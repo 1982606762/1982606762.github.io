@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+<meta name="referrer" content="no-referrer"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/logo.png">
+  <link rel="mask-icon" href="/images/logo.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.zhaoxuanlang.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="udemy iOS &amp; Swift - The Complete iOS App Development Bootcamp 学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="swift学习">
+<meta property="og:url" content="http://www.zhaoxuanlang.cn/2021/12/03/swift%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="松鼠小筑">
+<meta property="og:description" content="udemy iOS &amp; Swift - The Complete iOS App Development Bootcamp 学习笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/Squirrel_01/img/raw/master/img/image-20211203214120296.png">
+<meta property="og:image" content="https://gitee.com/Squirrel_01/img/raw/master/img/image-20211206191909648.png">
+<meta property="og:image" content="https://gitee.com/Squirrel_01/img/raw/master/img/image-20211220185034330.png">
+<meta property="og:image" content="https://gitee.com/Squirrel_01/img/raw/master/img/image-20211210111025022.png">
+<meta property="og:image" content="https://gitee.com/Squirrel_01/img/raw/master/img/image-20211204153117825.png">
+<meta property="og:image" content="https://gitee.com/Squirrel_01/img/raw/master/img/image-20211204155250623.png">
+<meta property="og:image" content="https://gitee.com/Squirrel_01/img/raw/master/img/image-20211204160340654.png">
+<meta property="og:image" content="https://gitee.com/Squirrel_01/img/raw/master/img/image-20211206165603374.png">
+<meta property="og:image" content="https://gitee.com/Squirrel_01/img/raw/master/img/image-20211228193140941.png">
+<meta property="og:image" content="https://gitee.com/Squirrel_01/img/raw/master/img/image-20211211172952388.png">
+<meta property="article:published_time" content="2021-12-03T12:50:14.000Z">
+<meta property="article:modified_time" content="2022-01-03T09:15:39.875Z">
+<meta property="article:author" content="Xuanlang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/Squirrel_01/img/raw/master/img/image-20211203214120296.png">
+
+<link rel="canonical" href="http://www.zhaoxuanlang.cn/2021/12/03/swift%E5%AD%A6%E4%B9%A0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>swift学习 | 松鼠小筑</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="松鼠小筑" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">松鼠小筑</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">学习笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">5</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">7</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">56</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.zhaoxuanlang.cn/2021/12/03/swift%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xuanlang">
+      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="松鼠小筑">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          swift学习
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-03 20:50:14" itemprop="dateCreated datePublished" datetime="2021-12-03T20:50:14+08:00">2021-12-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-01-03 17:15:39" itemprop="dateModified" datetime="2022-01-03T17:15:39+08:00">2022-01-03</time>
+              </span>
+
+          
+            <span id="/2021/12/03/swift%E5%AD%A6%E4%B9%A0/" class="post-meta-item leancloud_visitors" data-flag-title="swift学习" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2021/12/03/swift%E5%AD%A6%E4%B9%A0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/12/03/swift%E5%AD%A6%E4%B9%A0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>udemy <a target="_blank" rel="noopener" href="https://www.udemy.com/course/ios-13-app-development-bootcamp/">iOS &amp; Swift - The Complete iOS App Development Bootcamp</a> 学习笔记</p>
+<span id="more"></span>
+
+<h1 id="使用xcode"><a href="#使用xcode" class="headerlink" title="使用xcode"></a>使用xcode</h1><p>在view中使用上方的加号可以添加元素，点击元素在右侧可以修改属性</p>
+<p>使用assistant分屏左侧view右侧controller的时候点control并将元素拖到右边可以创建链接，按钮需要放到最下边并使用UIButton</p>
+<p><img src="https://gitee.com/Squirrel_01/img/raw/master/img/image-20211203214120296.png" alt="image-20211203214120296"></p>
+<blockquote>
+<p>control+I自动格式化</p>
+<p>cmd+shift+B分析代码</p>
+</blockquote>
+<h2 id="在storyboard中修改按钮圆角"><a href="#在storyboard中修改按钮圆角" class="headerlink" title="在storyboard中修改按钮圆角"></a>在storyboard中修改按钮圆角</h2><p><img src="https://gitee.com/Squirrel_01/img/raw/master/img/image-20211206191909648.png" alt="image-20211206191909648"></p>
+<p>在这里新增<code> layer.cornerRadius</code> 即可</p>
+<h2 id="可视化选择UIColor和Img"><a href="#可视化选择UIColor和Img" class="headerlink" title="可视化选择UIColor和Img"></a>可视化选择UIColor和Img</h2><p>Xcode13之后变成了<code>#colorLiteral()</code> 和 <code>#imgLiteral()</code> 来快速选择</p>
+<p>Xcode13之前可以使用 <code>color literal</code>来自动补全</p>
+<h2 id="使用自带图形SFSymbol"><a href="#使用自带图形SFSymbol" class="headerlink" title="使用自带图形SFSymbol"></a>使用自带图形SFSymbol</h2><p>点imageview，右边image下拉菜单找或者输入名字</p>
+<h2 id="Dark-Mode"><a href="#Dark-Mode" class="headerlink" title="Dark Mode"></a>Dark Mode</h2><p>将颜色设置成label或者Systemcolor就可以随系统变化</p>
+<p>自定义颜色：</p>
+<ol>
+<li>在Assets.xcassets里左下角点加号新增一个color set，然后分别自定义各个颜色</li>
+</ol>
+<p>自定义图片：</p>
+<p><img src="https://gitee.com/Squirrel_01/img/raw/master/img/image-20211220185034330.png" alt="image-20211220185034330"></p>
+<h2 id="分割线和自定义快捷输入"><a href="#分割线和自定义快捷输入" class="headerlink" title="分割线和自定义快捷输入"></a>分割线和自定义快捷输入</h2><p>分割线是<code>//MARK: - </code></p>
+<p>选中函数右键，create code snippet可以新建快捷输入    </p>
+<h1 id="Swift基础"><a href="#Swift基础" class="headerlink" title="Swift基础"></a>Swift基础</h1><p>用var声明变量，用let声明常量。</p>
+<p>获取随机数：<br>Int.random(in:begin…end)<br>Int.random(in:begin..&lt;end)不包含end<br>Float.random(in:begin…end)获取浮点随机数</p>
+<p>arr.shuffle()可以将数组打乱顺序</p>
+<p>字符串可以直接用加号连接</p>
+<h2 id="loop循环建议使用"><a href="#loop循环建议使用" class="headerlink" title="loop循环建议使用"></a>loop循环建议使用</h2><figure class="highlight swift"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="keyword">_</span> <span class="keyword">in</span> <span class="number">0</span><span class="operator">..&lt;</span><span class="number">6</span>{</span><br><span class="line">  </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h2><figure class="highlight swift"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> a <span class="operator">==</span> <span class="number">1</span>{</span><br><span class="line">  xxx</span><br><span class="line">}<span class="keyword">else</span>{</span><br><span class="line">  xxx</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h2><figure class="highlight swift"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num <span class="operator">=</span> <span class="type">Int</span>.random(in: <span class="number">0</span><span class="operator">...</span><span class="number">100</span>)</span><br><span class="line"><span class="keyword">switch</span> num {</span><br><span class="line"><span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="number">2</span>)</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"hello!"</span>)</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Swift-range"><a href="#Swift-range" class="headerlink" title="Swift range"></a>Swift range</h2><blockquote>
+<p>a…b closed Range</p>
+<p>a..&lt;b half open Range</p>
+<p>…b One sided Range</p>
+</blockquote>
+<h2 id="Dictionary"><a href="#Dictionary" class="headerlink" title="Dictionary"></a>Dictionary</h2><figure class="highlight swift"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> dic <span class="operator">=</span> [:]</span><br><span class="line"><span class="keyword">let</span> dic : [<span class="type">String</span>:<span class="type">Int</span>] <span class="operator">=</span> [<span class="string">"aaa"</span>:<span class="number">123</span>]</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Optional"><a href="#Optional" class="headerlink" title="Optional"></a>Optional</h2><p>一个变量如果可能是nil就是一个optional变量，如果用到某个变量，他有可能是nil，并且是nil的时候会崩溃，就需要使用optional变量</p>
+<blockquote>
+<p>string   普通string<br>String? optional string</p>
+</blockquote>
+<figure class="highlight swift"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name : string<span class="operator">?</span> <span class="operator">=</span> <span class="literal">nil</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Structure"><a href="#Structure" class="headerlink" title="Structure"></a>Structure</h2><p>包含property 和method¡</p>
+<figure class="highlight swift"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">MyStructure</span></span>{</span><br><span class="line">  <span class="keyword">let</span> name : <span class="type">String</span></span><br><span class="line">  <span class="keyword">var</span> p : [<span class="type">String</span>]</span><br><span class="line">  <span class="function"><span class="keyword">init</span>(<span class="params">name</span>:<span class="type">String</span>,<span class="params">p</span>:[<span class="type">String</span>])</span>{</span><br><span class="line">    <span class="keyword">self</span>.name <span class="operator">=</span> name</span><br><span class="line">    <span class="keyword">self</span>.p <span class="operator">=</span> p</span><br><span class="line">}</span><br><span class="line">  <span class="function"><span class="keyword">func</span> <span class="title">hello</span>()</span>{</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"hello"</span>)</span><br><span class="line">  }</span><br><span class="line">}</span><br><span class="line"><span class="keyword">var</span> s1 <span class="operator">=</span> <span class="type">MyStructure</span>()</span><br><span class="line"><span class="built_in">print</span>(s1.name)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">exercise</span>()</span> {</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">User</span></span>{</span><br><span class="line">        <span class="keyword">let</span> name : <span class="type">String</span></span><br><span class="line">        <span class="keyword">var</span> email : <span class="type">String</span>?</span><br><span class="line">        <span class="keyword">var</span> followers : <span class="type">Int</span></span><br><span class="line">        <span class="keyword">var</span> isActive : <span class="type">Bool</span></span><br><span class="line">        <span class="function"><span class="keyword">func</span> <span class="title">logStatus</span>()</span>{</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">self</span>.isActive {</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">"<span class="subst">\(<span class="keyword">self</span>.name)</span> is working hard"</span>)</span><br><span class="line">            } <span class="keyword">else</span> {</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">"<span class="subst">\(<span class="keyword">self</span>.name)</span> has left the earth"</span>)</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">// Define the User struct here</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">// Initialise a User struct here</span></span><br><span class="line">    <span class="keyword">var</span> riuser <span class="operator">=</span> <span class="type">User</span>(name: <span class="string">"Richard"</span>, email: <span class="literal">nil</span>, followers: <span class="number">0</span>, isActive: <span class="literal">false</span>)</span><br><span class="line">    riuser.logStatus()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">// Diagnostic code - do not change this code</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"<span class="subst">\n</span>Diagnostic code (i.e., Challenge Hint):"</span>)</span><br><span class="line">    <span class="keyword">var</span> musk <span class="operator">=</span> <span class="type">User</span>(name: <span class="string">"Elon"</span>, email: <span class="string">"elon@tesla.com"</span>, followers: <span class="number">2001</span>, isActive: <span class="literal">true</span>)</span><br><span class="line">    musk.logStatus()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Contacting <span class="subst">\(musk.name)</span> on <span class="subst">\(musk.email<span class="operator">!</span>)</span> ..."</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"<span class="subst">\(musk.name)</span> has <span class="subst">\(musk.followers)</span> followers"</span>)</span><br><span class="line">    <span class="comment">// sometime later</span></span><br><span class="line">    musk.isActive <span class="operator">=</span> <span class="literal">false</span></span><br><span class="line">    musk.logStatus()</span><br><span class="line">    </span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="External-parameter"><a href="#External-parameter" class="headerlink" title="External parameter"></a>External parameter</h2><p>一个函数的参数可以有一个外部名字和一个内部名字，在设置了之后，使用函数就可以用外部名字传参，函数内再使用内部名字。或者直接不使用外部名字，使用函数时就不需要写参数名</p>
+<figure class="highlight swift"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//with external parameter</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">test</span>(<span class="params">answer</span> <span class="params">parameter</span>:<span class="type">String</span>)</span>{</span><br><span class="line">  <span class="built_in">print</span>(parameter)</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">test(answer:<span class="string">"Hello"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//without external parameter</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">test2</span>(<span class="keyword">_</span> <span class="params">parameter</span>:<span class="type">String</span>,<span class="keyword">_</span> <span class="params">para2</span>:<span class="type">Int</span>)</span>{</span><br><span class="line">    <span class="built_in">print</span>(parameter)</span><br><span class="line">    <span class="built_in">print</span>(para2)</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">test2(<span class="string">"Hello"</span>,<span class="number">123</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h2><figure class="highlight swift"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">isOdd</span>(<span class="keyword">_</span> <span class="params">n</span>:<span class="type">Int</span>)</span>-&gt; <span class="type">Bool</span>{</span><br><span class="line">    <span class="keyword">if</span> n<span class="operator">%</span><span class="number">2</span> <span class="operator">==</span> <span class="number">1</span>{</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    }<span class="keyword">else</span>{</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Mutable-可变性"><a href="#Mutable-可变性" class="headerlink" title="Mutable(可变性)"></a>Mutable(可变性)</h2><p>Swift中用var创建的变量都是mutable，用let创建的都是immutable。在修改immutable变量时需要打碎再重建</p>
+<p>在struct内部修改struct变量值的时候需要给方法添加mutating属性</p>
+<h2 id="保留小数位数"><a href="#保留小数位数" class="headerlink" title="保留小数位数"></a>保留小数位数</h2><p>从Double转到String时可使用<code> String("$.2f",num)</code>来保留两位小数</p>
+<p>从Int转到String，不足两位前面补0：<code>String("%02d,num")</code> </p>
+<h2 id="类和继承"><a href="#类和继承" class="headerlink" title="类和继承"></a>类和继承</h2><p>类的定义方式和结构体类似</p>
+<p>继承：<code> class A : B{}</code></p>
+<p>重载函数： <code>override func a(){}</code></p>
+<p>使用父类的函数：<code>super.funca()</code></p>
+<p> <img src="https://gitee.com/Squirrel_01/img/raw/master/img/image-20211210111025022.png" alt="image-20211210111025022"></p>
+<p>NSObject(NextObject)</p>
+<h2 id="Struct和Class区别"><a href="#Struct和Class区别" class="headerlink" title="Struct和Class区别"></a>Struct和Class区别</h2><p>使用A=B的时候Class是浅拷贝，struct是深拷贝</p>
+<p>struct使用值传递，class使用reference传递</p>
+<p>apple建议一开始使用struct，有需要时再变成class</p>
+<h2 id="Optional进阶用法"><a href="#Optional进阶用法" class="headerlink" title="Optional进阶用法"></a>Optional进阶用法</h2><ol>
+<li><p>强制unwrap a = optional!</p>
+</li>
+<li><p>```swift<br>if optional != nil{<br>  print(safe!)<br>}else{</p>
+<p>}</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">3. optional binding : </span><br><span class="line"></span><br><span class="line">   ```swift</span><br><span class="line">   if let safe = optional{</span><br><span class="line">     print(safe)</span><br><span class="line">   }else{</span><br><span class="line">     </span><br><span class="line">   }</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>Default:<br><code> optional ?? defaltvalue</code></p>
+</li>
+<li><p>Optional chaining<br><code> optional?.prop</code> </p>
+</li>
+</ol>
+<h2 id="自动页面位置"><a href="#自动页面位置" class="headerlink" title="自动页面位置"></a>自动页面位置</h2><p>横屏时自动修正位置：</p>
+<p>可以通过添加位置约束和对齐的方式</p>
+<blockquote>
+<ul>
+<li>位置约束：距离最近的元素上下左右具体多少像素</li>
+<li>对齐：水平轴或者垂直轴居中</li>
+<li>也可以两者一起使用</li>
+</ul>
+</blockquote>
+<p>添加位置约束：</p>
+<p>选择需要修改的view，选中需要修改的元素，右下角添加约束</p>
+<p><img src="https://gitee.com/Squirrel_01/img/raw/master/img/image-20211204153117825.png" alt="image-20211204153117825"></p>
+<p>把虚线点成实线后add。现在横屏后可能会局限在safe area中，就需要点constraint，具体修改四个方位的safe area改成superview即可</p>
+<p>添加居中：</p>
+<p><img src="https://gitee.com/Squirrel_01/img/raw/master/img/image-20211204155250623.png" alt="image-20211204155250623"></p>
+<p>两个一起使用可以制作出如图label效果，垂直轴居中并且离上边元素30px</p>
+<p>居中时会让元素大小发生变化，可以使用constrain来设置大小</p>
+<h3 id="用view控制位置"><a href="#用view控制位置" class="headerlink" title="用view控制位置"></a>用view控制位置</h3><p>对复杂元素定位时可以使用view，就是div的用处。选中需要在一起的元素点击这里可以放进一个view。</p>
+<p><img src="https://gitee.com/Squirrel_01/img/raw/master/img/image-20211204160340654.png" alt="image-20211204160340654"></p>
+<p>Stackview可以把多个view堆叠。将多个view添加到一个stackview后可以调整边距，元素距离等。</p>
+<blockquote>
+<p>Bug:Stack view 的Alignment设置成vertical时会使按钮无法使用，需要设置成Fill</p>
+</blockquote>
+<h2 id="播放声音"><a href="#播放声音" class="headerlink" title="播放声音"></a>播放声音</h2><p>在遇到新模块的时候去google，模板：dosth+language+stackoverflow</p>
+<figure class="highlight swift"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> AVFoundation</span><br><span class="line"><span class="keyword">var</span> player: <span class="type">AVAudioPlayer</span>?</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">playSound</span>(<span class="params">name</span>: <span class="type">String</span>)</span> {</span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> url <span class="operator">=</span> <span class="type">Bundle</span>.main.url(forResource: name, withExtension: <span class="string">"mp3"</span>) <span class="keyword">else</span> { <span class="keyword">return</span> }</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">do</span> {</span><br><span class="line">            <span class="keyword">try</span> <span class="type">AVAudioSession</span>.sharedInstance().setCategory(.playback, mode: .default)</span><br><span class="line">            <span class="keyword">try</span> <span class="type">AVAudioSession</span>.sharedInstance().setActive(<span class="literal">true</span>)</span><br><span class="line">            </span><br><span class="line">            player <span class="operator">=</span> <span class="keyword">try</span> <span class="type">AVAudioPlayer</span>(contentsOf: url, fileTypeHint: <span class="type">AVFileType</span>.mp3.rawValue)</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">guard</span> <span class="keyword">let</span> player <span class="operator">=</span> player <span class="keyword">else</span> { <span class="keyword">return</span> }</span><br><span class="line">            </span><br><span class="line">            player.play()</span><br><span class="line">            </span><br><span class="line">        } <span class="keyword">catch</span> <span class="keyword">let</span> error {</span><br><span class="line">            <span class="built_in">print</span>(error.localizedDescription)</span><br><span class="line">        }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="使用progressViewer"><a href="#使用progressViewer" class="headerlink" title="使用progressViewer"></a>使用progressViewer</h2><figure class="highlight swift"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">progressViewer.setProgress(<span class="number">0.0</span>,animated: <span class="literal">true</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h2><figure class="highlight swift"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> timer <span class="operator">=</span> <span class="type">Timer</span>?</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">startTimer</span>(<span class="params">time</span>:<span class="type">Int</span>)</span> {</span><br><span class="line">        timer<span class="operator">?</span>.invalidate()</span><br><span class="line">        timer <span class="operator">=</span> <span class="literal">nil</span></span><br><span class="line">        counter <span class="operator">=</span> time</span><br><span class="line">        timer <span class="operator">=</span> <span class="type">Timer</span>.scheduledTimer(timeInterval: <span class="number">1.0</span>, target: <span class="keyword">self</span>, selector: #selector(updateCounter), userInfo: <span class="literal">nil</span>, repeats: <span class="literal">true</span>)</span><br><span class="line">    }</span><br><span class="line"><span class="keyword">@objc</span> <span class="function"><span class="keyword">func</span> <span class="title">updateCounter</span>()</span> {</span><br><span class="line">        <span class="keyword">if</span> counter <span class="operator">&gt;</span> <span class="number">0</span> {</span><br><span class="line">            progressViewer.setProgress(<span class="type">Float</span>(times[hard]<span class="operator">!-</span>counter)<span class="operator">/</span><span class="type">Float</span>(times[hard]<span class="operator">!</span>), animated: <span class="literal">true</span>)</span><br><span class="line">            counter <span class="operator">-=</span> <span class="number">1</span></span><br><span class="line">        }<span class="keyword">else</span>{</span><br><span class="line">            playSound(name: <span class="string">"alarm_sound"</span>)</span><br><span class="line">            progressViewer.setProgress(<span class="number">1.0</span>, animated: <span class="literal">true</span>)</span><br><span class="line">            <span class="type">DispatchQueue</span>.main.asyncAfter(deadline: .now() <span class="operator">+</span> <span class="number">3</span>) {</span><br><span class="line">                <span class="keyword">self</span>.progressViewer.setProgress(<span class="number">0.0</span>, animated: <span class="literal">true</span>)</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> timer <span class="operator">=</span> <span class="keyword">self</span>.timer {</span><br><span class="line">                timer.invalidate()</span><br><span class="line">                <span class="keyword">self</span>.timer <span class="operator">=</span> <span class="literal">nil</span></span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><p>设计模式就是针对某一种问题的一个经过验证的解决方案</p>
+<p>有很多设计模式</p>
+<h3 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h3><p>Model-view-controller</p>
+<p><img src="https://gitee.com/Squirrel_01/img/raw/master/img/image-20211206165603374.png" alt="image-20211206165603374"></p>
+<h3 id="Delegate"><a href="#Delegate" class="headerlink" title="Delegate"></a>Delegate</h3><p><img src="https://gitee.com/Squirrel_01/img/raw/master/img/image-20211228193140941.png" alt="image-20211228193140941"></p>
+<h2 id="使用代码新建view"><a href="#使用代码新建view" class="headerlink" title="使用代码新建view"></a>使用代码新建view</h2><figure class="highlight swift"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">secondViewController</span>: <span class="title">UIViewController</span> </span>{</span><br><span class="line">    <span class="keyword">var</span> bmi <span class="operator">=</span>  <span class="string">"0.0"</span></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span>()</span> {</span><br><span class="line">        <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line">        </span><br><span class="line">        view.backgroundColor <span class="operator">=</span> .red</span><br><span class="line">        <span class="keyword">let</span> label <span class="operator">=</span> <span class="type">UILabel</span>()</span><br><span class="line">        label.text <span class="operator">=</span> bmi</span><br><span class="line">        label.frame <span class="operator">=</span> <span class="type">CGRect</span>(x: <span class="number">0</span>, y: <span class="number">0</span>, width: <span class="number">100</span>, height: <span class="number">50</span>)</span><br><span class="line">        label.backgroundColor <span class="operator">=</span> .green</span><br><span class="line">        view.addSubview(label)</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="切换显示view"><a href="#切换显示view" class="headerlink" title="切换显示view"></a>切换显示view</h2><figure class="highlight swift"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> vc2 <span class="operator">=</span> secondViewController()</span><br><span class="line">vc2.bmi <span class="operator">=</span> <span class="type">String</span>(format: <span class="string">"%.2f"</span>, bmi1)</span><br><span class="line"><span class="keyword">self</span>.present(vc2, animated: <span class="literal">true</span>, completion: <span class="literal">nil</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="创建segue"><a href="#创建segue" class="headerlink" title="创建segue"></a>创建segue</h2><p><img src="https://gitee.com/Squirrel_01/img/raw/master/img/image-20211211172952388.png" alt="image-20211211172952388"></p>
+<p>按住control拖到下边的</p>
+<p>segue可以定义页面切换的动画</p>
+<p>若要用segue从Acontroller切换到Bcontroller：</p>
+<blockquote>
+<p>需要在Axontroller中定义prepare函数来传输一些B必要的变量</p>
+<p>A中使用<code>self.performSegue</code>切换.第一个是在storyboard设置的名称，第二个是self或别的类</p>
+<p>B中使用 <code>dismiss</code> 来回去</p>
+</blockquote>
+<h2 id="protocol用法"><a href="#protocol用法" class="headerlink" title="protocol用法"></a>protocol用法</h2><p>protocol类似一种认证，其实就是虚类</p>
+<p>内部类似虚类，只能定义函数名</p>
+<p>用的时候需要定义函数</p>
+<figure class="highlight swift"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">airplane</span>: <span class="title">canfly</span></span>{</span><br><span class="line">  <span class="function"><span class="keyword">func</span> <span class="title">fly</span>()</span>{</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"fly"</span>)</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="使用api获得天气数据"><a href="#使用api获得天气数据" class="headerlink" title="使用api获得天气数据"></a>使用api获得天气数据</h2><p>在openweather注册账号，使用current来获取数据，还可以自定义一些显示特征</p>
+<h2 id="使用swift进行url链接"><a href="#使用swift进行url链接" class="headerlink" title="使用swift进行url链接"></a>使用swift进行url链接</h2><ol>
+<li>生成url</li>
+<li>创建URLSession</li>
+<li>给UrlSession一个任务</li>
+<li>运行任务</li>
+</ol>
+<h2 id="用函数作为参数，匿名函数"><a href="#用函数作为参数，匿名函数" class="headerlink" title="用函数作为参数，匿名函数"></a>用函数作为参数，匿名函数</h2><p>函数作参数传入：</p>
+<figure class="highlight swift"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">calculate</span>(<span class="params">n1</span>:<span class="type">Int</span>,<span class="params">n2</span>:<span class="type">Int</span>,<span class="params">operation</span>:(<span class="type">Int</span>,<span class="type">Int</span>)-&gt;<span class="type">Int</span>)</span>-&gt;<span class="type">Int</span>{</span><br><span class="line">  <span class="keyword">return</span> operation(n1,n2)</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">plus</span>(<span class="params">n1</span>:<span class="type">Int</span>,<span class="params">n2</span>:<span class="type">Int</span>)</span>-&gt;<span class="type">Int</span>{</span><br><span class="line">  <span class="keyword">return</span> n1<span class="operator">+</span>n2</span><br><span class="line">}</span><br><span class="line">calculate(n1: <span class="number">2</span>, n2: <span class="number">3</span>, operation: plus(n1:n2:))</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<p>匿名函数：</p>
+<figure class="highlight swift"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">	{</span><br><span class="line">    (no1:<span class="type">Int</span>,no2:<span class="type">Int</span>)-&gt;<span class="type">Int</span> <span class="keyword">in</span></span><br><span class="line">    	<span class="keyword">return</span> no1<span class="operator">+</span>no2</span><br><span class="line">  }</span><br><span class="line"><span class="comment">//编译器可以预判你要输出一些东西</span></span><br><span class="line">calculate(n1:<span class="number">2</span>,n2:<span class="number">3</span>,operation:{(no1,no2) <span class="keyword">in</span> </span><br><span class="line">                              no1<span class="operator">+</span>no2})</span><br><span class="line"><span class="comment">//$0代表第一个变量</span></span><br><span class="line">calculate(n1:<span class="number">2</span>,n2:<span class="number">3</span>,operation:{<span class="variable">$0</span><span class="operator">+</span><span class="variable">$1</span>})</span><br><span class="line">calculate(n1:<span class="number">2</span>,n2:<span class="number">3</span>){<span class="variable">$1</span><span class="operator">+</span><span class="variable">$2</span>}</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Map函数"><a href="#Map函数" class="headerlink" title="Map函数"></a>Map函数</h2><p><code>array.map(func1)</code></p>
+<figure class="highlight swift"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> newarray <span class="operator">=</span> array.map{<span class="string">"<span class="subst">\(<span class="variable">$0</span>)</span>"</span>}</span><br><span class="line">array.map({(n1)<span class="keyword">in</span></span><br><span class="line">    n1<span class="operator">+</span><span class="number">1</span>})</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="Computed-property"><a href="#Computed-property" class="headerlink" title="Computed property"></a>Computed property</h2><figure class="highlight swift"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> prop:<span class="type">String</span>{</span><br><span class="line">  <span class="keyword">return</span> <span class="string">"qwwe"</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="DispatchQueue"><a href="#DispatchQueue" class="headerlink" title="DispatchQueue"></a>DispatchQueue</h2><p>在需要长时间进行的任务（如从网上寻找东西）的时候系统会让他在后台执行，因为如果让用户等的话就会看起来像是卡住了。但是如果在任务中需要更新前台的显示就需要修改更新的代码</p>
+<p>把更新部分的代码用sync包裹起来</p>
+<figure class="highlight swift"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">DispatchQueue</span>.main.sync {</span><br><span class="line">            temperatureLabel.text <span class="operator">=</span> weather.temperatureString</span><br><span class="line">            conditionImageView.image <span class="operator">=</span> <span class="type">UIImage</span>(systemName: weather.conditionName)</span><br><span class="line">        }</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="extension用法"><a href="#extension用法" class="headerlink" title="extension用法"></a>extension用法</h2><p>用于扩展某个类，新增函数</p>
+<ol>
+<li><p>扩展内建类</p>
+<figure class="highlight swift"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">Double</span></span>{</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">round</span>(<span class="params">to</span>:<span class="type">Int</span>)</span> -&gt; <span class="type">Double</span> {</span><br><span class="line">        <span class="keyword">let</span> q <span class="operator">=</span> pow(<span class="number">10</span>, <span class="type">Double</span>(to))</span><br><span class="line">        <span class="keyword">var</span> n <span class="operator">=</span> <span class="keyword">self</span></span><br><span class="line">        n<span class="operator">=</span>n<span class="operator">*</span>q</span><br><span class="line">        n.round()</span><br><span class="line">        n <span class="operator">=</span> n<span class="operator">/</span>q</span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">}</span><br><span class="line"><span class="keyword">var</span> double <span class="operator">=</span> <span class="number">3.14159</span></span><br><span class="line">double.round(to:<span class="number">3</span>)</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>扩展protocol</p>
+<p>如果某个protocol里的函数需要一个默认值可以使用extension来添加</p>
+</li>
+<li><p>简化代码。</p>
+<p>如果一个类有很多继承关系，可以把每个继承写成一个扩展，扩展内部写和这个继承相关的函数</p>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Xuanlang
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://www.zhaoxuanlang.cn/2021/12/03/swift%E5%AD%A6%E4%B9%A0/" title="swift学习">http://www.zhaoxuanlang.cn/2021/12/03/swift学习/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/05/vue%E5%AD%A6%E4%B9%A0/" rel="prev" title="vue学习">
+      <i class="fa fa-chevron-left"></i> vue学习
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/01/04/%E5%9C%A8Mac%E4%BD%BF%E7%94%A8gnupg%E5%8A%A0%E5%AF%86git/" rel="next" title="在Mac使用gnupg加密git">
+      在Mac使用gnupg加密git <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8xcode"><span class="nav-number">1.</span> <span class="nav-text">使用xcode</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8storyboard%E4%B8%AD%E4%BF%AE%E6%94%B9%E6%8C%89%E9%92%AE%E5%9C%86%E8%A7%92"><span class="nav-number">1.1.</span> <span class="nav-text">在storyboard中修改按钮圆角</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E8%A7%86%E5%8C%96%E9%80%89%E6%8B%A9UIColor%E5%92%8CImg"><span class="nav-number">1.2.</span> <span class="nav-text">可视化选择UIColor和Img</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%87%AA%E5%B8%A6%E5%9B%BE%E5%BD%A2SFSymbol"><span class="nav-number">1.3.</span> <span class="nav-text">使用自带图形SFSymbol</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dark-Mode"><span class="nav-number">1.4.</span> <span class="nav-text">Dark Mode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%89%B2%E7%BA%BF%E5%92%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E8%BE%93%E5%85%A5"><span class="nav-number">1.5.</span> <span class="nav-text">分割线和自定义快捷输入</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Swift%E5%9F%BA%E7%A1%80"><span class="nav-number">2.</span> <span class="nav-text">Swift基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#loop%E5%BE%AA%E7%8E%AF%E5%BB%BA%E8%AE%AE%E4%BD%BF%E7%94%A8"><span class="nav-number">2.1.</span> <span class="nav-text">loop循环建议使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#if%E8%AF%AD%E5%8F%A5"><span class="nav-number">2.2.</span> <span class="nav-text">if语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#switch%E8%AF%AD%E5%8F%A5"><span class="nav-number">2.3.</span> <span class="nav-text">switch语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Swift-range"><span class="nav-number">2.4.</span> <span class="nav-text">Swift range</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dictionary"><span class="nav-number">2.5.</span> <span class="nav-text">Dictionary</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Optional"><span class="nav-number">2.6.</span> <span class="nav-text">Optional</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Structure"><span class="nav-number">2.7.</span> <span class="nav-text">Structure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#External-parameter"><span class="nav-number">2.8.</span> <span class="nav-text">External parameter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Function"><span class="nav-number">2.9.</span> <span class="nav-text">Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mutable-%E5%8F%AF%E5%8F%98%E6%80%A7"><span class="nav-number">2.10.</span> <span class="nav-text">Mutable(可变性)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%9D%E7%95%99%E5%B0%8F%E6%95%B0%E4%BD%8D%E6%95%B0"><span class="nav-number">2.11.</span> <span class="nav-text">保留小数位数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E5%92%8C%E7%BB%A7%E6%89%BF"><span class="nav-number">2.12.</span> <span class="nav-text">类和继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Struct%E5%92%8CClass%E5%8C%BA%E5%88%AB"><span class="nav-number">2.13.</span> <span class="nav-text">Struct和Class区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Optional%E8%BF%9B%E9%98%B6%E7%94%A8%E6%B3%95"><span class="nav-number">2.14.</span> <span class="nav-text">Optional进阶用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E9%A1%B5%E9%9D%A2%E4%BD%8D%E7%BD%AE"><span class="nav-number">2.15.</span> <span class="nav-text">自动页面位置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8view%E6%8E%A7%E5%88%B6%E4%BD%8D%E7%BD%AE"><span class="nav-number">2.15.1.</span> <span class="nav-text">用view控制位置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%92%AD%E6%94%BE%E5%A3%B0%E9%9F%B3"><span class="nav-number">2.16.</span> <span class="nav-text">播放声音</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8progressViewer"><span class="nav-number">2.17.</span> <span class="nav-text">使用progressViewer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E6%97%B6%E5%99%A8"><span class="nav-number">2.18.</span> <span class="nav-text">定时器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.19.</span> <span class="nav-text">设计模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MVC"><span class="nav-number">2.19.1.</span> <span class="nav-text">MVC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Delegate"><span class="nav-number">2.19.2.</span> <span class="nav-text">Delegate</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%A0%81%E6%96%B0%E5%BB%BAview"><span class="nav-number">2.20.</span> <span class="nav-text">使用代码新建view</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E6%8D%A2%E6%98%BE%E7%A4%BAview"><span class="nav-number">2.21.</span> <span class="nav-text">切换显示view</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BAsegue"><span class="nav-number">2.22.</span> <span class="nav-text">创建segue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#protocol%E7%94%A8%E6%B3%95"><span class="nav-number">2.23.</span> <span class="nav-text">protocol用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8api%E8%8E%B7%E5%BE%97%E5%A4%A9%E6%B0%94%E6%95%B0%E6%8D%AE"><span class="nav-number">2.24.</span> <span class="nav-text">使用api获得天气数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8swift%E8%BF%9B%E8%A1%8Curl%E9%93%BE%E6%8E%A5"><span class="nav-number">2.25.</span> <span class="nav-text">使用swift进行url链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E5%8F%82%E6%95%B0%EF%BC%8C%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0"><span class="nav-number">2.26.</span> <span class="nav-text">用函数作为参数，匿名函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Map%E5%87%BD%E6%95%B0"><span class="nav-number">2.27.</span> <span class="nav-text">Map函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Computed-property"><span class="nav-number">2.28.</span> <span class="nav-text">Computed property</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DispatchQueue"><span class="nav-number">2.29.</span> <span class="nav-text">DispatchQueue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#extension%E7%94%A8%E6%B3%95"><span class="nav-number">2.30.</span> <span class="nav-text">extension用法</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xuanlang"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xuanlang</p>
+  <div class="site-description" itemprop="description">业精于勤荒于嬉，行成于思毁于随</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">56</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/1982606762" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;1982606762" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zxl17302206700@gmail.com" title="E-Mail → mailto:zxl17302206700@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">津ICP备19008018号-1 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-award"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XuanLang</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'CrLAcvc7BNSXHSgGkmBwjcQK-gzGzoHsz',
+      appKey     : 'wNQMqo88elGD6NLm8MDvIrSA',
+      placeholder: "写些什么吧",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

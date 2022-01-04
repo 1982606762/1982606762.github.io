@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+<meta name="referrer" content="no-referrer"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/logo.png">
+  <link rel="mask-icon" href="/images/logo.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.zhaoxuanlang.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="1.进入官网找到自己所需的安装包：https:&#x2F;&#x2F;dev.mysql.com&#x2F; &amp;nbsp;，路径：DOWNLOAD–&gt;MYSQL Community Edition(GRL)–&gt;MYSQL on Windows (Installer &amp; Tool) 或直接点击&amp;nbsp;https:&#x2F;&#x2F;dev.mysql.com&#x2F;downloads&#x2F;windows&#x2F;installer&#x2F;&amp;nb">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows10 MYSQL Installer 安装（mysql-installer-community-5.7.19.0.msi）">
+<meta property="og:url" content="http://www.zhaoxuanlang.cn/2020/07/15/windows10-mysql-installer-%E5%AE%89%E8%A3%85%EF%BC%88mysql-installer-community-5-7-19-0-msi%EF%BC%89/index.html">
+<meta property="og:site_name" content="松鼠小筑">
+<meta property="og:description" content="1.进入官网找到自己所需的安装包：https:&#x2F;&#x2F;dev.mysql.com&#x2F; &amp;nbsp;，路径：DOWNLOAD–&gt;MYSQL Community Edition(GRL)–&gt;MYSQL on Windows (Installer &amp; Tool) 或直接点击&amp;nbsp;https:&#x2F;&#x2F;dev.mysql.com&#x2F;downloads&#x2F;windows&#x2F;installer&#x2F;&amp;nb">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1202941-20170722225513168-99169810.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1202941-20170722225525340-1635922988.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831313-3095-20170722225535090-1925937407.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831313-8105-20170722225609184-438065502.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831313-8141-1-20170722225738356-88388521.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831313-7844-20170722225950840-2044210671.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831314-6138-20170722230026215-1797155710.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831314-1312-20170722230046043-978659071.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831314-6490-20170722230201246-220989429.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831314-6339-20170722230232793-1759462371.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831314-7923-20170722230314340-1501335191.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831315-4997-1-20170722230439528-92431868.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831315-6544-20170722230506262-176699446.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831315-4350-20170722230524700-2060141633.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831315-5686-20170722230808200-494027333.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831316-1727-20170722230838934-1132653366.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831316-4284-20170722230918575-127114164.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831316-1042-20170722231058356-1269244144.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831317-1713-20170722231209903-956653442.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831317-3908-20170722231228387-1590560639.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831317-1586-20170722231608825-2099636815.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831317-4097-20170722231638887-180558399.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831318-8984-20170722231654278-649027984.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831318-9740-20170722231714809-1553936235.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831318-2164-20170722231738825-1692782858.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831318-2952-20170722231755762-1299837152.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831319-7917-20170722231811528-357673493.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831319-7786-20170722231826746-634086390.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831319-2072-20170722231844528-1242732523.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831319-9386-20170722231902950-256599456.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831319-1406-20170722231933637-179722774.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831320-7960-20170722232012418-1876643408.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831320-7374-41-20170722232031684-1843508.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831320-5015-20170722232044090-1304683536.png">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1571831320-6727-20170722232055731-2127042770.png">
+<meta property="article:published_time" content="2020-07-15T03:07:37.000Z">
+<meta property="article:modified_time" content="2021-08-09T11:39:37.886Z">
+<meta property="article:author" content="Xuanlang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.runoob.com/wp-content/uploads/2019/10/1202941-20170722225513168-99169810.png">
+
+<link rel="canonical" href="http://www.zhaoxuanlang.cn/2020/07/15/windows10-mysql-installer-%E5%AE%89%E8%A3%85%EF%BC%88mysql-installer-community-5-7-19-0-msi%EF%BC%89/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Windows10 MYSQL Installer 安装（mysql-installer-community-5.7.19.0.msi） | 松鼠小筑</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="松鼠小筑" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">松鼠小筑</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">学习笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">5</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">7</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">56</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.zhaoxuanlang.cn/2020/07/15/windows10-mysql-installer-%E5%AE%89%E8%A3%85%EF%BC%88mysql-installer-community-5-7-19-0-msi%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xuanlang">
+      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="松鼠小筑">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Windows10 MYSQL Installer 安装（mysql-installer-community-5.7.19.0.msi）
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-15 11:07:37" itemprop="dateCreated datePublished" datetime="2020-07-15T11:07:37+08:00">2020-07-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-09 19:39:37" itemprop="dateModified" datetime="2021-08-09T19:39:37+08:00">2021-08-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9D%82/" itemprop="url" rel="index"><span itemprop="name">杂</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/07/15/windows10-mysql-installer-%E5%AE%89%E8%A3%85%EF%BC%88mysql-installer-community-5-7-19-0-msi%EF%BC%89/" class="post-meta-item leancloud_visitors" data-flag-title="Windows10 MYSQL Installer 安装（mysql-installer-community-5.7.19.0.msi）" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/07/15/windows10-mysql-installer-%E5%AE%89%E8%A3%85%EF%BC%88mysql-installer-community-5-7-19-0-msi%EF%BC%89/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/15/windows10-mysql-installer-%E5%AE%89%E8%A3%85%EF%BC%88mysql-installer-community-5-7-19-0-msi%EF%BC%89/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>1.进入官网找到自己所需的安装包：<a target="_blank" rel="noopener" href="https://dev.mysql.com/">https://dev.mysql.com/</a> &nbsp;，路径：DOWNLOAD–&gt;MYSQL Community Edition(GRL)–&gt;MYSQL on Windows (Installer &amp; Tool)</p>
+<p>或直接点击&nbsp;<a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/windows/installer/">https://dev.mysql.com/downloads/windows/installer/</a>&nbsp;查看最新版本。</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1202941-20170722225513168-99169810.png"></p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1202941-20170722225525340-1635922988.png"></p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831313-3095-20170722225535090-1925937407.png"></p>
+<p>2.找到所需的安装包,</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831313-8105-20170722225609184-438065502.png"></p>
+<p>3.点击download。这里选择的是安装版（mysql -install-community）</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831313-8141-1-20170722225738356-88388521.png"></p>
+<p>4.选择不登陆下载。</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831313-7844-20170722225950840-2044210671.png"></p>
+<p>5.双击运行下载好的mysql-installer-community-5.7.19.0.msi，程序运行需要一些时间，请等待一下。</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831314-6138-20170722230026215-1797155710.png"></p>
+<p>6.运行成功之后，进入欢迎的界面.选择我同意协议，不然无法进行下一步。</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831314-1312-20170722230046043-978659071.png"></p>
+<p>7.&nbsp;进入类型选择页面，本人需要mysql云服务就选择了developer default（7.1是默认安装的步骤），如果只想安装mysql server的就选择custom模式（7.2步骤是选择自己需要的服务器类型，所选择的用于做一些数据分析）</p>
+<ul>
+<li>  developer default（开发者默认）：安装mysql开发所需的所有产品</li>
+<li>  server only（服务器）：只安装mysql服务器产品</li>
+<li>  client only（客户端）：只安装没有服务器的mysql客户端产品</li>
+<li>  full（完全）：安装所有包含的mysql产品和功能</li>
+<li>  custom（手动）：手动选择系统上应安装的产品</li>
+</ul>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831314-6490-20170722230201246-220989429.png"></p>
+<p>7.1开发者默认模式检测以下程序会安装不成功，点击下一步进入下一个安装流程—&gt;跳到第八步。</p>
+<p>check requirements：以下产品的请求失败，安装程序将自动尝试解决其中一些问题。标记为手动的要求无法自动解决。单击这些项目以尝试手动恢复。</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831314-6339-20170722230232793-1759462371.png"></p>
+<p>检测到不可安装的程序说明：</p>
+<p>Visual Studio：是一款代码编辑工具（可编写C#、Visual Basic、C++、TypeScript、F#&nbsp;），如果你安装的话就安装要求去安装Visual Studio version：2012.2013.2015.2017其中一个版本</p>
+<p>Connector/pyton 3.4：电脑有python3.6了就没选择3.4版本的。如果你没安装有python可按要求去安装一些内容。</p>
+<p>7.2选择mysql server（服务） 5.7.19 x64</p>
+<p>选择mysql workbench(mysql 的工作薄) 6.3.9 x64</p>
+<p>选择mysql notiyier(通知) 1.1.7 x86(因为这里只有一个选择所以选择了86)点击下一步进入下一个安装流程—&gt;跳到第九步。</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831314-7923-20170722230314340-1501335191.png"></p>
+<p>8.当我们点击下一步的时候安装程序出现了提示：（一个或者移动产品要求没有得到满足，那些符合要求的产品将不会安装/升级。你想要继续吗），这里我选择的是：YES</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831315-4997-1-20170722230439528-92431868.png"></p>
+<p>9.在安装所选界面能看到我们接下来所需要安装的程序，点击execute</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831315-6544-20170722230506262-176699446.png"></p>
+<p>10安装程序进度界面，安装需要一些时间。点击dide tails能看到安装日志</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831315-4350-20170722230524700-2060141633.png"></p>
+<p>11.程序安装完成之后，点击next</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831315-5686-20170722230808200-494027333.png"></p>
+<p>12.在product configutration（产品配置）页面能看到需要配置的程序，点击next（页面英语介绍：现在我们将逐一介绍以下产品的配置向导。您可以随时取消，如果您希望离开此向导，而不必配置所有产品）</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831316-1727-20170722230838934-1132653366.png"></p>
+<p>13.先配置mysql server的类型以及网络：type and networking（类型和网络），这里有两种mysql server类型，选择第一种类型点击next。</p>
+<p>有两种类型简单介绍</p>
+<ul>
+<li>  1.standalone mysql server/classic mysql replication：独立的mysql服务器/经典的mysql复制。choose this option if you want to run the mysql server either standalone with the opportunity to later configure classic mysql replication：选择这个选项，如果你想运行mysql服务器是独立的，有机会以后配置经典的mysql复制</li>
+<li>  2. innodb cluster sandbox thst setup(for testing only)：</li>
+</ul>
+<p>innodb集群沙箱thst设置（仅用于测试）</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831316-4284-20170722230918575-127114164.png"></p>
+<p>14.设置服务器配置类型以及连接端口：继续next</p>
+<p>Config Type:选择Development Machine，用于小型以及学习所用足够了。</p>
+<p>Port number：输入3306，也可以输入其他最好是3306-3309之间。</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831316-1042-20170722231058356-1269244144.png"></p>
+<p>15.配置root的密码（该密码要记住），系统提示这密码虚弱</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831317-1713-20170722231209903-956653442.png"></p>
+<p>16.&nbsp;添加其他管理员，点击add user 输入账号密码点击ok（如果添加的管理员只允许在本地登录就将host改成local），回到界面之后点击next</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831317-3908-20170722231228387-1590560639.png"></p>
+<p>17.配置mysql在windows系统中的名字，是否选择开机启动mysql服务，其它的没进行修改，点击”Next”。</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831317-1586-20170722231608825-2099636815.png"></p>
+<p>18.配置插件和扩展页面没进行修改直接下一步：</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831317-4097-20170722231638887-180558399.png"></p>
+<p>19.Mysql server :apply configuration（应用配置页面），选择execute进行安装配置</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831318-8984-20170722231654278-649027984.png"></p>
+<p>20.&nbsp;mysql server应用配置的log，选择finish</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831318-9740-20170722231714809-1553936235.png"></p>
+<p>21.安装程序又回到了product configutration（产品配置）页面，此时我们看到mysql server安装成功的显示，继续下一步：</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831318-2164-20170722231738825-1692782858.png"></p>
+<p>22.&nbsp;配置mysql router：勾选configure mysql route for innoDB cluster之后输入密码。（如果不想输入密码可直接点击点一下）点击下一步</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831318-2952-20170722231755762-1299837152.png"></p>
+<p>23.Mysql router :apply configuration（应用配置页面）点击execute,</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831319-7917-20170722231811528-357673493.png"></p>
+<p>24.安装完成之后点击选择finish</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831319-7786-20170722231826746-634086390.png"></p>
+<p>25.检测root密码</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831319-2072-20170722231844528-1242732523.png"></p>
+<p>26.安装一些server，老规矩点击execute，完成之后点击finish</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831319-9386-20170722231902950-256599456.png"></p>
+<p>27.&nbsp;程序回到产品配置页面。继续下一步：</p>
+<p>28.安装程序完成界面。</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831319-1406-20170722231933637-179722774.png"></p>
+<p>29.&nbsp;双击运行之前下载的安装包，能看到我们所安装的产品。</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831320-7960-20170722232012418-1876643408.png"></p>
+<p>30.&nbsp;配置mysql环境变量</p>
+<p>上面安装的是时候我们看到mysql默认安装路径是：C:\Program Files\MySQL\MySQL Server 5.7</p>
+<p>我的电脑右键—&gt;属性à高级系统设置à环境变量à新建MYSQL_HOME,将安装目录输入：</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831320-7374-41-20170722232031684-1843508.png"></p>
+<p>找到path编辑：输入%MYSQL_HOME%\bin</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831320-5015-20170722232044090-1304683536.png"></p>
+<p>打开cmd输入mysql –u root –p</p>
+<p>输入root的密码</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/10/1571831320-6727-20170722232055731-2127042770.png"></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Xuanlang
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://www.zhaoxuanlang.cn/2020/07/15/windows10-mysql-installer-%E5%AE%89%E8%A3%85%EF%BC%88mysql-installer-community-5-7-19-0-msi%EF%BC%89/" title="Windows10 MYSQL Installer 安装（mysql-installer-community-5.7.19.0.msi）">http://www.zhaoxuanlang.cn/2020/07/15/windows10-mysql-installer-安装（mysql-installer-community-5-7-19-0-msi）/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/06/10/%E7%A8%B3%E5%AE%9A%E6%8E%92%E5%BA%8F%E5%92%8C%E4%B8%8D%E7%A8%B3%E5%AE%9A%E6%8E%92%E5%BA%8F/" rel="prev" title="稳定排序和不稳定排序">
+      <i class="fa fa-chevron-left"></i> 稳定排序和不稳定排序
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/07/15/%E4%BD%BF%E7%94%A8mysql-query-browser%E6%97%B6%E5%87%BA%E7%8E%B0error1251%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="next" title="使用MYSQL QUERY browser时出现error1251的解决方案">
+      使用MYSQL QUERY browser时出现error1251的解决方案 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xuanlang"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xuanlang</p>
+  <div class="site-description" itemprop="description">业精于勤荒于嬉，行成于思毁于随</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">56</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/1982606762" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;1982606762" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zxl17302206700@gmail.com" title="E-Mail → mailto:zxl17302206700@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">津ICP备19008018号-1 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-award"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XuanLang</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'CrLAcvc7BNSXHSgGkmBwjcQK-gzGzoHsz',
+      appKey     : 'wNQMqo88elGD6NLm8MDvIrSA',
+      placeholder: "写些什么吧",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

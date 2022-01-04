@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+<meta name="referrer" content="no-referrer"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/logo.png">
+  <link rel="mask-icon" href="/images/logo.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.zhaoxuanlang.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="margin参数数量 margin: 20px;（上、下、左、右各20px。） margin: 20px 40px;（上、下20px；左、右40px。） margin: 20px 40px 60px;（上20px；左、右40px；下60px。） margin: 20px 40px 60px 80px;（上20px；右40px；下60px；左80px。）  单独设置角度border-bottom-l">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS开发学习笔记">
+<meta property="og:url" content="http://www.zhaoxuanlang.cn/2021/08/11/JS%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="松鼠小筑">
+<meta property="og:description" content="margin参数数量 margin: 20px;（上、下、左、右各20px。） margin: 20px 40px;（上、下20px；左、右40px。） margin: 20px 40px 60px;（上20px；左、右40px；下60px。） margin: 20px 40px 60px 80px;（上20px；右40px；下60px；左80px。）  单独设置角度border-bottom-l">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.zhaoxuanlang.cn/Users/zxl/Library/Containers/com.tencent.qq/Data/Library/Caches/Images/E7FA839551193991515F3BE73B5A0C73.jpg">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020092411313370.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTExMTM4NA==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://common.cnblogs.com/images/copycode.gif">
+<meta property="article:published_time" content="2021-08-11T13:47:37.000Z">
+<meta property="article:modified_time" content="2021-08-12T03:19:06.735Z">
+<meta property="article:author" content="Xuanlang">
+<meta property="article:tag" content="js">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.zhaoxuanlang.cn/Users/zxl/Library/Containers/com.tencent.qq/Data/Library/Caches/Images/E7FA839551193991515F3BE73B5A0C73.jpg">
+
+<link rel="canonical" href="http://www.zhaoxuanlang.cn/2021/08/11/JS%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>JS开发学习笔记 | 松鼠小筑</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="松鼠小筑" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">松鼠小筑</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">学习笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">5</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">7</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">56</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.zhaoxuanlang.cn/2021/08/11/JS%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xuanlang">
+      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="松鼠小筑">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JS开发学习笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-08-11 21:47:37" itemprop="dateCreated datePublished" datetime="2021-08-11T21:47:37+08:00">2021-08-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-12 11:19:06" itemprop="dateModified" datetime="2021-08-12T11:19:06+08:00">2021-08-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2021/08/11/JS%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-meta-item leancloud_visitors" data-flag-title="JS开发学习笔记" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2021/08/11/JS%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/08/11/JS%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="margin参数数量"><a href="#margin参数数量" class="headerlink" title="margin参数数量"></a>margin参数数量</h2><blockquote>
+<p>margin: 20px;（上、下、左、右各20px。）</p>
+<p>margin: 20px 40px;（上、下20px；左、右40px。）</p>
+<p>margin: 20px 40px 60px;（上20px；左、右40px；下60px。）</p>
+<p>margin: 20px 40px 60px 80px;（上20px；右40px；下60px；左80px。）</p>
+</blockquote>
+<h2 id="单独设置角度"><a href="#单独设置角度" class="headerlink" title="单独设置角度"></a>单独设置角度</h2><p><code>border-bottom-left-radius:2px</code></p>
+<span id="more"></span>
+
+<h2 id="设置单元格内文字不溢出还有padding"><a href="#设置单元格内文字不溢出还有padding" class="headerlink" title="设置单元格内文字不溢出还有padding"></a>设置单元格内文字不溢出还有padding</h2><blockquote>
+<p>.right_menu_inner .module_unit{<br>    width: 40%;<br>    left: 60%;<br>    border: 1px solid #ccc;</p>
+<p>position: absolute;</p>
+<p>​    padding: 6px 12px;</p>
+<p>​    font-size: 14px;</p>
+<p>​    line-height: 1.42857143;</p>
+<p>​    height: 100%;</p>
+<p>​    border-radius: 5px;</p>
+<p>​    background-color: white;</p>
+<p>​    overflow: scroll;</p>
+<p>​    border-top-left-radius: 0;</p>
+<p>​    border-bottom-left-radius: 0;</p>
+<p>}</p>
+<p>.right_menu_inner .module_unit::-webkit-scrollbar{</p>
+<p>​    display: none;</p>
+<p>}</p>
+</blockquote>
+<p>效果：<img src="/Users/zxl/Library/Containers/com.tencent.qq/Data/Library/Caches/Images/E7FA839551193991515F3BE73B5A0C73.jpg" alt="E7FA839551193991515F3BE73B5A0C73">   </p>
+<h2 id="添加输入框后自动编辑"><a href="#添加输入框后自动编辑" class="headerlink" title="添加输入框后自动编辑"></a>添加输入框后自动编辑</h2><p><em>div</em>.contentEditable=true</p>
+<p>div.focus()</p>
+<h2 id="css定义变量"><a href="#css定义变量" class="headerlink" title="css定义变量"></a>css定义变量</h2><p><code>:root{         --bianliangming:xxxxx; }</code></p>
+<p>需要前边两个横线</p>
+<p>使用：</p>
+<p><code>div{ color:div(--bianliangming,morenzhi)</code><br><code>}</code></p>
+<h2 id="使用vh进行响应式开发"><a href="#使用vh进行响应式开发" class="headerlink" title="使用vh进行响应式开发"></a>使用vh进行响应式开发</h2><p>vh就是viewed Height,同理还有vw就是width，他是相对目前打开的页面大小进行更改</p>
+<blockquote>
+<p>使用方法：<br>1vh就是1%</p>
+</blockquote>
+<h2 id="使用calc进行css计算"><a href="#使用calc进行css计算" class="headerlink" title="使用calc进行css计算"></a>使用calc进行css计算</h2><blockquote>
+<p>表达式中有“+”和“-”时，其前后必须要有空格，如”widht: calc(12%+5em)”这种没有空格的写法是错误的；</p>
+</blockquote>
+<blockquote>
+<p>表达式中有“*”和“/”时，其前后可以没有空格，但建议留有空格。  </p>
+</blockquote>
+<blockquote>
+<p>如height:(100vh - 20px);</p>
+</blockquote>
+<h2 id="下方浮动的div实现"><a href="#下方浮动的div实现" class="headerlink" title="下方浮动的div实现"></a>下方浮动的div实现</h2><p>只需</p>
+<figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">position</span>:fixed</span><br><span class="line">buttom:<span class="number">0px</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>就可以</p>
+<h2 id="array-操作"><a href="#array-操作" class="headerlink" title="array 操作"></a>array 操作</h2><ul>
+<li><p>Array.replace(a,b)</p>
+<blockquote>
+<p>把a用b替换，a可以使用正则表达式匹配多个内容</p>
+<p>例如：</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array.replace(<span class="regexp">/\t/g</span>,<span class="string">' '</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+<p>选择所有的tab换成空格</p>
+<p>再如：</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array.replace(<span class="regexp">/# |\n/g</span>,<span class="string">''</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+<p>选择形如# 和\n消除</p>
+</blockquote>
+</li>
+<li><p>Array.split(a,b)</p>
+<blockquote>
+<p>接收两个传入参数，第一个是用什么把array分离开，第二个是可选项 分离的最大项数</p>
+<p>例如:    </p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> str=<span class="string">"How are you doing today?"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.write(str.split(<span class="string">" "</span>) + <span class="string">"&lt;br /&gt;"</span>)</span><br><span class="line"><span class="built_in">document</span>.write(str.split(<span class="string">""</span>) + <span class="string">"&lt;br /&gt;"</span>)</span><br><span class="line"><span class="built_in">document</span>.write(str.split(<span class="string">" "</span>,<span class="number">3</span>))</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>输出</p>
+<p>![image-20210221202626935](/Users/zxl/Library/Application Support/typora-user-images/image-20210221202626935.png)</p>
+</blockquote>
+</li>
+<li><p>Array.join(a)</p>
+</li>
+</ul>
+<blockquote>
+<p>返回一个字符串。该字符串是通过把 arrayObject 的每个元素转换为字符串，然后把这些字符串连接起来，在两个元素之间插入 <em>separator</em> 字符串而生成的。</p>
+</blockquote>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript"></span></span><br><span class="line"><span class="javascript"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">3</span>)</span></span><br><span class="line"><span class="javascript">arr[<span class="number">0</span>] = <span class="string">"George"</span></span></span><br><span class="line"><span class="javascript">arr[<span class="number">1</span>] = <span class="string">"John"</span></span></span><br><span class="line"><span class="javascript">arr[<span class="number">2</span>] = <span class="string">"Thomas"</span></span></span><br><span class="line"><span class="javascript"></span></span><br><span class="line"><span class="javascript"><span class="built_in">document</span>.write(arr.join())</span></span><br><span class="line"><span class="javascript"></span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>![image-20210221202904663](/Users/zxl/Library/Application Support/typora-user-images/image-20210221202904663.png)</p>
+<ul>
+<li><p>Array.slice(start,end)</p>
+<blockquote>
+<h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h3><p>返回一个新的数组，包含从 start 到 end （不包括该元素）的 arrayObject 中的元素。</p>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>请注意，该方法并不会修改数组，而是返回一个子数组。如果想删除数组中的一段元素，应该使用方法 Array.splice()。</p>
+<p><strong>注释：</strong>您可使用负值从数组的尾部选取元素。</p>
+<p><strong>注释：</strong>如果 end 未被规定，那么 slice() 方法会选取从 start 到数组结尾的所有元素。</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript"></span></span><br><span class="line"><span class="javascript"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">3</span>)</span></span><br><span class="line"><span class="javascript">arr[<span class="number">0</span>] = <span class="string">"George"</span></span></span><br><span class="line"><span class="javascript">arr[<span class="number">1</span>] = <span class="string">"John"</span></span></span><br><span class="line"><span class="javascript">arr[<span class="number">2</span>] = <span class="string">"Thomas"</span></span></span><br><span class="line"><span class="javascript"></span></span><br><span class="line"><span class="javascript"><span class="built_in">document</span>.write(arr + <span class="string">"&lt;br /&gt;"</span>)</span></span><br><span class="line"><span class="javascript"><span class="built_in">document</span>.write(arr.slice(<span class="number">1</span>) + <span class="string">"&lt;br /&gt;"</span>)</span></span><br><span class="line"><span class="javascript"><span class="built_in">document</span>.write(arr)</span></span><br><span class="line"><span class="javascript"></span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>输出：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">George,John,Thomas</span><br><span class="line">John,Thomas</span><br><span class="line">George,John,Thomas</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li><p>array.trim()</p>
+<blockquote>
+<p>去除头尾的空格</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"       Runoob        "</span>;</span><br><span class="line">alert(str.trim());</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li><p>Array.map()</p>
+<blockquote>
+<p>映射</p>
+<p>类似于foreach</p>
+<p>var data = [1, 2, 3, 4];</p>
+<p>var arrayOfSquares = data.map(function (item) {</p>
+<p>　　return item * item;</p>
+<p>});</p>
+<p>alert(arrayOfSquares); // [1, 4, 9, 16]</p>
+<p>如果没有return就会把所有内容都映射成undefined</p>
+</blockquote>
+</li>
+</ul>
+<p>综合题：</p>
+<p><img src="https://img-blog.csdnimg.cn/2020092411313370.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTExMTM4NA==,size_16,color_FFFFFF,t_70#pic_center"></p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);fs.readFile(<span class="string">'./data.text'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>{    <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;    <span class="keyword">var</span> array = data.toString().split(<span class="string">"\n"</span>);<span class="keyword">var</span> arr = []<span class="keyword">var</span> temp =[]<span class="keyword">for</span>(i <span class="keyword">in</span> array) {    arr[i]=array[i].split(<span class="string">','</span>);    temp[i] = arr[i]    arr[i] = temp[i].join().trim().replace(<span class="regexp">/\s+/ig</span>,<span class="string">" "</span>).split(<span class="string">" "</span>)}<span class="built_in">console</span>.log(<span class="string">'arr'</span>,arr);});</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="给console-log加颜色"><a href="#给console-log加颜色" class="headerlink" title="给console.log加颜色"></a>给console.log加颜色</h2><p>使用npm下载colors</p>
+<p>用法：colors.xxx.xxx(text)</p>
+<p>支持：</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/colors">https://www.npmjs.com/package/colors</a></p>
+</blockquote>
+<h2 id="获得文件扩展名"><a href="#获得文件扩展名" class="headerlink" title="获得文件扩展名"></a>获得文件扩展名</h2><figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)path.extname(<span class="string">'index.html'</span>)<span class="comment">// returns'.html'</span></span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="获得文件名"><a href="#获得文件名" class="headerlink" title="获得文件名"></a>获得文件名</h2><figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.replace(<span class="regexp">/\.[^/.]+$/</span>, <span class="string">""</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="nodejs控制台输入流"><a href="#nodejs控制台输入流" class="headerlink" title="nodejs控制台输入流"></a>nodejs控制台输入流</h2><figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> readline = <span class="built_in">require</span>(<span class="string">'readline'</span>).createInterface({ <span class="attr">input</span>: process.stdin, <span class="attr">output</span>: process.stdout});readline.question(<span class="string">'Who are you?'</span>, <span class="function"><span class="params">name</span> =&gt;</span> { <span class="built_in">console</span>.log(<span class="string">`Hey there <span class="subst">${name}</span>!`</span>); readline.close();});</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<p>用JQ实现左右侧的滑动标签</p>
+<p>利用jq的animate实现</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">id</span>=<span class="string">"right_hide"</span>&gt;</span>                    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"glyphicon glyphicon-forward"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span> <span class="tag">&lt;/<span class="name">a</span>&gt;</span>                <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"right_show"</span> <span class="attr">class</span>=<span class="string">"right_show"</span>&gt;</span>显示新建栏<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"glyphicon glyphicon-backward"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span> <span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{                $(<span class="string">"#right_hide"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{                    $(<span class="string">"#right1"</span>).animate({ <span class="attr">right</span>: <span class="string">'-288px'</span> });                    $(<span class="string">"#right_show"</span>).delay(<span class="number">500</span>).animate({ <span class="attr">right</span>: <span class="string">'0'</span> });                    <span class="keyword">if</span> ($(<span class="string">"#left1"</span>).css(<span class="string">"left"</span>) != <span class="string">"0px"</span>) {                        $(<span class="string">".canvasall"</span>).css(<span class="string">"width"</span>, <span class="string">"calc(100% - 60px)"</span>);                        $(<span class="string">".top_select_bar"</span>).css(<span class="string">"width"</span>, <span class="string">"calc(100% - 60px)"</span>);                    } <span class="keyword">else</span> {                        $(<span class="string">".canvasall"</span>).css(<span class="string">"width"</span>, <span class="string">"calc(80% - 30px)"</span>);                        $(<span class="string">".top_select_bar"</span>).css(<span class="string">"width"</span>, <span class="string">"calc(80% - 30px)"</span>);                    }                });                $(<span class="string">"#right_show"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{                    $(<span class="string">"#right_show"</span>).animate({ <span class="attr">right</span>: <span class="string">'-30px'</span> });                    $(<span class="string">"#right1"</span>).delay(<span class="number">500</span>).animate({ <span class="attr">right</span>: <span class="string">'0'</span> });                    <span class="keyword">if</span> ($(<span class="string">"#left1"</span>).css(<span class="string">"left"</span>) != <span class="string">"0px"</span>) {                        $(<span class="string">".canvasall"</span>).css(<span class="string">"width"</span>, <span class="string">"calc(100% - 318px)"</span>);                        $(<span class="string">".top_select_bar"</span>).css(<span class="string">"width"</span>, <span class="string">"calc(100% - 318px)"</span>);                    } <span class="keyword">else</span> {                        $(<span class="string">".canvasall"</span>).css(<span class="string">"width"</span>, <span class="string">"calc(80% - 288px)"</span>);                        $(<span class="string">".top_select_bar"</span>).css(<span class="string">"width"</span>, <span class="string">"calc(80% - 288px)"</span>);                    }                });});</span><br></pre></td></tr></tbody></table></figure>
+
+<p>原理就是下边遮盖一层，点击后让上边这层向左/右滑走，下边那层滑入即可。</p>
+<h2 id="实现可拖动div"><a href="#实现可拖动div" class="headerlink" title="实现可拖动div"></a>实现可拖动div</h2><p>首先在需要缩放的div旁边实现一个小div</p>
+<h2 id="js深拷贝复制element"><a href="#js深拷贝复制element" class="headerlink" title="js深拷贝复制element"></a>js深拷贝复制element</h2><p><code>var newnode = oldnode.clone(true)</code></p>
+<p>true参数表示克隆节点所有后代</p>
+<h2 id="html实现滑块"><a href="#html实现滑块" class="headerlink" title="html实现滑块"></a>html实现滑块</h2><p>用h5自带的input就可以实现</p>
+<p><code> &lt;input type="range" min="10" max="300" value="100" step="10" οnchange="showValue(this.value)" style=""&gt;</code></p>
+<p>然后只需要写个showValue函数就可以修改值</p>
+<h2 id="设置某个div滚动条位置"><a href="#设置某个div滚动条位置" class="headerlink" title="设置某个div滚动条位置"></a>设置某个div滚动条位置</h2><p><code>先给div设置一个id然后使用document.getElementbyid.scroll(x,y)调整</code></p>
+<blockquote>
+<p>其中xy可以用ll.scrollWidth/ll.scrollHeight获得最大值</p>
+</blockquote>
+<h2 id="哈希表-map用法"><a href="#哈希表-map用法" class="headerlink" title="哈希表/map用法"></a>哈希表/map用法</h2><blockquote>
+<p>1，js创建map对象</p>
+<p>var map = new Map();</p>
+<p>2.将键值对放入map对象</p>
+<p>map.set(“key”,value)</p>
+<p>map.set(“key1”,value1)</p>
+<p>map.set(“key2”,value2)</p>
+<p>3.根据key获取map值</p>
+<p>map.get(key)</p>
+<p>4.删除map指定对象</p>
+<p>delete map[key]</p>
+<p>或</p>
+<p>map.delete(key)</p>
+<p>5.循环遍历map</p>
+<p>map.</p>
+<p>forEach(function(key){<br>　　console.log(“key”,key) //输出的是map中的value值</p>
+<p>})</p>
+</blockquote>
+<h2 id="js取整"><a href="#js取整" class="headerlink" title="js取整"></a>js取整</h2><blockquote>
+<p>只保留整数<br>parseInt(1.111)</p>
+</blockquote>
+<h2 id="css渐变过渡动画"><a href="#css渐变过渡动画" class="headerlink" title="css渐变过渡动画"></a>css渐变过渡动画</h2><blockquote>
+<p>transition: property duration timing-function delay </p>
+</blockquote>
+<p>transition属性是个复合属性，包括以下几个子属性：</p>
+<ul>
+<li>transition-property ：规定设置过渡效果的css属性名称</li>
+<li>transition-duration ：规定完成过渡效果需要多少秒或毫秒</li>
+<li>transition-timing-function ：指定过渡函数，规定速度效果的速度曲线</li>
+<li>transition-delay ：指定开始出现的延迟时间</li>
+</ul>
+<p>默认值分别为：all 0 ease 0 </p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">div {  width: 100px;  height: 100px;  background-color: orange;  margin: 20px auto;  border-radius: 100%;  -webkit-transition-property: -webkit-border-radius;  transition-property: border-radius;  -webkit-transition-duration: 3s;  transition-duration: 3s;  -webkit-transition-timing-function：ease; transition-timing-function：ease; div:hover {  border-radius: 0px;}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><a href="javascript:void(0);"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Xuanlang
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://www.zhaoxuanlang.cn/2021/08/11/JS%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="JS开发学习笔记">http://www.zhaoxuanlang.cn/2021/08/11/JS开发学习笔记/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/js/" rel="tag"># js</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/10/21/1nf%EF%BC%8C2nf%EF%BC%8C3nf%EF%BC%8Cbcnf%EF%BC%883nf%E5%92%8Cbcnf%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%89/" rel="prev" title="1NF，2NF，3NF，BCNF（3NF和BCNF的区别）">
+      <i class="fa fa-chevron-left"></i> 1NF，2NF，3NF，BCNF（3NF和BCNF的区别）
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/08/11/page%E5%92%8Chexo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/" rel="next" title="page和hexo搭建自己的博客">
+      page和hexo搭建自己的博客 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#margin%E5%8F%82%E6%95%B0%E6%95%B0%E9%87%8F"><span class="nav-number">1.</span> <span class="nav-text">margin参数数量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E7%8B%AC%E8%AE%BE%E7%BD%AE%E8%A7%92%E5%BA%A6"><span class="nav-number">2.</span> <span class="nav-text">单独设置角度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E5%8D%95%E5%85%83%E6%A0%BC%E5%86%85%E6%96%87%E5%AD%97%E4%B8%8D%E6%BA%A2%E5%87%BA%E8%BF%98%E6%9C%89padding"><span class="nav-number">3.</span> <span class="nav-text">设置单元格内文字不溢出还有padding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E8%BE%93%E5%85%A5%E6%A1%86%E5%90%8E%E8%87%AA%E5%8A%A8%E7%BC%96%E8%BE%91"><span class="nav-number">4.</span> <span class="nav-text">添加输入框后自动编辑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css%E5%AE%9A%E4%B9%89%E5%8F%98%E9%87%8F"><span class="nav-number">5.</span> <span class="nav-text">css定义变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8vh%E8%BF%9B%E8%A1%8C%E5%93%8D%E5%BA%94%E5%BC%8F%E5%BC%80%E5%8F%91"><span class="nav-number">6.</span> <span class="nav-text">使用vh进行响应式开发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8calc%E8%BF%9B%E8%A1%8Ccss%E8%AE%A1%E7%AE%97"><span class="nav-number">7.</span> <span class="nav-text">使用calc进行css计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E6%96%B9%E6%B5%AE%E5%8A%A8%E7%9A%84div%E5%AE%9E%E7%8E%B0"><span class="nav-number">8.</span> <span class="nav-text">下方浮动的div实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#array-%E6%93%8D%E4%BD%9C"><span class="nav-number">9.</span> <span class="nav-text">array 操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="nav-number">9.1.</span> <span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B4%E6%98%8E"><span class="nav-number">9.2.</span> <span class="nav-text">说明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%99console-log%E5%8A%A0%E9%A2%9C%E8%89%B2"><span class="nav-number">10.</span> <span class="nav-text">给console.log加颜色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%BE%97%E6%96%87%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D"><span class="nav-number">11.</span> <span class="nav-text">获得文件扩展名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%BE%97%E6%96%87%E4%BB%B6%E5%90%8D"><span class="nav-number">12.</span> <span class="nav-text">获得文件名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nodejs%E6%8E%A7%E5%88%B6%E5%8F%B0%E8%BE%93%E5%85%A5%E6%B5%81"><span class="nav-number">13.</span> <span class="nav-text">nodejs控制台输入流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E5%8F%AF%E6%8B%96%E5%8A%A8div"><span class="nav-number">14.</span> <span class="nav-text">实现可拖动div</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%A4%8D%E5%88%B6element"><span class="nav-number">15.</span> <span class="nav-text">js深拷贝复制element</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#html%E5%AE%9E%E7%8E%B0%E6%BB%91%E5%9D%97"><span class="nav-number">16.</span> <span class="nav-text">html实现滑块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E6%9F%90%E4%B8%AAdiv%E6%BB%9A%E5%8A%A8%E6%9D%A1%E4%BD%8D%E7%BD%AE"><span class="nav-number">17.</span> <span class="nav-text">设置某个div滚动条位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E8%A1%A8-map%E7%94%A8%E6%B3%95"><span class="nav-number">18.</span> <span class="nav-text">哈希表&#x2F;map用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js%E5%8F%96%E6%95%B4"><span class="nav-number">19.</span> <span class="nav-text">js取整</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css%E6%B8%90%E5%8F%98%E8%BF%87%E6%B8%A1%E5%8A%A8%E7%94%BB"><span class="nav-number">20.</span> <span class="nav-text">css渐变过渡动画</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xuanlang"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xuanlang</p>
+  <div class="site-description" itemprop="description">业精于勤荒于嬉，行成于思毁于随</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">56</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/1982606762" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;1982606762" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zxl17302206700@gmail.com" title="E-Mail → mailto:zxl17302206700@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">津ICP备19008018号-1 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-award"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XuanLang</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'CrLAcvc7BNSXHSgGkmBwjcQK-gzGzoHsz',
+      appKey     : 'wNQMqo88elGD6NLm8MDvIrSA',
+      placeholder: "写些什么吧",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

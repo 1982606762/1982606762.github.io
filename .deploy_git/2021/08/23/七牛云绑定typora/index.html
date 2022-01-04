@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+<meta name="referrer" content="no-referrer"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/logo.png">
+  <link rel="mask-icon" href="/images/logo.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.zhaoxuanlang.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="七牛云做图床绑定PicGo上传图片">
+<meta property="og:type" content="article">
+<meta property="og:title" content="七牛云绑定typora">
+<meta property="og:url" content="http://www.zhaoxuanlang.cn/2021/08/23/%E4%B8%83%E7%89%9B%E4%BA%91%E7%BB%91%E5%AE%9Atypora/index.html">
+<meta property="og:site_name" content="松鼠小筑">
+<meta property="og:description" content="七牛云做图床绑定PicGo上传图片">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://img.zhaoxuanlang.cn/image-20210823090911114.png">
+<meta property="og:image" content="http://img.zhaoxuanlang.cn/image-20210823091246883.png">
+<meta property="og:image" content="http://img.zhaoxuanlang.cn/image-20210823091454523.png">
+<meta property="og:image" content="http://img.zhaoxuanlang.cn/image-20210823091705146.png">
+<meta property="og:image" content="http://img.zhaoxuanlang.cn/image-20210823092044307.png">
+<meta property="og:image" content="http://img.zhaoxuanlang.cn/image-20210823092235923.png">
+<meta property="og:image" content="http://img.zhaoxuanlang.cn/image-20210823092510888.png">
+<meta property="og:image" content="http://img.zhaoxuanlang.cn/image-20210823092649657.png">
+<meta property="og:image" content="http://img.zhaoxuanlang.cn/image-20210823092747470.png">
+<meta property="og:image" content="http://img.zhaoxuanlang.cn/image-20210823093046660.png">
+<meta property="article:published_time" content="2021-08-23T01:06:12.000Z">
+<meta property="article:modified_time" content="2021-08-23T01:36:06.957Z">
+<meta property="article:author" content="Xuanlang">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://img.zhaoxuanlang.cn/image-20210823090911114.png">
+
+<link rel="canonical" href="http://www.zhaoxuanlang.cn/2021/08/23/%E4%B8%83%E7%89%9B%E4%BA%91%E7%BB%91%E5%AE%9Atypora/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>七牛云绑定typora | 松鼠小筑</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="松鼠小筑" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">松鼠小筑</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">学习笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">5</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">7</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">56</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.zhaoxuanlang.cn/2021/08/23/%E4%B8%83%E7%89%9B%E4%BA%91%E7%BB%91%E5%AE%9Atypora/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xuanlang">
+      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="松鼠小筑">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          七牛云绑定typora
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-08-23 09:06:12 / 修改时间：09:36:06" itemprop="dateCreated datePublished" datetime="2021-08-23T09:06:12+08:00">2021-08-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9D%82/" itemprop="url" rel="index"><span itemprop="name">杂</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2021/08/23/%E4%B8%83%E7%89%9B%E4%BA%91%E7%BB%91%E5%AE%9Atypora/" class="post-meta-item leancloud_visitors" data-flag-title="七牛云绑定typora" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2021/08/23/%E4%B8%83%E7%89%9B%E4%BA%91%E7%BB%91%E5%AE%9Atypora/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/08/23/%E4%B8%83%E7%89%9B%E4%BA%91%E7%BB%91%E5%AE%9Atypora/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>七牛云做图床绑定PicGo上传图片</p>
+<span id="more"></span>
+
+<p>七牛云的优势是每个月有10G的免费存储，而且服务器在国内，速度很快，上传和加载图片几乎是秒速</p>
+<p><img src="http://img.zhaoxuanlang.cn/image-20210823090911114.png" alt="image-20210823090911114"></p>
+<h1 id="前置工作"><a href="#前置工作" class="headerlink" title="前置工作"></a>前置工作</h1><ol>
+<li>需要有一个登记备案过的域名（腾讯阿里均可，需要绑定七牛云的图床。没有域名的话可以去腾讯云/阿里云申请一个，很便宜，备案大概半个月就可以完成。没有域名的话七牛云会给你一个临时的域名，但是只能用一个月。一个月后用临时域名就访问不到你的图片了）</li>
+<li>注册七牛云账户</li>
+</ol>
+<h1 id="七牛云配置相关"><a href="#七牛云配置相关" class="headerlink" title="七牛云配置相关"></a>七牛云配置相关</h1><p>首先要注册账户，这里不多说。注册完之后选择右上角的控制台进入如下页面</p>
+<p><img src="http://img.zhaoxuanlang.cn/image-20210823091246883.png" alt="image-20210823091246883"></p>
+<p>首先选择下方资源管理里第二个存储空间，新增一个存储空间。名称自己起一个就行，这个名称需要和他现有的其他空间不重复。需要注意这里一定要选公开！我一开始没有选公开导致上传上去的图片都加载不出来= =查了半天报错才发现是这里的问题。</p>
+<p><img src="http://img.zhaoxuanlang.cn/image-20210823091454523.png" alt="image-20210823091454523"></p>
+<p>新建完之后他会让你绑定域名。我们假设你已经有了腾讯云的域名，然后进行如下操作。</p>
+<p>我建议使用加速域名，因为访问会快一些，而且因为你流量也不多，加速域名的流量根本用不完。在添加域名页面中加速域名栏要填入一个你域名的二级域名。这里也注意不要直接填入xxx.com。我一开始直接填的xxx到后边CNAME解析的时候就傻眼了。</p>
+<p><img src="http://img.zhaoxuanlang.cn/image-20210823091705146.png" alt="image-20210823091705146"></p>
+<p>像这样创建完成之后点复制CNAME，准备进行下一步操作</p>
+<p><img src="http://img.zhaoxuanlang.cn/image-20210823092044307.png" alt="image-20210823092044307"></p>
+<h1 id="腾讯云域名配置"><a href="#腾讯云域名配置" class="headerlink" title="腾讯云域名配置"></a>腾讯云域名配置</h1><p>这一步很简单，直接打开你域名的控制台，点添加记录</p>
+<p>主机记录就填你刚刚输入的二级域名的头部，比如说我刚刚写的img.xxx.com这里就填img，记录类型选CNAME，记录值粘贴你刚刚复制到那一串东西，然后确认就ok了。</p>
+<p><img src="http://img.zhaoxuanlang.cn/image-20210823092235923.png" alt="image-20210823092235923"></p>
+<p>然后回到七牛云，看看你刚刚配置的存储空间是不是一切正常，这里可能需要等个十分钟等他自动配置。如下图就是正常配置成功的显示。</p>
+<p><img src="http://img.zhaoxuanlang.cn/image-20210823092510888.png" alt="image-20210823092510888"></p>
+<p>这里有红框框出来的就是成功配置</p>
+<p><img src="http://img.zhaoxuanlang.cn/image-20210823092649657.png" alt="image-20210823092649657"></p>
+<h1 id="Picgo的配置"><a href="#Picgo的配置" class="headerlink" title="Picgo的配置"></a>Picgo的配置</h1><p>我们来到PicGo，左侧域名列表选择七牛云</p>
+<p><img src="http://img.zhaoxuanlang.cn/image-20210823092747470.png" alt="image-20210823092747470"></p>
+<p>这里前两个Key都可以从七牛云右上角头像-&gt;个人中心-&gt;密钥管理处获得，直接粘贴即可</p>
+<p>存储空间名是你刚刚创建的那个的名字</p>
+<p>访问网址是你刚刚设置的加速域名，注意前边要加http://</p>
+<p>存储区域需要看这个<a href="%5BIMG%5Dhttp://img.zhaoxuanlang.cn/image-20210823092747470.png%5B/IMG%5D">链接</a>，里边有写每个服务器对应的区域，填入你存储空间对应的服务器代号即可</p>
+<p><img src="http://img.zhaoxuanlang.cn/image-20210823093046660.png" alt="image-20210823093046660"></p>
+<p>然后上传一张图片看看有没有上传成功就ok。</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Xuanlang
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://www.zhaoxuanlang.cn/2021/08/23/%E4%B8%83%E7%89%9B%E4%BA%91%E7%BB%91%E5%AE%9Atypora/" title="七牛云绑定typora">http://www.zhaoxuanlang.cn/2021/08/23/七牛云绑定typora/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/08/21/hexo%E8%BF%9B%E9%98%B6/" rel="prev" title="hexo进阶">
+      <i class="fa fa-chevron-left"></i> hexo进阶
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/08/27/forEach%E7%B3%BB%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/" rel="next" title="forEach系函数用法">
+      forEach系函数用法 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E5%B7%A5%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">前置工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%83%E7%89%9B%E4%BA%91%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3"><span class="nav-number">2.</span> <span class="nav-text">七牛云配置相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%85%BE%E8%AE%AF%E4%BA%91%E5%9F%9F%E5%90%8D%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">腾讯云域名配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Picgo%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="nav-number">4.</span> <span class="nav-text">Picgo的配置</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xuanlang"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xuanlang</p>
+  <div class="site-description" itemprop="description">业精于勤荒于嬉，行成于思毁于随</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">56</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/1982606762" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;1982606762" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zxl17302206700@gmail.com" title="E-Mail → mailto:zxl17302206700@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">津ICP备19008018号-1 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-award"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XuanLang</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'CrLAcvc7BNSXHSgGkmBwjcQK-gzGzoHsz',
+      appKey     : 'wNQMqo88elGD6NLm8MDvIrSA',
+      placeholder: "写些什么吧",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

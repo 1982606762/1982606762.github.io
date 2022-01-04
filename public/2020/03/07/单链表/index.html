@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+<meta name="referrer" content="no-referrer"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/logo.png">
+  <link rel="mask-icon" href="/images/logo.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.zhaoxuanlang.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="2-3 某线性表中最常用的操作是在最后一个元素之后插入一个元素和删除第一个元素，则采用什么存储方式最节省运算时间？&amp;nbsp;(2分)b   单链表  仅有尾指针的单循环链表  仅有头指针的单循环链表  双链表  c虽然可以直接获得第一个元素，但是想要获得最后一个元素却需要遍历整个链表。而b给出的是带有尾结点的单循环链表，这样就可以直接得到最后一个元素，想要得到第一个元素只需要再遍历一个元素就可以">
+<meta property="og:type" content="article">
+<meta property="og:title" content="单链表">
+<meta property="og:url" content="http://www.zhaoxuanlang.cn/2020/03/07/%E5%8D%95%E9%93%BE%E8%A1%A8/index.html">
+<meta property="og:site_name" content="松鼠小筑">
+<meta property="og:description" content="2-3 某线性表中最常用的操作是在最后一个元素之后插入一个元素和删除第一个元素，则采用什么存储方式最节省运算时间？&amp;nbsp;(2分)b   单链表  仅有尾指针的单循环链表  仅有头指针的单循环链表  双链表  c虽然可以直接获得第一个元素，但是想要获得最后一个元素却需要遍历整个链表。而b给出的是带有尾结点的单循环链表，这样就可以直接得到最后一个元素，想要得到第一个元素只需要再遍历一个元素就可以">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-1024x454.png">
+<meta property="og:image" content="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-1.png">
+<meta property="og:image" content="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-2.png">
+<meta property="og:image" content="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-3.png">
+<meta property="og:image" content="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-4.png">
+<meta property="article:published_time" content="2020-03-07T13:49:43.000Z">
+<meta property="article:modified_time" content="2021-08-09T11:39:37.808Z">
+<meta property="article:author" content="Xuanlang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-1024x454.png">
+
+<link rel="canonical" href="http://www.zhaoxuanlang.cn/2020/03/07/%E5%8D%95%E9%93%BE%E8%A1%A8/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>单链表 | 松鼠小筑</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="松鼠小筑" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">松鼠小筑</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">学习笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">5</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">7</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">56</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.zhaoxuanlang.cn/2020/03/07/%E5%8D%95%E9%93%BE%E8%A1%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xuanlang">
+      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="松鼠小筑">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          单链表
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-07 21:49:43" itemprop="dateCreated datePublished" datetime="2020-03-07T21:49:43+08:00">2020-03-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-09 19:39:37" itemprop="dateModified" datetime="2021-08-09T19:39:37+08:00">2021-08-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">数据结构笔记</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/03/07/%E5%8D%95%E9%93%BE%E8%A1%A8/" class="post-meta-item leancloud_visitors" data-flag-title="单链表" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/03/07/%E5%8D%95%E9%93%BE%E8%A1%A8/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/07/%E5%8D%95%E9%93%BE%E8%A1%A8/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>2-3 某线性表中最常用的操作是在最后一个元素之后插入一个元素和删除第一个元素，则采用什么存储方式最节省运算时间？&nbsp;(2分)b</p>
+<ol>
+<li> 单链表</li>
+<li> 仅有尾指针的单循环链表</li>
+<li> 仅有头指针的单循环链表</li>
+<li> 双链表</li>
+</ol>
+<p>c虽然可以直接获得第一个元素，但是想要获得最后一个元素却需要遍历整个链表。而b给出的是带有尾结点的单循环链表，这样就可以直接得到最后一个元素，想要得到第一个元素只需要再遍历一个元素就可以，所以选择b</p>
+<p>1-22下列函数试图求链式存储的线性表的表长，是否正确？</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">int  Length ( List  *PtrL )</span><br><span class="line">{    List  *p = PtrL;      </span><br><span class="line">     int  j = 0;</span><br><span class="line">     while ( p ) { </span><br><span class="line">           p++; </span><br><span class="line">           j++;                 </span><br><span class="line">     }   </span><br><span class="line">     return  j;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>F p++不能指向后一个元素</p>
+<p>2-4</p>
+<p>若某表最常用的操作是在最后一个结点之后插入一个结点或删除最后一个结点。则采用哪种存储方式最节省运算时间？&nbsp;(2分)</p>
+<ol>
+<li> 单链表</li>
+<li> 双链表</li>
+<li> 单循环链表</li>
+<li> 带头结点的双循环链表</li>
+</ol>
+<p>D 头结点上一个就是最后一个节点</p>
+<p><img src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-1024x454.png"></p>
+<p>这道题的逻辑，简单来说，就是地址存放你当前元素的地址，链接地址是指向当前元素的下一个元素的地址。 因此，我们来看没插入f之前时，链表的顺序，由于头元素是c（地址1008H），由C开始，C的链接地址是1000H，也就是指向元素a（地址1000H），之后a的链接地址是1010H，也就是指向元素e。。。 按照上面这个思路遍历，我们可以得到链表的遍历顺序c（1008H）-&gt;a（1000H）-&gt;e（1010H）-&gt;b（1004H）-&gt;d（100CH）-&gt;null。 由于f逻辑上位于a和e之间，因此也就是说将f插入到ae之间，因此只需要修改a的链接地址（也就是指向下一个元素的地址）为f的地址（1014H），然后将f的链接地址修改为e的地址。<br>链表插入不影响其他元素，所以其他元素链接地址不变。</p>
+<p><img src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-1.png"></p>
+<p>不带表头结点，头指针直接指向数据</p>
+<p><img src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-2.png"></p>
+<p>在m之后</p>
+<p>在一个长度为 n （ n&gt;1 ）的单链表上，设有头和尾两个指针，执行 操作与链表的长度有关。</p>
+<ul>
+<li>  删除单链表中的第一个元素</li>
+<li>  删除单链表中的最后一个元素</li>
+<li>  在单链表第一个元素前插入一个新元素</li>
+<li>  在单链表最后一个元素后插入一个新元素</li>
+</ul>
+<p>A<br>头指针是指向第一个元素（结点）的指针。 当<strong>删除单链表中的第一个元素</strong>时只需要将头指针指向第二个元素，然后释放第一个元素储存空间申请的内存。与链表长度无关。</p>
+<p>123</p>
+<p><code>ListNode *temp = head-&gt;next;``head-&gt;next = temp-&gt;next;``free``(temp);</code></p>
+<p>B<br>尾指针是指向最后一个元素（结点）的指针，与头指针类似。 当<strong>删除单链表中的最后一个元素</strong>时 由于不是双向链表，所以要从头指针开始，一直遍历直到倒数第二个元素，将倒数第二个元素（结点）指向NULL，释放原末端元素（结点）空间后，将尾指针等于新的末端元素（结点）。所以与链表长度有关。  </p>
+<p>12345</p>
+<p><code>ListNode *p = head;``while``(p-&gt;next != rear) p = p-&gt;next;``p-&gt;next = NULL;``free``(r);``r = p;</code></p>
+<p>C <strong>在单链表第一个元素前插入一个新元素</strong>时，只需要把新的元素（结点）指向原来的第一个元素（结点），然后使头指针指向新的元素（结点）。与链表长度无关。</p>
+<p>12</p>
+<p><code>new_point-&gt;next = head-&gt;next;``head-&gt;next = new_point;</code></p>
+<p>D <strong>在单链表最后一个元素后插入一个新元素</strong>时，只需先将新结点指向NULL，然后将尾指针指向的原末端结点指向新的元素（结点），最后将尾指针指向新的元素（结点）。与链表长度无关。</p>
+<p>123</p>
+<p><code>new_point-&gt;next = NULL;``rear-&gt;next = new_point;``rear = new_point;</code></p>
+<p><img src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-3.png"></p>
+<p>静态链表:数组的每一个下标都对应一个data和一个cur。数据域data用来存放数据元素，；而游标cur相当于单链表中的next指针，</p>
+<p>存放该元素的后继在数组中的下标。</p>
+<p><img src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-4.png"></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Xuanlang
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://www.zhaoxuanlang.cn/2020/03/07/%E5%8D%95%E9%93%BE%E8%A1%A8/" title="单链表">http://www.zhaoxuanlang.cn/2020/03/07/单链表/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/03/05/clion%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE/" rel="prev" title="clion的安装和配置">
+      <i class="fa fa-chevron-left"></i> clion的安装和配置
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/03/08/7-1-%E6%B1%82%E9%93%BE%E5%BC%8F%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACk%E9%A1%B9-20%E5%88%86/" rel="next" title="7-1 求链式线性表的倒数第K项 (20分)">
+      7-1 求链式线性表的倒数第K项 (20分) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xuanlang"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xuanlang</p>
+  <div class="site-description" itemprop="description">业精于勤荒于嬉，行成于思毁于随</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">56</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/1982606762" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;1982606762" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zxl17302206700@gmail.com" title="E-Mail → mailto:zxl17302206700@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">津ICP备19008018号-1 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-award"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XuanLang</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'CrLAcvc7BNSXHSgGkmBwjcQK-gzGzoHsz',
+      appKey     : 'wNQMqo88elGD6NLm8MDvIrSA',
+      placeholder: "写些什么吧",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

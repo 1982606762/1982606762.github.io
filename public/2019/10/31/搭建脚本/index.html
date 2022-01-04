@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+<meta name="referrer" content="no-referrer"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/logo.png">
+  <link rel="mask-icon" href="/images/logo.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.zhaoxuanlang.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="一键搭建 VPN shadowsocks&#x2F;搭建shadowsocksR的shell脚本，一键脚本适用Vultr上的和搬瓦工所有机型（CentOS、Ubuntu、Debian），搭建ss服务器支持所有客户端类型，本机你是iOS，Android，Windows，Mac，或者是Linux。一键脚本内容包括一键搭建shadowsocks&#x2F;一键搭建shadowsocksR+一键开启bbr加速。 什么是sha">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搭建脚本">
+<meta property="og:url" content="http://www.zhaoxuanlang.cn/2019/10/31/%E6%90%AD%E5%BB%BA%E8%84%9A%E6%9C%AC/index.html">
+<meta property="og:site_name" content="松鼠小筑">
+<meta property="og:description" content="一键搭建 VPN shadowsocks&#x2F;搭建shadowsocksR的shell脚本，一键脚本适用Vultr上的和搬瓦工所有机型（CentOS、Ubuntu、Debian），搭建ss服务器支持所有客户端类型，本机你是iOS，Android，Windows，Mac，或者是Linux。一键脚本内容包括一键搭建shadowsocks&#x2F;一键搭建shadowsocksR+一键开启bbr加速。 什么是sha">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.yehes.com/wp-content/uploads/2018/09/77c76f11gy1fs0lq2qaw5j211y0hlad4.jpg">
+<meta property="og:image" content="http://www.yehes.com/wp-content/uploads/2018/09/77c76f11gy1fs0lri8uh4j211t0hkdjo.jpg">
+<meta property="og:image" content="http://www.yehes.com/wp-content/uploads/2018/09/77c76f11gy1fs0jnt59zlj20id0ciaao.jpg">
+<meta property="og:image" content="http://www.yehes.com/wp-content/uploads/2018/09/77c76f11gy1fs0jrpq7vuj20id0cijs9.jpg">
+<meta property="og:image" content="http://www.yehes.com/wp-content/uploads/2018/09/77c76f11gy1fs0juvuqu5j20id08iwf0.jpg">
+<meta property="og:image" content="http://www.yehes.com/wp-content/uploads/2018/09/77c76f11gy1fs0k8so58bj20ll0ipjre.jpg">
+<meta property="og:image" content="http://www.yehes.com/wp-content/uploads/2018/09/77c76f11gy1fs0kbjmcz5j20pf07ma9y.jpg">
+<meta property="og:image" content="http://www.yehes.com/wp-content/uploads/2018/09/77c76f11gy1fs0jj5rdzij20ct0cet8z.jpg">
+<meta property="og:image" content="http://www.yehes.com/wp-content/uploads/2018/09/77c76f11gy1fs0kfp1oulj20ie0dyglr.jpg">
+<meta property="article:published_time" content="2019-10-31T03:01:28.000Z">
+<meta property="article:modified_time" content="2021-08-09T11:39:37.767Z">
+<meta property="article:author" content="Xuanlang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.yehes.com/wp-content/uploads/2018/09/77c76f11gy1fs0lq2qaw5j211y0hlad4.jpg">
+
+<link rel="canonical" href="http://www.zhaoxuanlang.cn/2019/10/31/%E6%90%AD%E5%BB%BA%E8%84%9A%E6%9C%AC/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>搭建脚本 | 松鼠小筑</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="松鼠小筑" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">松鼠小筑</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">学习笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">5</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">7</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">56</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.zhaoxuanlang.cn/2019/10/31/%E6%90%AD%E5%BB%BA%E8%84%9A%E6%9C%AC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xuanlang">
+      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="松鼠小筑">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          搭建脚本
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-31 11:01:28" itemprop="dateCreated datePublished" datetime="2019-10-31T11:01:28+08:00">2019-10-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-09 19:39:37" itemprop="dateModified" datetime="2021-08-09T19:39:37+08:00">2021-08-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">编程语言</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2019/10/31/%E6%90%AD%E5%BB%BA%E8%84%9A%E6%9C%AC/" class="post-meta-item leancloud_visitors" data-flag-title="搭建脚本" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/10/31/%E6%90%AD%E5%BB%BA%E8%84%9A%E6%9C%AC/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/10/31/%E6%90%AD%E5%BB%BA%E8%84%9A%E6%9C%AC/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>一键搭建 VPN shadowsocks/搭建shadowsocksR的shell脚本，一键脚本适用Vultr上的和搬瓦工所有机型（CentOS、Ubuntu、Debian），搭建ss服务器支持所有客户端类型，本机你是iOS，Android，Windows，Mac，或者是Linux。一键脚本内容包括一键搭建shadowsocks/一键搭建shadowsocksR+一键开启bbr加速。</p>
+<h2 id="什么是shadowsocks"><a href="#什么是shadowsocks" class="headerlink" title="什么是shadowsocks"></a>什么是shadowsocks</h2><p>shadowsocks可以指一种SOCKS5的加密传输协议，也可以指基于这种加密协议的各种数据传输包。shadowsocks正常工作需要服务器端和客户端两端合作实现，首先，客户端（本机）通过ss（shadowsocks）对正常的访问请求进行SOCK5加密，将加密后的访问请求传输给ss服务器端，服务器端接收到客户端的加密请求后，解密得到原始的访问请求，根据请求内容访问指定的网站（例如Google，YouTube，Facebook，instagram等），得到网站的返回结果后，再利用SOCKS5加密并返回给客户端，客户端通过ss解密后得到正常的访问结果，于是就可以实现你直接访问该网站的“假象”。</p>
+<p>为什么选择shadowsocks？不限终端（安卓，苹果，Windows，Mac都可用），流量便宜（服务器500G只要15元），方便（一键脚本，不需要专业知识）。</p>
+<p>为什么要自己搭建ss/ssr？你也许会觉得买ss服务也很方便，但是你得要考虑以下几个问题。首先，买的ss服务，限制很多，终端可能只能同时在线2个，每个月就一点点流量可能价格却不便宜，有时候还被别人做手脚，流量跑的贼快；其次，别人收钱跑路怎么办？很多这种情况的；更重要的是，如第一个问题中描述的shadowsocks原理，如果有心人做了一点手脚，是可以得到你的访问记录的；而自己搭建ss/ssr服务，一键脚本也就10来分钟就可以搞定。</p>
+<h2 id="一键脚本搭建ss-ssr支持系统版本"><a href="#一键脚本搭建ss-ssr支持系统版本" class="headerlink" title="一键脚本搭建ss/ssr支持系统版本"></a>一键脚本搭建ss/ssr支持系统版本</h2><p>脚本系统支持：CentOS 6+，Debian 7+，Ubuntu 12+</p>
+<p>注：这个脚本支持的系统版本是指ss服务器的版本（都没看过也没关系，不影响搭建），你本机是Windows、Mac、Linux，或者你想用手机端搭建ss/ssr服务器，安卓和苹果，都是可以的。</p>
+<h2 id="服务器购买"><a href="#服务器购买" class="headerlink" title="服务器购买"></a>服务器购买</h2><p>服务器推荐Vultr和搬瓦工，一是因为本脚本在这两家的所有VPS都做了测试，二是因为都是老牌VPS服务商，不怕跑路。</p>
+<p><strong>Vultr：</strong><a target="_blank" rel="noopener" href="https://www.vultr.com/promo25b/?ref=7371675">https://www.vultr.com</a>，最低月付2.5刀/500GB流量每月，推荐使用PayPal绑定Visa/Master信用卡，支持支付宝付款<br><strong>更新注意:</strong> Vultr 服务器2.5美元/月的不提供ipv4地址，不能正常使用，所以只能购买5美元/月的了</p>
+<p><strong>搬瓦工：</strong><a target="_blank" rel="noopener" href="https://bwh1.net/aff.php?aff=32798">https://bwh1.net</a>，可以访问登录，但是注册账号的时候需要全局才能成功<br>新用户注册链接：<a target="_blank" rel="noopener" href="https://bwh1.net/aff.php?aff=32798">https://bwh1.net/aff.php?aff=32798</a>，支持PayPal/支付宝/Visa/Master付款，最低年付19.99刀/500GB流量每月(已补货，之前售空了)</p>
+<p><strong>Vultr 官方发布新活动了，新用户激活账户就送 25 美元！参与推特活动可再获得 3 美元！</strong><br>1、送 25 美元注册地址：<a target="_blank" rel="noopener" href="https://www.vultr.com/promo25b/?ref=8290178">https://www.vultr.com/promo25b/?ref=7371675</a><br>需要外币信用卡（Visa 卡等）或 Paypal 账户（可绑定银联卡）才可参与活动，赠送部分有效期一年<br>2、无 25 美元注册地址：<a target="_blank" rel="noopener" href="https://www.vultr.com/promo25b/?ref=8290178">https://www.vultr.com/?ref=8290178</a><br>支付宝充值是没有优惠的，想使用 vultr 的请从上面地址注册<br>3、推特送 3 美元活动地址：<a target="_blank" rel="noopener" href="https://my.vultr.com/promo/">https://my.vultr.com/promo/</a><br>充值账户后才可以参与这个推特活动<br><strong>注意：</strong>此活动仅限从未注册过 Vultr 的参加，个人注册多个账户可能会被没收赠送金额！<br>如果自己从未注册过这一家，但是还是没有赠送，可以登录后点击左侧 Support 联系客服进行处理！</p>
+<p><img src="http://www.yehes.com/wp-content/uploads/2018/09/77c76f11gy1fs0lq2qaw5j211y0hlad4.jpg" alt="一键脚本轻松搭建SS教程/搭建SSR并开启BBR加速-夜河资源网"></p>
+<p><img src="http://www.yehes.com/wp-content/uploads/2018/09/77c76f11gy1fs0lri8uh4j211t0hkdjo.jpg" alt="一键脚本轻松搭建SS教程/搭建SSR并开启BBR加速-夜河资源网"></p>
+<h2 id="一键搭建SS-搭建SSR服务"><a href="#一键搭建SS-搭建SSR服务" class="headerlink" title="一键搭建SS/搭建SSR服务"></a>一键搭建SS/搭建SSR服务</h2><p>注意，shadowsocks/shadowsocksR这两个只需要搭建一个就可以了！！！！SS与SSR之间的比较一直是各有各的说法，王婆卖瓜自卖自夸。</p>
+<h3 id="一键搭建shadowsocks"><a href="#一键搭建shadowsocks" class="headerlink" title="一键搭建shadowsocks"></a>一键搭建shadowsocks</h3><p>在购买VPS并用PuTTY连接上你刚购买的VPS后，你将看到如下图所示的界面：</p>
+<p><img src="http://www.yehes.com/wp-content/uploads/2018/09/77c76f11gy1fs0jnt59zlj20id0ciaao.jpg" alt="一键脚本轻松搭建SS教程/搭建SSR并开启BBR加速-夜河资源网"></p>
+<p>1.下载一键搭建ss脚本文件，只需要执行一次，卸载ss后也不需要重新下载</p>
+<p>git clone <a target="_blank" rel="noopener" href="https://github.com/flyzy2005/ss-fly">https://github.com/flyzy2005/ss-fly</a></p>
+<p>如果提示bash: git: command not found，则先安装git：</p>
+<p>Centos执行这个：</p>
+<p>yum -y install git</p>
+<p>Ubuntu/Debian执行这个：</p>
+<p>apt-get -y install git</p>
+<p>2.运行搭建ss脚本代码</p>
+<p>ss-fly/ss-fly.sh -i password 1024</p>
+<p>其中password换成你要设置的shadowsocks的密码即可，最好只包含字母+数字，一些特殊字符可能会导致冲突。而第二个参数1024是端口号，也可以不加，不加默认是1024。</p>
+<p><img src="http://www.yehes.com/wp-content/uploads/2018/09/77c76f11gy1fs0jrpq7vuj20id0cijs9.jpg" alt="一键脚本轻松搭建SS教程/搭建SSR并开启BBR加速-夜河资源网"></p>
+<p>界面如下就表示一键搭建ss成功了：</p>
+<p><img src="http://www.yehes.com/wp-content/uploads/2018/09/77c76f11gy1fs0juvuqu5j20id08iwf0.jpg" alt="一键脚本轻松搭建SS教程/搭建SSR并开启BBR加速-夜河资源网"></p>
+<p>注：如果需要改密码或者改端口，只需要重新再执行一次搭建ss脚本代码就可以了，或者修改/etc/shadowsocks.json这个配置文件。</p>
+<p>3.相关ss操作</p>
+<p>修改配置文件：vim /etc/shadowsocks.json<br>停止ss服务：ssserver -c /etc/shadowsocks.json -d stop<br>启动ss服务：ssserver -c /etc/shadowsocks.json -d start<br>重启ss服务：ssserver -c /etc/shadowsocks.json -d restart</p>
+<p>4.卸载ss服务</p>
+<p>ss-fly/ss-fly.sh -uninstall</p>
+<h3 id="一键搭建shadowsocksR"><a href="#一键搭建shadowsocksR" class="headerlink" title="一键搭建shadowsocksR"></a>一键搭建shadowsocksR</h3><p>再次提醒，如果安装了SS，就不需要再安装SSR了，如果要改装SSR，请按照上一部分内容的教程先卸载SS！！！</p>
+<p>1.下载一键搭建ssr脚本(只需要执行一次，卸载ssr后也不需要重新执行)，此步骤与一键搭建ss一致</p>
+<p>git clone <a target="_blank" rel="noopener" href="https://github.com/flyzy2005/ss-fly">https://github.com/flyzy2005/ss-fly</a></p>
+<p>2.运行搭建ssr脚本代码</p>
+<p>ss-fly/ss-fly.sh -ssr</p>
+<p>3.输入对应的参数</p>
+<p>执行完上述的脚本代码后，会进入到输入参数的界面，包括服务器端口，密码，加密方式，协议，混淆。可以直接输入回车选择默认值，也可以输入相应的值选择对应的选项：</p>
+<p><img src="http://www.yehes.com/wp-content/uploads/2018/09/77c76f11gy1fs0k8so58bj20ll0ipjre.jpg" alt="一键脚本轻松搭建SS教程/搭建SSR并开启BBR加速-夜河资源网"></p>
+<p>全部选择结束后，会看到如下界面，就说明搭建ssr成功了：</p>
+<p>Congratulations, ShadowsocksR server install completed!<br>Your Server IP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:你的服务器ip<br>Your Server Port&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:你的端口<br>Your Password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :你的密码<br>Your Protocol&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :你的协议<br>Your obfs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :你的混淆<br>Your Encryption Method:your_encryption_method<br>Welcome to visit:<a target="_blank" rel="noopener" href="https://shadowsocks.be/9.html">https://shadowsocks.be/9.html</a><br>Enjoy it!</p>
+<p>4.相关操作ssr命令</p>
+<p>启动：/etc/init.d/shadowsocks start<br>停止：/etc/init.d/shadowsocks stop<br>重启：/etc/init.d/shadowsocks restart<br>状态：/etc/init.d/shadowsocks status<br>配置文件路径：/etc/shadowsocks.json<br>日志文件路径：/var/log/shadowsocks.log<br>代码安装目录：/usr/local/shadowsocks</p>
+<p>5.卸载ssr服务</p>
+<p>./shadowsocksR.sh uninstall</p>
+<p>文件配置方法：</p>
+<p>{     “server”:”0.0.0.0”,     “server_port”:4431,      “local_port”:1080,     “password”:”密码”,     “timeout”:600,     “method”:”aes-256-cfb” }</p>
+<p>多端口密码配置如下</p>
+<p>{<br>    “server”:”0.0.0.0”,<br>    “local_port”:1080,<br>    “port_password”: {<br>      “端口1”: “密码1”,<br>      “端口2”: “密码2”<br>    },<br>    “timeout”:600,<br>    “method”:”aes-256-cfb”<br>}</p>
+<h2 id="一键开启BBR加速"><a href="#一键开启BBR加速" class="headerlink" title="一键开启BBR加速"></a>一键开启BBR加速</h2><p>BBR是Google开源的一套内核加速算法，可以让你搭建的shadowsocks/shadowsocksR速度上一个台阶，本一键搭建ss/ssr脚本支持一键升级最新版本的内核并开启BBR加速。</p>
+<p>BBR支持4.9以上的，如果低于这个版本则会自动下载最新内容版本的内核后开启BBR加速并重启，如果高于4.9以上则自动开启BBR加速，执行如下脚本命令即可自动开启BBR加速：</p>
+<p>ss-fly/ss-fly.sh -bbr</p>
+<p><img src="http://www.yehes.com/wp-content/uploads/2018/09/77c76f11gy1fs0kbjmcz5j20pf07ma9y.jpg" alt="一键脚本轻松搭建SS教程/搭建SSR并开启BBR加速-夜河资源网"></p>
+<p>装完后需要重启系统，输入y即可立即重启，或者之后输入reboot命令重启。</p>
+<p>判断BBR加速有没有开启成功。输入以下命令：</p>
+<p>sysctl net.ipv4.tcp_available_congestion_control</p>
+<p>如果返回值为：</p>
+<p>net.ipv4.tcp_available_congestion_control = bbr cubic reno</p>
+<p>后面有bbr，则说明已经开启成功了。</p>
+<h2 id="客户端shadowsocks-shadowsockR登录使用"><a href="#客户端shadowsocks-shadowsockR登录使用" class="headerlink" title="客户端shadowsocks/shadowsockR登录使用"></a>客户端shadowsocks/shadowsockR登录使用</h2><p><strong>shadowsocks客户端下载地址：</strong><br><strong>Windows客户端:</strong>&nbsp;<a target="_blank" rel="noopener" href="https://github.com/shadowsocks/shadowsocks-windows/releases">https://github.com/shadowsocks/shadowsocks-windows/releases</a><br><strong>Mac客户端:</strong>&nbsp;<a target="_blank" rel="noopener" href="https://github.com/shadowsocks/ShadowsocksX-NG/releases">https://github.com/shadowsocks/ShadowsocksX-NG/releases</a><br><strong>Linux客户端:</strong>&nbsp;<a target="_blank" rel="noopener" href="https://github.com/shadowsocks/shadowsocks-qt5/wiki/Installation">https://github.com/shadowsocks/shadowsocks-qt5/wiki/Installation</a><br><strong>Android/安卓客户端：</strong><a target="_blank" rel="noopener" href="https://github.com/shadowsocks/shadowsocks-android/releases">https://github.com/shadowsocks/shadowsocks-android/releases</a><br><strong>iOS客户端：</strong>商店搜索Wingy/shadowsocks(美国地区)下载</p>
+<p>以Windows为例，依次填入服务器IP，服务器端口，密码，保存配置</p>
+<p><img src="http://www.yehes.com/wp-content/uploads/2018/09/77c76f11gy1fs0jj5rdzij20ct0cet8z.jpg" alt="一键脚本轻松搭建SS教程/搭建SSR并开启BBR加速-夜河资源网"></p>
+<p>在状态栏右击shadowsocks，勾选开机启动和启动系统代理，在系统代理模式中选择PAC模式，服务器-&gt;编辑服务器，一键安装shadowsocks的脚本默认服务器端口是1024，加密方式是aes-256-cfb，密码是你设置的密码，ip是你自己的VPS ip，保存即可。</p>
+<p><strong>shadowsockR客户端下载地址：<br>Windows客户端:</strong> <a target="_blank" rel="noopener" href="https://github.com/shadowsocksrr/shadowsocksr-csharp/releases">https://github.com/shadowsocksrr/shadowsocksr-csharp/releases</a><strong>Mac客户端:</strong> <a target="_blank" rel="noopener" href="https://github.com/flyzy2005/ss-ssr-clients/raw/master/ssr/SS-X-R.zip">https://github.com/flyzy2005/ss-ssr-clients/raw/master/ssr/SS-X-R.zip</a><strong>Linux客户端:</strong> <a target="_blank" rel="noopener" href="https://github.com/shadowsocks/shadowsocks-qt5/wiki/Installation">https://github.com/shadowsocks/shadowsocks-qt5/wiki/Installation</a>**<br>Android/安卓客户端：**<a target="_blank" rel="noopener" href="https://github.com/shadowsocksrr/shadowsocksr-android/releases">https://github.com/shadowsocksrr/shadowsocksr-android/releases</a>**<br>iOS客户端：**商店搜索Wingy/shadowsocks(美国地区)下载</p>
+<p>以Windows为例：</p>
+<p><img src="http://www.yehes.com/wp-content/uploads/2018/09/77c76f11gy1fs0kfp1oulj20ie0dyglr.jpg" alt="一键脚本轻松搭建SS教程/搭建SSR并开启BBR加速-夜河资源网"></p>
+<p>在状态栏右击shadowsocksR，在系统代理模式中选择PAC模式，再左击两次状态栏的图标打开编辑服务器界面，如上图所示，按照自己的服务器配置填充内容，保存即可。</p>
+<p>一键脚本GitHub地址：<a target="_blank" rel="noopener" href="https://github.com/flyzy2005/ss-fly">https://github.com/flyzy2005/ss-fly</a><br>shadowsocks项目GitHub：<a target="_blank" rel="noopener" href="https://github.com/shadowsocks">https://github.com/shadowsocks</a><br>shadowsocksR项目GitHub：<a target="_blank" rel="noopener" href="https://github.com/shadowsocksrr">https://github.com/shadowsocksrr</a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Xuanlang
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://www.zhaoxuanlang.cn/2019/10/31/%E6%90%AD%E5%BB%BA%E8%84%9A%E6%9C%AC/" title="搭建脚本">http://www.zhaoxuanlang.cn/2019/10/31/搭建脚本/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/10/10/kexue%E4%B8%8A%E7%BD%91%E6%9F%A5%E8%B5%84%E6%96%99/" rel="prev" title="Kexue上网查资料">
+      <i class="fa fa-chevron-left"></i> Kexue上网查资料
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/10/31/install-goolge-bbr-on-centos/" rel="next" title="Install Goolge BBR on CentOS">
+      Install Goolge BBR on CentOS <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFshadowsocks"><span class="nav-number">1.</span> <span class="nav-text">什么是shadowsocks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E6%90%AD%E5%BB%BAss-ssr%E6%94%AF%E6%8C%81%E7%B3%BB%E7%BB%9F%E7%89%88%E6%9C%AC"><span class="nav-number">2.</span> <span class="nav-text">一键脚本搭建ss&#x2F;ssr支持系统版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B4%AD%E4%B9%B0"><span class="nav-number">3.</span> <span class="nav-text">服务器购买</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E9%94%AE%E6%90%AD%E5%BB%BASS-%E6%90%AD%E5%BB%BASSR%E6%9C%8D%E5%8A%A1"><span class="nav-number">4.</span> <span class="nav-text">一键搭建SS&#x2F;搭建SSR服务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E9%94%AE%E6%90%AD%E5%BB%BAshadowsocks"><span class="nav-number">4.1.</span> <span class="nav-text">一键搭建shadowsocks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E9%94%AE%E6%90%AD%E5%BB%BAshadowsocksR"><span class="nav-number">4.2.</span> <span class="nav-text">一键搭建shadowsocksR</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E9%94%AE%E5%BC%80%E5%90%AFBBR%E5%8A%A0%E9%80%9F"><span class="nav-number">5.</span> <span class="nav-text">一键开启BBR加速</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AFshadowsocks-shadowsockR%E7%99%BB%E5%BD%95%E4%BD%BF%E7%94%A8"><span class="nav-number">6.</span> <span class="nav-text">客户端shadowsocks&#x2F;shadowsockR登录使用</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xuanlang"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xuanlang</p>
+  <div class="site-description" itemprop="description">业精于勤荒于嬉，行成于思毁于随</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">56</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/1982606762" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;1982606762" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zxl17302206700@gmail.com" title="E-Mail → mailto:zxl17302206700@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">津ICP备19008018号-1 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-award"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XuanLang</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'CrLAcvc7BNSXHSgGkmBwjcQK-gzGzoHsz',
+      appKey     : 'wNQMqo88elGD6NLm8MDvIrSA',
+      placeholder: "写些什么吧",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
