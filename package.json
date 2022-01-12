@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "hexo": "^5.0.0",
-    "hexo-deployer-cos-cdn": "^1.7.1",
     "hexo-deployer-git": "^3.0.0",
     "hexo-filter-flowchart": "^1.0.4",
     "hexo-filter-github-emojis": "^3.0.4",
