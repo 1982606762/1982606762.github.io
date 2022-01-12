@@ -76,27 +76,6 @@
   </entry>
   
   <entry>
-    <title>test</title>
-    <link href="http://www.zhaoxuanlang.cn/2021/10/12/test/"/>
-    <id>http://www.zhaoxuanlang.cn/2021/10/12/test/</id>
-    <published>2021-10-12T07:49:04.000Z</published>
-    <updated>2021-10-12T07:49:04.929Z</updated>
-    
-    <content type="html"><![CDATA[<span id="more"></span>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
-</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>浏览器解析url</title>
     <link href="http://www.zhaoxuanlang.cn/2021/10/12/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%A7%A3%E6%9E%90url/"/>
     <id>http://www.zhaoxuanlang.cn/2021/10/12/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%A7%A3%E6%9E%90url/</id>
@@ -150,12 +129,13 @@
     <link href="http://www.zhaoxuanlang.cn/2021/09/01/%E7%B1%BB/"/>
     <id>http://www.zhaoxuanlang.cn/2021/09/01/%E7%B1%BB/</id>
     <published>2021-09-01T08:53:11.000Z</published>
-    <updated>2021-09-01T08:53:43.949Z</updated>
+    <updated>2022-01-12T12:21:35.203Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://img.zhaoxuanlang.cn/image-20210901165330991.png" alt="image-20210901165330991"></p><span id="more"></span>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://img.zhaoxuanlang.cn/image-20210901165330991.png" alt="image-20210901165330991"></p><p><img src="https://gitee.com/Squirrel_01/img/raw/master/img/image-20220112195532476.png" alt="image-20220112195532476"></p><span id="more"></span>]]></content>
     
     
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;http://img.zhaoxuanlang.cn/image-20210901165330991.png&quot; alt=&quot;image-20210901165330991&quot;&gt;&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://img.zhaoxuanlang.cn/image-20210901165330991.png&quot; alt=&quot;image-20210901165330991&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://gitee.com/Squirrel_01/img/raw/master/img/image-20220112195532476.png&quot; alt=&quot;image-20220112195532476&quot;&gt;&lt;/p&gt;</summary>
     
     
     
@@ -450,6 +430,33 @@
     <summary type="html">&lt;p&gt;方法一：无损连接定理&lt;/p&gt;
 &lt;p&gt;关系模式R(U，F)的一个分解，ρ={R1&amp;lt;U1,F1&amp;gt;,R2&amp;lt;U2,F2&amp;gt;}具有无损连接的充分必要条件是：&lt;/p&gt;
 &lt;p&gt;U1∩U2→U1-U2 €F+ 或U1∩U2→U2&amp;nbsp;-U1€F+&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="http://www.zhaoxuanlang.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>网站开发日志</title>
+    <link href="http://www.zhaoxuanlang.cn/2020/08/06/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/"/>
+    <id>http://www.zhaoxuanlang.cn/2020/08/06/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/</id>
+    <published>2020-08-06T05:26:06.000Z</published>
+    <updated>2021-08-09T11:39:37.908Z</updated>
+    
+    <content type="html"><![CDATA[<p>2020-08-06</p><ul><li>  新增左侧菜单栏功能</li><li>  新增菜单栏对比色功能</li></ul><p>菜单栏实现：内侧标题position使用relative可自动上下移动，想打开和关闭的组件使用display:block和none控制显示与隐藏，在标题栏div添加onclick事件更改display参数即可实现</p><p>对比色实现：使用getelementsbyclassname获得一样classname的一个列表，for循环让列表[i]项的style.backgroundColor（注意这里和css不一样）变成不一样的颜色（加余数判定）</p><p>注意：for循环内如果设置多个表的颜色，表内元素必须相同，不然进行时报错回中止for循环！！！</p><p>2020-08-07</p><ul><li>  去除左右滚动条</li><li>  调整左侧菜单布局样式</li></ul><p>滚动条：overflow:scroll;overflow-x:hidden</p><p>2020-08-10</p><ul><li>  顶部菜单和右侧菜单添加一些内容</li><li>  更改整体配色</li><li>  更改整体布局，大小</li></ul><p>右侧菜单设置有问题待修复，下拉菜单：<select><option>若要弄这样的表，灰色部分使用th白色部分用td就可以分开设置，td内部加input就可以输入值2020-08-12  添加鼠标悬浮气泡功能  样式小调整123456789101112131415161718192021222324252627static showdiv(){        var tool = document.getElementsByClassName('geSidebarTooltip')[0];        //图片更改        var locate = this.firstElementChild.src;        var cimg = tool.firstElementChild;        cimg.src = locate;        //文字更改        var words =this.id.charAt(4).toUpperCase() + this.id.substr(5);        tool.children[1].innerText=words;        //位置更改        var t = this.offsetTop;        tool.style.top=t-10+'px';        tool.style.display='block';    }    static hidediv(){        var tool = document.getElementsByClassName('geSidebarTooltip')[0];        tool.style.display='none';    }var cpnt_btn_list = document.querySelectorAll('.component_btn');cpnt_btn_list.forEach(btn =&gt;{    // formed as btn_ + component name    var cpnt_str = btn.id.charAt(4).toUpperCase() + btn.id.substr(5);    btn.component_type = eval(cpnt_str);    btn.addEventListener("click", Component_btn.attachComponent);    btn.addEventListener('mouseover',Component_btn.showdiv);    btn.addEventListener('mouseout',Component_btn.hidediv);})以上为气泡核心代码，思路为先获得目标位置，图片src和文字描述，再通过js代码换进去，添加mouse over和mouseout就可以添加鼠标悬浮和移出功能只需要在html文件中添加一个div即可，div中添加主图img，下方文字div和左侧小箭头img。2020-08-13  添加checkbox函数，可以控制输入框disable值  右侧菜单新增奇偶颜色效果  新增dragging bar箭头效果  修复bugcheckbox首先需要定义函数，添加onclick函数，定义两个变量分别选择box和需要更改的input list，第一个可以直接用id，第二个建议先选出父元素再用tagname选出input。添加判断条件q.checked，内部两个for循环就可解决，注意disabled是attrabute，需要用set和remove，set要传入两个参数箭头效果用css就可以，用js不知道为什么会出错2020-08-19  新增顶部工具栏标签  新增标签换颜色函数  将函数运用到左侧和顶部标签button标签的border是没按下时的边框，outline是按下之后的边框，建议颜色都是inherith换色函数需要首先把所有标签都编号，判断当下颜色是否改变，没改变就变，然后把所有其他的都变成初始值应用的时候使用箭头函数btn=&gt;{}此时btn就是每次点击的this，使用匿名函数可以实现有参数的函数2020-08-21  尝试svg  增加顶部工具栏标签个数js中数字直接相加有可能是首尾相连，所以需要用parseInt转换！！2020-08-31  完成批量增加html元素功能添加时需要先选中要添加的位置，最好做一个空的div，然后使用innerHTML的方式直接添加，需注意的是换行和”都需要用\转义删除时只需要将其innerHTML变成””就可以2020-10-26人工alert函数：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647    &lt;div id="light" class="white_content"&gt;    &lt;/div&gt;     &lt;div id="fade" class="black_overlay"&gt;&lt;/div&gt;.black_overlay{     display: none;     position: absolute;     top: 0%;     left: 0%;     width: 100%;     height: 100%;     background-color: black;     z-index:1001;     -moz-opacity: 0.8;     opacity:.80;     filter: alpha(opacity=88); } .white_content {     display: none;     position: absolute;     top: 35%;    left: 45%;    width: 10%;    height: 15%;    padding: 20px;     background-color: white;     z-index:1002;     overflow: auto;     border: 5px solid black;} function artificial_alert(text){    document.getElementById('light').innerHTML="&lt;p&gt;"+text+"&lt;/p&gt;&lt;button type=\"button\" onclick=\"closeDialog()\"&gt;关闭&lt;/button&gt;"    if(document.getElementById('light').style.display== 'block'){        document.getElementById('light').style.display = 'none';        document.getElementById('fade').style.display = 'none';    }else{        document.getElementById('light').style.display = 'block';        document.getElementById('fade').style.display = 'block';    }}原理就是动态添加需要alert的文字进去2020-11-04最近在搞bootstrap导入时只需要&lt;link&nbsp;rel="stylesheet"&nbsp;href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css"&gt; &lt;script&nbsp;src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"&gt;&lt;/script&gt; &lt;script&nbsp;src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"&gt;&lt;/script&gt;就可以，但是在npm下运行时需要把jq下载到本地，同时引入在线jq和本地jq才可以输入框默认值，点击清除，不点击恢复：onfocus="if(this.value=='test'){this.value=''}"&nbsp;onblur="if(this.value==''){this.value='test'}"&nbsp;value="test"用for循环appendChild时不能只靠innerHTML修改元素，必须重新声明才可以列表可以使用push 和pop2020/11/23实现长宽比：垂直方向的padding这是最早提出的一种实现方案，主要借助的原理是利用padding-top或者padding-bottom的百分比值，实现容器长宽比。在CSS中padding-top或padding-bottom的百分比值是根据容器的width来计算的。如此一来就很好的实现了容器的长宽比。采用这种方法，需要把容器的height设置为0。而容器内容的所有元素都需要采用position:absolute，不然子元素内容都将被padding挤出容器（造成内容溢出）。比如我们容器的长宽比是16:9，那么根据计算：100% * 9 / 16可以得到56.25%。如果你希望的是4:3，那么对应的就是100% * 3 / 4。具体的CSS代码如下：12345678910111213.aspectration {    position: relative; /*因为容器所有子元素需要绝对定位*/    height: 0; /*容器高度是由padding来控制，盒模型原理告诉你一切*/    width: 100%; }.aspectration[data-ratio="16:9"] {    padding-top: 56.25%;}.aspectration[data-ratio="4:3"]{    padding-top: 75%;}通过通配符*选择器，让其子元素的宽高和容器.aspectration一样大小：1234567.aspectration &gt; * {    position: absolute;    left: 0;    top: 0;    width: 100%;    height: 100%;}</option></select></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;2020-08-06&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;  新增左侧菜单栏功能&lt;/li&gt;
+&lt;li&gt;  新增菜单栏对比色功能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;菜单栏实现：内侧标题position使用relative可自动上下移动，想打开和关闭的组件使用display:block和none</summary>
+      
     
     
     
