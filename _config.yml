@@ -103,10 +103,10 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
  type: git
- repository: 
-  github: git@github.com:1982606762/1982606762.github.io.git
+ repository: git@github.com:1982606762/1982606762.github.io.git
+ branch: main
   # gitee: https://gitee.com/Squirrel_01/squirrel
   # coding: https://e.coding.net/squirrel1/squirrel/Squirrel.git
   # coding2: https://e.coding.net/lishuai3/songshuxiaozhu/123456.git
- branch: main
+ 
  
