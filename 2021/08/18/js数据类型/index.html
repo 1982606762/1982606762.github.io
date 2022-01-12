@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/logo.png">
+  <link rel="mask-icon" href="/images/logo.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.zhaoxuanlang.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":null,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta property="og:type" content="article">
+<meta property="og:title" content="js数据类型">
+<meta property="og:url" content="https://www.zhaoxuanlang.cn/2021/08/18/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/index.html">
+<meta property="og:site_name" content="松鼠小筑">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hualigs.cn/image/611cef200e311.jpg">
+<meta property="og:image" content="https://z3.ax1x.com/2021/08/18/fTqytg.png">
+<meta property="article:published_time" content="2021-08-18T09:50:16.000Z">
+<meta property="article:modified_time" content="2022-01-12T05:42:46.142Z">
+<meta property="article:author" content="Xuanlang">
+<meta property="article:tag" content="js">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.hualigs.cn/image/611cef200e311.jpg">
+
+
+<link rel="canonical" href="https://www.zhaoxuanlang.cn/2021/08/18/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.zhaoxuanlang.cn/2021/08/18/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/","path":"2021/08/18/js数据类型/","title":"js数据类型"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>js数据类型 | 松鼠小筑</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?2c6ad69c6dce83b3987864c3d69796db"></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">松鼠小筑</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">学习笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">5</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">7</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">57</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Map%E5%92%8CSet"><span class="nav-number">1.</span> <span class="nav-text">Map和Set</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#map"><span class="nav-number">1.0.1.</span> <span class="nav-text">map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Set"><span class="nav-number">1.0.2.</span> <span class="nav-text">Set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%A6"><span class="nav-number">1.0.3.</span> <span class="nav-text">另</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#WeakMap-and-WeakSet%EF%BC%88%E5%BC%B1%E6%98%A0%E5%B0%84%E5%92%8C%E5%BC%B1%E9%9B%86%E5%90%88%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">WeakMap and WeakSet（弱映射和弱集合）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#WeakMap"><span class="nav-number">2.0.1.</span> <span class="nav-text">WeakMap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WeakSet"><span class="nav-number">2.0.2.</span> <span class="nav-text">WeakSet</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Object-keys%EF%BC%8Cvalues%EF%BC%8Centries"><span class="nav-number">3.</span> <span class="nav-text">Object.keys，values，entries</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AC%E6%8D%A2%E5%AF%B9%E8%B1%A1"><span class="nav-number">3.0.1.</span> <span class="nav-text">转换对象</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC"><span class="nav-number">4.</span> <span class="nav-text">解构赋值</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%AD%E6%B3%95"><span class="nav-number">4.1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%A9%E4%BD%99%E7%9A%84-%E2%80%98%E2%80%A6%E2%80%99"><span class="nav-number">4.2.</span> <span class="nav-text">剩余的 ‘…’</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="nav-number">4.3.</span> <span class="nav-text">默认值</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Date"><span class="nav-number">5.</span> <span class="nav-text">Date</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSON%E6%96%B9%E6%B3%95"><span class="nav-number">6.</span> <span class="nav-text">JSON方法</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xuanlang"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Xuanlang</p>
+  <div class="site-description" itemprop="description">业精于勤荒于嬉，行成于思毁于随</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">57</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/1982606762" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;1982606762" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zxl17302206700@gmail.com" title="E-Mail → mailto:zxl17302206700@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2021/08/18/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Xuanlang">
+      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="松鼠小筑">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          js数据类型
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-08-18 17:50:16" itemprop="dateCreated datePublished" datetime="2021-08-18T17:50:16+08:00">2021-08-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-01-12 13:42:46" itemprop="dateModified" datetime="2022-01-12T13:42:46+08:00">2022-01-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><img data-src="https://www.hualigs.cn/image/611cef200e311.jpg" alt="image-20210818175151311"></p>
+<span id="more"></span>
+
+<h1 id="Map和Set"><a href="#Map和Set" class="headerlink" title="Map和Set"></a>Map和Set</h1><h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><p>Key-键值对形式，类似哈希表</p>
+<ul>
+<li><code>new Map()</code> —— 创建 map。</li>
+<li><code>map.set(key, value)</code> —— 根据键存储值。</li>
+<li><code>map.get(key)</code> —— 根据键来返回值，如果 <code>map</code> 中不存在对应的 <code>key</code>，则返回 <code>undefined</code>。</li>
+<li><code>map.has(key)</code> —— 如果 <code>key</code> 存在则返回 <code>true</code>，否则返回 <code>false</code>。</li>
+<li><code>map.delete(key)</code> —— 删除指定键的值。</li>
+<li><code>map.clear()</code> —— 清空 map。</li>
+<li><code>map.size</code> —— 返回当前元素个数。</li>
+</ul>
+<p>如果要在 <code>map</code> 里使用循环，可以使用以下三个方法：</p>
+<ul>
+<li><code>map.keys()</code> —— 遍历并返回所有的键（returns an iterable for keys），</li>
+<li><code>map.values()</code> —— 遍历并返回所有的值（returns an iterable for values），</li>
+<li><code>map.entries()</code> —— 遍历并返回所有的实体（returns an iterable for entries）<code>[key, value]</code>，<code>for..of</code> 在默认情况下使用的就是这个。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>(<span class="built_in">Object</span>.entries(obj));<span class="comment">//从obj对象创建map</span></span><br><span class="line"><span class="keyword">let</span> obj = <span class="built_in">Object</span>.fromEntries(map.entries()); <span class="comment">// 创建一个普通对象（plain object）(*)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h3><p>每个键只出现一次</p>
+<p>它的主要方法如下：</p>
+<ul>
+<li><code>new Set(iterable)</code> —— 创建一个 <code>set</code>，如果提供了一个 <code>iterable</code> 对象（通常是数组），将会从数组里面复制值到 <code>set</code> 中。</li>
+<li><code>set.add(value)</code> —— 添加一个值，返回 set 本身</li>
+<li><code>set.delete(value)</code> —— 删除值，如果 <code>value</code> 在这个方法调用的时候存在则返回 <code>true</code> ，否则返回 <code>false</code>。</li>
+<li><code>set.has(value)</code> —— 如果 <code>value</code> 在 set 中，返回 <code>true</code>，否则返回 <code>false</code>。</li>
+<li><code>set.clear()</code> —— 清空 set。</li>
+<li><code>set.size</code> —— 返回元素个数。</li>
+</ul>
+<p><code>Map</code> 中用于迭代的方法在 <code>Set</code> 中也同样支持：</p>
+<ul>
+<li><code>set.keys()</code> —— 遍历并返回所有的值（returns an iterable object for values），</li>
+<li><code>set.values()</code> —— 与 <code>set.keys()</code> 作用相同，这是为了兼容 <code>Map</code>，</li>
+<li><code>set.entries()</code> —— 遍历并返回所有的实体（returns an iterable object for entries）<code>[value, value]</code>，它的存在也是为了兼容 <code>Map</code>。</li>
+</ul>
+<h3 id="另"><a href="#另" class="headerlink" title="另"></a>另</h3><p>obj = Array.from(iteratable)可以从一个可迭代对象返回一个数组</p>
+<h1 id="WeakMap-and-WeakSet（弱映射和弱集合）"><a href="#WeakMap-and-WeakSet（弱映射和弱集合）" class="headerlink" title="WeakMap and WeakSet（弱映射和弱集合）"></a>WeakMap and WeakSet（弱映射和弱集合）</h1><h3 id="WeakMap"><a href="#WeakMap" class="headerlink" title="WeakMap"></a>WeakMap</h3><ul>
+<li>不能用原始值作为键</li>
+<li>假如用对象作为键，但是对象被设为null时map里的键会自动删除</li>
+</ul>
+<p>使用案例：计数某人来的次数，当这个人退出时清空他的数据/清除缓存</p>
+<h3 id="WeakSet"><a href="#WeakSet" class="headerlink" title="WeakSet"></a>WeakSet</h3><ul>
+<li>不能添加原始值</li>
+<li>不支持size和keys方法，不可迭代</li>
+</ul>
+<h1 id="Object-keys，values，entries"><a href="#Object-keys，values，entries" class="headerlink" title="Object.keys，values，entries"></a>Object.keys，values，entries</h1><ul>
+<li>Object.keys(obj)—— 返回一个包含该对象所有的键的数组。</li>
+<li>Object.values(obj) —— 返回一个包含该对象所有的值的数组。</li>
+<li>Object.entries(obj) —— 返回一个包含该对象所有 [key, value] 键值对的数组。</li>
+</ul>
+<p>区别：（为了灵活性）</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/fTqytg"><img data-src="https://z3.ax1x.com/2021/08/18/fTqytg.png" alt="fTqytg.png"></a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;John&quot;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">30</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>Object.keys(user) = [&quot;name&quot;, &quot;age&quot;]</code></li>
+<li><code>Object.values(user) = [&quot;John&quot;, 30]</code></li>
+<li><code>Object.entries(user) = [ [&quot;name&quot;,&quot;John&quot;], [&quot;age&quot;,30] ]</code></li>
+</ul>
+<h3 id="转换对象"><a href="#转换对象" class="headerlink" title="转换对象"></a>转换对象</h3><p>对象没有map方法，使用需要先转换成数组再转回来</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> prices = &#123;</span><br><span class="line">  <span class="attr">banana</span>: <span class="number">1</span>,</span><br><span class="line">  <span class="attr">orange</span>: <span class="number">2</span>,</span><br><span class="line">  <span class="attr">meat</span>: <span class="number">4</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> doublePrices = <span class="built_in">Object</span>.fromEntries(</span><br><span class="line">  <span class="comment">// 转换为数组，之后使用 map 方法，然后通过 fromEntries 再转回到对象</span></span><br><span class="line">  <span class="built_in">Object</span>.entries(prices).map(<span class="function">(<span class="params">[key, value]</span>) =&gt;</span> [key, value * <span class="number">2</span>])</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">alert(doublePrices.meat); <span class="comment">// 8</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h1><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p><code> let &#123;prop : varName = default, ...rest&#125; = object</code></p>
+<p>这表示属性 <code>prop</code> 会被赋值给变量 <code>varName</code>，如果没有这个属性的话，就会使用默认值 <code>default</code>。</p>
+<p>没有对应映射的对象属性会被复制到 <code>rest</code> 对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 我们有一个存放了名字和姓氏的数组</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="string">&quot;Ilya&quot;</span>, <span class="string">&quot;Kantor&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 解构赋值</span></span><br><span class="line"><span class="comment">// sets firstName = arr[0]</span></span><br><span class="line"><span class="comment">// and surname = arr[1]</span></span><br><span class="line"><span class="keyword">let</span> [firstName, surname] = arr;</span><br><span class="line"></span><br><span class="line">alert(firstName); <span class="comment">// Ilya</span></span><br><span class="line">alert(surname);  <span class="comment">// Kantor</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="剩余的-‘…’"><a href="#剩余的-‘…’" class="headerlink" title="剩余的 ‘…’"></a>剩余的 ‘…’</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [name1, name2, ...rest] = [<span class="string">&quot;Julius&quot;</span>, <span class="string">&quot;Caesar&quot;</span>, <span class="string">&quot;Consul&quot;</span>, <span class="string">&quot;of the Roman Republic&quot;</span>];</span><br><span class="line"></span><br><span class="line">alert(name1); <span class="comment">// Julius</span></span><br><span class="line">alert(name2); <span class="comment">// Caesar</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 请注意，`rest` 的类型是数组</span></span><br><span class="line">alert(rest[<span class="number">0</span>]); <span class="comment">// Consul</span></span><br><span class="line">alert(rest[<span class="number">1</span>]); <span class="comment">// of the Roman Republic</span></span><br><span class="line">alert(rest.length); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [firstName, surname] = [];</span><br><span class="line"></span><br><span class="line">alert(firstName); <span class="comment">// undefined</span></span><br><span class="line">alert(surname); <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 默认值</span></span><br><span class="line"><span class="keyword">let</span> [name = <span class="string">&quot;Guest&quot;</span>, surname = <span class="string">&quot;Anonymous&quot;</span>] = [<span class="string">&quot;Julius&quot;</span>];</span><br><span class="line"></span><br><span class="line">alert(name);    <span class="comment">// Julius（来自数组的值）</span></span><br><span class="line">alert(surname); <span class="comment">// Anonymous（默认值被使用了）</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h1><p>new Date(year, month, date, hour, minute, second, millisecond) </p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh/docs/Web/JavaScript/Reference/Global_Objects/Date/getFullYear">getFullYear()</a></p>
+<p>获取年份（4 位数）</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh/docs/Web/JavaScript/Reference/Global_Objects/Date/getMonth">getMonth()</a></p>
+<p>获取月份，<strong>从 0 到 11</strong>。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh/docs/Web/JavaScript/Reference/Global_Objects/Date/getDate">getDate()</a></p>
+<p>获取当月的具体日期，从 1 到 31，这个方法名称可能看起来有些令人疑惑。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh/docs/Web/JavaScript/Reference/Global_Objects/Date/getHours">getHours()</a>，<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh/docs/Web/JavaScript/Reference/Global_Objects/Date/getMinutes">getMinutes()</a>，<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh/docs/Web/JavaScript/Reference/Global_Objects/Date/getSeconds">getSeconds()</a>，<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh/docs/Web/JavaScript/Reference/Global_Objects/Date/getMilliseconds">getMilliseconds()</a></p>
+<p>获取相应的时间组件。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh/docs/Web/JavaScript/Reference/Global_Objects/Date/getDay">getDay()</a></p>
+<p>获取一周中的第几天，从 <code>0</code>（星期日）到 <code>6</code>（星期六）。第一天始终是星期日，在某些国家可能不是这样的习惯，但是这不能被改变。</p>
+</li>
+</ul>
+<p>测量函数运行时间</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> start = <span class="built_in">Date</span>.now();<span class="comment">//获得起始</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++) f(date1, date2);<span class="comment">//运行多次函数f</span></span><br><span class="line"><span class="keyword">return</span> <span class="built_in">Date</span>.now() - start;<span class="comment">//返回差值</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bench</span>(<span class="params">f</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> date1 = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">let</span> date2 = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> start = <span class="built_in">Date</span>.now();</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++) f(date1, date2);</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Date</span>.now() - start;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> time1 = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">let</span> time2 = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 交替运行 bench(upperSlice) 和 bench(upperLoop) 各 10 次</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">  time1 += bench(diffSubtract);</span><br><span class="line">  time2 += bench(diffGetTime);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">alert( <span class="string">&#x27;Total time for diffSubtract: &#x27;</span> + time1 );</span><br><span class="line">alert( <span class="string">&#x27;Total time for diffGetTime: &#x27;</span> + time2 );</span><br></pre></td></tr></table></figure>
+
+<h1 id="JSON方法"><a href="#JSON方法" class="headerlink" title="JSON方法"></a>JSON方法</h1><ul>
+<li><p><code>JSON.stringify()</code> 将对象转换为 JSON。</p>
+</li>
+<li><p><code>JSON.parse()</code> 将 JSON 转换回对象。</p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Xuanlang
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.zhaoxuanlang.cn/2021/08/18/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" title="js数据类型">https://www.zhaoxuanlang.cn/2021/08/18/js数据类型/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/js/" rel="tag"># js</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/08/18/%E8%BF%AD%E4%BB%A3%E5%99%A8/" rel="prev" title="迭代器">
+                  <i class="fa fa-chevron-left"></i> 迭代器
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/08/19/%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6/" rel="next" title="函数进阶">
+                  函数进阶 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">津ICP备19008018号-1 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-award"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xuanlang</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://www.zhaoxuanlang.cn/2021/08/18/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+
+</body>
+</html>
