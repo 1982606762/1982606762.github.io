@@ -104,9 +104,9 @@ theme: next
 deploy:
  type: git
  repository: 
-  # github: https://github.com/1982606762/1982606762.github.io.git
+  github: git@github.com:1982606762/1982606762.github.io.git
   gitee: https://gitee.com/Squirrel_01/squirrel
-  coding: https://e.coding.net/squirrel1/squirrel/Squirrel.git
+  # coding: https://e.coding.net/squirrel1/squirrel/Squirrel.git
   # coding2: https://e.coding.net/lishuai3/songshuxiaozhu/123456.git
  branch: main
  
