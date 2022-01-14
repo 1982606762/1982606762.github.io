@@ -539,6 +539,21 @@
   </span>
   
   
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>31k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>57 分钟</span>
+    </span>
 </div>
 
         </div>
@@ -827,7 +842,7 @@
 <p>注意：对于同一配置项，三个配置文件的优先级是1&lt;2&lt;3</p>
 <p>这里可以直接编辑配置文件，通过命令设置后会响应到这里。</p>
 <h3 id="2-3-3、设置用户名与邮箱（用户标识，必要）"><a href="#2-3-3、设置用户名与邮箱（用户标识，必要）" class="headerlink" title="2.3.3、设置用户名与邮箱（用户标识，必要）"></a>2.3.3、设置用户名与邮箱（用户标识，必要）</h3><p>当你安装Git后首先要做的事情是设置你的用户名称和e-mail地址。这是非常重要的，因为每次Git提交都会使用该信息。它被永远的嵌入到了你的提交中：</p>
-<p> 　　$ git config –global user.name <strong>“<strong><strong>zhangguo</strong></strong>“</strong>  #名称<br> 　　$ git config –global user.email <a href="mailto:&#122;&#x68;&#97;&#x6e;&#103;&#103;&#117;&#111;&#64;&#x71;&#113;&#46;&#99;&#111;&#x6d;">&#122;&#x68;&#97;&#x6e;&#103;&#103;&#117;&#111;&#64;&#x71;&#113;&#46;&#99;&#111;&#x6d;</a>   #邮箱</p>
+<p> 　　$ git config –global user.name <strong>“<strong><strong>zhangguo</strong></strong>“</strong>  #名称<br> 　　$ git config –global user.email <a href="mailto:&#122;&#104;&#x61;&#x6e;&#x67;&#103;&#x75;&#x6f;&#x40;&#x71;&#x71;&#46;&#x63;&#111;&#109;">&#122;&#104;&#x61;&#x6e;&#x67;&#103;&#x75;&#x6f;&#x40;&#x71;&#x71;&#46;&#x63;&#111;&#109;</a>   #邮箱</p>
 <p>只需要做一次这个设置，如果你传递了–global 选项，因为Git将总是会使用该信息来处理你在系统中所做的一切操作。如果你希望在一个特定的项目中使用不同的名称或e-mail地址，你可以在该项目中运行该命令而不要–global选项。 总之–global为全局配置，不加为某个项目的特定配置。</p>
 <p><img data-src="https://images2017.cnblogs.com/blog/63651/201709/63651-20170905135629991-890437951.png"></p>
 <h3 id="2-3-4、添加或删除配置项"><a href="#2-3-4、添加或删除配置项" class="headerlink" title="2.3.4、添加或删除配置项"></a>2.3.4、添加或删除配置项</h3><p><strong>1）、添加配置项</strong> </p>
@@ -1300,7 +1315,7 @@
 <h3 id="5-2-3、提交源代码到远程仓库"><a href="#5-2-3、提交源代码到远程仓库" class="headerlink" title="5.2.3、提交源代码到远程仓库"></a>5.2.3、提交源代码到远程仓库</h3><p><img data-src="https://images2017.cnblogs.com/blog/63651/201709/63651-20170907201134616-522881160.png"></p>
 <p>从上图可以看出创建地址有两种：</p>
 <p>https 类型的：<a target="_blank" rel="noopener" href="https://git.coding.net/zhangguoGit/project7.git">https://git.coding.net/zhangguoGit/project7.git</a></p>
-<p>SSH类型的：<a href="mailto:&#103;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#x2e;&#x63;&#111;&#100;&#105;&#110;&#x67;&#x2e;&#x6e;&#101;&#x74;">&#103;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#x2e;&#x63;&#111;&#100;&#105;&#110;&#x67;&#x2e;&#x6e;&#101;&#x74;</a>:zhangguoGit/project7.git</p>
+<p>SSH类型的：<a href="mailto:&#x67;&#105;&#116;&#x40;&#x67;&#105;&#116;&#x2e;&#99;&#x6f;&#100;&#105;&#x6e;&#103;&#46;&#x6e;&#101;&#116;">&#x67;&#105;&#116;&#x40;&#x67;&#105;&#116;&#x2e;&#99;&#x6f;&#100;&#105;&#x6e;&#103;&#46;&#x6e;&#101;&#116;</a>:zhangguoGit/project7.git</p>
 <h4 id="HTTPS（推荐轻量级用户使用）"><a href="#HTTPS（推荐轻量级用户使用）" class="headerlink" title="HTTPS（推荐轻量级用户使用）"></a>HTTPS（推荐轻量级用户使用）</h4><p>使用加密的网页访问通道读写仓库，使用用户名及密码进行鉴权。 避免重复输入密码，查看 <a target="_blank" rel="noopener" href="https://coding.net/help/faq/git/git.html#push-">怎样在每次 Push 时不用重复输入密码</a>？</p>
 <blockquote>
 <p>提示：Git 用户名为 Coding 的账户邮箱或者个性后缀，密码为 Coding 的账户密码。<br>注意：HTTPS 方式 push 大文件可能引发错误，查看  <a target="_blank" rel="noopener" href="https://coding.net/help/faq/git/git.html">Push 出错怎么办</a>？</p>
