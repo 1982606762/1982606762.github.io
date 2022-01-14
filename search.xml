@@ -16,6 +16,30 @@
       </categories>
   </entry>
   <entry>
+    <title>加一</title>
+    <url>/2021/08/12/66-%E5%8A%A0%E4%B8%80/</url>
+    <content><![CDATA[<p>给定一个由 整数 组成的 非空 数组所表示的非负整数，在该数的基础上加一。</p>
+<p>最高位数字存放在数组的首位， 数组中每个元素只存储单个数字。</p>
+<p>你可以假设除了整数 0 之外，这个整数不会以零开头。</p>
+<p>示例 1：</p>
+<p>输入：digits = [1,2,3]<br>输出：[1,2,4]<br>解释：输入数组表示数字 123。<br>示例 2：</p>
+<p>输入：digits = [4,3,2,1]<br>输出：[4,3,2,2]<br>解释：输入数组表示数字 4321。<br>示例 3：</p>
+<p>输入：digits = [0]<br>输出：[1]</p>
+<span id="more"></span>
+
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>while内加一和进位</p>
+<p>若不是全9就在while里输出，若是全9就在前边加一个1</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[]&#125;</span> <span class="variable">digits</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number[]&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> plusOne = <span class="function"><span class="keyword">function</span>(<span class="params">digits</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> last = digits.length-<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(last&gt;=<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(digits[last]!=<span class="number">9</span>)&#123;</span><br><span class="line">            digits[last]+=<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">return</span> digits;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            digits[last]=<span class="number">0</span>;</span><br><span class="line">            last--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> [<span class="number">1</span>].concat(digits);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>数据结构笔记</category>
+      </categories>
+      <tags>
+        <tag>easy leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>1NF，2NF，3NF，BCNF（3NF和BCNF的区别）</title>
     <url>/2020/10/21/1nf%EF%BC%8C2nf%EF%BC%8C3nf%EF%BC%8Cbcnf%EF%BC%883nf%E5%92%8Cbcnf%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%89/</url>
     <content><![CDATA[<ul>
@@ -65,30 +89,6 @@
       </categories>
   </entry>
   <entry>
-    <title>加一</title>
-    <url>/2021/08/12/66-%E5%8A%A0%E4%B8%80/</url>
-    <content><![CDATA[<p>给定一个由 整数 组成的 非空 数组所表示的非负整数，在该数的基础上加一。</p>
-<p>最高位数字存放在数组的首位， 数组中每个元素只存储单个数字。</p>
-<p>你可以假设除了整数 0 之外，这个整数不会以零开头。</p>
-<p>示例 1：</p>
-<p>输入：digits = [1,2,3]<br>输出：[1,2,4]<br>解释：输入数组表示数字 123。<br>示例 2：</p>
-<p>输入：digits = [4,3,2,1]<br>输出：[4,3,2,2]<br>解释：输入数组表示数字 4321。<br>示例 3：</p>
-<p>输入：digits = [0]<br>输出：[1]</p>
-<span id="more"></span>
-
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>while内加一和进位</p>
-<p>若不是全9就在while里输出，若是全9就在前边加一个1</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[]&#125;</span> <span class="variable">digits</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number[]&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> plusOne = <span class="function"><span class="keyword">function</span>(<span class="params">digits</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> last = digits.length-<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(last&gt;=<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(digits[last]!=<span class="number">9</span>)&#123;</span><br><span class="line">            digits[last]+=<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">return</span> digits;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            digits[last]=<span class="number">0</span>;</span><br><span class="line">            last--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> [<span class="number">1</span>].concat(digits);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>数据结构笔记</category>
-      </categories>
-      <tags>
-        <tag>easy leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>7-1 数组循环左移 (20分)</title>
     <url>/2020/02/28/7-1-%E6%95%B0%E7%BB%84%E5%BE%AA%E7%8E%AF%E5%B7%A6%E7%A7%BB-20%E5%88%86/</url>
     <content><![CDATA[<p>本题要求实现一个对数组进行循环左移的简单函数：一个数组_a_中存有_n_（&gt;0）个整数，在不允许使用另外数组的前提下，将每个整数循环向左移_m_（≥0）个位置，即将_a_中的数据由（_a_​0​​_a_​1​​⋯_a_​_n_−1​​）变换为（_a_​_m_​​⋯_a_​_n_−1​​_a_​0​​_a_​1​​⋯_a_​_m_−1​​）（最前面的_m_个数循环移至最后面的_m_个位置）。如果还需要考虑程序移动数据的次数尽量少，要如何设计移动的方法？</p>
@@ -101,6 +101,21 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int m,n;</span><br><span class="line">    scanf(&quot;%d%d&quot;,&amp;m,&amp;n );</span><br><span class="line">    </span><br><span class="line">    int list[999];</span><br><span class="line">    for (int i = 0; i &lt; m; ++i) &#123;</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;list[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    for (int j = 0; j &lt; n; ++j) &#123;</span><br><span class="line">        int temp = list[0];</span><br><span class="line">        for (int i = 1; i &lt;m ; ++i) &#123;</span><br><span class="line">            list[i-1]=list[i];</span><br><span class="line">        &#125;</span><br><span class="line">        list[m-1]=temp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    for (int i = 0; i &lt; m-1; ++i) &#123;</span><br><span class="line">        printf(&quot;%d &quot;,list[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;%d&quot;,list[m-1]);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>c/c++语言</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>7-1 银行业务队列简单模拟 (25分)</title>
+    <url>/2020/04/05/7-1-%E9%93%B6%E8%A1%8C%E4%B8%9A%E5%8A%A1%E9%98%9F%E5%88%97%E7%AE%80%E5%8D%95%E6%A8%A1%E6%8B%9F-25%E5%88%86/</url>
+    <content><![CDATA[<p>设某银行有A、B两个业务窗口，且处理业务的速度不一样，其中A窗口处理速度是B窗口的2倍 —— 即当A窗口每处理完2个顾客时，B窗口处理完1个顾客。给定到达银行的顾客序列，请按业务完成的顺序输出顾客序列。假定不考虑顾客先后到达的时间间隔，并且当不同窗口同时处理完2个顾客时，A窗口顾客优先输出。</p>
+<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h3><p>输入为一行正整数，其中第1个数字N(≤1000)为顾客总数，后面跟着N位顾客的编号。编号为奇数的顾客需要到A窗口办理业务，为偶数的顾客则去B窗口。数字间以空格分隔。</p>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h3><p>按业务处理完成的顺序输出顾客的编号。数字间以空格分隔，但最后一个编号后不能有多余的空格。</p>
+<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">8 2 1 3 9 4 11 13 15</span><br></pre></td></tr></table></figure>
+
+<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1 3 2 9 11 4 13 15</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#define MAXSIZE 1000</span><br><span class="line">#define OVERFLOW -2</span><br><span class="line">#define OK 1</span><br><span class="line">#define ERROR -1</span><br><span class="line">using namespace std;</span><br><span class="line">typedef struct</span><br><span class="line">&#123;</span><br><span class="line">    int *base;</span><br><span class="line">    int front;</span><br><span class="line">    int rear;</span><br><span class="line">&#125; SqQueue;</span><br><span class="line">int InitQueue(SqQueue &amp;Q)</span><br><span class="line">&#123;</span><br><span class="line">    Q.base=new int[MAXSIZE];</span><br><span class="line">    if(!Q.base)</span><br><span class="line">        return OVERFLOW;</span><br><span class="line">    Q.front=Q.rear=0;</span><br><span class="line">    return OK;</span><br><span class="line">&#125;</span><br><span class="line">int DeQueue(SqQueue &amp;Q,int &amp;e)</span><br><span class="line">&#123;</span><br><span class="line">    if(Q.front==Q.rear)</span><br><span class="line">        return ERROR;</span><br><span class="line">    e=Q.base[Q.front];</span><br><span class="line">    Q.front=(Q.front+1)%MAXSIZE;</span><br><span class="line">    return OK;</span><br><span class="line">&#125;</span><br><span class="line">void Print(int *arr,int n)</span><br><span class="line">&#123;</span><br><span class="line">    cout&lt;&lt;arr[0];</span><br><span class="line">    for(int i=1;i&lt;n;i++)</span><br><span class="line">        cout&lt;&lt;&quot; &quot;&lt;&lt;arr[i];</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    SqQueue A,B;</span><br><span class="line">    InitQueue(A);</span><br><span class="line">    InitQueue(B);</span><br><span class="line">    int N,data,tmp,i=0;</span><br><span class="line">    cin&gt;&gt;N;</span><br><span class="line">    int result[N];</span><br><span class="line">    for(int i=0; i&lt;N; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin&gt;&gt;data;</span><br><span class="line">        if(data%2!=0)</span><br><span class="line">        &#123;</span><br><span class="line">            if((A.rear+1)%MAXSIZE==A.front)</span><br><span class="line">                return ERROR;</span><br><span class="line">            A.base[A.rear]=data;</span><br><span class="line">            A.rear=(A.rear+1)%MAXSIZE;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            if((B.rear+1)%MAXSIZE==B.front)</span><br><span class="line">                return ERROR;</span><br><span class="line">            B.base[B.rear]=data;</span><br><span class="line">            B.rear=(B.rear+1)%MAXSIZE;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    while((A.front!=A.rear)&amp;&amp;(B.front!=B.rear))</span><br><span class="line">    &#123;</span><br><span class="line">        DeQueue(A,tmp);</span><br><span class="line">        result[i++]=tmp;</span><br><span class="line">        DeQueue(A,tmp);</span><br><span class="line">        result[i++]=tmp;</span><br><span class="line">        DeQueue(B,tmp);</span><br><span class="line">        result[i++]=tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    while(A.front!=A.rear)</span><br><span class="line">    &#123;</span><br><span class="line">        DeQueue(A,tmp);</span><br><span class="line">        result[i++]=tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    while(B.front!=B.rear)</span><br><span class="line">    &#123;</span><br><span class="line">        DeQueue(B,tmp);</span><br><span class="line">        result[i++]=tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    Print(result,N);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>c/c++语言</category>
       </categories>
@@ -122,21 +137,6 @@
 <p>在这里只要cnt大于k则一定会找到，found就会变成1不会变回去</p>
 <p>关键在于只分配k个大小xxx-10kk+1xxxx</p>
 ]]></content>
-      <categories>
-        <category>c/c++语言</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>7-1 银行业务队列简单模拟 (25分)</title>
-    <url>/2020/04/05/7-1-%E9%93%B6%E8%A1%8C%E4%B8%9A%E5%8A%A1%E9%98%9F%E5%88%97%E7%AE%80%E5%8D%95%E6%A8%A1%E6%8B%9F-25%E5%88%86/</url>
-    <content><![CDATA[<p>设某银行有A、B两个业务窗口，且处理业务的速度不一样，其中A窗口处理速度是B窗口的2倍 —— 即当A窗口每处理完2个顾客时，B窗口处理完1个顾客。给定到达银行的顾客序列，请按业务完成的顺序输出顾客序列。假定不考虑顾客先后到达的时间间隔，并且当不同窗口同时处理完2个顾客时，A窗口顾客优先输出。</p>
-<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h3><p>输入为一行正整数，其中第1个数字N(≤1000)为顾客总数，后面跟着N位顾客的编号。编号为奇数的顾客需要到A窗口办理业务，为偶数的顾客则去B窗口。数字间以空格分隔。</p>
-<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h3><p>按业务处理完成的顺序输出顾客的编号。数字间以空格分隔，但最后一个编号后不能有多余的空格。</p>
-<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">8 2 1 3 9 4 11 13 15</span><br></pre></td></tr></table></figure>
-
-<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1 3 2 9 11 4 13 15</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#define MAXSIZE 1000</span><br><span class="line">#define OVERFLOW -2</span><br><span class="line">#define OK 1</span><br><span class="line">#define ERROR -1</span><br><span class="line">using namespace std;</span><br><span class="line">typedef struct</span><br><span class="line">&#123;</span><br><span class="line">    int *base;</span><br><span class="line">    int front;</span><br><span class="line">    int rear;</span><br><span class="line">&#125; SqQueue;</span><br><span class="line">int InitQueue(SqQueue &amp;Q)</span><br><span class="line">&#123;</span><br><span class="line">    Q.base=new int[MAXSIZE];</span><br><span class="line">    if(!Q.base)</span><br><span class="line">        return OVERFLOW;</span><br><span class="line">    Q.front=Q.rear=0;</span><br><span class="line">    return OK;</span><br><span class="line">&#125;</span><br><span class="line">int DeQueue(SqQueue &amp;Q,int &amp;e)</span><br><span class="line">&#123;</span><br><span class="line">    if(Q.front==Q.rear)</span><br><span class="line">        return ERROR;</span><br><span class="line">    e=Q.base[Q.front];</span><br><span class="line">    Q.front=(Q.front+1)%MAXSIZE;</span><br><span class="line">    return OK;</span><br><span class="line">&#125;</span><br><span class="line">void Print(int *arr,int n)</span><br><span class="line">&#123;</span><br><span class="line">    cout&lt;&lt;arr[0];</span><br><span class="line">    for(int i=1;i&lt;n;i++)</span><br><span class="line">        cout&lt;&lt;&quot; &quot;&lt;&lt;arr[i];</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    SqQueue A,B;</span><br><span class="line">    InitQueue(A);</span><br><span class="line">    InitQueue(B);</span><br><span class="line">    int N,data,tmp,i=0;</span><br><span class="line">    cin&gt;&gt;N;</span><br><span class="line">    int result[N];</span><br><span class="line">    for(int i=0; i&lt;N; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin&gt;&gt;data;</span><br><span class="line">        if(data%2!=0)</span><br><span class="line">        &#123;</span><br><span class="line">            if((A.rear+1)%MAXSIZE==A.front)</span><br><span class="line">                return ERROR;</span><br><span class="line">            A.base[A.rear]=data;</span><br><span class="line">            A.rear=(A.rear+1)%MAXSIZE;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            if((B.rear+1)%MAXSIZE==B.front)</span><br><span class="line">                return ERROR;</span><br><span class="line">            B.base[B.rear]=data;</span><br><span class="line">            B.rear=(B.rear+1)%MAXSIZE;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    while((A.front!=A.rear)&amp;&amp;(B.front!=B.rear))</span><br><span class="line">    &#123;</span><br><span class="line">        DeQueue(A,tmp);</span><br><span class="line">        result[i++]=tmp;</span><br><span class="line">        DeQueue(A,tmp);</span><br><span class="line">        result[i++]=tmp;</span><br><span class="line">        DeQueue(B,tmp);</span><br><span class="line">        result[i++]=tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    while(A.front!=A.rear)</span><br><span class="line">    &#123;</span><br><span class="line">        DeQueue(A,tmp);</span><br><span class="line">        result[i++]=tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    while(B.front!=B.rear)</span><br><span class="line">    &#123;</span><br><span class="line">        DeQueue(B,tmp);</span><br><span class="line">        result[i++]=tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    Print(result,N);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>c/c++语言</category>
       </categories>
@@ -174,21 +174,6 @@
       </categories>
   </entry>
   <entry>
-    <title>7-2 堆栈操作合法性 (20分)</title>
-    <url>/2020/03/31/7-2-%E5%A0%86%E6%A0%88%E6%93%8D%E4%BD%9C%E5%90%88%E6%B3%95%E6%80%A7-20%E5%88%86/</url>
-    <content><![CDATA[<p>假设以<code>S</code>和<code>X</code>分别表示入栈和出栈操作。如果根据一个仅由<code>S</code>和<code>X</code>构成的序列，对一个空堆栈进行操作，相应操作均可行（如没有出现删除时栈空）且最后状态也是栈空，则称该序列是合法的堆栈操作序列。请编写程序，输入<code>S</code>和<code>X</code>序列，判断该序列是否合法。</p>
-<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h3><p>输入第一行给出两个正整数N和M，其中N是待测序列的个数，M（≤50）是堆栈的最大容量。随后N行，每行中给出一个仅由<code>S</code>和<code>X</code>构成的序列。序列保证不为空，且长度不超过100。</p>
-<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h3><p>对每个序列，在一行中输出<code>YES</code>如果该序列是合法的堆栈操作序列，或<code>NO</code>如果不是。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">4 10</span><br><span class="line">SSSXXSXXSX</span><br><span class="line">SSSXXSXXS</span><br><span class="line">SSSSSSSSSSXSSXXXXXXXXXXX</span><br><span class="line">SSSXXSXXX</span><br></pre></td></tr></table></figure>
-
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">YES</span><br><span class="line">NO</span><br><span class="line">NO</span><br><span class="line">NO</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">#define MAXSIZE  100</span><br><span class="line">#define ADDSIZE  10</span><br><span class="line">typedef int Status;</span><br><span class="line">typedef char SElemType;</span><br><span class="line"></span><br><span class="line">typedef struct &#123;</span><br><span class="line">    SElemType *base;</span><br><span class="line">    SElemType *top;</span><br><span class="line">    int stacksize;</span><br><span class="line">&#125; SqStack;</span><br><span class="line"></span><br><span class="line">Status Initstack(SqStack &amp;s,int e=MAXSIZE)</span><br><span class="line">&#123;</span><br><span class="line">    s.base=new SElemType[e];</span><br><span class="line">    s.top=s.base;</span><br><span class="line">    s.stacksize=e;</span><br><span class="line">    return 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Status push(SElemType e,SqStack &amp;s)</span><br><span class="line">&#123;</span><br><span class="line">    if(s.top-s.base&gt;=s.stacksize)</span><br><span class="line">    &#123;</span><br><span class="line">        /*s.base=(SElemType*)realloc(s.base,(s.stacksize+ADDSIZE)* sizeof(SElemType));</span><br><span class="line">        if(!s.base)</span><br><span class="line">            exit(EOVERFLOW);</span><br><span class="line">        s.top=s.base+s.stacksize;</span><br><span class="line">        s.stacksize+=ADDSIZE;*/</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">    *s.top++=e;</span><br><span class="line">    return 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Status pop(SElemType &amp;e,SqStack &amp;s)</span><br><span class="line">&#123;</span><br><span class="line">    if(s.top==s.base)return 0;</span><br><span class="line">    e=*--s.top;</span><br><span class="line">    return 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Status GetTop(SElemType &amp;e,SqStack &amp;s)</span><br><span class="line">&#123;</span><br><span class="line">    if(s.top==s.base)return 0;</span><br><span class="line">    e=*(s.top-1);</span><br><span class="line">    return 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bool Isright(string s,int e)</span><br><span class="line">&#123;</span><br><span class="line">    int i=0,f=1;</span><br><span class="line">    SqStack sq;</span><br><span class="line">    Initstack(sq,e);</span><br><span class="line">    while (s[i] != &#x27;\0&#x27;)</span><br><span class="line">    &#123;</span><br><span class="line">        if(s[i]==&#x27;S&#x27;) &#123;</span><br><span class="line">            if (push(s[i],sq) == 1)</span><br><span class="line">                i++;</span><br><span class="line">            else</span><br><span class="line">                &#123;</span><br><span class="line">                f = 0;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        else &#123;</span><br><span class="line">            if (pop(s[i],sq) == 1)</span><br><span class="line">                i++;</span><br><span class="line">            else &#123;</span><br><span class="line">                f = 0;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if(sq.top==sq.base&amp;&amp;s[i]==&#x27;\0&#x27;)</span><br><span class="line">        f=1;</span><br><span class="line">    else</span><br><span class="line">        f=0;</span><br><span class="line">    return f == 1;</span><br><span class="line">&#125;</span><br><span class="line">bool IsRight(string s,int L)</span><br><span class="line">&#123;</span><br><span class="line">    int i=0,flag=1;</span><br><span class="line">    SqStack sq;</span><br><span class="line">    Initstack(sq,L);</span><br><span class="line">    while(s[i]!=&#x27;\0&#x27;)</span><br><span class="line">    &#123;</span><br><span class="line">        if(s[i]==&#x27;S&#x27;)</span><br><span class="line">        &#123;</span><br><span class="line">            if(push(s[i],sq)==1)</span><br><span class="line">                i++;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                flag=0;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            if(pop(s[i],sq)==1)</span><br><span class="line">                i++;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                flag=0;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if((sq.top==sq.base) &amp;&amp; s[i]==&#x27;\0&#x27;)</span><br><span class="line">        flag=1;</span><br><span class="line">    else</span><br><span class="line">        flag=0;</span><br><span class="line">    return flag == 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int m,n;</span><br><span class="line">    string ss;</span><br><span class="line">    cin&gt;&gt;m&gt;&gt;n;</span><br><span class="line">    for (int u = 0; u &lt; m; ++u) &#123;</span><br><span class="line">        cin&gt;&gt;ss;</span><br><span class="line">        if (IsRight(ss,n)== true)</span><br><span class="line">            cout&lt;&lt;&quot;YES&quot;&lt;&lt;endl;</span><br><span class="line">        else</span><br><span class="line">            cout&lt;&lt;&quot;NO&quot;&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>c/c++语言</category>
-      </categories>
-  </entry>
-  <entry>
     <title>7-2 队列操作 (10分)</title>
     <url>/2020/04/05/7-2-%E9%98%9F%E5%88%97%E6%93%8D%E4%BD%9C-10%E5%88%86/</url>
     <content><![CDATA[<p>请实现一个MyQueue类，实现出队，入队，求队列长度.</p>
@@ -203,6 +188,21 @@
 
 <p>注意switch语句需要有continue</p>
 ]]></content>
+      <categories>
+        <category>c/c++语言</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>7-2 堆栈操作合法性 (20分)</title>
+    <url>/2020/03/31/7-2-%E5%A0%86%E6%A0%88%E6%93%8D%E4%BD%9C%E5%90%88%E6%B3%95%E6%80%A7-20%E5%88%86/</url>
+    <content><![CDATA[<p>假设以<code>S</code>和<code>X</code>分别表示入栈和出栈操作。如果根据一个仅由<code>S</code>和<code>X</code>构成的序列，对一个空堆栈进行操作，相应操作均可行（如没有出现删除时栈空）且最后状态也是栈空，则称该序列是合法的堆栈操作序列。请编写程序，输入<code>S</code>和<code>X</code>序列，判断该序列是否合法。</p>
+<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h3><p>输入第一行给出两个正整数N和M，其中N是待测序列的个数，M（≤50）是堆栈的最大容量。随后N行，每行中给出一个仅由<code>S</code>和<code>X</code>构成的序列。序列保证不为空，且长度不超过100。</p>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h3><p>对每个序列，在一行中输出<code>YES</code>如果该序列是合法的堆栈操作序列，或<code>NO</code>如果不是。</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">4 10</span><br><span class="line">SSSXXSXXSX</span><br><span class="line">SSSXXSXXS</span><br><span class="line">SSSSSSSSSSXSSXXXXXXXXXXX</span><br><span class="line">SSSXXSXXX</span><br></pre></td></tr></table></figure>
+
+<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">YES</span><br><span class="line">NO</span><br><span class="line">NO</span><br><span class="line">NO</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">#define MAXSIZE  100</span><br><span class="line">#define ADDSIZE  10</span><br><span class="line">typedef int Status;</span><br><span class="line">typedef char SElemType;</span><br><span class="line"></span><br><span class="line">typedef struct &#123;</span><br><span class="line">    SElemType *base;</span><br><span class="line">    SElemType *top;</span><br><span class="line">    int stacksize;</span><br><span class="line">&#125; SqStack;</span><br><span class="line"></span><br><span class="line">Status Initstack(SqStack &amp;s,int e=MAXSIZE)</span><br><span class="line">&#123;</span><br><span class="line">    s.base=new SElemType[e];</span><br><span class="line">    s.top=s.base;</span><br><span class="line">    s.stacksize=e;</span><br><span class="line">    return 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Status push(SElemType e,SqStack &amp;s)</span><br><span class="line">&#123;</span><br><span class="line">    if(s.top-s.base&gt;=s.stacksize)</span><br><span class="line">    &#123;</span><br><span class="line">        /*s.base=(SElemType*)realloc(s.base,(s.stacksize+ADDSIZE)* sizeof(SElemType));</span><br><span class="line">        if(!s.base)</span><br><span class="line">            exit(EOVERFLOW);</span><br><span class="line">        s.top=s.base+s.stacksize;</span><br><span class="line">        s.stacksize+=ADDSIZE;*/</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">    *s.top++=e;</span><br><span class="line">    return 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Status pop(SElemType &amp;e,SqStack &amp;s)</span><br><span class="line">&#123;</span><br><span class="line">    if(s.top==s.base)return 0;</span><br><span class="line">    e=*--s.top;</span><br><span class="line">    return 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Status GetTop(SElemType &amp;e,SqStack &amp;s)</span><br><span class="line">&#123;</span><br><span class="line">    if(s.top==s.base)return 0;</span><br><span class="line">    e=*(s.top-1);</span><br><span class="line">    return 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bool Isright(string s,int e)</span><br><span class="line">&#123;</span><br><span class="line">    int i=0,f=1;</span><br><span class="line">    SqStack sq;</span><br><span class="line">    Initstack(sq,e);</span><br><span class="line">    while (s[i] != &#x27;\0&#x27;)</span><br><span class="line">    &#123;</span><br><span class="line">        if(s[i]==&#x27;S&#x27;) &#123;</span><br><span class="line">            if (push(s[i],sq) == 1)</span><br><span class="line">                i++;</span><br><span class="line">            else</span><br><span class="line">                &#123;</span><br><span class="line">                f = 0;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        else &#123;</span><br><span class="line">            if (pop(s[i],sq) == 1)</span><br><span class="line">                i++;</span><br><span class="line">            else &#123;</span><br><span class="line">                f = 0;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if(sq.top==sq.base&amp;&amp;s[i]==&#x27;\0&#x27;)</span><br><span class="line">        f=1;</span><br><span class="line">    else</span><br><span class="line">        f=0;</span><br><span class="line">    return f == 1;</span><br><span class="line">&#125;</span><br><span class="line">bool IsRight(string s,int L)</span><br><span class="line">&#123;</span><br><span class="line">    int i=0,flag=1;</span><br><span class="line">    SqStack sq;</span><br><span class="line">    Initstack(sq,L);</span><br><span class="line">    while(s[i]!=&#x27;\0&#x27;)</span><br><span class="line">    &#123;</span><br><span class="line">        if(s[i]==&#x27;S&#x27;)</span><br><span class="line">        &#123;</span><br><span class="line">            if(push(s[i],sq)==1)</span><br><span class="line">                i++;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                flag=0;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            if(pop(s[i],sq)==1)</span><br><span class="line">                i++;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                flag=0;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if((sq.top==sq.base) &amp;&amp; s[i]==&#x27;\0&#x27;)</span><br><span class="line">        flag=1;</span><br><span class="line">    else</span><br><span class="line">        flag=0;</span><br><span class="line">    return flag == 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int m,n;</span><br><span class="line">    string ss;</span><br><span class="line">    cin&gt;&gt;m&gt;&gt;n;</span><br><span class="line">    for (int u = 0; u &lt; m; ++u) &#123;</span><br><span class="line">        cin&gt;&gt;ss;</span><br><span class="line">        if (IsRight(ss,n)== true)</span><br><span class="line">            cout&lt;&lt;&quot;YES&quot;&lt;&lt;endl;</span><br><span class="line">        else</span><br><span class="line">            cout&lt;&lt;&quot;NO&quot;&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>c/c++语言</category>
       </categories>
@@ -239,6 +239,25 @@
       </categories>
   </entry>
   <entry>
+    <title>7-5 括号匹配 (18分)</title>
+    <url>/2020/04/01/7-5-%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D-18%E5%88%86/</url>
+    <content><![CDATA[<p>检查一段C语言代码的小括号<code>( )</code>、 中括号 <code>[ ]</code> 和大括号<code>&#123; &#125;</code> 是否匹配。</p>
+<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h3><p>在一行中输入一段C语言代码，长度不超过1000个字符（行末以换行符结束）。</p>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h3><p>第一行输出左括号的数量和右括号的数量，中间以一个空格间隔。<br>若括号是匹配的，在第二行打印<code>YES</code>，否则打印<code>NO</code>。</p>
+<h3 id="输入样例1"><a href="#输入样例1" class="headerlink" title="输入样例1:"></a>输入样例1:</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">for(int i=0; i&lt;v; i++)&#123; visited[i] = 0; for(int j=0; j&lt;v; j++) scanf(&quot;%d&quot;,&amp;(g-&gt;Adj[i][j])); &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="输出样例1"><a href="#输出样例1" class="headerlink" title="输出样例1:"></a>输出样例1:</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">8 8</span><br><span class="line">YES</span><br></pre></td></tr></table></figure>
+
+<h3 id="输入样例2"><a href="#输入样例2" class="headerlink" title="输入样例2:"></a>输入样例2:</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">for(int i=0; i&lt;v; i++) a(i]=0;</span><br></pre></td></tr></table></figure>
+
+<h3 id="输出样例2"><a href="#输出样例2" class="headerlink" title="输出样例2:"></a>输出样例2:</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">2 2</span><br><span class="line">NO</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;stack&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">bool is_left_kuohao(char ch)</span><br><span class="line">&#123;</span><br><span class="line">return ch == &#x27;(&#x27;  ch == &#x27;[&#x27;  ch == &#x27;&#123;&#x27;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bool is_right_kuohao(char ch)</span><br><span class="line">&#123;</span><br><span class="line">return ch == &#x27;)&#x27;  ch == &#x27;]&#x27;  ch == &#x27;&#125;&#x27;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bool match(char left, char right)</span><br><span class="line">&#123;</span><br><span class="line">return (left == &#x27;(&#x27; &amp;&amp; right == &#x27;)&#x27;) </span><br><span class="line">   (left == &#x27;[&#x27; &amp;&amp; right == &#x27;]&#x27;) </span><br><span class="line">   (left == &#x27;&#123;&#x27; &amp;&amp; right == &#x27;&#125;&#x27;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">string line;</span><br><span class="line">getline(cin, line);</span><br><span class="line"></span><br><span class="line">int left_kuohao_count = 0;</span><br><span class="line">int right_kuohao_count = 0;</span><br><span class="line"></span><br><span class="line">for (int i = 0; i &lt; line.length(); i++)</span><br><span class="line">&#123;</span><br><span class="line">if (is_left_kuohao(line[i]))</span><br><span class="line">left_kuohao_count += 1;</span><br><span class="line">if (is_right_kuohao(line[i]))</span><br><span class="line">right_kuohao_count += 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">cout &lt;&lt; left_kuohao_count &lt;&lt; &quot; &quot; </span><br><span class="line">     &lt;&lt; right_kuohao_count &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">stack&lt;char&gt; left_kuohaos;</span><br><span class="line"></span><br><span class="line">for (int i = 0; i &lt; line.length(); i++)</span><br><span class="line">&#123;</span><br><span class="line">if (is_left_kuohao(line[i]))</span><br><span class="line">left_kuohaos.push(line[i]);</span><br><span class="line">if (is_right_kuohao(line[i]))</span><br><span class="line">&#123;</span><br><span class="line">if (!left_kuohaos.empty() &amp;&amp; match(left_kuohaos.top(), line[i]))</span><br><span class="line">left_kuohaos.pop();</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">cout &lt;&lt; &quot;NO&quot; &lt;&lt; endl;</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">if (left_kuohaos.empty())</span><br><span class="line">cout &lt;&lt; &quot;YES&quot; &lt;&lt; endl;</span><br><span class="line">else</span><br><span class="line">cout &lt;&lt; &quot;NO&quot; &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>c/c++语言</category>
+      </categories>
+  </entry>
+  <entry>
     <title>7-4 交换二叉树中每个结点的左孩子和右孩子 (20分)</title>
     <url>/2020/05/10/7-4-%E4%BA%A4%E6%8D%A2%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E6%AF%8F%E4%B8%AA%E7%BB%93%E7%82%B9%E7%9A%84%E5%B7%A6%E5%AD%A9%E5%AD%90%E5%92%8C%E5%8F%B3%E5%AD%A9%E5%AD%90-20%E5%88%86/</url>
     <content><![CDATA[<p>以二叉链表作为二叉树的存储结构，交换二叉树中每个结点的左孩子和右孩子。</p>
@@ -269,25 +288,6 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-3 10 20 78</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;string.h&gt;</span><br><span class="line">#include&lt;malloc.h&gt;</span><br><span class="line">#define list 10</span><br><span class="line">#define max 10</span><br><span class="line"> </span><br><span class="line">typedef int Elemtype;</span><br><span class="line">typedef struct sqlist *List;</span><br><span class="line">struct sqlist&#123;</span><br><span class="line">Elemtype *elem;</span><br><span class="line">int length;</span><br><span class="line">int listsize;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line">void initlist(List L)&#123;</span><br><span class="line">L-&gt;elem=(Elemtype *)malloc(list*sizeof(Elemtype));</span><br><span class="line">L-&gt;length=0;</span><br><span class="line">L-&gt;listsize=max;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">void creat(List L)&#123;</span><br><span class="line">initlist(L);</span><br><span class="line">int i,n;</span><br><span class="line">scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">for(i=0;i&lt;n;i++) &#123;</span><br><span class="line">   scanf(&quot;%d&quot;,&amp;L-&gt;elem[i]);</span><br><span class="line">   L-&gt;length++;</span><br><span class="line">   if(L-&gt;length==L-&gt;listsize) &#123;</span><br><span class="line">int *new_elem = (Elemtype *)malloc((L-&gt;listsize+list)*sizeof(Elemtype));</span><br><span class="line">memcpy(new_elem,L-&gt;elem,L-&gt;length);</span><br><span class="line">L-&gt;elem = new_elem;</span><br><span class="line">L-&gt;listsize+=list;</span><br><span class="line">   &#125;</span><br><span class="line">&#125; </span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">void print(List L) &#123;</span><br><span class="line">for(int i=0; i&lt;L-&gt;length;i++) &#123;</span><br><span class="line">if(i==L-&gt;length-1)</span><br><span class="line">printf(&quot;%d&quot;,L-&gt;elem[i]);</span><br><span class="line">else</span><br><span class="line">printf(&quot;%d &quot;,L-&gt;elem[i]);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">int main()&#123;</span><br><span class="line">List L = (List)malloc(sizeof(struct sqlist));</span><br><span class="line">initlist(L);</span><br><span class="line">creat(L);</span><br><span class="line">print(L);</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>c/c++语言</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>7-5 括号匹配 (18分)</title>
-    <url>/2020/04/01/7-5-%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D-18%E5%88%86/</url>
-    <content><![CDATA[<p>检查一段C语言代码的小括号<code>( )</code>、 中括号 <code>[ ]</code> 和大括号<code>&#123; &#125;</code> 是否匹配。</p>
-<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h3><p>在一行中输入一段C语言代码，长度不超过1000个字符（行末以换行符结束）。</p>
-<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h3><p>第一行输出左括号的数量和右括号的数量，中间以一个空格间隔。<br>若括号是匹配的，在第二行打印<code>YES</code>，否则打印<code>NO</code>。</p>
-<h3 id="输入样例1"><a href="#输入样例1" class="headerlink" title="输入样例1:"></a>输入样例1:</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">for(int i=0; i&lt;v; i++)&#123; visited[i] = 0; for(int j=0; j&lt;v; j++) scanf(&quot;%d&quot;,&amp;(g-&gt;Adj[i][j])); &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="输出样例1"><a href="#输出样例1" class="headerlink" title="输出样例1:"></a>输出样例1:</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">8 8</span><br><span class="line">YES</span><br></pre></td></tr></table></figure>
-
-<h3 id="输入样例2"><a href="#输入样例2" class="headerlink" title="输入样例2:"></a>输入样例2:</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">for(int i=0; i&lt;v; i++) a(i]=0;</span><br></pre></td></tr></table></figure>
-
-<h3 id="输出样例2"><a href="#输出样例2" class="headerlink" title="输出样例2:"></a>输出样例2:</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">2 2</span><br><span class="line">NO</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;stack&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">bool is_left_kuohao(char ch)</span><br><span class="line">&#123;</span><br><span class="line">return ch == &#x27;(&#x27;  ch == &#x27;[&#x27;  ch == &#x27;&#123;&#x27;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bool is_right_kuohao(char ch)</span><br><span class="line">&#123;</span><br><span class="line">return ch == &#x27;)&#x27;  ch == &#x27;]&#x27;  ch == &#x27;&#125;&#x27;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bool match(char left, char right)</span><br><span class="line">&#123;</span><br><span class="line">return (left == &#x27;(&#x27; &amp;&amp; right == &#x27;)&#x27;) </span><br><span class="line">   (left == &#x27;[&#x27; &amp;&amp; right == &#x27;]&#x27;) </span><br><span class="line">   (left == &#x27;&#123;&#x27; &amp;&amp; right == &#x27;&#125;&#x27;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">string line;</span><br><span class="line">getline(cin, line);</span><br><span class="line"></span><br><span class="line">int left_kuohao_count = 0;</span><br><span class="line">int right_kuohao_count = 0;</span><br><span class="line"></span><br><span class="line">for (int i = 0; i &lt; line.length(); i++)</span><br><span class="line">&#123;</span><br><span class="line">if (is_left_kuohao(line[i]))</span><br><span class="line">left_kuohao_count += 1;</span><br><span class="line">if (is_right_kuohao(line[i]))</span><br><span class="line">right_kuohao_count += 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">cout &lt;&lt; left_kuohao_count &lt;&lt; &quot; &quot; </span><br><span class="line">     &lt;&lt; right_kuohao_count &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">stack&lt;char&gt; left_kuohaos;</span><br><span class="line"></span><br><span class="line">for (int i = 0; i &lt; line.length(); i++)</span><br><span class="line">&#123;</span><br><span class="line">if (is_left_kuohao(line[i]))</span><br><span class="line">left_kuohaos.push(line[i]);</span><br><span class="line">if (is_right_kuohao(line[i]))</span><br><span class="line">&#123;</span><br><span class="line">if (!left_kuohaos.empty() &amp;&amp; match(left_kuohaos.top(), line[i]))</span><br><span class="line">left_kuohaos.pop();</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">cout &lt;&lt; &quot;NO&quot; &lt;&lt; endl;</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">if (left_kuohaos.empty())</span><br><span class="line">cout &lt;&lt; &quot;YES&quot; &lt;&lt; endl;</span><br><span class="line">else</span><br><span class="line">cout &lt;&lt; &quot;NO&quot; &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>c/c++语言</category>
       </categories>
@@ -530,67 +530,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Git学习笔记</title>
-    <url>/2020/07/28/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>下载安装</p>
-<ul>
-<li><p>  到目标文件夹中git init初始化</p>
-</li>
-<li><p>  把文件添加到git仓库使用命令<code>git add &lt;file&gt;</code></p>
-</li>
-<li><p>  使用命令 <code>git commit -m &lt;message&gt;</code></p>
-</li>
-<li><p>  要随时掌握工作区的状态，使用<code>git status</code>命令。</p>
-</li>
-<li><p>  如果<code>git status</code>告诉你有文件被修改过，用<code>git diff</code>可以查看修改内容。</p>
-</li>
-<li><p>  <code>HEAD</code>指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令<code>git reset --hard commit_id</code>。（上一个是HEAD^,上100个是HEAD~100）</p>
-</li>
-<li><p>  穿梭前，用<code>git log</code>可以查看提交历史，以便确定要回退到哪个版本。</p>
-</li>
-<li><p>  要重返未来，用<code>git reflog</code>查看命令历史，以便确定要回到未来的哪个版本。</p>
-</li>
-</ul>
-<p>场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令<code>git checkout -- file</code>。</p>
-<p>场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令<code>git reset HEAD &lt;file&gt;</code>，就回到了场景1，第二步按场景1操作。</p>
-<p>命令<code>git rm</code>用于删除一个文件</p>
-<p>要关联一个远程库，使用命令<code>git remote add origin git@server-name:path/repo-name.git</code>；</p>
-<p>关联后，使用命令<code>git push -u origin master</code>第一次推送master分支的所有内容；</p>
-<p>此后，每次本地提交后，只要有必要，就可以使用命令<code>git push origin master</code>推送最新修改；.</p>
-<p>要克隆一个仓库，首先必须知道仓库的地址，然后使用<code>git clone</code>命令克隆。</p>
-<p>$ git clone <a href="mailto:&#x67;&#x69;&#116;&#x40;&#103;&#x69;&#116;&#104;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;">&#x67;&#x69;&#116;&#x40;&#103;&#x69;&#116;&#104;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;</a>:1982606762/worked1</p>
-<p>Git鼓励大量使用分支：</p>
-<p>查看分支：<code>git branch</code></p>
-<p>创建分支：<code>git branch &lt;name&gt;</code></p>
-<p>切换分支：<code>git checkout &lt;name&gt;</code>或者<code>git switch &lt;name&gt;</code></p>
-<p>创建+切换分支：<code>git checkout -b &lt;name&gt;</code>或者<code>git switch -c &lt;name&gt;</code></p>
-<p>合并某分支到当前分支：<code>git merge &lt;name&gt;</code></p>
-<p>删除分支：<code>git branch -d &lt;name&gt;</code></p>
-<p>远程连接github：</p>
-<h2 id="1-检查SSH-keys是否存在"><a href="#1-检查SSH-keys是否存在" class="headerlink" title="1. 检查SSH keys是否存在"></a>1. 检查SSH keys是否存在</h2><p>输入下面的命令，如果有文件<code>id_rsa.pub</code> 或 <code>id_dsa.pub</code>，则直接进入步骤3将SSH key添加到GitHub中，否则进入第二步生成SSH key</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ls -al ~/.ssh</span><br><span class="line"># Lists the files in your .ssh directory, if they exist</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-生成新的ssh-key"><a href="#2-生成新的ssh-key" class="headerlink" title="2. 生成新的ssh key"></a>2. 生成新的ssh key</h2><p><strong>第一步：生成public/private rsa key pair</strong><br>在命令行中输入<code>ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</code></p>
-<p>默认会在相应路径下（/your_home_path）生成<code>id_rsa</code>和<code>id_rsa.pub</code>两个文件，如下面代码所示</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</span><br><span class="line"># Creates a new ssh key using the provided email</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/your_home_path/.ssh/id_rsa):</span><br></pre></td></tr></table></figure>
-
-<p><strong>第二步：输入passphrase（本步骤可以跳过）</strong></p>
-<p>设置passphrase后，进行版本控制时，每次与GitHub通信都会要求输入passphrase，以避免某些“失误”</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Enter passphrase (empty for no passphrase): [Type a passphrase]</span><br><span class="line">Enter same passphrase again: [Type passphrase again]</span><br></pre></td></tr></table></figure>
-
-<p>sample result:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Your identification has been saved in /your_home_path/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved in /your_home_path/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">#01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@example.com</span><br></pre></td></tr></table></figure>
-
-<p><strong>第三步：将新生成的key添加到ssh-agent中:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># start the ssh-agent in the background</span><br><span class="line">eval &quot;$(ssh-agent -s)&quot;</span><br><span class="line">Agent pid 59566</span><br><span class="line">ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-将ssh-key添加到GitHub中"><a href="#3-将ssh-key添加到GitHub中" class="headerlink" title="3. 将ssh key添加到GitHub中"></a>3. 将ssh key添加到GitHub中</h2><p>用自己喜欢的文本编辑器打开<code>id_rsa.pub</code>文件，里面的信息即为SSH key，将这些信息复制到GitHub的<code>Add SSH key</code>页面即可</p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-  </entry>
-  <entry>
     <title>clion的安装和配置</title>
     <url>/2020/03/05/clion%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<p>写代码时一个易用的编译器是很重要的，若想写c/c++我推荐jetbrain家的clion，真的很方便</p>
@@ -677,6 +616,67 @@
       </tags>
   </entry>
   <entry>
+    <title>Git学习笔记</title>
+    <url>/2020/07/28/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>下载安装</p>
+<ul>
+<li><p>  到目标文件夹中git init初始化</p>
+</li>
+<li><p>  把文件添加到git仓库使用命令<code>git add &lt;file&gt;</code></p>
+</li>
+<li><p>  使用命令 <code>git commit -m &lt;message&gt;</code></p>
+</li>
+<li><p>  要随时掌握工作区的状态，使用<code>git status</code>命令。</p>
+</li>
+<li><p>  如果<code>git status</code>告诉你有文件被修改过，用<code>git diff</code>可以查看修改内容。</p>
+</li>
+<li><p>  <code>HEAD</code>指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令<code>git reset --hard commit_id</code>。（上一个是HEAD^,上100个是HEAD~100）</p>
+</li>
+<li><p>  穿梭前，用<code>git log</code>可以查看提交历史，以便确定要回退到哪个版本。</p>
+</li>
+<li><p>  要重返未来，用<code>git reflog</code>查看命令历史，以便确定要回到未来的哪个版本。</p>
+</li>
+</ul>
+<p>场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令<code>git checkout -- file</code>。</p>
+<p>场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令<code>git reset HEAD &lt;file&gt;</code>，就回到了场景1，第二步按场景1操作。</p>
+<p>命令<code>git rm</code>用于删除一个文件</p>
+<p>要关联一个远程库，使用命令<code>git remote add origin git@server-name:path/repo-name.git</code>；</p>
+<p>关联后，使用命令<code>git push -u origin master</code>第一次推送master分支的所有内容；</p>
+<p>此后，每次本地提交后，只要有必要，就可以使用命令<code>git push origin master</code>推送最新修改；.</p>
+<p>要克隆一个仓库，首先必须知道仓库的地址，然后使用<code>git clone</code>命令克隆。</p>
+<p>$ git clone <a href="mailto:&#103;&#105;&#x74;&#x40;&#x67;&#x69;&#116;&#104;&#x75;&#x62;&#46;&#99;&#111;&#x6d;">&#103;&#105;&#x74;&#x40;&#x67;&#x69;&#116;&#104;&#x75;&#x62;&#46;&#99;&#111;&#x6d;</a>:1982606762/worked1</p>
+<p>Git鼓励大量使用分支：</p>
+<p>查看分支：<code>git branch</code></p>
+<p>创建分支：<code>git branch &lt;name&gt;</code></p>
+<p>切换分支：<code>git checkout &lt;name&gt;</code>或者<code>git switch &lt;name&gt;</code></p>
+<p>创建+切换分支：<code>git checkout -b &lt;name&gt;</code>或者<code>git switch -c &lt;name&gt;</code></p>
+<p>合并某分支到当前分支：<code>git merge &lt;name&gt;</code></p>
+<p>删除分支：<code>git branch -d &lt;name&gt;</code></p>
+<p>远程连接github：</p>
+<h2 id="1-检查SSH-keys是否存在"><a href="#1-检查SSH-keys是否存在" class="headerlink" title="1. 检查SSH keys是否存在"></a>1. 检查SSH keys是否存在</h2><p>输入下面的命令，如果有文件<code>id_rsa.pub</code> 或 <code>id_dsa.pub</code>，则直接进入步骤3将SSH key添加到GitHub中，否则进入第二步生成SSH key</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ls -al ~/.ssh</span><br><span class="line"># Lists the files in your .ssh directory, if they exist</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-生成新的ssh-key"><a href="#2-生成新的ssh-key" class="headerlink" title="2. 生成新的ssh key"></a>2. 生成新的ssh key</h2><p><strong>第一步：生成public/private rsa key pair</strong><br>在命令行中输入<code>ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</code></p>
+<p>默认会在相应路径下（/your_home_path）生成<code>id_rsa</code>和<code>id_rsa.pub</code>两个文件，如下面代码所示</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</span><br><span class="line"># Creates a new ssh key using the provided email</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/your_home_path/.ssh/id_rsa):</span><br></pre></td></tr></table></figure>
+
+<p><strong>第二步：输入passphrase（本步骤可以跳过）</strong></p>
+<p>设置passphrase后，进行版本控制时，每次与GitHub通信都会要求输入passphrase，以避免某些“失误”</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Enter passphrase (empty for no passphrase): [Type a passphrase]</span><br><span class="line">Enter same passphrase again: [Type passphrase again]</span><br></pre></td></tr></table></figure>
+
+<p>sample result:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Your identification has been saved in /your_home_path/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved in /your_home_path/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">#01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@example.com</span><br></pre></td></tr></table></figure>
+
+<p><strong>第三步：将新生成的key添加到ssh-agent中:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># start the ssh-agent in the background</span><br><span class="line">eval &quot;$(ssh-agent -s)&quot;</span><br><span class="line">Agent pid 59566</span><br><span class="line">ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-将ssh-key添加到GitHub中"><a href="#3-将ssh-key添加到GitHub中" class="headerlink" title="3. 将ssh key添加到GitHub中"></a>3. 将ssh key添加到GitHub中</h2><p>用自己喜欢的文本编辑器打开<code>id_rsa.pub</code>文件，里面的信息即为SSH key，将这些信息复制到GitHub的<code>Add SSH key</code>页面即可</p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+  </entry>
+  <entry>
     <title>hexo进阶</title>
     <url>/2021/08/21/hexo%E8%BF%9B%E9%98%B6/</url>
     <content><![CDATA[<p>实现一些hexo的进阶操作</p>
@@ -736,6 +736,141 @@
       <tags>
         <tag>hexo</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Install Goolge BBR on CentOS</title>
+    <url>/2019/10/31/install-goolge-bbr-on-centos/</url>
+    <content><![CDATA[<h2 id="CentOS安装谷歌BBR加速插件"><a href="#CentOS安装谷歌BBR加速插件" class="headerlink" title="CentOS安装谷歌BBR加速插件"></a>CentOS安装谷歌BBR加速插件</h2><p>BBR (Bottleneck Bandwidth and RTT) is a new congestion control algorithm which is contributed to the Linux kernel TCP stack by Google. With BBR in place, a Linux server can get significantly increased throughput and reduced latency for connections. Besides, it’s easy to deploy BBR because this algorithm requires only updates on the sender side, not in the network or on the receiver side.</p>
+<p>In this article, I will show you how to deploy BBR on a Vultr CentOS 7 KVM server instance.</p>
+<h3 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h3><ul>
+<li>  A Vultr CentOS 7 x64 server instance.</li>
+<li>  A <a href="https://www.vultr.com/docs/how-to-use-sudo-on-debian-centos-and-freebsd">sudo user</a>.</li>
+</ul>
+<h3 id="Step-1-Upgrade-the-kernel-using-the-ELRepo-RPM-repository"><a href="#Step-1-Upgrade-the-kernel-using-the-ELRepo-RPM-repository" class="headerlink" title="Step 1: Upgrade the kernel using the ELRepo RPM repository"></a>Step 1: Upgrade the kernel using the ELRepo RPM repository</h3><p>In order to use BBR, you need to upgrade the kernel of your CentOS 7 machine to 4.9.0. You can easily get that done using the ELRepo RPM repository.</p>
+<p>Before the upgrade, you can take a look at the current kernel:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">uname -r</span><br></pre></td></tr></table></figure>
+
+<p>This command should output a string which resembles:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">3.10.0-514.2.2.el7.x86_64</span><br></pre></td></tr></table></figure>
+
+<p>As you see, the current kernel is 3.10.0.</p>
+<p>Install the ELRepo repo:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</span><br><span class="line">sudo rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm</span><br></pre></td></tr></table></figure>
+
+<p>Install the 4.9.0 kernel using the ELRepo repo:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo yum --enablerepo=elrepo-kernel install kernel-ml -y</span><br></pre></td></tr></table></figure>
+
+<p>Confirm the result:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rpm -qa  grep kernel</span><br></pre></td></tr></table></figure>
+
+<p>If the installation is successful, you should see <code>kernel-ml-4.9.0-1.el7.elrepo.x86_64</code> among the output list:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">kernel-ml-4.9.0-1.el7.elrepo.x86_64</span><br><span class="line">kernel-3.10.0-514.el7.x86_64</span><br><span class="line">kernel-tools-libs-3.10.0-514.2.2.el7.x86_64</span><br><span class="line">kernel-tools-3.10.0-514.2.2.el7.x86_64</span><br><span class="line">kernel-3.10.0-514.2.2.el7.x86_64</span><br></pre></td></tr></table></figure>
+
+<p>Now, you need to enable the 4.9.0 kernel by setting up the default grub2 boot entry.</p>
+<p>Show all entries in the grub2 menu:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo egrep ^menuentry /etc/grub2.cfg  cut -f 2 -d \&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>The result should resemble:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CentOS Linux 7 Rescue a0cbf86a6ef1416a8812657bb4f2b860 (4.9.0-1.el7.elrepo.x86_64)</span><br><span class="line">CentOS Linux (4.9.0-1.el7.elrepo.x86_64) 7 (Core)</span><br><span class="line">CentOS Linux (3.10.0-514.2.2.el7.x86_64) 7 (Core)</span><br><span class="line">CentOS Linux (3.10.0-514.el7.x86_64) 7 (Core)</span><br><span class="line">CentOS Linux (0-rescue-bf94f46c6bd04792a6a42c91bae645f7) 7 (Core)</span><br></pre></td></tr></table></figure>
+
+<p>Indexing starts at <code>0</code>. This means that the 4.9.0 kernel is located at <code>1</code>:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo grub2-set-default `</span><br></pre></td></tr></table></figure>
+
+<p>Reboot the system:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo shutdown -r now</span><br></pre></td></tr></table></figure>
+
+<p>When the server is back online, log back in and rerun the uname command to confirm that you are using the correct Kernel:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">uname -r</span><br></pre></td></tr></table></figure>
+
+<p>You should see the result as below:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">4.9.0-1.el7.elrepo.x86_64</span><br></pre></td></tr></table></figure>
+
+<h3 id="Step-2-Enable-BBR"><a href="#Step-2-Enable-BBR" class="headerlink" title="Step 2: Enable BBR"></a>Step 2: Enable BBR</h3><p>In order to enable the BBR algorithm, you need to modify the <code>sysctl</code> configuration as follows:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo &#x27;net.core.default_qdisc=fq&#x27;  sudo tee -a /etc/sysctl.conf</span><br><span class="line">echo &#x27;net.ipv4.tcp_congestion_control=bbr&#x27;  sudo tee -a /etc/sysctl.conf</span><br><span class="line">sudo sysctl -p</span><br></pre></td></tr></table></figure>
+
+<p>Now, you can use the following commands to confirm that BBR is enabled:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo sysctl net.ipv4.tcp_available_congestion_control</span><br></pre></td></tr></table></figure>
+
+<p>The output should resemble:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net.ipv4.tcp_available_congestion_control = bbr cubic reno</span><br></pre></td></tr></table></figure>
+
+<p>Next, verify with:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo sysctl -n net.ipv4.tcp_congestion_control</span><br></pre></td></tr></table></figure>
+
+<p>The output should be:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bbr</span><br></pre></td></tr></table></figure>
+
+<p>Finally, check that the kernel module was loaded:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lsmod  grep bbr</span><br></pre></td></tr></table></figure>
+
+<p>The output will be similar to:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tcp_bbr                16384  0</span><br></pre></td></tr></table></figure>
+
+<h3 id="Step-3-optional-Test-the-network-performance-enhancement"><a href="#Step-3-optional-Test-the-network-performance-enhancement" class="headerlink" title="Step 3 (optional): Test the network performance enhancement"></a>Step 3 (optional): Test the network performance enhancement</h3><p>In order to test BBR’s network performance enhancement, you can create a file in the web server directory for download, and then test the download speed from a web browser on your desktop machine.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo yum install httpd -y</span><br><span class="line">sudo systemctl start httpd.service</span><br><span class="line">sudo firewall-cmd --zone=public --permanent --add-service=http</span><br><span class="line">sudo firewall-cmd --reload</span><br><span class="line">cd /var/www/html</span><br><span class="line">sudo dd if=/dev/zero of=500mb.zip bs=1024k count=500</span><br></pre></td></tr></table></figure>
+
+<p>Finally, visit the URL <code>http://[your-server-IP]/500mb.zip</code> from a web browser on your desktop computer, and then evaluate download speed.</p>
+<p>That’s all. Thank you for reading.</p>
+<p>copyright Vultr.com</p>
+<p>版权归Vultr.com所有</p>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JS学习笔记</title>
+    <url>/2020/07/30/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h2 id="2020-07-29"><a href="#2020-07-29" class="headerlink" title="2020/07/29"></a>2020/07/29</h2><p>6.1对象性质</p>
+<ul>
+<li>  数据属性直接定义，有四个属性</li>
+<li>  访问器只能用函数定义，有set和get，通常用来改一个值就改所有值</li>
+<li>  获取属性使用<code>var qq = object.getownpropertydescriptor(name,&quot;数据名&quot;)</code></li>
+</ul>
+<p>6.2创建对象</p>
+<ul>
+<li>  构造函数模式，直接写构造函数之后new即可</li>
+<li>  原型模式，使用prototype关键字，初始化定义好属性，使用时修改则会吧原型的同名属性屏蔽，可以用delete删除某一属性</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//当前使用最广泛</span><br><span class="line">function personq(name,age,job)</span><br><span class="line">&#123;</span><br><span class="line">    this.age = age;</span><br><span class="line">    this.name = name;</span><br><span class="line">    this.job = job;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">personq.prototype = </span><br><span class="line">&#123;</span><br><span class="line">    constructor:personq,</span><br><span class="line">    sayname:function()&#123;</span><br><span class="line">        alert(this.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>6.3原型链</p>
+<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/07/image-745x1024.png"></p>
+<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/07/image-1-1024x526.png"></p>
+<p>继承：</p>
+<ul>
+<li>  组合式继承</li>
+<li>  寄生组合式继承（效果最好）</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">function inheritPrototype(subType,superType)&#123;</span><br><span class="line">    var prototype = Object(superType,prototype);</span><br><span class="line">    prototype.constructor = subType;</span><br><span class="line">    subType.prototype = prototype;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function Supertype(name)</span><br><span class="line">&#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Supertype.prototype.sayname = function()</span><br><span class="line">&#123;</span><br><span class="line">    alert(this.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function Subtype(name,age)&#123;</span><br><span class="line">    //继承属性</span><br><span class="line">    Supertype.call(this,name);</span><br><span class="line">    this.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//继承方法</span><br><span class="line">Subtype.prototype = new Supertype();</span><br><span class="line">//寄生组合式继承</span><br><span class="line">//inheritPrototype(Subtype,Supertype);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Subtype.prototype.sayage = function()&#123;</span><br><span class="line">    alert(this.age);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2020-07-30"><a href="#2020-07-30" class="headerlink" title="2020/07/30"></a>2020/07/30</h2><p>函数表达式可以不对函数命名，即匿名函数</p>
+<p>在函数内部定义其他函数是闭包，用处两个</p>
+<ul>
+<li>  创建并立刻调用函数</li>
+<li>  实现私有变量</li>
+</ul>
+<p>BOM</p>
+<p>window对象：</p>
+<ul>
+<li>  top指向最外围的框架，parent指向上一级</li>
+<li>  window可以指定窗口大小和位置</li>
+<li>  导航和打开窗口</li>
+</ul>
+<p>location对象：</p>
+<ul>
+<li>  通过编程访问浏览器导航，逐段修改浏览器url</li>
+<li>  使用replace（）方法可以不能返回</li>
+</ul>
+<p>navigator对象：</p>
+<ul>
+<li>  检测插件</li>
+<li>  与浏览器有关</li>
+</ul>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
   </entry>
   <entry>
     <title>Git教程</title>
@@ -1019,7 +1154,7 @@
 <p>注意：对于同一配置项，三个配置文件的优先级是1&lt;2&lt;3</p>
 <p>这里可以直接编辑配置文件，通过命令设置后会响应到这里。</p>
 <h3 id="2-3-3、设置用户名与邮箱（用户标识，必要）"><a href="#2-3-3、设置用户名与邮箱（用户标识，必要）" class="headerlink" title="2.3.3、设置用户名与邮箱（用户标识，必要）"></a>2.3.3、设置用户名与邮箱（用户标识，必要）</h3><p>当你安装Git后首先要做的事情是设置你的用户名称和e-mail地址。这是非常重要的，因为每次Git提交都会使用该信息。它被永远的嵌入到了你的提交中：</p>
-<p> 　　$ git config –global user.name <strong>“<strong><strong>zhangguo</strong></strong>“</strong>  #名称<br> 　　$ git config –global user.email <a href="mailto:&#122;&#x68;&#97;&#x6e;&#103;&#x67;&#117;&#111;&#x40;&#113;&#x71;&#x2e;&#x63;&#x6f;&#x6d;">&#122;&#x68;&#97;&#x6e;&#103;&#x67;&#117;&#111;&#x40;&#113;&#x71;&#x2e;&#x63;&#x6f;&#x6d;</a>   #邮箱</p>
+<p> 　　$ git config –global user.name <strong>“<strong><strong>zhangguo</strong></strong>“</strong>  #名称<br> 　　$ git config –global user.email <a href="mailto:&#122;&#104;&#x61;&#x6e;&#103;&#x67;&#117;&#111;&#x40;&#113;&#x71;&#x2e;&#99;&#x6f;&#109;">&#122;&#104;&#x61;&#x6e;&#103;&#x67;&#117;&#111;&#x40;&#113;&#x71;&#x2e;&#99;&#x6f;&#109;</a>   #邮箱</p>
 <p>只需要做一次这个设置，如果你传递了–global 选项，因为Git将总是会使用该信息来处理你在系统中所做的一切操作。如果你希望在一个特定的项目中使用不同的名称或e-mail地址，你可以在该项目中运行该命令而不要–global选项。 总之–global为全局配置，不加为某个项目的特定配置。</p>
 <p><img data-src="https://images2017.cnblogs.com/blog/63651/201709/63651-20170905135629991-890437951.png"></p>
 <h3 id="2-3-4、添加或删除配置项"><a href="#2-3-4、添加或删除配置项" class="headerlink" title="2.3.4、添加或删除配置项"></a>2.3.4、添加或删除配置项</h3><p><strong>1）、添加配置项</strong> </p>
@@ -1492,7 +1627,7 @@
 <h3 id="5-2-3、提交源代码到远程仓库"><a href="#5-2-3、提交源代码到远程仓库" class="headerlink" title="5.2.3、提交源代码到远程仓库"></a>5.2.3、提交源代码到远程仓库</h3><p><img data-src="https://images2017.cnblogs.com/blog/63651/201709/63651-20170907201134616-522881160.png"></p>
 <p>从上图可以看出创建地址有两种：</p>
 <p>https 类型的：<a href="https://git.coding.net/zhangguoGit/project7.git">https://git.coding.net/zhangguoGit/project7.git</a></p>
-<p>SSH类型的：<a href="mailto:&#x67;&#105;&#x74;&#64;&#103;&#105;&#116;&#46;&#x63;&#111;&#x64;&#105;&#110;&#x67;&#x2e;&#x6e;&#101;&#116;">&#x67;&#105;&#x74;&#64;&#103;&#105;&#116;&#46;&#x63;&#111;&#x64;&#105;&#110;&#x67;&#x2e;&#x6e;&#101;&#116;</a>:zhangguoGit/project7.git</p>
+<p>SSH类型的：<a href="mailto:&#103;&#105;&#116;&#64;&#103;&#x69;&#x74;&#46;&#x63;&#111;&#100;&#x69;&#110;&#x67;&#x2e;&#110;&#101;&#x74;">&#103;&#105;&#116;&#64;&#103;&#x69;&#x74;&#46;&#x63;&#111;&#100;&#x69;&#110;&#x67;&#x2e;&#110;&#101;&#x74;</a>:zhangguoGit/project7.git</p>
 <h4 id="HTTPS（推荐轻量级用户使用）"><a href="#HTTPS（推荐轻量级用户使用）" class="headerlink" title="HTTPS（推荐轻量级用户使用）"></a>HTTPS（推荐轻量级用户使用）</h4><p>使用加密的网页访问通道读写仓库，使用用户名及密码进行鉴权。 避免重复输入密码，查看 <a href="https://coding.net/help/faq/git/git.html#push-">怎样在每次 Push 时不用重复输入密码</a>？</p>
 <blockquote>
 <p>提示：Git 用户名为 Coding 的账户邮箱或者个性后缀，密码为 Coding 的账户密码。<br>注意：HTTPS 方式 push 大文件可能引发错误，查看  <a href="https://coding.net/help/faq/git/git.html">Push 出错怎么办</a>？</p>
@@ -1807,141 +1942,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Install Goolge BBR on CentOS</title>
-    <url>/2019/10/31/install-goolge-bbr-on-centos/</url>
-    <content><![CDATA[<h2 id="CentOS安装谷歌BBR加速插件"><a href="#CentOS安装谷歌BBR加速插件" class="headerlink" title="CentOS安装谷歌BBR加速插件"></a>CentOS安装谷歌BBR加速插件</h2><p>BBR (Bottleneck Bandwidth and RTT) is a new congestion control algorithm which is contributed to the Linux kernel TCP stack by Google. With BBR in place, a Linux server can get significantly increased throughput and reduced latency for connections. Besides, it’s easy to deploy BBR because this algorithm requires only updates on the sender side, not in the network or on the receiver side.</p>
-<p>In this article, I will show you how to deploy BBR on a Vultr CentOS 7 KVM server instance.</p>
-<h3 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h3><ul>
-<li>  A Vultr CentOS 7 x64 server instance.</li>
-<li>  A <a href="https://www.vultr.com/docs/how-to-use-sudo-on-debian-centos-and-freebsd">sudo user</a>.</li>
-</ul>
-<h3 id="Step-1-Upgrade-the-kernel-using-the-ELRepo-RPM-repository"><a href="#Step-1-Upgrade-the-kernel-using-the-ELRepo-RPM-repository" class="headerlink" title="Step 1: Upgrade the kernel using the ELRepo RPM repository"></a>Step 1: Upgrade the kernel using the ELRepo RPM repository</h3><p>In order to use BBR, you need to upgrade the kernel of your CentOS 7 machine to 4.9.0. You can easily get that done using the ELRepo RPM repository.</p>
-<p>Before the upgrade, you can take a look at the current kernel:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">uname -r</span><br></pre></td></tr></table></figure>
-
-<p>This command should output a string which resembles:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">3.10.0-514.2.2.el7.x86_64</span><br></pre></td></tr></table></figure>
-
-<p>As you see, the current kernel is 3.10.0.</p>
-<p>Install the ELRepo repo:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</span><br><span class="line">sudo rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm</span><br></pre></td></tr></table></figure>
-
-<p>Install the 4.9.0 kernel using the ELRepo repo:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo yum --enablerepo=elrepo-kernel install kernel-ml -y</span><br></pre></td></tr></table></figure>
-
-<p>Confirm the result:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rpm -qa  grep kernel</span><br></pre></td></tr></table></figure>
-
-<p>If the installation is successful, you should see <code>kernel-ml-4.9.0-1.el7.elrepo.x86_64</code> among the output list:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">kernel-ml-4.9.0-1.el7.elrepo.x86_64</span><br><span class="line">kernel-3.10.0-514.el7.x86_64</span><br><span class="line">kernel-tools-libs-3.10.0-514.2.2.el7.x86_64</span><br><span class="line">kernel-tools-3.10.0-514.2.2.el7.x86_64</span><br><span class="line">kernel-3.10.0-514.2.2.el7.x86_64</span><br></pre></td></tr></table></figure>
-
-<p>Now, you need to enable the 4.9.0 kernel by setting up the default grub2 boot entry.</p>
-<p>Show all entries in the grub2 menu:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo egrep ^menuentry /etc/grub2.cfg  cut -f 2 -d \&#x27;</span><br></pre></td></tr></table></figure>
-
-<p>The result should resemble:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CentOS Linux 7 Rescue a0cbf86a6ef1416a8812657bb4f2b860 (4.9.0-1.el7.elrepo.x86_64)</span><br><span class="line">CentOS Linux (4.9.0-1.el7.elrepo.x86_64) 7 (Core)</span><br><span class="line">CentOS Linux (3.10.0-514.2.2.el7.x86_64) 7 (Core)</span><br><span class="line">CentOS Linux (3.10.0-514.el7.x86_64) 7 (Core)</span><br><span class="line">CentOS Linux (0-rescue-bf94f46c6bd04792a6a42c91bae645f7) 7 (Core)</span><br></pre></td></tr></table></figure>
-
-<p>Indexing starts at <code>0</code>. This means that the 4.9.0 kernel is located at <code>1</code>:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo grub2-set-default `</span><br></pre></td></tr></table></figure>
-
-<p>Reboot the system:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo shutdown -r now</span><br></pre></td></tr></table></figure>
-
-<p>When the server is back online, log back in and rerun the uname command to confirm that you are using the correct Kernel:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">uname -r</span><br></pre></td></tr></table></figure>
-
-<p>You should see the result as below:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">4.9.0-1.el7.elrepo.x86_64</span><br></pre></td></tr></table></figure>
-
-<h3 id="Step-2-Enable-BBR"><a href="#Step-2-Enable-BBR" class="headerlink" title="Step 2: Enable BBR"></a>Step 2: Enable BBR</h3><p>In order to enable the BBR algorithm, you need to modify the <code>sysctl</code> configuration as follows:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo &#x27;net.core.default_qdisc=fq&#x27;  sudo tee -a /etc/sysctl.conf</span><br><span class="line">echo &#x27;net.ipv4.tcp_congestion_control=bbr&#x27;  sudo tee -a /etc/sysctl.conf</span><br><span class="line">sudo sysctl -p</span><br></pre></td></tr></table></figure>
-
-<p>Now, you can use the following commands to confirm that BBR is enabled:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo sysctl net.ipv4.tcp_available_congestion_control</span><br></pre></td></tr></table></figure>
-
-<p>The output should resemble:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net.ipv4.tcp_available_congestion_control = bbr cubic reno</span><br></pre></td></tr></table></figure>
-
-<p>Next, verify with:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo sysctl -n net.ipv4.tcp_congestion_control</span><br></pre></td></tr></table></figure>
-
-<p>The output should be:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bbr</span><br></pre></td></tr></table></figure>
-
-<p>Finally, check that the kernel module was loaded:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lsmod  grep bbr</span><br></pre></td></tr></table></figure>
-
-<p>The output will be similar to:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tcp_bbr                16384  0</span><br></pre></td></tr></table></figure>
-
-<h3 id="Step-3-optional-Test-the-network-performance-enhancement"><a href="#Step-3-optional-Test-the-network-performance-enhancement" class="headerlink" title="Step 3 (optional): Test the network performance enhancement"></a>Step 3 (optional): Test the network performance enhancement</h3><p>In order to test BBR’s network performance enhancement, you can create a file in the web server directory for download, and then test the download speed from a web browser on your desktop machine.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo yum install httpd -y</span><br><span class="line">sudo systemctl start httpd.service</span><br><span class="line">sudo firewall-cmd --zone=public --permanent --add-service=http</span><br><span class="line">sudo firewall-cmd --reload</span><br><span class="line">cd /var/www/html</span><br><span class="line">sudo dd if=/dev/zero of=500mb.zip bs=1024k count=500</span><br></pre></td></tr></table></figure>
-
-<p>Finally, visit the URL <code>http://[your-server-IP]/500mb.zip</code> from a web browser on your desktop computer, and then evaluate download speed.</p>
-<p>That’s all. Thank you for reading.</p>
-<p>copyright Vultr.com</p>
-<p>版权归Vultr.com所有</p>
-]]></content>
-      <categories>
-        <category>编程语言</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>JS学习笔记</title>
-    <url>/2020/07/30/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h2 id="2020-07-29"><a href="#2020-07-29" class="headerlink" title="2020/07/29"></a>2020/07/29</h2><p>6.1对象性质</p>
-<ul>
-<li>  数据属性直接定义，有四个属性</li>
-<li>  访问器只能用函数定义，有set和get，通常用来改一个值就改所有值</li>
-<li>  获取属性使用<code>var qq = object.getownpropertydescriptor(name,&quot;数据名&quot;)</code></li>
-</ul>
-<p>6.2创建对象</p>
-<ul>
-<li>  构造函数模式，直接写构造函数之后new即可</li>
-<li>  原型模式，使用prototype关键字，初始化定义好属性，使用时修改则会吧原型的同名属性屏蔽，可以用delete删除某一属性</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//当前使用最广泛</span><br><span class="line">function personq(name,age,job)</span><br><span class="line">&#123;</span><br><span class="line">    this.age = age;</span><br><span class="line">    this.name = name;</span><br><span class="line">    this.job = job;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">personq.prototype = </span><br><span class="line">&#123;</span><br><span class="line">    constructor:personq,</span><br><span class="line">    sayname:function()&#123;</span><br><span class="line">        alert(this.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>6.3原型链</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/07/image-745x1024.png"></p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/07/image-1-1024x526.png"></p>
-<p>继承：</p>
-<ul>
-<li>  组合式继承</li>
-<li>  寄生组合式继承（效果最好）</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">function inheritPrototype(subType,superType)&#123;</span><br><span class="line">    var prototype = Object(superType,prototype);</span><br><span class="line">    prototype.constructor = subType;</span><br><span class="line">    subType.prototype = prototype;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function Supertype(name)</span><br><span class="line">&#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Supertype.prototype.sayname = function()</span><br><span class="line">&#123;</span><br><span class="line">    alert(this.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function Subtype(name,age)&#123;</span><br><span class="line">    //继承属性</span><br><span class="line">    Supertype.call(this,name);</span><br><span class="line">    this.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//继承方法</span><br><span class="line">Subtype.prototype = new Supertype();</span><br><span class="line">//寄生组合式继承</span><br><span class="line">//inheritPrototype(Subtype,Supertype);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Subtype.prototype.sayage = function()&#123;</span><br><span class="line">    alert(this.age);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="2020-07-30"><a href="#2020-07-30" class="headerlink" title="2020/07/30"></a>2020/07/30</h2><p>函数表达式可以不对函数命名，即匿名函数</p>
-<p>在函数内部定义其他函数是闭包，用处两个</p>
-<ul>
-<li>  创建并立刻调用函数</li>
-<li>  实现私有变量</li>
-</ul>
-<p>BOM</p>
-<p>window对象：</p>
-<ul>
-<li>  top指向最外围的框架，parent指向上一级</li>
-<li>  window可以指定窗口大小和位置</li>
-<li>  导航和打开窗口</li>
-</ul>
-<p>location对象：</p>
-<ul>
-<li>  通过编程访问浏览器导航，逐段修改浏览器url</li>
-<li>  使用replace（）方法可以不能返回</li>
-</ul>
-<p>navigator对象：</p>
-<ul>
-<li>  检测插件</li>
-<li>  与浏览器有关</li>
-</ul>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-  </entry>
-  <entry>
     <title>js数据类型</title>
     <url>/2021/08/18/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
     <content><![CDATA[<p><img data-src="https://www.hualigs.cn/image/611cef200e311.jpg" alt="image-20210818175151311"></p>
@@ -2054,6 +2054,97 @@
       </categories>
       <tags>
         <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>page和hexo搭建自己的博客</title>
+    <url>/2021/08/11/page%E5%92%8Chexo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>之前用腾讯云的主机和wordpress建站，但是由于主机到期，所以打算换一个平台，找到了免费的github page</p>
+<span id="more"></span>
+
+<p>github page虽然免费，但是不像vps那么强大，他只支持静态博客的搭建。没有数据库支持，更新文章需要使用git手动增量上传。博客生成器我用的是hexo，当然也有其他的解决方案。</p>
+<ol>
+<li><p>前置工作</p>
+<ul>
+<li>需要电脑有安装git</li>
+<li>安装node.js</li>
+<li>注册github账户</li>
+<li>（非必选）域名</li>
+<li>（非必选）markdown编辑器（推荐typora，vscode也能用而且相关插件很强大）</li>
+</ul>
+</li>
+<li><p>在本地安装hexo</p>
+<p>打开控制台，输入以下代码</p>
+<blockquote>
+<p>npm install hexo -g</p>
+<p>npm install hexo-server -g</p>
+</blockquote>
+<p>然后新建hexo项目</p>
+<blockquote>
+<p>hexo init blog</p>
+<p>cd blog</p>
+<p>npm install</p>
+<p>hexo s</p>
+</blockquote>
+<p>等他提示打开localhost就可以看到博客已经打开了，ctrl/control+c可以关闭</p>
+<p>这时为了下边需要不要关terminal，还在blog目录下安装deploy-git</p>
+<blockquote>
+<p>npm install hexo-deployer-git –save</p>
+</blockquote>
+</li>
+<li><p>配置</p>
+<p>在blog文件夹中找一个叫做_config.yml的文件，打开它</p>
+<p>目前需要改的只有最开头Site部分，按照自己情况写标题作者什么的。</p>
+<p>然后打开github，新建一个仓库</p>
+<img data-src="https://www.hualigs.cn/image/611cef5f7cb07.jpg" alt="image-20210818181723781" style="zoom:50%;" />
+
+<p>在下一级新建一个仓库，名称填xxx.github.io，如</p>
+<p><a href="https://imgtu.com/i/fT5WdJ"><img data-src="https://z3.ax1x.com/2021/08/18/fT5WdJ.md.png" alt="fT5WdJ.md.png"></a></p>
+<p>公开或者私密看你自己心情，然后创建</p>
+<p>再回到刚刚那个yml配置文件，拉到最下边deploy位置，按这个格式填入你刚刚创建的仓库信息然后保存文件。</p>
+<blockquote>
+<p>deploy:</p>
+<p> type: git</p>
+<p> repository: <a href="https://github.com/1982606762/1982606762.github.io.git">https://github.com/1982606762/1982606762.github.io.git</a></p>
+<p> branch: main</p>
+</blockquote>
+<p>现在配置文件设置好了，只需要用terminal  cd进blog文件夹使用hexo g&amp;&amp;hexo d就可以部署到远程仓库了。</p>
+<p>等他提示Deploy done的时候可以打开github仓库页面看看有没有部署完成，部署完成在这会有个√</p>
+<p><a href="https://imgtu.com/i/fT5fo9"><img data-src="https://z3.ax1x.com/2021/08/18/fT5fo9.md.png" alt="fT5fo9.md.png"></a></p>
+<p>有的话就可以用xxx.github,io访问了。</p>
+</li>
+<li><p>绑定自己的域名</p>
+<p>首先需要去比如说腾讯云或者阿里云注册一个域名，便宜的大概十来块一年。</p>
+<p>到刚刚blog文件夹下的source文件夹内新建一个叫CNAME的文件，注意文件不能有任何后缀。（mac系统新建之后如果用文本编辑器编辑他会自动添加txt后缀。。而且是隐藏的，所以需要用touch命令创建后用vim修改即可）</p>
+<p>修改这个文件内容为你刚刚申请的域名，只包含域名即可如xxx.com</p>
+<p>然后用terminal     hexo g&amp;&amp;hexo d，等他上传之后看看github仓库的这个位置</p>
+<p><a href="https://imgtu.com/i/fT55J1"><img data-src="https://z3.ax1x.com/2021/08/18/fT55J1.md.png" alt="fT55J1.md.png"></a></p>
+<p>是不是显示published at你的域名</p>
+<p><a href="https://imgtu.com/i/fT5IRx"><img data-src="https://z3.ax1x.com/2021/08/18/fT5IRx.png" alt="fT5IRx.png"></a></p>
+<p>有的话这边就算设置好了，然后去域名那边设置</p>
+<p>登录到你刚刚买域名的网站，找到控制台里的域名解析或者DNS解析之类的，里边有你刚刚买的域名。找到解析列表，点击添加记录，按照下图第二行设置即可，注意在记录值位置需要改成自己的github账户</p>
+<p><a href="https://imgtu.com/i/fT54iR"><img data-src="https://z3.ax1x.com/2021/08/18/fT54iR.png" alt="fT54iR.png" border="0" /></a></p>
+<p>添加完后等几分钟，等他生效。不出意外此时访问xxx.com(你的域名)就可以打开博客了。</p>
+</li>
+<li><p>新建文章</p>
+<p>写文章首先需要新建，还是用terminal  cd到blog目录下输入<code>hexo new 我的博文xxx</code>其中第三个字段是文章名称。</p>
+<p>然后在blog/source/_posts目录下会多一个我的博文xxx.md的文件，用markdown编辑器打开会看到类似</p>
+<blockquote>
+<p>Title:</p>
+<p>date</p>
+<p>tags</p>
+<p>–</p>
+</blockquote>
+<p>—下边就可以用markdown语句写文章，上边是一些参数，可以修改tags</p>
+<p>写完文章后保存这个文件，然后在terminal输入<code>hexo clean</code> 之后<code>hexo g&amp;&amp;hexo d</code>就可以上传到云端。这时再打开博客就可以看到新写的文章了</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>杂</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -2261,19 +2352,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>vue学习</title>
-    <url>/2021/11/05/vue%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<span id="more"></span>
-
-<h1 id="11月5日"><a href="#11月5日" class="headerlink" title="11月5日"></a>11月5日</h1><ul>
-<li><p>v-for支持两个参数，第二个是当前项的索引，从0开始</p>
-</li>
-<li><p>V-bind:class后可以在某条件达成后获得某个类名</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;(item,index) in navList&quot;</span> <span class="attr">:class</span>=<span class="string">&quot;&#123;active:index === activeNavIndex&#125;&quot;</span></span></span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
     <title>Windows10 MYSQL Installer 安装（mysql-installer-community-5.7.19.0.msi）</title>
     <url>/2020/07/15/windows10-mysql-installer-%E5%AE%89%E8%A3%85%EF%BC%88mysql-installer-community-5-7-19-0-msi%EF%BC%89/</url>
     <content><![CDATA[<p>1.进入官网找到自己所需的安装包：<a href="https://dev.mysql.com/">https://dev.mysql.com/</a>  ，路径：DOWNLOAD–&gt;MYSQL Community Edition(GRL)–&gt;MYSQL on Windows (Installer &amp; Tool)</p>
@@ -2376,6 +2454,19 @@
       </categories>
   </entry>
   <entry>
+    <title>vue学习</title>
+    <url>/2021/11/05/vue%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<span id="more"></span>
+
+<h1 id="11月5日"><a href="#11月5日" class="headerlink" title="11月5日"></a>11月5日</h1><ul>
+<li><p>v-for支持两个参数，第二个是当前项的索引，从0开始</p>
+</li>
+<li><p>V-bind:class后可以在某条件达成后获得某个类名</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;(item,index) in navList&quot;</span> <span class="attr">:class</span>=<span class="string">&quot;&#123;active:index === activeNavIndex&#125;&quot;</span></span></span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
     <title>七牛云绑定typora</title>
     <url>/2021/08/23/%E4%B8%83%E7%89%9B%E4%BA%91%E7%BB%91%E5%AE%9Atypora/</url>
     <content><![CDATA[<p>七牛云做图床绑定PicGo上传图片</p>
@@ -2411,97 +2502,6 @@
 <p>存储区域需要看这个<a href="%5BIMG%5Dhttp://img.zhaoxuanlang.cn/image-20210823092747470.png%5B/IMG%5D">链接</a>，里边有写每个服务器对应的区域，填入你存储空间对应的服务器代号即可</p>
 <p><img data-src="http://img.zhaoxuanlang.cn/image-20210823093046660.png" alt="image-20210823093046660"></p>
 <p>然后上传一张图片看看有没有上传成功就ok。</p>
-]]></content>
-      <categories>
-        <category>杂</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>page和hexo搭建自己的博客</title>
-    <url>/2021/08/11/page%E5%92%8Chexo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<p>之前用腾讯云的主机和wordpress建站，但是由于主机到期，所以打算换一个平台，找到了免费的github page</p>
-<span id="more"></span>
-
-<p>github page虽然免费，但是不像vps那么强大，他只支持静态博客的搭建。没有数据库支持，更新文章需要使用git手动增量上传。博客生成器我用的是hexo，当然也有其他的解决方案。</p>
-<ol>
-<li><p>前置工作</p>
-<ul>
-<li>需要电脑有安装git</li>
-<li>安装node.js</li>
-<li>注册github账户</li>
-<li>（非必选）域名</li>
-<li>（非必选）markdown编辑器（推荐typora，vscode也能用而且相关插件很强大）</li>
-</ul>
-</li>
-<li><p>在本地安装hexo</p>
-<p>打开控制台，输入以下代码</p>
-<blockquote>
-<p>npm install hexo -g</p>
-<p>npm install hexo-server -g</p>
-</blockquote>
-<p>然后新建hexo项目</p>
-<blockquote>
-<p>hexo init blog</p>
-<p>cd blog</p>
-<p>npm install</p>
-<p>hexo s</p>
-</blockquote>
-<p>等他提示打开localhost就可以看到博客已经打开了，ctrl/control+c可以关闭</p>
-<p>这时为了下边需要不要关terminal，还在blog目录下安装deploy-git</p>
-<blockquote>
-<p>npm install hexo-deployer-git –save</p>
-</blockquote>
-</li>
-<li><p>配置</p>
-<p>在blog文件夹中找一个叫做_config.yml的文件，打开它</p>
-<p>目前需要改的只有最开头Site部分，按照自己情况写标题作者什么的。</p>
-<p>然后打开github，新建一个仓库</p>
-<img data-src="https://www.hualigs.cn/image/611cef5f7cb07.jpg" alt="image-20210818181723781" style="zoom:50%;" />
-
-<p>在下一级新建一个仓库，名称填xxx.github.io，如</p>
-<p><a href="https://imgtu.com/i/fT5WdJ"><img data-src="https://z3.ax1x.com/2021/08/18/fT5WdJ.md.png" alt="fT5WdJ.md.png"></a></p>
-<p>公开或者私密看你自己心情，然后创建</p>
-<p>再回到刚刚那个yml配置文件，拉到最下边deploy位置，按这个格式填入你刚刚创建的仓库信息然后保存文件。</p>
-<blockquote>
-<p>deploy:</p>
-<p> type: git</p>
-<p> repository: <a href="https://github.com/1982606762/1982606762.github.io.git">https://github.com/1982606762/1982606762.github.io.git</a></p>
-<p> branch: main</p>
-</blockquote>
-<p>现在配置文件设置好了，只需要用terminal  cd进blog文件夹使用hexo g&amp;&amp;hexo d就可以部署到远程仓库了。</p>
-<p>等他提示Deploy done的时候可以打开github仓库页面看看有没有部署完成，部署完成在这会有个√</p>
-<p><a href="https://imgtu.com/i/fT5fo9"><img data-src="https://z3.ax1x.com/2021/08/18/fT5fo9.md.png" alt="fT5fo9.md.png"></a></p>
-<p>有的话就可以用xxx.github,io访问了。</p>
-</li>
-<li><p>绑定自己的域名</p>
-<p>首先需要去比如说腾讯云或者阿里云注册一个域名，便宜的大概十来块一年。</p>
-<p>到刚刚blog文件夹下的source文件夹内新建一个叫CNAME的文件，注意文件不能有任何后缀。（mac系统新建之后如果用文本编辑器编辑他会自动添加txt后缀。。而且是隐藏的，所以需要用touch命令创建后用vim修改即可）</p>
-<p>修改这个文件内容为你刚刚申请的域名，只包含域名即可如xxx.com</p>
-<p>然后用terminal     hexo g&amp;&amp;hexo d，等他上传之后看看github仓库的这个位置</p>
-<p><a href="https://imgtu.com/i/fT55J1"><img data-src="https://z3.ax1x.com/2021/08/18/fT55J1.md.png" alt="fT55J1.md.png"></a></p>
-<p>是不是显示published at你的域名</p>
-<p><a href="https://imgtu.com/i/fT5IRx"><img data-src="https://z3.ax1x.com/2021/08/18/fT5IRx.png" alt="fT5IRx.png"></a></p>
-<p>有的话这边就算设置好了，然后去域名那边设置</p>
-<p>登录到你刚刚买域名的网站，找到控制台里的域名解析或者DNS解析之类的，里边有你刚刚买的域名。找到解析列表，点击添加记录，按照下图第二行设置即可，注意在记录值位置需要改成自己的github账户</p>
-<p><a href="https://imgtu.com/i/fT54iR"><img data-src="https://z3.ax1x.com/2021/08/18/fT54iR.png" alt="fT54iR.png" border="0" /></a></p>
-<p>添加完后等几分钟，等他生效。不出意外此时访问xxx.com(你的域名)就可以打开博客了。</p>
-</li>
-<li><p>新建文章</p>
-<p>写文章首先需要新建，还是用terminal  cd到blog目录下输入<code>hexo new 我的博文xxx</code>其中第三个字段是文章名称。</p>
-<p>然后在blog/source/_posts目录下会多一个我的博文xxx.md的文件，用markdown编辑器打开会看到类似</p>
-<blockquote>
-<p>Title:</p>
-<p>date</p>
-<p>tags</p>
-<p>–</p>
-</blockquote>
-<p>—下边就可以用markdown语句写文章，上边是一些参数，可以修改tags</p>
-<p>写完文章后保存这个文件，然后在terminal输入<code>hexo clean</code> 之后<code>hexo g&amp;&amp;hexo d</code>就可以上传到云端。这时再打开博客就可以看到新写的文章了</p>
-</li>
-</ol>
 ]]></content>
       <categories>
         <category>杂</category>
@@ -2560,6 +2560,66 @@
       <categories>
         <category>杂</category>
       </categories>
+  </entry>
+  <entry>
+    <title>前端听课笔记</title>
+    <url>/2021/08/14/%E5%89%8D%E7%AB%AF%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>前端实战训练营笔记</p>
+<span id="more"></span>
+
+<h1 id="JavaScript基础"><a href="#JavaScript基础" class="headerlink" title="JavaScript基础"></a>JavaScript基础</h1><p>Number全都用双精度浮点数表示</p>
+<p>安全数是2^53-1以下的</p>
+<p>toPresition(a)返回第一个不为0保留后边a位</p>
+<p>tofixed(a)返回保留小数点后a位</p>
+<p>原型链</p>
+<ul>
+<li>_proto_是隐式原型，指向构造函数原型prototype</li>
+<li>prototype是显式原型</li>
+<li></li>
+</ul>
+<h1 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h1><p>userAgent可以获取用户的硬件信息</p>
+<p>navigation</p>
+<ul>
+<li>clipboard获得粘贴的信息</li>
+<li>keyboard是键盘相关</li>
+<li>geolocation定位</li>
+</ul>
+<p>indexedDB</p>
+<h3 id="浏览器提供的数据库"><a href="#浏览器提供的数据库" class="headerlink" title="浏览器提供的数据库"></a>浏览器提供的数据库</h3><blockquote>
+<p>Cookie：4kb</p>
+<p>LocalStorage:2.5m-10mb</p>
+<p>indexedDB:无限</p>
+</blockquote>
+<h3 id="Filereader"><a href="#Filereader" class="headerlink" title="Filereader"></a>Filereader</h3><blockquote>
+<p>文件操作</p>
+</blockquote>
+<h3 id="生成随机数"><a href="#生成随机数" class="headerlink" title="生成随机数"></a>生成随机数</h3><blockquote>
+<p>使用window.crypto.getRandomValues()arr</p>
+<p>或Math.random()</p>
+</blockquote>
+<h3 id="图片懒加载"><a href="#图片懒加载" class="headerlink" title="图片懒加载"></a>图片懒加载</h3><blockquote>
+<p>可以用parent scroll</p>
+<p>还有IntersectionObserver方法</p>
+</blockquote>
+<h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h3 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h3><blockquote>
+<p>从外往里border，margin，content，padding</p>
+</blockquote>
+<p>flex</p>
+<p>grid</p>
+<h1 id="底层技术"><a href="#底层技术" class="headerlink" title="底层技术"></a>底层技术</h1><h3 id="浏览器缓存"><a href="#浏览器缓存" class="headerlink" title="浏览器缓存"></a>浏览器缓存</h3><blockquote>
+<p>缓存顺序</p>
+</blockquote>
+<h3 id="浏览器渲染"><a href="#浏览器渲染" class="headerlink" title="浏览器渲染"></a>浏览器渲染</h3><blockquote>
+<p>async和defer</p>
+<p>async加载好后直接执行</p>
+</blockquote>
+<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1>]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+      </tags>
   </entry>
   <entry>
     <title>函数进阶</title>
@@ -2670,66 +2730,6 @@
       </tags>
   </entry>
   <entry>
-    <title>前端听课笔记</title>
-    <url>/2021/08/14/%E5%89%8D%E7%AB%AF%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>前端实战训练营笔记</p>
-<span id="more"></span>
-
-<h1 id="JavaScript基础"><a href="#JavaScript基础" class="headerlink" title="JavaScript基础"></a>JavaScript基础</h1><p>Number全都用双精度浮点数表示</p>
-<p>安全数是2^53-1以下的</p>
-<p>toPresition(a)返回第一个不为0保留后边a位</p>
-<p>tofixed(a)返回保留小数点后a位</p>
-<p>原型链</p>
-<ul>
-<li>_proto_是隐式原型，指向构造函数原型prototype</li>
-<li>prototype是显式原型</li>
-<li></li>
-</ul>
-<h1 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h1><p>userAgent可以获取用户的硬件信息</p>
-<p>navigation</p>
-<ul>
-<li>clipboard获得粘贴的信息</li>
-<li>keyboard是键盘相关</li>
-<li>geolocation定位</li>
-</ul>
-<p>indexedDB</p>
-<h3 id="浏览器提供的数据库"><a href="#浏览器提供的数据库" class="headerlink" title="浏览器提供的数据库"></a>浏览器提供的数据库</h3><blockquote>
-<p>Cookie：4kb</p>
-<p>LocalStorage:2.5m-10mb</p>
-<p>indexedDB:无限</p>
-</blockquote>
-<h3 id="Filereader"><a href="#Filereader" class="headerlink" title="Filereader"></a>Filereader</h3><blockquote>
-<p>文件操作</p>
-</blockquote>
-<h3 id="生成随机数"><a href="#生成随机数" class="headerlink" title="生成随机数"></a>生成随机数</h3><blockquote>
-<p>使用window.crypto.getRandomValues()arr</p>
-<p>或Math.random()</p>
-</blockquote>
-<h3 id="图片懒加载"><a href="#图片懒加载" class="headerlink" title="图片懒加载"></a>图片懒加载</h3><blockquote>
-<p>可以用parent scroll</p>
-<p>还有IntersectionObserver方法</p>
-</blockquote>
-<h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h3 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h3><blockquote>
-<p>从外往里border，margin，content，padding</p>
-</blockquote>
-<p>flex</p>
-<p>grid</p>
-<h1 id="底层技术"><a href="#底层技术" class="headerlink" title="底层技术"></a>底层技术</h1><h3 id="浏览器缓存"><a href="#浏览器缓存" class="headerlink" title="浏览器缓存"></a>浏览器缓存</h3><blockquote>
-<p>缓存顺序</p>
-</blockquote>
-<h3 id="浏览器渲染"><a href="#浏览器渲染" class="headerlink" title="浏览器渲染"></a>浏览器渲染</h3><blockquote>
-<p>async和defer</p>
-<p>async加载好后直接执行</p>
-</blockquote>
-<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1>]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>单链表</title>
     <url>/2020/03/07/%E5%8D%95%E9%93%BE%E8%A1%A8/</url>
     <content><![CDATA[<p>2-3 某线性表中最常用的操作是在最后一个元素之后插入一个元素和删除第一个元素，则采用什么存储方式最节省运算时间？ (2分)b</p>
@@ -2809,18 +2809,6 @@
       </tags>
   </entry>
   <entry>
-    <title>图床测试</title>
-    <url>/2022/01/12/%E5%9B%BE%E5%BA%8A%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<p>七牛图床和gitee图床测试</p>
-<span id="more"></span>
-
-<p>七牛图床：</p>
-<p><img data-src="https://img.zhaoxuanlang.cn/image-20220112202327645.png" alt="image-20220112202327645"></p>
-<p>Gitee图床：</p>
-<p><img data-src="https://gitee.com/Squirrel_01/img/raw/master/img/image-20220112202349502.png" alt="image-20220112202349502"></p>
-]]></content>
-  </entry>
-  <entry>
     <title>在Mac使用gnupg加密git</title>
     <url>/2022/01/04/%E5%9C%A8Mac%E4%BD%BF%E7%94%A8gnupg%E5%8A%A0%E5%AF%86git/</url>
     <content><![CDATA[<p>让你的git提交也能拥有酷炫的认证标志</p>
@@ -2847,7 +2835,7 @@
 <h2 id="配置git"><a href="#配置git" class="headerlink" title="配置git"></a>配置git</h2><p>使用<code>gpg --list-secret-keys --keyid-format=long</code>查看当前的秘钥</p>
 <blockquote>
 <p>/Users/zxl/.gnupg/pubring.kbx</p>
-<p>sec   rsa3072/89E3C55059BE3D97 2022-01-04 [SC]<br>      CE52DE13A3615D3687F9C82389E3C55059BE3D97<br>uid                   [ 绝对 ] Zhaoxuanlang (It’s me!) <a href="mailto:&#x31;&#57;&#56;&#50;&#54;&#48;&#54;&#55;&#x36;&#x32;&#64;&#x71;&#x71;&#46;&#99;&#111;&#109;">&#x31;&#57;&#56;&#50;&#54;&#48;&#54;&#55;&#x36;&#x32;&#64;&#x71;&#x71;&#46;&#99;&#111;&#109;</a><br>ssb   rsa3072/1CF09AC8CF982194 2022-01-04 [E]</p>
+<p>sec   rsa3072/89E3C55059BE3D97 2022-01-04 [SC]<br>      CE52DE13A3615D3687F9C82389E3C55059BE3D97<br>uid                   [ 绝对 ] Zhaoxuanlang (It’s me!) <a href="mailto:&#49;&#x39;&#56;&#50;&#54;&#x30;&#x36;&#55;&#x36;&#x32;&#64;&#x71;&#x71;&#x2e;&#99;&#x6f;&#x6d;">&#49;&#x39;&#56;&#50;&#54;&#x30;&#x36;&#55;&#x36;&#x32;&#64;&#x71;&#x71;&#x2e;&#99;&#x6f;&#x6d;</a><br>ssb   rsa3072/1CF09AC8CF982194 2022-01-04 [E]</p>
 </blockquote>
 <p>这里你密钥的ID是89E3C55059BE3D97</p>
 <p>然后使用<code>gpg --armor --export 89E3C55059BE3D97</code>查看公钥，复制所有包括BEGIN和END的内容</p>
@@ -2866,6 +2854,18 @@
       </categories>
   </entry>
   <entry>
+    <title>图床测试</title>
+    <url>/2022/01/12/%E5%9B%BE%E5%BA%8A%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<p>七牛图床和gitee图床测试</p>
+<span id="more"></span>
+
+<p>七牛图床：</p>
+<p><img data-src="https://img.zhaoxuanlang.cn/image-20220112202327645.png" alt="image-20220112202327645"></p>
+<p>Gitee图床：</p>
+<p><img data-src="https://gitee.com/Squirrel_01/img/raw/master/img/image-20220112202349502.png" alt="image-20220112202349502"></p>
+]]></content>
+  </entry>
+  <entry>
     <title>对称矩阵压缩存储的地址计算</title>
     <url>/2020/04/20/%E5%AF%B9%E7%A7%B0%E7%9F%A9%E9%98%B5%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8%E7%9A%84%E5%9C%B0%E5%9D%80%E8%AE%A1%E7%AE%97/</url>
     <content><![CDATA[<p>设有一个10对称矩阵A，采用压缩存储，a[0][0]地址为1000，每个元素占两个字节，则a[3][6]地址为多少？</p>
@@ -2875,6 +2875,18 @@
 ]]></content>
       <categories>
         <category>数据结构笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>惨痛教训</title>
+    <url>/2020/01/14/%E6%83%A8%E7%97%9B%E6%95%99%E8%AE%AD/</url>
+    <content><![CDATA[<p>昨天打算在服务器上安装一个seafile，但是备份worldpress时仅仅备份了框架而没有备份数据库，导致文章全部丢失</p>
+<h2 id="教训："><a href="#教训：" class="headerlink" title="教训："></a>教训：</h2><p>1.定期备份很重要，不但要备份框架还需要数据库，甚至不备份框架也一定要备份数据库</p>
+<p>2.不要轻易对服务器进行修改</p>
+<p>3.数据库和框架在两个不同的位置</p>
+]]></content>
+      <categories>
+        <category>杂</category>
       </categories>
   </entry>
   <entry>
@@ -2896,18 +2908,6 @@
 ]]></content>
       <categories>
         <category>数据结构笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>惨痛教训</title>
-    <url>/2020/01/14/%E6%83%A8%E7%97%9B%E6%95%99%E8%AE%AD/</url>
-    <content><![CDATA[<p>昨天打算在服务器上安装一个seafile，但是备份worldpress时仅仅备份了框架而没有备份数据库，导致文章全部丢失</p>
-<h2 id="教训："><a href="#教训：" class="headerlink" title="教训："></a>教训：</h2><p>1.定期备份很重要，不但要备份框架还需要数据库，甚至不备份框架也一定要备份数据库</p>
-<p>2.不要轻易对服务器进行修改</p>
-<p>3.数据库和框架在两个不同的位置</p>
-]]></content>
-      <categories>
-        <category>杂</category>
       </categories>
   </entry>
   <entry>
@@ -3030,25 +3030,6 @@
       </categories>
   </entry>
   <entry>
-    <title>数据、数据元素、数据项、数据对象的介绍和理解</title>
-    <url>/2020/02/23/%E6%95%B0%E6%8D%AE%E3%80%81%E6%95%B0%E6%8D%AE%E5%85%83%E7%B4%A0%E3%80%81%E6%95%B0%E6%8D%AE%E9%A1%B9%E3%80%81%E6%95%B0%E6%8D%AE%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%92%8C%E7%90%86%E8%A7%A3/</url>
-    <content><![CDATA[<p><img data-src="https://img-blog.csdnimg.cn/20190618173532304.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JhaWR1XzMxNjU3ODg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p>数据结构是相互之间存在一种或多种特定关系的数据元素的集合。</p>
-<p>数据：是描述客观事物的符号，是计算机中可以操作的对象，是能被计算机识别，并输入给计算机处理的符号集合。数据不仅仅包括整形、实型等数值类型，还包括字符及声音、图像、视频等非数值类型。<br>数据，也就是符号，必须具备两个前提：<br>a.可以输入到计算机中<br>b.能被计算机程序处理<br>对于整型、实型等数值类型，可以进行数值计算。<br>对于字符数据类型，就需要非数值的处理。而声音、图像、视频等其实是可以通过编码的手段变成字符数据来处理的</p>
-<p>数据元素：是组成数据的、有一定意义的基本单位，在计算机中通常作为整体处理。也被称为记录。<br>比如 畜类 牛、马、羊、鸡、猪、狗等动物当然就是畜类的数据元素。</p>
-<p>数据项：一个数据元素可以由若干个数据项组成。<br>比如人这样的元素，可以有眼、耳、鼻、嘴等数据项，也可以有姓名、年龄、性别等数据项。<br>数据项是数据不可分割的最小单位。</p>
-<p>数据对象**：是性质相同的数据元素的集合，是数据的子集。<br>什么叫性质相同呢？是指数据元素具有相同数量和类型的数据项，比如人 这个例子，都有姓名、生日、性别等相同的数据项。<br>既然数据对象是数据的子集，在实际应用中，处理的数据元素通常具有相同性质，在不产生混淆的情况下，我们将数据对象简称为数据。</p>
-<p>数据结构<br>结构，简单的理解就是关系，比如分子结构，就是组成分子的原子之间的排列方式。严格带你说，结构是指各个组成部分相互搭配的排列的方式。在现实世界中，不同数据元素之间不是独立的，而是存在特定的关系，我们将这些关系成为 结构。<br>数据结构：是相互之间存在一种或者多种特定关系的数据元素的集合。</p>
-<p>根据网上大佬的理解 可能会更直观一些：<br>假设有两张表，A表为人员表，B表为课程表， 表的格式如下：</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/02/image-1-1024x316.png"></p>
-<p>重点：</p>
-<p>这两张表就是数据<br>而单独的一张表就称为数据对象，即人员表是一个数据对象，课程表也是一个数据对象<br>而每张表中的每一行就称为数据元素<br>而姓名，性别，身高，课程代号，课程名就称为数据项</p>
-]]></content>
-      <categories>
-        <category>数据结构笔记</category>
-      </categories>
-  </entry>
-  <entry>
     <title>未知宽高元素居中</title>
     <url>/2021/10/09/%E6%9C%AA%E7%9F%A5%E5%AE%BD%E9%AB%98%E5%85%83%E7%B4%A0%E5%B1%85%E4%B8%AD/</url>
     <content><![CDATA[<span id="more"></span>
@@ -3069,6 +3050,51 @@
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">position</span>: absolute;</span><br><span class="line"><span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line"><span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line"><span class="attribute">transform</span>: <span class="built_in">translate</span>(-<span class="number">50%</span>, -<span class="number">50%</span>);</span><br><span class="line"><span class="attribute">word-break</span>: break-all;</span><br><span class="line"><span class="attribute">background-color</span>: deepskyblue;</span><br></pre></td></tr></table></figure></li>
 </ol>
 ]]></content>
+  </entry>
+  <entry>
+    <title>数据、数据元素、数据项、数据对象的介绍和理解</title>
+    <url>/2020/02/23/%E6%95%B0%E6%8D%AE%E3%80%81%E6%95%B0%E6%8D%AE%E5%85%83%E7%B4%A0%E3%80%81%E6%95%B0%E6%8D%AE%E9%A1%B9%E3%80%81%E6%95%B0%E6%8D%AE%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%92%8C%E7%90%86%E8%A7%A3/</url>
+    <content><![CDATA[<p><img data-src="https://img-blog.csdnimg.cn/20190618173532304.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JhaWR1XzMxNjU3ODg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>数据结构是相互之间存在一种或多种特定关系的数据元素的集合。</p>
+<p>数据：是描述客观事物的符号，是计算机中可以操作的对象，是能被计算机识别，并输入给计算机处理的符号集合。数据不仅仅包括整形、实型等数值类型，还包括字符及声音、图像、视频等非数值类型。<br>数据，也就是符号，必须具备两个前提：<br>a.可以输入到计算机中<br>b.能被计算机程序处理<br>对于整型、实型等数值类型，可以进行数值计算。<br>对于字符数据类型，就需要非数值的处理。而声音、图像、视频等其实是可以通过编码的手段变成字符数据来处理的</p>
+<p>数据元素：是组成数据的、有一定意义的基本单位，在计算机中通常作为整体处理。也被称为记录。<br>比如 畜类 牛、马、羊、鸡、猪、狗等动物当然就是畜类的数据元素。</p>
+<p>数据项：一个数据元素可以由若干个数据项组成。<br>比如人这样的元素，可以有眼、耳、鼻、嘴等数据项，也可以有姓名、年龄、性别等数据项。<br>数据项是数据不可分割的最小单位。</p>
+<p>数据对象**：是性质相同的数据元素的集合，是数据的子集。<br>什么叫性质相同呢？是指数据元素具有相同数量和类型的数据项，比如人 这个例子，都有姓名、生日、性别等相同的数据项。<br>既然数据对象是数据的子集，在实际应用中，处理的数据元素通常具有相同性质，在不产生混淆的情况下，我们将数据对象简称为数据。</p>
+<p>数据结构<br>结构，简单的理解就是关系，比如分子结构，就是组成分子的原子之间的排列方式。严格带你说，结构是指各个组成部分相互搭配的排列的方式。在现实世界中，不同数据元素之间不是独立的，而是存在特定的关系，我们将这些关系成为 结构。<br>数据结构：是相互之间存在一种或者多种特定关系的数据元素的集合。</p>
+<p>根据网上大佬的理解 可能会更直观一些：<br>假设有两张表，A表为人员表，B表为课程表， 表的格式如下：</p>
+<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/02/image-1-1024x316.png"></p>
+<p>重点：</p>
+<p>这两张表就是数据<br>而单独的一张表就称为数据对象，即人员表是一个数据对象，课程表也是一个数据对象<br>而每张表中的每一行就称为数据元素<br>而姓名，性别，身高，课程代号，课程名就称为数据项</p>
+]]></content>
+      <categories>
+        <category>数据结构笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>树和二叉树习题</title>
+    <url>/2020/04/29/%E6%A0%91%E5%92%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B9%A0%E9%A2%98/</url>
+    <content><![CDATA[<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/04/image.png"></p>
+<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/04/image-1.png"></p>
+<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/04/image-2-1024x161.png"></p>
+<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/04/image-3.png"></p>
+<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/04/image-4.png"></p>
+<p>A是根节点，B在C的左边，D选项B在C右边</p>
+<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/04/image-5.png"></p>
+<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/04/image-6.png"></p>
+<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/04/image-8.png"></p>
+<p>2^10 -1 -200</p>
+<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/04/image-9.png"></p>
+<p>2n-（n-1)  </p>
+<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/04/image-10.png"></p>
+<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/04/image-12.png"></p>
+<p>线索化中序二叉树：</p>
+<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/04/image-11-1024x629.png"></p>
+<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/04/image-13-1024x96.png"></p>
+<p>度为2的数量=叶结点数量-1</p>
+]]></content>
+      <categories>
+        <category>数据结构笔记</category>
+      </categories>
   </entry>
   <entry>
     <title>浏览器解析url</title>
@@ -3114,32 +3140,6 @@
 <p>(7)希尔排序(shell)<br>希尔排序是按照不同步长对元素进行插入排序，当刚开始元素很无序的时候，步长最大，所以插入排序的元素个数很少，速度很快；当元素基本有序了，步长很小， 插入排序对于有序的序列效率很高。所以，希尔排序的时间复杂度会比O(n^2)好一些。由于多次插入排序，我们知道一次插入排序是稳定的，不会改变相同元素的相对顺序，但在不同的插入排序过程中，相同的元素可能在各自的插入排序中移动，最后其稳定性就会被打乱，所以shell排序是不稳定的。</p>
 <p>(8)堆排序<br>我们知道堆的结构是节点i的孩子为2 * i和2 * i + 1节点，大顶堆要求父节点大于等于其2个子节点，小顶堆要求父节点小于等于其2个子节点。在一个长为n 的序列，堆排序的过程是从第n / 2开始和其子节点共3个值选择最大（大顶堆）或者最小（小顶堆），这3个元素之间的选择当然不会破坏稳定性。但当为n / 2 - 1， n / 2 - 2， … 1这些个父节点选择元素时，就会破坏稳定性。有可能第n / 2个父节点交换把后面一个元素交换过去了，而第n / 2 - 1个父节点把后面一个相同的元素没 有交换，那么这2个相同的元素之间的稳定性就被破坏了。所以，堆排序不是稳定的排序算法。</p>
 <p>综上，得出结论: <strong>选择排序、快速排序、希尔排序、堆排序不是稳定的排序算法，而冒泡排序、插入排序、归并排序和基数排序是稳定的排序算法</strong></p>
-]]></content>
-      <categories>
-        <category>数据结构笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>树和二叉树习题</title>
-    <url>/2020/04/29/%E6%A0%91%E5%92%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B9%A0%E9%A2%98/</url>
-    <content><![CDATA[<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/04/image.png"></p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/04/image-1.png"></p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/04/image-2-1024x161.png"></p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/04/image-3.png"></p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/04/image-4.png"></p>
-<p>A是根节点，B在C的左边，D选项B在C右边</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/04/image-5.png"></p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/04/image-6.png"></p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/04/image-8.png"></p>
-<p>2^10 -1 -200</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/04/image-9.png"></p>
-<p>2n-（n-1)  </p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/04/image-10.png"></p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/04/image-12.png"></p>
-<p>线索化中序二叉树：</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/04/image-11-1024x629.png"></p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/04/image-13-1024x96.png"></p>
-<p>度为2的数量=叶结点数量-1</p>
 ]]></content>
       <categories>
         <category>数据结构笔记</category>

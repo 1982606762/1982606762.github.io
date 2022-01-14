@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"www.zhaoxuanlang.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":null,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.zhaoxuanlang.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":null,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"algolia":{"appID":"GNS5LFPQL3","apiKey":"7a1dc67e7209c7c82fbda5e1f2953bb5","indexName":"dev_xuazhao","hits":{"per_page":10}}}</script><script src="/js/config.js"></script>
 <meta name="description" content="业精于勤荒于嬉，行成于思毁于随">
 <meta property="og:type" content="website">
 <meta property="og:title" content="松鼠小筑">
@@ -29,6 +29,7 @@
 <meta property="og:description" content="业精于勤荒于嬉，行成于思毁于随">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="Xuanlang">
+<meta property="article:tag" content="松鼠小筑">
 <meta name="twitter:card" content="summary">
 
 
@@ -106,19 +107,15 @@
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off" maxlength="80"
-           placeholder="搜索..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
+  <div class="search-input-container"></div>
   <span class="popup-btn-close" role="button">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div class="search-result-container no-result">
-  <div class="search-result-icon">
-    <i class="fa fa-spinner fa-pulse fa-5x"></i>
-  </div>
+<div class="search-result-container">
+  <div class="algolia-stats"><hr></div>
+  <div class="algolia-hits"></div>
+  <div class="algolia-pagination"></div>
 </div>
 
     </div>
@@ -224,7 +221,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/02/23/%E6%95%B0%E6%8D%AE%E3%80%81%E6%95%B0%E6%8D%AE%E5%85%83%E7%B4%A0%E3%80%81%E6%95%B0%E6%8D%AE%E9%A1%B9%E3%80%81%E6%95%B0%E6%8D%AE%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%92%8C%E7%90%86%E8%A7%A3/">
+    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/07/15/windows10-mysql-installer-%E5%AE%89%E8%A3%85%EF%BC%88mysql-installer-community-5-7-19-0-msi%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -237,7 +234,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/02/23/%E6%95%B0%E6%8D%AE%E3%80%81%E6%95%B0%E6%8D%AE%E5%85%83%E7%B4%A0%E3%80%81%E6%95%B0%E6%8D%AE%E9%A1%B9%E3%80%81%E6%95%B0%E6%8D%AE%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%92%8C%E7%90%86%E8%A7%A3/" class="post-title-link" itemprop="url">数据、数据元素、数据项、数据对象的介绍和理解</a>
+          <a href="/2020/07/15/windows10-mysql-installer-%E5%AE%89%E8%A3%85%EF%BC%88mysql-installer-community-5-7-19-0-msi%EF%BC%89/" class="post-title-link" itemprop="url">Windows10 MYSQL Installer 安装（mysql-installer-community-5.7.19.0.msi）</a>
         </h2>
 
         <div class="post-meta-container">
@@ -248,7 +245,180 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2020-02-23 22:15:04" itemprop="dateCreated datePublished" datetime="2020-02-23T22:15:04+08:00">2020-02-23</time>
+      <time title="创建时间：2020-07-15 11:07:37" itemprop="dateCreated datePublished" datetime="2020-07-15T11:07:37+08:00">2020-07-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-01-12 13:42:46" itemprop="dateModified" datetime="2022-01-12T13:42:46+08:00">2022-01-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9D%82/" itemprop="url" rel="index"><span itemprop="name">杂</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>1.进入官网找到自己所需的安装包：<a target="_blank" rel="noopener" href="https://dev.mysql.com/">https://dev.mysql.com/</a>  ，路径：DOWNLOAD–&gt;MYSQL Community Edition(GRL)–&gt;MYSQL on Windows (Installer &amp; Tool)</p>
+<p>或直接点击 <a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/windows/installer/">https://dev.mysql.com/downloads/windows/installer/</a> 查看最新版本。</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1202941-20170722225513168-99169810.png"></p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1202941-20170722225525340-1635922988.png"></p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831313-3095-20170722225535090-1925937407.png"></p>
+<p>2.找到所需的安装包,</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831313-8105-20170722225609184-438065502.png"></p>
+<p>3.点击download。这里选择的是安装版（mysql -install-community）</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831313-8141-1-20170722225738356-88388521.png"></p>
+<p>4.选择不登陆下载。</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831313-7844-20170722225950840-2044210671.png"></p>
+<p>5.双击运行下载好的mysql-installer-community-5.7.19.0.msi，程序运行需要一些时间，请等待一下。</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831314-6138-20170722230026215-1797155710.png"></p>
+<p>6.运行成功之后，进入欢迎的界面.选择我同意协议，不然无法进行下一步。</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831314-1312-20170722230046043-978659071.png"></p>
+<p>7. 进入类型选择页面，本人需要mysql云服务就选择了developer default（7.1是默认安装的步骤），如果只想安装mysql server的就选择custom模式（7.2步骤是选择自己需要的服务器类型，所选择的用于做一些数据分析）</p>
+<ul>
+<li>  developer default（开发者默认）：安装mysql开发所需的所有产品</li>
+<li>  server only（服务器）：只安装mysql服务器产品</li>
+<li>  client only（客户端）：只安装没有服务器的mysql客户端产品</li>
+<li>  full（完全）：安装所有包含的mysql产品和功能</li>
+<li>  custom（手动）：手动选择系统上应安装的产品</li>
+</ul>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831314-6490-20170722230201246-220989429.png"></p>
+<p>7.1开发者默认模式检测以下程序会安装不成功，点击下一步进入下一个安装流程—&gt;跳到第八步。</p>
+<p>check requirements：以下产品的请求失败，安装程序将自动尝试解决其中一些问题。标记为手动的要求无法自动解决。单击这些项目以尝试手动恢复。</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831314-6339-20170722230232793-1759462371.png"></p>
+<p>检测到不可安装的程序说明：</p>
+<p>Visual Studio：是一款代码编辑工具（可编写C#、Visual Basic、C++、TypeScript、F# ），如果你安装的话就安装要求去安装Visual Studio version：2012.2013.2015.2017其中一个版本</p>
+<p>Connector/pyton 3.4：电脑有python3.6了就没选择3.4版本的。如果你没安装有python可按要求去安装一些内容。</p>
+<p>7.2选择mysql server（服务） 5.7.19 x64</p>
+<p>选择mysql workbench(mysql 的工作薄) 6.3.9 x64</p>
+<p>选择mysql notiyier(通知) 1.1.7 x86(因为这里只有一个选择所以选择了86)点击下一步进入下一个安装流程—&gt;跳到第九步。</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831314-7923-20170722230314340-1501335191.png"></p>
+<p>8.当我们点击下一步的时候安装程序出现了提示：（一个或者移动产品要求没有得到满足，那些符合要求的产品将不会安装/升级。你想要继续吗），这里我选择的是：YES</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831315-4997-1-20170722230439528-92431868.png"></p>
+<p>9.在安装所选界面能看到我们接下来所需要安装的程序，点击execute</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831315-6544-20170722230506262-176699446.png"></p>
+<p>10安装程序进度界面，安装需要一些时间。点击dide tails能看到安装日志</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831315-4350-20170722230524700-2060141633.png"></p>
+<p>11.程序安装完成之后，点击next</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831315-5686-20170722230808200-494027333.png"></p>
+<p>12.在product configutration（产品配置）页面能看到需要配置的程序，点击next（页面英语介绍：现在我们将逐一介绍以下产品的配置向导。您可以随时取消，如果您希望离开此向导，而不必配置所有产品）</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831316-1727-20170722230838934-1132653366.png"></p>
+<p>13.先配置mysql server的类型以及网络：type and networking（类型和网络），这里有两种mysql server类型，选择第一种类型点击next。</p>
+<p>有两种类型简单介绍</p>
+<ul>
+<li>  1.standalone mysql server/classic mysql replication：独立的mysql服务器/经典的mysql复制。choose this option if you want to run the mysql server either standalone with the opportunity to later configure classic mysql replication：选择这个选项，如果你想运行mysql服务器是独立的，有机会以后配置经典的mysql复制</li>
+<li>  2. innodb cluster sandbox thst setup(for testing only)：</li>
+</ul>
+<p>innodb集群沙箱thst设置（仅用于测试）</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831316-4284-20170722230918575-127114164.png"></p>
+<p>14.设置服务器配置类型以及连接端口：继续next</p>
+<p>Config Type:选择Development Machine，用于小型以及学习所用足够了。</p>
+<p>Port number：输入3306，也可以输入其他最好是3306-3309之间。</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831316-1042-20170722231058356-1269244144.png"></p>
+<p>15.配置root的密码（该密码要记住），系统提示这密码虚弱</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831317-1713-20170722231209903-956653442.png"></p>
+<p>16. 添加其他管理员，点击add user 输入账号密码点击ok（如果添加的管理员只允许在本地登录就将host改成local），回到界面之后点击next</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831317-3908-20170722231228387-1590560639.png"></p>
+<p>17.配置mysql在windows系统中的名字，是否选择开机启动mysql服务，其它的没进行修改，点击”Next”。</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831317-1586-20170722231608825-2099636815.png"></p>
+<p>18.配置插件和扩展页面没进行修改直接下一步：</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831317-4097-20170722231638887-180558399.png"></p>
+<p>19.Mysql server :apply configuration（应用配置页面），选择execute进行安装配置</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831318-8984-20170722231654278-649027984.png"></p>
+<p>20. mysql server应用配置的log，选择finish</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831318-9740-20170722231714809-1553936235.png"></p>
+<p>21.安装程序又回到了product configutration（产品配置）页面，此时我们看到mysql server安装成功的显示，继续下一步：</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831318-2164-20170722231738825-1692782858.png"></p>
+<p>22. 配置mysql router：勾选configure mysql route for innoDB cluster之后输入密码。（如果不想输入密码可直接点击点一下）点击下一步</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831318-2952-20170722231755762-1299837152.png"></p>
+<p>23.Mysql router :apply configuration（应用配置页面）点击execute,</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831319-7917-20170722231811528-357673493.png"></p>
+<p>24.安装完成之后点击选择finish</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831319-7786-20170722231826746-634086390.png"></p>
+<p>25.检测root密码</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831319-2072-20170722231844528-1242732523.png"></p>
+<p>26.安装一些server，老规矩点击execute，完成之后点击finish</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831319-9386-20170722231902950-256599456.png"></p>
+<p>27. 程序回到产品配置页面。继续下一步：</p>
+<p>28.安装程序完成界面。</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831319-1406-20170722231933637-179722774.png"></p>
+<p>29. 双击运行之前下载的安装包，能看到我们所安装的产品。</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831320-7960-20170722232012418-1876643408.png"></p>
+<p>30. 配置mysql环境变量</p>
+<p>上面安装的是时候我们看到mysql默认安装路径是：C:\Program Files\MySQL\MySQL Server 5.7</p>
+<p>我的电脑右键—&gt;属性à高级系统设置à环境变量à新建MYSQL_HOME,将安装目录输入：</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831320-7374-41-20170722232031684-1843508.png"></p>
+<p>找到path编辑：输入%MYSQL_HOME%\bin</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831320-5015-20170722232044090-1304683536.png"></p>
+<p>打开cmd输入mysql –u root –p</p>
+<p>输入root的密码</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831320-6727-20170722232055731-2127042770.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/06/10/%E7%A8%B3%E5%AE%9A%E6%8E%92%E5%BA%8F%E5%92%8C%E4%B8%8D%E7%A8%B3%E5%AE%9A%E6%8E%92%E5%BA%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Xuanlang">
+      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="松鼠小筑">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/06/10/%E7%A8%B3%E5%AE%9A%E6%8E%92%E5%BA%8F%E5%92%8C%E4%B8%8D%E7%A8%B3%E5%AE%9A%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">稳定排序和不稳定排序</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-06-10 09:40:49" itemprop="dateCreated datePublished" datetime="2020-06-10T09:40:49+08:00">2020-06-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -277,17 +447,20 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><img data-src="https://img-blog.csdnimg.cn/20190618173532304.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JhaWR1XzMxNjU3ODg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p>数据结构是相互之间存在一种或多种特定关系的数据元素的集合。</p>
-<p>数据：是描述客观事物的符号，是计算机中可以操作的对象，是能被计算机识别，并输入给计算机处理的符号集合。数据不仅仅包括整形、实型等数值类型，还包括字符及声音、图像、视频等非数值类型。<br>数据，也就是符号，必须具备两个前提：<br>a.可以输入到计算机中<br>b.能被计算机程序处理<br>对于整型、实型等数值类型，可以进行数值计算。<br>对于字符数据类型，就需要非数值的处理。而声音、图像、视频等其实是可以通过编码的手段变成字符数据来处理的</p>
-<p>数据元素：是组成数据的、有一定意义的基本单位，在计算机中通常作为整体处理。也被称为记录。<br>比如 畜类 牛、马、羊、鸡、猪、狗等动物当然就是畜类的数据元素。</p>
-<p>数据项：一个数据元素可以由若干个数据项组成。<br>比如人这样的元素，可以有眼、耳、鼻、嘴等数据项，也可以有姓名、年龄、性别等数据项。<br>数据项是数据不可分割的最小单位。</p>
-<p>数据对象**：是性质相同的数据元素的集合，是数据的子集。<br>什么叫性质相同呢？是指数据元素具有相同数量和类型的数据项，比如人 这个例子，都有姓名、生日、性别等相同的数据项。<br>既然数据对象是数据的子集，在实际应用中，处理的数据元素通常具有相同性质，在不产生混淆的情况下，我们将数据对象简称为数据。</p>
-<p>数据结构<br>结构，简单的理解就是关系，比如分子结构，就是组成分子的原子之间的排列方式。严格带你说，结构是指各个组成部分相互搭配的排列的方式。在现实世界中，不同数据元素之间不是独立的，而是存在特定的关系，我们将这些关系成为 结构。<br>数据结构：是相互之间存在一种或者多种特定关系的数据元素的集合。</p>
-<p>根据网上大佬的理解 可能会更直观一些：<br>假设有两张表，A表为人员表，B表为课程表， 表的格式如下：</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/02/image-1-1024x316.png"></p>
-<p>重点：</p>
-<p>这两张表就是数据<br>而单独的一张表就称为数据对象，即人员表是一个数据对象，课程表也是一个数据对象<br>而每张表中的每一行就称为数据元素<br>而姓名，性别，身高，课程代号，课程名就称为数据项</p>
+          <p>首先，排序算法的稳定性大家应该都知道，通俗地讲就是能保证排序前2个相等的数其在序列的前后位置顺序和排序后它们两个的前后位置顺序相同。在简单形式化一下，如果Ai = Aj，Ai原来在位置前，排序后Ai还是要在Aj位置前。</p>
+<p>      其次，说一下稳定性的好处。排序算法如果是稳定的，那么从一个键上排序，然后再从另一个键上排序，第一个键排序的结果可以为第二个键排序所用。基数排序就是这样，先按低位排序，逐次按高位排序，低位相同的元素其顺序再高位也相同时是不会改变的。另外，如果排序算法稳定，对基于比较的排序算法而言，元素交换的次数可能会少一些（个人感觉，没有证实）。</p>
+<p>回到主题，现在分析一下常见的排序算法的稳定性，每个都给出简单的理由。</p>
+<p>(1)冒泡排序</p>
+<p>冒泡排序就是把小的元素往前调或者把大的元素往后调。比较是相邻的两个元素比较，交换也发生在这两个元素之间。所以，如果两个元素相等，我想你是不会再无聊地把他们俩交换一下的；如果两个相等的元素没有相邻，那么即使通过前面的两两交换把两个相邻起来，这时候也不会交换，所以相同元素的前后顺序并没有改变，所以冒泡排序是一种稳定排序算法。</p>
+<p>(2)选择排序</p>
+<p>选择排序是给每个位置选择当前元素最小的，比如给第一个位置选择最小的，在剩余元素里面给第二个元素选择第二小的，依次类推，直到第n - 1个元素，第n个元素不用选择了，因为只剩下它一个最大的元素了。那么，在一趟选择，如果当前元素比一个元素小，而该小的元素又出现在一个和当前元素相等的元素后面，那么交换后稳定性就被破坏了。比较拗口，举个例子，序列5 8 5 2 9，我们知道第一遍选择第1个元素5会和2交换，那么原序列中2个5的相对前后顺序就被破坏了，所以选择排序不是一个稳定的排序算法。</p>
+<p>(3)插入排序<br>插入排序是在一个已经有序的小序列的基础上，一次插入一个元素。当然，刚开始这个有序的小序列只有1个元素，就是第一个元素。比较是从有序序列的末尾开始，也就是想要插入的元素和已经有序的最大者开始比起，如果比它大则直接插入在其后面，否则一直往前找直到找到它该插入的位置。如果碰见一个和插入元素相等的，那么插入元素把想插入的元素放在相等元素的后面。所以，相等元素的前后顺序没有改变，从原无序序列出去的顺序就是排好序后的顺序，所以插入排序是稳定的。</p>
+<p>(4)快速排序<br>快速排序有两个方向，左边的i下标一直往右走，当a[i] &lt;= a[center_index]，其中center_index是中枢元素的数组下标，一般取为数组第0个元素。而右边的j下标一直往左走，当a[j] &gt; a[center_index]。如果i和j都走不动了，i &lt;= j，交换a[i]和a[j],重复上面的过程，直到i &gt; j。 交换a[j]和a[center_index]，完成一趟快速排序。在中枢元素和a[j]交换的时候，很有可能把前面的元素的稳定性打乱，比如序列为5 3 3 4 3 8 9 10 11，现在中枢元素5和3（第5个元素，下标从1开始计）交换就会把元素3的稳定性打乱，所以快速排序是一个不稳定的排序算法，不稳定发生在中枢元素和a[j] 交换的时刻。</p>
+<p>(5)归并排序<br>归并排序是把序列递归地分成短序列，递归出口是短序列只有1个元素（认为直接有序）或者2个序列（1次比较和交换），然后把各个有序的段序列合并成一个有序的长序列，不断合并直到原序列全部排好序。可以发现，在1个或2个元素时，1个元素不会交换，2个元素如果大小相等也没有人故意交换，这不会破坏稳定性。那么，在短的有序序列合并的过程中，稳定是是否受到破坏？没有，合并过程中我们可以保证如果两个当前元素相等时，我们把处在前面的序列的元素保存在结果序列的前面，这样就保证了稳定性。所以，归并排序也是稳定的排序算法。</p>
+<p>(6)基数排序<br>基数排序是按照低位先排序，然后收集；再按照高位排序，然后再收集；依次类推，直到最高位。有时候有些属性是有优先级顺序的，先按低优先级排序，再按高优先级排序，最后的次序就是高优先级高的在前，高优先级相同的低优先级高的在前。基数排序基于分别排序，分别收集，所以其是稳定的排序算法。</p>
+<p>(7)希尔排序(shell)<br>希尔排序是按照不同步长对元素进行插入排序，当刚开始元素很无序的时候，步长最大，所以插入排序的元素个数很少，速度很快；当元素基本有序了，步长很小， 插入排序对于有序的序列效率很高。所以，希尔排序的时间复杂度会比O(n^2)好一些。由于多次插入排序，我们知道一次插入排序是稳定的，不会改变相同元素的相对顺序，但在不同的插入排序过程中，相同的元素可能在各自的插入排序中移动，最后其稳定性就会被打乱，所以shell排序是不稳定的。</p>
+<p>(8)堆排序<br>我们知道堆的结构是节点i的孩子为2 * i和2 * i + 1节点，大顶堆要求父节点大于等于其2个子节点，小顶堆要求父节点小于等于其2个子节点。在一个长为n 的序列，堆排序的过程是从第n / 2开始和其子节点共3个值选择最大（大顶堆）或者最小（小顶堆），这3个元素之间的选择当然不会破坏稳定性。但当为n / 2 - 1， n / 2 - 2， … 1这些个父节点选择元素时，就会破坏稳定性。有可能第n / 2个父节点交换把后面一个元素交换过去了，而第n / 2 - 1个父节点把后面一个相同的元素没 有交换，那么这2个相同的元素之间的稳定性就被破坏了。所以，堆排序不是稳定的排序算法。</p>
+<p>综上，得出结论: <strong>选择排序、快速排序、希尔排序、堆排序不是稳定的排序算法，而冒泡排序、插入排序、归并排序和基数排序是稳定的排序算法</strong></p>
 
       
     </div>
@@ -314,7 +487,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/01/14/%E6%83%A8%E7%97%9B%E6%95%99%E8%AE%AD/">
+    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/05/22/%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E5%88%A4%E5%AE%9A%E6%A0%91%E5%8F%8A%E5%B9%B3%E5%9D%87%E6%9F%A5%E6%89%BE%E9%95%BF%E5%BA%A6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -327,7 +500,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/01/14/%E6%83%A8%E7%97%9B%E6%95%99%E8%AE%AD/" class="post-title-link" itemprop="url">惨痛教训</a>
+          <a href="/2020/05/22/%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E5%88%A4%E5%AE%9A%E6%A0%91%E5%8F%8A%E5%B9%B3%E5%9D%87%E6%9F%A5%E6%89%BE%E9%95%BF%E5%BA%A6/" class="post-title-link" itemprop="url">折半查找/二分查找判定树及平均查找长度</a>
         </h2>
 
         <div class="post-meta-container">
@@ -338,7 +511,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2020-01-14 11:23:55" itemprop="dateCreated datePublished" datetime="2020-01-14T11:23:55+08:00">2020-01-14</time>
+      <time title="创建时间：2020-05-22 12:56:52" itemprop="dateCreated datePublished" datetime="2020-05-22T12:56:52+08:00">2020-05-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -353,7 +526,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9D%82/" itemprop="url" rel="index"><span itemprop="name">杂</span></a>
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">数据结构笔记</span></a>
         </span>
     </span>
 
@@ -367,10 +540,19 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>昨天打算在服务器上安装一个seafile，但是备份worldpress时仅仅备份了框架而没有备份数据库，导致文章全部丢失</p>
-<h2 id="教训："><a href="#教训：" class="headerlink" title="教训："></a>教训：</h2><p>1.定期备份很重要，不但要备份框架还需要数据库，甚至不备份框架也一定要备份数据库</p>
-<p>2.不要轻易对服务器进行修改</p>
-<p>3.数据库和框架在两个不同的位置</p>
+          <p>长度为n的折半查找判定树的构造方法为：</p>
+<p>⑴ 当n=0时，折半查找判定树为空；</p>
+<p>⑵ 当n＞0时，折半查找判定树的根结点是有序表中序号为mid=(n+1)/2的记录，根结点的左子树是与有序表r[1] ~ r[mid-1]相对应的折半查找判定树，根结点的右子树是与r[mid+1] ~ r[n]相对应的折半查找判定树。</p>
+<p>例如，长度为10的折半查找判定树的具体生成过程为：</p>
+<p>⑴ 在长度为10的有序表中进行折半查找，不论查找哪个记录，都必须先和中间记录进行比较，而中间记录的序号为(1+10)/2=5（注意是整除即向下取整），即判定树的根结点是5，如图7-2(a)所示；</p>
+<p>⑵ 考虑判定树的左子树，即将查找区间调整到左半区，此时的查找区间是</p>
+<p>[1，4]，也就是说，左分支上为根结点的值减1，代表查找区间的高端high，此时，根结点的左孩子是(1+4)/2=2，如图7-2(b)所示；</p>
+<p>⑶ 考虑判定树的右子树，即将查找区间调整到右半区，此时的查找区间是</p>
+<p>[6，10]，也就是说，右分支上为根结点的值加1，代表查找区间的低端low，此时，根结点的右孩子是(6+10)/2=8，如图7-2(c)所示；</p>
+<p>⑷ 重复⑵⑶步，依次确定每个结点的左右孩子，如图7-2(d)所示。</p>
+<p><img data-src="https://img-blog.csdn.net/20160108180718291?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center"></p>
+<p><img data-src="https://img-blog.csdn.net/20160108181550336?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center"></p>
+<p>对于折半查找判定树，需要补充以下两点： <br>⑴ 折半查找判定树是一棵二叉排序树，即每个结点的值均大于其左子树上所有结点的值，小于其右子树上所有结点的值； <br>⑵ 折半查找判定树中的结点都是查找成功的情况，将每个结点的空指针指向一个实际上并不存在的结点——称为外结点，所有外结点即是查找不成功的情况，如图7-2(e)所示。如果有序表的长度为n，则外结点一定有n+1个。 在折半查找判定树中，某结点所在的层数即是查找该结点的比较次数，整个判定树代表的有序表的平均查找长度即为查找每个结点的比较次数之和除以有序表的长度。例如，长度为10的有序表的平均查找长度为： <br>ASL=(1×1+2×2+3×4+4×3)/10=29/10 <br>在折半查找判定树中，查找不成功时的比较次数即是查找相应外结点时与内结点的比较次数。整个判定树代表的有序表在查找失败时的平均查找长度即为查找每个外结点的比较次数之和除以外结点的个数。例如，长度为10的有序表在查找失败时的平均查找长度为： <br>ASL=(3×5+4×6)/11=39/11</p>
 
       
     </div>
@@ -397,7 +579,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2019/10/31/install-goolge-bbr-on-centos/">
+    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/05/10/7-3-%E6%B1%82%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%8F%B6%E5%AD%90%E7%BB%93%E7%82%B9%E4%B8%AA%E6%95%B0-20%E5%88%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -410,7 +592,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/10/31/install-goolge-bbr-on-centos/" class="post-title-link" itemprop="url">Install Goolge BBR on CentOS</a>
+          <a href="/2020/05/10/7-3-%E6%B1%82%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%8F%B6%E5%AD%90%E7%BB%93%E7%82%B9%E4%B8%AA%E6%95%B0-20%E5%88%86/" class="post-title-link" itemprop="url">7-3 求二叉树的叶子结点个数 (20分)</a>
         </h2>
 
         <div class="post-meta-container">
@@ -421,7 +603,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2019-10-31 11:11:05" itemprop="dateCreated datePublished" datetime="2019-10-31T11:11:05+08:00">2019-10-31</time>
+      <time title="创建时间：2020-05-10 16:50:13" itemprop="dateCreated datePublished" datetime="2020-05-10T16:50:13+08:00">2020-05-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -436,7 +618,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">编程语言</span></a>
+          <a href="/categories/c-c-%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">c/c++语言</span></a>
         </span>
     </span>
 
@@ -450,80 +632,17 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="CentOS安装谷歌BBR加速插件"><a href="#CentOS安装谷歌BBR加速插件" class="headerlink" title="CentOS安装谷歌BBR加速插件"></a>CentOS安装谷歌BBR加速插件</h2><p>BBR (Bottleneck Bandwidth and RTT) is a new congestion control algorithm which is contributed to the Linux kernel TCP stack by Google. With BBR in place, a Linux server can get significantly increased throughput and reduced latency for connections. Besides, it’s easy to deploy BBR because this algorithm requires only updates on the sender side, not in the network or on the receiver side.</p>
-<p>In this article, I will show you how to deploy BBR on a Vultr CentOS 7 KVM server instance.</p>
-<h3 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h3><ul>
-<li>  A Vultr CentOS 7 x64 server instance.</li>
-<li>  A <a target="_blank" rel="noopener" href="https://www.vultr.com/docs/how-to-use-sudo-on-debian-centos-and-freebsd">sudo user</a>.</li>
-</ul>
-<h3 id="Step-1-Upgrade-the-kernel-using-the-ELRepo-RPM-repository"><a href="#Step-1-Upgrade-the-kernel-using-the-ELRepo-RPM-repository" class="headerlink" title="Step 1: Upgrade the kernel using the ELRepo RPM repository"></a>Step 1: Upgrade the kernel using the ELRepo RPM repository</h3><p>In order to use BBR, you need to upgrade the kernel of your CentOS 7 machine to 4.9.0. You can easily get that done using the ELRepo RPM repository.</p>
-<p>Before the upgrade, you can take a look at the current kernel:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -r</span><br></pre></td></tr></table></figure>
-
-<p>This command should output a string which resembles:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3.10.0-514.2.2.el7.x86_64</span><br></pre></td></tr></table></figure>
-
-<p>As you see, the current kernel is 3.10.0.</p>
-<p>Install the ELRepo repo:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</span><br><span class="line">sudo rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm</span><br></pre></td></tr></table></figure>
-
-<p>Install the 4.9.0 kernel using the ELRepo repo:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum --enablerepo=elrepo-kernel install kernel-ml -y</span><br></pre></td></tr></table></figure>
-
-<p>Confirm the result:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa  grep kernel</span><br></pre></td></tr></table></figure>
-
-<p>If the installation is successful, you should see <code>kernel-ml-4.9.0-1.el7.elrepo.x86_64</code> among the output list:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">kernel-ml-4.9.0-1.el7.elrepo.x86_64</span><br><span class="line">kernel-3.10.0-514.el7.x86_64</span><br><span class="line">kernel-tools-libs-3.10.0-514.2.2.el7.x86_64</span><br><span class="line">kernel-tools-3.10.0-514.2.2.el7.x86_64</span><br><span class="line">kernel-3.10.0-514.2.2.el7.x86_64</span><br></pre></td></tr></table></figure>
-
-<p>Now, you need to enable the 4.9.0 kernel by setting up the default grub2 boot entry.</p>
-<p>Show all entries in the grub2 menu:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo egrep ^menuentry /etc/grub2.cfg  cut -f 2 -d \&#x27;</span><br></pre></td></tr></table></figure>
-
-<p>The result should resemble:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CentOS Linux 7 Rescue a0cbf86a6ef1416a8812657bb4f2b860 (4.9.0-1.el7.elrepo.x86_64)</span><br><span class="line">CentOS Linux (4.9.0-1.el7.elrepo.x86_64) 7 (Core)</span><br><span class="line">CentOS Linux (3.10.0-514.2.2.el7.x86_64) 7 (Core)</span><br><span class="line">CentOS Linux (3.10.0-514.el7.x86_64) 7 (Core)</span><br><span class="line">CentOS Linux (0-rescue-bf94f46c6bd04792a6a42c91bae645f7) 7 (Core)</span><br></pre></td></tr></table></figure>
-
-<p>Indexing starts at <code>0</code>. This means that the 4.9.0 kernel is located at <code>1</code>:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo grub2-set-default `</span><br></pre></td></tr></table></figure>
-
-<p>Reboot the system:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo shutdown -r now</span><br></pre></td></tr></table></figure>
-
-<p>When the server is back online, log back in and rerun the uname command to confirm that you are using the correct Kernel:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -r</span><br></pre></td></tr></table></figure>
-
-<p>You should see the result as below:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4.9.0-1.el7.elrepo.x86_64</span><br></pre></td></tr></table></figure>
-
-<h3 id="Step-2-Enable-BBR"><a href="#Step-2-Enable-BBR" class="headerlink" title="Step 2: Enable BBR"></a>Step 2: Enable BBR</h3><p>In order to enable the BBR algorithm, you need to modify the <code>sysctl</code> configuration as follows:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo &#x27;net.core.default_qdisc=fq&#x27;  sudo tee -a /etc/sysctl.conf</span><br><span class="line">echo &#x27;net.ipv4.tcp_congestion_control=bbr&#x27;  sudo tee -a /etc/sysctl.conf</span><br><span class="line">sudo sysctl -p</span><br></pre></td></tr></table></figure>
-
-<p>Now, you can use the following commands to confirm that BBR is enabled:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sysctl net.ipv4.tcp_available_congestion_control</span><br></pre></td></tr></table></figure>
-
-<p>The output should resemble:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net.ipv4.tcp_available_congestion_control = bbr cubic reno</span><br></pre></td></tr></table></figure>
-
-<p>Next, verify with:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sysctl -n net.ipv4.tcp_congestion_control</span><br></pre></td></tr></table></figure>
-
-<p>The output should be:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bbr</span><br></pre></td></tr></table></figure>
-
-<p>Finally, check that the kernel module was loaded:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsmod  grep bbr</span><br></pre></td></tr></table></figure>
-
-<p>The output will be similar to:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcp_bbr                16384  0</span><br></pre></td></tr></table></figure>
-
-<h3 id="Step-3-optional-Test-the-network-performance-enhancement"><a href="#Step-3-optional-Test-the-network-performance-enhancement" class="headerlink" title="Step 3 (optional): Test the network performance enhancement"></a>Step 3 (optional): Test the network performance enhancement</h3><p>In order to test BBR’s network performance enhancement, you can create a file in the web server directory for download, and then test the download speed from a web browser on your desktop machine.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install httpd -y</span><br><span class="line">sudo systemctl start httpd.service</span><br><span class="line">sudo firewall-cmd --zone=public --permanent --add-service=http</span><br><span class="line">sudo firewall-cmd --reload</span><br><span class="line">cd /var/www/html</span><br><span class="line">sudo dd if=/dev/zero of=500mb.zip bs=1024k count=500</span><br></pre></td></tr></table></figure>
-
-<p>Finally, visit the URL <code>http://[your-server-IP]/500mb.zip</code> from a web browser on your desktop computer, and then evaluate download speed.</p>
-<p>That’s all. Thank you for reading.</p>
-<p>copyright Vultr.com</p>
-<p>版权归Vultr.com所有</p>
-
+          <p>以二叉链表作为二叉树的存储结构，求二叉树的叶子结点个数。</p>
+<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h3><p>输入二叉树的先序序列。</p>
+<p>提示：一棵二叉树的先序序列是一个字符串，若字符是‘#’,表示该二叉树是空树，否则该字符是相应结点的数据元素。</p>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h3><p>输出有两行：</p>
+<p>第一行是二叉树的中序遍历序列；</p>
+<p>第二行是二叉树的叶子结点个数。</p>
+<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h3><p>ABC##DE#G##F###</p>
+<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h3><p>CBEGDFA</p>
+<p>3</p>
+<p>需要三个函数：前序建立树，中序输出，计算叶子结点</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//根据有#的前序遍历生成树</span><br><span class="line">tree fcreate()</span><br><span class="line">&#123;</span><br><span class="line">    tree t;</span><br><span class="line">    char s;</span><br><span class="line">    //按每个字符输入</span><br><span class="line">    scanf(&quot;%c&quot;,&amp;s);</span><br><span class="line">    if(s==&#x27;#&#x27;)return nullptr;</span><br><span class="line">    else &#123;</span><br><span class="line">        t=(tree)malloc(sizeof(struct treenode));</span><br><span class="line">        t-&gt;data = s;</span><br><span class="line">        t-&gt;lchild = fcreate();</span><br><span class="line">        t-&gt;rchild = fcreate();</span><br><span class="line">        return t;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//中序输出</span><br><span class="line">void Inordertranverse(tree t)</span><br><span class="line">&#123;</span><br><span class="line">    if(!t)return;</span><br><span class="line">    Inordertranverse(t-&gt;lchild);</span><br><span class="line">    cout&lt;&lt;t-&gt;data;</span><br><span class="line">    Inordertranverse(t-&gt;rchild);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//计数树的根结点数</span><br><span class="line">int count(tree t,int c)</span><br><span class="line">&#123;</span><br><span class="line">    if(t) &#123;</span><br><span class="line">        if (t-&gt;lchild == nullptr &amp;&amp; t-&gt;rchild == nullptr)c++;</span><br><span class="line">        c=count(t-&gt;lchild, c);</span><br><span class="line">        c=count(t-&gt;rchild, c);</span><br><span class="line">    &#125;</span><br><span class="line">    return c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -549,7 +668,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2019/10/31/%E6%90%AD%E5%BB%BA%E8%84%9A%E6%9C%AC/">
+    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/05/10/7-4-%E4%BA%A4%E6%8D%A2%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E6%AF%8F%E4%B8%AA%E7%BB%93%E7%82%B9%E7%9A%84%E5%B7%A6%E5%AD%A9%E5%AD%90%E5%92%8C%E5%8F%B3%E5%AD%A9%E5%AD%90-20%E5%88%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -562,7 +681,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/10/31/%E6%90%AD%E5%BB%BA%E8%84%9A%E6%9C%AC/" class="post-title-link" itemprop="url">搭建脚本</a>
+          <a href="/2020/05/10/7-4-%E4%BA%A4%E6%8D%A2%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E6%AF%8F%E4%B8%AA%E7%BB%93%E7%82%B9%E7%9A%84%E5%B7%A6%E5%AD%A9%E5%AD%90%E5%92%8C%E5%8F%B3%E5%AD%A9%E5%AD%90-20%E5%88%86/" class="post-title-link" itemprop="url">7-4 交换二叉树中每个结点的左孩子和右孩子 (20分)</a>
         </h2>
 
         <div class="post-meta-container">
@@ -573,7 +692,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2019-10-31 11:01:28" itemprop="dateCreated datePublished" datetime="2019-10-31T11:01:28+08:00">2019-10-31</time>
+      <time title="创建时间：2020-05-10 16:21:56" itemprop="dateCreated datePublished" datetime="2020-05-10T16:21:56+08:00">2020-05-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -588,7 +707,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">编程语言</span></a>
+          <a href="/categories/c-c-%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">c/c++语言</span></a>
         </span>
     </span>
 
@@ -602,287 +721,17 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>一键搭建 VPN shadowsocks/搭建shadowsocksR的shell脚本，一键脚本适用Vultr上的和搬瓦工所有机型（CentOS、Ubuntu、Debian），搭建ss服务器支持所有客户端类型，本机你是iOS，Android，Windows，Mac，或者是Linux。一键脚本内容包括一键搭建shadowsocks/一键搭建shadowsocksR+一键开启bbr加速。</p>
-<h2 id="什么是shadowsocks"><a href="#什么是shadowsocks" class="headerlink" title="什么是shadowsocks"></a>什么是shadowsocks</h2><p>shadowsocks可以指一种SOCKS5的加密传输协议，也可以指基于这种加密协议的各种数据传输包。shadowsocks正常工作需要服务器端和客户端两端合作实现，首先，客户端（本机）通过ss（shadowsocks）对正常的访问请求进行SOCK5加密，将加密后的访问请求传输给ss服务器端，服务器端接收到客户端的加密请求后，解密得到原始的访问请求，根据请求内容访问指定的网站（例如Google，YouTube，Facebook，instagram等），得到网站的返回结果后，再利用SOCKS5加密并返回给客户端，客户端通过ss解密后得到正常的访问结果，于是就可以实现你直接访问该网站的“假象”。</p>
-<p>为什么选择shadowsocks？不限终端（安卓，苹果，Windows，Mac都可用），流量便宜（服务器500G只要15元），方便（一键脚本，不需要专业知识）。</p>
-<p>为什么要自己搭建ss/ssr？你也许会觉得买ss服务也很方便，但是你得要考虑以下几个问题。首先，买的ss服务，限制很多，终端可能只能同时在线2个，每个月就一点点流量可能价格却不便宜，有时候还被别人做手脚，流量跑的贼快；其次，别人收钱跑路怎么办？很多这种情况的；更重要的是，如第一个问题中描述的shadowsocks原理，如果有心人做了一点手脚，是可以得到你的访问记录的；而自己搭建ss/ssr服务，一键脚本也就10来分钟就可以搞定。</p>
-<h2 id="一键脚本搭建ss-ssr支持系统版本"><a href="#一键脚本搭建ss-ssr支持系统版本" class="headerlink" title="一键脚本搭建ss/ssr支持系统版本"></a>一键脚本搭建ss/ssr支持系统版本</h2><p>脚本系统支持：CentOS 6+，Debian 7+，Ubuntu 12+</p>
-<p>注：这个脚本支持的系统版本是指ss服务器的版本（都没看过也没关系，不影响搭建），你本机是Windows、Mac、Linux，或者你想用手机端搭建ss/ssr服务器，安卓和苹果，都是可以的。</p>
-<h2 id="服务器购买"><a href="#服务器购买" class="headerlink" title="服务器购买"></a>服务器购买</h2><p>服务器推荐Vultr和搬瓦工，一是因为本脚本在这两家的所有VPS都做了测试，二是因为都是老牌VPS服务商，不怕跑路。</p>
-<p><strong>Vultr：</strong><a target="_blank" rel="noopener" href="https://www.vultr.com/promo25b/?ref=7371675">https://www.vultr.com</a>，最低月付2.5刀/500GB流量每月，推荐使用PayPal绑定Visa/Master信用卡，支持支付宝付款<br><strong>更新注意:</strong> Vultr 服务器2.5美元/月的不提供ipv4地址，不能正常使用，所以只能购买5美元/月的了</p>
-<p><strong>搬瓦工：</strong><a target="_blank" rel="noopener" href="https://bwh1.net/aff.php?aff=32798">https://bwh1.net</a>，可以访问登录，但是注册账号的时候需要全局才能成功<br>新用户注册链接：<a target="_blank" rel="noopener" href="https://bwh1.net/aff.php?aff=32798">https://bwh1.net/aff.php?aff=32798</a>，支持PayPal/支付宝/Visa/Master付款，最低年付19.99刀/500GB流量每月(已补货，之前售空了)</p>
-<p><strong>Vultr 官方发布新活动了，新用户激活账户就送 25 美元！参与推特活动可再获得 3 美元！</strong><br>1、送 25 美元注册地址：<a target="_blank" rel="noopener" href="https://www.vultr.com/promo25b/?ref=8290178">https://www.vultr.com/promo25b/?ref=7371675</a><br>需要外币信用卡（Visa 卡等）或 Paypal 账户（可绑定银联卡）才可参与活动，赠送部分有效期一年<br>2、无 25 美元注册地址：<a target="_blank" rel="noopener" href="https://www.vultr.com/promo25b/?ref=8290178">https://www.vultr.com/?ref=8290178</a><br>支付宝充值是没有优惠的，想使用 vultr 的请从上面地址注册<br>3、推特送 3 美元活动地址：<a target="_blank" rel="noopener" href="https://my.vultr.com/promo/">https://my.vultr.com/promo/</a><br>充值账户后才可以参与这个推特活动<br><strong>注意：</strong>此活动仅限从未注册过 Vultr 的参加，个人注册多个账户可能会被没收赠送金额！<br>如果自己从未注册过这一家，但是还是没有赠送，可以登录后点击左侧 Support 联系客服进行处理！</p>
-<p><img data-src="http://www.yehes.com/wp-content/uploads/2018/09/77c76f11gy1fs0lq2qaw5j211y0hlad4.jpg" alt="一键脚本轻松搭建SS教程/搭建SSR并开启BBR加速-夜河资源网"></p>
-<p><img data-src="http://www.yehes.com/wp-content/uploads/2018/09/77c76f11gy1fs0lri8uh4j211t0hkdjo.jpg" alt="一键脚本轻松搭建SS教程/搭建SSR并开启BBR加速-夜河资源网"></p>
-<h2 id="一键搭建SS-搭建SSR服务"><a href="#一键搭建SS-搭建SSR服务" class="headerlink" title="一键搭建SS/搭建SSR服务"></a>一键搭建SS/搭建SSR服务</h2><p>注意，shadowsocks/shadowsocksR这两个只需要搭建一个就可以了！！！！SS与SSR之间的比较一直是各有各的说法，王婆卖瓜自卖自夸。</p>
-<h3 id="一键搭建shadowsocks"><a href="#一键搭建shadowsocks" class="headerlink" title="一键搭建shadowsocks"></a>一键搭建shadowsocks</h3><p>在购买VPS并用PuTTY连接上你刚购买的VPS后，你将看到如下图所示的界面：</p>
-<p><img data-src="http://www.yehes.com/wp-content/uploads/2018/09/77c76f11gy1fs0jnt59zlj20id0ciaao.jpg" alt="一键脚本轻松搭建SS教程/搭建SSR并开启BBR加速-夜河资源网"></p>
-<p>1.下载一键搭建ss脚本文件，只需要执行一次，卸载ss后也不需要重新下载</p>
-<p>git clone <a target="_blank" rel="noopener" href="https://github.com/flyzy2005/ss-fly">https://github.com/flyzy2005/ss-fly</a></p>
-<p>如果提示bash: git: command not found，则先安装git：</p>
-<p>Centos执行这个：</p>
-<p>yum -y install git</p>
-<p>Ubuntu/Debian执行这个：</p>
-<p>apt-get -y install git</p>
-<p>2.运行搭建ss脚本代码</p>
-<p>ss-fly/ss-fly.sh -i password 1024</p>
-<p>其中password换成你要设置的shadowsocks的密码即可，最好只包含字母+数字，一些特殊字符可能会导致冲突。而第二个参数1024是端口号，也可以不加，不加默认是1024。</p>
-<p><img data-src="http://www.yehes.com/wp-content/uploads/2018/09/77c76f11gy1fs0jrpq7vuj20id0cijs9.jpg" alt="一键脚本轻松搭建SS教程/搭建SSR并开启BBR加速-夜河资源网"></p>
-<p>界面如下就表示一键搭建ss成功了：</p>
-<p><img data-src="http://www.yehes.com/wp-content/uploads/2018/09/77c76f11gy1fs0juvuqu5j20id08iwf0.jpg" alt="一键脚本轻松搭建SS教程/搭建SSR并开启BBR加速-夜河资源网"></p>
-<p>注：如果需要改密码或者改端口，只需要重新再执行一次搭建ss脚本代码就可以了，或者修改/etc/shadowsocks.json这个配置文件。</p>
-<p>3.相关ss操作</p>
-<p>修改配置文件：vim /etc/shadowsocks.json<br>停止ss服务：ssserver -c /etc/shadowsocks.json -d stop<br>启动ss服务：ssserver -c /etc/shadowsocks.json -d start<br>重启ss服务：ssserver -c /etc/shadowsocks.json -d restart</p>
-<p>4.卸载ss服务</p>
-<p>ss-fly/ss-fly.sh -uninstall</p>
-<h3 id="一键搭建shadowsocksR"><a href="#一键搭建shadowsocksR" class="headerlink" title="一键搭建shadowsocksR"></a>一键搭建shadowsocksR</h3><p>再次提醒，如果安装了SS，就不需要再安装SSR了，如果要改装SSR，请按照上一部分内容的教程先卸载SS！！！</p>
-<p>1.下载一键搭建ssr脚本(只需要执行一次，卸载ssr后也不需要重新执行)，此步骤与一键搭建ss一致</p>
-<p>git clone <a target="_blank" rel="noopener" href="https://github.com/flyzy2005/ss-fly">https://github.com/flyzy2005/ss-fly</a></p>
-<p>2.运行搭建ssr脚本代码</p>
-<p>ss-fly/ss-fly.sh -ssr</p>
-<p>3.输入对应的参数</p>
-<p>执行完上述的脚本代码后，会进入到输入参数的界面，包括服务器端口，密码，加密方式，协议，混淆。可以直接输入回车选择默认值，也可以输入相应的值选择对应的选项：</p>
-<p><img data-src="http://www.yehes.com/wp-content/uploads/2018/09/77c76f11gy1fs0k8so58bj20ll0ipjre.jpg" alt="一键脚本轻松搭建SS教程/搭建SSR并开启BBR加速-夜河资源网"></p>
-<p>全部选择结束后，会看到如下界面，就说明搭建ssr成功了：</p>
-<p>Congratulations, ShadowsocksR server install completed!<br>Your Server IP        :你的服务器ip<br>Your Server Port      :你的端口<br>Your Password         :你的密码<br>Your Protocol         :你的协议<br>Your obfs             :你的混淆<br>Your Encryption Method:your_encryption_method<br>Welcome to visit:<a target="_blank" rel="noopener" href="https://shadowsocks.be/9.html">https://shadowsocks.be/9.html</a><br>Enjoy it!</p>
-<p>4.相关操作ssr命令</p>
-<p>启动：/etc/init.d/shadowsocks start<br>停止：/etc/init.d/shadowsocks stop<br>重启：/etc/init.d/shadowsocks restart<br>状态：/etc/init.d/shadowsocks status<br>配置文件路径：/etc/shadowsocks.json<br>日志文件路径：/var/log/shadowsocks.log<br>代码安装目录：/usr/local/shadowsocks</p>
-<p>5.卸载ssr服务</p>
-<p>./shadowsocksR.sh uninstall</p>
-<p>文件配置方法：</p>
-<p>{     “server”:”0.0.0.0”,     “server_port”:4431,      “local_port”:1080,     “password”:”密码”,     “timeout”:600,     “method”:”aes-256-cfb” }</p>
-<p>多端口密码配置如下</p>
-<p>{<br>    “server”:”0.0.0.0”,<br>    “local_port”:1080,<br>    “port_password”: {<br>      “端口1”: “密码1”,<br>      “端口2”: “密码2”<br>    },<br>    “timeout”:600,<br>    “method”:”aes-256-cfb”<br>}</p>
-<h2 id="一键开启BBR加速"><a href="#一键开启BBR加速" class="headerlink" title="一键开启BBR加速"></a>一键开启BBR加速</h2><p>BBR是Google开源的一套内核加速算法，可以让你搭建的shadowsocks/shadowsocksR速度上一个台阶，本一键搭建ss/ssr脚本支持一键升级最新版本的内核并开启BBR加速。</p>
-<p>BBR支持4.9以上的，如果低于这个版本则会自动下载最新内容版本的内核后开启BBR加速并重启，如果高于4.9以上则自动开启BBR加速，执行如下脚本命令即可自动开启BBR加速：</p>
-<p>ss-fly/ss-fly.sh -bbr</p>
-<p><img data-src="http://www.yehes.com/wp-content/uploads/2018/09/77c76f11gy1fs0kbjmcz5j20pf07ma9y.jpg" alt="一键脚本轻松搭建SS教程/搭建SSR并开启BBR加速-夜河资源网"></p>
-<p>装完后需要重启系统，输入y即可立即重启，或者之后输入reboot命令重启。</p>
-<p>判断BBR加速有没有开启成功。输入以下命令：</p>
-<p>sysctl net.ipv4.tcp_available_congestion_control</p>
-<p>如果返回值为：</p>
-<p>net.ipv4.tcp_available_congestion_control = bbr cubic reno</p>
-<p>后面有bbr，则说明已经开启成功了。</p>
-<h2 id="客户端shadowsocks-shadowsockR登录使用"><a href="#客户端shadowsocks-shadowsockR登录使用" class="headerlink" title="客户端shadowsocks/shadowsockR登录使用"></a>客户端shadowsocks/shadowsockR登录使用</h2><p><strong>shadowsocks客户端下载地址：</strong><br><strong>Windows客户端:</strong> <a target="_blank" rel="noopener" href="https://github.com/shadowsocks/shadowsocks-windows/releases">https://github.com/shadowsocks/shadowsocks-windows/releases</a><br><strong>Mac客户端:</strong> <a target="_blank" rel="noopener" href="https://github.com/shadowsocks/ShadowsocksX-NG/releases">https://github.com/shadowsocks/ShadowsocksX-NG/releases</a><br><strong>Linux客户端:</strong> <a target="_blank" rel="noopener" href="https://github.com/shadowsocks/shadowsocks-qt5/wiki/Installation">https://github.com/shadowsocks/shadowsocks-qt5/wiki/Installation</a><br><strong>Android/安卓客户端：</strong><a target="_blank" rel="noopener" href="https://github.com/shadowsocks/shadowsocks-android/releases">https://github.com/shadowsocks/shadowsocks-android/releases</a><br><strong>iOS客户端：</strong>商店搜索Wingy/shadowsocks(美国地区)下载</p>
-<p>以Windows为例，依次填入服务器IP，服务器端口，密码，保存配置</p>
-<p><img data-src="http://www.yehes.com/wp-content/uploads/2018/09/77c76f11gy1fs0jj5rdzij20ct0cet8z.jpg" alt="一键脚本轻松搭建SS教程/搭建SSR并开启BBR加速-夜河资源网"></p>
-<p>在状态栏右击shadowsocks，勾选开机启动和启动系统代理，在系统代理模式中选择PAC模式，服务器-&gt;编辑服务器，一键安装shadowsocks的脚本默认服务器端口是1024，加密方式是aes-256-cfb，密码是你设置的密码，ip是你自己的VPS ip，保存即可。</p>
-<p><strong>shadowsockR客户端下载地址：<br>Windows客户端:</strong> <a target="_blank" rel="noopener" href="https://github.com/shadowsocksrr/shadowsocksr-csharp/releases">https://github.com/shadowsocksrr/shadowsocksr-csharp/releases</a><strong>Mac客户端:</strong> <a target="_blank" rel="noopener" href="https://github.com/flyzy2005/ss-ssr-clients/raw/master/ssr/SS-X-R.zip">https://github.com/flyzy2005/ss-ssr-clients/raw/master/ssr/SS-X-R.zip</a><strong>Linux客户端:</strong> <a target="_blank" rel="noopener" href="https://github.com/shadowsocks/shadowsocks-qt5/wiki/Installation">https://github.com/shadowsocks/shadowsocks-qt5/wiki/Installation</a>**<br>Android/安卓客户端：**<a target="_blank" rel="noopener" href="https://github.com/shadowsocksrr/shadowsocksr-android/releases">https://github.com/shadowsocksrr/shadowsocksr-android/releases</a>**<br>iOS客户端：**商店搜索Wingy/shadowsocks(美国地区)下载</p>
-<p>以Windows为例：</p>
-<p><img data-src="http://www.yehes.com/wp-content/uploads/2018/09/77c76f11gy1fs0kfp1oulj20ie0dyglr.jpg" alt="一键脚本轻松搭建SS教程/搭建SSR并开启BBR加速-夜河资源网"></p>
-<p>在状态栏右击shadowsocksR，在系统代理模式中选择PAC模式，再左击两次状态栏的图标打开编辑服务器界面，如上图所示，按照自己的服务器配置填充内容，保存即可。</p>
-<p>一键脚本GitHub地址：<a target="_blank" rel="noopener" href="https://github.com/flyzy2005/ss-fly">https://github.com/flyzy2005/ss-fly</a><br>shadowsocks项目GitHub：<a target="_blank" rel="noopener" href="https://github.com/shadowsocks">https://github.com/shadowsocks</a><br>shadowsocksR项目GitHub：<a target="_blank" rel="noopener" href="https://github.com/shadowsocksrr">https://github.com/shadowsocksrr</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2019/10/10/kexue%E4%B8%8A%E7%BD%91%E6%9F%A5%E8%B5%84%E6%96%99/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Xuanlang">
-      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="松鼠小筑">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/10/10/kexue%E4%B8%8A%E7%BD%91%E6%9F%A5%E8%B5%84%E6%96%99/" class="post-title-link" itemprop="url">Kexue上网查资料</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-10-10 11:16:46" itemprop="dateCreated datePublished" datetime="2019-10-10T11:16:46+08:00">2019-10-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-01-12 13:42:46" itemprop="dateModified" datetime="2022-01-12T13:42:46+08:00">2022-01-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9D%82/" itemprop="url" rel="index"><span itemprop="name">杂</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>在管控越来越严的形势下，以前的很多软件都不能再用了，所以自己动手丰衣足食才是最好的方法。</p>
-<p>所需软件：1.<a href="http://链接：https://pan.baidu.com/s/1dNTBc5rHUXoVC9F5Hh3ttA">Xshell</a> 提取码opph  2.<a href="http://链接：https://pan.baidu.com/s/1NJmhSbLI3SIjRJVgvxKQlg">shadowsocksr</a>      2o4c       </p>
-<h2 id="一：购买服务器"><a href="#一：购买服务器" class="headerlink" title="一：购买服务器"></a>一：购买服务器</h2><p>首先我们需要一个jingwai服务器，我是在 <a target="_blank" rel="noopener" href="https://www.vultr.com/?ref=7743951">vultr</a> 购买的。注册账号后首先选择自己需要的服务器。</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2019/10/image-1024x441.png"></p>
-<p>选择第一个</p>
-<p>下边的地区根据自己的需求选择即可。</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2019/10/image-1-1024x641.png"></p>
-<p>下边的大小选最小的就可以满足需求</p>
-<p>之后部署即可。</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2019/10/image-2-1024x368.png"></p>
-<h2 id="二：连接到服务器"><a href="#二：连接到服务器" class="headerlink" title="二：连接到服务器"></a>二：连接到服务器</h2><p>打开xshell，输入刚刚部署的服务器ip后他会自动连接。现在会有两种可能的结果</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2019/10/image-3.png"></p>
-<p>一直显示连接中</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2019/10/image-4.png"></p>
-<p>瞬间连接上</p>
-<p>若是2，那么恭喜你，你的服务器可以用。若是1，现在就需要再去刚刚那个网站，把刚买的fwq销毁掉再买一个，知道出现2即可</p>
-<h2 id="三：配置"><a href="#三：配置" class="headerlink" title="三：配置"></a>三：配置</h2><p>这一步很简单，首先使用 <code>wget --no-check-certificate https://freed.ga/github/shadowsocksR.sh; bash shadowsocksR.sh</code> 自动安装</p>
-<p>然后安装加速插件，先使用wget -N –no-check-certificate <a target="_blank" rel="noopener" href="https://freed.ga/kernel/ruisu.sh">https://freed.ga/kernel/ruisu.sh</a> &amp;&amp; bash ruisu.sh更换ubantu版本</p>
-<p>再使用wget -N –no-check-certificate <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/91yun/serverspeeder/master/serverspeeder-all.sh">https://raw.githubusercontent.com/91yun/serverspeeder/master/serverspeeder-all.sh</a> &amp;&amp; bash serverspeeder-all.sh安装加速</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/02/image.png"></p>
-<p>四：使用</p>
-<p>使用刚刚下载的第二个软件输入内容即可</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2019/09/05/%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E9%A1%B5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Xuanlang">
-      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="松鼠小筑">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/09/05/%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E9%A1%B5/" class="post-title-link" itemprop="url">简易建站教程</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-09-05 12:17:59" itemprop="dateCreated datePublished" datetime="2019-09-05T12:17:59+08:00">2019-09-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-01-12 13:42:46" itemprop="dateModified" datetime="2022-01-12T13:42:46+08:00">2022-01-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/HTML/" itemprop="url" rel="index"><span itemprop="name">HTML</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>放完暑假开学后回到班里，偶然看到同学在搞个人网页。由于我之前在Wix上有过一个个人主页，但是那个属于利用他网站给的现成的资源，只需要自己写文章即可。做为一个学计算机的学生，我当然不仅仅满足于写文章，所以我打算搭建一个属于自己的网页</p>
-<h3 id="第一步：购买所需原料"><a href="#第一步：购买所需原料" class="headerlink" title="第一步：购买所需原料"></a>第一步：购买所需原料</h3><p>想要自己的网页24小时可用，靠自己的电脑肯定是不够的，所以就需要一个云主机。我这里购买的是腾讯云的主机，因为他有学生优惠，一年的主机只要120，加16元就可以买一年的域名，简直完美符合我的需求。买服务器时我建议买三个月以上时长的，原因后边会讲。</p>
-<p><a target="_blank" rel="noopener" href="https://sp0.baidu.com/9q9JcDHa2gU2pMbgoY3K/adrc.php?t=06KL00c00fALeK30dWk-0awHAsKpIgKI00000ryI5NC00000vOPxvZ.THLnvVAvdnm0UWdBmy-bIfK15yuWuAc4uj9-nj0snAnvPWc0IHdKrHnzP17jrj0YnRDzPWRkfRFanj6znYc1PDcvnWc3f6K95gTqFhdWpyfqn1c3PHRsPHRkrausThqbpyfqnHm0uHdCIZwsT1CEQvP_ULNbQMw-UhP-UMf8mvqVQv7WIaqWmydsIgnOuMFEUNPEIgFWuHdMILGWIz3zPHD4PHb3QWcdnHbdrH68nWRkrHR4raudIAdxUyNbpgNV5yPsuaudIAdxpyfquLIlmLT8nWRkrHR4ra3zPHD4PHb3QWcdnHbdrH60mLFW5HR3rjRv&tpl=tpl_11534_19968_16032&l=1513987557&attach=location=&linkName=%25E6%2596%2587%25E5%25AD%2597%25E5%2588%2597%25E8%25A1%25A8-%25E7%25AC%25AC1%25E8%25A1%258C%25E6%2596%2587%25E6%259C%25AC&linkText=%255B%25E4%25BA%2591%252B%25E6%25A0%25A1%25E5%259B%25AD%255D%25E5%25AD%25A6%25E7%2594%259F%25E4%25BA%2591%25E6%259C%258D%25E5%258A%25A1%25E5%2599%25A8%25E4%25BD%2593%25E9%25AA%258C%25E5%25A5%2597%25E9%25A4%259010%25E5%2585%2583%252F%25E6%259C%2588&xp=id(%2522m3285505518_canvas%2522)%252FDIV%255B1%255D%252FDIV%255B2%255D%252FDIV%255B1%255D%252FUL%255B1%255D%252FLI%255B1%255D%252FA%255B1%255D&linkType=&checksum=84&ie=utf-8&f=8&tn=baidu&wd=%E8%85%BE%E8%AE%AF%E4%BA%91&rqlang=cn&inputT=1812">学生优惠页面</a></p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2019/09/image-1024x401.png"></p>
-<p>在买域名之前需要先去看看自己想要注册的域名是否被注册了，这一步我们可以在很多网站完成，但是为了方便我还是选择<a target="_blank" rel="noopener" href="https://dnspod.cloud.tencent.com/">腾讯云</a>。其实阿里云的域名会稍微便宜一点，如果想省钱可以买阿里云的。</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2019/09/image-1-1024x679.png"></p>
-<p>可以看到有的已经被注册了，这时就需要换一个名字搜索…  </p>
-<p>域名后的这个.xxx不一样，价格也不太一样。.com是国际的域名后缀，其他的就是各国分配的后缀。有的很便宜的是某些小国家的域名，我还是建议买咱们中国的.cn，比.com便宜一些还很靠谱，知名度也高。</p>
-<h2 id="第二步：域名备案，-服务器的准备工作"><a href="#第二步：域名备案，-服务器的准备工作" class="headerlink" title="第二步：域名备案， 服务器的准备工作"></a>第二步：域名备案， 服务器的准备工作</h2><p>在完成第一步后我们应该现在有一个云服务器和一个域名了。首先我们要域名备案，由于管局要求，国内的服务器搭建的网址都需要备案。在备案时需要一个备案授权码，但是这个授权码腾讯云只给三个月以上时长的服务器生成，所以是之前建议买超过三个月的服务器。我当时就是因为买了一个月的，这时还得再去续费才能用。</p>
-<p>备案我建议用腾讯云的微信小程序，流程非常快，只需要跟着要求走就可以，我是不到一周就通过了，他官方给的时间是20天以内。不备案你的网页就不能上线，所以我还是推荐尽早完成。</p>
-<p>备案后还需要进行域名解析，填完保存就可以。</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2019/09/image-3-1024x538.png"></p>
-<p>记录值填你买的服务器的公网IP</p>
-<p>接下来我们需要进行服务器准备，进入控制台会看到这个页面,点登录进入控制台。我在这用的是宝塔的面板，安装教程可以去他<a target="_blank" rel="noopener" href="https://www.bt.cn/">官网</a>找到<img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2019/09/PTQ8FE273SESX26I.png"></p>
-<p>安装完成宝塔后在服务器后台页面会有一个网址，用户名和密码。在浏览器打开网址并用用户名密码登录后进入宝塔的控制台。第一次登录他会让你安装框架，安装推荐的就可以，然后等他安装好。</p>
-<p>这时我们需要配置自己网页，在宝塔面板左边找到网站,选择添加站点，像图中这样配置，用户名和密码都可以自己写，只要能记住就行。</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2019/09/image-2-1024x566.png"></p>
-<p>等待的时候我们还需要去网上下载一个工具Xshell和Xftp。可以自行百度也可以用我这个<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1Tu8UMCjk2_cH114imOxbRQ">版本</a><br>提取码：gwej ，无需安装，只要解压出来就可以。这两个工具可以让你连接到服务器和上传文件更加方便。</p>
-<h2 id="第三步：网站建设"><a href="#第三步：网站建设" class="headerlink" title="第三步：网站建设"></a>第三步：网站建设</h2><p>现在你应该已经能通过www.你的域名.xx进入你的网页了，它会提示你当前页是宝塔自动生成的，这时我们需要上传自己的网页。用之前下载的Xftp或宝塔面板的文件页面都可以</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2019/09/image-4-832x1024.png"></p>
-<p>Xftp设置页面</p>
-<p>在Xftp中Host填服务器公网IP，下边username 和password都填服务器管理员的账号密码</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2019/09/image-5-1024x627.png"></p>
-<p>进www文件夹里wwwroot里你域名那个文件夹</p>
-<p>现在你的文件夹里应该只有两个html，我们需要把这两个文件都删了，把你想上传的网页放到这个文件夹里就可以，但记得把网页名字改成index</p>
-<p>到此，我们网站的建设就完成了。下边我还要介绍一下worldpress的安装。</p>
-<h2 id="第四步：worldpress的安装"><a href="#第四步：worldpress的安装" class="headerlink" title="第四步：worldpress的安装"></a>第四步：worldpress的安装</h2><p>首先需要去worldpress官网<a target="_blank" rel="noopener" href="https://cn.wordpress.org/download/">下载</a>组件，下载后解压到刚刚的域名文件夹里。</p>
-<p>现在如果打开网页，如果发现他提示php版本过低，就去宝塔面板里的软件商店安装最新php并禁用你当前版本的php即可</p>
-<p>现在你应该进入了worldpress的设置界面，按着他说的进行就可以，只有一步，你需要在数据库的地方填入刚刚宝塔设置网页时的用户名和密码。</p>
-<p>现在你有了一个属于自己的world press网页！</p>
-
+          <p>以二叉链表作为二叉树的存储结构，交换二叉树中每个结点的左孩子和右孩子。</p>
+<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h3><p>输入二叉树的先序序列。</p>
+<p>提示：一棵二叉树的先序序列是一个字符串，若字符是‘#’,表示该二叉树是空树，否则该字符是相应结点的数据元素。</p>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h3><p>输出有两行：</p>
+<p>第一行是原二叉树的中序遍历序列；</p>
+<p>第二行是交换后的二叉树的中序遍历序列。</p>
+<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h3><p>ABC##DE#G##F###</p>
+<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h3><p>CBEGDFA</p>
+<p>AFDGEBC</p>
+<p>需要三个函数：根据前序输入生成树，交换，中序输出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//根据有#的前序遍历生成树</span><br><span class="line">tree fcreate()</span><br><span class="line">&#123;</span><br><span class="line">    tree t;</span><br><span class="line">    char s;</span><br><span class="line">    //按每个字符输入</span><br><span class="line">    scanf(&quot;%c&quot;,&amp;s);</span><br><span class="line">    if(s==&#x27;#&#x27;)return nullptr;</span><br><span class="line">    else &#123;</span><br><span class="line">        t=(tree)malloc(sizeof(struct treenode));</span><br><span class="line">        t-&gt;data = s;</span><br><span class="line">        t-&gt;lchild = fcreate();</span><br><span class="line">        t-&gt;rchild = fcreate();</span><br><span class="line">        return t;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">void Inordertranverse(tree t)</span><br><span class="line">&#123;</span><br><span class="line">    if(!t)return;</span><br><span class="line">    Inordertranverse(t-&gt;lchild);</span><br><span class="line">    cout&lt;&lt;t-&gt;data;</span><br><span class="line">    Inordertranverse(t-&gt;rchild);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//交换每个结点左右子树</span><br><span class="line">void Exchange(tree &amp;bt)</span><br><span class="line">&#123;</span><br><span class="line">    tree temp;</span><br><span class="line">    if(bt)&#123;</span><br><span class="line">        temp = bt -&gt; lchild;</span><br><span class="line">        bt -&gt; lchild = bt -&gt; rchild;</span><br><span class="line">        bt -&gt; rchild = temp;</span><br><span class="line">        Exchange(bt -&gt; lchild);</span><br><span class="line">        Exchange(bt -&gt; rchild);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    tree t;</span><br><span class="line">    t=fcreate();</span><br><span class="line">    Inordertranverse(t);</span><br><span class="line">    Exchange(t);</span><br><span class="line">    Inordertranverse(t);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -901,7 +750,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>
@@ -934,8 +783,8 @@
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   
-<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
-<script src="/js/third-party/search/local-search.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.11.0/dist/algoliasearch-lite.umd.js" integrity="sha256-48AZ24Ct05NAMLT7hvYgeW1X350OgEcZvHd6Ih6xwOA=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.36.0/dist/instantsearch.production.min.js" integrity="sha256-2IhR6D0EWonVYvGbuQADSjD9VROGINJw9A8RFZEHXAM=" crossorigin="anonymous"></script><script src="/js/third-party/search/algolia-search.js"></script>
 
 
 

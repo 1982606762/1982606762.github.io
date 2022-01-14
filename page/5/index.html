@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"www.zhaoxuanlang.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":null,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.zhaoxuanlang.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":null,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"algolia":{"appID":"GNS5LFPQL3","apiKey":"7a1dc67e7209c7c82fbda5e1f2953bb5","indexName":"dev_xuazhao","hits":{"per_page":10}}}</script><script src="/js/config.js"></script>
 <meta name="description" content="业精于勤荒于嬉，行成于思毁于随">
 <meta property="og:type" content="website">
 <meta property="og:title" content="松鼠小筑">
@@ -29,6 +29,7 @@
 <meta property="og:description" content="业精于勤荒于嬉，行成于思毁于随">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="Xuanlang">
+<meta property="article:tag" content="松鼠小筑">
 <meta name="twitter:card" content="summary">
 
 
@@ -106,19 +107,15 @@
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off" maxlength="80"
-           placeholder="搜索..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
+  <div class="search-input-container"></div>
   <span class="popup-btn-close" role="button">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div class="search-result-container no-result">
-  <div class="search-result-icon">
-    <i class="fa fa-spinner fa-pulse fa-5x"></i>
-  </div>
+<div class="search-result-container">
+  <div class="algolia-stats"><hr></div>
+  <div class="algolia-hits"></div>
+  <div class="algolia-pagination"></div>
 </div>
 
     </div>
@@ -224,7 +221,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/03/08/7-1-%E6%B1%82%E9%93%BE%E5%BC%8F%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACk%E9%A1%B9-20%E5%88%86/">
+    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/08/06/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -237,7 +234,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/03/08/7-1-%E6%B1%82%E9%93%BE%E5%BC%8F%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACk%E9%A1%B9-20%E5%88%86/" class="post-title-link" itemprop="url">7-1 求链式线性表的倒数第K项 (20分)</a>
+          <a href="/2020/08/06/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/" class="post-title-link" itemprop="url">网站开发日志</a>
         </h2>
 
         <div class="post-meta-container">
@@ -248,7 +245,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2020-03-08 21:37:48" itemprop="dateCreated datePublished" datetime="2020-03-08T21:37:48+08:00">2020-03-08</time>
+      <time title="创建时间：2020-08-06 13:26:06" itemprop="dateCreated datePublished" datetime="2020-08-06T13:26:06+08:00">2020-08-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -263,7 +260,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/c-c-%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">c/c++语言</span></a>
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
         </span>
     </span>
 
@@ -277,10 +274,445 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>给定一系列正整数，请设计一个尽可能高效的算法，查找倒数第K个位置上的数字。</p>
+          <p>2020-08-06</p>
+<ul>
+<li>  新增左侧菜单栏功能</li>
+<li>  新增菜单栏对比色功能</li>
+</ul>
+<p>菜单栏实现：内侧标题position使用relative可自动上下移动，想打开和关闭的组件使用display:block和none控制显示与隐藏，在标题栏div添加onclick事件更改display参数即可实现</p>
+<p>对比色实现：使用getelementsbyclassname获得一样classname的一个列表，for循环让列表[i]项的style.backgroundColor（注意这里和css不一样）变成不一样的颜色（加余数判定）</p>
+<p>注意：for循环内如果设置多个表的颜色，表内元素必须相同，不然进行时报错回中止for循环！！！</p>
+<p>2020-08-07</p>
+<ul>
+<li>  去除左右滚动条</li>
+<li>  调整左侧菜单布局样式</li>
+</ul>
+<p>滚动条：overflow:scroll;overflow-x:hidden</p>
+<p>2020-08-10</p>
+<ul>
+<li>  顶部菜单和右侧菜单添加一些内容</li>
+<li>  更改整体配色</li>
+<li>  更改整体布局，大小</li>
+</ul>
+<p>右侧菜单设置有问题待修复，下拉菜单：<select><option></p>
+<p><img data-src="https://img.jbzj.com/file_images/article/201212/20121213112015996.png"></p>
+<p>若要弄这样的表，灰色部分使用th白色部分用td就可以分开设置，td内部加input就可以输入值</p>
+<p>2020-08-12</p>
+<ul>
+<li>  添加鼠标悬浮气泡功能</li>
+<li>  样式小调整</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">static showdiv()&#123;</span><br><span class="line">        var tool = document.getElementsByClassName(&#x27;geSidebarTooltip&#x27;)[0];</span><br><span class="line">        //图片更改</span><br><span class="line">        var locate = this.firstElementChild.src;</span><br><span class="line">        var cimg = tool.firstElementChild;</span><br><span class="line">        cimg.src = locate;</span><br><span class="line">        //文字更改</span><br><span class="line">        var words =this.id.charAt(4).toUpperCase() + this.id.substr(5);</span><br><span class="line">        tool.children[1].innerText=words;</span><br><span class="line">        //位置更改</span><br><span class="line">        var t = this.offsetTop;</span><br><span class="line">        tool.style.top=t-10+&#x27;px&#x27;;</span><br><span class="line">        tool.style.display=&#x27;block&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">    static hidediv()&#123;</span><br><span class="line">        var tool = document.getElementsByClassName(&#x27;geSidebarTooltip&#x27;)[0];</span><br><span class="line">        tool.style.display=&#x27;none&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">var cpnt_btn_list = document.querySelectorAll(&#x27;.component_btn&#x27;);</span><br><span class="line">cpnt_btn_list.forEach(btn =&gt;&#123;</span><br><span class="line">    // formed as btn_ + component name</span><br><span class="line">    var cpnt_str = btn.id.charAt(4).toUpperCase() + btn.id.substr(5);</span><br><span class="line">    btn.component_type = eval(cpnt_str);</span><br><span class="line">    btn.addEventListener(&quot;click&quot;, Component_btn.attachComponent);</span><br><span class="line">    btn.addEventListener(&#x27;mouseover&#x27;,Component_btn.showdiv);</span><br><span class="line">    btn.addEventListener(&#x27;mouseout&#x27;,Component_btn.hidediv);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>以上为气泡核心代码，思路为先获得目标位置，图片src和文字描述，再通过js代码换进去，添加mouse over和mouseout就可以添加鼠标悬浮和移出功能</p>
+<p>只需要在html文件中添加一个div即可，div中添加主图img，下方文字div和左侧小箭头img。</p>
+<p>2020-08-13</p>
+<ul>
+<li>  添加checkbox函数，可以控制输入框disable值</li>
+<li>  右侧菜单新增奇偶颜色效果</li>
+<li>  新增dragging bar箭头效果</li>
+<li>  修复bug</li>
+</ul>
+<p>checkbox首先需要定义函数，添加onclick函数，定义两个变量分别选择box和需要更改的input list，第一个可以直接用id，第二个建议先选出父元素再用tagname选出input。添加判断条件q.checked，内部两个for循环就可解决，注意disabled是attrabute，需要用set和remove，set要传入两个参数</p>
+<p>箭头效果用css就可以，用js不知道为什么会出错</p>
+<p>2020-08-19</p>
+<ul>
+<li>  新增顶部工具栏标签</li>
+<li>  新增标签换颜色函数</li>
+<li>  将函数运用到左侧和顶部标签</li>
+</ul>
+<p>button标签的border是没按下时的边框，outline是按下之后的边框，建议颜色都是inherit</p>
+<p>h换色函数需要首先把所有标签都编号，判断当下颜色是否改变，没改变就变，然后把所有其他的都变成初始值</p>
+<p>应用的时候使用箭头函数btn=&gt;{}此时btn就是每次点击的this，使用匿名函数可以实现有参数的函数</p>
+<p>2020-08-21</p>
+<ul>
+<li>  尝试svg</li>
+<li>  增加顶部工具栏标签个数</li>
+</ul>
+<p>js中数字直接相加有可能是首尾相连，所以需要用parseInt转换！！</p>
+<p>2020-08-31</p>
+<ul>
+<li>  完成批量增加html元素功能</li>
+</ul>
+<p>添加时需要先选中要添加的位置，最好做一个空的div，然后使用innerHTML的方式直接添加，需注意的是换行和”都需要用\转义</p>
+<p>删除时只需要将其innerHTML变成””就可以</p>
+<p>2020-10-26</p>
+<p>人工alert函数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    &lt;div id=&quot;light&quot; class=&quot;white_content&quot;&gt;</span><br><span class="line">    &lt;/div&gt; </span><br><span class="line">    &lt;div id=&quot;fade&quot; class=&quot;black_overlay&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">.black_overlay&#123; </span><br><span class="line">    display: none; </span><br><span class="line">    position: absolute; </span><br><span class="line">    top: 0%; </span><br><span class="line">    left: 0%; </span><br><span class="line">    width: 100%; </span><br><span class="line">    height: 100%; </span><br><span class="line">    background-color: black; </span><br><span class="line">    z-index:1001; </span><br><span class="line">    -moz-opacity: 0.8; </span><br><span class="line">    opacity:.80; </span><br><span class="line">    filter: alpha(opacity=88); </span><br><span class="line">&#125; </span><br><span class="line">.white_content &#123; </span><br><span class="line">    display: none; </span><br><span class="line">    position: absolute; </span><br><span class="line">    top: 35%;</span><br><span class="line">    left: 45%;</span><br><span class="line">    width: 10%;</span><br><span class="line">    height: 15%;</span><br><span class="line">    padding: 20px; </span><br><span class="line">    background-color: white; </span><br><span class="line">    z-index:1002; </span><br><span class="line">    overflow: auto; </span><br><span class="line">    border: 5px solid black;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">function artificial_alert(text)&#123;</span><br><span class="line">    document.getElementById(&#x27;light&#x27;).innerHTML=&quot;&lt;p&gt;&quot;+text+&quot;&lt;/p&gt;&lt;button type=\&quot;button\&quot; onclick=\&quot;closeDialog()\&quot;&gt;关闭&lt;/button&gt;&quot;</span><br><span class="line">    if(document.getElementById(&#x27;light&#x27;).style.display== &#x27;block&#x27;)&#123;</span><br><span class="line">        document.getElementById(&#x27;light&#x27;).style.display = &#x27;none&#x27;;</span><br><span class="line">        document.getElementById(&#x27;fade&#x27;).style.display = &#x27;none&#x27;;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        document.getElementById(&#x27;light&#x27;).style.display = &#x27;block&#x27;;</span><br><span class="line">        document.getElementById(&#x27;fade&#x27;).style.display = &#x27;block&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>原理就是动态添加需要alert的文字进去</p>
+<p>2020-11-04</p>
+<p>最近在搞bootstrap</p>
+<p>导入时只需要</p>
+<p><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css&quot;&gt;</code> </p>
+<p><code>&lt;script src=&quot;https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js&quot;&gt;&lt;/script&gt;</code> </p>
+<p><code>&lt;script src=&quot;https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</code></p>
+<p>就可以，但是在npm下运行时需要把jq下载到本地，同时引入在线jq和本地jq才可以</p>
+<p>输入框默认值，点击清除，不点击恢复：</p>
+<p><code>onfocus=&quot;if(this.value==&#39;test&#39;)&#123;this.value=&#39;&#39;&#125;&quot; onblur=&quot;if(this.value==&#39;&#39;)&#123;this.value=&#39;test&#39;&#125;&quot; value=&quot;test&quot;</code></p>
+<p>用for循环appendChild时不能只靠innerHTML修改元素，必须重新声明才可以</p>
+<p>列表可以使用push 和pop</p>
+<p>2020/11/23</p>
+<p>实现长宽比：</p>
+<p>垂直方向的padding</p>
+<p>这是最早提出的一种实现方案，主要借助的原理是利用<code>padding-top</code>或者<code>padding-bottom</code>的百分比值，实现容器长宽比。在CSS中<code>padding-top</code>或<code>padding-bottom</code>的百分比值是根据容器的<code>width</code>来计算的。如此一来就很好的实现了容器的长宽比。采用这种方法，需要把容器的<code>height</code>设置为<code>0</code>。而容器内容的所有元素都需要采用<code>position:absolute</code>，不然子元素内容都将被<code>padding</code>挤出容器（造成内容溢出）。</p>
+<p>比如我们容器的长宽比是<code>16:9</code>，那么根据计算：<code>100% * 9 / 16</code>可以得到<code>56.25%</code>。如果你希望的是<code>4:3</code>，那么对应的就是<code>100% * 3 / 4</code>。</p>
+<p>具体的CSS代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.aspectration &#123;</span><br><span class="line">    position: relative; /*因为容器所有子元素需要绝对定位*/</span><br><span class="line">    height: 0; /*容器高度是由padding来控制，盒模型原理告诉你一切*/</span><br><span class="line">    width: 100%; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.aspectration[data-ratio=&quot;16:9&quot;] &#123;</span><br><span class="line">    padding-top: 56.25%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.aspectration[data-ratio=&quot;4:3&quot;]&#123;</span><br><span class="line">    padding-top: 75%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过通配符<code>*</code>选择器，让其子元素的宽高和容器<code>.aspectration</code>一样大小：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.aspectration &gt; * &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: 0;</span><br><span class="line">    top: 0;</span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 100%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/07/30/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Xuanlang">
+      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="松鼠小筑">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/07/30/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">JS学习笔记</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-07-30 00:07:16" itemprop="dateCreated datePublished" datetime="2020-07-30T00:07:16+08:00">2020-07-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-01-12 13:42:46" itemprop="dateModified" datetime="2022-01-12T13:42:46+08:00">2022-01-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="2020-07-29"><a href="#2020-07-29" class="headerlink" title="2020/07/29"></a>2020/07/29</h2><p>6.1对象性质</p>
+<ul>
+<li>  数据属性直接定义，有四个属性</li>
+<li>  访问器只能用函数定义，有set和get，通常用来改一个值就改所有值</li>
+<li>  获取属性使用<code>var qq = object.getownpropertydescriptor(name,&quot;数据名&quot;)</code></li>
+</ul>
+<p>6.2创建对象</p>
+<ul>
+<li>  构造函数模式，直接写构造函数之后new即可</li>
+<li>  原型模式，使用prototype关键字，初始化定义好属性，使用时修改则会吧原型的同名属性屏蔽，可以用delete删除某一属性</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//当前使用最广泛</span><br><span class="line">function personq(name,age,job)</span><br><span class="line">&#123;</span><br><span class="line">    this.age = age;</span><br><span class="line">    this.name = name;</span><br><span class="line">    this.job = job;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">personq.prototype = </span><br><span class="line">&#123;</span><br><span class="line">    constructor:personq,</span><br><span class="line">    sayname:function()&#123;</span><br><span class="line">        alert(this.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>6.3原型链</p>
+<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/07/image-745x1024.png"></p>
+<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/07/image-1-1024x526.png"></p>
+<p>继承：</p>
+<ul>
+<li>  组合式继承</li>
+<li>  寄生组合式继承（效果最好）</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function inheritPrototype(subType,superType)&#123;</span><br><span class="line">    var prototype = Object(superType,prototype);</span><br><span class="line">    prototype.constructor = subType;</span><br><span class="line">    subType.prototype = prototype;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function Supertype(name)</span><br><span class="line">&#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Supertype.prototype.sayname = function()</span><br><span class="line">&#123;</span><br><span class="line">    alert(this.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function Subtype(name,age)&#123;</span><br><span class="line">    //继承属性</span><br><span class="line">    Supertype.call(this,name);</span><br><span class="line">    this.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//继承方法</span><br><span class="line">Subtype.prototype = new Supertype();</span><br><span class="line">//寄生组合式继承</span><br><span class="line">//inheritPrototype(Subtype,Supertype);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Subtype.prototype.sayage = function()&#123;</span><br><span class="line">    alert(this.age);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2020-07-30"><a href="#2020-07-30" class="headerlink" title="2020/07/30"></a>2020/07/30</h2><p>函数表达式可以不对函数命名，即匿名函数</p>
+<p>在函数内部定义其他函数是闭包，用处两个</p>
+<ul>
+<li>  创建并立刻调用函数</li>
+<li>  实现私有变量</li>
+</ul>
+<p>BOM</p>
+<p>window对象：</p>
+<ul>
+<li>  top指向最外围的框架，parent指向上一级</li>
+<li>  window可以指定窗口大小和位置</li>
+<li>  导航和打开窗口</li>
+</ul>
+<p>location对象：</p>
+<ul>
+<li>  通过编程访问浏览器导航，逐段修改浏览器url</li>
+<li>  使用replace（）方法可以不能返回</li>
+</ul>
+<p>navigator对象：</p>
+<ul>
+<li>  检测插件</li>
+<li>  与浏览器有关</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/07/28/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Xuanlang">
+      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="松鼠小筑">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/07/28/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">Git学习笔记</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-07-28 19:53:13" itemprop="dateCreated datePublished" datetime="2020-07-28T19:53:13+08:00">2020-07-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-01-12 13:42:46" itemprop="dateModified" datetime="2022-01-12T13:42:46+08:00">2022-01-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>下载安装</p>
+<ul>
+<li><p>  到目标文件夹中git init初始化</p>
+</li>
+<li><p>  把文件添加到git仓库使用命令<code>git add &lt;file&gt;</code></p>
+</li>
+<li><p>  使用命令 <code>git commit -m &lt;message&gt;</code></p>
+</li>
+<li><p>  要随时掌握工作区的状态，使用<code>git status</code>命令。</p>
+</li>
+<li><p>  如果<code>git status</code>告诉你有文件被修改过，用<code>git diff</code>可以查看修改内容。</p>
+</li>
+<li><p>  <code>HEAD</code>指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令<code>git reset --hard commit_id</code>。（上一个是HEAD^,上100个是HEAD~100）</p>
+</li>
+<li><p>  穿梭前，用<code>git log</code>可以查看提交历史，以便确定要回退到哪个版本。</p>
+</li>
+<li><p>  要重返未来，用<code>git reflog</code>查看命令历史，以便确定要回到未来的哪个版本。</p>
+</li>
+</ul>
+<p>场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令<code>git checkout -- file</code>。</p>
+<p>场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令<code>git reset HEAD &lt;file&gt;</code>，就回到了场景1，第二步按场景1操作。</p>
+<p>命令<code>git rm</code>用于删除一个文件</p>
+<p>要关联一个远程库，使用命令<code>git remote add origin git@server-name:path/repo-name.git</code>；</p>
+<p>关联后，使用命令<code>git push -u origin master</code>第一次推送master分支的所有内容；</p>
+<p>此后，每次本地提交后，只要有必要，就可以使用命令<code>git push origin master</code>推送最新修改；.</p>
+<p>要克隆一个仓库，首先必须知道仓库的地址，然后使用<code>git clone</code>命令克隆。</p>
+<p>$ git clone <a href="mailto:&#103;&#105;&#x74;&#x40;&#x67;&#x69;&#116;&#104;&#x75;&#x62;&#46;&#99;&#111;&#x6d;">&#103;&#105;&#x74;&#x40;&#x67;&#x69;&#116;&#104;&#x75;&#x62;&#46;&#99;&#111;&#x6d;</a>:1982606762/worked1</p>
+<p>Git鼓励大量使用分支：</p>
+<p>查看分支：<code>git branch</code></p>
+<p>创建分支：<code>git branch &lt;name&gt;</code></p>
+<p>切换分支：<code>git checkout &lt;name&gt;</code>或者<code>git switch &lt;name&gt;</code></p>
+<p>创建+切换分支：<code>git checkout -b &lt;name&gt;</code>或者<code>git switch -c &lt;name&gt;</code></p>
+<p>合并某分支到当前分支：<code>git merge &lt;name&gt;</code></p>
+<p>删除分支：<code>git branch -d &lt;name&gt;</code></p>
+<p>远程连接github：</p>
+<h2 id="1-检查SSH-keys是否存在"><a href="#1-检查SSH-keys是否存在" class="headerlink" title="1. 检查SSH keys是否存在"></a>1. 检查SSH keys是否存在</h2><p>输入下面的命令，如果有文件<code>id_rsa.pub</code> 或 <code>id_dsa.pub</code>，则直接进入步骤3将SSH key添加到GitHub中，否则进入第二步生成SSH key</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls -al ~/.ssh</span><br><span class="line"># Lists the files in your .ssh directory, if they exist</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-生成新的ssh-key"><a href="#2-生成新的ssh-key" class="headerlink" title="2. 生成新的ssh key"></a>2. 生成新的ssh key</h2><p><strong>第一步：生成public/private rsa key pair</strong><br>在命令行中输入<code>ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</code></p>
+<p>默认会在相应路径下（/your_home_path）生成<code>id_rsa</code>和<code>id_rsa.pub</code>两个文件，如下面代码所示</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</span><br><span class="line"># Creates a new ssh key using the provided email</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/your_home_path/.ssh/id_rsa):</span><br></pre></td></tr></table></figure>
+
+<p><strong>第二步：输入passphrase（本步骤可以跳过）</strong></p>
+<p>设置passphrase后，进行版本控制时，每次与GitHub通信都会要求输入passphrase，以避免某些“失误”</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Enter passphrase (empty for no passphrase): [Type a passphrase]</span><br><span class="line">Enter same passphrase again: [Type passphrase again]</span><br></pre></td></tr></table></figure>
+
+<p>sample result:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Your identification has been saved in /your_home_path/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved in /your_home_path/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">#01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@example.com</span><br></pre></td></tr></table></figure>
+
+<p><strong>第三步：将新生成的key添加到ssh-agent中:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># start the ssh-agent in the background</span><br><span class="line">eval &quot;$(ssh-agent -s)&quot;</span><br><span class="line">Agent pid 59566</span><br><span class="line">ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-将ssh-key添加到GitHub中"><a href="#3-将ssh-key添加到GitHub中" class="headerlink" title="3. 将ssh key添加到GitHub中"></a>3. 将ssh key添加到GitHub中</h2><p>用自己喜欢的文本编辑器打开<code>id_rsa.pub</code>文件，里面的信息即为SSH key，将这些信息复制到GitHub的<code>Add SSH key</code>页面即可</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/07/28/git%E6%95%99%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Xuanlang">
+      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="松鼠小筑">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/07/28/git%E6%95%99%E7%A8%8B/" class="post-title-link" itemprop="url">Git教程</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-07-28 18:38:40" itemprop="dateCreated datePublished" datetime="2020-07-28T18:38:40+08:00">2020-07-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-01-12 13:42:46" itemprop="dateModified" datetime="2022-01-12T13:42:46+08:00">2022-01-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9D%82/" itemprop="url" rel="index"><span itemprop="name">杂</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><strong>目录</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/best/p/7474442.html#_label0">一、版本控制概要 工作区 暂存区 本地仓库 远程仓库</a><ul>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/best/p/7474442.html#_lab2_0_0">1.1、什么是版本控制</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/best/p/7474442.html#_lab2_0_1">1.2、常用术语</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/best/p/7474442.html#_lab2_0_2">1.3、常见的版本控制器</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/best/p/7474442.html#_lab2_0_3">1.4、版本控制分类</a><ul>
+<li>  <a target="_blank" rel="noopener" href="https://www.cnblogs.com/best/p/7474442.html#_label3_0_3_0">1.4.1、本地版本控制</a></li>
+<li>  <a target="_blank" rel="noopener" href="https://www.cnblogs.com/best/p/7474442.html#_label3_0_3_1">1.4.2、集中版本控制</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/best/p/7474442.html#_label3_0_3_2">1.4.3、分布式版本控制</a></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/best/p/7474442.html#_lab2_0_4">1.5、Git与SVN最主要区别</a>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/03/08/7-1-%E6%B1%82%E9%93%BE%E5%BC%8F%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACk%E9%A1%B9-20%E5%88%86/#more" rel="contents">
+              <a class="btn" href="/2020/07/28/git%E6%95%99%E7%A8%8B/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -311,7 +743,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/03/07/%E5%8D%95%E9%93%BE%E8%A1%A8/">
+    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/07/15/%E4%BD%BF%E7%94%A8mysql-query-browser%E6%97%B6%E5%87%BA%E7%8E%B0error1251%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -324,7 +756,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/03/07/%E5%8D%95%E9%93%BE%E8%A1%A8/" class="post-title-link" itemprop="url">单链表</a>
+          <a href="/2020/07/15/%E4%BD%BF%E7%94%A8mysql-query-browser%E6%97%B6%E5%87%BA%E7%8E%B0error1251%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="post-title-link" itemprop="url">使用MYSQL QUERY browser时出现error1251的解决方案</a>
         </h2>
 
         <div class="post-meta-container">
@@ -335,7 +767,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2020-03-07 21:49:43" itemprop="dateCreated datePublished" datetime="2020-03-07T21:49:43+08:00">2020-03-07</time>
+      <time title="创建时间：2020-07-15 11:58:59" itemprop="dateCreated datePublished" datetime="2020-07-15T11:58:59+08:00">2020-07-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -350,7 +782,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">数据结构笔记</span></a>
+          <a href="/categories/%E6%9D%82/" itemprop="url" rel="index"><span itemprop="name">杂</span></a>
         </span>
     </span>
 
@@ -364,790 +796,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>2-3 某线性表中最常用的操作是在最后一个元素之后插入一个元素和删除第一个元素，则采用什么存储方式最节省运算时间？ (2分)b</p>
-<ol>
-<li> 单链表</li>
-<li> 仅有尾指针的单循环链表</li>
-<li> 仅有头指针的单循环链表</li>
-<li> 双链表</li>
-</ol>
-<p>c虽然可以直接获得第一个元素，但是想要获得最后一个元素却需要遍历整个链表。而b给出的是带有尾结点的单循环链表，这样就可以直接得到最后一个元素，想要得到第一个元素只需要再遍历一个元素就可以，所以选择b</p>
-<p>1-22下列函数试图求链式存储的线性表的表长，是否正确？</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">int  Length ( List  *PtrL )</span><br><span class="line">&#123;    List  *p = PtrL;      </span><br><span class="line">     int  j = 0;</span><br><span class="line">     while ( p ) &#123; </span><br><span class="line">           p++; </span><br><span class="line">           j++;                 </span><br><span class="line">     &#125;   </span><br><span class="line">     return  j;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>F p++不能指向后一个元素</p>
-<p>2-4</p>
-<p>若某表最常用的操作是在最后一个结点之后插入一个结点或删除最后一个结点。则采用哪种存储方式最节省运算时间？ (2分)</p>
-<ol>
-<li> 单链表</li>
-<li> 双链表</li>
-<li> 单循环链表</li>
-<li> 带头结点的双循环链表</li>
-</ol>
-<p>D 头结点上一个就是最后一个节点</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-1024x454.png"></p>
-<p>这道题的逻辑，简单来说，就是地址存放你当前元素的地址，链接地址是指向当前元素的下一个元素的地址。 因此，我们来看没插入f之前时，链表的顺序，由于头元素是c（地址1008H），由C开始，C的链接地址是1000H，也就是指向元素a（地址1000H），之后a的链接地址是1010H，也就是指向元素e。。。 按照上面这个思路遍历，我们可以得到链表的遍历顺序c（1008H）-&gt;a（1000H）-&gt;e（1010H）-&gt;b（1004H）-&gt;d（100CH）-&gt;null。 由于f逻辑上位于a和e之间，因此也就是说将f插入到ae之间，因此只需要修改a的链接地址（也就是指向下一个元素的地址）为f的地址（1014H），然后将f的链接地址修改为e的地址。<br>链表插入不影响其他元素，所以其他元素链接地址不变。</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-1.png"></p>
-<p>不带表头结点，头指针直接指向数据</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-2.png"></p>
-<p>在m之后</p>
-<p>在一个长度为 n （ n&gt;1 ）的单链表上，设有头和尾两个指针，执行 操作与链表的长度有关。</p>
-<ul>
-<li>  删除单链表中的第一个元素</li>
-<li>  删除单链表中的最后一个元素</li>
-<li>  在单链表第一个元素前插入一个新元素</li>
-<li>  在单链表最后一个元素后插入一个新元素</li>
-</ul>
-<p>A<br>头指针是指向第一个元素（结点）的指针。 当<strong>删除单链表中的第一个元素</strong>时只需要将头指针指向第二个元素，然后释放第一个元素储存空间申请的内存。与链表长度无关。</p>
-<p>123</p>
-<p><code>ListNode *temp = head-&gt;next;``head-&gt;next = temp-&gt;next;``free``(temp);</code></p>
-<p>B<br>尾指针是指向最后一个元素（结点）的指针，与头指针类似。 当<strong>删除单链表中的最后一个元素</strong>时 由于不是双向链表，所以要从头指针开始，一直遍历直到倒数第二个元素，将倒数第二个元素（结点）指向NULL，释放原末端元素（结点）空间后，将尾指针等于新的末端元素（结点）。所以与链表长度有关。  </p>
-<p>12345</p>
-<p><code>ListNode *p = head;``while``(p-&gt;next != rear) p = p-&gt;next;``p-&gt;next = NULL;``free``(r);``r = p;</code></p>
-<p>C <strong>在单链表第一个元素前插入一个新元素</strong>时，只需要把新的元素（结点）指向原来的第一个元素（结点），然后使头指针指向新的元素（结点）。与链表长度无关。</p>
-<p>12</p>
-<p><code>new_point-&gt;next = head-&gt;next;``head-&gt;next = new_point;</code></p>
-<p>D <strong>在单链表最后一个元素后插入一个新元素</strong>时，只需先将新结点指向NULL，然后将尾指针指向的原末端结点指向新的元素（结点），最后将尾指针指向新的元素（结点）。与链表长度无关。</p>
-<p>123</p>
-<p><code>new_point-&gt;next = NULL;``rear-&gt;next = new_point;``rear = new_point;</code></p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-3.png"></p>
-<p>静态链表:数组的每一个下标都对应一个data和一个cur。数据域data用来存放数据元素，；而游标cur相当于单链表中的next指针，</p>
-<p>存放该元素的后继在数组中的下标。</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-4.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/03/05/clion%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Xuanlang">
-      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="松鼠小筑">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/03/05/clion%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">clion的安装和配置</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-03-05 09:47:55" itemprop="dateCreated datePublished" datetime="2020-03-05T09:47:55+08:00">2020-03-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-01-12 13:42:46" itemprop="dateModified" datetime="2022-01-12T13:42:46+08:00">2022-01-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/c-c-%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">c/c++语言</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>写代码时一个易用的编译器是很重要的，若想写c/c++我推荐jetbrain家的clion，真的很方便</p>
-<p>首先去官网下载<a target="_blank" rel="noopener" href="https://www.jetbrains.com/clion/">官网页面</a>并安装</p>
-<p>在这不提供破解方法，建议支持正版，破解方法可以在百度上搜索到</p>
-<p>之后需要下载一个c/c++的译码器，我在这用的是MingW.不建议去官网下载，因为即使科学上网速度也还是很慢而且容易出错</p>
-<p>在这提供我的百度网盘收藏链接，直接下载安装即可</p>
-<p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1xYOb-eYFKSfJgwFxG9fZWw">https://pan.baidu.com/s/1xYOb-eYFKSfJgwFxG9fZWw</a><br>提取码：kiec</p>
-<p><strong>（2）配置CLion</strong><br>打开CLion，左上角File-Settings-Build-Toolchains，然后点击 <strong>+</strong> 号  </p>
-<p><img data-src="//upload-images.jianshu.io/upload_images/13625730-59b19c35c9589ad0.png?imageMogr2/auto-orient/stripimageView2/2/w/908/format/webp"></p>
-<p>settings</p>
-<p><img data-src="//upload-images.jianshu.io/upload_images/13625730-9c1c7b4ac50f2320.png?imageMogr2/auto-orient/stripimageView2/2/w/624/format/webp"></p>
-<p>toolchains</p>
-<p>Environment选择MinGW，然后填入刚刚解压的MinGW64的路径（这是我的路径）：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\71022\Documents\mingw64</span><br></pre></td></tr></table></figure>
-
-<p><img data-src="//upload-images.jianshu.io/upload_images/13625730-c97f11fcde1a679f.png?imageMogr2/auto-orient/stripimageView2/2/w/780/format/webp"></p>
-<p>image.png</p>
-<p>然后CLion会自动帮你填上所有你该填的东西，点击OK，等调试的小虫子变绿就可以了。</p>
-<p><img data-src="//upload-images.jianshu.io/upload_images/13625730-9f5aa1e8408cef27.png?imageMogr2/auto-orient/stripimageView2/2/w/781/format/webp"></p>
-<p>image.png</p>
-<p><strong>当然，也会出现无法检测成功的情况，这时候就需要手动填写啦。</strong><br>CMake一般会自动选择。<br>Make填入路径：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\71022\Documents\mingw64\bin\mingw32-make.exe</span><br></pre></td></tr></table></figure>
-
-<p>C Compiler填入路径：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\71022\Documents\mingw64\bin\gcc.exe</span><br></pre></td></tr></table></figure>
-
-<p>C++ Compiler填入路径：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\71022\Documents\mingw64\bin\g++.exe</span><br></pre></td></tr></table></figure>
-
-<p>Debugger一般会自己填入，如果没有可以手动填：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\71022\Documents\mingw64\bin\gdb.exe</span><br></pre></td></tr></table></figure>
-
-<p>然后OK，等一段时间就可以了。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/03/05/7-3-%E5%AD%A6%E7%94%9F%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%9A%84%E5%BB%BA%E7%AB%8B-10%E5%88%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Xuanlang">
-      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="松鼠小筑">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/03/05/7-3-%E5%AD%A6%E7%94%9F%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%9A%84%E5%BB%BA%E7%AB%8B-10%E5%88%86/" class="post-title-link" itemprop="url">7-3 学生顺序表的建立 (10分)</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-03-05 09:40:00" itemprop="dateCreated datePublished" datetime="2020-03-05T09:40:00+08:00">2020-03-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-01-12 13:42:46" itemprop="dateModified" datetime="2022-01-12T13:42:46+08:00">2022-01-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/c-c-%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">c/c++语言</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>完成对一个顺序表的建立，表中的每个元素是同学们的学号、姓名和三门课程的成绩，输入5个同学的信息，然后显示在屏幕上。（要求利用顺序表的基本操作）</p>
-<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h3><p>首先收入学生人数5，然后依次输入5个学生的学号、姓名和三门课的成绩</p>
-<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h3><p>输入5个学生的学号、姓名和三门课的成绩</p>
-<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h3><p>5 01 张三 89 89 89 02 李四 90 90 90 03 王五 89 89 89 04 钱六 97 97 97 05 赵倩 90 90 90</p>
-<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h3><p>1 张三 89.0 89.0 89.0 2 李四 90.0 90.0 90.0 3 王五 89.0 89.0 89.0 4 钱六 97.0 97.0 97.0 5 赵倩 90.0 90.0 90.0</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">struct STU</span><br><span class="line">&#123;</span><br><span class="line">    int id;</span><br><span class="line">    char name[20];</span><br><span class="line">    float score1;</span><br><span class="line">    float score2;</span><br><span class="line">    float score3;</span><br><span class="line">&#125;stu[20];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int m;</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;m);</span><br><span class="line">    for (int i = 0; i &lt;m ; ++i) &#123;</span><br><span class="line">        scanf(&quot;%d%s%f%f%f&quot;,&amp;stu[i].id,&amp;stu[i].name,&amp;stu[i].score1,&amp;stu[i].score2,&amp;stu[i].score3);</span><br><span class="line">    &#125;</span><br><span class="line">    for (int j = 0; j &lt; m-1; ++j) &#123;</span><br><span class="line">        printf(&quot;%d %s %.1f %.1f %.1f\n&quot;,j+1,stu[j].name,stu[j].score1,stu[j].score2,stu[j].score3);</span><br><span class="line">    &#125;</span><br><span class="line">    int j=m-1;</span><br><span class="line">    printf(&quot;%d %s %.1f %.1f %.1f&quot;,j+1,stu[j].name,stu[j].score1,stu[j].score2,stu[j].score3);</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/02/28/7-4-%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%9A%84%E5%BB%BA%E7%AB%8B%E5%8F%8A%E9%81%8D%E5%8E%86-30%E5%88%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Xuanlang">
-      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="松鼠小筑">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/02/28/7-4-%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%9A%84%E5%BB%BA%E7%AB%8B%E5%8F%8A%E9%81%8D%E5%8E%86-30%E5%88%86/" class="post-title-link" itemprop="url">7-4 顺序表的建立及遍历 (30分)</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-02-28 22:48:24" itemprop="dateCreated datePublished" datetime="2020-02-28T22:48:24+08:00">2020-02-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-01-12 13:42:46" itemprop="dateModified" datetime="2022-01-12T13:42:46+08:00">2022-01-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/c-c-%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">c/c++语言</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>读入n值及n个整数，建立顺序表并遍历输出。</p>
-<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h3><p>读入n及n个整数</p>
-<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h3><p>输出n个整数，以空格分隔（最后一个数的后面没有空格）。</p>
-<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h3><p>在这里给出一组输入。例如：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">-3 10 20 78</span><br></pre></td></tr></table></figure>
-
-<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h3><p>在这里给出相应的输出。例如：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-3 10 20 78</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;string.h&gt;</span><br><span class="line">#include&lt;malloc.h&gt;</span><br><span class="line">#define list 10</span><br><span class="line">#define max 10</span><br><span class="line"> </span><br><span class="line">typedef int Elemtype;</span><br><span class="line">typedef struct sqlist *List;</span><br><span class="line">struct sqlist&#123;</span><br><span class="line">Elemtype *elem;</span><br><span class="line">int length;</span><br><span class="line">int listsize;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line">void initlist(List L)&#123;</span><br><span class="line">L-&gt;elem=(Elemtype *)malloc(list*sizeof(Elemtype));</span><br><span class="line">L-&gt;length=0;</span><br><span class="line">L-&gt;listsize=max;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">void creat(List L)&#123;</span><br><span class="line">initlist(L);</span><br><span class="line">int i,n;</span><br><span class="line">scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">for(i=0;i&lt;n;i++) &#123;</span><br><span class="line">   scanf(&quot;%d&quot;,&amp;L-&gt;elem[i]);</span><br><span class="line">   L-&gt;length++;</span><br><span class="line">   if(L-&gt;length==L-&gt;listsize) &#123;</span><br><span class="line">int *new_elem = (Elemtype *)malloc((L-&gt;listsize+list)*sizeof(Elemtype));</span><br><span class="line">memcpy(new_elem,L-&gt;elem,L-&gt;length);</span><br><span class="line">L-&gt;elem = new_elem;</span><br><span class="line">L-&gt;listsize+=list;</span><br><span class="line">   &#125;</span><br><span class="line">&#125; </span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">void print(List L) &#123;</span><br><span class="line">for(int i=0; i&lt;L-&gt;length;i++) &#123;</span><br><span class="line">if(i==L-&gt;length-1)</span><br><span class="line">printf(&quot;%d&quot;,L-&gt;elem[i]);</span><br><span class="line">else</span><br><span class="line">printf(&quot;%d &quot;,L-&gt;elem[i]);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">int main()&#123;</span><br><span class="line">List L = (List)malloc(sizeof(struct sqlist));</span><br><span class="line">initlist(L);</span><br><span class="line">creat(L);</span><br><span class="line">print(L);</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/02/28/7-5-%E6%B1%82%E9%9B%86%E5%90%88%E4%BA%A4%E9%9B%86-20%E5%88%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Xuanlang">
-      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="松鼠小筑">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/02/28/7-5-%E6%B1%82%E9%9B%86%E5%90%88%E4%BA%A4%E9%9B%86-20%E5%88%86/" class="post-title-link" itemprop="url">7-5 求集合交集 (20分)</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-02-28 22:47:03" itemprop="dateCreated datePublished" datetime="2020-02-28T22:47:03+08:00">2020-02-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-01-12 13:42:46" itemprop="dateModified" datetime="2022-01-12T13:42:46+08:00">2022-01-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/c-c-%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">c/c++语言</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>求整数集合A与整数集合B的交集。</p>
-<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h3><p>输入有三行： 第一行是A和B的元素个数m和n； 第二行是集合A的m个元素； 第三行是集合A的n个元素。</p>
-<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h3><p>输出交集的所有元素（按照在A集合出现的顺序输出，最后一个输出后面没有空格）。</p>
-<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h3><p>在这里给出一组输入。例如：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">3 4</span><br><span class="line">10 9 2</span><br><span class="line">9 10 8 0</span><br></pre></td></tr></table></figure>
-
-<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h3><p>在这里给出相应的输出。例如：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">10 9</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a,b,alist[999],blist[999];</span><br><span class="line">    scanf(&quot;%d%d&quot;,&amp;a,&amp;b);</span><br><span class="line">    for(int i=0;i&lt;a;i++)&#123;</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;alist[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    for(int j=0;j&lt;b;j++)&#123;</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;blist[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    int clist[999]=&#123;0&#125;;</span><br><span class="line">    int q=0;</span><br><span class="line">    for(int k=0;k&lt;a;k++)&#123;</span><br><span class="line">        int temp=alist[k];</span><br><span class="line">        for(int p=0;p&lt;b;p++)&#123;</span><br><span class="line">            if(temp==blist[p])&#123;</span><br><span class="line">                clist[q]=temp;</span><br><span class="line">                q++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if (q&gt;0)&#123;</span><br><span class="line">    for(int u=0;u&lt;q-1;u++)&#123;</span><br><span class="line">        printf(&quot;%d &quot;,clist[u]);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;%d&quot;,clist[q-1]);</span><br><span class="line">    return 0;&#125; else&#123;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/02/28/7-2-jmu-ds-%E9%A1%BA%E5%BA%8F%E8%A1%A8%E5%8C%BA%E9%97%B4%E5%85%83%E7%B4%A0%E5%88%A0%E9%99%A4-15%E5%88%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Xuanlang">
-      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="松鼠小筑">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/02/28/7-2-jmu-ds-%E9%A1%BA%E5%BA%8F%E8%A1%A8%E5%8C%BA%E9%97%B4%E5%85%83%E7%B4%A0%E5%88%A0%E9%99%A4-15%E5%88%86/" class="post-title-link" itemprop="url">7-2 jmu-ds-顺序表区间元素删除 (15分)</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-02-28 21:03:32" itemprop="dateCreated datePublished" datetime="2020-02-28T21:03:32+08:00">2020-02-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-01-12 13:42:46" itemprop="dateModified" datetime="2022-01-12T13:42:46+08:00">2022-01-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/c-c-%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">c/c++语言</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>若一个线性表L采用顺序存储结构存储，其中所有的元素为整数。设计一个算法，删除元素值在[x,y]之间的所有元素，要求算法的时间复杂度为O(n)，空间复杂度为O(1)。</p>
-<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h3><p>三行数据，第一行是顺序表的元素个数，第二行是顺序表的元素，第三行是x和y。</p>
-<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h3><p>删除元素值在[x,y]之间的所有元素后的顺序表。</p>
-<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h3><p>10<br>5 1 9 10 67 12 8 33 6 2<br>3 10</p>
-<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h3><p>1 67 12 33 2</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int m;</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;m );</span><br><span class="line"></span><br><span class="line">    int list[999];</span><br><span class="line">    for (int i = 0; i &lt; m; ++i) &#123;</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;list[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    int x,y;</span><br><span class="line">    scanf(&quot;%d%d&quot;,&amp;x,&amp;y);</span><br><span class="line"></span><br><span class="line">    int list2[999],q=0;</span><br><span class="line"></span><br><span class="line">    for (int j = 0; j &lt; m; ++j) &#123;</span><br><span class="line">        if (x&gt;list[j]y&lt;list[j])</span><br><span class="line">        &#123;</span><br><span class="line">            list2[q]=list[j];</span><br><span class="line">            q++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    for (int i = 0; i &lt; q-1; ++i) &#123;</span><br><span class="line">        printf(&quot;%d &quot;,list2[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;%d&quot;,list2[q-1]);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/02/28/7-1-%E6%95%B0%E7%BB%84%E5%BE%AA%E7%8E%AF%E5%B7%A6%E7%A7%BB-20%E5%88%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Xuanlang">
-      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="松鼠小筑">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/02/28/7-1-%E6%95%B0%E7%BB%84%E5%BE%AA%E7%8E%AF%E5%B7%A6%E7%A7%BB-20%E5%88%86/" class="post-title-link" itemprop="url">7-1 数组循环左移 (20分)</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-02-28 20:02:53" itemprop="dateCreated datePublished" datetime="2020-02-28T20:02:53+08:00">2020-02-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-01-12 13:42:46" itemprop="dateModified" datetime="2022-01-12T13:42:46+08:00">2022-01-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/c-c-%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">c/c++语言</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>本题要求实现一个对数组进行循环左移的简单函数：一个数组_a_中存有_n_（&gt;0）个整数，在不允许使用另外数组的前提下，将每个整数循环向左移_m_（≥0）个位置，即将_a_中的数据由（_a_​0​​_a_​1​​⋯_a_​_n_−1​​）变换为（_a_​_m_​​⋯_a_​_n_−1​​_a_​0​​_a_​1​​⋯_a_​_m_−1​​）（最前面的_m_个数循环移至最后面的_m_个位置）。如果还需要考虑程序移动数据的次数尽量少，要如何设计移动的方法？</p>
-<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h3><p>输入第1行给出正整数_n_（≤100）和整数_m_（≥0）；第2行给出_n_个整数，其间以空格分隔。</p>
-<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h3><p>在一行中输出循环左移_m_位以后的整数序列，之间用空格分隔，序列结尾不能有多余空格。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">8 3</span><br><span class="line">1 2 3 4 5 6 7 8</span><br></pre></td></tr></table></figure>
-
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4 5 6 7 8 1 2 3</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int m,n;</span><br><span class="line">    scanf(&quot;%d%d&quot;,&amp;m,&amp;n );</span><br><span class="line">    </span><br><span class="line">    int list[999];</span><br><span class="line">    for (int i = 0; i &lt; m; ++i) &#123;</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;list[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    for (int j = 0; j &lt; n; ++j) &#123;</span><br><span class="line">        int temp = list[0];</span><br><span class="line">        for (int i = 1; i &lt;m ; ++i) &#123;</span><br><span class="line">            list[i-1]=list[i];</span><br><span class="line">        &#125;</span><br><span class="line">        list[m-1]=temp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    for (int i = 0; i &lt; m-1; ++i) &#123;</span><br><span class="line">        printf(&quot;%d &quot;,list[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;%d&quot;,list[m-1]);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/02/28/c%E8%AF%AD%E8%A8%80%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Xuanlang">
-      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="松鼠小筑">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/02/28/c%E8%AF%AD%E8%A8%80%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C/" class="post-title-link" itemprop="url">C语言数组操作</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-02-28 19:10:46" itemprop="dateCreated datePublished" datetime="2020-02-28T19:10:46+08:00">2020-02-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-01-12 13:42:46" itemprop="dateModified" datetime="2022-01-12T13:42:46+08:00">2022-01-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/c-c-%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">c/c++语言</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>1.数组定义</p>
-<p>int a[5]</p>
-<p>int a[5] = {1,2,3}</p>
-<p>int a[]={1,2,3,4,5}</p>
-<p>int a[5]={1,2,3,4,5}</p>
-<p>例：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># include &lt;stdio.h&gt;</span><br><span class="line">int main(void)</span><br><span class="line">&#123;</span><br><span class="line">    int a[5] = &#123;0&#125;;  //数组清零初始化</span><br><span class="line">    int i;</span><br><span class="line">    printf(&quot;请输入5个数:&quot;);</span><br><span class="line">    for (i=0; i&lt;5; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        scanf(&quot;%d&quot;, &amp;a[i] );</span><br><span class="line">    &#125;</span><br><span class="line">    for (i=0; i&lt;5; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;%d\x20&quot;, a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/02/28/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E9%93%BE%E5%BC%8F%E8%A1%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Xuanlang">
-      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="松鼠小筑">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/02/28/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E9%93%BE%E5%BC%8F%E8%A1%A8/" class="post-title-link" itemprop="url">第二章 链式表</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-02-28 18:54:09" itemprop="dateCreated datePublished" datetime="2020-02-28T18:54:09+08:00">2020-02-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-01-12 13:42:46" itemprop="dateModified" datetime="2022-01-12T13:42:46+08:00">2022-01-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">数据结构笔记</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>顺序表中增加一个数据平均n/2，删除一个平均(n-1)/2</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/02/image-2.png"></p>
-<p>计算方法位100+（5-1）*2</p>
-<p>线性表的顺序存储结构和线性表的链式存储结构分别是(B )。  </p>
-<p>A．顺序存取的存储结构、顺序存取的存储结构<br>B．随机存取的存储结构、顺序存取的存储结构<br>C．随机存取的存储结构、随机存取的存储结构<br>D．任意存取的存储结构、任意存取的存储结构  </p>
-<h3 id="答案解析"><a href="#答案解析" class="headerlink" title="答案解析"></a><strong>答案解析</strong></h3><p>顺序存储结构中，数据元素存放在一组地址连续的存储单元中，每个数据元素地址可通过公式LOC(ai)=LOC(a1)+(i-1)L计算得到，从而实现了随机存取。对于链式存储结构，要对某结点进行存取，都得从链的头指针指向的结点开始，这是一种顺序存取的存储结构。</p>
-<p>顺序表是线性表的（ ）存储表示。 (2分)</p>
-<ol>
-<li> 有序</li>
-<li> 连续</li>
-<li> 数组</li>
-<li> 顺序存取</li>
-</ol>
-<p>若长度为n的非空线性表采用顺序存储结构，在表的第i个位置插入一个数据元素的合法值应该是（ ）。 (2分)</p>
-<ol>
-<li> 1≤i≤n</li>
-<li> 1≤i≤n+1</li>
-<li> 0≤i≤n-1</li>
-<li> 0≤i≤n</li>
-</ol>
-<p>若线性表最常用的操作是存取第i个元素及其前驱的值，则采用( )存储方式节省时间。 (2分)</p>
-<ol>
-<li> 单链表</li>
-<li> 双向链表</li>
-<li> 单循环链表</li>
-<li> 顺序表</li>
-</ol>
+          <p>出现1251一般是密码问题</p>
+<p>首先使用cmd 输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
+
+<p>登录后输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; alter user root@localhost identified by &#x27;newpassword&#x27; password expire never;</span><br><span class="line"></span><br><span class="line">mysql&gt; alter user root@localhost identified with mysql_native_password by &#x27;newpassword&#x27;;</span><br><span class="line"></span><br><span class="line">mysql&gt; flush privileges;　　　　# 刷新权限</span><br></pre></td></tr></table></figure>
+
+<p>newpassword是新密码</p>
+<p>之后就可以正常链接了</p>
 
       
     </div>
@@ -1167,7 +824,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>
@@ -1200,8 +857,8 @@
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   
-<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
-<script src="/js/third-party/search/local-search.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.11.0/dist/algoliasearch-lite.umd.js" integrity="sha256-48AZ24Ct05NAMLT7hvYgeW1X350OgEcZvHd6Ih6xwOA=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.36.0/dist/instantsearch.production.min.js" integrity="sha256-2IhR6D0EWonVYvGbuQADSjD9VROGINJw9A8RFZEHXAM=" crossorigin="anonymous"></script><script src="/js/third-party/search/algolia-search.js"></script>
 
 
 

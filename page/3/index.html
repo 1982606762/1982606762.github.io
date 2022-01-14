@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"www.zhaoxuanlang.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":null,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.zhaoxuanlang.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":null,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"algolia":{"appID":"GNS5LFPQL3","apiKey":"7a1dc67e7209c7c82fbda5e1f2953bb5","indexName":"dev_xuazhao","hits":{"per_page":10}}}</script><script src="/js/config.js"></script>
 <meta name="description" content="业精于勤荒于嬉，行成于思毁于随">
 <meta property="og:type" content="website">
 <meta property="og:title" content="松鼠小筑">
@@ -29,6 +29,7 @@
 <meta property="og:description" content="业精于勤荒于嬉，行成于思毁于随">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="Xuanlang">
+<meta property="article:tag" content="松鼠小筑">
 <meta name="twitter:card" content="summary">
 
 
@@ -106,19 +107,15 @@
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off" maxlength="80"
-           placeholder="搜索..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
+  <div class="search-input-container"></div>
   <span class="popup-btn-close" role="button">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div class="search-result-container no-result">
-  <div class="search-result-icon">
-    <i class="fa fa-spinner fa-pulse fa-5x"></i>
-  </div>
+<div class="search-result-container">
+  <div class="algolia-stats"><hr></div>
+  <div class="algolia-hits"></div>
+  <div class="algolia-pagination"></div>
 </div>
 
     </div>
@@ -224,7 +221,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/08/06/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/">
+    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2021/08/19/%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -237,7 +234,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/08/06/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/" class="post-title-link" itemprop="url">网站开发日志</a>
+          <a href="/2021/08/19/%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6/" class="post-title-link" itemprop="url">函数进阶</a>
         </h2>
 
         <div class="post-meta-container">
@@ -248,7 +245,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2020-08-06 13:26:06" itemprop="dateCreated datePublished" datetime="2020-08-06T13:26:06+08:00">2020-08-06</time>
+      <time title="创建时间：2021-08-19 21:05:53" itemprop="dateCreated datePublished" datetime="2021-08-19T21:05:53+08:00">2021-08-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -277,445 +274,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>2020-08-06</p>
-<ul>
-<li>  新增左侧菜单栏功能</li>
-<li>  新增菜单栏对比色功能</li>
-</ul>
-<p>菜单栏实现：内侧标题position使用relative可自动上下移动，想打开和关闭的组件使用display:block和none控制显示与隐藏，在标题栏div添加onclick事件更改display参数即可实现</p>
-<p>对比色实现：使用getelementsbyclassname获得一样classname的一个列表，for循环让列表[i]项的style.backgroundColor（注意这里和css不一样）变成不一样的颜色（加余数判定）</p>
-<p>注意：for循环内如果设置多个表的颜色，表内元素必须相同，不然进行时报错回中止for循环！！！</p>
-<p>2020-08-07</p>
-<ul>
-<li>  去除左右滚动条</li>
-<li>  调整左侧菜单布局样式</li>
-</ul>
-<p>滚动条：overflow:scroll;overflow-x:hidden</p>
-<p>2020-08-10</p>
-<ul>
-<li>  顶部菜单和右侧菜单添加一些内容</li>
-<li>  更改整体配色</li>
-<li>  更改整体布局，大小</li>
-</ul>
-<p>右侧菜单设置有问题待修复，下拉菜单：<select><option></p>
-<p><img data-src="https://img.jbzj.com/file_images/article/201212/20121213112015996.png"></p>
-<p>若要弄这样的表，灰色部分使用th白色部分用td就可以分开设置，td内部加input就可以输入值</p>
-<p>2020-08-12</p>
-<ul>
-<li>  添加鼠标悬浮气泡功能</li>
-<li>  样式小调整</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">static showdiv()&#123;</span><br><span class="line">        var tool = document.getElementsByClassName(&#x27;geSidebarTooltip&#x27;)[0];</span><br><span class="line">        //图片更改</span><br><span class="line">        var locate = this.firstElementChild.src;</span><br><span class="line">        var cimg = tool.firstElementChild;</span><br><span class="line">        cimg.src = locate;</span><br><span class="line">        //文字更改</span><br><span class="line">        var words =this.id.charAt(4).toUpperCase() + this.id.substr(5);</span><br><span class="line">        tool.children[1].innerText=words;</span><br><span class="line">        //位置更改</span><br><span class="line">        var t = this.offsetTop;</span><br><span class="line">        tool.style.top=t-10+&#x27;px&#x27;;</span><br><span class="line">        tool.style.display=&#x27;block&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">    static hidediv()&#123;</span><br><span class="line">        var tool = document.getElementsByClassName(&#x27;geSidebarTooltip&#x27;)[0];</span><br><span class="line">        tool.style.display=&#x27;none&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">var cpnt_btn_list = document.querySelectorAll(&#x27;.component_btn&#x27;);</span><br><span class="line">cpnt_btn_list.forEach(btn =&gt;&#123;</span><br><span class="line">    // formed as btn_ + component name</span><br><span class="line">    var cpnt_str = btn.id.charAt(4).toUpperCase() + btn.id.substr(5);</span><br><span class="line">    btn.component_type = eval(cpnt_str);</span><br><span class="line">    btn.addEventListener(&quot;click&quot;, Component_btn.attachComponent);</span><br><span class="line">    btn.addEventListener(&#x27;mouseover&#x27;,Component_btn.showdiv);</span><br><span class="line">    btn.addEventListener(&#x27;mouseout&#x27;,Component_btn.hidediv);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>以上为气泡核心代码，思路为先获得目标位置，图片src和文字描述，再通过js代码换进去，添加mouse over和mouseout就可以添加鼠标悬浮和移出功能</p>
-<p>只需要在html文件中添加一个div即可，div中添加主图img，下方文字div和左侧小箭头img。</p>
-<p>2020-08-13</p>
-<ul>
-<li>  添加checkbox函数，可以控制输入框disable值</li>
-<li>  右侧菜单新增奇偶颜色效果</li>
-<li>  新增dragging bar箭头效果</li>
-<li>  修复bug</li>
-</ul>
-<p>checkbox首先需要定义函数，添加onclick函数，定义两个变量分别选择box和需要更改的input list，第一个可以直接用id，第二个建议先选出父元素再用tagname选出input。添加判断条件q.checked，内部两个for循环就可解决，注意disabled是attrabute，需要用set和remove，set要传入两个参数</p>
-<p>箭头效果用css就可以，用js不知道为什么会出错</p>
-<p>2020-08-19</p>
-<ul>
-<li>  新增顶部工具栏标签</li>
-<li>  新增标签换颜色函数</li>
-<li>  将函数运用到左侧和顶部标签</li>
-</ul>
-<p>button标签的border是没按下时的边框，outline是按下之后的边框，建议颜色都是inherit</p>
-<p>h换色函数需要首先把所有标签都编号，判断当下颜色是否改变，没改变就变，然后把所有其他的都变成初始值</p>
-<p>应用的时候使用箭头函数btn=&gt;{}此时btn就是每次点击的this，使用匿名函数可以实现有参数的函数</p>
-<p>2020-08-21</p>
-<ul>
-<li>  尝试svg</li>
-<li>  增加顶部工具栏标签个数</li>
-</ul>
-<p>js中数字直接相加有可能是首尾相连，所以需要用parseInt转换！！</p>
-<p>2020-08-31</p>
-<ul>
-<li>  完成批量增加html元素功能</li>
-</ul>
-<p>添加时需要先选中要添加的位置，最好做一个空的div，然后使用innerHTML的方式直接添加，需注意的是换行和”都需要用\转义</p>
-<p>删除时只需要将其innerHTML变成””就可以</p>
-<p>2020-10-26</p>
-<p>人工alert函数：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    &lt;div id=&quot;light&quot; class=&quot;white_content&quot;&gt;</span><br><span class="line">    &lt;/div&gt; </span><br><span class="line">    &lt;div id=&quot;fade&quot; class=&quot;black_overlay&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">.black_overlay&#123; </span><br><span class="line">    display: none; </span><br><span class="line">    position: absolute; </span><br><span class="line">    top: 0%; </span><br><span class="line">    left: 0%; </span><br><span class="line">    width: 100%; </span><br><span class="line">    height: 100%; </span><br><span class="line">    background-color: black; </span><br><span class="line">    z-index:1001; </span><br><span class="line">    -moz-opacity: 0.8; </span><br><span class="line">    opacity:.80; </span><br><span class="line">    filter: alpha(opacity=88); </span><br><span class="line">&#125; </span><br><span class="line">.white_content &#123; </span><br><span class="line">    display: none; </span><br><span class="line">    position: absolute; </span><br><span class="line">    top: 35%;</span><br><span class="line">    left: 45%;</span><br><span class="line">    width: 10%;</span><br><span class="line">    height: 15%;</span><br><span class="line">    padding: 20px; </span><br><span class="line">    background-color: white; </span><br><span class="line">    z-index:1002; </span><br><span class="line">    overflow: auto; </span><br><span class="line">    border: 5px solid black;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">function artificial_alert(text)&#123;</span><br><span class="line">    document.getElementById(&#x27;light&#x27;).innerHTML=&quot;&lt;p&gt;&quot;+text+&quot;&lt;/p&gt;&lt;button type=\&quot;button\&quot; onclick=\&quot;closeDialog()\&quot;&gt;关闭&lt;/button&gt;&quot;</span><br><span class="line">    if(document.getElementById(&#x27;light&#x27;).style.display== &#x27;block&#x27;)&#123;</span><br><span class="line">        document.getElementById(&#x27;light&#x27;).style.display = &#x27;none&#x27;;</span><br><span class="line">        document.getElementById(&#x27;fade&#x27;).style.display = &#x27;none&#x27;;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        document.getElementById(&#x27;light&#x27;).style.display = &#x27;block&#x27;;</span><br><span class="line">        document.getElementById(&#x27;fade&#x27;).style.display = &#x27;block&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>原理就是动态添加需要alert的文字进去</p>
-<p>2020-11-04</p>
-<p>最近在搞bootstrap</p>
-<p>导入时只需要</p>
-<p><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css&quot;&gt;</code> </p>
-<p><code>&lt;script src=&quot;https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js&quot;&gt;&lt;/script&gt;</code> </p>
-<p><code>&lt;script src=&quot;https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</code></p>
-<p>就可以，但是在npm下运行时需要把jq下载到本地，同时引入在线jq和本地jq才可以</p>
-<p>输入框默认值，点击清除，不点击恢复：</p>
-<p><code>onfocus=&quot;if(this.value==&#39;test&#39;)&#123;this.value=&#39;&#39;&#125;&quot; onblur=&quot;if(this.value==&#39;&#39;)&#123;this.value=&#39;test&#39;&#125;&quot; value=&quot;test&quot;</code></p>
-<p>用for循环appendChild时不能只靠innerHTML修改元素，必须重新声明才可以</p>
-<p>列表可以使用push 和pop</p>
-<p>2020/11/23</p>
-<p>实现长宽比：</p>
-<p>垂直方向的padding</p>
-<p>这是最早提出的一种实现方案，主要借助的原理是利用<code>padding-top</code>或者<code>padding-bottom</code>的百分比值，实现容器长宽比。在CSS中<code>padding-top</code>或<code>padding-bottom</code>的百分比值是根据容器的<code>width</code>来计算的。如此一来就很好的实现了容器的长宽比。采用这种方法，需要把容器的<code>height</code>设置为<code>0</code>。而容器内容的所有元素都需要采用<code>position:absolute</code>，不然子元素内容都将被<code>padding</code>挤出容器（造成内容溢出）。</p>
-<p>比如我们容器的长宽比是<code>16:9</code>，那么根据计算：<code>100% * 9 / 16</code>可以得到<code>56.25%</code>。如果你希望的是<code>4:3</code>，那么对应的就是<code>100% * 3 / 4</code>。</p>
-<p>具体的CSS代码如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.aspectration &#123;</span><br><span class="line">    position: relative; /*因为容器所有子元素需要绝对定位*/</span><br><span class="line">    height: 0; /*容器高度是由padding来控制，盒模型原理告诉你一切*/</span><br><span class="line">    width: 100%; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.aspectration[data-ratio=&quot;16:9&quot;] &#123;</span><br><span class="line">    padding-top: 56.25%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.aspectration[data-ratio=&quot;4:3&quot;]&#123;</span><br><span class="line">    padding-top: 75%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>通过通配符<code>*</code>选择器，让其子元素的宽高和容器<code>.aspectration</code>一样大小：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.aspectration &gt; * &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: 0;</span><br><span class="line">    top: 0;</span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 100%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/07/30/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Xuanlang">
-      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="松鼠小筑">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/07/30/js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">JS学习笔记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-07-30 00:07:16" itemprop="dateCreated datePublished" datetime="2020-07-30T00:07:16+08:00">2020-07-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-01-12 13:42:46" itemprop="dateModified" datetime="2022-01-12T13:42:46+08:00">2022-01-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="2020-07-29"><a href="#2020-07-29" class="headerlink" title="2020/07/29"></a>2020/07/29</h2><p>6.1对象性质</p>
-<ul>
-<li>  数据属性直接定义，有四个属性</li>
-<li>  访问器只能用函数定义，有set和get，通常用来改一个值就改所有值</li>
-<li>  获取属性使用<code>var qq = object.getownpropertydescriptor(name,&quot;数据名&quot;)</code></li>
-</ul>
-<p>6.2创建对象</p>
-<ul>
-<li>  构造函数模式，直接写构造函数之后new即可</li>
-<li>  原型模式，使用prototype关键字，初始化定义好属性，使用时修改则会吧原型的同名属性屏蔽，可以用delete删除某一属性</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//当前使用最广泛</span><br><span class="line">function personq(name,age,job)</span><br><span class="line">&#123;</span><br><span class="line">    this.age = age;</span><br><span class="line">    this.name = name;</span><br><span class="line">    this.job = job;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">personq.prototype = </span><br><span class="line">&#123;</span><br><span class="line">    constructor:personq,</span><br><span class="line">    sayname:function()&#123;</span><br><span class="line">        alert(this.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>6.3原型链</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/07/image-745x1024.png"></p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/07/image-1-1024x526.png"></p>
-<p>继承：</p>
-<ul>
-<li>  组合式继承</li>
-<li>  寄生组合式继承（效果最好）</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function inheritPrototype(subType,superType)&#123;</span><br><span class="line">    var prototype = Object(superType,prototype);</span><br><span class="line">    prototype.constructor = subType;</span><br><span class="line">    subType.prototype = prototype;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function Supertype(name)</span><br><span class="line">&#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Supertype.prototype.sayname = function()</span><br><span class="line">&#123;</span><br><span class="line">    alert(this.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function Subtype(name,age)&#123;</span><br><span class="line">    //继承属性</span><br><span class="line">    Supertype.call(this,name);</span><br><span class="line">    this.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//继承方法</span><br><span class="line">Subtype.prototype = new Supertype();</span><br><span class="line">//寄生组合式继承</span><br><span class="line">//inheritPrototype(Subtype,Supertype);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Subtype.prototype.sayage = function()&#123;</span><br><span class="line">    alert(this.age);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="2020-07-30"><a href="#2020-07-30" class="headerlink" title="2020/07/30"></a>2020/07/30</h2><p>函数表达式可以不对函数命名，即匿名函数</p>
-<p>在函数内部定义其他函数是闭包，用处两个</p>
-<ul>
-<li>  创建并立刻调用函数</li>
-<li>  实现私有变量</li>
-</ul>
-<p>BOM</p>
-<p>window对象：</p>
-<ul>
-<li>  top指向最外围的框架，parent指向上一级</li>
-<li>  window可以指定窗口大小和位置</li>
-<li>  导航和打开窗口</li>
-</ul>
-<p>location对象：</p>
-<ul>
-<li>  通过编程访问浏览器导航，逐段修改浏览器url</li>
-<li>  使用replace（）方法可以不能返回</li>
-</ul>
-<p>navigator对象：</p>
-<ul>
-<li>  检测插件</li>
-<li>  与浏览器有关</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/07/28/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Xuanlang">
-      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="松鼠小筑">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/07/28/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">Git学习笔记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-07-28 19:53:13" itemprop="dateCreated datePublished" datetime="2020-07-28T19:53:13+08:00">2020-07-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-01-12 13:42:46" itemprop="dateModified" datetime="2022-01-12T13:42:46+08:00">2022-01-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>下载安装</p>
-<ul>
-<li><p>  到目标文件夹中git init初始化</p>
-</li>
-<li><p>  把文件添加到git仓库使用命令<code>git add &lt;file&gt;</code></p>
-</li>
-<li><p>  使用命令 <code>git commit -m &lt;message&gt;</code></p>
-</li>
-<li><p>  要随时掌握工作区的状态，使用<code>git status</code>命令。</p>
-</li>
-<li><p>  如果<code>git status</code>告诉你有文件被修改过，用<code>git diff</code>可以查看修改内容。</p>
-</li>
-<li><p>  <code>HEAD</code>指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令<code>git reset --hard commit_id</code>。（上一个是HEAD^,上100个是HEAD~100）</p>
-</li>
-<li><p>  穿梭前，用<code>git log</code>可以查看提交历史，以便确定要回退到哪个版本。</p>
-</li>
-<li><p>  要重返未来，用<code>git reflog</code>查看命令历史，以便确定要回到未来的哪个版本。</p>
-</li>
-</ul>
-<p>场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令<code>git checkout -- file</code>。</p>
-<p>场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令<code>git reset HEAD &lt;file&gt;</code>，就回到了场景1，第二步按场景1操作。</p>
-<p>命令<code>git rm</code>用于删除一个文件</p>
-<p>要关联一个远程库，使用命令<code>git remote add origin git@server-name:path/repo-name.git</code>；</p>
-<p>关联后，使用命令<code>git push -u origin master</code>第一次推送master分支的所有内容；</p>
-<p>此后，每次本地提交后，只要有必要，就可以使用命令<code>git push origin master</code>推送最新修改；.</p>
-<p>要克隆一个仓库，首先必须知道仓库的地址，然后使用<code>git clone</code>命令克隆。</p>
-<p>$ git clone <a href="mailto:&#x67;&#x69;&#116;&#x40;&#103;&#x69;&#116;&#104;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;">&#x67;&#x69;&#116;&#x40;&#103;&#x69;&#116;&#104;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;</a>:1982606762/worked1</p>
-<p>Git鼓励大量使用分支：</p>
-<p>查看分支：<code>git branch</code></p>
-<p>创建分支：<code>git branch &lt;name&gt;</code></p>
-<p>切换分支：<code>git checkout &lt;name&gt;</code>或者<code>git switch &lt;name&gt;</code></p>
-<p>创建+切换分支：<code>git checkout -b &lt;name&gt;</code>或者<code>git switch -c &lt;name&gt;</code></p>
-<p>合并某分支到当前分支：<code>git merge &lt;name&gt;</code></p>
-<p>删除分支：<code>git branch -d &lt;name&gt;</code></p>
-<p>远程连接github：</p>
-<h2 id="1-检查SSH-keys是否存在"><a href="#1-检查SSH-keys是否存在" class="headerlink" title="1. 检查SSH keys是否存在"></a>1. 检查SSH keys是否存在</h2><p>输入下面的命令，如果有文件<code>id_rsa.pub</code> 或 <code>id_dsa.pub</code>，则直接进入步骤3将SSH key添加到GitHub中，否则进入第二步生成SSH key</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls -al ~/.ssh</span><br><span class="line"># Lists the files in your .ssh directory, if they exist</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-生成新的ssh-key"><a href="#2-生成新的ssh-key" class="headerlink" title="2. 生成新的ssh key"></a>2. 生成新的ssh key</h2><p><strong>第一步：生成public/private rsa key pair</strong><br>在命令行中输入<code>ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</code></p>
-<p>默认会在相应路径下（/your_home_path）生成<code>id_rsa</code>和<code>id_rsa.pub</code>两个文件，如下面代码所示</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</span><br><span class="line"># Creates a new ssh key using the provided email</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/your_home_path/.ssh/id_rsa):</span><br></pre></td></tr></table></figure>
-
-<p><strong>第二步：输入passphrase（本步骤可以跳过）</strong></p>
-<p>设置passphrase后，进行版本控制时，每次与GitHub通信都会要求输入passphrase，以避免某些“失误”</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Enter passphrase (empty for no passphrase): [Type a passphrase]</span><br><span class="line">Enter same passphrase again: [Type passphrase again]</span><br></pre></td></tr></table></figure>
-
-<p>sample result:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Your identification has been saved in /your_home_path/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved in /your_home_path/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">#01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@example.com</span><br></pre></td></tr></table></figure>
-
-<p><strong>第三步：将新生成的key添加到ssh-agent中:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># start the ssh-agent in the background</span><br><span class="line">eval &quot;$(ssh-agent -s)&quot;</span><br><span class="line">Agent pid 59566</span><br><span class="line">ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-将ssh-key添加到GitHub中"><a href="#3-将ssh-key添加到GitHub中" class="headerlink" title="3. 将ssh key添加到GitHub中"></a>3. 将ssh key添加到GitHub中</h2><p>用自己喜欢的文本编辑器打开<code>id_rsa.pub</code>文件，里面的信息即为SSH key，将这些信息复制到GitHub的<code>Add SSH key</code>页面即可</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/07/28/git%E6%95%99%E7%A8%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Xuanlang">
-      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="松鼠小筑">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/07/28/git%E6%95%99%E7%A8%8B/" class="post-title-link" itemprop="url">Git教程</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-07-28 18:38:40" itemprop="dateCreated datePublished" datetime="2020-07-28T18:38:40+08:00">2020-07-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-01-12 13:42:46" itemprop="dateModified" datetime="2022-01-12T13:42:46+08:00">2022-01-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9D%82/" itemprop="url" rel="index"><span itemprop="name">杂</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><strong>目录</strong></p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/best/p/7474442.html#_label0">一、版本控制概要 工作区 暂存区 本地仓库 远程仓库</a><ul>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/best/p/7474442.html#_lab2_0_0">1.1、什么是版本控制</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/best/p/7474442.html#_lab2_0_1">1.2、常用术语</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/best/p/7474442.html#_lab2_0_2">1.3、常见的版本控制器</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/best/p/7474442.html#_lab2_0_3">1.4、版本控制分类</a><ul>
-<li>  <a target="_blank" rel="noopener" href="https://www.cnblogs.com/best/p/7474442.html#_label3_0_3_0">1.4.1、本地版本控制</a></li>
-<li>  <a target="_blank" rel="noopener" href="https://www.cnblogs.com/best/p/7474442.html#_label3_0_3_1">1.4.2、集中版本控制</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/best/p/7474442.html#_label3_0_3_2">1.4.3、分布式版本控制</a></li>
-</ul>
-</li>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/best/p/7474442.html#_lab2_0_4">1.5、Git与SVN最主要区别</a>
+          <img data-src="https://gitee.com/Squirrel_01/img/raw/master/img/image-20210820104723148.png" alt="image-20210820104723148" style="zoom:50%;" />
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/07/28/git%E6%95%99%E7%A8%8B/#more" rel="contents">
+              <a class="btn" href="/2021/08/19/%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -746,7 +308,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/07/15/%E4%BD%BF%E7%94%A8mysql-query-browser%E6%97%B6%E5%87%BA%E7%8E%B0error1251%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2021/08/18/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -759,7 +321,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/07/15/%E4%BD%BF%E7%94%A8mysql-query-browser%E6%97%B6%E5%87%BA%E7%8E%B0error1251%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="post-title-link" itemprop="url">使用MYSQL QUERY browser时出现error1251的解决方案</a>
+          <a href="/2021/08/18/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="post-title-link" itemprop="url">js数据类型</a>
         </h2>
 
         <div class="post-meta-container">
@@ -770,7 +332,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2020-07-15 11:58:59" itemprop="dateCreated datePublished" datetime="2020-07-15T11:58:59+08:00">2020-07-15</time>
+      <time title="创建时间：2021-08-18 17:50:16" itemprop="dateCreated datePublished" datetime="2021-08-18T17:50:16+08:00">2021-08-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -785,7 +347,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9D%82/" itemprop="url" rel="index"><span itemprop="name">杂</span></a>
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
         </span>
     </span>
 
@@ -799,16 +361,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>出现1251一般是密码问题</p>
-<p>首先使用cmd 输入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
-
-<p>登录后输入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; alter user root@localhost identified by &#x27;newpassword&#x27; password expire never;</span><br><span class="line"></span><br><span class="line">mysql&gt; alter user root@localhost identified with mysql_native_password by &#x27;newpassword&#x27;;</span><br><span class="line"></span><br><span class="line">mysql&gt; flush privileges;　　　　# 刷新权限</span><br></pre></td></tr></table></figure>
-
-<p>newpassword是新密码</p>
-<p>之后就可以正常链接了</p>
-
+          <p><img data-src="https://www.hualigs.cn/image/611cef200e311.jpg" alt="image-20210818175151311"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/08/18/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -834,7 +395,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/07/15/windows10-mysql-installer-%E5%AE%89%E8%A3%85%EF%BC%88mysql-installer-community-5-7-19-0-msi%EF%BC%89/">
+    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2021/08/18/%E8%BF%AD%E4%BB%A3%E5%99%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -847,7 +408,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/07/15/windows10-mysql-installer-%E5%AE%89%E8%A3%85%EF%BC%88mysql-installer-community-5-7-19-0-msi%EF%BC%89/" class="post-title-link" itemprop="url">Windows10 MYSQL Installer 安装（mysql-installer-community-5.7.19.0.msi）</a>
+          <a href="/2021/08/18/%E8%BF%AD%E4%BB%A3%E5%99%A8/" class="post-title-link" itemprop="url">迭代器</a>
         </h2>
 
         <div class="post-meta-container">
@@ -858,7 +419,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2020-07-15 11:07:37" itemprop="dateCreated datePublished" datetime="2020-07-15T11:07:37+08:00">2020-07-15</time>
+      <time title="创建时间：2021-08-18 16:37:21" itemprop="dateCreated datePublished" datetime="2021-08-18T16:37:21+08:00">2021-08-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -873,7 +434,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9D%82/" itemprop="url" rel="index"><span itemprop="name">杂</span></a>
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
         </span>
     </span>
 
@@ -887,101 +448,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>1.进入官网找到自己所需的安装包：<a target="_blank" rel="noopener" href="https://dev.mysql.com/">https://dev.mysql.com/</a>  ，路径：DOWNLOAD–&gt;MYSQL Community Edition(GRL)–&gt;MYSQL on Windows (Installer &amp; Tool)</p>
-<p>或直接点击 <a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/windows/installer/">https://dev.mysql.com/downloads/windows/installer/</a> 查看最新版本。</p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1202941-20170722225513168-99169810.png"></p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1202941-20170722225525340-1635922988.png"></p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831313-3095-20170722225535090-1925937407.png"></p>
-<p>2.找到所需的安装包,</p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831313-8105-20170722225609184-438065502.png"></p>
-<p>3.点击download。这里选择的是安装版（mysql -install-community）</p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831313-8141-1-20170722225738356-88388521.png"></p>
-<p>4.选择不登陆下载。</p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831313-7844-20170722225950840-2044210671.png"></p>
-<p>5.双击运行下载好的mysql-installer-community-5.7.19.0.msi，程序运行需要一些时间，请等待一下。</p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831314-6138-20170722230026215-1797155710.png"></p>
-<p>6.运行成功之后，进入欢迎的界面.选择我同意协议，不然无法进行下一步。</p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831314-1312-20170722230046043-978659071.png"></p>
-<p>7. 进入类型选择页面，本人需要mysql云服务就选择了developer default（7.1是默认安装的步骤），如果只想安装mysql server的就选择custom模式（7.2步骤是选择自己需要的服务器类型，所选择的用于做一些数据分析）</p>
-<ul>
-<li>  developer default（开发者默认）：安装mysql开发所需的所有产品</li>
-<li>  server only（服务器）：只安装mysql服务器产品</li>
-<li>  client only（客户端）：只安装没有服务器的mysql客户端产品</li>
-<li>  full（完全）：安装所有包含的mysql产品和功能</li>
-<li>  custom（手动）：手动选择系统上应安装的产品</li>
-</ul>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831314-6490-20170722230201246-220989429.png"></p>
-<p>7.1开发者默认模式检测以下程序会安装不成功，点击下一步进入下一个安装流程—&gt;跳到第八步。</p>
-<p>check requirements：以下产品的请求失败，安装程序将自动尝试解决其中一些问题。标记为手动的要求无法自动解决。单击这些项目以尝试手动恢复。</p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831314-6339-20170722230232793-1759462371.png"></p>
-<p>检测到不可安装的程序说明：</p>
-<p>Visual Studio：是一款代码编辑工具（可编写C#、Visual Basic、C++、TypeScript、F# ），如果你安装的话就安装要求去安装Visual Studio version：2012.2013.2015.2017其中一个版本</p>
-<p>Connector/pyton 3.4：电脑有python3.6了就没选择3.4版本的。如果你没安装有python可按要求去安装一些内容。</p>
-<p>7.2选择mysql server（服务） 5.7.19 x64</p>
-<p>选择mysql workbench(mysql 的工作薄) 6.3.9 x64</p>
-<p>选择mysql notiyier(通知) 1.1.7 x86(因为这里只有一个选择所以选择了86)点击下一步进入下一个安装流程—&gt;跳到第九步。</p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831314-7923-20170722230314340-1501335191.png"></p>
-<p>8.当我们点击下一步的时候安装程序出现了提示：（一个或者移动产品要求没有得到满足，那些符合要求的产品将不会安装/升级。你想要继续吗），这里我选择的是：YES</p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831315-4997-1-20170722230439528-92431868.png"></p>
-<p>9.在安装所选界面能看到我们接下来所需要安装的程序，点击execute</p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831315-6544-20170722230506262-176699446.png"></p>
-<p>10安装程序进度界面，安装需要一些时间。点击dide tails能看到安装日志</p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831315-4350-20170722230524700-2060141633.png"></p>
-<p>11.程序安装完成之后，点击next</p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831315-5686-20170722230808200-494027333.png"></p>
-<p>12.在product configutration（产品配置）页面能看到需要配置的程序，点击next（页面英语介绍：现在我们将逐一介绍以下产品的配置向导。您可以随时取消，如果您希望离开此向导，而不必配置所有产品）</p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831316-1727-20170722230838934-1132653366.png"></p>
-<p>13.先配置mysql server的类型以及网络：type and networking（类型和网络），这里有两种mysql server类型，选择第一种类型点击next。</p>
-<p>有两种类型简单介绍</p>
-<ul>
-<li>  1.standalone mysql server/classic mysql replication：独立的mysql服务器/经典的mysql复制。choose this option if you want to run the mysql server either standalone with the opportunity to later configure classic mysql replication：选择这个选项，如果你想运行mysql服务器是独立的，有机会以后配置经典的mysql复制</li>
-<li>  2. innodb cluster sandbox thst setup(for testing only)：</li>
-</ul>
-<p>innodb集群沙箱thst设置（仅用于测试）</p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831316-4284-20170722230918575-127114164.png"></p>
-<p>14.设置服务器配置类型以及连接端口：继续next</p>
-<p>Config Type:选择Development Machine，用于小型以及学习所用足够了。</p>
-<p>Port number：输入3306，也可以输入其他最好是3306-3309之间。</p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831316-1042-20170722231058356-1269244144.png"></p>
-<p>15.配置root的密码（该密码要记住），系统提示这密码虚弱</p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831317-1713-20170722231209903-956653442.png"></p>
-<p>16. 添加其他管理员，点击add user 输入账号密码点击ok（如果添加的管理员只允许在本地登录就将host改成local），回到界面之后点击next</p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831317-3908-20170722231228387-1590560639.png"></p>
-<p>17.配置mysql在windows系统中的名字，是否选择开机启动mysql服务，其它的没进行修改，点击”Next”。</p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831317-1586-20170722231608825-2099636815.png"></p>
-<p>18.配置插件和扩展页面没进行修改直接下一步：</p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831317-4097-20170722231638887-180558399.png"></p>
-<p>19.Mysql server :apply configuration（应用配置页面），选择execute进行安装配置</p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831318-8984-20170722231654278-649027984.png"></p>
-<p>20. mysql server应用配置的log，选择finish</p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831318-9740-20170722231714809-1553936235.png"></p>
-<p>21.安装程序又回到了product configutration（产品配置）页面，此时我们看到mysql server安装成功的显示，继续下一步：</p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831318-2164-20170722231738825-1692782858.png"></p>
-<p>22. 配置mysql router：勾选configure mysql route for innoDB cluster之后输入密码。（如果不想输入密码可直接点击点一下）点击下一步</p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831318-2952-20170722231755762-1299837152.png"></p>
-<p>23.Mysql router :apply configuration（应用配置页面）点击execute,</p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831319-7917-20170722231811528-357673493.png"></p>
-<p>24.安装完成之后点击选择finish</p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831319-7786-20170722231826746-634086390.png"></p>
-<p>25.检测root密码</p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831319-2072-20170722231844528-1242732523.png"></p>
-<p>26.安装一些server，老规矩点击execute，完成之后点击finish</p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831319-9386-20170722231902950-256599456.png"></p>
-<p>27. 程序回到产品配置页面。继续下一步：</p>
-<p>28.安装程序完成界面。</p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831319-1406-20170722231933637-179722774.png"></p>
-<p>29. 双击运行之前下载的安装包，能看到我们所安装的产品。</p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831320-7960-20170722232012418-1876643408.png"></p>
-<p>30. 配置mysql环境变量</p>
-<p>上面安装的是时候我们看到mysql默认安装路径是：C:\Program Files\MySQL\MySQL Server 5.7</p>
-<p>我的电脑右键—&gt;属性à高级系统设置à环境变量à新建MYSQL_HOME,将安装目录输入：</p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831320-7374-41-20170722232031684-1843508.png"></p>
-<p>找到path编辑：输入%MYSQL_HOME%\bin</p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831320-5015-20170722232044090-1304683536.png"></p>
-<p>打开cmd输入mysql –u root –p</p>
-<p>输入root的密码</p>
-<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831320-6727-20170722232055731-2127042770.png"></p>
-
+          <p>迭代器使对象可以在for of中使用</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/08/18/%E8%BF%AD%E4%BB%A3%E5%99%A8/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1007,7 +482,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/06/10/%E7%A8%B3%E5%AE%9A%E6%8E%92%E5%BA%8F%E5%92%8C%E4%B8%8D%E7%A8%B3%E5%AE%9A%E6%8E%92%E5%BA%8F/">
+    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2021/08/14/%E5%89%8D%E7%AB%AF%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -1020,7 +495,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/06/10/%E7%A8%B3%E5%AE%9A%E6%8E%92%E5%BA%8F%E5%92%8C%E4%B8%8D%E7%A8%B3%E5%AE%9A%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">稳定排序和不稳定排序</a>
+          <a href="/2021/08/14/%E5%89%8D%E7%AB%AF%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">前端听课笔记</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1031,7 +506,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2020-06-10 09:40:49" itemprop="dateCreated datePublished" datetime="2020-06-10T09:40:49+08:00">2020-06-10</time>
+      <time title="创建时间：2021-08-14 10:09:33" itemprop="dateCreated datePublished" datetime="2021-08-14T10:09:33+08:00">2021-08-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1039,6 +514,93 @@
       </span>
       <span class="post-meta-item-text">更新于</span>
       <time title="修改时间：2022-01-12 13:42:46" itemprop="dateModified" datetime="2022-01-12T13:42:46+08:00">2022-01-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>前端实战训练营笔记</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/08/14/%E5%89%8D%E7%AB%AF%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2021/08/12/66-%E5%8A%A0%E4%B8%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Xuanlang">
+      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="松鼠小筑">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/08/12/66-%E5%8A%A0%E4%B8%80/" class="post-title-link" itemprop="url">加一</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-08-12 11:11:15" itemprop="dateCreated datePublished" datetime="2021-08-12T11:11:15+08:00">2021-08-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-01-12 21:06:50" itemprop="dateModified" datetime="2022-01-12T21:06:50+08:00">2022-01-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1060,291 +622,21 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>首先，排序算法的稳定性大家应该都知道，通俗地讲就是能保证排序前2个相等的数其在序列的前后位置顺序和排序后它们两个的前后位置顺序相同。在简单形式化一下，如果Ai = Aj，Ai原来在位置前，排序后Ai还是要在Aj位置前。</p>
-<p>      其次，说一下稳定性的好处。排序算法如果是稳定的，那么从一个键上排序，然后再从另一个键上排序，第一个键排序的结果可以为第二个键排序所用。基数排序就是这样，先按低位排序，逐次按高位排序，低位相同的元素其顺序再高位也相同时是不会改变的。另外，如果排序算法稳定，对基于比较的排序算法而言，元素交换的次数可能会少一些（个人感觉，没有证实）。</p>
-<p>回到主题，现在分析一下常见的排序算法的稳定性，每个都给出简单的理由。</p>
-<p>(1)冒泡排序</p>
-<p>冒泡排序就是把小的元素往前调或者把大的元素往后调。比较是相邻的两个元素比较，交换也发生在这两个元素之间。所以，如果两个元素相等，我想你是不会再无聊地把他们俩交换一下的；如果两个相等的元素没有相邻，那么即使通过前面的两两交换把两个相邻起来，这时候也不会交换，所以相同元素的前后顺序并没有改变，所以冒泡排序是一种稳定排序算法。</p>
-<p>(2)选择排序</p>
-<p>选择排序是给每个位置选择当前元素最小的，比如给第一个位置选择最小的，在剩余元素里面给第二个元素选择第二小的，依次类推，直到第n - 1个元素，第n个元素不用选择了，因为只剩下它一个最大的元素了。那么，在一趟选择，如果当前元素比一个元素小，而该小的元素又出现在一个和当前元素相等的元素后面，那么交换后稳定性就被破坏了。比较拗口，举个例子，序列5 8 5 2 9，我们知道第一遍选择第1个元素5会和2交换，那么原序列中2个5的相对前后顺序就被破坏了，所以选择排序不是一个稳定的排序算法。</p>
-<p>(3)插入排序<br>插入排序是在一个已经有序的小序列的基础上，一次插入一个元素。当然，刚开始这个有序的小序列只有1个元素，就是第一个元素。比较是从有序序列的末尾开始，也就是想要插入的元素和已经有序的最大者开始比起，如果比它大则直接插入在其后面，否则一直往前找直到找到它该插入的位置。如果碰见一个和插入元素相等的，那么插入元素把想插入的元素放在相等元素的后面。所以，相等元素的前后顺序没有改变，从原无序序列出去的顺序就是排好序后的顺序，所以插入排序是稳定的。</p>
-<p>(4)快速排序<br>快速排序有两个方向，左边的i下标一直往右走，当a[i] &lt;= a[center_index]，其中center_index是中枢元素的数组下标，一般取为数组第0个元素。而右边的j下标一直往左走，当a[j] &gt; a[center_index]。如果i和j都走不动了，i &lt;= j，交换a[i]和a[j],重复上面的过程，直到i &gt; j。 交换a[j]和a[center_index]，完成一趟快速排序。在中枢元素和a[j]交换的时候，很有可能把前面的元素的稳定性打乱，比如序列为5 3 3 4 3 8 9 10 11，现在中枢元素5和3（第5个元素，下标从1开始计）交换就会把元素3的稳定性打乱，所以快速排序是一个不稳定的排序算法，不稳定发生在中枢元素和a[j] 交换的时刻。</p>
-<p>(5)归并排序<br>归并排序是把序列递归地分成短序列，递归出口是短序列只有1个元素（认为直接有序）或者2个序列（1次比较和交换），然后把各个有序的段序列合并成一个有序的长序列，不断合并直到原序列全部排好序。可以发现，在1个或2个元素时，1个元素不会交换，2个元素如果大小相等也没有人故意交换，这不会破坏稳定性。那么，在短的有序序列合并的过程中，稳定是是否受到破坏？没有，合并过程中我们可以保证如果两个当前元素相等时，我们把处在前面的序列的元素保存在结果序列的前面，这样就保证了稳定性。所以，归并排序也是稳定的排序算法。</p>
-<p>(6)基数排序<br>基数排序是按照低位先排序，然后收集；再按照高位排序，然后再收集；依次类推，直到最高位。有时候有些属性是有优先级顺序的，先按低优先级排序，再按高优先级排序，最后的次序就是高优先级高的在前，高优先级相同的低优先级高的在前。基数排序基于分别排序，分别收集，所以其是稳定的排序算法。</p>
-<p>(7)希尔排序(shell)<br>希尔排序是按照不同步长对元素进行插入排序，当刚开始元素很无序的时候，步长最大，所以插入排序的元素个数很少，速度很快；当元素基本有序了，步长很小， 插入排序对于有序的序列效率很高。所以，希尔排序的时间复杂度会比O(n^2)好一些。由于多次插入排序，我们知道一次插入排序是稳定的，不会改变相同元素的相对顺序，但在不同的插入排序过程中，相同的元素可能在各自的插入排序中移动，最后其稳定性就会被打乱，所以shell排序是不稳定的。</p>
-<p>(8)堆排序<br>我们知道堆的结构是节点i的孩子为2 * i和2 * i + 1节点，大顶堆要求父节点大于等于其2个子节点，小顶堆要求父节点小于等于其2个子节点。在一个长为n 的序列，堆排序的过程是从第n / 2开始和其子节点共3个值选择最大（大顶堆）或者最小（小顶堆），这3个元素之间的选择当然不会破坏稳定性。但当为n / 2 - 1， n / 2 - 2， … 1这些个父节点选择元素时，就会破坏稳定性。有可能第n / 2个父节点交换把后面一个元素交换过去了，而第n / 2 - 1个父节点把后面一个相同的元素没 有交换，那么这2个相同的元素之间的稳定性就被破坏了。所以，堆排序不是稳定的排序算法。</p>
-<p>综上，得出结论: <strong>选择排序、快速排序、希尔排序、堆排序不是稳定的排序算法，而冒泡排序、插入排序、归并排序和基数排序是稳定的排序算法</strong></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/05/22/%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E5%88%A4%E5%AE%9A%E6%A0%91%E5%8F%8A%E5%B9%B3%E5%9D%87%E6%9F%A5%E6%89%BE%E9%95%BF%E5%BA%A6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Xuanlang">
-      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="松鼠小筑">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/05/22/%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E5%88%A4%E5%AE%9A%E6%A0%91%E5%8F%8A%E5%B9%B3%E5%9D%87%E6%9F%A5%E6%89%BE%E9%95%BF%E5%BA%A6/" class="post-title-link" itemprop="url">折半查找/二分查找判定树及平均查找长度</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-05-22 12:56:52" itemprop="dateCreated datePublished" datetime="2020-05-22T12:56:52+08:00">2020-05-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-01-12 13:42:46" itemprop="dateModified" datetime="2022-01-12T13:42:46+08:00">2022-01-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">数据结构笔记</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>长度为n的折半查找判定树的构造方法为：</p>
-<p>⑴ 当n=0时，折半查找判定树为空；</p>
-<p>⑵ 当n＞0时，折半查找判定树的根结点是有序表中序号为mid=(n+1)/2的记录，根结点的左子树是与有序表r[1] ~ r[mid-1]相对应的折半查找判定树，根结点的右子树是与r[mid+1] ~ r[n]相对应的折半查找判定树。</p>
-<p>例如，长度为10的折半查找判定树的具体生成过程为：</p>
-<p>⑴ 在长度为10的有序表中进行折半查找，不论查找哪个记录，都必须先和中间记录进行比较，而中间记录的序号为(1+10)/2=5（注意是整除即向下取整），即判定树的根结点是5，如图7-2(a)所示；</p>
-<p>⑵ 考虑判定树的左子树，即将查找区间调整到左半区，此时的查找区间是</p>
-<p>[1，4]，也就是说，左分支上为根结点的值减1，代表查找区间的高端high，此时，根结点的左孩子是(1+4)/2=2，如图7-2(b)所示；</p>
-<p>⑶ 考虑判定树的右子树，即将查找区间调整到右半区，此时的查找区间是</p>
-<p>[6，10]，也就是说，右分支上为根结点的值加1，代表查找区间的低端low，此时，根结点的右孩子是(6+10)/2=8，如图7-2(c)所示；</p>
-<p>⑷ 重复⑵⑶步，依次确定每个结点的左右孩子，如图7-2(d)所示。</p>
-<p><img data-src="https://img-blog.csdn.net/20160108180718291?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center"></p>
-<p><img data-src="https://img-blog.csdn.net/20160108181550336?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center"></p>
-<p>对于折半查找判定树，需要补充以下两点： <br>⑴ 折半查找判定树是一棵二叉排序树，即每个结点的值均大于其左子树上所有结点的值，小于其右子树上所有结点的值； <br>⑵ 折半查找判定树中的结点都是查找成功的情况，将每个结点的空指针指向一个实际上并不存在的结点——称为外结点，所有外结点即是查找不成功的情况，如图7-2(e)所示。如果有序表的长度为n，则外结点一定有n+1个。 在折半查找判定树中，某结点所在的层数即是查找该结点的比较次数，整个判定树代表的有序表的平均查找长度即为查找每个结点的比较次数之和除以有序表的长度。例如，长度为10的有序表的平均查找长度为： <br>ASL=(1×1+2×2+3×4+4×3)/10=29/10 <br>在折半查找判定树中，查找不成功时的比较次数即是查找相应外结点时与内结点的比较次数。整个判定树代表的有序表在查找失败时的平均查找长度即为查找每个外结点的比较次数之和除以外结点的个数。例如，长度为10的有序表在查找失败时的平均查找长度为： <br>ASL=(3×5+4×6)/11=39/11</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/05/10/7-3-%E6%B1%82%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%8F%B6%E5%AD%90%E7%BB%93%E7%82%B9%E4%B8%AA%E6%95%B0-20%E5%88%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Xuanlang">
-      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="松鼠小筑">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/05/10/7-3-%E6%B1%82%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%8F%B6%E5%AD%90%E7%BB%93%E7%82%B9%E4%B8%AA%E6%95%B0-20%E5%88%86/" class="post-title-link" itemprop="url">7-3 求二叉树的叶子结点个数 (20分)</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-05-10 16:50:13" itemprop="dateCreated datePublished" datetime="2020-05-10T16:50:13+08:00">2020-05-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-01-12 13:42:46" itemprop="dateModified" datetime="2022-01-12T13:42:46+08:00">2022-01-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/c-c-%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">c/c++语言</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>以二叉链表作为二叉树的存储结构，求二叉树的叶子结点个数。</p>
-<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h3><p>输入二叉树的先序序列。</p>
-<p>提示：一棵二叉树的先序序列是一个字符串，若字符是‘#’,表示该二叉树是空树，否则该字符是相应结点的数据元素。</p>
-<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h3><p>输出有两行：</p>
-<p>第一行是二叉树的中序遍历序列；</p>
-<p>第二行是二叉树的叶子结点个数。</p>
-<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h3><p>ABC##DE#G##F###</p>
-<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h3><p>CBEGDFA</p>
-<p>3</p>
-<p>需要三个函数：前序建立树，中序输出，计算叶子结点</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//根据有#的前序遍历生成树</span><br><span class="line">tree fcreate()</span><br><span class="line">&#123;</span><br><span class="line">    tree t;</span><br><span class="line">    char s;</span><br><span class="line">    //按每个字符输入</span><br><span class="line">    scanf(&quot;%c&quot;,&amp;s);</span><br><span class="line">    if(s==&#x27;#&#x27;)return nullptr;</span><br><span class="line">    else &#123;</span><br><span class="line">        t=(tree)malloc(sizeof(struct treenode));</span><br><span class="line">        t-&gt;data = s;</span><br><span class="line">        t-&gt;lchild = fcreate();</span><br><span class="line">        t-&gt;rchild = fcreate();</span><br><span class="line">        return t;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//中序输出</span><br><span class="line">void Inordertranverse(tree t)</span><br><span class="line">&#123;</span><br><span class="line">    if(!t)return;</span><br><span class="line">    Inordertranverse(t-&gt;lchild);</span><br><span class="line">    cout&lt;&lt;t-&gt;data;</span><br><span class="line">    Inordertranverse(t-&gt;rchild);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//计数树的根结点数</span><br><span class="line">int count(tree t,int c)</span><br><span class="line">&#123;</span><br><span class="line">    if(t) &#123;</span><br><span class="line">        if (t-&gt;lchild == nullptr &amp;&amp; t-&gt;rchild == nullptr)c++;</span><br><span class="line">        c=count(t-&gt;lchild, c);</span><br><span class="line">        c=count(t-&gt;rchild, c);</span><br><span class="line">    &#125;</span><br><span class="line">    return c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/05/10/7-4-%E4%BA%A4%E6%8D%A2%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E6%AF%8F%E4%B8%AA%E7%BB%93%E7%82%B9%E7%9A%84%E5%B7%A6%E5%AD%A9%E5%AD%90%E5%92%8C%E5%8F%B3%E5%AD%A9%E5%AD%90-20%E5%88%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Xuanlang">
-      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="松鼠小筑">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/05/10/7-4-%E4%BA%A4%E6%8D%A2%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E6%AF%8F%E4%B8%AA%E7%BB%93%E7%82%B9%E7%9A%84%E5%B7%A6%E5%AD%A9%E5%AD%90%E5%92%8C%E5%8F%B3%E5%AD%A9%E5%AD%90-20%E5%88%86/" class="post-title-link" itemprop="url">7-4 交换二叉树中每个结点的左孩子和右孩子 (20分)</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-05-10 16:21:56" itemprop="dateCreated datePublished" datetime="2020-05-10T16:21:56+08:00">2020-05-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-01-12 13:42:46" itemprop="dateModified" datetime="2022-01-12T13:42:46+08:00">2022-01-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/c-c-%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">c/c++语言</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>以二叉链表作为二叉树的存储结构，交换二叉树中每个结点的左孩子和右孩子。</p>
-<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h3><p>输入二叉树的先序序列。</p>
-<p>提示：一棵二叉树的先序序列是一个字符串，若字符是‘#’,表示该二叉树是空树，否则该字符是相应结点的数据元素。</p>
-<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h3><p>输出有两行：</p>
-<p>第一行是原二叉树的中序遍历序列；</p>
-<p>第二行是交换后的二叉树的中序遍历序列。</p>
-<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h3><p>ABC##DE#G##F###</p>
-<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h3><p>CBEGDFA</p>
-<p>AFDGEBC</p>
-<p>需要三个函数：根据前序输入生成树，交换，中序输出</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//根据有#的前序遍历生成树</span><br><span class="line">tree fcreate()</span><br><span class="line">&#123;</span><br><span class="line">    tree t;</span><br><span class="line">    char s;</span><br><span class="line">    //按每个字符输入</span><br><span class="line">    scanf(&quot;%c&quot;,&amp;s);</span><br><span class="line">    if(s==&#x27;#&#x27;)return nullptr;</span><br><span class="line">    else &#123;</span><br><span class="line">        t=(tree)malloc(sizeof(struct treenode));</span><br><span class="line">        t-&gt;data = s;</span><br><span class="line">        t-&gt;lchild = fcreate();</span><br><span class="line">        t-&gt;rchild = fcreate();</span><br><span class="line">        return t;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">void Inordertranverse(tree t)</span><br><span class="line">&#123;</span><br><span class="line">    if(!t)return;</span><br><span class="line">    Inordertranverse(t-&gt;lchild);</span><br><span class="line">    cout&lt;&lt;t-&gt;data;</span><br><span class="line">    Inordertranverse(t-&gt;rchild);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//交换每个结点左右子树</span><br><span class="line">void Exchange(tree &amp;bt)</span><br><span class="line">&#123;</span><br><span class="line">    tree temp;</span><br><span class="line">    if(bt)&#123;</span><br><span class="line">        temp = bt -&gt; lchild;</span><br><span class="line">        bt -&gt; lchild = bt -&gt; rchild;</span><br><span class="line">        bt -&gt; rchild = temp;</span><br><span class="line">        Exchange(bt -&gt; lchild);</span><br><span class="line">        Exchange(bt -&gt; rchild);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    tree t;</span><br><span class="line">    t=fcreate();</span><br><span class="line">    Inordertranverse(t);</span><br><span class="line">    Exchange(t);</span><br><span class="line">    Inordertranverse(t);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <p>给定一个由 整数 组成的 非空 数组所表示的非负整数，在该数的基础上加一。</p>
+<p>最高位数字存放在数组的首位， 数组中每个元素只存储单个数字。</p>
+<p>你可以假设除了整数 0 之外，这个整数不会以零开头。</p>
+<p>示例 1：</p>
+<p>输入：digits = [1,2,3]<br>输出：[1,2,4]<br>解释：输入数组表示数字 123。<br>示例 2：</p>
+<p>输入：digits = [4,3,2,1]<br>输出：[4,3,2,2]<br>解释：输入数组表示数字 4321。<br>示例 3：</p>
+<p>输入：digits = [0]<br>输出：[1]</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/08/12/66-%E5%8A%A0%E4%B8%80/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1363,7 +655,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>
@@ -1396,8 +688,8 @@
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   
-<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
-<script src="/js/third-party/search/local-search.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.11.0/dist/algoliasearch-lite.umd.js" integrity="sha256-48AZ24Ct05NAMLT7hvYgeW1X350OgEcZvHd6Ih6xwOA=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.36.0/dist/instantsearch.production.min.js" integrity="sha256-2IhR6D0EWonVYvGbuQADSjD9VROGINJw9A8RFZEHXAM=" crossorigin="anonymous"></script><script src="/js/third-party/search/algolia-search.js"></script>
 
 
 
