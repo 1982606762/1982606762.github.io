@@ -2,8 +2,7 @@
 title: 使用MYSQL QUERY browser时出现error1251的解决方案
 tags: []
 id: '357'
-categories:
-  - - 杂
+categories: Linux
 date: 2020-07-15 11:58:59
 ---
 

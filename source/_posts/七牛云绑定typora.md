@@ -4,7 +4,7 @@ date: 2021-08-23 09:06:12
 tags:
   hexo
 categories:
-  杂
+  前端
 ---
 
 七牛云做图床绑定PicGo上传图片

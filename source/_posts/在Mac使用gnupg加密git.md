@@ -1,9 +1,8 @@
 ---
 title: 在Mac使用gnupg加密git
 date: 2022-01-04 13:18:13
-tags:
-categories:
-  杂
+tags: Mac
+categories: Linux
 ---
 
 让你的git提交也能拥有酷炫的认证标志
@@ -63,11 +62,27 @@ allow-loopback-pinentry
 
 进入github页面-settings-SSH-新增GPG，复制进去即可
 
+还需要在本地设置git使用密钥
+
+```
+git config --global user.signingkey "GPG key ID"
+```
+
 然后在commit的时候使用``git commit -S -m "xxxx"``来加密本次提交，push之后就可以见到![image-20220104122352299](https://gitee.com/Squirrel_01/img/raw/master/img/image-20220104122352299.png)
 
 防止每次都加-S太麻烦可以使用``git config --global commit.gpgsign true``来默认使用加密提交
 
 此外，还可以使用``gpg --delete-secret-and-public-key your@email.addr``来删除已生成的本地密钥
+
+或是两步删除密钥
+
+``` 
+gpg -k #列出所有密钥
+gpg --delete-secret-keys id
+gpg --delete-keys id
+```
+
+
 
 ## 参考链接
 

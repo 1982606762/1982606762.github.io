@@ -4,7 +4,7 @@ date: 2021-08-18 17:50:16
 tags:
   js
 categories:
-  学习笔记
+  前端
 ---
 
 ![image-20210818175151311](https://www.hualigs.cn/image/611cef200e311.jpg)

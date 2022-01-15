@@ -2,8 +2,7 @@
 title: Windows10 MYSQL Installer 安装（mysql-installer-community-5.7.19.0.msi）
 tags: []
 id: '355'
-categories:
-  - - 杂
+categories: 其他笔记
 date: 2020-07-15 11:07:37
 ---
 

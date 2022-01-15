@@ -4,7 +4,7 @@ date: 2021-08-27 10:42:20
 tags:
   js
 categories:
-  学习笔记
+  前端
 ---
 
 # 简述forEach()、map()、every()、some()和filter()的用法

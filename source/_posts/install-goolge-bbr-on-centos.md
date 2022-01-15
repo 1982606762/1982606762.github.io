@@ -2,8 +2,7 @@
 title: Install Goolge BBR on CentOS
 tags: []
 id: '100'
-categories:
-  - - 编程语言
+categories: Linux
 date: 2019-10-31 11:11:05
 ---
 

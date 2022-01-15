@@ -2,8 +2,7 @@
 title: clion的安装和配置
 tags: []
 id: '223'
-categories:
-  - - c/c++语言
+categories: C/C++
 date: 2020-03-05 09:47:55
 ---
 

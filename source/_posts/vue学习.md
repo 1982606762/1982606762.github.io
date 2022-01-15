@@ -1,8 +1,8 @@
 ---
 title: vue学习
 date: 2021-11-05 20:36:24
-tags:
-categories:
+tags: vue
+categories: 前端
 ---
 
 <!--more-->

@@ -2,8 +2,7 @@
 title: C语言数组操作
 tags: []
 id: '206'
-categories:
-  - - c/c++语言
+categories: C/C++
 date: 2020-02-28 19:10:46
 ---
 

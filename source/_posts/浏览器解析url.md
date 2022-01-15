@@ -1,8 +1,8 @@
 ---
 title: 浏览器解析url
 date: 2021-10-12 14:43:15
-tags:
-categories:
+tags: 浏览器
+categories: 前端
 ---
 
 

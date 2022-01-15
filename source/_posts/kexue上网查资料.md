@@ -2,8 +2,7 @@
 title: Kexue上网查资料
 tags: []
 id: '83'
-categories:
-  - - 杂
+categories: Linux
 date: 2019-10-10 11:16:46
 ---
 

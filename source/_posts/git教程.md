@@ -2,8 +2,7 @@
 title: Git教程
 tags: []
 id: '359'
-categories:
-  - - 杂
+categories: Linux
 date: 2020-07-28 18:38:40
 ---
 

@@ -4,7 +4,7 @@ date: 2021-08-21 08:00:29
 tags:
   hexo
 categories:
-  杂
+  前端
 ---
 
 实现一些hexo的进阶操作

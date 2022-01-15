@@ -2,8 +2,7 @@
 title: 7-2 jmu-ds-顺序表区间元素删除 (15分)
 tags: []
 id: '212'
-categories:
-  - - c/c++语言
+categories: 数据结构与算法
 date: 2020-02-28 21:03:32
 ---
 

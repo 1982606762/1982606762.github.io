@@ -2,7 +2,7 @@
 title: swift学习
 date: 2021-12-03 20:50:14
 tags:
-categories:
+categories: swift
 ---
 
 udemy [iOS & Swift - The Complete iOS App Development Bootcamp](https://www.udemy.com/course/ios-13-app-development-bootcamp/) 学习笔记

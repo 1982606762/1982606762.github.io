@@ -4,7 +4,7 @@ date: 2021-08-11 22:07:43
 tags:
   hexo
 categories:
-  杂
+  前端
 ---
 
 之前用腾讯云的主机和wordpress建站，但是由于主机到期，所以打算换一个平台，找到了免费的github page

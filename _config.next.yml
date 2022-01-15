@@ -50,10 +50,10 @@ darkmode: false
 # ---------------------------------------------------------------
 
 favicon:
-  small: /images/logo.png
-  medium: /images/logo.png
-  apple_touch_icon: /images/logo.png
-  safari_pinned_tab: /images/logo.png
+  small: /images/16*16.ico
+  medium: /images/32*32.ico
+  apple_touch_icon: /images/32*32.ico
+  safari_pinned_tab: /images/32*32.ico
   #android_manifest: /manifest.json
 
 # Custom Logo (Warning: Do not support scheme Mist)
@@ -570,9 +570,9 @@ comments:
   style: tabs
   # Choose a comment system to be displayed by default.
   # Available values: disqus | disqusjs | changyan | livere | gitalk | utterances
-  active: 
+  active: changyan
   # Setting `true` means remembering the comment system selected by the visitor.
-  storage: 
+  storage: true
   # Lazyload all comment systems.
   lazyload: false
   # Modify texts or order for any naves, here are some examples.
@@ -605,9 +605,9 @@ disqusjs:
 # Changyan
 # For more information: https://changyan.kuaizhan.com
 changyan:
-  enable: false
-  appid:
-  appkey:
+  enable: true
+  appid: cyvRiUJ7H
+  appkey: bfa85e46b2e4cf46d837cbd6e78ba7ab
 
 # LiveRe comments system
 # You can get your uid from https://livere.com/insight/myCode (General web site)
@@ -617,11 +617,11 @@ livere_uid: # <your_uid>
 # For more information: https://gitalk.github.io
 gitalk:
   enable: false
-  github_id: # GitHub repo owner
-  repo: # Repository name to store issues
-  client_id: # GitHub Application Client ID
-  client_secret: # GitHub Application Client Secret
-  admin_user: # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
+  github_id: 1982606762 # GitHub repo owner
+  repo: gittalk # Repository name to store issues
+  client_id: 231cfb1b82c3b8fa9624
+  client_secret: d99b79d22a66ddc5629f9089f58d9fb49c1bf8d9 # GitHub Application Client Secret
+  admin_user: "['1982606762']" # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
   distraction_free_mode: true # Facebook-like distraction free mode
   # When the official proxy is not available, you can change it to your own proxy address
   proxy: https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token # This is official proxy address

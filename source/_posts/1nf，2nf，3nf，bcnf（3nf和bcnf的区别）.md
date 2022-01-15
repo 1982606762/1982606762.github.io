@@ -2,8 +2,7 @@
 title: 1NF，2NF，3NF，BCNF（3NF和BCNF的区别）
 tags: []
 id: '422'
-categories:
-  - - 学习笔记
+categories: 其他笔记
 date: 2020-10-21 19:31:53
 ---
 

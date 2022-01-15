@@ -118,3 +118,12 @@ algolia:
   apiKey: '7a1dc67e7209c7c82fbda5e1f2953bb5'
   indexName: 'dev_xuazhao'
   chunkSize: 5000
+
+symbols_count_time:
+  symbols: true		# 开启字符计数
+  time: true		# 显示阅读时间
+  total_symbols: false		# 关闭博客总字符数目
+  total_time: false		# 关闭博客总阅读时间
+  exclude_codeblock: false
+  awl: 2
+  wpm: 275
