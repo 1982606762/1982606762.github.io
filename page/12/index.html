@@ -21,29 +21,26 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.zhaoxuanlang.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="给你两个有序整数数组 nums1 和 nums2，请你将 nums2 合并到 nums1 中，使 nums1 成为一个有序数组。 初始化 nums1 和 nums2 的元素数量分别为 m 和 n 。你可以假设 nums1 的空间大小等于 m + n，这样它就有足够的空间保存来自 nums2 的元素。 示例 1： 输入：nums1 &#x3D; [1,2,3,0,0,0], m &#x3D; 3, nums2 &#x3D; [2">
-<meta property="og:type" content="article">
-<meta property="og:title" content="合并两个有序数组">
-<meta property="og:url" content="https://www.zhaoxuanlang.cn/2021/08/12/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/index.html">
+<meta name="description" content="业精于勤荒于嬉，行成于思毁于随">
+<meta property="og:type" content="website">
+<meta property="og:title" content="松鼠小筑">
+<meta property="og:url" content="https://www.zhaoxuanlang.cn/page/12/index.html">
 <meta property="og:site_name" content="松鼠小筑">
-<meta property="og:description" content="给你两个有序整数数组 nums1 和 nums2，请你将 nums2 合并到 nums1 中，使 nums1 成为一个有序数组。 初始化 nums1 和 nums2 的元素数量分别为 m 和 n 。你可以假设 nums1 的空间大小等于 m + n，这样它就有足够的空间保存来自 nums2 的元素。 示例 1： 输入：nums1 &#x3D; [1,2,3,0,0,0], m &#x3D; 3, nums2 &#x3D; [2">
+<meta property="og:description" content="业精于勤荒于嬉，行成于思毁于随">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-08-12T02:46:28.000Z">
-<meta property="article:modified_time" content="2022-01-15T02:13:37.616Z">
 <meta property="article:author" content="Xuanlang">
-<meta property="article:tag" content="easy">
-<meta property="article:tag" content="leetcode">
+<meta property="article:tag" content="松鼠小筑">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://www.zhaoxuanlang.cn/2021/08/12/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/">
+<link rel="canonical" href="https://www.zhaoxuanlang.cn/page/12/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.zhaoxuanlang.cn/2021/08/12/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/","path":"2021/08/12/合并两个有序数组/","title":"合并两个有序数组"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"page/12/index.html","title":""}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>合并两个有序数组 | 松鼠小筑</title>
+<title>松鼠小筑 - 学习笔记</title>
   
 
   <script src="/js/third-party/analytics/baidu-analytics.js"></script>
@@ -74,7 +71,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <p class="site-title">松鼠小筑</p>
+      <h1 class="site-title">松鼠小筑</h1>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">学习笔记</p>
@@ -218,18 +215,17 @@
 </noscript>
 
 
-    <div class="main-inner post posts-expand">
+    <div class="main-inner index posts-expand">
 
-
-  
+    
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2021/08/12/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2019/09/05/%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E9%A1%B5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -241,9 +237,9 @@
       <meta itemprop="name" content="松鼠小筑">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          合并两个有序数组
-        </h1>
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/09/05/%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E9%A1%B5/" class="post-title-link" itemprop="url">简易建站教程</a>
+        </h2>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -253,14 +249,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2021-08-12 10:46:28" itemprop="dateCreated datePublished" datetime="2021-08-12T10:46:28+08:00">2021-08-12</time>
+      <time title="创建时间：2019-09-05 12:17:59" itemprop="dateCreated datePublished" datetime="2019-09-05T12:17:59+08:00">2019-09-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-01-15 10:13:37" itemprop="dateModified" datetime="2022-01-15T10:13:37+08:00">2022-01-15</time>
+      <time title="修改时间：2022-01-15 10:16:19" itemprop="dateModified" datetime="2022-01-15T10:16:19+08:00">2022-01-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -268,7 +264,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
+          <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
         </span>
     </span>
 
@@ -281,8 +277,8 @@
       </span>
       <span class="post-meta-item-text">Changyan：</span>
     
-    <a title="合并两个有序数组" href="/2021/08/12/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::d504291e8780332e9f2921fbe695510b" class="cy_cmt_count" itemprop="commentCount"></span>
+    <a title="简易建站教程" href="/2019/09/05/%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E9%A1%B5/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::794360baf07207653335e765126d6b3a" class="cy_cmt_count" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -293,14 +289,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>828</span>
+      <span>1.5k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>3 分钟</span>
     </span>
 </div>
 
@@ -311,17 +307,38 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>给你两个有序整数数组 nums1 和 nums2，请你将 nums2 合并到 nums1 中，使 nums1 成为一个有序数组。</p>
-<p>初始化 nums1 和 nums2 的元素数量分别为 m 和 n 。你可以假设 nums1 的空间大小等于 m + n，这样它就有足够的空间保存来自 nums2 的元素。</p>
-<p>示例 1：</p>
-<p>输入：nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3<br>输出：[1,2,2,3,5,6]<br>示例 2：</p>
-<p>输入：nums1 = [1], m = 1, nums2 = [], n = 0<br>输出：[1]</p>
-<span id="more"></span>
+          <p>放完暑假开学后回到班里，偶然看到同学在搞个人网页。由于我之前在Wix上有过一个个人主页，但是那个属于利用他网站给的现成的资源，只需要自己写文章即可。做为一个学计算机的学生，我当然不仅仅满足于写文章，所以我打算搭建一个属于自己的网页</p>
+<h3 id="第一步：购买所需原料"><a href="#第一步：购买所需原料" class="headerlink" title="第一步：购买所需原料"></a>第一步：购买所需原料</h3><p>想要自己的网页24小时可用，靠自己的电脑肯定是不够的，所以就需要一个云主机。我这里购买的是腾讯云的主机，因为他有学生优惠，一年的主机只要120，加16元就可以买一年的域名，简直完美符合我的需求。买服务器时我建议买三个月以上时长的，原因后边会讲。</p>
+<p><a target="_blank" rel="noopener" href="https://sp0.baidu.com/9q9JcDHa2gU2pMbgoY3K/adrc.php?t=06KL00c00fALeK30dWk-0awHAsKpIgKI00000ryI5NC00000vOPxvZ.THLnvVAvdnm0UWdBmy-bIfK15yuWuAc4uj9-nj0snAnvPWc0IHdKrHnzP17jrj0YnRDzPWRkfRFanj6znYc1PDcvnWc3f6K95gTqFhdWpyfqn1c3PHRsPHRkrausThqbpyfqnHm0uHdCIZwsT1CEQvP_ULNbQMw-UhP-UMf8mvqVQv7WIaqWmydsIgnOuMFEUNPEIgFWuHdMILGWIz3zPHD4PHb3QWcdnHbdrH68nWRkrHR4raudIAdxUyNbpgNV5yPsuaudIAdxpyfquLIlmLT8nWRkrHR4ra3zPHD4PHb3QWcdnHbdrH60mLFW5HR3rjRv&tpl=tpl_11534_19968_16032&l=1513987557&attach=location=&linkName=%25E6%2596%2587%25E5%25AD%2597%25E5%2588%2597%25E8%25A1%25A8-%25E7%25AC%25AC1%25E8%25A1%258C%25E6%2596%2587%25E6%259C%25AC&linkText=%255B%25E4%25BA%2591%252B%25E6%25A0%25A1%25E5%259B%25AD%255D%25E5%25AD%25A6%25E7%2594%259F%25E4%25BA%2591%25E6%259C%258D%25E5%258A%25A1%25E5%2599%25A8%25E4%25BD%2593%25E9%25AA%258C%25E5%25A5%2597%25E9%25A4%259010%25E5%2585%2583%252F%25E6%259C%2588&xp=id(%2522m3285505518_canvas%2522)%252FDIV%255B1%255D%252FDIV%255B2%255D%252FDIV%255B1%255D%252FUL%255B1%255D%252FLI%255B1%255D%252FA%255B1%255D&linkType=&checksum=84&ie=utf-8&f=8&tn=baidu&wd=%E8%85%BE%E8%AE%AF%E4%BA%91&rqlang=cn&inputT=1812">学生优惠页面</a></p>
+<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2019/09/image-1024x401.png"></p>
+<p>在买域名之前需要先去看看自己想要注册的域名是否被注册了，这一步我们可以在很多网站完成，但是为了方便我还是选择<a target="_blank" rel="noopener" href="https://dnspod.cloud.tencent.com/">腾讯云</a>。其实阿里云的域名会稍微便宜一点，如果想省钱可以买阿里云的。</p>
+<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2019/09/image-1-1024x679.png"></p>
+<p>可以看到有的已经被注册了，这时就需要换一个名字搜索…  </p>
+<p>域名后的这个.xxx不一样，价格也不太一样。.com是国际的域名后缀，其他的就是各国分配的后缀。有的很便宜的是某些小国家的域名，我还是建议买咱们中国的.cn，比.com便宜一些还很靠谱，知名度也高。</p>
+<h2 id="第二步：域名备案，-服务器的准备工作"><a href="#第二步：域名备案，-服务器的准备工作" class="headerlink" title="第二步：域名备案， 服务器的准备工作"></a>第二步：域名备案， 服务器的准备工作</h2><p>在完成第一步后我们应该现在有一个云服务器和一个域名了。首先我们要域名备案，由于管局要求，国内的服务器搭建的网址都需要备案。在备案时需要一个备案授权码，但是这个授权码腾讯云只给三个月以上时长的服务器生成，所以是之前建议买超过三个月的服务器。我当时就是因为买了一个月的，这时还得再去续费才能用。</p>
+<p>备案我建议用腾讯云的微信小程序，流程非常快，只需要跟着要求走就可以，我是不到一周就通过了，他官方给的时间是20天以内。不备案你的网页就不能上线，所以我还是推荐尽早完成。</p>
+<p>备案后还需要进行域名解析，填完保存就可以。</p>
+<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2019/09/image-3-1024x538.png"></p>
+<p>记录值填你买的服务器的公网IP</p>
+<p>接下来我们需要进行服务器准备，进入控制台会看到这个页面,点登录进入控制台。我在这用的是宝塔的面板，安装教程可以去他<a target="_blank" rel="noopener" href="https://www.bt.cn/">官网</a>找到<img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2019/09/PTQ8FE273SESX26I.png"></p>
+<p>安装完成宝塔后在服务器后台页面会有一个网址，用户名和密码。在浏览器打开网址并用用户名密码登录后进入宝塔的控制台。第一次登录他会让你安装框架，安装推荐的就可以，然后等他安装好。</p>
+<p>这时我们需要配置自己网页，在宝塔面板左边找到网站,选择添加站点，像图中这样配置，用户名和密码都可以自己写，只要能记住就行。</p>
+<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2019/09/image-2-1024x566.png"></p>
+<p>等待的时候我们还需要去网上下载一个工具Xshell和Xftp。可以自行百度也可以用我这个<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1Tu8UMCjk2_cH114imOxbRQ">版本</a><br>提取码：gwej ，无需安装，只要解压出来就可以。这两个工具可以让你连接到服务器和上传文件更加方便。</p>
+<h2 id="第三步：网站建设"><a href="#第三步：网站建设" class="headerlink" title="第三步：网站建设"></a>第三步：网站建设</h2><p>现在你应该已经能通过www.你的域名.xx进入你的网页了，它会提示你当前页是宝塔自动生成的，这时我们需要上传自己的网页。用之前下载的Xftp或宝塔面板的文件页面都可以</p>
+<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2019/09/image-4-832x1024.png"></p>
+<p>Xftp设置页面</p>
+<p>在Xftp中Host填服务器公网IP，下边username 和password都填服务器管理员的账号密码</p>
+<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2019/09/image-5-1024x627.png"></p>
+<p>进www文件夹里wwwroot里你域名那个文件夹</p>
+<p>现在你的文件夹里应该只有两个html，我们需要把这两个文件都删了，把你想上传的网页放到这个文件夹里就可以，但记得把网页名字改成index</p>
+<p>到此，我们网站的建设就完成了。下边我还要介绍一下worldpress的安装。</p>
+<h2 id="第四步：worldpress的安装"><a href="#第四步：worldpress的安装" class="headerlink" title="第四步：worldpress的安装"></a>第四步：worldpress的安装</h2><p>首先需要去worldpress官网<a target="_blank" rel="noopener" href="https://cn.wordpress.org/download/">下载</a>组件，下载后解压到刚刚的域名文件夹里。</p>
+<p>现在如果打开网页，如果发现他提示php版本过低，就去宝塔面板里的软件商店安装最新php并禁用你当前版本的php即可</p>
+<p>现在你应该进入了worldpress的设置界面，按着他说的进行就可以，只有一步，你需要在数据库的地方填入刚刚宝塔设置网页时的用户名和密码。</p>
+<p>现在你有了一个属于自己的world press网页！</p>
 
-<p>思路：用双指针逆向向nums1从后往前添加两个数组里大的元素，需要注意最外边的循环mn都是大于等于0，因为等于0的时候说明还有一个元素。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[]&#125;</span> <span class="variable">nums1</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">m</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[]&#125;</span> <span class="variable">nums2</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">n</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;void&#125;</span> </span>Do not return anything, modify nums1 in-place instead.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> merge = <span class="function"><span class="keyword">function</span> (<span class="params">nums1, m, nums2, n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> last = m-- + --n;</span><br><span class="line">    <span class="keyword">while</span> (n&gt;=<span class="number">0</span>||m&gt;=<span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(n&lt;<span class="number">0</span>)&#123;</span><br><span class="line">            nums1[last--] = nums1[m--];</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(m&lt;<span class="number">0</span>)&#123;</span><br><span class="line">            nums1[last--] = nums2[n--];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (nums1[m] &gt;= nums2[n]) &#123;</span><br><span class="line">            nums1[last--] = nums1[m--];</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            nums1[last--] = nums2[n--];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-
+      
     </div>
 
     
@@ -329,42 +346,8 @@
     
 
     <footer class="post-footer">
-          
-
-<div class="post-copyright">
-<ul>
-  <li class="post-copyright-author">
-      <strong>本文作者： </strong>Xuanlang
-  </li>
-  <li class="post-copyright-link">
-      <strong>本文链接：</strong>
-      <a href="https://www.zhaoxuanlang.cn/2021/08/12/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/" title="合并两个有序数组">https://www.zhaoxuanlang.cn/2021/08/12/合并两个有序数组/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
-  </li>
-</ul>
-</div>
-
-          <div class="post-tags">
-              <a href="/tags/easy/" rel="tag"># easy</a>
-              <a href="/tags/leetcode/" rel="tag"># leetcode</a>
-          </div>
-
-        
-
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/2021/08/11/page%E5%92%8Chexo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/" rel="prev" title="page和hexo搭建自己的博客">
-                  <i class="fa fa-chevron-left"></i> page和hexo搭建自己的博客
-                </a>
-            </div>
-            <div class="post-nav-item">
-                <a href="/2021/08/12/66-%E5%8A%A0%E4%B8%80/" rel="next" title="66-加一">
-                  66-加一 <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
+        <div class="post-eof"></div>
+      
     </footer>
   </article>
 </div>
@@ -372,9 +355,10 @@
 
 
 
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/11/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span>
+  </nav>
 
-
-    <div class="comments" id="SOHUCS" sid="d504291e8780332e9f2921fbe695510b"></div>
 </div>
   </main>
 
@@ -419,7 +403,7 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://www.zhaoxuanlang.cn/2021/08/12/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://www.zhaoxuanlang.cn/page/12/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
 <script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyvRiUJ7H","appkey":"bfa85e46b2e4cf46d837cbd6e78ba7ab"}</script>
 <script src="/js/third-party/comments/changyan.js"></script>
