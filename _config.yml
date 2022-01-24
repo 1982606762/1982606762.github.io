@@ -113,11 +113,16 @@ deploy:
   # coding2: https://e.coding.net/lishuai3/songshuxiaozhu/123456.git
  
  
-algolia:
-  applicationID: 'GNS5LFPQL3'
-  apiKey: '7a1dc67e7209c7c82fbda5e1f2953bb5'
-  indexName: 'dev_xuazhao'
-  chunkSize: 5000
+# algolia:
+#   applicationID: 'GNS5LFPQL3'
+#   apiKey: '7a1dc67e7209c7c82fbda5e1f2953bb5'
+#   indexName: 'dev_xuazhao'
+#   chunkSize: 5000
+
+search:
+  path: search.xml
+  field: all
+  content: true
 
 symbols_count_time:
   symbols: true		# 开启字符计数

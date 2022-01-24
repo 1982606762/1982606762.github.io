@@ -39,3 +39,11 @@ categories: 前端
 >```
 
 开启后在缓存位置可以改短一些，我设置的是1天缓存。缓存时间太长会导致网页更新后访问不到最新的页面。你也可以手动在刷新预热-URL刷新删除所有CDN缓存。
+
+测试结果：
+
+![1s-测速](https://gitee.com/Squirrel_01/img/raw/master/img/1s-%E6%B5%8B%E9%80%9F.png)
+
+![1h-测速](https://gitee.com/Squirrel_01/img/raw/master/img/1h-%E6%B5%8B%E9%80%9F.png)
+
+![1d-测速](https://gitee.com/Squirrel_01/img/raw/master/img/1d-%E6%B5%8B%E9%80%9F.png)

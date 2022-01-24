@@ -70,13 +70,26 @@ arr.shuffle()可以将数组打乱顺序
 
 字符串可以直接用加号连接
 
-## loop循环建议使用
+## for循环建议使用
 
 ```swift
 for _ in 0..<6{
   
 }
 ```
+
+也支持
+
+```swift
+let titleText = "⚡️FlashChat"
+for letter in titleText{
+    print(letter)
+}
+```
+
+
+
+
 
 ## if语句
 
@@ -105,11 +118,11 @@ default:
 
 ## Swift range
 
-> a...b closed Range
+> a...b closed Range  [a,b]
 >
-> a..<b half open Range
+> a..<b half open Range  [a,b)
 >
-> ...b One sided Range
+> ...b One sided Range [1,b]
 
 ## Dictionary
 
@@ -430,17 +443,23 @@ class secondViewController: UIViewController {
 
 ![image-20211211172952388](https://gitee.com/Squirrel_01/img/raw/master/img/image-20211211172952388.png)
 
-按住control拖到下边的
+在controller上或者view上边的小点上按住control拖到下边的viewcontroller
 
-segue可以定义页面切换的动画
+还可以直接按住cintrol从Aview里的某一个按钮上拖到另一个view
+
+segue可以定义页面切换的动画，不同segue的区别：https://help.apple.com/xcode/mac/8.0/#/dev564169bb1
 
 若要用segue从Acontroller切换到Bcontroller：
 
-> 需要在Axontroller中定义prepare函数来传输一些B必要的变量
+> 需要在Acontroller中定义prepare函数来传输一些B必要的变量
 >
 > A中使用``self.performSegue``切换.第一个是在storyboard设置的名称，第二个是self或别的类
 >
 > B中使用 ``dismiss`` 来回去
+
+![image-20220123215120967](https://gitee.com/Squirrel_01/img/raw/master/img/image-20220123215120967.png)
+
+点击第一个view，editor-embedin-navigation controller就可以添加进navigation stack
 
 ## protocol用法
 
@@ -564,5 +583,20 @@ DispatchQueue.main.sync {
 
    如果一个类有很多继承关系，可以把每个继承写成一个扩展，扩展内部写和这个继承相关的函数
 
-   
+## 使用cocoapods
+
+cocoapods类似前端的npm，是一个Swift的包管理器
+
+1. ``sudo gem install cocoapods``安装
+2. cd到项目目录，使用pod init生成podfile
+3. 修改podfile，添加需要的模块
+4. `` pod install``
+5. 打开新生成的App.xcworkspace进行操作
+
+删除操作：
+
+1. 在podfile中删除模块
+2. 使用pod install
+
+相关链接：[cocoapods官网](https://cocoapods.org/)
 
