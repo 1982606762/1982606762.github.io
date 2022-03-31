@@ -239,6 +239,8 @@ Swift中用var创建的变量都是mutable，用let创建的都是immutable。�
 
 在struct内部修改struct变量值的时候需要给方法添加mutating属性
 
+使用SwiftUI的时候可以给变量加@State属性来修复
+
 ## 保留小数位数
 
 从Double转到String时可使用`` String("$.2f",num)``来保留两位小数
@@ -410,6 +412,12 @@ Model-view-controller
 
 ### Delegate
 
+常用delegate：
+
+Decodable：用于表明这个struct可以转化成json
+
+Identifiable：必须自己有一个叫做id的东西，可以使用computed propoty代替。用处可以简便的遍历这个类的元素
+
 ![image-20211228193140941](https://gitee.com/Squirrel_01/img/raw/master/img/image-20211228193140941.png)
 
 ## 使用代码新建view
@@ -458,8 +466,6 @@ segue可以定义页面切换的动画，不同segue的区别：https://help.app
 > B中使用 ``dismiss`` 来回去
 
 ![image-20220123215120967](https://gitee.com/Squirrel_01/img/raw/master/img/image-20220123215120967.png)
-
-点击第一个view，editor-embedin-navigation controller就可以添加进navigation stack
 
 ## protocol用法
 
@@ -599,4 +605,228 @@ cocoapods类似前端的npm，是一个Swift的包管理器
 2. 使用pod install
 
 相关链接：[cocoapods官网](https://cocoapods.org/)
+
+## Constant文件
+
+用来记录一些项目中的常量
+
+在根文件夹新建Constants.swift，里边新增一个Constants struct。里边的成员使用static修饰
+
+![](https://img.zhaoxuanlang.cn/image-20220130205457742.png)
+
+let是instance变量，static let是type变量。type变量依赖于type，instance变量依赖于instance
+
+建议struct叫做K，比较短
+
+## UITableView
+
+搜索tableview，同时新增一个table cell。这个cell必须要设置一个identifier
+
+也可以直接搜索UItableviewcontroller，这样的话所有所需的关联都会自动添加。（推荐）
+
+### 使用
+
+在controller中首先需要有数据源的数组
+
+然后添加两个函数，一个是有numberOfRowsInSection，返回数据源的成员个数，获得table的行数
+
+另一个是有cellForRowAt，返回的是一个cell。这个函数内先定义一个cell，这里要用到之前的那个identifier，然后可以设置它的文本，最好返回这个cell。
+
+![image-20220213113516497](https://img.zhaoxuanlang.cn/image-20220213113516497.png)
+
+### 添加点击事件
+
+需要用到delegate方法来呼叫delegate。
+
+添加有didSelectRowAt的tableView方法，里边可以先写个print来获得点击的位置。点击后有灰色的效果，如果想取消灰色效果就需要加tableView.deselectRow方法。
+
+可以通过添加accessoryType来添加尾部元素如checkmark。
+
+```swift
+override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        print(ItemArray[indexPath.row])
+        
+        if (tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark){
+            tableView.cellForRow(at: indexPath)?.accessoryType = .none
+        }else{
+            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+```
+
+### 重新加载
+
+```swift
+self.tableview.reloadData()
+```
+
+
+
+
+
+
+
+# as标签的使用
+
+```swift
+If i is int{
+  
+}//可以用来辨别i变量的属性
+```
+
+as!用于强制类型转换，可以转化成子类，但是有可能在运行时报错
+
+as?用于有可能能转化
+
+```swift
+if let a as? b{
+	a.bfunc()
+}else{
+  
+}
+```
+
+as是把类转化成父类（不常用）
+
+## Navigation bar
+
+### 生成
+
+点击第一个view，editor-embedin-navigation controller就可以添加进navigation stack
+
+### 颜色设置
+
+点左侧Navigation Bar，右侧的设置中Translucent可以让它颜色和下边相同
+
+Tint是返回文字的颜色
+
+### 自定义显示和隐藏
+
+在要隐藏的view controller中添加
+
+```swift
+override func viewWillAppear(xxx){
+  super.viewxxxx
+  navigationController?.isNavigationBarHidden = true
+}
+override func viewWillDisappear(xxx){
+  super.viewxxxx
+  xxx = false
+}
+```
+
+### 在bar中添加button
+
+搜索barbutton添加，可以直接选择systemItem为一些预设样式
+
+## View Controller 生命周期
+
+![image-20220201211336874](https://img.zhaoxuanlang.cn/image-20220201211336874.png)
+
+## SwiftUI使用
+
+SwiftUI可以实时预览，还能直接向画面上添加组件
+
+### 创建
+
+在创建项目时选择使用SwiftUI
+
+### 添加自定义字体
+
+把文件放进项目后在info里新增一条Fonts provided by application,值填字体的全称，包括扩展名。
+
+### 图片
+
+更改大小需要加resizable，然后可以用aspectRatio来自适应。padding类似于前端的margin。
+
+### Extract Subview实现组件复用
+
+cmd+左键点某一个组件，选择Extract Subview就可以分离出来，然后可以进行改名。
+
+分离出来之后在总view中新建变量，调用的时候传入变量后就可以复用。
+
+还可以新建一个SwiftUI文件，把这个复制进去作为单独的文件用。
+
+![](https://img.zhaoxuanlang.cn/image-20220207123719045.png)
+
+## UIAlert
+
+### 定义
+
+需要定义一个alert和一个action。alert是对话框本地，action是添加到alert对象上的选项。
+
+alert可以添加TextField文本输入框
+
+## 本地存储
+
+![](https://img.zhaoxuanlang.cn/%E6%88%AA%E5%B1%8F2022-02-16%20%E4%B8%8B%E5%8D%881.53.27.png)
+
+### Userdefault
+
+把所有数据以key-value的形式存在一个plist里
+
+
+
+首先需要定义一个``var defaults = UserDefaults.standard``
+
+存储：``self.defaults.set(xxxxx,forKey:"keyxxx")``
+
+读取取决于存入的类型：
+
+```swift
+defaults.array(forKey:"keyxxx")
+defaults.float()
+defaults.object()
+defaults.dictionary()
+```
+
+不建议存储大量数据，每次读取都会读所有的plist
+
+### NSdecoder
+
+自定义plist的存储位置，可以分开多个plist存放不同数据
+
+
+
+首先需要定义plist：
+
+``  **let** dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("items.plist")``
+
+读取与写入：
+
+```swift
+func saveitems() {
+        let encoder = PropertyListEncoder()
+        do{
+            let data = try encoder.encode(ItemArray)
+            try data.write(to: dataFilePath!)
+        }catch{
+            print("Error saving!")
+        }
+        tableView.reloadData()
+    }
+    
+    func loadItem() {
+        if let data = try? Data(contentsOf: dataFilePath!){
+            let decoder = PropertyListDecoder()
+            do{
+                ItemArray = try decoder.decode([Item].self, from: data)
+            }catch{
+                print(error)
+            }
+        }
+    }
+```
+
+
+
+## Singleton
+
+全局只能有一个
+
+在class里定义一个static类型变量
+
+
+
 

@@ -105,6 +105,10 @@ deploy:
 - type: git
   repository: git@github.com:1982606762/1982606762.github.io.git
   branch: main
+- type: git
+  repository:
+      https://gitee.com/Squirrel_01/hexowebsite.git
+  branch: main
 # - type: git
 #   repository: https://gitee.com/Squirrel_01/squirrel
 #   branch: main
