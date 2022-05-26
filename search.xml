@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>统计代码行数</title>
+      <link href="/2022/05/26/%E7%BB%9F%E8%AE%A1%E4%BB%A3%E7%A0%81%E8%A1%8C%E6%95%B0/"/>
+      <url>/2022/05/26/%E7%BB%9F%E8%AE%A1%E4%BB%A3%E7%A0%81%E8%A1%8C%E6%95%B0/</url>
+      
+        <content type="html"><![CDATA[<p>虽然用行数来统计代码量很蠢，但是很多情况下又想看看这个项目中一共有多少行代码，自己数就变得更蠢了，所以需要一个统计行数的小插件。</p><span id="more"></span><h2 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h2><p>mac系统使用brew下载<code>brew install cloc</code></p><p>github链接：<a href="https://github.com/AlDanial/cloc">https://github.com/AlDanial/cloc</a></p><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><code>cloc ./</code>统计当前文件夹行数</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 其他笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 代码统计 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>c++ stack/queue方法集</title>
       <link href="/2022/05/09/c-stack-queue%E6%96%B9%E6%B3%95%E9%9B%86/"/>
       <url>/2022/05/09/c-stack-queue%E6%96%B9%E6%B3%95%E9%9B%86/</url>
