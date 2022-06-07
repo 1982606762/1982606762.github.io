@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>新建hexo文章的优化操作</title>
+      <link href="/2022/06/04/%E6%96%B0%E5%BB%BAhexo%E6%96%87%E7%AB%A0%E7%9A%84%E4%BC%98%E5%8C%96%E6%93%8D%E4%BD%9C/"/>
+      <url>/2022/06/04/%E6%96%B0%E5%BB%BAhexo%E6%96%87%E7%AB%A0%E7%9A%84%E4%BC%98%E5%8C%96%E6%93%8D%E4%BD%9C/</url>
+      
+        <content type="html"><![CDATA[<p>在新建hexo文章的时候需要先进入hexo的目录再新建，而且新建的文章常常不知道该给他加什么标签和分类，还得去网站上看现在有啥。这篇文章介绍了快速新建文章并且显示辅助信息的一系列操作。</p><span id="more"></span><h1 id="显示当前有的标签和分类"><a href="#显示当前有的标签和分类" class="headerlink" title="显示当前有的标签和分类"></a>显示当前有的标签和分类</h1><p>首先需要获取到所有的信息，由于hexo文章结构都是固定的，因此获得信息页不是很难。</p><p>首先使用<img data-src="https://img.zhaoxuanlang.cn/image-20220607%E4%B8%8B%E5%8D%8842609348.png" alt="image-20220607下午42609348"></p><p>获取到tags和categories之间的文本并且保存在test文件中。<sup><a href="https://blog.csdn.net/ichen820/article/details/118112985" title="sed截取字符串之间内容">1</a></sup></p><p>在观察这个文件的时候我发现里边有很多不需要的内容，所以又使用了</p><p><img data-src="https://img.zhaoxuanlang.cn/image-20220607%E4%B8%8B%E5%8D%8842638905.png" alt="image-20220607下午42638905"></p><p>来删除以id和date开头的行并保存在test2中。<sup><a href="https://os.51cto.com/article/624709.html" title="使用sed删除特定行">2</a></sup></p><p>之后再使用</p><p><img data-src="https://img.zhaoxuanlang.cn/image-20220607%E4%B8%8B%E5%8D%8842704465.png" alt="image-20220607下午42704465"></p><p>将数据排序去重得到粗加工产物test3.<sup><a href="https://cloud.tencent.com/developer/article/1392949?from=15425" title="Linux去重">3</a></sup></p><p>然后使用python来读取这个文件并且进行细分，代码如下</p><p><img data-src="https://img.zhaoxuanlang.cn/image-20220607%E4%B8%8B%E5%8D%8843214237.png" alt="image-20220607下午43214237"></p><p><img data-src="https://img.zhaoxuanlang.cn/image-20220607%E4%B8%8B%E5%8D%8843232975.png" alt="image-20220607下午43232975">开头的一行是因为在使用脚本调用的时候括号需要转义，如果加上用环境中的python去运行的话也可以实现并且简洁不少。<sup><a href="https://www.jianshu.com/p/b1a8264c2043" title="编写shell脚本运行python文件">4</a></sup></p><p>最后把他们整合到一个sh文件中：</p><p><img data-src="https://img.zhaoxuanlang.cn/image-20220607%E4%B8%8B%E5%8D%8842746654.png" alt="image-20220607下午42746654"></p><p>这个文件要放在_posts目录下运行。</p><p>现在运行new.sh就可以看到结果。</p><p><img data-src="https://img.zhaoxuanlang.cn/image-20220607%E4%B8%8B%E5%8D%8843316861.png" alt="image-20220607下午43316861"></p><h1 id="快速新建文章"><a href="#快速新建文章" class="headerlink" title="快速新建文章"></a>快速新建文章</h1><p>利用了别名的传参技巧<sup><a href="https://www.qianjinyike.com/alias-%E5%88%AB%E5%90%8D%E5%91%BD%E4%BB%A4%E6%97%B6%E5%80%99%EF%BC%8C%E5%A6%82%E4%BD%95%E6%94%AF%E6%8C%81%E4%BC%A0%E5%8F%82%EF%BC%9F/" title="别名传参">5</a></sup>，具体别名实现如下：</p><p><code>hexo=&#39;func()&#123; cd ~/study/newblog/source/_posts/ &amp;&amp; hexo $1 $2 &amp;&amp; sh new.sh &amp;&amp; cd ~&#125;;func&#39;</code></p><p>现在在任何位置都可以使用hexo相关命令，并且创建文件后会先打开这个文章便于编辑，并且提示你当前有的所有信息，最后回到~目录下。效果如下:</p><p><img data-src="https://img.zhaoxuanlang.cn/image-20220604%E4%B8%8B%E5%8D%8814039888.png" alt="image-20220604下午14039888"></p><h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>使用meta实现定时跳转链接</title>
       <link href="/2022/05/29/%E4%BD%BF%E7%94%A8meta%E5%AE%9E%E7%8E%B0%E5%AE%9A%E6%97%B6%E8%B7%B3%E8%BD%AC%E9%93%BE%E6%8E%A5/"/>
       <url>/2022/05/29/%E4%BD%BF%E7%94%A8meta%E5%AE%9E%E7%8E%B0%E5%AE%9A%E6%97%B6%E8%B7%B3%E8%BD%AC%E9%93%BE%E6%8E%A5/</url>
