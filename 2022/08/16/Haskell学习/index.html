@@ -21,26 +21,28 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.zhaoxuanlang.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="业精于勤荒于嬉，行成于思毁于随">
-<meta property="og:type" content="website">
-<meta property="og:title" content="松鼠小筑">
-<meta property="og:url" content="https://www.zhaoxuanlang.cn/index.html">
+<meta name="description" content="基础变量变量命名使用驼峰式 函数调用先写函数名后加参数，如min 1 2 声明先函数名，后跟空格分隔的参数表，然后加&#x3D;后定义函数行为 doubleme x &#x3D; x+x 常用函数replicate n m  复制n个m if语句1234doubleme x &#x3D; if x&gt;100							then x							else x*2  if里 else部分不能省略 if语句是一个表达式，即">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Haskell学习">
+<meta property="og:url" content="https://www.zhaoxuanlang.cn/2022/08/16/Haskell%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="松鼠小筑">
-<meta property="og:description" content="业精于勤荒于嬉，行成于思毁于随">
+<meta property="og:description" content="基础变量变量命名使用驼峰式 函数调用先写函数名后加参数，如min 1 2 声明先函数名，后跟空格分隔的参数表，然后加&#x3D;后定义函数行为 doubleme x &#x3D; x+x 常用函数replicate n m  复制n个m if语句1234doubleme x &#x3D; if x&gt;100							then x							else x*2  if里 else部分不能省略 if语句是一个表达式，即">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-08-16T18:47:16.000Z">
+<meta property="article:modified_time" content="2022-09-06T07:53:14.305Z">
 <meta property="article:author" content="Xuanlang">
-<meta property="article:tag" content="松鼠小筑">
+<meta property="article:tag" content="Haskell">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://www.zhaoxuanlang.cn/">
+<link rel="canonical" href="https://www.zhaoxuanlang.cn/2022/08/16/Haskell%E5%AD%A6%E4%B9%A0/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.zhaoxuanlang.cn/2022/08/16/Haskell%E5%AD%A6%E4%B9%A0/","path":"2022/08/16/Haskell学习/","title":"Haskell学习"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>松鼠小筑 - 学习笔记</title>
+<title>Haskell学习 | 松鼠小筑</title>
   
 
   <script src="/js/third-party/analytics/baidu-analytics.js"></script>
@@ -71,7 +73,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">松鼠小筑</h1>
+      <p class="site-title">松鼠小筑</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">学习笔记</p>
@@ -135,7 +137,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -148,6 +150,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-number">1.1.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-number">1.2.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E7%94%A8"><span class="nav-number">1.2.1.</span> <span class="nav-text">调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A3%B0%E6%98%8E"><span class="nav-number">1.2.2.</span> <span class="nav-text">声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="nav-number">1.2.3.</span> <span class="nav-text">常用函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#if%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.3.</span> <span class="nav-text">if语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F-1"><span class="nav-number">1.4.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#List"><span class="nav-number">1.4.1.</span> <span class="nav-text">List</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Range"><span class="nav-number">1.4.2.</span> <span class="nav-text">Range</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%83%E7%BB%84Tuple"><span class="nav-number">1.4.3.</span> <span class="nav-text">元组Tuple</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E8%AF%AD%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">函数语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D"><span class="nav-number">2.1.</span> <span class="nav-text">模式匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Guards"><span class="nav-number">2.2.</span> <span class="nav-text">Guards</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Where"><span class="nav-number">2.3.</span> <span class="nav-text">Where</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#let"><span class="nav-number">2.4.</span> <span class="nav-text">let</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#case"><span class="nav-number">2.5.</span> <span class="nav-text">case</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0-1"><span class="nav-number">3.</span> <span class="nav-text">常用函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#zip-a-b"><span class="nav-number">3.1.</span> <span class="nav-text">zip [a] [b]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#replicate-a-b"><span class="nav-number">3.2.</span> <span class="nav-text">replicate a b</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flip-f-a-b"><span class="nav-number">3.3.</span> <span class="nav-text">flip f a b</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#div-a-b"><span class="nav-number">3.4.</span> <span class="nav-text">div a b</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zipWith-f-a-b"><span class="nav-number">3.5.</span> <span class="nav-text">zipWith f [a] [b]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#map-f-a"><span class="nav-number">3.6.</span> <span class="nav-text">map f [a]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#filter-a-gt-bool-a"><span class="nav-number">3.7.</span> <span class="nav-text">filter (a-&gt;bool) [a]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#takeWhile-a-gt-bool-a"><span class="nav-number">3.8.</span> <span class="nav-text">takeWhile (a-&gt;bool) [a]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dropWhile-a-gt-bool-a"><span class="nav-number">3.9.</span> <span class="nav-text">dropWhile (a-&gt;bool) [a]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#odd"><span class="nav-number">3.10.</span> <span class="nav-text">odd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#even"><span class="nav-number">3.11.</span> <span class="nav-text">even</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#words"><span class="nav-number">3.12.</span> <span class="nav-text">words</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unwords"><span class="nav-number">3.13.</span> <span class="nav-text">unwords</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E5%87%BD%E6%95%B0"><span class="nav-number">4.</span> <span class="nav-text">计算函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89type"><span class="nav-number">5.</span> <span class="nav-text">自定义type</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF%E7%B1%BB"><span class="nav-number">5.1.</span> <span class="nav-text">继承类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#show"><span class="nav-number">5.1.1.</span> <span class="nav-text">show</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Eq"><span class="nav-number">5.1.2.</span> <span class="nav-text">Eq</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ghci%E5%91%BD%E4%BB%A4"><span class="nav-number">6.</span> <span class="nav-text">ghci命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#l-%E8%A3%85%E8%BD%BD%E6%9F%90%E4%B8%AAhs%E6%96%87%E4%BB%B6"><span class="nav-number">6.1.</span> <span class="nav-text">:l 装载某个hs文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#t-%E6%9F%A5%E7%9C%8B%E7%B1%BB%E5%9E%8B"><span class="nav-number">6.2.</span> <span class="nav-text">:t 查看类型</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -214,16 +217,17 @@
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2022/08/16/Haskell%E5%AD%A6%E4%B9%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -236,9 +240,9 @@
       <meta itemprop="name" content="松鼠小筑">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/08/16/Haskell%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">Haskell学习</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Haskell学习
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -306,7 +310,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <span id="more"></span>
+        <span id="more"></span>
 
 <h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>变量命名使用驼峰式</p>
 <h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="调用"><a href="#调用" class="headerlink" title="调用"></a>调用</h3><p>先写函数名后加参数，如<code>min 1 2</code></p>
@@ -419,7 +423,6 @@
 <h1 id="ghci命令"><a href="#ghci命令" class="headerlink" title="ghci命令"></a>ghci命令</h1><h2 id="l-装载某个hs文件"><a href="#l-装载某个hs文件" class="headerlink" title=":l 装载某个hs文件"></a>:l 装载某个hs文件</h2><p><code>:l aaa.hs</code></p>
 <h2 id="t-查看类型"><a href="#t-查看类型" class="headerlink" title=":t 查看类型"></a>:t 查看类型</h2><p><code>:t &#39;a&#39;</code></p>
 
-      
     </div>
 
     
@@ -427,344 +430,38 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Xuanlang
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.zhaoxuanlang.cn/2022/08/16/Haskell%E5%AD%A6%E4%B9%A0/" title="Haskell学习">https://www.zhaoxuanlang.cn/2022/08/16/Haskell学习/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
 </div>
 
+          <div class="post-tags">
+              <a href="/tags/Haskell/" rel="tag"># Haskell</a>
+          </div>
 
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2022/08/16/conda%E7%9B%B8%E5%85%B3%E4%BD%BF%E7%94%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Xuanlang">
-      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="松鼠小筑">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/08/16/conda%E7%9B%B8%E5%85%B3%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">conda相关使用</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2022-08-16 08:56:05 / 修改时间：09:23:11" itemprop="dateCreated datePublished" datetime="2022-08-16T08:56:05+02:00">2022-08-16</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Changyan：</span>
-    
-    <a title="conda相关使用" href="/2022/08/16/conda%E7%9B%B8%E5%85%B3%E4%BD%BF%E7%94%A8/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::7936eb785302564d65f9e2189bbb99b8" class="cy_cmt_count" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>337</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>在管理本地Python环境的时候经常用到的就是conda，它可以简单快捷地切换Python环境。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/08/16/conda%E7%9B%B8%E5%85%B3%E4%BD%BF%E7%94%A8/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2022/06/21/%E4%B8%8B%E8%BD%BDkindle%E8%B4%AD%E4%B9%B0%E4%B9%A6%E7%B1%8D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Xuanlang">
-      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="松鼠小筑">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/06/21/%E4%B8%8B%E8%BD%BDkindle%E8%B4%AD%E4%B9%B0%E4%B9%A6%E7%B1%8D/" class="post-title-link" itemprop="url">下载kindle购买书籍</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2022-06-21 18:08:00 / 修改时间：18:22:01" itemprop="dateCreated datePublished" datetime="2022-06-21T18:08:00+02:00">2022-06-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%85%B6%E4%BB%96%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">其他笔记</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Changyan：</span>
-    
-    <a title="下载kindle购买书籍" href="/2022/06/21/%E4%B8%8B%E8%BD%BDkindle%E8%B4%AD%E4%B9%B0%E4%B9%A6%E7%B1%8D/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::b8290e44d9c8e98a63a95cb10d1586f9" class="cy_cmt_count" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>3.6k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>6 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>随着kindle在大陆退出市场，我们需要把之前购买过的书籍都下载下来以防万一。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/06/21/%E4%B8%8B%E8%BD%BDkindle%E8%B4%AD%E4%B9%B0%E4%B9%A6%E7%B1%8D/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/08/16/conda%E7%9B%B8%E5%85%B3%E4%BD%BF%E7%94%A8/" rel="prev" title="conda相关使用">
+                  <i class="fa fa-chevron-left"></i> conda相关使用
+                </a>
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2022/06/04/%E6%96%B0%E5%BB%BAhexo%E6%96%87%E7%AB%A0%E7%9A%84%E4%BC%98%E5%8C%96%E6%93%8D%E4%BD%9C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Xuanlang">
-      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="松鼠小筑">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/06/04/%E6%96%B0%E5%BB%BAhexo%E6%96%87%E7%AB%A0%E7%9A%84%E4%BC%98%E5%8C%96%E6%93%8D%E4%BD%9C/" class="post-title-link" itemprop="url">新建hexo文章的优化操作</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-06-04 07:03:01" itemprop="dateCreated datePublished" datetime="2022-06-04T07:03:01+02:00">2022-06-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-06-07 10:33:20" itemprop="dateModified" datetime="2022-06-07T10:33:20+02:00">2022-06-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Changyan：</span>
-    
-    <a title="新建hexo文章的优化操作" href="/2022/06/04/%E6%96%B0%E5%BB%BAhexo%E6%96%87%E7%AB%A0%E7%9A%84%E4%BC%98%E5%8C%96%E6%93%8D%E4%BD%9C/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::331e869bd331c9679e1d5ff08c14c68c" class="cy_cmt_count" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>628</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>在新建hexo文章的时候需要先进入hexo的目录再新建，而且新建的文章常常不知道该给他加什么标签和分类，还得去网站上看现在有啥。这篇文章介绍了快速新建文章并且显示辅助信息的一系列操作。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/06/04/%E6%96%B0%E5%BB%BAhexo%E6%96%87%E7%AB%A0%E7%9A%84%E4%BC%98%E5%8C%96%E6%93%8D%E4%BD%9C/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
+            <div class="post-nav-item">
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          </div>
     </footer>
   </article>
 </div>
@@ -772,126 +469,9 @@
 
 
 
-    
 
 
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2022/05/29/%E4%BD%BF%E7%94%A8meta%E5%AE%9E%E7%8E%B0%E5%AE%9A%E6%97%B6%E8%B7%B3%E8%BD%AC%E9%93%BE%E6%8E%A5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Xuanlang">
-      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="松鼠小筑">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/29/%E4%BD%BF%E7%94%A8meta%E5%AE%9E%E7%8E%B0%E5%AE%9A%E6%97%B6%E8%B7%B3%E8%BD%AC%E9%93%BE%E6%8E%A5/" class="post-title-link" itemprop="url">使用meta实现定时跳转链接</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-05-29 12:56:39" itemprop="dateCreated datePublished" datetime="2022-05-29T12:56:39+02:00">2022-05-29</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-06-04 05:20:22" itemprop="dateModified" datetime="2022-06-04T05:20:22+02:00">2022-06-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Changyan：</span>
-    
-    <a title="使用meta实现定时跳转链接" href="/2022/05/29/%E4%BD%BF%E7%94%A8meta%E5%AE%9E%E7%8E%B0%E5%AE%9A%E6%97%B6%E8%B7%B3%E8%BD%AC%E9%93%BE%E6%8E%A5/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::fe9ead1975b5ff11c6bebdad20768445" class="cy_cmt_count" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>991</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>利用了meta标签的一个功能。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/05/29/%E4%BD%BF%E7%94%A8meta%E5%AE%9E%E7%8E%B0%E5%AE%9A%E6%97%B6%E8%B7%B3%E8%BD%AC%E9%93%BE%E6%8E%A5/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
-
+    <div class="comments" id="SOHUCS" sid="f1efaaf47db5e407e52b3c12ef56e5c1"></div>
 </div>
   </main>
 
@@ -936,7 +516,7 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://www.zhaoxuanlang.cn/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://www.zhaoxuanlang.cn/2022/08/16/Haskell%E5%AD%A6%E4%B9%A0/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
 <script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyvRiUJ7H","appkey":"bfa85e46b2e4cf46d837cbd6e78ba7ab"}</script>
 <script src="/js/third-party/comments/changyan.js"></script>
