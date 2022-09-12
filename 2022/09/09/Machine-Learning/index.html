@@ -21,12 +21,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.zhaoxuanlang.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="Supervised learningregressionLinear regressionmodel$$ f_{\omega,b}(x) &#x3D; wx+b$$ change the w and b to optimize the algorithm. Cost functionUsed to evaluate the model. The goal is to use cost function">
+<meta name="description" content="Supervised learning regression Linear regression model \[  f_{\omega,b}(x) &#x3D; wx+b  \] change the w and b to optimize the algorithm. Cost function Used to evaluate the model. The goal is to use cost f">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Machine Learning">
 <meta property="og:url" content="https://www.zhaoxuanlang.cn/2022/09/09/Machine-Learning/index.html">
 <meta property="og:site_name" content="松鼠小筑">
-<meta property="og:description" content="Supervised learningregressionLinear regressionmodel$$ f_{\omega,b}(x) &#x3D; wx+b$$ change the w and b to optimize the algorithm. Cost functionUsed to evaluate the model. The goal is to use cost function">
+<meta property="og:description" content="Supervised learning regression Linear regression model \[  f_{\omega,b}(x) &#x3D; wx+b  \] change the w and b to optimize the algorithm. Cost function Used to evaluate the model. The goal is to use cost f">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.mathpix.com/snip/images/4PNilhlBG6Ar9npUJvpzHe04Da9TCX2XZTiS9frwkpk.original.fullsize.png">
 <meta property="article:published_time" content="2022-09-09T15:00:24.000Z">
@@ -152,7 +152,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Supervised-learning"><span class="nav-number">1.</span> <span class="nav-text">Supervised learning</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#regression"><span class="nav-number">1.1.</span> <span class="nav-text">regression</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linear-regression"><span class="nav-number">1.1.1.</span> <span class="nav-text">Linear regression</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#model"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">model</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cost-function"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">Cost function</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#classifition"><span class="nav-number">1.2.</span> <span class="nav-text">classifition</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Unsupervised-Learning"><span class="nav-number">2.</span> <span class="nav-text">Unsupervised Learning</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#supervised-learning"><span class="nav-number">1.</span> <span class="nav-text">Supervised learning</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#regression"><span class="nav-number">1.1.</span> <span class="nav-text">regression</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#linear-regression"><span class="nav-number">1.1.1.</span> <span class="nav-text">Linear regression</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#model"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">model</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cost-function"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">Cost function</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#classifition"><span class="nav-number">1.2.</span> <span class="nav-text">classifition</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#unsupervised-learning"><span class="nav-number">2.</span> <span class="nav-text">Unsupervised Learning</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -304,14 +304,24 @@
     
     <div class="post-body" itemprop="articleBody">
         <span id="more"></span>
-
-<h1 id="Supervised-learning"><a href="#Supervised-learning" class="headerlink" title="Supervised learning"></a>Supervised learning</h1><h2 id="regression"><a href="#regression" class="headerlink" title="regression"></a>regression</h2><h3 id="Linear-regression"><a href="#Linear-regression" class="headerlink" title="Linear regression"></a>Linear regression</h3><h4 id="model"><a href="#model" class="headerlink" title="model"></a>model</h4><p>$$<br> f_{\omega,b}(x) = wx+b<br>$$</p>
+<h1 id="supervised-learning">Supervised learning</h1>
+<h2 id="regression">regression</h2>
+<h3 id="linear-regression">Linear regression</h3>
+<h4 id="model">model</h4>
+<p><span class="math display">\[
+ f_{\omega,b}(x) = wx+b 
+\]</span></p>
 <p>change the w and b to optimize the algorithm.</p>
-<h4 id="Cost-function"><a href="#Cost-function" class="headerlink" title="Cost function"></a>Cost function</h4><p>Used to evaluate the model. The goal is to use cost function to minimize it and to find the best parameters for the model.</p>
-<p>used for linear regression is<br>$$<br>J(\omega,b) = \frac{1}{2m}\sum_{i=1}^{m}(f_{\omega,b}(x^{(i)})-y^{(i)})^2<br>$$<br>It’s related with w and b</p>
-<p> Graph when J is only related to w:</p>
-<p><img data-src="https://cdn.mathpix.com/snip/images/4PNilhlBG6Ar9npUJvpzHe04Da9TCX2XZTiS9frwkpk.original.fullsize.png"></p>
-<h2 id="classifition"><a href="#classifition" class="headerlink" title="classifition"></a>classifition</h2><h1 id="Unsupervised-Learning"><a href="#Unsupervised-Learning" class="headerlink" title="Unsupervised Learning"></a>Unsupervised Learning</h1>
+<h4 id="cost-function">Cost function</h4>
+<p>Used to evaluate the model. The goal is to use cost function to minimize it and to find the best parameters for the model.</p>
+<p>used for linear regression is <span class="math display">\[
+J(\omega,b) = \frac{1}{2m}\sum_{i=1}^{m}(f_{\omega,b}(x^{(i)})-y^{(i)})^2
+\]</span> It's related with w and b</p>
+<p>Graph when J is only related to w:</p>
+<p><img data-src="https://cdn.mathpix.com/snip/images/4PNilhlBG6Ar9npUJvpzHe04Da9TCX2XZTiS9frwkpk.original.fullsize.png" /></p>
+<h2 id="classifition">classifition</h2>
+<h1 id="unsupervised-learning">Unsupervised Learning</h1>
+
     </div>
 
     
@@ -399,6 +409,12 @@
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
 
 
   <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>

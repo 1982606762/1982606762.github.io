@@ -248,7 +248,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2020-02-28 14:03:32" itemprop="dateCreated datePublished" datetime="2020-02-28T14:03:32+01:00">2020-02-28</time>
+      <time title="创建时间：2020-02-28 21:03:32" itemprop="dateCreated datePublished" datetime="2020-02-28T21:03:32+01:00">2020-02-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -307,11 +307,18 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>若一个线性表L采用顺序存储结构存储，其中所有的元素为整数。设计一个算法，删除元素值在[x,y]之间的所有元素，要求算法的时间复杂度为O(n)，空间复杂度为O(1)。</p>
-<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h3><p>三行数据，第一行是顺序表的元素个数，第二行是顺序表的元素，第三行是x和y。</p>
-<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h3><p>删除元素值在[x,y]之间的所有元素后的顺序表。</p>
-<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h3><p>10<br>5 1 9 10 67 12 8 33 6 2<br>3 10</p>
-<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h3><p>1 67 12 33 2</p>
+<h3 id="输入格式">输入格式:</h3>
+<p>三行数据，第一行是顺序表的元素个数，第二行是顺序表的元素，第三行是x和y。</p>
+<h3 id="输出格式">输出格式:</h3>
+<p>删除元素值在[x,y]之间的所有元素后的顺序表。</p>
+<h3 id="输入样例">输入样例:</h3>
+<p>10<br />
+5 1 9 10 67 12 8 33 6 2<br />
+3 10</p>
+<h3 id="输出样例">输出样例:</h3>
+<p>1 67 12 33 2</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int m;</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;m );</span><br><span class="line"></span><br><span class="line">    int list[999];</span><br><span class="line">    for (int i = 0; i &lt; m; ++i) &#123;</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;list[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    int x,y;</span><br><span class="line">    scanf(&quot;%d%d&quot;,&amp;x,&amp;y);</span><br><span class="line"></span><br><span class="line">    int list2[999],q=0;</span><br><span class="line"></span><br><span class="line">    for (int j = 0; j &lt; m; ++j) &#123;</span><br><span class="line">        if (x&gt;list[j]y&lt;list[j])</span><br><span class="line">        &#123;</span><br><span class="line">            list2[q]=list[j];</span><br><span class="line">            q++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    for (int i = 0; i &lt; q-1; ++i) &#123;</span><br><span class="line">        printf(&quot;%d &quot;,list2[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;%d&quot;,list2[q-1]);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -361,7 +368,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2020-02-28 13:02:53" itemprop="dateCreated datePublished" datetime="2020-02-28T13:02:53+01:00">2020-02-28</time>
+      <time title="创建时间：2020-02-28 20:02:53" itemprop="dateCreated datePublished" datetime="2020-02-28T20:02:53+01:00">2020-02-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -401,7 +408,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>800</span>
+      <span>776</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -419,15 +426,16 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>本题要求实现一个对数组进行循环左移的简单函数：一个数组_a_中存有_n_（&gt;0）个整数，在不允许使用另外数组的前提下，将每个整数循环向左移_m_（≥0）个位置，即将_a_中的数据由（_a_​0​​_a_​1​​⋯_a_​_n_−1​​）变换为（_a_​_m_​​⋯_a_​_n_−1​​_a_​0​​_a_​1​​⋯_a_​_m_−1​​）（最前面的_m_个数循环移至最后面的_m_个位置）。如果还需要考虑程序移动数据的次数尽量少，要如何设计移动的方法？</p>
-<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h3><p>输入第1行给出正整数_n_（≤100）和整数_m_（≥0）；第2行给出_n_个整数，其间以空格分隔。</p>
-<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h3><p>在一行中输出循环左移_m_位以后的整数序列，之间用空格分隔，序列结尾不能有多余空格。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">8 3</span><br><span class="line">1 2 3 4 5 6 7 8</span><br></pre></td></tr></table></figure>
-
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4 5 6 7 8 1 2 3</span><br></pre></td></tr></table></figure>
-
+          <p>本题要求实现一个对数组进行循环左移的简单函数：一个数组_a_中存有_n_（&gt;0）个整数，在不允许使用另外数组的前提下，将每个整数循环向左移_m_（≥0）个位置，即将_a_中的数据由（<em>a</em>​0​​<em>a</em>​1​​⋯<em>a</em>​<em>n</em>−1​​）变换为（<em>a</em>​<em>m</em>​​⋯<em>a</em>​<em>n</em>−1​​<em>a</em>​0​​<em>a</em>​1​​⋯<em>a</em>​<em>m</em>−1​​）（最前面的_m_个数循环移至最后面的_m_个位置）。如果还需要考虑程序移动数据的次数尽量少，要如何设计移动的方法？</p>
+<h3 id="输入格式">输入格式:</h3>
+<p>输入第1行给出正整数_n_（≤100）和整数_m_（≥0）；第2行给出_n_个整数，其间以空格分隔。</p>
+<h3 id="输出格式">输出格式:</h3>
+<p>在一行中输出循环左移_m_位以后的整数序列，之间用空格分隔，序列结尾不能有多余空格。</p>
+<h3 id="输入样例">输入样例：</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">8 3</span><br><span class="line">1 2 3 4 5 6 7 8</span><br></pre></td></tr></table></figure>
+<h3 id="输出样例">输出样例：</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4 5 6 7 8 1 2 3</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int m,n;</span><br><span class="line">    scanf(&quot;%d%d&quot;,&amp;m,&amp;n );</span><br><span class="line">    </span><br><span class="line">    int list[999];</span><br><span class="line">    for (int i = 0; i &lt; m; ++i) &#123;</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;list[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    for (int j = 0; j &lt; n; ++j) &#123;</span><br><span class="line">        int temp = list[0];</span><br><span class="line">        for (int i = 1; i &lt;m ; ++i) &#123;</span><br><span class="line">            list[i-1]=list[i];</span><br><span class="line">        &#125;</span><br><span class="line">        list[m-1]=temp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    for (int i = 0; i &lt; m-1; ++i) &#123;</span><br><span class="line">        printf(&quot;%d &quot;,list[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;%d&quot;,list[m-1]);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 
       
     </div>
@@ -478,7 +486,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2020-02-28 12:10:46" itemprop="dateCreated datePublished" datetime="2020-02-28T12:10:46+01:00">2020-02-28</time>
+      <time title="创建时间：2020-02-28 19:10:46" itemprop="dateCreated datePublished" datetime="2020-02-28T19:10:46+01:00">2020-02-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -543,6 +551,7 @@
 <p>int a[5]={1,2,3,4,5}</p>
 <p>例：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># include &lt;stdio.h&gt;</span><br><span class="line">int main(void)</span><br><span class="line">&#123;</span><br><span class="line">    int a[5] = &#123;0&#125;;  //数组清零初始化</span><br><span class="line">    int i;</span><br><span class="line">    printf(&quot;请输入5个数:&quot;);</span><br><span class="line">    for (i=0; i&lt;5; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        scanf(&quot;%d&quot;, &amp;a[i] );</span><br><span class="line">    &#125;</span><br><span class="line">    for (i=0; i&lt;5; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;%d\x20&quot;, a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -592,7 +601,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2020-02-28 11:54:09" itemprop="dateCreated datePublished" datetime="2020-02-28T11:54:09+01:00">2020-02-28</time>
+      <time title="创建时间：2020-02-28 18:54:09" itemprop="dateCreated datePublished" datetime="2020-02-28T18:54:09+01:00">2020-02-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -651,31 +660,35 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>顺序表中增加一个数据平均n/2，删除一个平均(n-1)/2</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/02/image-2.png"></p>
+<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/02/image-2.png" /></p>
 <p>计算方法位100+（5-1）*2</p>
-<p>线性表的顺序存储结构和线性表的链式存储结构分别是(B )。  </p>
-<p>A．顺序存取的存储结构、顺序存取的存储结构<br>B．随机存取的存储结构、顺序存取的存储结构<br>C．随机存取的存储结构、随机存取的存储结构<br>D．任意存取的存储结构、任意存取的存储结构  </p>
-<h3 id="答案解析"><a href="#答案解析" class="headerlink" title="答案解析"></a><strong>答案解析</strong></h3><p>顺序存储结构中，数据元素存放在一组地址连续的存储单元中，每个数据元素地址可通过公式LOC(ai)=LOC(a1)+(i-1)L计算得到，从而实现了随机存取。对于链式存储结构，要对某结点进行存取，都得从链的头指针指向的结点开始，这是一种顺序存取的存储结构。</p>
+<p>线性表的顺序存储结构和线性表的链式存储结构分别是(B )。</p>
+<p>A．顺序存取的存储结构、顺序存取的存储结构<br />
+B．随机存取的存储结构、顺序存取的存储结构<br />
+C．随机存取的存储结构、随机存取的存储结构<br />
+D．任意存取的存储结构、任意存取的存储结构</p>
+<h3 id="答案解析"><strong>答案解析</strong></h3>
+<p>顺序存储结构中，数据元素存放在一组地址连续的存储单元中，每个数据元素地址可通过公式LOC(ai)=LOC(a1)+(i-1)L计算得到，从而实现了随机存取。对于链式存储结构，要对某结点进行存取，都得从链的头指针指向的结点开始，这是一种顺序存取的存储结构。</p>
 <p>顺序表是线性表的（ ）存储表示。 (2分)</p>
-<ol>
-<li> 有序</li>
-<li> 连续</li>
-<li> 数组</li>
-<li> 顺序存取</li>
+<ol type="1">
+<li>有序</li>
+<li>连续</li>
+<li>数组</li>
+<li>顺序存取</li>
 </ol>
 <p>若长度为n的非空线性表采用顺序存储结构，在表的第i个位置插入一个数据元素的合法值应该是（ ）。 (2分)</p>
-<ol>
-<li> 1≤i≤n</li>
-<li> 1≤i≤n+1</li>
-<li> 0≤i≤n-1</li>
-<li> 0≤i≤n</li>
+<ol type="1">
+<li>1≤i≤n</li>
+<li>1≤i≤n+1</li>
+<li>0≤i≤n-1</li>
+<li>0≤i≤n</li>
 </ol>
 <p>若线性表最常用的操作是存取第i个元素及其前驱的值，则采用( )存储方式节省时间。 (2分)</p>
-<ol>
-<li> 单链表</li>
-<li> 双向链表</li>
-<li> 单循环链表</li>
-<li> 顺序表</li>
+<ol type="1">
+<li>单链表</li>
+<li>双向链表</li>
+<li>单循环链表</li>
+<li>顺序表</li>
 </ol>
 
       
@@ -727,7 +740,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2020-02-23 15:15:04" itemprop="dateCreated datePublished" datetime="2020-02-23T15:15:04+01:00">2020-02-23</time>
+      <time title="创建时间：2020-02-23 22:15:04" itemprop="dateCreated datePublished" datetime="2020-02-23T22:15:04+01:00">2020-02-23</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -767,7 +780,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>805</span>
+      <span>814</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -785,17 +798,35 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><img data-src="https://img-blog.csdnimg.cn/20190618173532304.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JhaWR1XzMxNjU3ODg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+          <figure>
+<img data-src="https://img-blog.csdnimg.cn/20190618173532304.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JhaWR1XzMxNjU3ODg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /><figcaption aria-hidden="true">在这里插入图片描述</figcaption>
+</figure>
 <p>数据结构是相互之间存在一种或多种特定关系的数据元素的集合。</p>
-<p>数据：是描述客观事物的符号，是计算机中可以操作的对象，是能被计算机识别，并输入给计算机处理的符号集合。数据不仅仅包括整形、实型等数值类型，还包括字符及声音、图像、视频等非数值类型。<br>数据，也就是符号，必须具备两个前提：<br>a.可以输入到计算机中<br>b.能被计算机程序处理<br>对于整型、实型等数值类型，可以进行数值计算。<br>对于字符数据类型，就需要非数值的处理。而声音、图像、视频等其实是可以通过编码的手段变成字符数据来处理的</p>
-<p>数据元素：是组成数据的、有一定意义的基本单位，在计算机中通常作为整体处理。也被称为记录。<br>比如 畜类 牛、马、羊、鸡、猪、狗等动物当然就是畜类的数据元素。</p>
-<p>数据项：一个数据元素可以由若干个数据项组成。<br>比如人这样的元素，可以有眼、耳、鼻、嘴等数据项，也可以有姓名、年龄、性别等数据项。<br>数据项是数据不可分割的最小单位。</p>
-<p>数据对象**：是性质相同的数据元素的集合，是数据的子集。<br>什么叫性质相同呢？是指数据元素具有相同数量和类型的数据项，比如人 这个例子，都有姓名、生日、性别等相同的数据项。<br>既然数据对象是数据的子集，在实际应用中，处理的数据元素通常具有相同性质，在不产生混淆的情况下，我们将数据对象简称为数据。</p>
-<p>数据结构<br>结构，简单的理解就是关系，比如分子结构，就是组成分子的原子之间的排列方式。严格带你说，结构是指各个组成部分相互搭配的排列的方式。在现实世界中，不同数据元素之间不是独立的，而是存在特定的关系，我们将这些关系成为 结构。<br>数据结构：是相互之间存在一种或者多种特定关系的数据元素的集合。</p>
-<p>根据网上大佬的理解 可能会更直观一些：<br>假设有两张表，A表为人员表，B表为课程表， 表的格式如下：</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/02/image-1-1024x316.png"></p>
+<p>数据：是描述客观事物的符号，是计算机中可以操作的对象，是能被计算机识别，并输入给计算机处理的符号集合。数据不仅仅包括整形、实型等数值类型，还包括字符及声音、图像、视频等非数值类型。<br />
+数据，也就是符号，必须具备两个前提：<br />
+a.可以输入到计算机中<br />
+b.能被计算机程序处理<br />
+对于整型、实型等数值类型，可以进行数值计算。<br />
+对于字符数据类型，就需要非数值的处理。而声音、图像、视频等其实是可以通过编码的手段变成字符数据来处理的</p>
+<p>数据元素：是组成数据的、有一定意义的基本单位，在计算机中通常作为整体处理。也被称为记录。<br />
+比如 畜类 牛、马、羊、鸡、猪、狗等动物当然就是畜类的数据元素。</p>
+<p>数据项：一个数据元素可以由若干个数据项组成。<br />
+比如人这样的元素，可以有眼、耳、鼻、嘴等数据项，也可以有姓名、年龄、性别等数据项。<br />
+数据项是数据不可分割的最小单位。</p>
+<p>数据对象**：是性质相同的数据元素的集合，是数据的子集。<br />
+什么叫性质相同呢？是指数据元素具有相同数量和类型的数据项，比如人 这个例子，都有姓名、生日、性别等相同的数据项。<br />
+既然数据对象是数据的子集，在实际应用中，处理的数据元素通常具有相同性质，在不产生混淆的情况下，我们将数据对象简称为数据。</p>
+<p>数据结构<br />
+结构，简单的理解就是关系，比如分子结构，就是组成分子的原子之间的排列方式。严格带你说，结构是指各个组成部分相互搭配的排列的方式。在现实世界中，不同数据元素之间不是独立的，而是存在特定的关系，我们将这些关系成为 结构。<br />
+数据结构：是相互之间存在一种或者多种特定关系的数据元素的集合。</p>
+<p>根据网上大佬的理解 可能会更直观一些：<br />
+假设有两张表，A表为人员表，B表为课程表， 表的格式如下：</p>
+<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/02/image-1-1024x316.png" /></p>
 <p>重点：</p>
-<p>这两张表就是数据<br>而单独的一张表就称为数据对象，即人员表是一个数据对象，课程表也是一个数据对象<br>而每张表中的每一行就称为数据元素<br>而姓名，性别，身高，课程代号，课程名就称为数据项</p>
+<p>这两张表就是数据<br />
+而单独的一张表就称为数据对象，即人员表是一个数据对象，课程表也是一个数据对象<br />
+而每张表中的每一行就称为数据元素<br />
+而姓名，性别，身高，课程代号，课程名就称为数据项</p>
 
       
     </div>
@@ -859,6 +890,12 @@
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
 
 
   <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>

@@ -30,8 +30,8 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img-blog.csdn.net/20160108180718291?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
 <meta property="og:image" content="https://img-blog.csdn.net/20160108181550336?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
-<meta property="article:published_time" content="2020-05-22T04:56:52.000Z">
-<meta property="article:modified_time" content="2022-01-15T02:23:19.936Z">
+<meta property="article:published_time" content="2020-05-22T10:56:52.000Z">
+<meta property="article:modified_time" content="2022-01-15T02:23:19.930Z">
 <meta property="article:author" content="Xuanlang">
 <meta property="article:tag" content="松鼠小筑">
 <meta name="twitter:card" content="summary">
@@ -254,7 +254,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2020-05-22 06:56:52" itemprop="dateCreated datePublished" datetime="2020-05-22T06:56:52+02:00">2020-05-22</time>
+      <time title="创建时间：2020-05-22 12:56:52" itemprop="dateCreated datePublished" datetime="2020-05-22T12:56:52+02:00">2020-05-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -322,9 +322,14 @@
 <p>⑶ 考虑判定树的右子树，即将查找区间调整到右半区，此时的查找区间是</p>
 <p>[6，10]，也就是说，右分支上为根结点的值加1，代表查找区间的低端low，此时，根结点的右孩子是(6+10)/2=8，如图7-2(c)所示；</p>
 <p>⑷ 重复⑵⑶步，依次确定每个结点的左右孩子，如图7-2(d)所示。</p>
-<p><img data-src="https://img-blog.csdn.net/20160108180718291?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center"></p>
-<p><img data-src="https://img-blog.csdn.net/20160108181550336?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center"></p>
-<p>对于折半查找判定树，需要补充以下两点： <br>⑴ 折半查找判定树是一棵二叉排序树，即每个结点的值均大于其左子树上所有结点的值，小于其右子树上所有结点的值； <br>⑵ 折半查找判定树中的结点都是查找成功的情况，将每个结点的空指针指向一个实际上并不存在的结点——称为外结点，所有外结点即是查找不成功的情况，如图7-2(e)所示。如果有序表的长度为n，则外结点一定有n+1个。 在折半查找判定树中，某结点所在的层数即是查找该结点的比较次数，整个判定树代表的有序表的平均查找长度即为查找每个结点的比较次数之和除以有序表的长度。例如，长度为10的有序表的平均查找长度为： <br>ASL=(1×1+2×2+3×4+4×3)/10=29/10 <br>在折半查找判定树中，查找不成功时的比较次数即是查找相应外结点时与内结点的比较次数。整个判定树代表的有序表在查找失败时的平均查找长度即为查找每个外结点的比较次数之和除以外结点的个数。例如，长度为10的有序表在查找失败时的平均查找长度为： <br>ASL=(3×5+4×6)/11=39/11</p>
+<p><img data-src="https://img-blog.csdn.net/20160108180718291?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" /></p>
+<p><img data-src="https://img-blog.csdn.net/20160108181550336?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" /></p>
+<p>对于折半查找判定树，需要补充以下两点： <br />
+⑴ 折半查找判定树是一棵二叉排序树，即每个结点的值均大于其左子树上所有结点的值，小于其右子树上所有结点的值； <br />
+⑵ 折半查找判定树中的结点都是查找成功的情况，将每个结点的空指针指向一个实际上并不存在的结点——称为外结点，所有外结点即是查找不成功的情况，如图7-2(e)所示。如果有序表的长度为n，则外结点一定有n+1个。 在折半查找判定树中，某结点所在的层数即是查找该结点的比较次数，整个判定树代表的有序表的平均查找长度即为查找每个结点的比较次数之和除以有序表的长度。例如，长度为10的有序表的平均查找长度为： <br />
+ASL=(1×1+2×2+3×4+4×3)/10=29/10 <br />
+在折半查找判定树中，查找不成功时的比较次数即是查找相应外结点时与内结点的比较次数。整个判定树代表的有序表在查找失败时的平均查找长度即为查找每个外结点的比较次数之和除以外结点的个数。例如，长度为10的有序表在查找失败时的平均查找长度为： <br />
+ASL=(3×5+4×6)/11=39/11</p>
 
     </div>
 
@@ -416,6 +421,12 @@
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
 
 
   <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
