@@ -21,15 +21,15 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.zhaoxuanlang.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="This article describes how to trace the items in your stock and get a summary of how much you profit&#x2F;loss from it.  Use a Web crawler to get the current item price Save daily price into sqlite3 databa">
+<meta name="description" content="This article describes how to trace the items in your stock and get a summary of how much you profit&#x2F;lose from it.  Use a Web crawler to get the current item price Save daily price into sqlite3 databa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="monitor-csgo-item-price">
 <meta property="og:url" content="https://www.zhaoxuanlang.cn/2023/01/06/monitor-csgo-item-price/index.html">
 <meta property="og:site_name" content="松鼠小筑">
-<meta property="og:description" content="This article describes how to trace the items in your stock and get a summary of how much you profit&#x2F;loss from it.  Use a Web crawler to get the current item price Save daily price into sqlite3 databa">
+<meta property="og:description" content="This article describes how to trace the items in your stock and get a summary of how much you profit&#x2F;lose from it.  Use a Web crawler to get the current item price Save daily price into sqlite3 databa">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-01-06T17:58:34.000Z">
-<meta property="article:modified_time" content="2023-01-06T18:44:38.965Z">
+<meta property="article:modified_time" content="2023-01-06T19:08:53.699Z">
 <meta property="article:author" content="Xuanlang">
 <meta property="article:tag" content="crawler">
 <meta name="twitter:card" content="summary">
@@ -153,7 +153,8 @@
             <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#use-a-web-crawler-to-get-the-current-item-price"><span class="nav-number">1.</span> <span class="nav-text">Use a Web
 crawler to get the current item price</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#save-daily-price-into-sqlite3-database"><span class="nav-number">2.</span> <span class="nav-text">Save daily price into
 sqlite3 database</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#use-crontab-to-run-the-script-daily"><span class="nav-number">3.</span> <span class="nav-text">Use crontab to run the
-script daily</span></a></li></ol></div>
+script daily</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#use-cronitor-to-monitor-crontab"><span class="nav-number">4.</span> <span class="nav-text">Use cronitor to monitor
+crontab</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -256,7 +257,7 @@ script daily</span></a></li></ol></div>
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-01-06 18:58:34 / 修改时间：19:44:38" itemprop="dateCreated datePublished" datetime="2023-01-06T18:58:34+01:00">2023-01-06</time>
+      <time title="创建时间：2023-01-06 18:58:34 / 修改时间：20:08:53" itemprop="dateCreated datePublished" datetime="2023-01-06T18:58:34+01:00">2023-01-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -289,14 +290,14 @@ script daily</span></a></li></ol></div>
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>3.1k</span>
+      <span>3.8k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>6 分钟</span>
+      <span>7 分钟</span>
     </span>
 </div>
 
@@ -308,11 +309,12 @@ script daily</span></a></li></ol></div>
     
     <div class="post-body" itemprop="articleBody">
         <p>This article describes how to trace the items in your stock and get a
-summary of how much you profit/loss from it.</p>
+summary of how much you profit/lose from it.</p>
 <ul>
-<li><p>Use a Web crawler to get the current item price</p></li>
-<li><p>Save daily price into sqlite3 database</p></li>
-<li><p>Use crontab to run the script daily</p></li>
+<li>Use a Web crawler to get the current item price</li>
+<li>Save daily price into sqlite3 database</li>
+<li>Use crontab to run the script daily</li>
+<li>Use cronitor to monitor crontab</li>
 </ul>
 <span id="more"></span>
 <h2 id="use-a-web-crawler-to-get-the-current-item-price">Use a Web
@@ -360,6 +362,29 @@ macOS).</p>
 <code>* * * * * * ~/miniconda3/bin/python3 /Users/xuanlang/study/python/test.py</code></p>
 <p>For more information about cron, you can go to
 https://crontab.guru/</p>
+<p>The crontab's log will be sent to macOS terminal mailbox, use
+<code>mail</code> to see them.</p>
+<p>You can define cron's environment variables in crontab itself,
+like:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">LANG=nb_NO.UTF-8</span><br><span class="line">LC_ALL=nb_NO.UTF-8</span><br><span class="line"><span class="comment"># m h  dom mon dow   command</span></span><br><span class="line"></span><br><span class="line">* * * * * sleep 5s &amp;&amp; <span class="built_in">echo</span> <span class="string">&quot;yo&quot;</span></span><br></pre></td></tr></table></figure>
+<p>There might be some problems occur, to solve them:</p>
+<ol type="1">
+<li>Count the right number of * !!!</li>
+<li>Check cron's shell and env is the same as your terminal, or it won't
+find some instruction sometimes.</li>
+<li>Use mail to trace the log.</li>
+</ol>
+<h2 id="use-cronitor-to-monitor-crontab">Use cronitor to monitor
+crontab</h2>
+<p><a
+target="_blank" rel="noopener" href="https://cronitor.io/app/welcome?env=production&amp;time=24h">cronitor</a>
+is a tool that can trace some jobs as well as some other things. We will
+use it to monitor cron work.</p>
+<ol type="1">
+<li>install CronitorCLI</li>
+<li>Run <code>cronitor discover</code> to find cron jobs</li>
+</ol>
+<p>for more information go to its document https://cronitor.io/docs.</p>
 
     </div>
 
