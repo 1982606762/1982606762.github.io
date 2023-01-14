@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>new-in-bootstrap5</title>
+      <link href="/2023/01/14/new-in-bootstrap5/"/>
+      <url>/2023/01/14/new-in-bootstrap5/</url>
+      
+        <content type="html"><![CDATA[<ul><li>Nav-bar</li></ul><span id="more"></span><ul><li><p>Nav-bar toggle</p><blockquote><p>before:</p><p>​ data-toggle="" data-target=""</p><p>New:</p><p>​ data-bs-toggle="" data-bs-target=""</p></blockquote></li><li><p>Nav-bar margin</p><blockquote><p>Margin left auto &amp; margin right auto</p><p>ml-auto can make an item be at the right of the nav bar, and mr-autocan make the item be at the left of the nav bar.</p><p>Before:</p><p>​ ml-auto mr-auto</p><p>New:</p><p>​ ms-auto me-auto</p></blockquote></li></ul><p>Ref:https://stackoverflow.com/questions/19733447/bootstrap-navbar-with-left-center-or-right-aligned-items</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> bootstrap </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>monitor-csgo-item-price</title>
       <link href="/2023/01/06/monitor-csgo-item-price/"/>
       <url>/2023/01/06/monitor-csgo-item-price/</url>
