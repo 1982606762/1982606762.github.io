@@ -73,32 +73,6 @@
     
     
     <entry>
-      <title>AADS</title>
-      <link href="/2022/11/21/AADS/"/>
-      <url>/2022/11/21/AADS/</url>
-      
-        <content type="html"><![CDATA[<span id="more"></span><h1>AADS</h1><h2 id="residual-capacity"><a class="header-anchor" href="#residual-capacity">¶</a>residual capacity</h2><p>$ C_f(u,v)$ = c(u,v) - f(u,v) [u-&gt;v]/f(u,v) [v-&gt;u]</p><h2 id="Residual-network"><a class="header-anchor" href="#Residual-network">¶</a>Residual network</h2><p>使用上边的公式计算，如果是0就不写</p><h2 id="Cut"><a class="header-anchor" href="#Cut">¶</a>Cut</h2><p>把所有点分为(S,T),起始点在S里，重点在T里</p><p>Cut 的capacity是c(S,T) = 所有c(u,v)的求和， u是S里的，v是T里的</p><p>f(S,T) = f(u,v) - f(v,u), u是S里的，v是T里的</p><p>定理：对于任意flow f和任意cut(S,T), |f| = f(S,T)</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>imgtest</title>
-      <link href="/2022/10/22/imgtest/"/>
-      <url>/2022/10/22/imgtest/</url>
-      
-        <content type="html"><![CDATA[<span id="more"></span><figure><img data-src="../images/IMG_5671.jpeg" alt="IMG_5671" /><figcaption aria-hidden="true">IMG_5671</figcaption></figure>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>MLA-assignment-1</title>
       <link href="/2022/09/13/MLA-assignment-1/"/>
       <url>/2022/09/13/MLA-assignment-1/</url>
