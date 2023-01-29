@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/32*32.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32*32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16*16.ico">
+  <link rel="mask-icon" href="/images/32*32.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.zhaoxuanlang.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="MaxFlow Linear Programming Problem Randomized Algorithm Hash Veb Tree NP Completeness Exact Exponetial problems Approximation Algorithm Polygon Triangulation">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AADS-ExamNotes">
+<meta property="og:url" content="https://www.zhaoxuanlang.cn/2023/01/30/AADS-ExamNotes/index.html">
+<meta property="og:site_name" content="松鼠小筑">
+<meta property="og:description" content="MaxFlow Linear Programming Problem Randomized Algorithm Hash Veb Tree NP Completeness Exact Exponetial problems Approximation Algorithm Polygon Triangulation">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.imgur.com/AK4Quf1.png">
+<meta property="og:image" content="https://i.imgur.com/E2WAAma.png">
+<meta property="og:image" content="https://i.imgur.com/uWUZFSY.png">
+<meta property="og:image" content="https://i.imgur.com/lppWVYD.png">
+<meta property="og:image" content="https://i.imgur.com/xqzboKa.png">
+<meta property="og:image" content="https://i.imgur.com/ybO2cMj.png">
+<meta property="og:image" content="https://i.imgur.com/qaweUh5.png">
+<meta property="og:image" content="https://i.imgur.com/MOcnpJH.png">
+<meta property="og:image" content="https://i.imgur.com/QLqyOJH.png">
+<meta property="og:image" content="https://i.imgur.com/nwxbLi0.png">
+<meta property="og:image" content="https://i.imgur.com/X6IqMIZ.png">
+<meta property="og:image" content="https://i.imgur.com/VRix2iJ.png">
+<meta property="og:image" content="https://i.imgur.com/a6fdqGV.png">
+<meta property="og:image" content="https://i.imgur.com/8QCX1a3.png">
+<meta property="og:image" content="https://i.imgur.com/AhcNsP8.png">
+<meta property="og:image" content="https://i.imgur.com/5ye5C1J.png">
+<meta property="og:image" content="https://i.imgur.com/2mIS37y.png">
+<meta property="og:image" content="https://i.imgur.com/Iij29ei.png">
+<meta property="og:image" content="https://i.imgur.com/zM8753X.png">
+<meta property="og:image" content="https://i.imgur.com/wIZVHAb.png">
+<meta property="og:image" content="https://i.imgur.com/JeozAY1.png">
+<meta property="og:image" content="https://i.imgur.com/XDOS5Vk.png">
+<meta property="og:image" content="https://i.imgur.com/EefMoDj.png">
+<meta property="og:image" content="https://i.imgur.com/kUUD7J2.png">
+<meta property="og:image" content="https://i.imgur.com/UARzNQT.png">
+<meta property="og:image" content="https://i.imgur.com/RDR9vc9.png">
+<meta property="og:image" content="https://i.imgur.com/LrUGAAq.png">
+<meta property="article:published_time" content="2023-01-29T23:40:07.000Z">
+<meta property="article:modified_time" content="2023-01-29T23:43:00.045Z">
+<meta property="article:author" content="Xuanlang">
+<meta property="article:tag" content="松鼠小筑">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/AK4Quf1.png">
+
+
+<link rel="canonical" href="https://www.zhaoxuanlang.cn/2023/01/30/AADS-ExamNotes/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.zhaoxuanlang.cn/2023/01/30/AADS-ExamNotes/","path":"2023/01/30/AADS-ExamNotes/","title":"AADS-ExamNotes"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>AADS-ExamNotes | 松鼠小筑</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?2c6ad69c6dce83b3987864c3d69796db"></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">松鼠小筑</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">学习笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">19</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">10</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">80</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">maxflow</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#outline"><span class="nav-number">1.1.</span> <span class="nav-text">outline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#presentation"><span class="nav-number">1.2.</span> <span class="nav-text">presentation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">Linear Programming Problem</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Outline"><span class="nav-number">2.1.</span> <span class="nav-text">Outline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Presentation"><span class="nav-number">2.2.</span> <span class="nav-text">Presentation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">Randomized Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Randomized-Quick-Sort"><span class="nav-number">3.1.</span> <span class="nav-text">Randomized Quick Sort</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Algorithm"><span class="nav-number">3.1.1.</span> <span class="nav-text">Algorithm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Why-it-sorts-the-numbers"><span class="nav-number">3.1.2.</span> <span class="nav-text">Why it sorts the numbers?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What-might-be-the-case"><span class="nav-number">3.1.3.</span> <span class="nav-text">What might be the case?</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Lucky-case"><span class="nav-number">3.1.3.1.</span> <span class="nav-text">Lucky case:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#S-i-is-always-medium"><span class="nav-number">3.1.3.2.</span> <span class="nav-text">$S_i$ is always medium</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Unlucky-case"><span class="nav-number">3.1.3.3.</span> <span class="nav-text">Unlucky case:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#S-i-is-always-minimum"><span class="nav-number">3.1.3.4.</span> <span class="nav-text">$S_i$ is always minimum</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#average-case"><span class="nav-number">3.1.3.5.</span> <span class="nav-text">average case:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Randomized-min-cut"><span class="nav-number">3.2.</span> <span class="nav-text">Randomized min-cut</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">Hash</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hashing-fundamentals"><span class="nav-number">4.1.</span> <span class="nav-text">Hashing fundamentals</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Truly-random"><span class="nav-number">4.1.1.</span> <span class="nav-text">Truly random:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Universal"><span class="nav-number">4.1.2.</span> <span class="nav-text">Universal:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-approximately-universal"><span class="nav-number">4.1.3.</span> <span class="nav-text">C-approximately universal:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#strongly-universal-2-independent"><span class="nav-number">4.1.4.</span> <span class="nav-text">strongly universal(2-independent)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-approximately-strongly-universal"><span class="nav-number">4.1.5.</span> <span class="nav-text">C-approximately strongly universal</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Application-Unordered-sets"><span class="nav-number">4.2.</span> <span class="nav-text">Application:Unordered sets</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hashing-with-chaining"><span class="nav-number">4.2.1.</span> <span class="nav-text">Hashing with chaining</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Application-Signatures"><span class="nav-number">4.3.</span> <span class="nav-text">Application:Signatures</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Practial-hash-functions"><span class="nav-number">4.4.</span> <span class="nav-text">Practial hash functions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Multiply-mod-prime"><span class="nav-number">4.4.1.</span> <span class="nav-text">Multiply-mod-prime</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multiply-shift"><span class="nav-number">4.4.2.</span> <span class="nav-text">Multiply-shift</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Strong-multiply-shift"><span class="nav-number">4.4.3.</span> <span class="nav-text">Strong multiply-shift</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Application-Coordinated-sampling"><span class="nav-number">4.5.</span> <span class="nav-text">Application:Coordinated sampling</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">5.</span> <span class="nav-text">VEB tree</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">6.</span> <span class="nav-text">NP Completeness</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#prove-CLIQUE-from-3-CNF-SAT"><span class="nav-number">6.0.0.1.</span> <span class="nav-text">prove CLIQUE from 3-CNF-SAT</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">7.</span> <span class="nav-text">Exact exponential algorithms</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">8.</span> <span class="nav-text">Approximation algorithms</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">9.</span> <span class="nav-text">Polygon triangulation</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xuanlang"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Xuanlang</p>
+  <div class="site-description" itemprop="description">业精于勤荒于嬉，行成于思毁于随</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">80</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/1982606762" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;1982606762" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zxl17302206700@gmail.com" title="E-Mail → mailto:zxl17302206700@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2023/01/30/AADS-ExamNotes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Xuanlang">
+      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="松鼠小筑">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AADS-ExamNotes
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-01-30 00:40:07 / 修改时间：00:43:00" itemprop="dateCreated datePublished" datetime="2023-01-30T00:40:07+01:00">2023-01-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/UCPH/" itemprop="url" rel="index"><span itemprop="name">UCPH</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="AADS-ExamNotes" href="/2023/01/30/AADS-ExamNotes/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::9d5f4e5322324bf878410e6f64387baa" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>24k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>43 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <ul>
+<li>MaxFlow</li>
+<li>Linear Programming Problem</li>
+<li>Randomized Algorithm</li>
+<li>Hash</li>
+<li>Veb Tree</li>
+<li>NP Completeness</li>
+<li>Exact Exponetial problems</li>
+<li>Approximation Algorithm</li>
+<li>Polygon Triangulation</li>
+</ul>
+<span id="more"></span>
+<h1>maxflow</h1>
+<h2 id="outline"><a class="header-anchor" href="#outline">¶</a>outline</h2>
+<ul>
+<li>flow network,</li>
+<li>flow: a function return a real value and has two constraints
+<ul>
+<li>Capacity constraint</li>
+<li>flow conservation</li>
+</ul>
+</li>
+<li>FF method
+<ul>
+<li>Initialize flow f, while there’s an augmenting path p in the residual network, add it</li>
+<li>residual network
+<ul>
+<li>residual capacity</li>
+<li>flow augmentation</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>cut off flow networks
+<ul>
+<li>definition: a partition of V into S and T</li>
+<li>f(S,T) = s到t所有边的f - t到s所有边的f</li>
+<li>minimum cut: a cut whose capacity is the minimum overall cut of the network</li>
+</ul>
+</li>
+</ul>
+<h2 id="presentation"><a class="header-anchor" href="#presentation">¶</a>presentation</h2>
+<p><strong>flow network:</strong> G=(V,E) is a directed graph in which each edge $(u,v)\in E$ has a nonnegative capacity $c(u,v)\ge 0$. We also require if E contains an edge(u,v) there’s no reverse edge (v,u). If there’s no edge between two vertexes we define the capacity between these two vertex to be 0. There’s a source s and a sink t in a network.</p>
+<p><strong>flow:</strong> a function receive two vertexes and return a real value which stands for the flow value between them. A flow has two properties:</p>
+<p>the first is capacity constraint, which is for all $u,v\in V$ we require $0 \le f(u,v) \le c(u,v)$.</p>
+<p>The second is flow conservation, which is for all $u \in V-{s, t}$ we require $\sum_{v \in V} f(v, u)=\sum_{v \in V} f(u, v)$, which means the flow that goes out is equal to the flow that goes in.</p>
+<p>The value |f| of a flow is the sum of all flow go out from souce minuse all flow goes in the source, and defined as $|f|=\sum_{\nu \in V} f(s, v)-\sum_{\nu \in V} f(v, s)$</p>
+<p>In max-flow we want to find a flow of maximum value.</p>
+<p>To solve the problem we can use Ford-Fulkerson Method. It forst init a flow f to be 0, and while there’s an augmenting path p in the residual network $G_f$ we augment the flow f with p.</p>
+<p>**Residual network:**a residual network is made up of the same nodes, and between two adjencnt nodes we add two reverse edges. The capacity of each edges are from current flow of the graph and it’s based of this:$c_f(u, v)= \begin{cases}c(u, v)-f(u, v) &amp; \text { if }(u, v) \in E \ f(v, u) &amp; \text { if }(v, u) \in E \ 0 &amp; \text { otherwise }\end{cases}$</p>
+<p>we can remove all edges that has a capacity of 0.</p>
+<p>After we get the flow from the algorithm we want to know if it’s actually a max flow, so we need to use Max-flow min-cut theorem</p>
+<p>First we need to specify what’s a cut.</p>
+<p><strong>cut</strong>:a cut of flow is a partition of V into S and T such that source node is in set S and the sink node is in set T.</p>
+<p>The net flow of a cut is the total flow from set S to set T minus the total flow from set T to set S and it’s denoted as $f(S, T)=\sum_{u \in S} \sum_{v \in T} f(u, v)-\sum_{u \in S} \sum_{v \in T} f(v, u)$…</p>
+<p>The capacity of a cut is the sum of all capacities from set S to set T and it’s denoted as $c(S, T)=\sum_{u \in S} \sum_{v \in T} c(u, v)$.</p>
+<p>Then we have the theorem: if f is a flow in a flow network G with source s sink t, then we have following equivalent conditions:</p>
+<ol>
+<li>f is a max flow in G</li>
+<li>the residual network $G_f$ contains no augmenting paths</li>
+<li>|f| = c(S,T) for some cut(S,T) of G</li>
+</ol>
+<p><strong>Proof:</strong></p>
+<p>(1)=&gt;(2): suppose f is a max flow and there’s an augmenting path $f_p$ in residual network, then after augmenting $f_p$ the value of f will increase, which contradics with f is a max flow.</p>
+<p>(2)=&gt;(3):suppose $G_f$ has no augmenting path, so it have no path from source to sink.Let set S = $\left{v \in V:\right.$ there exists a path from $s$ to $v$ in $\left.G_f\right}$and T = V - S</p>
+<p>The partition (S,T) is a cut.</p>
+<p>Now we can say there’s a u in S and v in T. If(u,v) is in E, then we must have f(u,v) = c(u,v) because otherwise residual network will have an augment path.  If (v,u) is in E,then we must have f(v,u) = 0 because otherwise in residual there will be some room for cancellation. And if (u,v)and(v,u) both not in E we have both two flow to be 0.</p>
+<p>Then we have:<br>
+$$<br>
+\begin{aligned}<br>
+f(S, T) &amp; =\sum_{u \in S} \sum_{v \in T} f(u, v)-\sum_{v \in T} \sum_{u \in S} f(v, u) \<br>
+&amp; =\sum_{u \in S} \sum_{v \in T} c(u, v)-\sum_{v \in T} \sum_{u \in S} 0 \<br>
+&amp; =c(S, T)<br>
+\end{aligned}<br>
+$$<br>
+Then by lemma 4 that is flow value of a cut is equal to the net flow value of its cut we can get |f| = f(S,T), then we have |f| = c(S,T). Because of the reason of time I don’t prove lemma 4 now, you can ask me to do that later.</p>
+<p>(3)=&gt;(1):</p>
+<p>By Corollary we know that for all cuts the flow value is less or equal to the cut capacity, and when it equals we can know f is a max flow.</p>
+<p><img data-src="https://i.imgur.com/AK4Quf1.png" alt="image-20230125104137157 PM"></p>
+<p><img data-src="https://i.imgur.com/E2WAAma.png" alt="image-20230125104402866 PM"></p>
+<h1>Linear Programming Problem</h1>
+<p>Problem: There’s a list of variables with some constraints, we have a linear objective function and its feasible solution which is a set of values x1 x2… x6 that can satisfy all constraints. The set of all feasible solutions is called the feasible region. What we want is an optimal solution that has the minimum or maximum objective value.</p>
+<p>The solution is the SIMPLEX algorithm.</p>
+<p>Start with the standard form. Procedures to produce it:</p>
+<ol>
+<li>transform minimization problem to maximization problem</li>
+<li>replace variables that don’t have non-negativity constraint into two non-negative variables and xj is replaced by xj’ - xj’’
+<ol>
+<li>只有x1&gt;=0没有x2&gt;=0</li>
+</ol>
+</li>
+<li>change equal constraint into a pair of opposite inequality constraint
+<ol>
+<li>x1+x2 = 0 变成x1 + x2 &gt;=0 和 x1 + x2 &lt;= 0</li>
+</ol>
+</li>
+<li>change all &gt;= into &lt;=</li>
+<li>Rename variables</li>
+</ol>
+<p>Slack variable</p>
+<p>there’s a slack between inequality’s left side and right side. We add a new variable to the left side and make inequality become equality.Add z = objective function, e.g. z = 0 + 2x1 - 3x2 + 3x3</p>
+<p>The feasible solution: all variables including nonbasic(right-hand side) and basic(left-hand side) are positive.</p>
+<p>Basic solution: all nonbasic variables to 0.</p>
+<p>SIMPLEX:</p>
+<ol>
+<li>Pivoting: find x1’s binding and add until there’s a basic variable that becomes negative. then we have a feasible solution(9,0,0,21,6,0)and z = 27.Then we rewrite the slack form and put x1 to the left side, its binding variable to the right side. And replace all x1 with a formula with x2,x3, and x6.</li>
+<li>And then you add another none basic variable to become basic until there’s no room for the original none basic to grow, now it’s the optimal solution.</li>
+</ol>
+<p>Termination:</p>
+<ul>
+<li>When all variables in the objective function &lt;= 0</li>
+<li>When LP is unbounded
+<ul>
+<li>an unbasic increase all basic are also increase</li>
+</ul>
+</li>
+</ul>
+<p>Cycling:</p>
+<ul>
+<li>If a set of basic and none basic is pivoted again</li>
+<li>if SIMPLEX fails to terminate then it cycles</li>
+<li>Avoid: always choose the variable with positive coefficients and pick one with the smallest indices. And pick the smallest indices to leave. (最小下标)</li>
+<li></li>
+</ul>
+<p>Infeasible First Basic Solution</p>
+<ul>
+<li>Define an auxiliary LP problem</li>
+<li>it’s always feasible and bounded</li>
+</ul>
+<ol>
+<li>Find max -x0</li>
+<li>Change each ax &lt;= b into ax-x0 &lt;= b</li>
+<li>add x0 &gt;= 0</li>
+</ol>
+<p>it is bounded as x0 &gt;=0 so max -x0 is 0</p>
+<p>If it’s 0 then the original solution is feasible</p>
+<p>if it’s negative original is infeasible.</p>
+<p>如果是0的话把x0=0就成为原始的simplex问题了，就有一组解可以解决。</p>
+<p>Dual problem:</p>
+<p>if min of dual = max of original then it’s the optimal solution</p>
+<p>It’s used to prove Simplex</p>
+<ol>
+<li>Multiply constraints by y1 y2 and make the sum less than the right side’s sum
+<ol>
+<li>Y1(x1-x2-x3+3x4) + y2(5x1+x2+3x3+8x4)+y3(-x1+2x2+3x3-5x4)&lt;= y1 + 55y2+3y3</li>
+</ol>
+</li>
+<li>The left side has an upper bound of LP
+<ol>
+<li>y1+5y2-y3&gt;=4</li>
+</ol>
+</li>
+<li>4x1+x2+5x3+3x4 &lt;= y1+55y2+3y3</li>
+<li>Minimize the right side with 2’s constraints and get its dual problem</li>
+<li>(transpose the original matrix)</li>
+</ol>
+<p><img data-src="https://i.imgur.com/uWUZFSY.png" alt="image-20230109104722576 PM"></p>
+<p>weak duality</p>
+<p><img data-src="https://i.imgur.com/lppWVYD.png" alt="image-20230109104649736 PM"></p>
+<p>If there’s an optimal solution for dual then there’s an optimal solution for a primal solution.</p>
+<p><img data-src="https://i.imgur.com/xqzboKa.png" alt="image-20230109105139766 PM"></p>
+<p><img data-src="https://i.imgur.com/ybO2cMj.png" alt="image-20230109105209994 PM"></p>
+<p>m = constrains数量，n=variables数量</p>
+<p>当原始的constrain远大于variables的时候解决Dual比解决原始问题简单</p>
+<h2 id="Outline"><a class="header-anchor" href="#Outline">¶</a>Outline</h2>
+<ol>
+<li>Introduction</li>
+<li>Objective function,constraint</li>
+<li>Example</li>
+<li>SIMPLEX algorithm</li>
+</ol>
+<p>Example:</p>
+<p><img data-src="https://i.imgur.com/qaweUh5.png" alt="image-20230111125255676 PM"></p>
+<h2 id="Presentation"><a class="header-anchor" href="#Presentation">¶</a>Presentation</h2>
+<p>I’m going talk about linear problem. In real life a lot of problems can be solved by this algorithm, so linear program is quite useful in many practial areas.</p>
+<p>a general linear problem consists of an objective function that describes some relation between the variables of the problem, which we want to either be maximize or minimize; it also consists of linear constraints on the variables.</p>
+<p>Given a linear problem, we first need to transform it into standard form.First I need to introduce what’s standard form. In standard form we have an maximization object function with n variables and m linear inequalities.And we are going to use these to manage to get the maximize of the object function,like this:</p>
+<p><img data-src="https://i.imgur.com/MOcnpJH.png" alt="image-2023011330653524 PM"></p>
+<p>So there are non-negativity constraints on all the n variables and all other constrains should be less than equal.</p>
+<p>(Do standard form)</p>
+<p>Then, in order to solve the problem, we need to tranform standard form into slack form by adding a slack variable to make all the inequality to become equal.</p>
+<p>(Do slack form)</p>
+<p>Then we can apply SIMPLEX algorithm on the slack form by continuously changing the basic solution by pivoting variables to and from the basic variables. Pick a variables in the objective function which positively increases the value, and pivot it with the basic variable that bottlenecks how much the non-basic variable can be increased.</p>
+<p>(Do SIMPLEX)</p>
+<p>In this example SIMPLEX algorithm runs normally and give a resonable result.However, in some other circumenstences it may occur some special cases, like it won’t stop, or basic solution is not feasible, or why it return the optimal solution. Due to limited time I’d like to only discuss about the last one.</p>
+<p>First, we have sth called the dual of a linear program.which we can use to show that the SIMPLEX algorithm actually computes the optimal solution to the problem. I just want to talk about the weak duality theorem, which states that the solution to the DUAL of a linear program (PRIMAL) is always an upper bound to the solution to the PRIMAL.</p>
+<p>The dual looks like follows:</p>
+<p><img data-src="https://i.imgur.com/QLqyOJH.png" alt="image-20230113105655482 PM"></p>
+<p>So, what the weak duality theorem says is that it is always the case that</p>
+<p><img data-src="https://i.imgur.com/nwxbLi0.png" alt="image-20230113105716981 PM"></p>
+<p>Proof are as follows:</p>
+<p><img data-src="https://i.imgur.com/X6IqMIZ.png" alt="image-20230113105738794 PM"></p>
+<h1>Randomized Algorithm</h1>
+<p>Randomized algorithms are algorithms that add randomness in the <a target="_blank" rel="noopener" href="http://procedure.In">procedure.In</a> some cases they can be the most fast or the most simple one among all other solutions to the problem. There are two types of randomized algorithm which is Las vegas and Monte Carlo. The first one always return the correct answer but the time it consumes may vary. The second one will end in a specfic time but the result it returns may not be that correct.</p>
+<h2 id="Randomized-Quick-Sort"><a class="header-anchor" href="#Randomized-Quick-Sort">¶</a>Randomized Quick Sort</h2>
+<h3 id="Algorithm"><a class="header-anchor" href="#Algorithm">¶</a>Algorithm</h3>
+<p>It’s similar to quick sort but the point is choose tach pivot randomly.</p>
+<p>Example:[3,5,2,1,4].</p>
+<h3 id="Why-it-sorts-the-numbers"><a class="header-anchor" href="#Why-it-sorts-the-numbers">¶</a>Why it sorts the numbers?</h3>
+<p>Proof: indoction on n</p>
+<p>n=0 trival</p>
+<p>Assume true for n-1 numbers</p>
+<p>Then we return RandQS(L) + $S_i$ + RandQS®,L+R &lt;= n-1</p>
+<p>And the result is sorted.</p>
+<h3 id="What-might-be-the-case"><a class="header-anchor" href="#What-might-be-the-case">¶</a>What might be the case?</h3>
+<h4 id="Lucky-case"><a class="header-anchor" href="#Lucky-case">¶</a>Lucky case:</h4>
+<h4 id="S-i-is-always-medium"><a class="header-anchor" href="#S-i-is-always-medium">¶</a>$S_i$ is always medium</h4>
+<p>Running time: T(n) =O(n)+2T(n/2)=…=O(n)+2O(n/2)+4O(n/4)+…+nO(1)</p>
+<p>O(nlogn)</p>
+<h4 id="Unlucky-case"><a class="header-anchor" href="#Unlucky-case">¶</a>Unlucky case:</h4>
+<h4 id="S-i-is-always-minimum"><a class="header-anchor" href="#S-i-is-always-minimum">¶</a>$S_i$ is always minimum</h4>
+<p>O(n^2)</p>
+<h4 id="average-case"><a class="header-anchor" href="#average-case">¶</a>average case:</h4>
+<p>O(nlogn). proof</p>
+<p>$\mathbb{E}[#$ comparisons $]=\mathbb{E}\left[\sum_{i&lt;j} X_{i j}\right]=\sum_{i&lt;j} \mathbb{E}\left[X_{i j}\right]$</p>
+<p>$\mathbb{E}\left[X_{i j}\right]=\left(1-p_{i j}\right) \cdot 0+p_{i j} \cdot 1=p_{i j}$</p>
+<p>$\mathbb{E}[#$ comparisons $]=\sum_{i&lt;j} \mathbb{E}\left[X_{i j}\right]=\sum_{i&lt;j} p_{i j}$</p>
+<p>$\begin{aligned} p_{i j} &amp; =\operatorname{Pr}[c \in{i, j} \mid c \in{i, i+1, \ldots, j} \text { u.a.r. }] \ &amp; =\frac{2}{|{i, i+1, \ldots, j}|}=\frac{2}{j+1-i}\end{aligned}$</p>
+<p>$\mathbb{E}[#$ comparisons $]=\sum_{i&lt;j} p_{i j}=\sum_{i&lt;j} \frac{2}{j+1-i}$</p>
+<p>$=\sum_{i&lt;j} \frac{2}{j+1-i}$<br>
+$=\sum_{i=1}^{n-1} \sum_{j=i+1}^n \frac{2}{j+1-i}$<br>
+$=\sum_{i=1}^{n-1} \sum_{k=2}^{n+1-i} \frac{2}{k}&lt;\sum_{i=1}^n \sum_{k=2}^n \frac{2}{k}$<br>
+$=2 n \sum_{k=2}^n \frac{1}{k}=2 n\left(\left(\sum_{k=1}^n \frac{1}{k}\right)-1\right)=2 n\left(H_n-1\right)$<br>
+$\leq 2 n \int_1^n \frac{1}{x} d x=2 n \ln n=\mathcal{O}(n \log n)$</p>
+<h2 id="Randomized-min-cut"><a class="header-anchor" href="#Randomized-min-cut">¶</a>Randomized min-cut</h2>
+<ul>
+<li>Why it return a cut?</li>
+</ul>
+<p>Prove by induction on the number k of iterations of the loop.If k = 0 then it returnall edges in the graph.suppose it is true for up to k-1 iterations, we can get a graph $G’$ after first iteration and do k-1 iterations, it’s a cut in G’, but such cut is also a cut in G because it’s the same with do K iterations.</p>
+<ul>
+<li>For any min-cut C, the probability that RandMinCut(G) returns C is $\ge \frac{2}{n(n-1)}$</li>
+</ul>
+<p>Proof :</p>
+<ol>
+<li>
+<p>Let Ei be the event that the edge to be contracted isn’t part of C,Then we need to prove 当且仅当每一步都不删除C里的边才会返回C<img data-src="https://i.imgur.com/VRix2iJ.png" alt="image-20230114110202228 PM"></p>
+</li>
+<li>
+<p>With conditional probability formula we can know</p>
+<p><img data-src="https://i.imgur.com/a6fdqGV.png" alt="image-20230114110348933 PM"></p>
+<p>Then the pr before can be defined as 此时pi是前i-1步都不删除的前提下第i步也不删除</p>
+<p><img data-src="https://i.imgur.com/8QCX1a3.png" alt="image-20230114110440511 PM"></p>
+</li>
+<li>
+<p>With observation we can know</p>
+<ol>
+<li>
+<p>$G_i = (V_i,E_i)$has ni = n - i vertices</p>
+</li>
+<li>
+<p>The min-cut size of ith procedure is &gt;= |C|</p>
+</li>
+<li>
+<p>每个点的degree 都&gt;= |C|</p>
+<p>$\left|E_i\right|=\frac{1}{2} \sum_{v \in V_i} d_i(v) \geq \frac{1}{2} n_i|C|$</p>
+<p>第i步后的边数等于总度数/2大于ni乘mincut</p>
+<p>得到第i步后的边数与C的关系</p>
+</li>
+</ol>
+</li>
+<li>
+<p>第i步选中C的概率是C的大小/边数，即</p>
+<p>$\begin{aligned} 1-p_i &amp; =\operatorname{Pr}\left[\text { uniformly random } e \in E_{i-1} \text { is in } C \mid \cap_{j=1}^{i-1} \mathcal{E}<em>j\right] \ &amp; =\frac{|C|}{\left|E</em>{i-1}\right|} \leq \frac{|C|}{\frac{1}{2} n_{i-1}|C|}=\frac{2}{n_{i-1}}=\frac{2}{n-(i-1)} \ \Rightarrow p_i &amp; \geq 1-\frac{2}{n-i+1}=\frac{n-i-1}{n-i+1}\end{aligned}$</p>
+</li>
+<li>
+<p>连乘逐项相消得到2/n(n-1)</p>
+</li>
+</ol>
+<p>Trade Off:</p>
+<p>call it $t \frac{n(n-1)}{2}$ times and let $C^*$ be the smallest cut returned(用到1+x&lt;=$e^x$ )</p>
+<p>$\begin{aligned} \operatorname{Pr}\left[C^{\star} \text { is not a min-cut }\right] &amp; \leq\left(1-\frac{2}{n(n-1)}\right)^{t \frac{n(n-1)}{2}} \ &amp; \leq\left(e^{-\frac{2}{(n-1)}}\right)^{t \frac{n(n-1)}{2}}\end{aligned}$</p>
+<p>$=e^{-t}$</p>
+<p>$\begin{aligned} \operatorname{Pr}\left[C^{\star} \text { is a min-cut }\right] &amp; \geq 1-e^{-t} \ &amp; \left.=1-n^{-c} \quad \text { (If we set } t=c \ln n\right)\end{aligned}$</p>
+<p>So we repeat it $c \cdot \frac{n(n-1)}{2} \cdot \ln n$ times then P[get a min-cut] is $1-n^{-c}$ .</p>
+<h1>Hash</h1>
+<h2 id="Hashing-fundamentals"><a class="header-anchor" href="#Hashing-fundamentals">¶</a>Hashing fundamentals</h2>
+<p>Hash function: A hash function h : U-&gt;[m] for each x from U,h(x) in [m] is a random variable.</p>
+<h3 id="Truly-random"><a class="header-anchor" href="#Truly-random">¶</a>Truly random:</h3>
+<p>​		if the variables h(x) for x in U are independent and uniform</p>
+<p>​		<strong>(Impractial, because it require |U|logm bits to represent)</strong></p>
+<h3 id="Universal"><a class="header-anchor" href="#Universal">¶</a>Universal:</h3>
+<p>​		for any distinct values, their hash value are same has a small probability</p>
+<p>​		$x \neq y \in U: \operatorname{Pr}[h(x)=h(y)] \leq \frac{1}{m}$</p>
+<h3 id="C-approximately-universal"><a class="header-anchor" href="#C-approximately-universal">¶</a>C-approximately universal:</h3>
+<p>​		Because sometime we need to compute faster so we need a slack version of universal.</p>
+<p>​		h is c-approximately if $x \neq y \in U: \operatorname{Pr}[h(x)=h(y)] \leq \frac{c}{m}$</p>
+<h3 id="strongly-universal-2-independent"><a class="header-anchor" href="#strongly-universal-2-independent">¶</a>strongly universal(2-independent)</h3>
+<ul>
+<li>Each key is hashed uniformly into [m]
+<ul>
+<li>for any x and any q, $Pr[h(x) = q] = \frac{1}{m}$</li>
+</ul>
+</li>
+<li>Any two distinct keys hash independently
+<ul>
+<li>there’s two keys x,y. If you know h(x) = q you don’t know anything about h(y) = ?</li>
+</ul>
+</li>
+</ul>
+<p>​		for all $x \neq y \in U$ ,and $q, r \in[m]: \operatorname{Pr}[h(x)=q \wedge h(y)=r]=\frac{1}{m^2}$</p>
+<p>​		explaniation: (h(x)=q is 1/m,h(y)=r is 1/m)</p>
+<h3 id="C-approximately-strongly-universal"><a class="header-anchor" href="#C-approximately-strongly-universal">¶</a>C-approximately strongly universal</h3>
+<ul>
+<li>each key has $Pr[h(x) = q] = \frac{1}{m}$</li>
+</ul>
+<p>​		$q, r \in[m]: \operatorname{Pr}[h(x)=q \wedge h(y)=r]=\frac{c}{m^2}$</p>
+<h2 id="Application-Unordered-sets"><a class="header-anchor" href="#Application-Unordered-sets">¶</a>Application:Unordered sets</h2>
+<p>Maintain a set S with at most n keys</p>
+<p>need to insert,delete,member</p>
+<h3 id="Hashing-with-chaining"><a class="header-anchor" href="#Hashing-with-chaining">¶</a>Hashing with chaining</h3>
+<p>Define a store array L and $L[i]=$ linked list over ${y \in S \mid h(y)=i}$</p>
+<p><img data-src="https://i.imgur.com/AhcNsP8.png" alt="image-20230115113819274 PM"></p>
+<p>Each operation takes $\mathcal{O}(|L[h(x)]|+1)$ time (the first one is to find the element in the chain and the second one is to operate on it)</p>
+<p>Prove it only use constant time.</p>
+<h2 id="Application-Signatures"><a class="header-anchor" href="#Application-Signatures">¶</a>Application:Signatures</h2>
+<p><img data-src="https://i.imgur.com/5ye5C1J.png" alt="image-20230116122232950 AM"></p>
+<h2 id="Practial-hash-functions"><a class="header-anchor" href="#Practial-hash-functions">¶</a>Practial hash functions</h2>
+<p>How to generate hash values</p>
+<h3 id="Multiply-mod-prime"><a class="header-anchor" href="#Multiply-mod-prime">¶</a>Multiply-mod-prime</h3>
+<p>Let $U=[u]$ and Pick prime $p \geq u$</p>
+<p>for any $a, b \in[p]$, let $h_{a, b}^m: U \rightarrow[m]$ be:</p>
+<p>$h_{a, b}^m(x)=((a x+b) \bmod p) \bmod m$</p>
+<p>choose a,b independently and uniformly at random. h(x) is a 2-approximately strongly universal hash function</p>
+<h3 id="Multiply-shift"><a class="header-anchor" href="#Multiply-shift">¶</a>Multiply-shift</h3>
+<p>Let $U=\left[2^w\right]$ and $m=2^{\ell}$. For any odd $a \in\left[2^w\right]$ define</p>
+<p>$h_a(x):=\left\lfloor\frac{(a x) \bmod 2^w}{2^{w-\ell}}\right\rfloor$</p>
+<p>choose a randomly then h is 2-approximately universal hash function</p>
+<h3 id="Strong-multiply-shift"><a class="header-anchor" href="#Strong-multiply-shift">¶</a>Strong multiply-shift</h3>
+<p><img data-src="https://i.imgur.com/2mIS37y.png" alt="image-2023011635100504 PM"></p>
+<h2 id="Application-Coordinated-sampling"><a class="header-anchor" href="#Application-Coordinated-sampling">¶</a>Application:Coordinated sampling</h2>
+<h1>VEB tree</h1>
+<ul>
+<li>proof of O(lg lg u)</li>
+<li>do some operation on the example of vEB</li>
+</ul>
+<p><img data-src="https://i.imgur.com/Iij29ei.png" alt="image-2023012440305148 PM"></p>
+<h1>NP Completeness</h1>
+<ul>
+<li>Definition of verification, languages</li>
+<li>Definition of NP, reduction,NPC</li>
+<li>prove CLIQUE from 3-CNF-SAT</li>
+<li>Prove VERTEX-COVER from CLIQUE</li>
+<li>Prove TSP from HAM-CYCLE</li>
+</ul>
+<p><strong>Definition of a problem</strong>: there’s a set I of instances and a set S of solutions, a problem is a binary relation between I and S</p>
+<p><strong>Definition of a decision problem</strong>: problem whose result is Yes or No, so S is {0,1}</p>
+<p>optimal problems can be transformed into decision problems,e.g. you want to find the shortest path, instead of finding its shortest we can iterate over all the possible results and get the last Yes result instance</p>
+<p><strong>Definition of Languages</strong>:</p>
+<ol>
+<li>Alphabet: a finite set $\Sigma$ of symbols</li>
+<li>language L over $\Sigma$ : a set of strings of symbols from $\Sigma$, e.g.: $\Sigma={a, b, c}$ and $L={a, b a, c a b, b b a c, \ldots}$. The empty string is denoted by(epsilon) $\epsilon$ and empty language is denoted by (emptyset) $\emptyset$ and all strings are denoted by $\Sigma^*$</li>
+<li>Language acceptance: Let A be an algorithm for a decision problem and denote by $A(x) \in{0,1}$, A accepts a string x if A(x) = 1 and rejects a string x if A(x) = 0.The language accepted by A is$L=\left{x \in{0,1}^* \mid A(x)=1\right}$ .We say all strings not in L are rejected by A, so $A(x)=0 \forall x \in{0,1}^* \backslash L$.</li>
+</ol>
+<p><strong>Definition of P and NP:</strong></p>
+<p>$P=\left{L \subseteq{0,1}^* \mid\right.$ there exists an algorithm $A$ that decides $L$ in polynomial time $}$.</p>
+<p>NP is the class of languages that can be veriﬁed in polynomial time. More precisely, L ∈ NP if and only if there is a polynomial-time veriﬁcation algorithm A and a constant c such that $L=\left{x \in{0,1}^* \mid\right.$ there is a $y \in{0,1}^{*}$ with $|y|=O\left(|x|^{c}\right)$ such that $\left.A(x, y)=1\right}$.</p>
+<p><strong>Verification</strong></p>
+<p>Consider algorithm A taking two parameters, instead of trying to ﬁnd a solution to x (which may take a long time), A instead veriﬁes that c is a solution to x.</p>
+<p>The language verified by A is $L=\left{x \in{0,1}^* \mid\right.$ there is a $y \in{0,1}^*$ such that $\left.A(x, y)=1\right}$.</p>
+<p><strong>Reducibility</strong></p>
+<p>Language L 1is polynomial-time reducible to language L 2if there is a polynomial-time computible function f ∶ {0, 1} ∗ → {0, 1} ∗ such that for all x ∈ {0, 1} ∗ ,$x \in L_1 \Longleftrightarrow f(x) \in L_2$. In this case, we write $L_1 \leq p L_2$ , and it shows L1 is no harder to solve than L2.</p>
+<h4 id="prove-CLIQUE-from-3-CNF-SAT"><a class="header-anchor" href="#prove-CLIQUE-from-3-CNF-SAT">¶</a>prove CLIQUE from 3-CNF-SAT</h4>
+<ul>
+<li>Prove NP
+<ul>
+<li>consider an algorithm A taking two inputs, &lt;G, k &gt; and a certiﬁcate y.</li>
+<li>y speciﬁes a subset V ′ of vertices of G.</li>
+<li>A check that | V ′ | = k and that V ′ is a clique in G.</li>
+<li>This can easily be done in polynomial time.</li>
+</ul>
+</li>
+<li>Prove $3-\mathrm{CNF}-\mathrm{SAT} \leq{ }_P$ CLIQUE
+<ul>
+<li>Given a formula f = C 1∧ C 2∧ . . . ∧ C kin 3-CNF.</li>
+<li>We will construct a graph G such that f is satisﬁable if and only if G has a clique of size k.</li>
+<li>For each $C_r=\ell_1^r \vee \ell_2^r \vee \ell_3^r$ , we include three vertices to G.</li>
+<li>There is an edge $\left(v_i^r, v_j^s\right)$ in $G$ if and only if $r \neq s$ and $\ell_i^r$ is not the negation of $\ell_j^s$.</li>
+</ul>
+</li>
+<li><img data-src="https://i.imgur.com/zM8753X.png" alt="image-20230118124407756 AM"></li>
+</ul>
+<p><strong>Prove TSP from HAM-CYCLE</strong></p>
+<ul>
+<li>prove NP
+<ul>
+<li>consider an algorithm A taking two inputs, G.= &lt;V,E,c&gt; and a certificate y.</li>
+<li>y specifies a tour in G</li>
+<li>A check y’s cost and get the minimum</li>
+<li>This can easily be done in polynomial time</li>
+</ul>
+</li>
+<li>Prove $\mathrm{HAM}-\mathrm{CYCLE} \leq_P$ TSP
+<ul>
+<li><img data-src="https://i.imgur.com/wIZVHAb.png" alt="image-2023011810156956 AM"></li>
+</ul>
+</li>
+</ul>
+<h1>Exact exponential algorithms</h1>
+<ul>
+<li>TSP via DP</li>
+</ul>
+<p>Problem: Given cities $c_1, \ldots, c_n$, and distances $d_{i j}=d\left(c_i, c_j\right)$, find tour of minimal length, visiting all cities exactly once.</p>
+<p>We can define a set S which is the subset of the set of points from c2 to cn and select a ci from set S.Then as we are using Dynamic Programming we need to define the structure OPT[s,ci] = minimum length of all paths in $S \cup\left{c_1\right}$ that starts from c1, visits all vertexes in S once and ends in ci. Then $\min \left{\operatorname{OPT}\left[\left{c_2, \ldots c_n\right}, c_i\right]+d\left(c_i, c_1\right) \mid c_i \in\left{c_2, \ldots, c_n\right}\right}$ is the length of the minimal tour</p>
+<p>We have</p>
+<p>OPT $\left[S, c_i\right]= \begin{cases}d\left(c_1, c_i\right) &amp; \text { if } S=\left{c_i\right} \ \min \left{\text { OPT }\left[S \backslash\left{c_i\right}, c_k\right]+d\left(c_k, c_i\right) \mid c_k \in S \backslash\left{c_i\right}\right} &amp; \text { if }\left{c_i\right} \subset S\end{cases}$</p>
+<p>To prove this, we first let e = (ck,ci) to be the last edge on this path. If k = 1 we just use the distance from c1 to ci. If k &gt; 1 then the shortest length through e must be OPT $\left[S \backslash\left{c_i\right}, c_k\right]+d\left(c_k, c_i\right)$.The shortest such path must use the minimum over all $c_k \in S \backslash\left{c_i\right}$.</p>
+<p>So we know the formula is correct and we can get shortet path throught it.What about time it consume?</p>
+<p>We can get the solution with this method by computing $O(n^2*2^n)$ shortest paths.Here I’ll give the proof.</p>
+<p>We enlarge the set where we want to go through from 2 to n-1 and we choose a set of size n-1 from j citys.Then we need to pick one as the last.We can observe it’s bounded by $n^2$ and this one we can add more into this and this equals to $n^2*2^n$. And then we return $\min \left{\operatorname{OPT}\left[\left{c_2, \ldots c_n\right}, c_i\right]+d\left(c_i, c_1\right) \mid c_i \in\left{c_2, \ldots, c_n\right}\right}$ and we only compute n-1 times at most.</p>
+<p>we assume basic operations take polynomial time in n and the algorithm costs $O^<em>(2^n)$. We also need to specify what $O^</em>$​ is</p>
+<p>for any a &gt; 1 we have $O(n^c*a^n)\subset O((a+\epsilon)^n)$</p>
+<p>So when comparing exact exponential algorithms the polynomial factors are mostly irrelevant.</p>
+<p>$f(n) \in O^*(g(n)) &lt;=&gt; \exists c \in \mathbb{R}: f(n) \in \mathcal{O}\left(n^c \cdot g(n)\right)$</p>
+<p>So $O^*$ is the same as O but ignores polynomial factors.</p>
+<ul>
+<li>Bar fight prevention</li>
+</ul>
+<h1>Approximation algorithms</h1>
+<ul>
+<li>approximation ratio</li>
+<li>Vertex cover</li>
+<li>3-CNF-SAT</li>
+</ul>
+<p>易错点：ratio证明，3-SAT写X=sum。</p>
+<p>There are some optimization problems which will take exponential time to get the exact result, but sometimes a solution which is not that good is also acceptable, and it will become much faster to get these results. So we need to use approximation algorithms.</p>
+<p><strong>approximation ratio</strong></p>
+<p>we say that an algorithm for an optimization problem has an approximation ratio of $\rho(n)$ if, for any input of size n:</p>
+<p>$\max \left(\frac{C}{C^<em>}, \frac{C^</em>}{C}\right) \leq \rho(n)$</p>
+<p>If an algorithm achieves an approximation ratio of  (n), we call it a  $\rho(n)$-approximation algorithm.</p>
+<p><strong>Vertex cover</strong></p>
+<p>The following algorithm is a polynomial-time 2-approximation algorithm:</p>
+<p><img data-src="https://i.imgur.com/JeozAY1.png" alt="image-20230119124119184 PM"></p>
+<p>The running time in worst case is O(|V| + |E|) as we will add all vertexs and remove all edges.Now I’d like to prove it’s a 2-approximation algorithm:</p>
+<p>First let $C^<em>$ to be an optimal cover, and let $A \subset E$ be the edges chosen by the algorithm. Each edges have two endpoints and one of them must be in $C^</em>$ ,so $|C^*| \ge |A| = |C|/2$  (|C| =return vertex’s number) ,so it’s 2-approximate.</p>
+<p><strong>MAX-3-SAT</strong></p>
+<p>There’s also another problem called Max-3-CNF which input is some clauses combined with logic connections, the goal is to return an assignment of the variables that maximize the number of clauses evaluating to 1.</p>
+<p>The following algorithm is a polynomial time algorithm:</p>
+<p><img data-src="https://i.imgur.com/XDOS5Vk.png" alt="image-2023011914701123 PM"></p>
+<p>The running time of that is O(n) and n is the number of the variables. So it is a polynomial algorithm. Now I will prove it is an 8/7 approximation algorithm.</p>
+<p>First, let phi$\Phi=C_1 \wedge \ldots \wedge C_n$ and each of the clauses $C_i=\ell_1 \vee \ell_2 \vee \ell_3$.</p>
+<p>So the clause is not satisfied if and only if all three variables are 0, in other words $\neg \ell_1 \wedge \neg \ell_2 \wedge \neg \ell_3$.</p>
+<p>So $\operatorname{Pr}\left[\neg C_i\right]=\operatorname{Pr}\left[\neg \ell_1\right] \cdot \operatorname{Pr}\left[\neg \ell_2\right] \cdot \operatorname{Pr}\left[\neg \ell_2\right]=\left(\frac{1}{2}\right)^3=1 / 8$</p>
+<p>$\operatorname{Pr}\left[C_i\right]=1-\operatorname{Pr}\left[\neg C_i\right]=1-1 / 8=7 / 8$</p>
+<p>And we define a variable X = $\sum_{i=1}^n\left[C_i\right]$ which is the number of satisfied clauses</p>
+<p>We want to calculate the expect of X, which is $\mathbf{E}[X]=\mathbf{E}\left[\sum_{i=1}^n\left[C_i\right]\right] {=} \sum_{i=1}^n \mathbf{E}\left[C_i\right]=\sum_{i=1}^n \frac{7}{8}=7 n / 8$</p>
+<p>So we can know in this algorithm C is 7n/8, and the optimal solution should be n,so it’s approximation ratio is $\frac{\mathcal{C}^<em>}{\mathcal{C}}=\frac{\mathcal{C}^</em>}{7 n / 8} \leq \frac{n}{7 n / 8}=8 / 7$</p>
+<p><strong>TSP</strong></p>
+<p>Last I want to give another algorithm, TSP, given a complete undirected graph and each edge has a capacity. we want to find a minimum weight cycle through all vertices.</p>
+<p>The approx-tsp algorithm is as follows: first it find the minimum spanning tree in the graph, and make a euler tour W along the MST so it goes through each edge twice,and then we shortcut W to get H and return it.</p>
+<p>It’s a polynomial time algorithm because each step in it consumes polynomial time. Then I’d like to prove it’s a 2-approximation problem.</p>
+<p>Let $H^<em>$ to be the optimal solution, then $c(T)\le c((H^</em>))$.And we know $c(W) = 2c(T)$, and $c(H) \le c(W)$ because of the triangle inequality.</p>
+<p>So we have $c(H) \le 2c(H^*)$ , and it’s proven.</p>
+<h1>Polygon triangulation</h1>
+<ul>
+<li>definition of a monotone polygon</li>
+<li>partitioning into monotone pieces</li>
+<li>Triangulating a monotone polygon</li>
+</ul>
+<p>example:<img data-src="https://i.imgur.com/EefMoDj.png" alt="image-2023011934120613 PM"></p>
+<p>There are some problems like the art gallery problem we need to solve, and in order to solve the problem we need to first triangulate the polygon. Then I’ll introduce an algorithm that can efficiently triangulate a simple polygon.</p>
+<p><strong>y-monotone polygon</strong></p>
+<p>In geometry, a polygon <em>P</em> is called <strong>y-monotone</strong> with respect to a horizontal line <em>L</em>, if every line in the boundary of <em>P</em> intersects with L at most twice.</p>
+<p>If we have a y-monotone polygon then it’s easy to triangulate it, which I will discuss it later. If the polygon is not y-monotone then we need to cut it into several parts, I’d like to show how we can do it.</p>
+<p><strong>partitioning</strong></p>
+<p>A simple polygon has several different types of vertices, like start, normal, merge split, and end. From the definition, we can know that a polygon without split and merge and only having one start and one end vertex is a y-monotone polygon, so we need to erase all the merge and split vertexes from our polygon.</p>
+<p>First, we need to introduce the idea of sweeping. We construct a sweeping horizontal line that goes from top to bottom. As we can only explore the part above the line, we can only erase split vertexes when it sweeps down and we can erase merge vertexes when the sweep line goes up.</p>
+<p>So, how can we remove the split vertex?</p>
+<p>I’d like to introduce the helper of edges first. The helper for an edge e which has a polygon right of it is the lowest vertex v above the sweep line such that the horizontal line segment connecting e and v are inside the polygon. In another word, it’s the first vertex sweep line that will touch if it goes up.</p>
+<p>We will also need a status structure to store all edges that have the polygon to the right with their helper and an event list storing all vertices by decreasing y-coordinate. While there are still events in the list we pop and handle them.</p>
+<p>How do we handle the event?</p>
+<p>**Start v: **</p>
+<img data-src="https://i.imgur.com/kUUD7J2.png" alt="image-2023011940309588 PM" style="zoom:50%;" />
+<p>Insert the counterclockwise incident edge in T with v as the helper.</p>
+<p><strong>Regular v:</strong></p>
+<img data-src="https://i.imgur.com/UARzNQT.png" alt="image-2023011940322092 PM" style="zoom:50%;" />
+<p>If the polygon is right of the two incident edges, then replace the upper edge with the lower edge in T, and make v the helper</p>
+<p>If the polygon is left of the two incident edges , then find the edge e directly left of v , and replace its helper by v</p>
+<p><strong>Merge v:</strong></p>
+<img data-src="https://i.imgur.com/RDR9vc9.png" alt="image-2023011940339625 PM" style="zoom:50%;" />
+<p>Remove the edge clockwise from v from T Find the edge e directly left of v , and replace its helper by v</p>
+<p><strong>Split v:</strong></p>
+<img data-src="https://i.imgur.com/LrUGAAq.png" alt="image-2023011940631161 PM" style="zoom:50%;" />
+<ol>
+<li>add a diagonal from v to the helper of the edge directly left of v.</li>
+<li>Replace the helper of e by v</li>
+<li>Insert the edge counterclockwise from v in T with v as its helper</li>
+</ol>
+<p><strong>End v:</strong></p>
+<p>Delete the clockwise incident edge and its helper from T</p>
+<p><strong>How much time does it cost?</strong></p>
+<p>Sorting events costs O(N log N) and if we use a binary search tree as a status structure every event costs O(logn).</p>
+<p>So we partitioned the polygon into several y-monoton polygons, we need to trangulate it.</p>
+<p><strong>Triangulate algorithm</strong></p>
+<ol>
+<li>Sort all vertices from top to bottom</li>
+<li>init a stack and push the first two vertices</li>
+<li>take the next vertex, triangulate as much as possible while popping the stack and push v into the stack</li>
+</ol>
+<p>It will take O(n) time.</p>
+<p>Probable question: Can we immediately conclude: A simple polygon with n vertices can be triangulated O ( n log n) time?</p>
+<p>We need to argue that all y - monotone polygons together that we will triangulate have O ( n ) vertices</p>
+<p>Initially we had n edges . We add at most n - 3 diagonals in the sweeps . These diagonals are used on both sides as edges . So all monotone polygons together have at most 3n - 6 edges , and therefore at most 3n - 6 vertices</p>
+<p>Hence we can conclude that triangulating all monotone polygons together takes only O ( n ) time</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Xuanlang
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.zhaoxuanlang.cn/2023/01/30/AADS-ExamNotes/" title="AADS-ExamNotes">https://www.zhaoxuanlang.cn/2023/01/30/AADS-ExamNotes/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/01/14/new-in-bootstrap5/" rel="prev" title="new-in-bootstrap5">
+                  <i class="fa fa-chevron-left"></i> new-in-bootstrap5
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="SOHUCS" sid="9d5f4e5322324bf878410e6f64387baa"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">津ICP备19008018号-1 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-award"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xuanlang</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://www.zhaoxuanlang.cn/2023/01/30/AADS-ExamNotes/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyvRiUJ7H","appkey":"bfa85e46b2e4cf46d837cbd6e78ba7ab"}</script>
+<script src="/js/third-party/comments/changyan.js"></script>
+
+</body>
+</html>
