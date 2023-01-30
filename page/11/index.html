@@ -91,7 +91,7 @@
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">18</span></a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">10</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">77</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">80</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -162,7 +162,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">77</span>
+          <span class="site-state-item-count">80</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -215,6 +215,451 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/07/15/%E4%BD%BF%E7%94%A8mysql-query-browser%E6%97%B6%E5%87%BA%E7%8E%B0error1251%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Xuanlang">
+      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="松鼠小筑">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/07/15/%E4%BD%BF%E7%94%A8mysql-query-browser%E6%97%B6%E5%87%BA%E7%8E%B0error1251%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="post-title-link" itemprop="url">使用MYSQL QUERY browser时出现error1251的解决方案</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-07-15 11:58:59" itemprop="dateCreated datePublished" datetime="2020-07-15T11:58:59+02:00">2020-07-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-01-15 03:29:05" itemprop="dateModified" datetime="2022-01-15T03:29:05+01:00">2022-01-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="使用MYSQL QUERY browser时出现error1251的解决方案" href="/2020/07/15/%E4%BD%BF%E7%94%A8mysql-query-browser%E6%97%B6%E5%87%BA%E7%8E%B0error1251%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::42cf6a16cd8ad648b533ba66d138c308" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>281</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>出现1251一般是密码问题</p>
+<p>首先使用cmd 输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
+<p>登录后输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; alter user root@localhost identified by &#x27;newpassword&#x27; password expire never;</span><br><span class="line"></span><br><span class="line">mysql&gt; alter user root@localhost identified with mysql_native_password by &#x27;newpassword&#x27;;</span><br><span class="line"></span><br><span class="line">mysql&gt; flush privileges;　　　　# 刷新权限</span><br></pre></td></tr></table></figure>
+<p>newpassword是新密码</p>
+<p>之后就可以正常链接了</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/07/15/windows10-mysql-installer-%E5%AE%89%E8%A3%85%EF%BC%88mysql-installer-community-5-7-19-0-msi%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Xuanlang">
+      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="松鼠小筑">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/07/15/windows10-mysql-installer-%E5%AE%89%E8%A3%85%EF%BC%88mysql-installer-community-5-7-19-0-msi%EF%BC%89/" class="post-title-link" itemprop="url">Windows10 MYSQL Installer 安装（mysql-installer-community-5.7.19.0.msi）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-07-15 11:07:37" itemprop="dateCreated datePublished" datetime="2020-07-15T11:07:37+02:00">2020-07-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-01-15 03:30:42" itemprop="dateModified" datetime="2022-01-15T03:30:42+01:00">2022-01-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%85%B6%E4%BB%96%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">其他笔记</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="Windows10 MYSQL Installer 安装（mysql-installer-community-5.7.19.0.msi）" href="/2020/07/15/windows10-mysql-installer-%E5%AE%89%E8%A3%85%EF%BC%88mysql-installer-community-5-7-19-0-msi%EF%BC%89/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::b2f1b0106715bc4b7ebcdb452d2ad727" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.7k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>1.进入官网找到自己所需的安装包：https://dev.mysql.com/  ，路径：DOWNLOAD--&gt;MYSQL Community Edition(GRL)--&gt;MYSQL on Windows (Installer &amp; Tool)</p>
+<p>或直接点击 <a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/windows/installer/">https://dev.mysql.com/downloads/windows/installer/</a> 查看最新版本。</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1202941-20170722225513168-99169810.png" /></p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1202941-20170722225525340-1635922988.png" /></p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831313-3095-20170722225535090-1925937407.png" /></p>
+<p>2.找到所需的安装包,</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831313-8105-20170722225609184-438065502.png" /></p>
+<p>3.点击download。这里选择的是安装版（mysql -install-community）</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831313-8141-1-20170722225738356-88388521.png" /></p>
+<p>4.选择不登陆下载。</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831313-7844-20170722225950840-2044210671.png" /></p>
+<p>5.双击运行下载好的mysql-installer-community-5.7.19.0.msi，程序运行需要一些时间，请等待一下。</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831314-6138-20170722230026215-1797155710.png" /></p>
+<p>6.运行成功之后，进入欢迎的界面.选择我同意协议，不然无法进行下一步。</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831314-1312-20170722230046043-978659071.png" /></p>
+<p>7. 进入类型选择页面，本人需要mysql云服务就选择了developer default（7.1是默认安装的步骤），如果只想安装mysql server的就选择custom模式（7.2步骤是选择自己需要的服务器类型，所选择的用于做一些数据分析）</p>
+<ul>
+<li>developer default（开发者默认）：安装mysql开发所需的所有产品</li>
+<li>server only（服务器）：只安装mysql服务器产品</li>
+<li>client only（客户端）：只安装没有服务器的mysql客户端产品</li>
+<li>full（完全）：安装所有包含的mysql产品和功能</li>
+<li>custom（手动）：手动选择系统上应安装的产品</li>
+</ul>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831314-6490-20170722230201246-220989429.png" /></p>
+<p>7.1开发者默认模式检测以下程序会安装不成功，点击下一步进入下一个安装流程—&gt;跳到第八步。</p>
+<p>check requirements：以下产品的请求失败，安装程序将自动尝试解决其中一些问题。标记为手动的要求无法自动解决。单击这些项目以尝试手动恢复。</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831314-6339-20170722230232793-1759462371.png" /></p>
+<p>检测到不可安装的程序说明：</p>
+<p>Visual Studio：是一款代码编辑工具（可编写C#、Visual Basic、C++、TypeScript、F# ），如果你安装的话就安装要求去安装Visual Studio version：2012.2013.2015.2017其中一个版本</p>
+<p>Connector/pyton 3.4：电脑有python3.6了就没选择3.4版本的。如果你没安装有python可按要求去安装一些内容。</p>
+<p>7.2选择mysql server（服务） 5.7.19 x64</p>
+<p>选择mysql workbench(mysql 的工作薄) 6.3.9 x64</p>
+<p>选择mysql notiyier(通知) 1.1.7 x86(因为这里只有一个选择所以选择了86)点击下一步进入下一个安装流程—&gt;跳到第九步。</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831314-7923-20170722230314340-1501335191.png" /></p>
+<p>8.当我们点击下一步的时候安装程序出现了提示：（一个或者移动产品要求没有得到满足，那些符合要求的产品将不会安装/升级。你想要继续吗），这里我选择的是：YES</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831315-4997-1-20170722230439528-92431868.png" /></p>
+<p>9.在安装所选界面能看到我们接下来所需要安装的程序，点击execute</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831315-6544-20170722230506262-176699446.png" /></p>
+<p>10安装程序进度界面，安装需要一些时间。点击dide tails能看到安装日志</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831315-4350-20170722230524700-2060141633.png" /></p>
+<p>11.程序安装完成之后，点击next</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831315-5686-20170722230808200-494027333.png" /></p>
+<p>12.在product configutration（产品配置）页面能看到需要配置的程序，点击next（页面英语介绍：现在我们将逐一介绍以下产品的配置向导。您可以随时取消，如果您希望离开此向导，而不必配置所有产品）</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831316-1727-20170722230838934-1132653366.png" /></p>
+<p>13.先配置mysql server的类型以及网络：type and networking（类型和网络），这里有两种mysql server类型，选择第一种类型点击next。</p>
+<p>有两种类型简单介绍</p>
+<ul>
+<li>1.standalone mysql server/classic mysql replication：独立的mysql服务器/经典的mysql复制。choose this option if you want to run the mysql server either standalone with the opportunity to later configure classic mysql replication：选择这个选项，如果你想运行mysql服务器是独立的，有机会以后配置经典的mysql复制</li>
+<li>2. innodb cluster sandbox thst setup(for testing only)：</li>
+</ul>
+<p>innodb集群沙箱thst设置（仅用于测试）</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831316-4284-20170722230918575-127114164.png" /></p>
+<p>14.设置服务器配置类型以及连接端口：继续next</p>
+<p>Config Type:选择Development Machine，用于小型以及学习所用足够了。</p>
+<p>Port number：输入3306，也可以输入其他最好是3306-3309之间。</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831316-1042-20170722231058356-1269244144.png" /></p>
+<p>15.配置root的密码（该密码要记住），系统提示这密码虚弱</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831317-1713-20170722231209903-956653442.png" /></p>
+<p>16. 添加其他管理员，点击add user 输入账号密码点击ok（如果添加的管理员只允许在本地登录就将host改成local），回到界面之后点击next</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831317-3908-20170722231228387-1590560639.png" /></p>
+<p>17.配置mysql在windows系统中的名字，是否选择开机启动mysql服务，其它的没进行修改，点击"Next"。</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831317-1586-20170722231608825-2099636815.png" /></p>
+<p>18.配置插件和扩展页面没进行修改直接下一步：</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831317-4097-20170722231638887-180558399.png" /></p>
+<p>19.Mysql server :apply configuration（应用配置页面），选择execute进行安装配置</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831318-8984-20170722231654278-649027984.png" /></p>
+<p>20. mysql server应用配置的log，选择finish</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831318-9740-20170722231714809-1553936235.png" /></p>
+<p>21.安装程序又回到了product configutration（产品配置）页面，此时我们看到mysql server安装成功的显示，继续下一步：</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831318-2164-20170722231738825-1692782858.png" /></p>
+<p>22. 配置mysql router：勾选configure mysql route for innoDB cluster之后输入密码。（如果不想输入密码可直接点击点一下）点击下一步</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831318-2952-20170722231755762-1299837152.png" /></p>
+<p>23.Mysql router :apply configuration（应用配置页面）点击execute,</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831319-7917-20170722231811528-357673493.png" /></p>
+<p>24.安装完成之后点击选择finish</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831319-7786-20170722231826746-634086390.png" /></p>
+<p>25.检测root密码</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831319-2072-20170722231844528-1242732523.png" /></p>
+<p>26.安装一些server，老规矩点击execute，完成之后点击finish</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831319-9386-20170722231902950-256599456.png" /></p>
+<p>27. 程序回到产品配置页面。继续下一步：</p>
+<p>28.安装程序完成界面。</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831319-1406-20170722231933637-179722774.png" /></p>
+<p>29. 双击运行之前下载的安装包，能看到我们所安装的产品。</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831320-7960-20170722232012418-1876643408.png" /></p>
+<p>30. 配置mysql环境变量</p>
+<p>上面安装的是时候我们看到mysql默认安装路径是：C:\Program Files\MySQL\MySQL Server 5.7</p>
+<p>我的电脑右键—&gt;属性à高级系统设置à环境变量à新建MYSQL_HOME,将安装目录输入：</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831320-7374-41-20170722232031684-1843508.png" /></p>
+<p>找到path编辑：输入%MYSQL_HOME%\bin</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831320-5015-20170722232044090-1304683536.png" /></p>
+<p>打开cmd输入mysql –u root –p</p>
+<p>输入root的密码</p>
+<p><img data-src="https://www.runoob.com/wp-content/uploads/2019/10/1571831320-6727-20170722232055731-2127042770.png" /></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/06/10/%E7%A8%B3%E5%AE%9A%E6%8E%92%E5%BA%8F%E5%92%8C%E4%B8%8D%E7%A8%B3%E5%AE%9A%E6%8E%92%E5%BA%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Xuanlang">
+      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="松鼠小筑">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/06/10/%E7%A8%B3%E5%AE%9A%E6%8E%92%E5%BA%8F%E5%92%8C%E4%B8%8D%E7%A8%B3%E5%AE%9A%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">稳定排序和不稳定排序</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-06-10 09:40:49" itemprop="dateCreated datePublished" datetime="2020-06-10T09:40:49+02:00">2020-06-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-01-15 03:14:30" itemprop="dateModified" datetime="2022-01-15T03:14:30+01:00">2022-01-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="稳定排序和不稳定排序" href="/2020/06/10/%E7%A8%B3%E5%AE%9A%E6%8E%92%E5%BA%8F%E5%92%8C%E4%B8%8D%E7%A8%B3%E5%AE%9A%E6%8E%92%E5%BA%8F/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::59df3d42868a96c84c2701ab328c3923" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>首先，排序算法的稳定性大家应该都知道，通俗地讲就是能保证排序前2个相等的数其在序列的前后位置顺序和排序后它们两个的前后位置顺序相同。在简单形式化一下，如果Ai = Aj，Ai原来在位置前，排序后Ai还是要在Aj位置前。</p>
+<p>      其次，说一下稳定性的好处。排序算法如果是稳定的，那么从一个键上排序，然后再从另一个键上排序，第一个键排序的结果可以为第二个键排序所用。基数排序就是这样，先按低位排序，逐次按高位排序，低位相同的元素其顺序再高位也相同时是不会改变的。另外，如果排序算法稳定，对基于比较的排序算法而言，元素交换的次数可能会少一些（个人感觉，没有证实）。</p>
+<p>回到主题，现在分析一下常见的排序算法的稳定性，每个都给出简单的理由。</p>
+<p>(1)冒泡排序</p>
+<p>冒泡排序就是把小的元素往前调或者把大的元素往后调。比较是相邻的两个元素比较，交换也发生在这两个元素之间。所以，如果两个元素相等，我想你是不会再无聊地把他们俩交换一下的；如果两个相等的元素没有相邻，那么即使通过前面的两两交换把两个相邻起来，这时候也不会交换，所以相同元素的前后顺序并没有改变，所以冒泡排序是一种稳定排序算法。</p>
+<p>(2)选择排序</p>
+<p>选择排序是给每个位置选择当前元素最小的，比如给第一个位置选择最小的，在剩余元素里面给第二个元素选择第二小的，依次类推，直到第n - 1个元素，第n个元素不用选择了，因为只剩下它一个最大的元素了。那么，在一趟选择，如果当前元素比一个元素小，而该小的元素又出现在一个和当前元素相等的元素后面，那么交换后稳定性就被破坏了。比较拗口，举个例子，序列5 8 5 2 9，我们知道第一遍选择第1个元素5会和2交换，那么原序列中2个5的相对前后顺序就被破坏了，所以选择排序不是一个稳定的排序算法。</p>
+<p>(3)插入排序<br />
+插入排序是在一个已经有序的小序列的基础上，一次插入一个元素。当然，刚开始这个有序的小序列只有1个元素，就是第一个元素。比较是从有序序列的末尾开始，也就是想要插入的元素和已经有序的最大者开始比起，如果比它大则直接插入在其后面，否则一直往前找直到找到它该插入的位置。如果碰见一个和插入元素相等的，那么插入元素把想插入的元素放在相等元素的后面。所以，相等元素的前后顺序没有改变，从原无序序列出去的顺序就是排好序后的顺序，所以插入排序是稳定的。</p>
+<p>(4)快速排序<br />
+快速排序有两个方向，左边的i下标一直往右走，当a[i] &lt;= a[center_index]，其中center_index是中枢元素的数组下标，一般取为数组第0个元素。而右边的j下标一直往左走，当a[j] &gt; a[center_index]。如果i和j都走不动了，i &lt;= j，交换a[i]和a[j],重复上面的过程，直到i &gt; j。 交换a[j]和a[center_index]，完成一趟快速排序。在中枢元素和a[j]交换的时候，很有可能把前面的元素的稳定性打乱，比如序列为5 3 3 4 3 8 9 10 11，现在中枢元素5和3（第5个元素，下标从1开始计）交换就会把元素3的稳定性打乱，所以快速排序是一个不稳定的排序算法，不稳定发生在中枢元素和a[j] 交换的时刻。</p>
+<p>(5)归并排序<br />
+归并排序是把序列递归地分成短序列，递归出口是短序列只有1个元素（认为直接有序）或者2个序列（1次比较和交换），然后把各个有序的段序列合并成一个有序的长序列，不断合并直到原序列全部排好序。可以发现，在1个或2个元素时，1个元素不会交换，2个元素如果大小相等也没有人故意交换，这不会破坏稳定性。那么，在短的有序序列合并的过程中，稳定是是否受到破坏？没有，合并过程中我们可以保证如果两个当前元素相等时，我们把处在前面的序列的元素保存在结果序列的前面，这样就保证了稳定性。所以，归并排序也是稳定的排序算法。</p>
+<p>(6)基数排序<br />
+基数排序是按照低位先排序，然后收集；再按照高位排序，然后再收集；依次类推，直到最高位。有时候有些属性是有优先级顺序的，先按低优先级排序，再按高优先级排序，最后的次序就是高优先级高的在前，高优先级相同的低优先级高的在前。基数排序基于分别排序，分别收集，所以其是稳定的排序算法。</p>
+<p>(7)希尔排序(shell)<br />
+希尔排序是按照不同步长对元素进行插入排序，当刚开始元素很无序的时候，步长最大，所以插入排序的元素个数很少，速度很快；当元素基本有序了，步长很小， 插入排序对于有序的序列效率很高。所以，希尔排序的时间复杂度会比O(n^2)好一些。由于多次插入排序，我们知道一次插入排序是稳定的，不会改变相同元素的相对顺序，但在不同的插入排序过程中，相同的元素可能在各自的插入排序中移动，最后其稳定性就会被打乱，所以shell排序是不稳定的。</p>
+<p>(8)堆排序<br />
+我们知道堆的结构是节点i的孩子为2 * i和2 * i + 1节点，大顶堆要求父节点大于等于其2个子节点，小顶堆要求父节点小于等于其2个子节点。在一个长为n 的序列，堆排序的过程是从第n / 2开始和其子节点共3个值选择最大（大顶堆）或者最小（小顶堆），这3个元素之间的选择当然不会破坏稳定性。但当为n / 2 - 1， n / 2 - 2， ... 1这些个父节点选择元素时，就会破坏稳定性。有可能第n / 2个父节点交换把后面一个元素交换过去了，而第n / 2 - 1个父节点把后面一个相同的元素没 有交换，那么这2个相同的元素之间的稳定性就被破坏了。所以，堆排序不是稳定的排序算法。</p>
+<p>综上，得出结论: <strong>选择排序、快速排序、希尔排序、堆排序不是稳定的排序算法，而冒泡排序、插入排序、归并排序和基数排序是稳定的排序算法</strong></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -447,366 +892,6 @@ ASL=(3×5+4×6)/11=39/11</p>
 <p>3</p>
 <p>需要三个函数：前序建立树，中序输出，计算叶子结点</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//根据有#的前序遍历生成树</span><br><span class="line">tree fcreate()</span><br><span class="line">&#123;</span><br><span class="line">    tree t;</span><br><span class="line">    char s;</span><br><span class="line">    //按每个字符输入</span><br><span class="line">    scanf(&quot;%c&quot;,&amp;s);</span><br><span class="line">    if(s==&#x27;#&#x27;)return nullptr;</span><br><span class="line">    else &#123;</span><br><span class="line">        t=(tree)malloc(sizeof(struct treenode));</span><br><span class="line">        t-&gt;data = s;</span><br><span class="line">        t-&gt;lchild = fcreate();</span><br><span class="line">        t-&gt;rchild = fcreate();</span><br><span class="line">        return t;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//中序输出</span><br><span class="line">void Inordertranverse(tree t)</span><br><span class="line">&#123;</span><br><span class="line">    if(!t)return;</span><br><span class="line">    Inordertranverse(t-&gt;lchild);</span><br><span class="line">    cout&lt;&lt;t-&gt;data;</span><br><span class="line">    Inordertranverse(t-&gt;rchild);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//计数树的根结点数</span><br><span class="line">int count(tree t,int c)</span><br><span class="line">&#123;</span><br><span class="line">    if(t) &#123;</span><br><span class="line">        if (t-&gt;lchild == nullptr &amp;&amp; t-&gt;rchild == nullptr)c++;</span><br><span class="line">        c=count(t-&gt;lchild, c);</span><br><span class="line">        c=count(t-&gt;rchild, c);</span><br><span class="line">    &#125;</span><br><span class="line">    return c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/05/10/7-4-%E4%BA%A4%E6%8D%A2%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E6%AF%8F%E4%B8%AA%E7%BB%93%E7%82%B9%E7%9A%84%E5%B7%A6%E5%AD%A9%E5%AD%90%E5%92%8C%E5%8F%B3%E5%AD%A9%E5%AD%90-20%E5%88%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Xuanlang">
-      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="松鼠小筑">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/05/10/7-4-%E4%BA%A4%E6%8D%A2%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E6%AF%8F%E4%B8%AA%E7%BB%93%E7%82%B9%E7%9A%84%E5%B7%A6%E5%AD%A9%E5%AD%90%E5%92%8C%E5%8F%B3%E5%AD%A9%E5%AD%90-20%E5%88%86/" class="post-title-link" itemprop="url">7-4 交换二叉树中每个结点的左孩子和右孩子 (20分)</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-05-10 16:21:56" itemprop="dateCreated datePublished" datetime="2020-05-10T16:21:56+02:00">2020-05-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-01-15 03:11:50" itemprop="dateModified" datetime="2022-01-15T03:11:50+01:00">2022-01-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Changyan：</span>
-    
-    <a title="7-4 交换二叉树中每个结点的左孩子和右孩子 (20分)" href="/2020/05/10/7-4-%E4%BA%A4%E6%8D%A2%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E6%AF%8F%E4%B8%AA%E7%BB%93%E7%82%B9%E7%9A%84%E5%B7%A6%E5%AD%A9%E5%AD%90%E5%92%8C%E5%8F%B3%E5%AD%A9%E5%AD%90-20%E5%88%86/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::f423715aa6133a62be2835976a40a90c" class="cy_cmt_count" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>958</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>以二叉链表作为二叉树的存储结构，交换二叉树中每个结点的左孩子和右孩子。</p>
-<h3 id="输入格式">输入格式:</h3>
-<p>输入二叉树的先序序列。</p>
-<p>提示：一棵二叉树的先序序列是一个字符串，若字符是‘#’,表示该二叉树是空树，否则该字符是相应结点的数据元素。</p>
-<h3 id="输出格式">输出格式:</h3>
-<p>输出有两行：</p>
-<p>第一行是原二叉树的中序遍历序列；</p>
-<p>第二行是交换后的二叉树的中序遍历序列。</p>
-<h3 id="输入样例">输入样例:</h3>
-<p>ABC##DE#G##F###</p>
-<h3 id="输出样例">输出样例:</h3>
-<p>CBEGDFA</p>
-<p>AFDGEBC</p>
-<p>需要三个函数：根据前序输入生成树，交换，中序输出</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//根据有#的前序遍历生成树</span><br><span class="line">tree fcreate()</span><br><span class="line">&#123;</span><br><span class="line">    tree t;</span><br><span class="line">    char s;</span><br><span class="line">    //按每个字符输入</span><br><span class="line">    scanf(&quot;%c&quot;,&amp;s);</span><br><span class="line">    if(s==&#x27;#&#x27;)return nullptr;</span><br><span class="line">    else &#123;</span><br><span class="line">        t=(tree)malloc(sizeof(struct treenode));</span><br><span class="line">        t-&gt;data = s;</span><br><span class="line">        t-&gt;lchild = fcreate();</span><br><span class="line">        t-&gt;rchild = fcreate();</span><br><span class="line">        return t;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">void Inordertranverse(tree t)</span><br><span class="line">&#123;</span><br><span class="line">    if(!t)return;</span><br><span class="line">    Inordertranverse(t-&gt;lchild);</span><br><span class="line">    cout&lt;&lt;t-&gt;data;</span><br><span class="line">    Inordertranverse(t-&gt;rchild);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//交换每个结点左右子树</span><br><span class="line">void Exchange(tree &amp;bt)</span><br><span class="line">&#123;</span><br><span class="line">    tree temp;</span><br><span class="line">    if(bt)&#123;</span><br><span class="line">        temp = bt -&gt; lchild;</span><br><span class="line">        bt -&gt; lchild = bt -&gt; rchild;</span><br><span class="line">        bt -&gt; rchild = temp;</span><br><span class="line">        Exchange(bt -&gt; lchild);</span><br><span class="line">        Exchange(bt -&gt; rchild);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    tree t;</span><br><span class="line">    t=fcreate();</span><br><span class="line">    Inordertranverse(t);</span><br><span class="line">    Exchange(t);</span><br><span class="line">    Inordertranverse(t);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/04/24/7-1-%E4%B8%89%E5%85%83%E7%BB%84%E9%A1%BA%E5%BA%8F%E8%A1%A8%E8%A1%A8%E7%A4%BA%E7%9A%84%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE%E2%85%B1-10%E5%88%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Xuanlang">
-      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="松鼠小筑">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/04/24/7-1-%E4%B8%89%E5%85%83%E7%BB%84%E9%A1%BA%E5%BA%8F%E8%A1%A8%E8%A1%A8%E7%A4%BA%E7%9A%84%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE%E2%85%B1-10%E5%88%86/" class="post-title-link" itemprop="url">7-1 三元组顺序表表示的稀疏矩阵转置Ⅱ (10分)</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-04-24 18:04:11" itemprop="dateCreated datePublished" datetime="2020-04-24T18:04:11+02:00">2020-04-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-01-15 03:08:23" itemprop="dateModified" datetime="2022-01-15T03:08:23+01:00">2022-01-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Changyan：</span>
-    
-    <a title="7-1 三元组顺序表表示的稀疏矩阵转置Ⅱ (10分)" href="/2020/04/24/7-1-%E4%B8%89%E5%85%83%E7%BB%84%E9%A1%BA%E5%BA%8F%E8%A1%A8%E8%A1%A8%E7%A4%BA%E7%9A%84%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE%E2%85%B1-10%E5%88%86/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::a364ab313160088fa83739c587eacc5c" class="cy_cmt_count" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.2k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>三元组顺序表表示的稀疏矩阵转置Ⅱ。设a和b为三元组顺序表变量，分别表示矩阵M和T。要求按照a中三元组的次序进行转置，并将转置后的三元组置入b中恰当的位置。</p>
-<h3 id="输入格式">输入格式:</h3>
-<p>输入第1行为矩阵行数m、列数n及非零元素个数t。 按行优先顺序依次输入t行，每行3个数，分别表示非零元素的行标、列标和值。</p>
-<h3 id="输出格式">输出格式:</h3>
-<p>按置入b中的顺序输出置入的位置下标，转置后的三元组行标、列标和值，数据之间用空格分隔，共t行。</p>
-<h3 id="输入样例1">输入样例1:</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3 4 3</span><br><span class="line">0 1 -5</span><br><span class="line">1 0 1</span><br><span class="line">2 2 2</span><br></pre></td></tr></table></figure>
-<h3 id="输出样例1">输出样例1:</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1 1 0 -5</span><br><span class="line">0 0 1 1</span><br><span class="line">2 2 2 2</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef struct</span><br><span class="line">&#123;</span><br><span class="line">    int x,y;</span><br><span class="line">    int data;</span><br><span class="line">&#125;triple;</span><br><span class="line"></span><br><span class="line">typedef struct</span><br><span class="line">&#123;</span><br><span class="line">    triple data[1001];</span><br><span class="line">    int mu,nu,tu;</span><br><span class="line">&#125;TSMatrix;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    TSMatrix m1,m2;</span><br><span class="line">    int m,n,t;</span><br><span class="line">    cin&gt;&gt;m&gt;&gt;n&gt;&gt;t;</span><br><span class="line">    m1.mu=m;m1.nu=n;m1.tu=t;</span><br><span class="line">    for (int i = 0; i &lt; t; ++i) &#123;</span><br><span class="line">        cin&gt;&gt;m1.data[i].x&gt;&gt;m1.data[i].y&gt;&gt;m1.data[i].data;</span><br><span class="line">    &#125;</span><br><span class="line">    m2.mu=m1.nu;m2.nu=m1.mu;m2.tu=m1.tu;</span><br><span class="line">    if(m2.tu)</span><br><span class="line">    &#123;</span><br><span class="line">        int q=0;</span><br><span class="line">        for (int i = 0; i &lt; m1.nu; ++i) &#123;</span><br><span class="line">            for (int j = 0; j &lt; m1.tu; ++j) &#123;</span><br><span class="line">                if (m1.data[j].y==i)</span><br><span class="line">                &#123;</span><br><span class="line">                    m2.data[q].x=m1.data[j].y;</span><br><span class="line">                    m2.data[q].y=m1.data[j].x;</span><br><span class="line">                    m2.data[q].data=m1.data[j].data;</span><br><span class="line">                    q++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        for (int k = 0; k &lt; m1.nu; ++k) &#123;</span><br><span class="line">            for (int i = 0; i &lt; m1.tu; ++i) &#123;</span><br><span class="line">                if(m2.data[i].y==k)</span><br><span class="line">                &#123;</span><br><span class="line">                    cout&lt;&lt;i&lt;&lt;&quot; &quot;&lt;&lt;m2.data[i].x&lt;&lt;&quot; &quot;&lt;&lt;m2.data[i].y&lt;&lt;&quot; &quot;&lt;&lt;m2.data[i].data&lt;&lt;endl;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/04/20/%E5%AF%B9%E7%A7%B0%E7%9F%A9%E9%98%B5%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8%E7%9A%84%E5%9C%B0%E5%9D%80%E8%AE%A1%E7%AE%97/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Xuanlang">
-      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="松鼠小筑">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/04/20/%E5%AF%B9%E7%A7%B0%E7%9F%A9%E9%98%B5%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8%E7%9A%84%E5%9C%B0%E5%9D%80%E8%AE%A1%E7%AE%97/" class="post-title-link" itemprop="url">对称矩阵压缩存储的地址计算</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-04-20 21:07:35" itemprop="dateCreated datePublished" datetime="2020-04-20T21:07:35+02:00">2020-04-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-01-15 03:13:30" itemprop="dateModified" datetime="2022-01-15T03:13:30+01:00">2022-01-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Changyan：</span>
-    
-    <a title="对称矩阵压缩存储的地址计算" href="/2020/04/20/%E5%AF%B9%E7%A7%B0%E7%9F%A9%E9%98%B5%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8%E7%9A%84%E5%9C%B0%E5%9D%80%E8%AE%A1%E7%AE%97/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::5b3bee52e93c29564268383df9d6761d" class="cy_cmt_count" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>450</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>设有一个10对称矩阵A，采用压缩存储，a[0][0]地址为1000，每个元素占两个字节，则a[3][6]地址为多少？</p>
-<p>对对称阵进行压缩存取是将对称元素只存一个，并将<a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao">数据存储</a>在一维数组中<br />
-首先来确定a[i][j]在b[k]中的i，j与k的关系<br />
-首先是判定i与j的关系， 如果是下三角存储，则分一下两种情况<br />
-1、如果i&lt;j, 则交换i与j的值，将上copy三角的位置值变换到下三角位置<br />
-2、如果i&gt;=j，则不用执行操作直接走下面的流程</p>
-<p>此时，i表示行坐标，j表示了坐标i之前有i行，即有1+2+...+i = (i+1)*i/2，在i标识的第i+1行有j+1个元素，由此zd可以确定k的值为(i+1)*i/2+j+1 = k+1 由此可得k = (i+1)*i/2+j</p>
-<p>由此可以的，a[3][6], i=3, j=6, 由于i&lt;j, 交换得i=6， j=3<br />
-由此 k = (6+1)*6/2+3 = 24<br />
-又由于&amp;b[0] = 1000 每个元素占两个字节, 则b[24] = 1000+2*24 = 1048<br />
-由此便得到a[3][6]的地址为1048</p>
 
       
     </div>
