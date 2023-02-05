@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>upload-ssh-key</title>
+      <link href="/2023/02/05/upload-ssh-key/"/>
+      <url>/2023/02/05/upload-ssh-key/</url>
+      
+        <content type="html"><![CDATA[<ul><li>Generate ssh file</li><li>upload it to the server</li></ul><span id="more"></span><h1 id="generate-ssh-file">Generate ssh file</h1><p>To log in to a server with ssh keys you need to first generate a keyfile using <code>ssh-keygen</code> and get two files id_rsa andid_rsa.pub. The .pub file is a public key, you need to put it into.ssh/authorized_keys file.</p><h1 id="upload-it-to-the-server">Upload it to the server</h1><p>You can paste it yourself or use<code>ssh-copy-id -i key_file user@host</code> to upload itautomatically.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ssh </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Machine-Learning-A-Final-Report</title>
       <link href="/2023/01/30/Machine-Learning-A-Final-Report/"/>
       <url>/2023/01/30/Machine-Learning-A-Final-Report/</url>
