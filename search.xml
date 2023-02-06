@@ -4,6 +4,58 @@
   
     
     <entry>
+      <title>upload-to-Gdrive</title>
+      <link href="/2023/02/06/upload-to-Gdrive/"/>
+      <url>/2023/02/06/upload-to-Gdrive/</url>
+      
+        <content type="html"><![CDATA[<p>rclone is a tool to enable you to sync files on the command line with several online storage platforms.</p><ul><li>install rclone</li><li>Bind with google account</li><li>Upload files to the drive</li></ul><span id="more"></span><h1>Install rclone</h1><p>To install rclone on Linux/macOS/BSD systems, run:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -v ; curl https://rclone.org/install.sh | sudo bash</span><br></pre></td></tr></table></figure><p><a href="https://rclone.org/downloads/">official link</a></p><h1>Bind with google account</h1><p>first, create a google service account.<a href="https://rclone.org/drive/#:~:text=1.%20Create%20a%20service%20account%20for%20example.com">link</a></p><p><a href="https://rclone.org/drive/">Then configure rclone</a></p><h1>Upload files to the drive</h1><p>Upload silently:</p><p><code>rclone copy &lt;sourcepath&gt; &lt;remotename&gt;:&lt;remotepath&gt; -P &gt;&gt; log.txt</code></p><p>Check the log file:</p><p><code>tail --lines=8 log.txt &amp;&amp; echo &quot;\n&quot;</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> rclone </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>deploy flask with nginx on ubuntu</title>
+      <link href="/2023/02/05/deploy-flask-with-nginx-on-ubuntu/"/>
+      <url>/2023/02/05/deploy-flask-with-nginx-on-ubuntu/</url>
+      
+        <content type="html"><![CDATA[<ul><li>Configure nginx</li><li>configure flask app</li></ul><span id="more"></span><h1>Configure nginx</h1><p>First, install nginx using <code>apt-get install nginx</code>.</p><p>修改/etc/nginx/sites-enabled/default，改文件名成xxx.com后修改内容</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">listen 80;</span><br><span class="line">server_name stock.joticia.cn;</span><br><span class="line"></span><br><span class="line">location / &#123;</span><br><span class="line">proxy_pass http://0.0.0.0:5000/;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">location /stock&#123;</span><br><span class="line">proxy_pass http://0.0.0.0:5000/stock;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>使用软连接把文件连接到sites-available里</p><h1>Configure flask app</h1><p>In <a href="http://app.py">app.py</a> need to use <code>app.run(host='0.0.0.0')</code> so all access can be done through ip:5000</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> nginx </tag>
+            
+            <tag> flask </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>upload-ssh-key</title>
       <link href="/2023/02/05/upload-ssh-key/"/>
       <url>/2023/02/05/upload-ssh-key/</url>
