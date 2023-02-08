@@ -60,7 +60,7 @@
       <link href="/2023/02/05/upload-ssh-key/"/>
       <url>/2023/02/05/upload-ssh-key/</url>
       
-        <content type="html"><![CDATA[<ul><li>Generate ssh file</li><li>upload it to the server</li></ul><span id="more"></span><h1 id="generate-ssh-file">Generate ssh file</h1><p>To log in to a server with ssh keys you need to first generate a keyfile using <code>ssh-keygen</code> and get two files id_rsa andid_rsa.pub. The .pub file is a public key, you need to put it into.ssh/authorized_keys file.</p><h1 id="upload-it-to-the-server">Upload it to the server</h1><p>You can paste it yourself or use<code>ssh-copy-id -i key_file user@host</code> to upload itautomatically.</p>]]></content>
+        <content type="html"><![CDATA[<ul><li>Generate ssh file</li><li>upload it to the server</li></ul><span id="more"></span><h1>Generate ssh file</h1><p>To log in to a server with ssh keys you need to first generate a key file using <code>ssh-keygen</code> and get two files id_rsa and id_rsa.pub. The .pub file is a public key, you need to put it into .ssh/authorized_keys file.</p><h1>Upload it to the server</h1><p>You can paste it yourself or use <code>ssh-copy-id -i key_file user@host</code> to upload it automatically.</p><p>Or you can do it manually:</p><ol><li>login to your server and go to ~/.ssh dir</li><li><code>vi authorized_keys</code></li><li>Paste the content of id_rsa.pub into it</li></ol>]]></content>
       
       
       <categories>
