@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/32*32.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32*32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16*16.ico">
+  <link rel="mask-icon" href="/images/32*32.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.zhaoxuanlang.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="Develop a system that can add a torrent on the website, after completing the download it will automatically upload the file to my google drive while showing the upload log to the website so that I can">
+<meta property="og:type" content="article">
+<meta property="og:title" content="auto-upload-gdrive">
+<meta property="og:url" content="https://www.zhaoxuanlang.cn/2023/02/24/auto-upload-gdrive/index.html">
+<meta property="og:site_name" content="松鼠小筑">
+<meta property="og:description" content="Develop a system that can add a torrent on the website, after completing the download it will automatically upload the file to my google drive while showing the upload log to the website so that I can">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-02-24T17:50:48.000Z">
+<meta property="article:modified_time" content="2023-02-24T18:17:46.444Z">
+<meta property="article:author" content="Xuanlang">
+<meta property="article:tag" content="rclone">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://www.zhaoxuanlang.cn/2023/02/24/auto-upload-gdrive/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.zhaoxuanlang.cn/2023/02/24/auto-upload-gdrive/","path":"2023/02/24/auto-upload-gdrive/","title":"auto-upload-gdrive"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>auto-upload-gdrive | 松鼠小筑</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?2c6ad69c6dce83b3987864c3d69796db"></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">松鼠小筑</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">学习笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">22</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">10</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">84</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#install-qbittorrent-nox"><span class="nav-number">1.</span> <span class="nav-text">Install Qbittorrent-nox</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#install-qbittorrent-nox-1"><span class="nav-number">1.1.</span> <span class="nav-text">Install qBittorrent-nox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#run-qbittorrent-nox-as-a-service"><span class="nav-number">1.2.</span> <span class="nav-text">Run qBittorrent-nox as a
+service</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#testing-qbittorrent-nox"><span class="nav-number">1.3.</span> <span class="nav-text">Testing qBittorrent-nox</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#setup-after-download-script"><span class="nav-number">2.</span> <span class="nav-text">Setup after-download-script</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#show-real-time-log-on-the-website"><span class="nav-number">3.</span> <span class="nav-text">Show real-time log on the
+website</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-number">4.</span> <span class="nav-text">reference</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xuanlang"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Xuanlang</p>
+  <div class="site-description" itemprop="description">业精于勤荒于嬉，行成于思毁于随</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">84</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/1982606762" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;1982606762" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zxl17302206700@gmail.com" title="E-Mail → mailto:zxl17302206700@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2023/02/24/auto-upload-gdrive/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Xuanlang">
+      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="松鼠小筑">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          auto-upload-gdrive
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-02-24 18:50:48 / 修改时间：19:17:46" itemprop="dateCreated datePublished" datetime="2023-02-24T18:50:48+01:00">2023-02-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="auto-upload-gdrive" href="/2023/02/24/auto-upload-gdrive/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::b8f47a7c5b0f4b664add8f7c2d227d76" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>6 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>Develop a system that can add a torrent on the website, after
+completing the download it will automatically upload the file to my
+google drive while showing the upload log to the website so that I can
+see the procedure of uploading.</p>
+<ul>
+<li>install Qbittorrent command-line version</li>
+<li>Setup after-download-script</li>
+<li>Show real-time log on the website</li>
+</ul>
+<span id="more"></span>
+<h1 id="install-qbittorrent-nox">Install Qbittorrent-nox</h1>
+<p>In Ubuntu, it's called qBittorrent-nox.</p>
+<h2 id="install-qbittorrent-nox-1">Install qBittorrent-nox</h2>
+<p>Add the qBittorrent repository:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository -y ppa:qbittorrent-team/qbittorrent-stable</span><br></pre></td></tr></table></figure>
+<p>Install qBittorrent-nox:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install -y qbittorrent-nox</span><br></pre></td></tr></table></figure>
+<p>After installation, we can check the qBittorrent-nox version:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qbittorrent-nox --version</span><br></pre></td></tr></table></figure>
+<h2 id="run-qbittorrent-nox-as-a-service">Run qBittorrent-nox as a
+service</h2>
+<p>In order to run qBittorrent-nox as a service we need to configure
+systemd. Create a systemd unit file:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/systemd/system/qbittorrent-nox.service</span><br></pre></td></tr></table></figure>
+<p>Add the following content to the file:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=qBittorrent client</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">ExecStart=/usr/bin/qbittorrent-nox --webui-port=8080</span><br><span class="line">Restart=always</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+<p>You can change the web interface port if you want.</p>
+<p>Start qBittorrent-nox service:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service qbittorrent-nox start</span><br></pre></td></tr></table></figure>
+<p>You can run the following command to make sure that the
+qBittorrent-nox service is running:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service qbittorrent-nox status</span><br></pre></td></tr></table></figure>
+<p>Also, you can stop or restart the service:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo service qbittorrent-nox stop</span><br><span class="line">sudo service qbittorrent-nox restart</span><br></pre></td></tr></table></figure>
+<p>To enable qBittorrent-nox to start on boot, run the following
+command:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl enable qbittorrent-nox</span><br></pre></td></tr></table></figure>
+<h2 id="testing-qbittorrent-nox">Testing qBittorrent-nox</h2>
+<p>Open a browser and enter the URL address
+<code>http://&lt;IP_ADDRESS&gt;:8080</code>, where
+<code>&lt;IP_ADDRESS&gt;</code> is the IP address of your machine. You
+can log in to the web UI with the default username (<code>admin</code>)
+and password (<code>adminadmin</code>).</p>
+<h1 id="setup-after-download-script">Setup after-download-script</h1>
+<blockquote>
+<p>qbt now doesn't give shell environment by default, you'll either need
+to specify full path <code>/usr/bin/rm</code> or invoke the shell by
+yourself <code>/usr/bin/sh -c &lt;command&gt;</code>.</p>
+</blockquote>
+<p>So we need to add <code>/bin/bash  /Torrent.bash "%N" "%F"</code> in
+external program field</p>
+<p>And create a bash file with content as follows:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment">#echo &quot;$1&quot; &gt;&gt; /root/1.txt</span></span><br><span class="line">rclone copy <span class="variable">$2</span> gdrive1:美剧/<span class="variable">$1</span> -P &gt;&gt; /root/qbitdown/<span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+<p>Of course, you can add whatever you want into the bash file, I'm just
+showing my own configuration.</p>
+<h1 id="show-real-time-log-on-the-website">Show real-time log on the
+website</h1>
+<p>First, we need to add some blocks to the HTML file:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;log-title&quot;</span>&gt;</span>update log<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;log-container&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">      <span class="function"><span class="keyword">function</span> <span class="title">updateLogs</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">          <span class="comment">// 创建XMLHttpRequest对象</span></span></span><br><span class="line"><span class="javascript">          <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span></span><br><span class="line"><span class="javascript">          <span class="comment">// 设置请求的URL和HTTP方法</span></span></span><br><span class="line"><span class="javascript">          xhr.open(<span class="string">&#x27;GET&#x27;</span>, <span class="string">&#x27;/api/logs&#x27;</span>, <span class="literal">true</span>);</span></span><br><span class="line"><span class="javascript">          <span class="comment">// 注册请求完成的回调函数</span></span></span><br><span class="line"><span class="javascript">          xhr.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">              <span class="keyword">if</span> (xhr.status === <span class="number">200</span>) &#123;</span></span><br><span class="line"><span class="javascript">                  <span class="comment">// 将响应的JSON格式数据解析为JavaScript对象</span></span></span><br><span class="line"><span class="javascript">                  <span class="keyword">var</span> data = <span class="built_in">JSON</span>.parse(xhr.responseText);</span></span><br><span class="line"><span class="javascript">                  <span class="comment">// 获取日志内容并插入到页面中</span></span></span><br><span class="line"><span class="javascript">                  <span class="keyword">var</span> logContainer = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;log-container&#x27;</span>);</span></span><br><span class="line"><span class="javascript">                  <span class="keyword">var</span> logs = data.logs;</span></span><br><span class="line"><span class="javascript">                  <span class="keyword">var</span> logHtml = <span class="string">&#x27;&#x27;</span>;</span></span><br><span class="line"><span class="javascript">                  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; logs.length; i++) &#123;</span></span><br><span class="line"><span class="javascript">                      logHtml += <span class="string">&#x27;&lt;p&gt;&#x27;</span> + logs[i] + <span class="string">&#x27;&lt;/p&gt;&#x27;</span>;</span></span><br><span class="line"><span class="javascript">                  &#125;</span></span><br><span class="line"><span class="javascript">                  logContainer.innerHTML = logHtml;</span></span><br><span class="line"><span class="javascript">              &#125;</span></span><br><span class="line"><span class="javascript">          &#125;;</span></span><br><span class="line"><span class="javascript">          <span class="comment">// 发送请求</span></span></span><br><span class="line"><span class="javascript">          xhr.send();</span></span><br><span class="line"><span class="javascript">      &#125;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">          updateLogs();</span></span><br><span class="line"><span class="javascript">          <span class="built_in">setInterval</span>(updateLogs, <span class="number">1000</span>); <span class="comment">// 1秒钟更新一次</span></span></span><br><span class="line"><span class="javascript">      &#125;;</span></span><br><span class="line"><span class="javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Then we need to add a new router in the flask code:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/api/logs&#x27;</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_logs</span>():</span></span><br><span class="line">    output = subprocess.check_output([<span class="string">&#x27;tail&#x27;</span>, <span class="string">&#x27;-n&#x27;</span>, <span class="string">&#x27;50&#x27;</span>, <span class="string">&#x27;/root/qbitdown/log&#x27;</span>])</span><br><span class="line">    logs = output.decode(<span class="string">&#x27;utf-8&#x27;</span>, <span class="string">&#x27;ignore&#x27;</span>).split(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> jsonify(&#123;<span class="string">&#x27;logs&#x27;</span>: logs&#125;)</span><br></pre></td></tr></table></figure>
+<p>The 'ignore' can prevent the system being crashed because of some
+decoding error...Which is very important</p>
+<h1 id="reference">reference</h1>
+<p>https://lindevs.com/install-qbittorrent-nox-on-ubuntu</p>
+<p>https://github.com/qbittorrent/qBittorrent/issues/11042</p>
+<p>https://www.reddit.com/r/unRAID/comments/lhilzu/comment/ipckgr1/</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Xuanlang
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.zhaoxuanlang.cn/2023/02/24/auto-upload-gdrive/" title="auto-upload-gdrive">https://www.zhaoxuanlang.cn/2023/02/24/auto-upload-gdrive/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/rclone/" rel="tag"># rclone</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/02/06/upload-to-Gdrive/" rel="prev" title="upload-to-Gdrive">
+                  <i class="fa fa-chevron-left"></i> upload-to-Gdrive
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="SOHUCS" sid="b8f47a7c5b0f4b664add8f7c2d227d76"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">津ICP备19008018号-1 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-award"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xuanlang</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://www.zhaoxuanlang.cn/2023/02/24/auto-upload-gdrive/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyvRiUJ7H","appkey":"bfa85e46b2e4cf46d837cbd6e78ba7ab"}</script>
+<script src="/js/third-party/comments/changyan.js"></script>
+
+</body>
+</html>
