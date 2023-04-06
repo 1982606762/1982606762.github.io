@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/32*32.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32*32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16*16.ico">
+  <link rel="mask-icon" href="/images/32*32.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.zhaoxuanlang.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="A brief note for the class Signal and Image Processing includes most of the class.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SIP_note">
+<meta property="og:url" content="https://www.zhaoxuanlang.cn/2023/04/06/SIP-note/index.html">
+<meta property="og:site_name" content="松鼠小筑">
+<meta property="og:description" content="A brief note for the class Signal and Image Processing includes most of the class.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.imgur.com/7cKLkeh.png">
+<meta property="og:image" content="https://i.imgur.com/UWbKimM.png">
+<meta property="og:image" content="https://i.imgur.com/y9WB0KY.png">
+<meta property="og:image" content="https://i.imgur.com/1P3I6me.png">
+<meta property="article:published_time" content="2023-04-06T12:36:09.000Z">
+<meta property="article:modified_time" content="2023-04-06T12:37:39.324Z">
+<meta property="article:author" content="Xuanlang">
+<meta property="article:tag" content="ImageProcessing">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/7cKLkeh.png">
+
+
+<link rel="canonical" href="https://www.zhaoxuanlang.cn/2023/04/06/SIP-note/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.zhaoxuanlang.cn/2023/04/06/SIP-note/","path":"2023/04/06/SIP-note/","title":"SIP_note"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>SIP_note | 松鼠小筑</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?2c6ad69c6dce83b3987864c3d69796db"></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">松鼠小筑</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">学习笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">23</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">10</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">85</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#signal-and-image-processing-notes"><span class="nav-number">1.</span> <span class="nav-text">Signal and Image Processing
+notes</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#intro"><span class="nav-number">1.1.</span> <span class="nav-text">Intro</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#image-and-signal-basics-and-terminology"><span class="nav-number">1.1.1.</span> <span class="nav-text">Image and signal basics
+and terminology</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#color-and-spectral-measurements"><span class="nav-number">1.1.2.</span> <span class="nav-text">Color and spectral
+measurements</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pixel-wise-operations-intensity-transformations-image-formation-and-the-convolution-integral"><span class="nav-number">1.2.</span> <span class="nav-text">Pixel-wise
+Operations, Intensity Transformations, Image Formation, and the
+Convolution Integral</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#image-basics"><span class="nav-number">1.2.1.</span> <span class="nav-text">Image basics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#basic-pixel-wise-operations"><span class="nav-number">1.2.2.</span> <span class="nav-text">Basic pixel-wise operations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pixel-wise-intensity-transforms"><span class="nav-number">1.2.3.</span> <span class="nav-text">Pixel-wise intensity
+transforms</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#logarithmic-transform-of-intensities"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">Logarithmic transform of
+intensities:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#exponential-transform-of-intensities"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">Exponential transform of
+intensities：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#power-law-gamma-transform"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">Power-law (Gamma) transform</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bit-plane-slicing"><span class="nav-number">1.2.3.4.</span> <span class="nav-text">bit-plane slicing</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#a-mathematical-model-of-image-formation-camera"><span class="nav-number">1.2.4.</span> <span class="nav-text">A Mathematical
+Model of Image Formation (Camera)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#filtering"><span class="nav-number">1.3.</span> <span class="nav-text">filtering</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#linear-filtering"><span class="nav-number">1.3.1.</span> <span class="nav-text">Linear filtering</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#some-common-linear-filters"><span class="nav-number">1.3.2.</span> <span class="nav-text">Some common linear filters</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#mean-filter"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">Mean filter</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%B9%E7%95%8C%E5%A4%84%E7%90%86"><span class="nav-number">1.3.3.</span> <span class="nav-text">边界处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#linear-separable-filters"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">Linear separable filters</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#filtering-multi-channel-images"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">Filtering multi-channel
+images</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#discrete-gaussian-filter"><span class="nav-number">1.3.3.3.</span> <span class="nav-text">Discrete Gaussian filter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#derivative-filter"><span class="nav-number">1.3.3.4.</span> <span class="nav-text">Derivative filter</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#non-linear-filtering"><span class="nav-number">1.3.4.</span> <span class="nav-text">Non-linear filtering</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#median-filter"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">median filter</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fourier-transform"><span class="nav-number">1.4.</span> <span class="nav-text">Fourier Transform</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intensity-thresholding-and-intensity-histograms"><span class="nav-number">1.5.</span> <span class="nav-text">intensity
+thresholding and intensity histograms</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#intensity-thresholding"><span class="nav-number">1.5.1.</span> <span class="nav-text">Intensity Thresholding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#intensity-histograms"><span class="nav-number">1.5.2.</span> <span class="nav-text">Intensity Histograms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#histogram-matching"><span class="nav-number">1.5.3.</span> <span class="nav-text">Histogram Matching</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#histogram-equalization"><span class="nav-number">1.5.4.</span> <span class="nav-text">Histogram equalization</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mathematical-morphology-distance-transform-and-connected-components"><span class="nav-number">1.6.</span> <span class="nav-text">Mathematical
+morphology, distance transform, and connected components</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mathematical-morphology"><span class="nav-number">1.6.1.</span> <span class="nav-text">Mathematical morphology</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#image-restoration-and-deconvolution"><span class="nav-number">1.7.</span> <span class="nav-text">Image Restoration and
+Deconvolution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#laplacian-image-sharpening"><span class="nav-number">1.7.1.</span> <span class="nav-text">Laplacian image sharpening</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#models-of-image-degradation"><span class="nav-number">1.7.2.</span> <span class="nav-text">Models of image degradation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#deconvolution-without-and-with-noise"><span class="nav-number">1.7.3.</span> <span class="nav-text">Deconvolution without and
+with noise</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#transformations"><span class="nav-number">1.8.</span> <span class="nav-text">transformations</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#motivation"><span class="nav-number">1.8.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#transformations-of-points-and-intensities"><span class="nav-number">1.8.2.</span> <span class="nav-text">Transformations of
+points and intensities:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#homogeneous-coordinates"><span class="nav-number">1.8.2.1.</span> <span class="nav-text">homogeneous coordinates</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#image-warps-transformation-of-intensities"><span class="nav-number">1.8.3.</span> <span class="nav-text">Image warps
+(transformation of intensities)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#features"><span class="nav-number">1.9.</span> <span class="nav-text">Features</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#intensity-edges"><span class="nav-number">1.9.1.</span> <span class="nav-text">Intensity edges</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#scalespace"><span class="nav-number">1.10.</span> <span class="nav-text">scalespace</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#image-pyramids"><span class="nav-number">1.10.1.</span> <span class="nav-text">Image Pyramids</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linear-scale-space-theory"><span class="nav-number">1.10.2.</span> <span class="nav-text">Linear scale space theory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#multi-scale-feature-detection"><span class="nav-number">1.10.3.</span> <span class="nav-text">Multi-scale feature
+detection</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#segmentation"><span class="nav-number">1.11.</span> <span class="nav-text">segmentation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#intensity-based"><span class="nav-number">1.11.1.</span> <span class="nav-text">intensity based</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#edge-based"><span class="nav-number">1.11.2.</span> <span class="nav-text">edge based</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#region-based"><span class="nav-number">1.11.3.</span> <span class="nav-text">Region based</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#energy-minimization"><span class="nav-number">1.11.4.</span> <span class="nav-text">Energy minimization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chan-vese"><span class="nav-number">1.11.5.</span> <span class="nav-text">Chan-Vese</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hough-transform"><span class="nav-number">1.11.6.</span> <span class="nav-text">Hough transform</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#supervised-machine-learning-for-image-segmentation"><span class="nav-number">1.11.7.</span> <span class="nav-text">Supervised
+machine learning for image segmentation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#texture"><span class="nav-number">1.12.</span> <span class="nav-text">Texture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shape-models-and-procrustes-alignment"><span class="nav-number">1.13.</span> <span class="nav-text">Shape models and
+procrustes alignment</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#procrustes-alignment"><span class="nav-number">1.13.1.</span> <span class="nav-text">Procrustes alignment</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xuanlang"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Xuanlang</p>
+  <div class="site-description" itemprop="description">业精于勤荒于嬉，行成于思毁于随</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">85</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/1982606762" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;1982606762" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zxl17302206700@gmail.com" title="E-Mail → mailto:zxl17302206700@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2023/04/06/SIP-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Xuanlang">
+      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="松鼠小筑">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          SIP_note
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-04-06 14:36:09 / 修改时间：14:37:39" itemprop="dateCreated datePublished" datetime="2023-04-06T14:36:09+02:00">2023-04-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/UCPH/" itemprop="url" rel="index"><span itemprop="name">UCPH</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="SIP_note" href="/2023/04/06/SIP-note/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::e9a0836645e836b622d068527b31bc33" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>7.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>13 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>A brief note for the class Signal and Image Processing includes most
+of the class.</p>
+<span id="more"></span>
+<h1 id="signal-and-image-processing-notes">Signal and Image Processing
+notes</h1>
+<h2 id="intro">Intro</h2>
+<p>We are dealing with signals, an image can also be considered a kind
+of signal.</p>
+<h3 id="image-and-signal-basics-and-terminology">Image and signal basics
+and terminology</h3>
+<p>a digital image is an n-dimensional array of quantities, if n = 2
+then it's a pixel.</p>
+<p>The resolution is given by the number of pixels in the image
+array</p>
+<h3 id="color-and-spectral-measurements">Color and spectral
+measurements</h3>
+<p>color can be represented in RGB(Red Greed Blue) and HSV(Hue
+Saturation Value)</p>
+<p>Convert RGB to gray scale: Gray = 0.299R + 0.587G + 0.114B</p>
+<h2
+id="pixel-wise-operations-intensity-transformations-image-formation-and-the-convolution-integral">Pixel-wise
+Operations, Intensity Transformations, Image Formation, and the
+Convolution Integral</h2>
+<h3 id="image-basics">Image basics</h3>
+<p>JPEG: unsigned 8-bit int(lossy)</p>
+<p>PNG: 1,2,4,8,16 bit unsigned int</p>
+<p>TIFF: 1-32 bit unsigned int</p>
+<h3 id="basic-pixel-wise-operations">Basic pixel-wise operations</h3>
+<p>Adding or subtracting a constant: J(r,c) = I(r,c)+C</p>
+<p>Multiplication or division by a constant: J(r,c) = C*I(r,c)</p>
+<p>Adding or subtracting images (pixel-wise): J(r, c) = I A (r, c) + I B
+(r, c)</p>
+<p>Multiplication or division of images (pixel-wise): J(r, c) = I A (r,
+c)⋅ I B (r, c)</p>
+<p><strong>Be careful to handle over- and underflow! Usually, clip the
+values to the quantization range.</strong></p>
+<h3 id="pixel-wise-intensity-transforms">Pixel-wise intensity
+transforms</h3>
+<p>The Dynamic range is the actual range of intensity values [I min, I
+max] present in the image.</p>
+<p>We can change the dynamic range of an image by applying functions on
+intensity values.</p>
+<h4 id="logarithmic-transform-of-intensities">Logarithmic transform of
+intensities:</h4>
+<p><span class="math inline">\(\begin{aligned} &amp; J(x, y)=c \ln
+\left[1+\left(e^\alpha-1\right) I(x, y)\right]
+\alpha&gt;0\end{aligned}\)</span></p>
+<p>用于查看图片暗处的细节，原理是把暗处intensity拉伸，同时亮处的intensity不怎么变</p>
+<h4 id="exponential-transform-of-intensities">Exponential transform of
+intensities：</h4>
+<p><span class="math inline">\(\begin{aligned} J(x, y) &amp;
+=c\left[(1+\alpha)^{I(x, y)}-1\right]\alpha &gt;0
+.\end{aligned}\)</span></p>
+<p>用于查看亮处细节，原理同上</p>
+<h4 id="power-law-gamma-transform">Power-law (Gamma) transform</h4>
+<p><span class="math inline">\(J(x, y)=c[I(x, y)]^\gamma\)</span></p>
+<p>可以对动态范围做调整</p>
+<figure>
+<img data-src="https://i.imgur.com/7cKLkeh.png"
+alt="image-20230405123311371 PM" />
+<figcaption aria-hidden="true">image-20230405123311371 PM</figcaption>
+</figure>
+<h4 id="bit-plane-slicing">bit-plane slicing</h4>
+<p>把图片每个像素点分解成8层后做逻辑和操作获得八张图片</p>
+<p>例如10010110,每层都拿一个对应的数，如第八层拿第一个1，以此类推。这种情况下第八层是最significant的，因为它可以表达出图片的大致轮廓，只需要通过这个图片就能大概知道原图的形状。</p>
+<figure>
+<img data-src="https://i.imgur.com/UWbKimM.png"
+alt="image-20230405124017052 PM" />
+<figcaption aria-hidden="true">image-20230405124017052 PM</figcaption>
+</figure>
+<p>为了节省空间可以只取前几层的图片做叠加。</p>
+<h3 id="a-mathematical-model-of-image-formation-camera">A Mathematical
+Model of Image Formation (Camera)</h3>
+<p>照相机可以视为对进入的光源做PSF变化再加噪音后返回一张图片</p>
+<p>PSF使用convolution对图片进行操作</p>
+<p>有多种不同的PSF构造方式</p>
+<h2 id="filtering">filtering</h2>
+<p>可以通过应用多种不同的滤镜来处理图片。</p>
+<p>输入一个图片，经过处理（卷积）后输出处理后的图片，基于neighborhood</p>
+<p>有linear和non-linear两种</p>
+<p>linear是可以写出具体kernel的，但是两种都是shift invariant。</p>
+<h3 id="linear-filtering">Linear filtering</h3>
+<p>Applying the linear filter to the image f is done by convolution:
+<span class="math display">\[
+g(x, y)=\{f * h\}(x, y)=\iint_{-\infty}^{\infty} f\left(x^{\prime},
+y^{\prime}\right) h\left(x-x^{\prime}, y-y^{\prime}\right) d x^{\prime}
+d y^{\prime}
+\]</span> In discrete filtering,we compute a new value for a traget
+pixel, we need to define a filter center for the target pixel.Normally
+it's the center if the window size is odd.</p>
+<h3 id="some-common-linear-filters">Some common linear filters</h3>
+<h4 id="mean-filter">Mean filter</h4>
+<p><span class="math display">\[
+\boldsymbol{h}_N=\frac{1}{N}[1, \cdots, 1]
+\]</span></p>
+<h3 id="边界处理">边界处理</h3>
+<ul>
+<li>Pad the border 用数字填充，通常是0.缺点是卷积后的图片边界比较暗</li>
+<li>Symmetric mirroring 使用另一边的镜像填充</li>
+<li>Periodic boundary 把图像看做周期性的</li>
+<li>Leave border pixels unchanged 直接复制边缘</li>
+<li>Filter only inside the image and crop away the border
+只做能处理的边界，但是会让图片变小</li>
+</ul>
+<h4 id="linear-separable-filters">Linear separable filters</h4>
+<p>A linear filter is linear separable, if it can be decomposed into a
+linear filter along the x-axis and another along the y-axis. <span
+class="math display">\[
+f * \boldsymbol{h}_{N \times N}=f *
+\frac{1}{N^2}\left[\begin{array}{ccc}
+1 &amp; \cdots &amp; 1 \\
+\vdots &amp; \ddots &amp; \vdots \\
+1 &amp; \ldots &amp; 1
+\end{array}\right]=f * \frac{1}{N}[1, \cdots, 1] *
+\frac{1}{N}\left[\begin{array}{c}
+1 \\
+\vdots \\
+1
+\end{array}\right]
+\]</span>
+即一个2D的kernel可以表示为两个1D的矩阵乘法的结果，可以让计算更快</p>
+<h4 id="filtering-multi-channel-images">Filtering multi-channel
+images</h4>
+<p>对RGB分别应用filter有可能会让颜色泄露出来，需要知道与对HSV的V应用结果不一样</p>
+<h4 id="discrete-gaussian-filter">Discrete Gaussian filter</h4>
+<p>由高斯方程得到的一个线性可分的filter，特点是中心权重大</p>
+<p>参数有sigma和kernelsize</p>
+<h4 id="derivative-filter">Derivative filter</h4>
+<p>对图片求导，由于图片是离散的所以取一个近似，即</p>
+<p><span class="math inline">\(\frac{\partial f}{\partial x} \approx
+f(x+1, y)-f(x, y)\)</span></p>
+<p><span class="math inline">\(\frac{\partial f}{\partial y} \approx
+f(x, y+1)-f(x, y)\)</span></p>
+<p>对应的卷积核：</p>
+<p>[1 -1]</p>
+<p><span class="math inline">\(\left[\begin{array}{c}1 \\
+-1\end{array}\right]\)</span></p>
+<p>还有多种其他的卷积核：</p>
+<figure>
+<img data-src="https://i.imgur.com/y9WB0KY.png"
+alt="image-2023021913252907 PM" />
+<figcaption aria-hidden="true">image-2023021913252907 PM</figcaption>
+</figure>
+<p>可用于边界检测</p>
+<p>噪声对于求导卷积影响很大</p>
+<h3 id="non-linear-filtering">Non-linear filtering</h3>
+<h4 id="median-filter">median filter</h4>
+<p>rank filter的一种特殊情况，每次先排序然后取中位数</p>
+<h2 id="fourier-transform">Fourier Transform</h2>
+<p>Power spectrum
+是由音波图经过傅里叶变换得来的，表达的是声音的frequency perspective</p>
+<p>图片经过傅里叶变化也可以得到一个图,这个图显示了图片的频率，经过shift后中心的点是高频</p>
+<p>图片经过傅里叶变化后可以通过遮盖特定部分来去除那一块频率的噪音，做法是给那一块加一个黑块。</p>
+<p>高斯的傅里叶还是高斯</p>
+<h2 id="intensity-thresholding-and-intensity-histograms">intensity
+thresholding and intensity histograms</h2>
+<h3 id="intensity-thresholding">Intensity Thresholding</h3>
+<p>Simple thresholding formula: <span class="math inline">\(J(x, y)=
+\begin{cases}1 &amp; , \text { if } I(x, y)&gt;\tau \\ 0 &amp; , \text {
+Otherwise }\end{cases}\)</span></p>
+<p>可以得到一个binary image</p>
+<p>也可以在颜色通道上进行Thresholding</p>
+<h3 id="intensity-histograms">Intensity Histograms</h3>
+<p>Intensity histogram: Count the number of pixels having a specific
+intensity level</p>
+<p><span class="math inline">\(H_I(v)=\#\{(x, y), \quad I(x, y)=v\},
+\quad v \in[0, L-1]\)</span></p>
+<p>可以使用Histogram做thresholding，只保留某些intensity值</p>
+<h3 id="histogram-matching">Histogram Matching</h3>
+<p>把一幅曝光不好的图像做Histogram
+Matching到另一副图像上可以调整亮度</p>
+<h3 id="histogram-equalization">Histogram equalization</h3>
+<p>可以让图像的histogram分布均匀</p>
+<p>也可以应用在色彩通道</p>
+<h2
+id="mathematical-morphology-distance-transform-and-connected-components">Mathematical
+morphology, distance transform, and connected components</h2>
+<h3 id="mathematical-morphology">Mathematical morphology</h3>
+<p>图像形态学，主要操作包括膨胀与腐蚀</p>
+<p>Dilation: <span class="math inline">\(X \oplus B=\{p \in \Omega \mid
+p=x+\mathrm{b}, \mathrm{x} \in X\)</span> and <span
+class="math inline">\(\mathrm{b} \in B\}\)</span></p>
+<p>把b绕着X转一圈后扩大X的面积，可用于去除中心的空洞</p>
+<p>Erosion: <span class="math inline">\(X \ominus B=\{p \in \Omega \mid
+p+\mathrm{b} \in X\)</span> for all <span
+class="math inline">\(\mathrm{b} \in B\}\)</span></p>
+<p>把b在<span
+class="math inline">\(\Omega\)</span>遍历一遍，删掉所有不能覆盖的部分</p>
+<p>Opening: <span class="math inline">\(X \ominus B \oplus
+B\)</span></p>
+<p>Closing: <span class="math inline">\((X \oplus B) \ominus
+B\)</span></p>
+<p>还可以用于边缘检测</p>
+<figure>
+<img data-src="https://i.imgur.com/1P3I6me.png"
+alt="image-2023040530508959 PM" />
+<figcaption aria-hidden="true">image-2023040530508959 PM</figcaption>
+</figure>
+<p>参考链接：<a
+target="_blank" rel="noopener" href="https://blog.csdn.net/cutemypig/article/details/107575375?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522168069897816800180664562%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=168069897816800180664562&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-107575375-null-null.142%5Ev81%5Ewechat,201%5Ev4%5Eadd_ask,239%5Ev2%5Einsert_chatgpt&amp;utm_term=%E5%9B%BE%E7%89%87%E5%BD%A2%E6%80%81%E5%AD%A6&amp;spm=1018.2226.3001.4187">链接</a></p>
+<h2 id="image-restoration-and-deconvolution">Image Restoration and
+Deconvolution</h2>
+<h3 id="laplacian-image-sharpening">Laplacian image sharpening</h3>
+<p>拉普拉斯算子在图像中变化明显的地方很容易检测到。</p>
+<p>用原图减图片的二阶导可以实现image sharpening</p>
+<p>但是缺点是如果原图有噪音这个操作会增加噪音，因为求导操作会增大噪音</p>
+<h3 id="models-of-image-degradation">Models of image degradation</h3>
+<h3 id="deconvolution-without-and-with-noise">Deconvolution without and
+with noise</h3>
+<p>图像形成过程：f(x,y) * h(x,y) + n(x,y) = g(x,y)</p>
+<p>图像还原过程： g(x,y) use h(x,y) = <span class="math inline">\(\hat
+f(x,y)\)</span></p>
+<p>Wiener filter可以用来还原带噪音的图像。</p>
+<p><span class="math display">\[\frac{1}{H^{\prime}(u, v)}=\frac{1}{H(u,
+v)} \frac{|H(u, v)|^2}{|H(u, v)|^2+S_n(u, v) / S_f(u, v)}\]</span></p>
+<p>Where <span class="math inline">\(S_n(u, v)=|N(u, v)|^2, S_f(u,
+v)=|F(u, v)|^2\)</span> are the power spectra of the noise and the
+original image.</p>
+<h2 id="transformations">transformations</h2>
+<h3 id="motivation">Motivation</h3>
+<p>Object shape can be a curve that represents the outline fo the object
+boundary</p>
+<p>我们会获得各种图片，需要对图片进行一些变化以符合要求，如旋转，拉伸等</p>
+<h3 id="transformations-of-points-and-intensities">Transformations of
+points and intensities:</h3>
+<h4 id="homogeneous-coordinates">homogeneous coordinates</h4>
+<p>A 2D point <span class="math inline">\((x, y)\)</span> has, for any
+<span class="math inline">\(w \neq 0\)</span>, a homogeneous coordinate
+representation <span class="math inline">\([w x, w y,
+w]^{\top}\)</span>.</p>
+<h3 id="image-warps-transformation-of-intensities">Image warps
+(transformation of intensities)</h3>
+<p>有多种转换方式</p>
+<h2 id="features">Features</h2>
+<h3 id="intensity-edges">Intensity edges</h3>
+<p>Use local maxima of gradient magnitude to detecte edge</p>
+<p>Canny edge detector: use thresholding and analysis of connectivity to
+detect</p>
+<h2 id="scalespace">scalespace</h2>
+<h3 id="image-pyramids">Image Pyramids</h3>
+<p>Discrete scale</p>
+<h3 id="linear-scale-space-theory">Linear scale space theory</h3>
+<p>Continouos scale</p>
+<h3 id="multi-scale-feature-detection">Multi-scale feature
+detection</h3>
+<h2 id="segmentation">segmentation</h2>
+<h3 id="intensity-based">intensity based</h3>
+<p>使用threshold</p>
+<p>或把图片拆分成多个高斯曲线的叠加</p>
+<h3 id="edge-based">edge based</h3>
+<h3 id="region-based">Region based</h3>
+<p>region growing</p>
+<h3 id="energy-minimization">Energy minimization</h3>
+<p>minimize this formula: <span class="math display">\[
+E(f)=\sum_{p \in \mathcal{P}} D_p\left(f_p\right)+\sum_{p, q \in
+\mathcal{N}} V_{p, q}\left(f_p, f_q\right)
+\]</span></p>
+<h3 id="chan-vese">Chan-Vese</h3>
+<p>minimize this formula to be 0 <span class="math display">\[
+\begin{aligned}
+F_1(C)+F_2(C)= &amp; \int_{\text {inside }(C)}\left|u_0(x,
+y)-c_1\right|^2 d x d y \\
+&amp; +\int_{\text {outside }(C)}\left|u_0(x, y)-c_2\right|^2 d x d y
+\end{aligned}
+\]</span></p>
+<h3 id="hough-transform">Hough transform</h3>
+<p>将原图中<span class="math inline">\(\rho_{\circ}=x \cdot \cos
+\theta_{\circ}+y \cdot \sin \theta_{\circ}\)</span> 转化成关于<span
+class="math inline">\(\theta,\rho\)</span> 的坐标系</p>
+<ol type="1">
+<li><p>Chose range and discretization of ρ and θ.</p>
+<ol type="a">
+<li>θ in [0, 180] degrees</li>
+<li>ρ in [-d, d] where d is the length of the edge image’s
+diagonal.</li>
+</ol></li>
+<li><p>Create accumulator 2D array (Hough Space) and initialize to
+zero.</p></li>
+<li><p>For every edge pixel, loop through θ range, calculate
+corresponding ρ, and increment the accumulator at these
+coordinates.</p></li>
+<li><p>Lines correspond to accumulator values larger than a certain
+threshold.</p></li>
+</ol>
+<p>可以用来检测直线</p>
+<h3 id="supervised-machine-learning-for-image-segmentation">Supervised
+machine learning for image segmentation</h3>
+<h2 id="texture">Texture</h2>
+<p>can be used to identify regions containing distinct textures</p>
+<p>Use filter banks</p>
+<h2 id="shape-models-and-procrustes-alignment">Shape models and
+procrustes alignment</h2>
+<h3 id="procrustes-alignment">Procrustes alignment</h3>
+<ol type="1">
+<li>Translational alignment</li>
+<li>Scaling alignment</li>
+<li>Rotational alignment</li>
+</ol>
+<p>Translational alignment: subtracting the sample mean</p>
+<p>Scaling: S = sI <span class="math display">\[
+s=\frac{\sum_{i=1}^N \overrightarrow{x&#39;}_i^T
+\overrightarrow{\mathbf{x}_i}}{\sum_{i=1}^N
+\overrightarrow{\mathbf{x}}_i^T \overrightarrow{\mathbf{x}_i}}
+\]</span> 其中<span class="math inline">\(x&#39;\)</span>是target</p>
+<p>rotation: <span class="math display">\[
+\mathbf{H}=\mathbf{V}^T \mathbf{R}=\mathbf{I} \quad \Rightarrow \quad
+\mathbf{R}=\mathbf{V} \mathbf{U}^T
+\]</span> where <span class="math inline">\(\mathbf{U}\)</span> and
+<span class="math inline">\(\mathbf{V}\)</span> are obtained from the
+SVD of <span class="math inline">\(\mathbf{X Y} \mathbf{Y}^T\)</span> -
+ie from <span class="math inline">\(\mathbf{X Y}^T=\mathbf{U S
+V}^T\)</span>.</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Xuanlang
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.zhaoxuanlang.cn/2023/04/06/SIP-note/" title="SIP_note">https://www.zhaoxuanlang.cn/2023/04/06/SIP-note/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/ImageProcessing/" rel="tag"># ImageProcessing</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/02/24/auto-upload-gdrive/" rel="prev" title="auto-upload-gdrive">
+                  <i class="fa fa-chevron-left"></i> auto-upload-gdrive
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="SOHUCS" sid="e9a0836645e836b622d068527b31bc33"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">津ICP备19008018号-1 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-award"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xuanlang</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://www.zhaoxuanlang.cn/2023/04/06/SIP-note/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyvRiUJ7H","appkey":"bfa85e46b2e4cf46d837cbd6e78ba7ab"}</script>
+<script src="/js/third-party/comments/changyan.js"></script>
+
+</body>
+</html>
