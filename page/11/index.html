@@ -288,14 +288,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>7.7k</span>
+      <span>7.4k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>14 分钟</span>
+      <span>13 分钟</span>
     </span>
 </div>
 
@@ -306,14 +306,14 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="margin参数数量"><a class="markdownIt-Anchor" href="#margin参数数量"></a> margin参数数量</h2>
+          <h2 id="margin参数数量">margin参数数量</h2>
 <blockquote>
 <p>margin: 20px;（上、下、左、右各20px。）</p>
 <p>margin: 20px 40px;（上、下20px；左、右40px。）</p>
 <p>margin: 20px 40px 60px;（上20px；左、右40px；下60px。）</p>
 <p>margin: 20px 40px 60px 80px;（上20px；右40px；下60px；左80px。）</p>
 </blockquote>
-<h2 id="单独设置角度"><a class="markdownIt-Anchor" href="#单独设置角度"></a> 单独设置角度</h2>
+<h2 id="单独设置角度">单独设置角度</h2>
 <p><code>border-bottom-left-radius:2px</code></p>
           <!--noindex-->
             <div class="post-button">
@@ -431,14 +431,9 @@
     
     <div class="post-body" itemprop="articleBody">
           <ul>
-<li>
-<p><strong><em><strong>候选码：若关系中的某一组属性的值能唯一地标识一个元组，而其子集不能，则称该属性组为候选码；</strong></em></strong></p>
-</li>
-<li>
-<p><strong><em><strong>主码：若一个关系有多个候选码，则选定其中一个为主码；</strong></em></strong></p>
-</li>
-<li>
-<p><strong><em><strong>主属性&amp;&amp;非主属性：候选码的诸属性都称为主属性，不包含在任何候选码中的属性称为非主属性；</strong></em></strong></p>
+<li><p><strong><em><strong>候选码：若关系中的某一组属性的值能唯一地标识一个元组，而其子集不能，则称该属性组为候选码；</strong></em></strong></p></li>
+<li><p><strong><em><strong>主码：若一个关系有多个候选码，则选定其中一个为主码；</strong></em></strong></p></li>
+<li><p><strong><em><strong>主属性&amp;&amp;非主属性：候选码的诸属性都称为主属性，不包含在任何候选码中的属性称为非主属性；</strong></em></strong></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/10/21/1nf%EF%BC%8C2nf%EF%BC%8C3nf%EF%BC%8Cbcnf%EF%BC%883nf%E5%92%8Cbcnf%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%89/#more" rel="contents">
@@ -654,7 +649,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>4.9k</span>
+      <span>4.8k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -693,7 +688,8 @@
 <li>更改整体布局，大小</li>
 </ul>
 <p>右侧菜单设置有问题待修复，下拉菜单：<select><option></p>
-<p><img data-src="https://img.jbzj.com/file_images/article/201212/20121213112015996.png" alt="" /></p>
+<p><img
+src="https://img.jbzj.com/file_images/article/201212/20121213112015996.png" /></p>
 <p>若要弄这样的表，灰色部分使用th白色部分用td就可以分开设置，td内部加input就可以输入值</p>
 <p>2020-08-12</p>
 <ul>
@@ -701,7 +697,8 @@
 <li>样式小调整</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">static showdiv()&#123;</span><br><span class="line">        var tool = document.getElementsByClassName(&#x27;geSidebarTooltip&#x27;)[0];</span><br><span class="line">        //图片更改</span><br><span class="line">        var locate = this.firstElementChild.src;</span><br><span class="line">        var cimg = tool.firstElementChild;</span><br><span class="line">        cimg.src = locate;</span><br><span class="line">        //文字更改</span><br><span class="line">        var words =this.id.charAt(4).toUpperCase() + this.id.substr(5);</span><br><span class="line">        tool.children[1].innerText=words;</span><br><span class="line">        //位置更改</span><br><span class="line">        var t = this.offsetTop;</span><br><span class="line">        tool.style.top=t-10+&#x27;px&#x27;;</span><br><span class="line">        tool.style.display=&#x27;block&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">    static hidediv()&#123;</span><br><span class="line">        var tool = document.getElementsByClassName(&#x27;geSidebarTooltip&#x27;)[0];</span><br><span class="line">        tool.style.display=&#x27;none&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">var cpnt_btn_list = document.querySelectorAll(&#x27;.component_btn&#x27;);</span><br><span class="line">cpnt_btn_list.forEach(btn =&gt;&#123;</span><br><span class="line">    // formed as btn_ + component name</span><br><span class="line">    var cpnt_str = btn.id.charAt(4).toUpperCase() + btn.id.substr(5);</span><br><span class="line">    btn.component_type = eval(cpnt_str);</span><br><span class="line">    btn.addEventListener(&quot;click&quot;, Component_btn.attachComponent);</span><br><span class="line">    btn.addEventListener(&#x27;mouseover&#x27;,Component_btn.showdiv);</span><br><span class="line">    btn.addEventListener(&#x27;mouseout&#x27;,Component_btn.hidediv);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>以上为气泡核心代码，思路为先获得目标位置，图片src和文字描述，再通过js代码换进去，添加mouse over和mouseout就可以添加鼠标悬浮和移出功能</p>
+<p>以上为气泡核心代码，思路为先获得目标位置，图片src和文字描述，再通过js代码换进去，添加mouse
+over和mouseout就可以添加鼠标悬浮和移出功能</p>
 <p>只需要在html文件中添加一个div即可，div中添加主图img，下方文字div和左侧小箭头img。</p>
 <p>2020-08-13</p>
 <ul>
@@ -710,7 +707,8 @@
 <li>新增dragging bar箭头效果</li>
 <li>修复bug</li>
 </ul>
-<p>checkbox首先需要定义函数，添加onclick函数，定义两个变量分别选择box和需要更改的input list，第一个可以直接用id，第二个建议先选出父元素再用tagname选出input。添加判断条件q.checked，内部两个for循环就可解决，注意disabled是attrabute，需要用set和remove，set要传入两个参数</p>
+<p>checkbox首先需要定义函数，添加onclick函数，定义两个变量分别选择box和需要更改的input
+list，第一个可以直接用id，第二个建议先选出父元素再用tagname选出input。添加判断条件q.checked，内部两个for循环就可解决，注意disabled是attrabute，需要用set和remove，set要传入两个参数</p>
 <p>箭头效果用css就可以，用js不知道为什么会出错</p>
 <p>2020-08-19</p>
 <ul>
@@ -731,8 +729,8 @@
 <ul>
 <li>完成批量增加html元素功能</li>
 </ul>
-<p>添加时需要先选中要添加的位置，最好做一个空的div，然后使用innerHTML的方式直接添加，需注意的是换行和&quot;都需要用\转义</p>
-<p>删除时只需要将其innerHTML变成&quot;&quot;就可以</p>
+<p>添加时需要先选中要添加的位置，最好做一个空的div，然后使用innerHTML的方式直接添加，需注意的是换行和"都需要用\转义</p>
+<p>删除时只需要将其innerHTML变成""就可以</p>
 <p>2020-10-26</p>
 <p>人工alert函数：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    &lt;div id=&quot;light&quot; class=&quot;white_content&quot;&gt;</span><br><span class="line">    &lt;/div&gt; </span><br><span class="line">    &lt;div id=&quot;fade&quot; class=&quot;black_overlay&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">.black_overlay&#123; </span><br><span class="line">    display: none; </span><br><span class="line">    position: absolute; </span><br><span class="line">    top: 0%; </span><br><span class="line">    left: 0%; </span><br><span class="line">    width: 100%; </span><br><span class="line">    height: 100%; </span><br><span class="line">    background-color: black; </span><br><span class="line">    z-index:1001; </span><br><span class="line">    -moz-opacity: 0.8; </span><br><span class="line">    opacity:.80; </span><br><span class="line">    filter: alpha(opacity=88); </span><br><span class="line">&#125; </span><br><span class="line">.white_content &#123; </span><br><span class="line">    display: none; </span><br><span class="line">    position: absolute; </span><br><span class="line">    top: 35%;</span><br><span class="line">    left: 45%;</span><br><span class="line">    width: 10%;</span><br><span class="line">    height: 15%;</span><br><span class="line">    padding: 20px; </span><br><span class="line">    background-color: white; </span><br><span class="line">    z-index:1002; </span><br><span class="line">    overflow: auto; </span><br><span class="line">    border: 5px solid black;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">function artificial_alert(text)&#123;</span><br><span class="line">    document.getElementById(&#x27;light&#x27;).innerHTML=&quot;&lt;p&gt;&quot;+text+&quot;&lt;/p&gt;&lt;button type=\&quot;button\&quot; onclick=\&quot;closeDialog()\&quot;&gt;关闭&lt;/button&gt;&quot;</span><br><span class="line">    if(document.getElementById(&#x27;light&#x27;).style.display== &#x27;block&#x27;)&#123;</span><br><span class="line">        document.getElementById(&#x27;light&#x27;).style.display = &#x27;none&#x27;;</span><br><span class="line">        document.getElementById(&#x27;fade&#x27;).style.display = &#x27;none&#x27;;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        document.getElementById(&#x27;light&#x27;).style.display = &#x27;block&#x27;;</span><br><span class="line">        document.getElementById(&#x27;fade&#x27;).style.display = &#x27;block&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -740,12 +738,12 @@
 <p>2020-11-04</p>
 <p>最近在搞bootstrap</p>
 <p>导入时只需要</p>
-<p><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css&quot;&gt;</code></p>
-<p><code>&lt;script src=&quot;https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js&quot;&gt;&lt;/script&gt;</code></p>
-<p><code>&lt;script src=&quot;https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</code></p>
+<p><code>&lt;link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css"&gt;</code></p>
+<p><code>&lt;script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"&gt;&lt;/script&gt;</code></p>
+<p><code>&lt;script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"&gt;&lt;/script&gt;</code></p>
 <p>就可以，但是在npm下运行时需要把jq下载到本地，同时引入在线jq和本地jq才可以</p>
 <p>输入框默认值，点击清除，不点击恢复：</p>
-<p><code>onfocus=&quot;if(this.value=='test')&#123;this.value=''&#125;&quot; onblur=&quot;if(this.value=='')&#123;this.value='test'&#125;&quot; value=&quot;test&quot;</code></p>
+<p><code>onfocus="if(this.value=='test')&#123;this.value=''&#125;" onblur="if(this.value=='')&#123;this.value='test'&#125;" value="test"</code></p>
 <p>用for循环appendChild时不能只靠innerHTML修改元素，必须重新声明才可以</p>
 <p>列表可以使用push 和pop</p>
 <p>2020/11/23</p>
@@ -757,6 +755,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.aspectration &#123;</span><br><span class="line">    position: relative; /*因为容器所有子元素需要绝对定位*/</span><br><span class="line">    height: 0; /*容器高度是由padding来控制，盒模型原理告诉你一切*/</span><br><span class="line">    width: 100%; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.aspectration[data-ratio=&quot;16:9&quot;] &#123;</span><br><span class="line">    padding-top: 56.25%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.aspectration[data-ratio=&quot;4:3&quot;]&#123;</span><br><span class="line">    padding-top: 75%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>通过通配符<code>*</code>选择器，让其子元素的宽高和容器<code>.aspectration</code>一样大小：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.aspectration &gt; * &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: 0;</span><br><span class="line">    top: 0;</span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 100%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -866,30 +865,14 @@
     <div class="post-body" itemprop="articleBody">
           <p>下载安装</p>
 <ul>
-<li>
-<p>到目标文件夹中git init初始化</p>
-</li>
-<li>
-<p>把文件添加到git仓库使用命令<code>git add &lt;file&gt;</code></p>
-</li>
-<li>
-<p>使用命令 <code>git commit -m &lt;message&gt;</code></p>
-</li>
-<li>
-<p>要随时掌握工作区的状态，使用<code>git status</code>命令。</p>
-</li>
-<li>
-<p>如果<code>git status</code>告诉你有文件被修改过，用<code>git diff</code>可以查看修改内容。</p>
-</li>
-<li>
-<p><code>HEAD</code>指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令<code>git reset --hard commit_id</code>。（上一个是HEAD^,上100个是HEAD~100）</p>
-</li>
-<li>
-<p>穿梭前，用<code>git log</code>可以查看提交历史，以便确定要回退到哪个版本。</p>
-</li>
-<li>
-<p>要重返未来，用<code>git reflog</code>查看命令历史，以便确定要回到未来的哪个版本。</p>
-</li>
+<li><p>到目标文件夹中git init初始化</p></li>
+<li><p>把文件添加到git仓库使用命令<code>git add &lt;file&gt;</code></p></li>
+<li><p>使用命令 <code>git commit -m &lt;message&gt;</code></p></li>
+<li><p>要随时掌握工作区的状态，使用<code>git status</code>命令。</p></li>
+<li><p>如果<code>git status</code>告诉你有文件被修改过，用<code>git diff</code>可以查看修改内容。</p></li>
+<li><p><code>HEAD</code>指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令<code>git reset --hard commit_id</code>。（上一个是HEAD^,上100个是HEAD~100）</p></li>
+<li><p>穿梭前，用<code>git log</code>可以查看提交历史，以便确定要回退到哪个版本。</p></li>
+<li><p>要重返未来，用<code>git reflog</code>查看命令历史，以便确定要回到未来的哪个版本。</p></li>
 </ul>
 <p>场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令<code>git checkout -- file</code>。</p>
 <p>场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令<code>git reset HEAD &lt;file&gt;</code>，就回到了场景1，第二步按场景1操作。</p>
@@ -907,12 +890,14 @@
 <p>合并某分支到当前分支：<code>git merge &lt;name&gt;</code></p>
 <p>删除分支：<code>git branch -d &lt;name&gt;</code></p>
 <p>远程连接github：</p>
-<h2 id="1-检查ssh-keys是否存在"><a class="markdownIt-Anchor" href="#1-检查ssh-keys是否存在"></a> 1. 检查SSH keys是否存在</h2>
-<p>输入下面的命令，如果有文件<code>id_rsa.pub</code> 或 <code>id_dsa.pub</code>，则直接进入步骤3将SSH key添加到GitHub中，否则进入第二步生成SSH key</p>
+<h2 id="检查ssh-keys是否存在">1. 检查SSH keys是否存在</h2>
+<p>输入下面的命令，如果有文件<code>id_rsa.pub</code> 或
+<code>id_dsa.pub</code>，则直接进入步骤3将SSH
+key添加到GitHub中，否则进入第二步生成SSH key</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls -al ~/.ssh</span><br><span class="line"># Lists the files in your .ssh directory, if they exist</span><br></pre></td></tr></table></figure>
-<h2 id="2-生成新的ssh-key"><a class="markdownIt-Anchor" href="#2-生成新的ssh-key"></a> 2. 生成新的ssh key</h2>
+<h2 id="生成新的ssh-key">2. 生成新的ssh key</h2>
 <p><strong>第一步：生成public/private rsa key pair</strong><br />
-在命令行中输入<code>ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</code></p>
+在命令行中输入<code>ssh-keygen -t rsa -C "your_email@example.com"</code></p>
 <p>默认会在相应路径下（/your_home_path）生成<code>id_rsa</code>和<code>id_rsa.pub</code>两个文件，如下面代码所示</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</span><br><span class="line"># Creates a new ssh key using the provided email</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/your_home_path/.ssh/id_rsa):</span><br></pre></td></tr></table></figure>
 <p><strong>第二步：输入passphrase（本步骤可以跳过）</strong></p>
@@ -922,8 +907,9 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Your identification has been saved in /your_home_path/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved in /your_home_path/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">#01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@example.com</span><br></pre></td></tr></table></figure>
 <p><strong>第三步：将新生成的key添加到ssh-agent中:</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># start the ssh-agent in the background</span><br><span class="line">eval &quot;$(ssh-agent -s)&quot;</span><br><span class="line">Agent pid 59566</span><br><span class="line">ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
-<h2 id="3-将ssh-key添加到github中"><a class="markdownIt-Anchor" href="#3-将ssh-key添加到github中"></a> 3. 将ssh key添加到GitHub中</h2>
-<p>用自己喜欢的文本编辑器打开<code>id_rsa.pub</code>文件，里面的信息即为SSH key，将这些信息复制到GitHub的<code>Add SSH key</code>页面即可</p>
+<h2 id="将ssh-key添加到github中">3. 将ssh key添加到GitHub中</h2>
+<p>用自己喜欢的文本编辑器打开<code>id_rsa.pub</code>文件，里面的信息即为SSH
+key，将这些信息复制到GitHub的<code>Add SSH key</code>页面即可</p>
 
       
     </div>
@@ -991,7 +977,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","single_dollars":true,"cjk_width":0.9,"normal_width":0.6,"append_css":true,"every_page":true,"js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 

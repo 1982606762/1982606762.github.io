@@ -21,12 +21,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.zhaoxuanlang.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="读入n值及n个整数，建立顺序表并遍历输出。  输入格式: 读入n及n个整数  输出格式: 输出n个整数，以空格分隔（最后一个数的后面没有空格）。  输入样例: 在这里给出一组输入。例如： 124-3 10 20 78  输出样例: 在这里给出相应的输出。例如： 1-3 10 20 78 12345678910111213141516171819202122232425262728293031323">
+<meta name="description" content="读入n值及n个整数，建立顺序表并遍历输出。 输入格式: 读入n及n个整数 输出格式: 输出n个整数，以空格分隔（最后一个数的后面没有空格）。 输入样例: 在这里给出一组输入。例如： 124-3 10 20 78 输出样例: 在这里给出相应的输出。例如： 1-3 10 20 78 123456789101112131415161718192021222324252627282930313233343">
 <meta property="og:type" content="article">
 <meta property="og:title" content="7-4 顺序表的建立及遍历 (30分)">
 <meta property="og:url" content="https://www.zhaoxuanlang.cn/2020/02/28/7-4-%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%9A%84%E5%BB%BA%E7%AB%8B%E5%8F%8A%E9%81%8D%E5%8E%86-30%E5%88%86/index.html">
 <meta property="og:site_name" content="松鼠小筑">
-<meta property="og:description" content="读入n值及n个整数，建立顺序表并遍历输出。  输入格式: 读入n及n个整数  输出格式: 输出n个整数，以空格分隔（最后一个数的后面没有空格）。  输入样例: 在这里给出一组输入。例如： 124-3 10 20 78  输出样例: 在这里给出相应的输出。例如： 1-3 10 20 78 12345678910111213141516171819202122232425262728293031323">
+<meta property="og:description" content="读入n值及n个整数，建立顺序表并遍历输出。 输入格式: 读入n及n个整数 输出格式: 输出n个整数，以空格分隔（最后一个数的后面没有空格）。 输入样例: 在这里给出一组输入。例如： 124-3 10 20 78 输出样例: 在这里给出相应的输出。例如： 1-3 10 20 78 123456789101112131415161718192021222324252627282930313233343">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-28T21:48:24.000Z">
 <meta property="article:modified_time" content="2022-01-15T02:11:57.430Z">
@@ -150,7 +150,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text"> 输入格式:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text"> 输出格式:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B"><span class="nav-number">3.</span> <span class="nav-text"> 输入样例:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B"><span class="nav-number">4.</span> <span class="nav-text"> 输出样例:</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">输入格式:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">输出格式:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B"><span class="nav-number">3.</span> <span class="nav-text">输入样例:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B"><span class="nav-number">4.</span> <span class="nav-text">输出样例:</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -311,17 +311,18 @@
     
     <div class="post-body" itemprop="articleBody">
         <p>读入n值及n个整数，建立顺序表并遍历输出。</p>
-<h3 id="输入格式"><a class="markdownIt-Anchor" href="#输入格式"></a> 输入格式:</h3>
+<h3 id="输入格式">输入格式:</h3>
 <p>读入n及n个整数</p>
-<h3 id="输出格式"><a class="markdownIt-Anchor" href="#输出格式"></a> 输出格式:</h3>
+<h3 id="输出格式">输出格式:</h3>
 <p>输出n个整数，以空格分隔（最后一个数的后面没有空格）。</p>
-<h3 id="输入样例"><a class="markdownIt-Anchor" href="#输入样例"></a> 输入样例:</h3>
+<h3 id="输入样例">输入样例:</h3>
 <p>在这里给出一组输入。例如：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">-3 10 20 78</span><br></pre></td></tr></table></figure>
-<h3 id="输出样例"><a class="markdownIt-Anchor" href="#输出样例"></a> 输出样例:</h3>
+<h3 id="输出样例">输出样例:</h3>
 <p>在这里给出相应的输出。例如：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-3 10 20 78</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;string.h&gt;</span><br><span class="line">#include&lt;malloc.h&gt;</span><br><span class="line">#define list 10</span><br><span class="line">#define max 10</span><br><span class="line"> </span><br><span class="line">typedef int Elemtype;</span><br><span class="line">typedef struct sqlist *List;</span><br><span class="line">struct sqlist&#123;</span><br><span class="line">Elemtype *elem;</span><br><span class="line">int length;</span><br><span class="line">int listsize;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line">void initlist(List L)&#123;</span><br><span class="line">L-&gt;elem=(Elemtype *)malloc(list*sizeof(Elemtype));</span><br><span class="line">L-&gt;length=0;</span><br><span class="line">L-&gt;listsize=max;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">void creat(List L)&#123;</span><br><span class="line">initlist(L);</span><br><span class="line">int i,n;</span><br><span class="line">scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">for(i=0;i&lt;n;i++) &#123;</span><br><span class="line">   scanf(&quot;%d&quot;,&amp;L-&gt;elem[i]);</span><br><span class="line">   L-&gt;length++;</span><br><span class="line">   if(L-&gt;length==L-&gt;listsize) &#123;</span><br><span class="line">int *new_elem = (Elemtype *)malloc((L-&gt;listsize+list)*sizeof(Elemtype));</span><br><span class="line">memcpy(new_elem,L-&gt;elem,L-&gt;length);</span><br><span class="line">L-&gt;elem = new_elem;</span><br><span class="line">L-&gt;listsize+=list;</span><br><span class="line">   &#125;</span><br><span class="line">&#125; </span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">void print(List L) &#123;</span><br><span class="line">for(int i=0; i&lt;L-&gt;length;i++) &#123;</span><br><span class="line">if(i==L-&gt;length-1)</span><br><span class="line">printf(&quot;%d&quot;,L-&gt;elem[i]);</span><br><span class="line">else</span><br><span class="line">printf(&quot;%d &quot;,L-&gt;elem[i]);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">int main()&#123;</span><br><span class="line">List L = (List)malloc(sizeof(struct sqlist));</span><br><span class="line">initlist(L);</span><br><span class="line">creat(L);</span><br><span class="line">print(L);</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
     </div>
 
     
@@ -416,7 +417,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","single_dollars":true,"cjk_width":0.9,"normal_width":0.6,"append_css":true,"every_page":true,"js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 

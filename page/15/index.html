@@ -307,13 +307,13 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>已知两个非降序链表序列S1与S2，设计函数构造出S1与S2合并后的新的非降序链表S3。</p>
-<h3 id="输入格式"><a class="markdownIt-Anchor" href="#输入格式"></a> 输入格式:</h3>
+<h3 id="输入格式">输入格式:</h3>
 <p>输入分两行，分别在每行给出由若干个正整数构成的非降序序列，用−1表示序列的结尾（−1不属于这个序列）。数字用空格间隔。</p>
-<h3 id="输出格式"><a class="markdownIt-Anchor" href="#输出格式"></a> 输出格式:</h3>
+<h3 id="输出格式">输出格式:</h3>
 <p>在一行中输出合并后新的非降序链表，数字间用空格分开，结尾不能有多余空格；若新链表为空，输出<code>NULL</code>。</p>
-<h3 id="输入样例"><a class="markdownIt-Anchor" href="#输入样例"></a> 输入样例:</h3>
+<h3 id="输入样例">输入样例:</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1 3 5 -1</span><br><span class="line">2 4 6 8 10 -1</span><br></pre></td></tr></table></figure>
-<h3 id="输出样例"><a class="markdownIt-Anchor" href="#输出样例"></a> 输出样例:</h3>
+<h3 id="输出样例">输出样例:</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 2 3 4 5 6 8 10</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;malloc.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef int Status;</span><br><span class="line">typedef int Elemtype;</span><br><span class="line">typedef struct LNode</span><br><span class="line">&#123;</span><br><span class="line">    Elemtype data;</span><br><span class="line">    LNode *next;</span><br><span class="line">&#125;LNode,*LinkList;</span><br><span class="line"></span><br><span class="line">LinkList endCreate()</span><br><span class="line">&#123;</span><br><span class="line">    LinkList L,p,s;</span><br><span class="line">    Elemtype e;</span><br><span class="line">    L=(LinkList)malloc(sizeof(LNode));</span><br><span class="line">    L-&gt;next=NULL;</span><br><span class="line">    p=L;</span><br><span class="line">    cin&gt;&gt;e;</span><br><span class="line">    while (e!=-1)</span><br><span class="line">    &#123;</span><br><span class="line">        s=(LinkList)malloc(sizeof(LNode));</span><br><span class="line">        s-&gt;data=e;</span><br><span class="line">        p-&gt;next=s;</span><br><span class="line">        p=s;</span><br><span class="line">        cin&gt;&gt;e;</span><br><span class="line">    &#125;</span><br><span class="line">    p-&gt;next=NULL;</span><br><span class="line">    return L;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">LinkList headCreate()</span><br><span class="line">&#123;</span><br><span class="line">    LinkList L,s;</span><br><span class="line">    Elemtype e;</span><br><span class="line">    L=(LinkList)malloc(sizeof(LNode));</span><br><span class="line">    L-&gt;next=NULL;</span><br><span class="line">    cin&gt;&gt;e;</span><br><span class="line">    while (e!=-1)</span><br><span class="line">    &#123;</span><br><span class="line">        s=(LinkList)malloc(sizeof(LNode));</span><br><span class="line">        s-&gt;data=e;</span><br><span class="line">        s-&gt;next=L-&gt;next;</span><br><span class="line">        L-&gt;next=s;</span><br><span class="line">        cin&gt;&gt;e;</span><br><span class="line">    &#125;</span><br><span class="line">    return L;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void print(LinkList list)</span><br><span class="line">&#123;</span><br><span class="line">    LinkList e;</span><br><span class="line">    e=list-&gt;next;</span><br><span class="line">    if(!e)</span><br><span class="line">    &#123;</span><br><span class="line">        cout&lt;&lt;&quot;NULL&quot;;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        while (e-&gt;next) &#123;</span><br><span class="line">            cout &lt;&lt; e-&gt;data &lt;&lt; &quot; &quot;;</span><br><span class="line">            e = e-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; e-&gt;data;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">void merge(LinkList L1,LinkList L2,LinkList &amp;L3)</span><br><span class="line">&#123;</span><br><span class="line">    LinkList l1=L1-&gt;next,l2=L2-&gt;next,l3;</span><br><span class="line">    l3=L3=L1;</span><br><span class="line">    while (l1&amp;&amp;l2)</span><br><span class="line">    &#123;</span><br><span class="line">        if (l1-&gt;data&lt;=l2-&gt;data)</span><br><span class="line">        &#123;</span><br><span class="line">            l3-&gt;next=l1;</span><br><span class="line">            l3=l1;</span><br><span class="line">            l1=l1-&gt;next;</span><br><span class="line">        &#125; else</span><br><span class="line">        &#123;</span><br><span class="line">            l3-&gt;next=l2;</span><br><span class="line">            l3=l2;</span><br><span class="line">            l2=l2-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    l3-&gt;next=l1?l1:l2;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    LinkList L1,L2,L3;</span><br><span class="line">    L1=endCreate();</span><br><span class="line">    L2=endCreate();</span><br><span class="line">    merge(L1,L2,L3);</span><br><span class="line">    print(L3);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这道题两点重点，第一是实现merge操作。传进去两个链表和第三个的引用，然后一直判断直到某一个结束，如果L3后边是L1说明L1还有剩下的，如果不是说明剩下的都是L2后边；</p>
@@ -542,8 +542,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>2-3 某线性表中最常用的操作是在最后一个元素之后插入一个元素和删除第一个元素，则采用什么存储方式最节省运算时间？ (2分)b</p>
-<ol>
+          <p>2-3
+某线性表中最常用的操作是在最后一个元素之后插入一个元素和删除第一个元素，则采用什么存储方式最节省运算时间？ (2分)b</p>
+<ol type="1">
 <li>单链表</li>
 <li>仅有尾指针的单循环链表</li>
 <li>仅有头指针的单循环链表</li>
@@ -555,21 +556,28 @@
 <p>F p++不能指向后一个元素</p>
 <p>2-4</p>
 <p>若某表最常用的操作是在最后一个结点之后插入一个结点或删除最后一个结点。则采用哪种存储方式最节省运算时间？ (2分)</p>
-<ol>
+<ol type="1">
 <li>单链表</li>
 <li>双链表</li>
 <li>单循环链表</li>
 <li>带头结点的双循环链表</li>
 </ol>
 <p>D 头结点上一个就是最后一个节点</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-1024x454.png" alt="" /></p>
-<p>这道题的逻辑，简单来说，就是地址存放你当前元素的地址，链接地址是指向当前元素的下一个元素的地址。 因此，我们来看没插入f之前时，链表的顺序，由于头元素是c（地址1008H），由C开始，C的链接地址是1000H，也就是指向元素a（地址1000H），之后a的链接地址是1010H，也就是指向元素e。。。 按照上面这个思路遍历，我们可以得到链表的遍历顺序c（1008H）-&gt;a（1000H）-&gt;e（1010H）-&gt;b（1004H）-&gt;d（100CH）-&gt;null。 由于f逻辑上位于a和e之间，因此也就是说将f插入到ae之间，因此只需要修改a的链接地址（也就是指向下一个元素的地址）为f的地址（1014H），然后将f的链接地址修改为e的地址。<br />
+<p><img
+src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-1024x454.png" /></p>
+<p>这道题的逻辑，简单来说，就是地址存放你当前元素的地址，链接地址是指向当前元素的下一个元素的地址。
+因此，我们来看没插入f之前时，链表的顺序，由于头元素是c（地址1008H），由C开始，C的链接地址是1000H，也就是指向元素a（地址1000H），之后a的链接地址是1010H，也就是指向元素e。。。
+按照上面这个思路遍历，我们可以得到链表的遍历顺序c（1008H）-&gt;a（1000H）-&gt;e（1010H）-&gt;b（1004H）-&gt;d（100CH）-&gt;null。
+由于f逻辑上位于a和e之间，因此也就是说将f插入到ae之间，因此只需要修改a的链接地址（也就是指向下一个元素的地址）为f的地址（1014H），然后将f的链接地址修改为e的地址。<br />
 链表插入不影响其他元素，所以其他元素链接地址不变。</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-1.png" alt="" /></p>
+<p><img
+src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-1.png" /></p>
 <p>不带表头结点，头指针直接指向数据</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-2.png" alt="" /></p>
+<p><img
+src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-2.png" /></p>
 <p>在m之后</p>
-<p>在一个长度为 n （ n&gt;1 ）的单链表上，设有头和尾两个指针，执行 操作与链表的长度有关。</p>
+<p>在一个长度为 n （ n&gt;1 ）的单链表上，设有头和尾两个指针，执行
+操作与链表的长度有关。</p>
 <ul>
 <li>删除单链表中的第一个元素</li>
 <li>删除单链表中的最后一个元素</li>
@@ -577,23 +585,30 @@
 <li>在单链表最后一个元素后插入一个新元素</li>
 </ul>
 <p>A<br />
-头指针是指向第一个元素（结点）的指针。 当<strong>删除单链表中的第一个元素</strong>时只需要将头指针指向第二个元素，然后释放第一个元素储存空间申请的内存。与链表长度无关。</p>
+头指针是指向第一个元素（结点）的指针。
+当<strong>删除单链表中的第一个元素</strong>时只需要将头指针指向第二个元素，然后释放第一个元素储存空间申请的内存。与链表长度无关。</p>
 <p>123</p>
 <p><code>ListNode *temp = head-&gt;next;``head-&gt;next = temp-&gt;next;``free``(temp);</code></p>
 <p>B<br />
-尾指针是指向最后一个元素（结点）的指针，与头指针类似。 当<strong>删除单链表中的最后一个元素</strong>时 由于不是双向链表，所以要从头指针开始，一直遍历直到倒数第二个元素，将倒数第二个元素（结点）指向NULL，释放原末端元素（结点）空间后，将尾指针等于新的末端元素（结点）。所以与链表长度有关。</p>
+尾指针是指向最后一个元素（结点）的指针，与头指针类似。
+当<strong>删除单链表中的最后一个元素</strong>时
+由于不是双向链表，所以要从头指针开始，一直遍历直到倒数第二个元素，将倒数第二个元素（结点）指向NULL，释放原末端元素（结点）空间后，将尾指针等于新的末端元素（结点）。所以与链表长度有关。</p>
 <p>12345</p>
 <p><code>ListNode *p = head;``while``(p-&gt;next != rear) p = p-&gt;next;``p-&gt;next = NULL;``free``(r);``r = p;</code></p>
-<p>C <strong>在单链表第一个元素前插入一个新元素</strong>时，只需要把新的元素（结点）指向原来的第一个元素（结点），然后使头指针指向新的元素（结点）。与链表长度无关。</p>
+<p>C
+<strong>在单链表第一个元素前插入一个新元素</strong>时，只需要把新的元素（结点）指向原来的第一个元素（结点），然后使头指针指向新的元素（结点）。与链表长度无关。</p>
 <p>12</p>
 <p><code>new_point-&gt;next = head-&gt;next;``head-&gt;next = new_point;</code></p>
-<p>D <strong>在单链表最后一个元素后插入一个新元素</strong>时，只需先将新结点指向NULL，然后将尾指针指向的原末端结点指向新的元素（结点），最后将尾指针指向新的元素（结点）。与链表长度无关。</p>
+<p>D
+<strong>在单链表最后一个元素后插入一个新元素</strong>时，只需先将新结点指向NULL，然后将尾指针指向的原末端结点指向新的元素（结点），最后将尾指针指向新的元素（结点）。与链表长度无关。</p>
 <p>123</p>
 <p><code>new_point-&gt;next = NULL;``rear-&gt;next = new_point;``rear = new_point;</code></p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-3.png" alt="" /></p>
+<p><img
+src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-3.png" /></p>
 <p>静态链表:数组的每一个下标都对应一个data和一个cur。数据域data用来存放数据元素，；而游标cur相当于单链表中的next指针，</p>
 <p>存放该元素的后继在数组中的下标。</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-4.png" alt="" /></p>
+<p><img
+src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-4.png" /></p>
 
       
     </div>
@@ -703,24 +718,30 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>写代码时一个易用的编译器是很重要的，若想写c/c++我推荐jetbrain家的clion，真的很方便</p>
-<p>首先去官网下载<a target="_blank" rel="noopener" href="https://www.jetbrains.com/clion/">官网页面</a>并安装</p>
+<p>首先去官网下载<a
+target="_blank" rel="noopener" href="https://www.jetbrains.com/clion/">官网页面</a>并安装</p>
 <p>在这不提供破解方法，建议支持正版，破解方法可以在百度上搜索到</p>
 <p>之后需要下载一个c/c++的译码器，我在这用的是MingW.不建议去官网下载，因为即使科学上网速度也还是很慢而且容易出错</p>
 <p>在这提供我的百度网盘收藏链接，直接下载安装即可</p>
-<p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1xYOb-eYFKSfJgwFxG9fZWw">https://pan.baidu.com/s/1xYOb-eYFKSfJgwFxG9fZWw</a><br />
+<p>链接：https://pan.baidu.com/s/1xYOb-eYFKSfJgwFxG9fZWw<br />
 提取码：kiec</p>
 <p><strong>（2）配置CLion</strong><br />
-打开CLion，左上角File-Settings-Build-Toolchains，然后点击 <strong>+</strong> 号</p>
-<p><img data-src="//upload-images.jianshu.io/upload_images/13625730-59b19c35c9589ad0.png?imageMogr2/auto-orient/stripimageView2/2/w/908/format/webp" alt="" /></p>
+打开CLion，左上角File-Settings-Build-Toolchains，然后点击
+<strong>+</strong> 号</p>
+<p><img
+src="//upload-images.jianshu.io/upload_images/13625730-59b19c35c9589ad0.png?imageMogr2/auto-orient/stripimageView2/2/w/908/format/webp" /></p>
 <p>settings</p>
-<p><img data-src="//upload-images.jianshu.io/upload_images/13625730-9c1c7b4ac50f2320.png?imageMogr2/auto-orient/stripimageView2/2/w/624/format/webp" alt="" /></p>
+<p><img
+src="//upload-images.jianshu.io/upload_images/13625730-9c1c7b4ac50f2320.png?imageMogr2/auto-orient/stripimageView2/2/w/624/format/webp" /></p>
 <p>toolchains</p>
 <p>Environment选择MinGW，然后填入刚刚解压的MinGW64的路径（这是我的路径）：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\71022\Documents\mingw64</span><br></pre></td></tr></table></figure>
-<p><img data-src="//upload-images.jianshu.io/upload_images/13625730-c97f11fcde1a679f.png?imageMogr2/auto-orient/stripimageView2/2/w/780/format/webp" alt="" /></p>
+<p><img
+src="//upload-images.jianshu.io/upload_images/13625730-c97f11fcde1a679f.png?imageMogr2/auto-orient/stripimageView2/2/w/780/format/webp" /></p>
 <p>image.png</p>
 <p>然后CLion会自动帮你填上所有你该填的东西，点击OK，等调试的小虫子变绿就可以了。</p>
-<p><img data-src="//upload-images.jianshu.io/upload_images/13625730-9f5aa1e8408cef27.png?imageMogr2/auto-orient/stripimageView2/2/w/781/format/webp" alt="" /></p>
+<p><img
+src="//upload-images.jianshu.io/upload_images/13625730-9f5aa1e8408cef27.png?imageMogr2/auto-orient/stripimageView2/2/w/781/format/webp" /></p>
 <p>image.png</p>
 <p><strong>当然，也会出现无法检测成功的情况，这时候就需要手动填写啦。</strong><br />
 CMake一般会自动选择。<br />
@@ -842,15 +863,18 @@ Make填入路径：</p>
     
     <div class="post-body" itemprop="articleBody">
           <p>完成对一个顺序表的建立，表中的每个元素是同学们的学号、姓名和三门课程的成绩，输入5个同学的信息，然后显示在屏幕上。（要求利用顺序表的基本操作）</p>
-<h3 id="输入格式"><a class="markdownIt-Anchor" href="#输入格式"></a> 输入格式:</h3>
+<h3 id="输入格式">输入格式:</h3>
 <p>首先收入学生人数5，然后依次输入5个学生的学号、姓名和三门课的成绩</p>
-<h3 id="输出格式"><a class="markdownIt-Anchor" href="#输出格式"></a> 输出格式:</h3>
+<h3 id="输出格式">输出格式:</h3>
 <p>输入5个学生的学号、姓名和三门课的成绩</p>
-<h3 id="输入样例"><a class="markdownIt-Anchor" href="#输入样例"></a> 输入样例:</h3>
-<p>5 01 张三 89 89 89 02 李四 90 90 90 03 王五 89 89 89 04 钱六 97 97 97 05 赵倩 90 90 90</p>
-<h3 id="输出样例"><a class="markdownIt-Anchor" href="#输出样例"></a> 输出样例:</h3>
-<p>1 张三 89.0 89.0 89.0 2 李四 90.0 90.0 90.0 3 王五 89.0 89.0 89.0 4 钱六 97.0 97.0 97.0 5 赵倩 90.0 90.0 90.0</p>
+<h3 id="输入样例">输入样例:</h3>
+<p>5 01 张三 89 89 89 02 李四 90 90 90 03 王五 89 89 89 04 钱六 97 97 97
+05 赵倩 90 90 90</p>
+<h3 id="输出样例">输出样例:</h3>
+<p>1 张三 89.0 89.0 89.0 2 李四 90.0 90.0 90.0 3 王五 89.0 89.0 89.0 4
+钱六 97.0 97.0 97.0 5 赵倩 90.0 90.0 90.0</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">struct STU</span><br><span class="line">&#123;</span><br><span class="line">    int id;</span><br><span class="line">    char name[20];</span><br><span class="line">    float score1;</span><br><span class="line">    float score2;</span><br><span class="line">    float score3;</span><br><span class="line">&#125;stu[20];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int m;</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;m);</span><br><span class="line">    for (int i = 0; i &lt;m ; ++i) &#123;</span><br><span class="line">        scanf(&quot;%d%s%f%f%f&quot;,&amp;stu[i].id,&amp;stu[i].name,&amp;stu[i].score1,&amp;stu[i].score2,&amp;stu[i].score3);</span><br><span class="line">    &#125;</span><br><span class="line">    for (int j = 0; j &lt; m-1; ++j) &#123;</span><br><span class="line">        printf(&quot;%d %s %.1f %.1f %.1f\n&quot;,j+1,stu[j].name,stu[j].score1,stu[j].score2,stu[j].score3);</span><br><span class="line">    &#125;</span><br><span class="line">    int j=m-1;</span><br><span class="line">    printf(&quot;%d %s %.1f %.1f %.1f&quot;,j+1,stu[j].name,stu[j].score1,stu[j].score2,stu[j].score3);</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -917,7 +941,7 @@ Make填入路径：</p>
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","single_dollars":true,"cjk_width":0.9,"normal_width":0.6,"append_css":true,"every_page":true,"js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 

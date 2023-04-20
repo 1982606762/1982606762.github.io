@@ -311,7 +311,8 @@
     <div class="post-body" itemprop="articleBody">
         <p>国内使用github时由于网络问题，push和pull时经常会卡，因此建议使用ssh代替http.</p>
 <span id="more"></span>
-<p>虽然在github页面可以直接选择使用ssh链接，但是有一些软件会使用git服务，这时就不是很好切换，我的例子是在使用cocoapods的时候没法pod install。所以尝试在gitconfig里强制使用ssh。</p>
+<p>虽然在github页面可以直接选择使用ssh链接，但是有一些软件会使用git服务，这时就不是很好切换，我的例子是在使用cocoapods的时候没法pod
+install。所以尝试在gitconfig里强制使用ssh。</p>
 <p>只需要在~/.gitconfig里加以下内容即可：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[url &quot;git@github.com:&quot;]</span><br><span class="line">  insteadOf = https://github.com/</span><br><span class="line">[url &quot;git@github.com:&quot;]</span><br><span class="line">  pushInsteadOf = &quot;git://github.com/&quot;</span><br><span class="line">[url &quot;git@github.com:&quot;]</span><br><span class="line">  pushInsteadOf = &quot;https://github.com/&quot;</span><br></pre></td></tr></table></figure>
 
@@ -412,7 +413,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","single_dollars":true,"cjk_width":0.9,"normal_width":0.6,"append_css":true,"every_page":true,"js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 

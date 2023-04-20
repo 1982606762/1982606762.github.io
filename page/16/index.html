@@ -307,17 +307,18 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>读入n值及n个整数，建立顺序表并遍历输出。</p>
-<h3 id="输入格式"><a class="markdownIt-Anchor" href="#输入格式"></a> 输入格式:</h3>
+<h3 id="输入格式">输入格式:</h3>
 <p>读入n及n个整数</p>
-<h3 id="输出格式"><a class="markdownIt-Anchor" href="#输出格式"></a> 输出格式:</h3>
+<h3 id="输出格式">输出格式:</h3>
 <p>输出n个整数，以空格分隔（最后一个数的后面没有空格）。</p>
-<h3 id="输入样例"><a class="markdownIt-Anchor" href="#输入样例"></a> 输入样例:</h3>
+<h3 id="输入样例">输入样例:</h3>
 <p>在这里给出一组输入。例如：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">-3 10 20 78</span><br></pre></td></tr></table></figure>
-<h3 id="输出样例"><a class="markdownIt-Anchor" href="#输出样例"></a> 输出样例:</h3>
+<h3 id="输出样例">输出样例:</h3>
 <p>在这里给出相应的输出。例如：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-3 10 20 78</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;string.h&gt;</span><br><span class="line">#include&lt;malloc.h&gt;</span><br><span class="line">#define list 10</span><br><span class="line">#define max 10</span><br><span class="line"> </span><br><span class="line">typedef int Elemtype;</span><br><span class="line">typedef struct sqlist *List;</span><br><span class="line">struct sqlist&#123;</span><br><span class="line">Elemtype *elem;</span><br><span class="line">int length;</span><br><span class="line">int listsize;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line">void initlist(List L)&#123;</span><br><span class="line">L-&gt;elem=(Elemtype *)malloc(list*sizeof(Elemtype));</span><br><span class="line">L-&gt;length=0;</span><br><span class="line">L-&gt;listsize=max;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">void creat(List L)&#123;</span><br><span class="line">initlist(L);</span><br><span class="line">int i,n;</span><br><span class="line">scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">for(i=0;i&lt;n;i++) &#123;</span><br><span class="line">   scanf(&quot;%d&quot;,&amp;L-&gt;elem[i]);</span><br><span class="line">   L-&gt;length++;</span><br><span class="line">   if(L-&gt;length==L-&gt;listsize) &#123;</span><br><span class="line">int *new_elem = (Elemtype *)malloc((L-&gt;listsize+list)*sizeof(Elemtype));</span><br><span class="line">memcpy(new_elem,L-&gt;elem,L-&gt;length);</span><br><span class="line">L-&gt;elem = new_elem;</span><br><span class="line">L-&gt;listsize+=list;</span><br><span class="line">   &#125;</span><br><span class="line">&#125; </span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">void print(List L) &#123;</span><br><span class="line">for(int i=0; i&lt;L-&gt;length;i++) &#123;</span><br><span class="line">if(i==L-&gt;length-1)</span><br><span class="line">printf(&quot;%d&quot;,L-&gt;elem[i]);</span><br><span class="line">else</span><br><span class="line">printf(&quot;%d &quot;,L-&gt;elem[i]);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">int main()&#123;</span><br><span class="line">List L = (List)malloc(sizeof(struct sqlist));</span><br><span class="line">initlist(L);</span><br><span class="line">creat(L);</span><br><span class="line">print(L);</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -426,17 +427,19 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>求整数集合A与整数集合B的交集。</p>
-<h3 id="输入格式"><a class="markdownIt-Anchor" href="#输入格式"></a> 输入格式:</h3>
-<p>输入有三行： 第一行是A和B的元素个数m和n； 第二行是集合A的m个元素； 第三行是集合A的n个元素。</p>
-<h3 id="输出格式"><a class="markdownIt-Anchor" href="#输出格式"></a> 输出格式:</h3>
+<h3 id="输入格式">输入格式:</h3>
+<p>输入有三行： 第一行是A和B的元素个数m和n； 第二行是集合A的m个元素；
+第三行是集合A的n个元素。</p>
+<h3 id="输出格式">输出格式:</h3>
 <p>输出交集的所有元素（按照在A集合出现的顺序输出，最后一个输出后面没有空格）。</p>
-<h3 id="输入样例"><a class="markdownIt-Anchor" href="#输入样例"></a> 输入样例:</h3>
+<h3 id="输入样例">输入样例:</h3>
 <p>在这里给出一组输入。例如：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">3 4</span><br><span class="line">10 9 2</span><br><span class="line">9 10 8 0</span><br></pre></td></tr></table></figure>
-<h3 id="输出样例"><a class="markdownIt-Anchor" href="#输出样例"></a> 输出样例:</h3>
+<h3 id="输出样例">输出样例:</h3>
 <p>在这里给出相应的输出。例如：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">10 9</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a,b,alist[999],blist[999];</span><br><span class="line">    scanf(&quot;%d%d&quot;,&amp;a,&amp;b);</span><br><span class="line">    for(int i=0;i&lt;a;i++)&#123;</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;alist[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    for(int j=0;j&lt;b;j++)&#123;</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;blist[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    int clist[999]=&#123;0&#125;;</span><br><span class="line">    int q=0;</span><br><span class="line">    for(int k=0;k&lt;a;k++)&#123;</span><br><span class="line">        int temp=alist[k];</span><br><span class="line">        for(int p=0;p&lt;b;p++)&#123;</span><br><span class="line">            if(temp==blist[p])&#123;</span><br><span class="line">                clist[q]=temp;</span><br><span class="line">                q++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if (q&gt;0)&#123;</span><br><span class="line">    for(int u=0;u&lt;q-1;u++)&#123;</span><br><span class="line">        printf(&quot;%d &quot;,clist[u]);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;%d&quot;,clist[q-1]);</span><br><span class="line">    return 0;&#125; else&#123;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -545,17 +548,18 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>若一个线性表L采用顺序存储结构存储，其中所有的元素为整数。设计一个算法，删除元素值在[x,y]之间的所有元素，要求算法的时间复杂度为O(n)，空间复杂度为O(1)。</p>
-<h3 id="输入格式"><a class="markdownIt-Anchor" href="#输入格式"></a> 输入格式:</h3>
+<h3 id="输入格式">输入格式:</h3>
 <p>三行数据，第一行是顺序表的元素个数，第二行是顺序表的元素，第三行是x和y。</p>
-<h3 id="输出格式"><a class="markdownIt-Anchor" href="#输出格式"></a> 输出格式:</h3>
+<h3 id="输出格式">输出格式:</h3>
 <p>删除元素值在[x,y]之间的所有元素后的顺序表。</p>
-<h3 id="输入样例"><a class="markdownIt-Anchor" href="#输入样例"></a> 输入样例:</h3>
+<h3 id="输入样例">输入样例:</h3>
 <p>10<br />
 5 1 9 10 67 12 8 33 6 2<br />
 3 10</p>
-<h3 id="输出样例"><a class="markdownIt-Anchor" href="#输出样例"></a> 输出样例:</h3>
+<h3 id="输出样例">输出样例:</h3>
 <p>1 67 12 33 2</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int m;</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;m );</span><br><span class="line"></span><br><span class="line">    int list[999];</span><br><span class="line">    for (int i = 0; i &lt; m; ++i) &#123;</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;list[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    int x,y;</span><br><span class="line">    scanf(&quot;%d%d&quot;,&amp;x,&amp;y);</span><br><span class="line"></span><br><span class="line">    int list2[999],q=0;</span><br><span class="line"></span><br><span class="line">    for (int j = 0; j &lt; m; ++j) &#123;</span><br><span class="line">        if (x&gt;list[j]y&lt;list[j])</span><br><span class="line">        &#123;</span><br><span class="line">            list2[q]=list[j];</span><br><span class="line">            q++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    for (int i = 0; i &lt; q-1; ++i) &#123;</span><br><span class="line">        printf(&quot;%d &quot;,list2[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;%d&quot;,list2[q-1]);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -645,7 +649,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>800</span>
+      <span>776</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -663,14 +667,14 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>本题要求实现一个对数组进行循环左移的简单函数：一个数组_a_中存有_n_（&gt;0）个整数，在不允许使用另外数组的前提下，将每个整数循环向左移_m_（≥0）个位置，即将_a_中的数据由（_a_​0​​_a_​1​​⋯_a_​_n_−1​​）变换为（_a_​_m_​​⋯_a_​_n_−1​​_a_​0​​_a_​1​​⋯_a_​_m_−1​​）（最前面的_m_个数循环移至最后面的_m_个位置）。如果还需要考虑程序移动数据的次数尽量少，要如何设计移动的方法？</p>
-<h3 id="输入格式"><a class="markdownIt-Anchor" href="#输入格式"></a> 输入格式:</h3>
+          <p>本题要求实现一个对数组进行循环左移的简单函数：一个数组_a_中存有_n_（&gt;0）个整数，在不允许使用另外数组的前提下，将每个整数循环向左移_m_（≥0）个位置，即将_a_中的数据由（<em>a</em>​0​​<em>a</em>​1​​⋯<em>a</em>​<em>n</em>−1​​）变换为（<em>a</em>​<em>m</em>​​⋯<em>a</em>​<em>n</em>−1​​<em>a</em>​0​​<em>a</em>​1​​⋯<em>a</em>​<em>m</em>−1​​）（最前面的_m_个数循环移至最后面的_m_个位置）。如果还需要考虑程序移动数据的次数尽量少，要如何设计移动的方法？</p>
+<h3 id="输入格式">输入格式:</h3>
 <p>输入第1行给出正整数_n_（≤100）和整数_m_（≥0）；第2行给出_n_个整数，其间以空格分隔。</p>
-<h3 id="输出格式"><a class="markdownIt-Anchor" href="#输出格式"></a> 输出格式:</h3>
+<h3 id="输出格式">输出格式:</h3>
 <p>在一行中输出循环左移_m_位以后的整数序列，之间用空格分隔，序列结尾不能有多余空格。</p>
-<h3 id="输入样例"><a class="markdownIt-Anchor" href="#输入样例"></a> 输入样例：</h3>
+<h3 id="输入样例">输入样例：</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">8 3</span><br><span class="line">1 2 3 4 5 6 7 8</span><br></pre></td></tr></table></figure>
-<h3 id="输出样例"><a class="markdownIt-Anchor" href="#输出样例"></a> 输出样例：</h3>
+<h3 id="输出样例">输出样例：</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4 5 6 7 8 1 2 3</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int m,n;</span><br><span class="line">    scanf(&quot;%d%d&quot;,&amp;m,&amp;n );</span><br><span class="line">    </span><br><span class="line">    int list[999];</span><br><span class="line">    for (int i = 0; i &lt; m; ++i) &#123;</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;list[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    for (int j = 0; j &lt; n; ++j) &#123;</span><br><span class="line">        int temp = list[0];</span><br><span class="line">        for (int i = 1; i &lt;m ; ++i) &#123;</span><br><span class="line">            list[i-1]=list[i];</span><br><span class="line">        &#125;</span><br><span class="line">        list[m-1]=temp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    for (int i = 0; i &lt; m-1; ++i) &#123;</span><br><span class="line">        printf(&quot;%d &quot;,list[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;%d&quot;,list[m-1]);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -788,6 +792,7 @@
 <p>int a[5]={1,2,3,4,5}</p>
 <p>例：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># include &lt;stdio.h&gt;</span><br><span class="line">int main(void)</span><br><span class="line">&#123;</span><br><span class="line">    int a[5] = &#123;0&#125;;  //数组清零初始化</span><br><span class="line">    int i;</span><br><span class="line">    printf(&quot;请输入5个数:&quot;);</span><br><span class="line">    for (i=0; i&lt;5; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        scanf(&quot;%d&quot;, &amp;a[i] );</span><br><span class="line">    &#125;</span><br><span class="line">    for (i=0; i&lt;5; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;%d\x20&quot;, a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -854,7 +859,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","single_dollars":true,"cjk_width":0.9,"normal_width":0.6,"append_css":true,"every_page":true,"js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 

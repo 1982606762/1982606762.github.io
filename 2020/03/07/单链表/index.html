@@ -28,17 +28,11 @@
 <meta property="og:site_name" content="松鼠小筑">
 <meta property="og:description" content="2-3 某线性表中最常用的操作是在最后一个元素之后插入一个元素和删除第一个元素，则采用什么存储方式最节省运算时间？ (2分)b  单链表 仅有尾指针的单循环链表 仅有头指针的单循环链表 双链表  c虽然可以直接获得第一个元素，但是想要获得最后一个元素却需要遍历整个链表。而b给出的是带有尾结点的单循环链表，这样就可以直接得到最后一个元素，想要得到第一个元素只需要再遍历一个元素就可以，所以选择b 1-">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-1024x454.png">
-<meta property="og:image" content="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-1.png">
-<meta property="og:image" content="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-2.png">
-<meta property="og:image" content="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-3.png">
-<meta property="og:image" content="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-4.png">
 <meta property="article:published_time" content="2020-03-07T20:49:43.000Z">
 <meta property="article:modified_time" content="2022-01-15T02:13:07.940Z">
 <meta property="article:author" content="Xuanlang">
 <meta property="article:tag" content="松鼠小筑">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-1024x454.png">
 
 
 <link rel="canonical" href="https://www.zhaoxuanlang.cn/2020/03/07/%E5%8D%95%E9%93%BE%E8%A1%A8/">
@@ -315,8 +309,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>2-3 某线性表中最常用的操作是在最后一个元素之后插入一个元素和删除第一个元素，则采用什么存储方式最节省运算时间？ (2分)b</p>
-<ol>
+        <p>2-3
+某线性表中最常用的操作是在最后一个元素之后插入一个元素和删除第一个元素，则采用什么存储方式最节省运算时间？ (2分)b</p>
+<ol type="1">
 <li>单链表</li>
 <li>仅有尾指针的单循环链表</li>
 <li>仅有头指针的单循环链表</li>
@@ -328,21 +323,28 @@
 <p>F p++不能指向后一个元素</p>
 <p>2-4</p>
 <p>若某表最常用的操作是在最后一个结点之后插入一个结点或删除最后一个结点。则采用哪种存储方式最节省运算时间？ (2分)</p>
-<ol>
+<ol type="1">
 <li>单链表</li>
 <li>双链表</li>
 <li>单循环链表</li>
 <li>带头结点的双循环链表</li>
 </ol>
 <p>D 头结点上一个就是最后一个节点</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-1024x454.png" alt="" /></p>
-<p>这道题的逻辑，简单来说，就是地址存放你当前元素的地址，链接地址是指向当前元素的下一个元素的地址。 因此，我们来看没插入f之前时，链表的顺序，由于头元素是c（地址1008H），由C开始，C的链接地址是1000H，也就是指向元素a（地址1000H），之后a的链接地址是1010H，也就是指向元素e。。。 按照上面这个思路遍历，我们可以得到链表的遍历顺序c（1008H）-&gt;a（1000H）-&gt;e（1010H）-&gt;b（1004H）-&gt;d（100CH）-&gt;null。 由于f逻辑上位于a和e之间，因此也就是说将f插入到ae之间，因此只需要修改a的链接地址（也就是指向下一个元素的地址）为f的地址（1014H），然后将f的链接地址修改为e的地址。<br />
+<p><img
+src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-1024x454.png" /></p>
+<p>这道题的逻辑，简单来说，就是地址存放你当前元素的地址，链接地址是指向当前元素的下一个元素的地址。
+因此，我们来看没插入f之前时，链表的顺序，由于头元素是c（地址1008H），由C开始，C的链接地址是1000H，也就是指向元素a（地址1000H），之后a的链接地址是1010H，也就是指向元素e。。。
+按照上面这个思路遍历，我们可以得到链表的遍历顺序c（1008H）-&gt;a（1000H）-&gt;e（1010H）-&gt;b（1004H）-&gt;d（100CH）-&gt;null。
+由于f逻辑上位于a和e之间，因此也就是说将f插入到ae之间，因此只需要修改a的链接地址（也就是指向下一个元素的地址）为f的地址（1014H），然后将f的链接地址修改为e的地址。<br />
 链表插入不影响其他元素，所以其他元素链接地址不变。</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-1.png" alt="" /></p>
+<p><img
+src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-1.png" /></p>
 <p>不带表头结点，头指针直接指向数据</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-2.png" alt="" /></p>
+<p><img
+src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-2.png" /></p>
 <p>在m之后</p>
-<p>在一个长度为 n （ n&gt;1 ）的单链表上，设有头和尾两个指针，执行 操作与链表的长度有关。</p>
+<p>在一个长度为 n （ n&gt;1 ）的单链表上，设有头和尾两个指针，执行
+操作与链表的长度有关。</p>
 <ul>
 <li>删除单链表中的第一个元素</li>
 <li>删除单链表中的最后一个元素</li>
@@ -350,23 +352,30 @@
 <li>在单链表最后一个元素后插入一个新元素</li>
 </ul>
 <p>A<br />
-头指针是指向第一个元素（结点）的指针。 当<strong>删除单链表中的第一个元素</strong>时只需要将头指针指向第二个元素，然后释放第一个元素储存空间申请的内存。与链表长度无关。</p>
+头指针是指向第一个元素（结点）的指针。
+当<strong>删除单链表中的第一个元素</strong>时只需要将头指针指向第二个元素，然后释放第一个元素储存空间申请的内存。与链表长度无关。</p>
 <p>123</p>
 <p><code>ListNode *temp = head-&gt;next;``head-&gt;next = temp-&gt;next;``free``(temp);</code></p>
 <p>B<br />
-尾指针是指向最后一个元素（结点）的指针，与头指针类似。 当<strong>删除单链表中的最后一个元素</strong>时 由于不是双向链表，所以要从头指针开始，一直遍历直到倒数第二个元素，将倒数第二个元素（结点）指向NULL，释放原末端元素（结点）空间后，将尾指针等于新的末端元素（结点）。所以与链表长度有关。</p>
+尾指针是指向最后一个元素（结点）的指针，与头指针类似。
+当<strong>删除单链表中的最后一个元素</strong>时
+由于不是双向链表，所以要从头指针开始，一直遍历直到倒数第二个元素，将倒数第二个元素（结点）指向NULL，释放原末端元素（结点）空间后，将尾指针等于新的末端元素（结点）。所以与链表长度有关。</p>
 <p>12345</p>
 <p><code>ListNode *p = head;``while``(p-&gt;next != rear) p = p-&gt;next;``p-&gt;next = NULL;``free``(r);``r = p;</code></p>
-<p>C <strong>在单链表第一个元素前插入一个新元素</strong>时，只需要把新的元素（结点）指向原来的第一个元素（结点），然后使头指针指向新的元素（结点）。与链表长度无关。</p>
+<p>C
+<strong>在单链表第一个元素前插入一个新元素</strong>时，只需要把新的元素（结点）指向原来的第一个元素（结点），然后使头指针指向新的元素（结点）。与链表长度无关。</p>
 <p>12</p>
 <p><code>new_point-&gt;next = head-&gt;next;``head-&gt;next = new_point;</code></p>
-<p>D <strong>在单链表最后一个元素后插入一个新元素</strong>时，只需先将新结点指向NULL，然后将尾指针指向的原末端结点指向新的元素（结点），最后将尾指针指向新的元素（结点）。与链表长度无关。</p>
+<p>D
+<strong>在单链表最后一个元素后插入一个新元素</strong>时，只需先将新结点指向NULL，然后将尾指针指向的原末端结点指向新的元素（结点），最后将尾指针指向新的元素（结点）。与链表长度无关。</p>
 <p>123</p>
 <p><code>new_point-&gt;next = NULL;``rear-&gt;next = new_point;``rear = new_point;</code></p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-3.png" alt="" /></p>
+<p><img
+src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-3.png" /></p>
 <p>静态链表:数组的每一个下标都对应一个data和一个cur。数据域data用来存放数据元素，；而游标cur相当于单链表中的next指针，</p>
 <p>存放该元素的后继在数组中的下标。</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-4.png" alt="" /></p>
+<p><img
+src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-4.png" /></p>
 
     </div>
 
@@ -462,7 +471,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","single_dollars":true,"cjk_width":0.9,"normal_width":0.6,"append_css":true,"every_page":true,"js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 

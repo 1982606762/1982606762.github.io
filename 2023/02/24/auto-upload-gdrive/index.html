@@ -150,7 +150,9 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#install-qbittorrent-nox"><span class="nav-number">1.</span> <span class="nav-text"> Install Qbittorrent-nox</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#install-qbittorrent-nox-2"><span class="nav-number">1.1.</span> <span class="nav-text"> Install qBittorrent-nox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#run-qbittorrent-nox-as-a-service"><span class="nav-number">1.2.</span> <span class="nav-text"> Run qBittorrent-nox as a service</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#testing-qbittorrent-nox"><span class="nav-number">1.3.</span> <span class="nav-text"> Testing qBittorrent-nox</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#setup-after-download-script"><span class="nav-number">2.</span> <span class="nav-text"> Setup after-download-script</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#show-real-time-log-on-the-website"><span class="nav-number">3.</span> <span class="nav-text"> Show real-time log on the website</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-number">4.</span> <span class="nav-text"> reference</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#install-qbittorrent-nox"><span class="nav-number">1.</span> <span class="nav-text">Install Qbittorrent-nox</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#install-qbittorrent-nox-1"><span class="nav-number">1.1.</span> <span class="nav-text">Install qBittorrent-nox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#run-qbittorrent-nox-as-a-service"><span class="nav-number">1.2.</span> <span class="nav-text">Run qBittorrent-nox as a
+service</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#testing-qbittorrent-nox"><span class="nav-number">1.3.</span> <span class="nav-text">Testing qBittorrent-nox</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#setup-after-download-script"><span class="nav-number">2.</span> <span class="nav-text">Setup after-download-script</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#show-real-time-log-on-the-website"><span class="nav-number">3.</span> <span class="nav-text">Show real-time log on the
+website</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reference"><span class="nav-number">4.</span> <span class="nav-text">reference</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -304,56 +306,73 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>Develop a system that can add a torrent on the website, after completing the download it will automatically upload the file to my google drive while showing the upload log to the website so that I can see the procedure of uploading.</p>
+        <p>Develop a system that can add a torrent on the website, after
+completing the download it will automatically upload the file to my
+google drive while showing the upload log to the website so that I can
+see the procedure of uploading.</p>
 <ul>
 <li>install Qbittorrent command-line version</li>
 <li>Setup after-download-script</li>
 <li>Show real-time log on the website</li>
 </ul>
 <span id="more"></span>
-<h1 id="install-qbittorrent-nox"><a class="markdownIt-Anchor" href="#install-qbittorrent-nox"></a> Install Qbittorrent-nox</h1>
-<p>In Ubuntu, it’s called qBittorrent-nox.</p>
-<h2 id="install-qbittorrent-nox-2"><a class="markdownIt-Anchor" href="#install-qbittorrent-nox-2"></a> Install qBittorrent-nox</h2>
+<h1 id="install-qbittorrent-nox">Install Qbittorrent-nox</h1>
+<p>In Ubuntu, it's called qBittorrent-nox.</p>
+<h2 id="install-qbittorrent-nox-1">Install qBittorrent-nox</h2>
 <p>Add the qBittorrent repository:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository -y ppa:qbittorrent-team/qbittorrent-stable</span><br></pre></td></tr></table></figure>
 <p>Install qBittorrent-nox:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install -y qbittorrent-nox</span><br></pre></td></tr></table></figure>
 <p>After installation, we can check the qBittorrent-nox version:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qbittorrent-nox --version</span><br></pre></td></tr></table></figure>
-<h2 id="run-qbittorrent-nox-as-a-service"><a class="markdownIt-Anchor" href="#run-qbittorrent-nox-as-a-service"></a> Run qBittorrent-nox as a service</h2>
-<p>In order to run qBittorrent-nox as a service we need to configure systemd. Create a systemd unit file:</p>
+<h2 id="run-qbittorrent-nox-as-a-service">Run qBittorrent-nox as a
+service</h2>
+<p>In order to run qBittorrent-nox as a service we need to configure
+systemd. Create a systemd unit file:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/systemd/system/qbittorrent-nox.service</span><br></pre></td></tr></table></figure>
 <p>Add the following content to the file:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=qBittorrent client</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">ExecStart=/usr/bin/qbittorrent-nox --webui-port=8080</span><br><span class="line">Restart=always</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
 <p>You can change the web interface port if you want.</p>
 <p>Start qBittorrent-nox service:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service qbittorrent-nox start</span><br></pre></td></tr></table></figure>
-<p>You can run the following command to make sure that the qBittorrent-nox service is running:</p>
+<p>You can run the following command to make sure that the
+qBittorrent-nox service is running:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service qbittorrent-nox status</span><br></pre></td></tr></table></figure>
 <p>Also, you can stop or restart the service:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo service qbittorrent-nox stop</span><br><span class="line">sudo service qbittorrent-nox restart</span><br></pre></td></tr></table></figure>
-<p>To enable qBittorrent-nox to start on boot, run the following command:</p>
+<p>To enable qBittorrent-nox to start on boot, run the following
+command:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl enable qbittorrent-nox</span><br></pre></td></tr></table></figure>
-<h2 id="testing-qbittorrent-nox"><a class="markdownIt-Anchor" href="#testing-qbittorrent-nox"></a> Testing qBittorrent-nox</h2>
-<p>Open a browser and enter the URL address <code>http://&lt;IP_ADDRESS&gt;:8080</code>, where <code>&lt;IP_ADDRESS&gt;</code> is the IP address of your machine. You can log in to the web UI with the default username (<code>admin</code>) and password (<code>adminadmin</code>).</p>
-<h1 id="setup-after-download-script"><a class="markdownIt-Anchor" href="#setup-after-download-script"></a> Setup after-download-script</h1>
+<h2 id="testing-qbittorrent-nox">Testing qBittorrent-nox</h2>
+<p>Open a browser and enter the URL address
+<code>http://&lt;IP_ADDRESS&gt;:8080</code>, where
+<code>&lt;IP_ADDRESS&gt;</code> is the IP address of your machine. You
+can log in to the web UI with the default username (<code>admin</code>)
+and password (<code>adminadmin</code>).</p>
+<h1 id="setup-after-download-script">Setup after-download-script</h1>
 <blockquote>
-<p>qbt now doesn’t give shell environment by default, you’ll either need to specify full path <code>/usr/bin/rm</code> or invoke the shell by yourself <code>/usr/bin/sh -c &lt;command&gt;</code>.</p>
+<p>qbt now doesn't give shell environment by default, you'll either need
+to specify full path <code>/usr/bin/rm</code> or invoke the shell by
+yourself <code>/usr/bin/sh -c &lt;command&gt;</code>.</p>
 </blockquote>
-<p>So we need to add <code>/bin/bash  /Torrent.bash &quot;%N&quot; &quot;%F&quot;</code> in external program field</p>
+<p>So we need to add <code>/bin/bash  /Torrent.bash "%N" "%F"</code> in
+external program field</p>
 <p>And create a bash file with content as follows:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment">#echo &quot;$1&quot; &gt;&gt; /root/1.txt</span></span><br><span class="line">rclone copy <span class="variable">$2</span> gdrive1:美剧/<span class="variable">$1</span> -P &gt;&gt; /root/qbitdown/<span class="built_in">log</span></span><br></pre></td></tr></table></figure>
-<p>Of course, you can add whatever you want into the bash file, I’m just showing my own configuration.</p>
-<h1 id="show-real-time-log-on-the-website"><a class="markdownIt-Anchor" href="#show-real-time-log-on-the-website"></a> Show real-time log on the website</h1>
+<p>Of course, you can add whatever you want into the bash file, I'm just
+showing my own configuration.</p>
+<h1 id="show-real-time-log-on-the-website">Show real-time log on the
+website</h1>
 <p>First, we need to add some blocks to the HTML file:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;log-title&quot;</span>&gt;</span>update log<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;log-container&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">      <span class="function"><span class="keyword">function</span> <span class="title">updateLogs</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">          <span class="comment">// 创建XMLHttpRequest对象</span></span></span><br><span class="line"><span class="javascript">          <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span></span><br><span class="line"><span class="javascript">          <span class="comment">// 设置请求的URL和HTTP方法</span></span></span><br><span class="line"><span class="javascript">          xhr.open(<span class="string">&#x27;GET&#x27;</span>, <span class="string">&#x27;/api/logs&#x27;</span>, <span class="literal">true</span>);</span></span><br><span class="line"><span class="javascript">          <span class="comment">// 注册请求完成的回调函数</span></span></span><br><span class="line"><span class="javascript">          xhr.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">              <span class="keyword">if</span> (xhr.status === <span class="number">200</span>) &#123;</span></span><br><span class="line"><span class="javascript">                  <span class="comment">// 将响应的JSON格式数据解析为JavaScript对象</span></span></span><br><span class="line"><span class="javascript">                  <span class="keyword">var</span> data = <span class="built_in">JSON</span>.parse(xhr.responseText);</span></span><br><span class="line"><span class="javascript">                  <span class="comment">// 获取日志内容并插入到页面中</span></span></span><br><span class="line"><span class="javascript">                  <span class="keyword">var</span> logContainer = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;log-container&#x27;</span>);</span></span><br><span class="line"><span class="javascript">                  <span class="keyword">var</span> logs = data.logs;</span></span><br><span class="line"><span class="javascript">                  <span class="keyword">var</span> logHtml = <span class="string">&#x27;&#x27;</span>;</span></span><br><span class="line"><span class="javascript">                  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; logs.length; i++) &#123;</span></span><br><span class="line"><span class="javascript">                      logHtml += <span class="string">&#x27;&lt;p&gt;&#x27;</span> + logs[i] + <span class="string">&#x27;&lt;/p&gt;&#x27;</span>;</span></span><br><span class="line"><span class="javascript">                  &#125;</span></span><br><span class="line"><span class="javascript">                  logContainer.innerHTML = logHtml;</span></span><br><span class="line"><span class="javascript">              &#125;</span></span><br><span class="line"><span class="javascript">          &#125;;</span></span><br><span class="line"><span class="javascript">          <span class="comment">// 发送请求</span></span></span><br><span class="line"><span class="javascript">          xhr.send();</span></span><br><span class="line"><span class="javascript">      &#125;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">          updateLogs();</span></span><br><span class="line"><span class="javascript">          <span class="built_in">setInterval</span>(updateLogs, <span class="number">1000</span>); <span class="comment">// 1秒钟更新一次</span></span></span><br><span class="line"><span class="javascript">      &#125;;</span></span><br><span class="line"><span class="javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>Then we need to add a new router in the flask code:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/api/logs&#x27;</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_logs</span>():</span></span><br><span class="line">    output = subprocess.check_output([<span class="string">&#x27;tail&#x27;</span>, <span class="string">&#x27;-n&#x27;</span>, <span class="string">&#x27;50&#x27;</span>, <span class="string">&#x27;/root/qbitdown/log&#x27;</span>])</span><br><span class="line">    logs = output.decode(<span class="string">&#x27;utf-8&#x27;</span>, <span class="string">&#x27;ignore&#x27;</span>).split(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> jsonify(&#123;<span class="string">&#x27;logs&#x27;</span>: logs&#125;)</span><br></pre></td></tr></table></figure>
-<p>The ‘ignore’ can prevent the system being crashed because of some decoding error…Which is very important</p>
-<h1 id="reference"><a class="markdownIt-Anchor" href="#reference"></a> reference</h1>
-<p><a target="_blank" rel="noopener" href="https://lindevs.com/install-qbittorrent-nox-on-ubuntu">https://lindevs.com/install-qbittorrent-nox-on-ubuntu</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/qbittorrent/qBittorrent/issues/11042">https://github.com/qbittorrent/qBittorrent/issues/11042</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.reddit.com/r/unRAID/comments/lhilzu/comment/ipckgr1/">https://www.reddit.com/r/unRAID/comments/lhilzu/comment/ipckgr1/</a></p>
+<p>The 'ignore' can prevent the system being crashed because of some
+decoding error...Which is very important</p>
+<h1 id="reference">reference</h1>
+<p>https://lindevs.com/install-qbittorrent-nox-on-ubuntu</p>
+<p>https://github.com/qbittorrent/qBittorrent/issues/11042</p>
+<p>https://www.reddit.com/r/unRAID/comments/lhilzu/comment/ipckgr1/</p>
 
     </div>
 
@@ -452,7 +471,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","single_dollars":true,"cjk_width":0.9,"normal_width":0.6,"append_css":true,"every_page":true,"js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 

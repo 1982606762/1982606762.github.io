@@ -151,7 +151,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#configure-nginx"><span class="nav-number">1.</span> <span class="nav-text"> Configure nginx</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#configure-flask-app"><span class="nav-number">2.</span> <span class="nav-text"> Configure flask app</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#configure-nginx"><span class="nav-number">1.</span> <span class="nav-text">Configure nginx</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#configure-flask-app"><span class="nav-number">2.</span> <span class="nav-text">Configure flask app</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -310,13 +310,14 @@
 <li>configure flask app</li>
 </ul>
 <span id="more"></span>
-<h1 id="configure-nginx"><a class="markdownIt-Anchor" href="#configure-nginx"></a> Configure nginx</h1>
+<h1 id="configure-nginx">Configure nginx</h1>
 <p>First, install nginx using <code>apt-get install nginx</code>.</p>
 <p>修改/etc/nginx/sites-enabled/default，改文件名成xxx.com后修改内容</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">listen 80;	</span><br><span class="line">server_name stock.joticia.cn;</span><br><span class="line"></span><br><span class="line">location / &#123;</span><br><span class="line">	proxy_pass http://0.0.0.0:5000/;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">location /stock&#123;</span><br><span class="line">	proxy_pass http://0.0.0.0:5000/stock;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>使用软连接把文件连接到sites-available里</p>
-<h1 id="configure-flask-app"><a class="markdownIt-Anchor" href="#configure-flask-app"></a> Configure flask app</h1>
-<p>In <a target="_blank" rel="noopener" href="http://app.py">app.py</a> need to use <code>app.run(host='0.0.0.0')</code> so all access can be done through ip:5000</p>
+<h1 id="configure-flask-app">Configure flask app</h1>
+<p>In app.py need to use <code>app.run(host='0.0.0.0')</code> so all
+access can be done through ip:5000</p>
 
     </div>
 
@@ -416,7 +417,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","single_dollars":true,"cjk_width":0.9,"normal_width":0.6,"append_css":true,"every_page":true,"js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
