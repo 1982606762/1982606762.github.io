@@ -161,7 +161,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E5%B7%A5%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">前置工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%83%E7%89%9B%E4%BA%91%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3"><span class="nav-number">2.</span> <span class="nav-text">七牛云配置相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%85%BE%E8%AE%AF%E4%BA%91%E5%9F%9F%E5%90%8D%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">腾讯云域名配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#picgo%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="nav-number">4.</span> <span class="nav-text">Picgo的配置</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E5%B7%A5%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text"> 前置工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%83%E7%89%9B%E4%BA%91%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3"><span class="nav-number">2.</span> <span class="nav-text"> 七牛云配置相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%85%BE%E8%AE%AF%E4%BA%91%E5%9F%9F%E5%90%8D%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text"> 腾讯云域名配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#picgo%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="nav-number">4.</span> <span class="nav-text"> Picgo的配置</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -303,7 +303,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.1k</span>
+      <span>909</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -324,58 +324,38 @@
         <p>七牛云做图床绑定PicGo上传图片</p>
 <span id="more"></span>
 <p>七牛云的优势是每个月有10G的免费存储，而且服务器在国内，速度很快，上传和加载图片几乎是秒速</p>
-<figure>
-<img data-src="http://img.zhaoxuanlang.cn/image-20210823090911114.png" alt="image-20210823090911114" /><figcaption aria-hidden="true">image-20210823090911114</figcaption>
-</figure>
-<h1 id="前置工作">前置工作</h1>
-<ol type="1">
+<p><img data-src="http://img.zhaoxuanlang.cn/image-20210823090911114.png" alt="image-20210823090911114" /></p>
+<h1 id="前置工作"><a class="markdownIt-Anchor" href="#前置工作"></a> 前置工作</h1>
+<ol>
 <li>需要有一个登记备案过的域名（腾讯阿里均可，需要绑定七牛云的图床。没有域名的话可以去腾讯云/阿里云申请一个，很便宜，备案大概半个月就可以完成。没有域名的话七牛云会给你一个临时的域名，但是只能用一个月。一个月后用临时域名就访问不到你的图片了）</li>
 <li>注册七牛云账户</li>
 </ol>
-<h1 id="七牛云配置相关">七牛云配置相关</h1>
+<h1 id="七牛云配置相关"><a class="markdownIt-Anchor" href="#七牛云配置相关"></a> 七牛云配置相关</h1>
 <p>首先要注册账户，这里不多说。注册完之后选择右上角的控制台进入如下页面</p>
-<figure>
-<img data-src="http://img.zhaoxuanlang.cn/image-20210823091246883.png" alt="image-20210823091246883" /><figcaption aria-hidden="true">image-20210823091246883</figcaption>
-</figure>
+<p><img data-src="http://img.zhaoxuanlang.cn/image-20210823091246883.png" alt="image-20210823091246883" /></p>
 <p>首先选择下方资源管理里第二个存储空间，新增一个存储空间。名称自己起一个就行，这个名称需要和他现有的其他空间不重复。需要注意这里一定要选公开！我一开始没有选公开导致上传上去的图片都加载不出来= =查了半天报错才发现是这里的问题。</p>
-<figure>
-<img data-src="http://img.zhaoxuanlang.cn/image-20210823091454523.png" alt="image-20210823091454523" /><figcaption aria-hidden="true">image-20210823091454523</figcaption>
-</figure>
+<p><img data-src="http://img.zhaoxuanlang.cn/image-20210823091454523.png" alt="image-20210823091454523" /></p>
 <p>新建完之后他会让你绑定域名。我们假设你已经有了腾讯云的域名，然后进行如下操作。</p>
-<p>我建议使用加速域名，因为访问会快一些，而且因为你流量也不多，加速域名的流量根本用不完。在添加域名页面中加速域名栏要填入一个你域名的二级域名。这里也注意不要直接填入xxx.com。我一开始直接填的xxx到后边CNAME解析的时候就傻眼了。</p>
-<figure>
-<img data-src="http://img.zhaoxuanlang.cn/image-20210823091705146.png" alt="image-20210823091705146" /><figcaption aria-hidden="true">image-20210823091705146</figcaption>
-</figure>
+<p>我建议使用加速域名，因为访问会快一些，而且因为你流量也不多，加速域名的流量根本用不完。在添加域名页面中加速域名栏要填入一个你域名的二级域名。<a target="_blank" rel="noopener" href="http://xn--xxx-628dro03muxotzqjpfm10aoizhl3ccirvhg.com">这里也注意不要直接填入xxx.com</a>。我一开始直接填的xxx到后边CNAME解析的时候就傻眼了。</p>
+<p><img data-src="http://img.zhaoxuanlang.cn/image-20210823091705146.png" alt="image-20210823091705146" /></p>
 <p>像这样创建完成之后点复制CNAME，准备进行下一步操作</p>
-<figure>
-<img data-src="http://img.zhaoxuanlang.cn/image-20210823092044307.png" alt="image-20210823092044307" /><figcaption aria-hidden="true">image-20210823092044307</figcaption>
-</figure>
-<h1 id="腾讯云域名配置">腾讯云域名配置</h1>
+<p><img data-src="http://img.zhaoxuanlang.cn/image-20210823092044307.png" alt="image-20210823092044307" /></p>
+<h1 id="腾讯云域名配置"><a class="markdownIt-Anchor" href="#腾讯云域名配置"></a> 腾讯云域名配置</h1>
 <p>这一步很简单，直接打开你域名的控制台，点添加记录</p>
 <p>主机记录就填你刚刚输入的二级域名的头部，比如说我刚刚写的img.xxx.com这里就填img，记录类型选CNAME，记录值粘贴你刚刚复制到那一串东西，然后确认就ok了。</p>
-<figure>
-<img data-src="http://img.zhaoxuanlang.cn/image-20210823092235923.png" alt="image-20210823092235923" /><figcaption aria-hidden="true">image-20210823092235923</figcaption>
-</figure>
+<p><img data-src="http://img.zhaoxuanlang.cn/image-20210823092235923.png" alt="image-20210823092235923" /></p>
 <p>然后回到七牛云，看看你刚刚配置的存储空间是不是一切正常，这里可能需要等个十分钟等他自动配置。如下图就是正常配置成功的显示。</p>
-<figure>
-<img data-src="http://img.zhaoxuanlang.cn/image-20210823092510888.png" alt="image-20210823092510888" /><figcaption aria-hidden="true">image-20210823092510888</figcaption>
-</figure>
+<p><img data-src="http://img.zhaoxuanlang.cn/image-20210823092510888.png" alt="image-20210823092510888" /></p>
 <p>这里有红框框出来的就是成功配置</p>
-<figure>
-<img data-src="http://img.zhaoxuanlang.cn/image-20210823092649657.png" alt="image-20210823092649657" /><figcaption aria-hidden="true">image-20210823092649657</figcaption>
-</figure>
-<h1 id="picgo的配置">Picgo的配置</h1>
+<p><img data-src="http://img.zhaoxuanlang.cn/image-20210823092649657.png" alt="image-20210823092649657" /></p>
+<h1 id="picgo的配置"><a class="markdownIt-Anchor" href="#picgo的配置"></a> Picgo的配置</h1>
 <p>我们来到PicGo，左侧域名列表选择七牛云</p>
-<figure>
-<img data-src="http://img.zhaoxuanlang.cn/image-20210823092747470.png" alt="image-20210823092747470" /><figcaption aria-hidden="true">image-20210823092747470</figcaption>
-</figure>
+<p><img data-src="http://img.zhaoxuanlang.cn/image-20210823092747470.png" alt="image-20210823092747470" /></p>
 <p>这里前两个Key都可以从七牛云右上角头像-&gt;个人中心-&gt;密钥管理处获得，直接粘贴即可</p>
 <p>存储空间名是你刚刚创建的那个的名字</p>
 <p>访问网址是你刚刚设置的加速域名，注意前边要加http://</p>
 <p>存储区域需要看这个<a href="%5BIMG%5Dhttp://img.zhaoxuanlang.cn/image-20210823092747470.png%5B/IMG%5D">链接</a>，里边有写每个服务器对应的区域，填入你存储空间对应的服务器代号即可</p>
-<figure>
-<img data-src="http://img.zhaoxuanlang.cn/image-20210823093046660.png" alt="image-20210823093046660" /><figcaption aria-hidden="true">image-20210823093046660</figcaption>
-</figure>
+<p><img data-src="http://img.zhaoxuanlang.cn/image-20210823093046660.png" alt="image-20210823093046660" /></p>
 <p>然后上传一张图片看看有没有上传成功就ok。</p>
 
     </div>

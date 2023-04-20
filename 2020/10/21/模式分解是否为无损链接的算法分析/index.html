@@ -321,10 +321,10 @@
 <p>U1∩U2→U1-U2 €F+ 或U1∩U2→U2 -U1€F+</p>
 <span id="more"></span>
 <p>方法二：算法</p>
-<p>ρ={R1&lt;U1,F1&gt;,R2&lt;U2,F2&gt;,...,Rk&lt;Uk,Fk&gt;}是关系模式R&lt;U,F&gt;的一个分解，U={A1,A2,...,An}，F={FD1,FD2,...,FDp}，并设F是一个最小依赖集，记FDi为Xi→Alj，其步骤如下：</p>
+<p>ρ={R1&lt;U1,F1&gt;,R2&lt;U2,F2&gt;,…,Rk&lt;Uk,Fk&gt;}是关系模式R&lt;U,F&gt;的一个分解，U={A1,A2,…,An}，F={FD1,FD2,…,FDp}，并设F是一个最小依赖集，记FDi为Xi→Alj，其步骤如下：</p>
 <p>① 建立一张n列k行的表，每一列对应一个属性，每一行对应分解中的一个关系模式。若属性Aj Ui，则在j列i行上真上aj，否则填上bij；</p>
 <p>② 对于每一个FDi做如下操作：找到Xi所对应的列中具有相同符号的那些行。考察这些行中li列的元素，若其中有aj，则全部改为aj，否则全部改为bmli，m是这些行的行号最小值。</p>
-<p><strong>如果在某次更改后，有一行成为：a1,a2,...,an，则算法终止。且分解ρ具有无损连接性</strong>，否则不具有无损连接性。</p>
+<p><strong>如果在某次更改后，有一行成为：a1,a2,…,an，则算法终止。且分解ρ具有无损连接性</strong>，否则不具有无损连接性。</p>
 <p>对F中p个FD逐一进行一次这样的处理，称为对F的一次扫描。</p>
 <p>③ 比较扫描前后，表有无变化，如有变化，则返回第② 步，否则算法终止。如果发生循环，那么前次扫描至少应使该表减少一个符号，表中符号有限，因此，循环必然终止。</p>
 <p>举例1：已知R&lt;U,F&gt;，U={A,B,C}，F={A→B}，如下的两个分解：</p>
@@ -338,18 +338,18 @@
 <p>所以A→B €F+，A→C ¢F+</p>
 <p>故ρ2是无损连接。</p>
 <p>举例2：已知R&lt;U,F&gt;，U={A,B,C,D,E}，F={A→C,B→C,C→D,DE→C,CE→A}，R的一个分解为R1(AD)，R2(AB)，R3(BE)，R4(CDE)，R5(AE)，判断这个分解是否具有无损连接性。</p>
-<p> ① 构造一个初始的二维表，若“属性”属于“模式”中的属性，则填aj，否则填bij</p>
-<p><img data-src="https://images0.cnblogs.com/blog2015/652582/201504/211054351402115.png" /></p>
+<p>① 构造一个初始的二维表，若“属性”属于“模式”中的属性，则填aj，否则填bij</p>
+<p><img data-src="https://images0.cnblogs.com/blog2015/652582/201504/211054351402115.png" alt="" /></p>
 <p>② 根据A→C，对上表进行处理，由于属性列A上第1、2、5行相同均为a1，所以将属性列C上的b13、b23、b53改为同一个符号b13（取行号最小值）。</p>
-<p><img data-src="https://images0.cnblogs.com/blog2015/652582/201504/211056092031146.png" /></p>
+<p><img data-src="https://images0.cnblogs.com/blog2015/652582/201504/211056092031146.png" alt="" /></p>
 <p>③ 根据B→C，对上表进行处理，由于属性列B上第2、3行相同均为a2，所以将属性列C上的b13、b33改为同一个符号b13（取行号最小值）。</p>
-<p><img data-src="https://images0.cnblogs.com/blog2015/652582/201504/211056516099856.png" /></p>
+<p><img data-src="https://images0.cnblogs.com/blog2015/652582/201504/211056516099856.png" alt="" /></p>
 <p>④ 根据C→D，对上表进行处理，由于属性列C上第1、2、3、5行相同均为b13，所以将属性列D上的值均改为同一个符号a4。</p>
-<p><img data-src="https://images0.cnblogs.com/blog2015/652582/201504/211057216409447.png" /></p>
+<p><img data-src="https://images0.cnblogs.com/blog2015/652582/201504/211057216409447.png" alt="" /></p>
 <p>⑤ 根据DE→C，对上表进行处理，由于属性列DE上第3、4、5行相同均为a4a5，所以将属性列C上的值均改为同一个符号a3。</p>
-<p><img data-src="https://images0.cnblogs.com/blog2015/652582/201504/211057502961728.png" /></p>
+<p><img data-src="https://images0.cnblogs.com/blog2015/652582/201504/211057502961728.png" alt="" /></p>
 <p>⑥ 根据CE→A，对上表进行处理，由于属性列CE上第3、4、5行相同均为a3a5，所以将属性列A上的值均改为同一个符号a1。</p>
-<p><img data-src="https://images0.cnblogs.com/blog2015/652582/201504/211058348282823.png" /></p>
+<p><img data-src="https://images0.cnblogs.com/blog2015/652582/201504/211058348282823.png" alt="" /></p>
 <p>⑦ 通过上述的修改，使第三行成为a1a2a3a4a5，则算法终止。且分解具有无损连接性。</p>
 
     </div>

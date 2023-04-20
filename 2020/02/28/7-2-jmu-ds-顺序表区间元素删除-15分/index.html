@@ -21,12 +21,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.zhaoxuanlang.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="若一个线性表L采用顺序存储结构存储，其中所有的元素为整数。设计一个算法，删除元素值在[x,y]之间的所有元素，要求算法的时间复杂度为O(n)，空间复杂度为O(1)。 输入格式: 三行数据，第一行是顺序表的元素个数，第二行是顺序表的元素，第三行是x和y。 输出格式: 删除元素值在[x,y]之间的所有元素后的顺序表。 输入样例: 10 5 1 9 10 67 12 8 33 6 2 3 10 输出样例">
+<meta name="description" content="若一个线性表L采用顺序存储结构存储，其中所有的元素为整数。设计一个算法，删除元素值在[x,y]之间的所有元素，要求算法的时间复杂度为O(n)，空间复杂度为O(1)。  输入格式: 三行数据，第一行是顺序表的元素个数，第二行是顺序表的元素，第三行是x和y。  输出格式: 删除元素值在[x,y]之间的所有元素后的顺序表。  输入样例: 10 5 1 9 10 67 12 8 33 6 2 3 10">
 <meta property="og:type" content="article">
 <meta property="og:title" content="7-2 jmu-ds-顺序表区间元素删除 (15分)">
 <meta property="og:url" content="https://www.zhaoxuanlang.cn/2020/02/28/7-2-jmu-ds-%E9%A1%BA%E5%BA%8F%E8%A1%A8%E5%8C%BA%E9%97%B4%E5%85%83%E7%B4%A0%E5%88%A0%E9%99%A4-15%E5%88%86/index.html">
 <meta property="og:site_name" content="松鼠小筑">
-<meta property="og:description" content="若一个线性表L采用顺序存储结构存储，其中所有的元素为整数。设计一个算法，删除元素值在[x,y]之间的所有元素，要求算法的时间复杂度为O(n)，空间复杂度为O(1)。 输入格式: 三行数据，第一行是顺序表的元素个数，第二行是顺序表的元素，第三行是x和y。 输出格式: 删除元素值在[x,y]之间的所有元素后的顺序表。 输入样例: 10 5 1 9 10 67 12 8 33 6 2 3 10 输出样例">
+<meta property="og:description" content="若一个线性表L采用顺序存储结构存储，其中所有的元素为整数。设计一个算法，删除元素值在[x,y]之间的所有元素，要求算法的时间复杂度为O(n)，空间复杂度为O(1)。  输入格式: 三行数据，第一行是顺序表的元素个数，第二行是顺序表的元素，第三行是x和y。  输出格式: 删除元素值在[x,y]之间的所有元素后的顺序表。  输入样例: 10 5 1 9 10 67 12 8 33 6 2 3 10">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-28T20:03:32.000Z">
 <meta property="article:modified_time" content="2022-01-15T02:11:03.270Z">
@@ -150,7 +150,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">输入格式:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">输出格式:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B"><span class="nav-number">3.</span> <span class="nav-text">输入样例:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B"><span class="nav-number">4.</span> <span class="nav-text">输出样例:</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text"> 输入格式:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text"> 输出格式:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B"><span class="nav-number">3.</span> <span class="nav-text"> 输入样例:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B"><span class="nav-number">4.</span> <span class="nav-text"> 输出样例:</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -311,18 +311,17 @@
     
     <div class="post-body" itemprop="articleBody">
         <p>若一个线性表L采用顺序存储结构存储，其中所有的元素为整数。设计一个算法，删除元素值在[x,y]之间的所有元素，要求算法的时间复杂度为O(n)，空间复杂度为O(1)。</p>
-<h3 id="输入格式">输入格式:</h3>
+<h3 id="输入格式"><a class="markdownIt-Anchor" href="#输入格式"></a> 输入格式:</h3>
 <p>三行数据，第一行是顺序表的元素个数，第二行是顺序表的元素，第三行是x和y。</p>
-<h3 id="输出格式">输出格式:</h3>
+<h3 id="输出格式"><a class="markdownIt-Anchor" href="#输出格式"></a> 输出格式:</h3>
 <p>删除元素值在[x,y]之间的所有元素后的顺序表。</p>
-<h3 id="输入样例">输入样例:</h3>
+<h3 id="输入样例"><a class="markdownIt-Anchor" href="#输入样例"></a> 输入样例:</h3>
 <p>10<br />
 5 1 9 10 67 12 8 33 6 2<br />
 3 10</p>
-<h3 id="输出样例">输出样例:</h3>
+<h3 id="输出样例"><a class="markdownIt-Anchor" href="#输出样例"></a> 输出样例:</h3>
 <p>1 67 12 33 2</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int m;</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;m );</span><br><span class="line"></span><br><span class="line">    int list[999];</span><br><span class="line">    for (int i = 0; i &lt; m; ++i) &#123;</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;list[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    int x,y;</span><br><span class="line">    scanf(&quot;%d%d&quot;,&amp;x,&amp;y);</span><br><span class="line"></span><br><span class="line">    int list2[999],q=0;</span><br><span class="line"></span><br><span class="line">    for (int j = 0; j &lt; m; ++j) &#123;</span><br><span class="line">        if (x&gt;list[j]y&lt;list[j])</span><br><span class="line">        &#123;</span><br><span class="line">            list2[q]=list[j];</span><br><span class="line">            q++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    for (int i = 0; i &lt; q-1; ++i) &#123;</span><br><span class="line">        printf(&quot;%d &quot;,list2[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;%d&quot;,list2[q-1]);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
     </div>
 
     

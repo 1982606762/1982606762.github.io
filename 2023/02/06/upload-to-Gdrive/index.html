@@ -150,7 +150,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Install rclone</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">Bind with google account</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">Upload files to the drive</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#install-rclone"><span class="nav-number">1.</span> <span class="nav-text"> Install rclone</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bind-with-google-account"><span class="nav-number">2.</span> <span class="nav-text"> Bind with google account</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#upload-files-to-the-drive"><span class="nav-number">3.</span> <span class="nav-text"> Upload files to the drive</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -311,14 +311,14 @@
 <li>Upload files to the drive</li>
 </ul>
 <span id="more"></span>
-<h1>Install rclone</h1>
+<h1 id="install-rclone"><a class="markdownIt-Anchor" href="#install-rclone"></a> Install rclone</h1>
 <p>To install rclone on Linux/macOS/BSD systems, run:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -v ; curl https://rclone.org/install.sh | sudo bash</span><br></pre></td></tr></table></figure>
 <p><a target="_blank" rel="noopener" href="https://rclone.org/downloads/">official link</a></p>
-<h1>Bind with google account</h1>
+<h1 id="bind-with-google-account"><a class="markdownIt-Anchor" href="#bind-with-google-account"></a> Bind with google account</h1>
 <p>first, create a google service account.<a target="_blank" rel="noopener" href="https://rclone.org/drive/#:~:text=1.%20Create%20a%20service%20account%20for%20example.com">link</a></p>
 <p><a target="_blank" rel="noopener" href="https://rclone.org/drive/">Then configure rclone</a></p>
-<h1>Upload files to the drive</h1>
+<h1 id="upload-files-to-the-drive"><a class="markdownIt-Anchor" href="#upload-files-to-the-drive"></a> Upload files to the drive</h1>
 <p>Upload silently:</p>
 <p><code>rclone copy &lt;sourcepath&gt; &lt;remotename&gt;:&lt;remotepath&gt; -P &gt;&gt; log.txt</code></p>
 <p>Check the log file:</p>

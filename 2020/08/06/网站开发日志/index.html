@@ -293,7 +293,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>4.8k</span>
+      <span>4.9k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -332,7 +332,7 @@
 <li>更改整体布局，大小</li>
 </ul>
 <p>右侧菜单设置有问题待修复，下拉菜单：<select><option></p>
-<p><img data-src="https://img.jbzj.com/file_images/article/201212/20121213112015996.png" /></p>
+<p><img data-src="https://img.jbzj.com/file_images/article/201212/20121213112015996.png" alt="" /></p>
 <p>若要弄这样的表，灰色部分使用th白色部分用td就可以分开设置，td内部加input就可以输入值</p>
 <p>2020-08-12</p>
 <ul>
@@ -370,8 +370,8 @@
 <ul>
 <li>完成批量增加html元素功能</li>
 </ul>
-<p>添加时需要先选中要添加的位置，最好做一个空的div，然后使用innerHTML的方式直接添加，需注意的是换行和"都需要用\转义</p>
-<p>删除时只需要将其innerHTML变成""就可以</p>
+<p>添加时需要先选中要添加的位置，最好做一个空的div，然后使用innerHTML的方式直接添加，需注意的是换行和&quot;都需要用\转义</p>
+<p>删除时只需要将其innerHTML变成&quot;&quot;就可以</p>
 <p>2020-10-26</p>
 <p>人工alert函数：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    &lt;div id=&quot;light&quot; class=&quot;white_content&quot;&gt;</span><br><span class="line">    &lt;/div&gt; </span><br><span class="line">    &lt;div id=&quot;fade&quot; class=&quot;black_overlay&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">.black_overlay&#123; </span><br><span class="line">    display: none; </span><br><span class="line">    position: absolute; </span><br><span class="line">    top: 0%; </span><br><span class="line">    left: 0%; </span><br><span class="line">    width: 100%; </span><br><span class="line">    height: 100%; </span><br><span class="line">    background-color: black; </span><br><span class="line">    z-index:1001; </span><br><span class="line">    -moz-opacity: 0.8; </span><br><span class="line">    opacity:.80; </span><br><span class="line">    filter: alpha(opacity=88); </span><br><span class="line">&#125; </span><br><span class="line">.white_content &#123; </span><br><span class="line">    display: none; </span><br><span class="line">    position: absolute; </span><br><span class="line">    top: 35%;</span><br><span class="line">    left: 45%;</span><br><span class="line">    width: 10%;</span><br><span class="line">    height: 15%;</span><br><span class="line">    padding: 20px; </span><br><span class="line">    background-color: white; </span><br><span class="line">    z-index:1002; </span><br><span class="line">    overflow: auto; </span><br><span class="line">    border: 5px solid black;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">function artificial_alert(text)&#123;</span><br><span class="line">    document.getElementById(&#x27;light&#x27;).innerHTML=&quot;&lt;p&gt;&quot;+text+&quot;&lt;/p&gt;&lt;button type=\&quot;button\&quot; onclick=\&quot;closeDialog()\&quot;&gt;关闭&lt;/button&gt;&quot;</span><br><span class="line">    if(document.getElementById(&#x27;light&#x27;).style.display== &#x27;block&#x27;)&#123;</span><br><span class="line">        document.getElementById(&#x27;light&#x27;).style.display = &#x27;none&#x27;;</span><br><span class="line">        document.getElementById(&#x27;fade&#x27;).style.display = &#x27;none&#x27;;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        document.getElementById(&#x27;light&#x27;).style.display = &#x27;block&#x27;;</span><br><span class="line">        document.getElementById(&#x27;fade&#x27;).style.display = &#x27;block&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -379,12 +379,12 @@
 <p>2020-11-04</p>
 <p>最近在搞bootstrap</p>
 <p>导入时只需要</p>
-<p><code>&lt;link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css"&gt;</code></p>
-<p><code>&lt;script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"&gt;&lt;/script&gt;</code></p>
-<p><code>&lt;script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"&gt;&lt;/script&gt;</code></p>
+<p><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css&quot;&gt;</code></p>
+<p><code>&lt;script src=&quot;https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js&quot;&gt;&lt;/script&gt;</code></p>
+<p><code>&lt;script src=&quot;https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</code></p>
 <p>就可以，但是在npm下运行时需要把jq下载到本地，同时引入在线jq和本地jq才可以</p>
 <p>输入框默认值，点击清除，不点击恢复：</p>
-<p><code>onfocus="if(this.value=='test')&#123;this.value=''&#125;" onblur="if(this.value=='')&#123;this.value='test'&#125;" value="test"</code></p>
+<p><code>onfocus=&quot;if(this.value=='test')&#123;this.value=''&#125;&quot; onblur=&quot;if(this.value=='')&#123;this.value='test'&#125;&quot; value=&quot;test&quot;</code></p>
 <p>用for循环appendChild时不能只靠innerHTML修改元素，必须重新声明才可以</p>
 <p>列表可以使用push 和pop</p>
 <p>2020/11/23</p>
@@ -396,7 +396,6 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.aspectration &#123;</span><br><span class="line">    position: relative; /*因为容器所有子元素需要绝对定位*/</span><br><span class="line">    height: 0; /*容器高度是由padding来控制，盒模型原理告诉你一切*/</span><br><span class="line">    width: 100%; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.aspectration[data-ratio=&quot;16:9&quot;] &#123;</span><br><span class="line">    padding-top: 56.25%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.aspectration[data-ratio=&quot;4:3&quot;]&#123;</span><br><span class="line">    padding-top: 75%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>通过通配符<code>*</code>选择器，让其子元素的宽高和容器<code>.aspectration</code>一样大小：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.aspectration &gt; * &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: 0;</span><br><span class="line">    top: 0;</span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 100%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
     </div>
 
     

@@ -291,7 +291,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>450</span>
+      <span>448</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -315,7 +315,7 @@
 首先是判定i与j的关系， 如果是下三角存储，则分一下两种情况<br />
 1、如果i&lt;j, 则交换i与j的值，将上copy三角的位置值变换到下三角位置<br />
 2、如果i&gt;=j，则不用执行操作直接走下面的流程</p>
-<p>此时，i表示行坐标，j表示了坐标i之前有i行，即有1+2+...+i = (i+1)*i/2，在i标识的第i+1行有j+1个元素，由此zd可以确定k的值为(i+1)*i/2+j+1 = k+1 由此可得k = (i+1)*i/2+j</p>
+<p>此时，i表示行坐标，j表示了坐标i之前有i行，即有1+2+…+i = (i+1)*i/2，在i标识的第i+1行有j+1个元素，由此zd可以确定k的值为(i+1)*i/2+j+1 = k+1 由此可得k = (i+1)*i/2+j</p>
 <p>由此可以的，a[3][6], i=3, j=6, 由于i&lt;j, 交换得i=6， j=3<br />
 由此 k = (6+1)*6/2+3 = 24<br />
 又由于&amp;b[0] = 1000 每个元素占两个字节, 则b[24] = 1000+2*24 = 1048<br />

@@ -150,7 +150,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Generate ssh file</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">Upload it to the server</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#generate-ssh-file"><span class="nav-number">1.</span> <span class="nav-text"> Generate ssh file</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#upload-it-to-the-server"><span class="nav-number">2.</span> <span class="nav-text"> Upload it to the server</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -315,9 +315,9 @@
 <li>upload it to the server</li>
 </ul>
 <span id="more"></span>
-<h1>Generate ssh file</h1>
+<h1 id="generate-ssh-file"><a class="markdownIt-Anchor" href="#generate-ssh-file"></a> Generate ssh file</h1>
 <p>To log in to a server with ssh keys you need to first generate a key file using <code>ssh-keygen</code> and get two files id_rsa and id_rsa.pub. The .pub file is a public key, you need to put it into .ssh/authorized_keys file.</p>
-<h1>Upload it to the server</h1>
+<h1 id="upload-it-to-the-server"><a class="markdownIt-Anchor" href="#upload-it-to-the-server"></a> Upload it to the server</h1>
 <p>You can paste it yourself or use <code>ssh-copy-id -i key_file user@host</code> to upload it automatically.</p>
 <p>Or you can do it manually:</p>
 <ol>

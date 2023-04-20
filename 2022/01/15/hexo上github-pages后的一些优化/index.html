@@ -155,7 +155,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8ssh%E5%8A%A0%E9%80%9Fpush%E6%93%8D%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">使用ssh加速push操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8https%E7%BB%99%E7%BD%91%E9%A1%B5%E5%8A%A0%E5%AF%86"><span class="nav-number">2.</span> <span class="nav-text">使用https给网页加密</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8cdn%E5%8A%A0%E9%80%9F%E7%BD%91%E7%AB%99%E8%AE%BF%E9%97%AE"><span class="nav-number">3.</span> <span class="nav-text">使用CDN加速网站访问</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8ssh%E5%8A%A0%E9%80%9Fpush%E6%93%8D%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text"> 使用ssh加速push操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8https%E7%BB%99%E7%BD%91%E9%A1%B5%E5%8A%A0%E5%AF%86"><span class="nav-number">2.</span> <span class="nav-text"> 使用https给网页加密</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8cdn%E5%8A%A0%E9%80%9F%E7%BD%91%E7%AB%99%E8%AE%BF%E9%97%AE"><span class="nav-number">3.</span> <span class="nav-text"> 使用CDN加速网站访问</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -291,7 +291,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>581</span>
+      <span>566</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -311,13 +311,13 @@
     <div class="post-body" itemprop="articleBody">
         <p>本文介绍使用github pages负载hexo的优化，包括push不受网络问题影响，网站https设置，使用CDN加速浏览</p>
 <span id="more"></span>
-<h1 id="使用ssh加速push操作">使用ssh加速push操作</h1>
+<h1 id="使用ssh加速push操作"><a class="markdownIt-Anchor" href="#使用ssh加速push操作"></a> 使用ssh加速push操作</h1>
 <p>由于国内网络问题，使用http向github push的时候经常遇到卡顿或者无法连接的情况，建议使用ssh</p>
 <p>首先需要用<code>ssh-keygen</code>来生成一个ssh密钥。然后把id_rsa.pub里的内容复制到github里</p>
 <p>在_config.yml中将github链接改为ssh对应的链接，删除.git_deploy文件，使用hexo clean，然后再hexo g &amp;&amp; hexo d</p>
-<h1 id="使用https给网页加密">使用https给网页加密</h1>
+<h1 id="使用https给网页加密"><a class="markdownIt-Anchor" href="#使用https给网页加密"></a> 使用https给网页加密</h1>
 <p>在腾讯云可以免费申请ssl证书。申请后可以搭配下边cdn一起使用。在github pages位置开启强制HTTPS即可</p>
-<h1 id="使用cdn加速网站访问">使用CDN加速网站访问</h1>
+<h1 id="使用cdn加速网站访问"><a class="markdownIt-Anchor" href="#使用cdn加速网站访问"></a> 使用CDN加速网站访问</h1>
 <p>在腾讯云-内容分发网络-域名管理新建针对网站域名的CDN服务</p>
 <p>在原站配置选自有源，https<img data-src="https://gitee.com/Squirrel_01/img/raw/master/img/image-20220115111541902.png" alt="image-20220115111541902" /></p>
 <p>地址就填github官方给的地址</p>
@@ -326,15 +326,9 @@
 </blockquote>
 <p>开启后在缓存位置可以改短一些，我设置的是1天缓存。缓存时间太长会导致网页更新后访问不到最新的页面。你也可以手动在刷新预热-URL刷新删除所有CDN缓存。</p>
 <p>测试结果：</p>
-<figure>
-<img data-src="https://gitee.com/Squirrel_01/img/raw/master/img/1s-%E6%B5%8B%E9%80%9F.png" alt="1s-测速" /><figcaption aria-hidden="true">1s-测速</figcaption>
-</figure>
-<figure>
-<img data-src="https://gitee.com/Squirrel_01/img/raw/master/img/1h-%E6%B5%8B%E9%80%9F.png" alt="1h-测速" /><figcaption aria-hidden="true">1h-测速</figcaption>
-</figure>
-<figure>
-<img data-src="https://gitee.com/Squirrel_01/img/raw/master/img/1d-%E6%B5%8B%E9%80%9F.png" alt="1d-测速" /><figcaption aria-hidden="true">1d-测速</figcaption>
-</figure>
+<p><img data-src="https://gitee.com/Squirrel_01/img/raw/master/img/1s-%E6%B5%8B%E9%80%9F.png" alt="1s-测速" /></p>
+<p><img data-src="https://gitee.com/Squirrel_01/img/raw/master/img/1h-%E6%B5%8B%E9%80%9F.png" alt="1h-测速" /></p>
+<p><img data-src="https://gitee.com/Squirrel_01/img/raw/master/img/1d-%E6%B5%8B%E9%80%9F.png" alt="1d-测速" /></p>
 
     </div>
 

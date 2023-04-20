@@ -21,12 +21,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.zhaoxuanlang.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="在这里插入图片描述  数据结构是相互之间存在一种或多种特定关系的数据元素的集合。 数据：是描述客观事物的符号，是计算机中可以操作的对象，是能被计算机识别，并输入给计算机处理的符号集合。数据不仅仅包括整形、实型等数值类型，还包括字符及声音、图像、视频等非数值类型。 数据，也就是符号，必须具备两个前提： a.可以输入到计算机中 b.能被计算机程序处理 对于整型、实型等数值类型，可以进行数值计算。 对">
+<meta name="description" content="数据结构是相互之间存在一种或多种特定关系的数据元素的集合。 数据：是描述客观事物的符号，是计算机中可以操作的对象，是能被计算机识别，并输入给计算机处理的符号集合。数据不仅仅包括整形、实型等数值类型，还包括字符及声音、图像、视频等非数值类型。 数据，也就是符号，必须具备两个前提： a.可以输入到计算机中 b.能被计算机程序处理 对于整型、实型等数值类型，可以进行数值计算。 对于字符数据类型，就需要">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据、数据元素、数据项、数据对象的介绍和理解">
 <meta property="og:url" content="https://www.zhaoxuanlang.cn/2020/02/23/%E6%95%B0%E6%8D%AE%E3%80%81%E6%95%B0%E6%8D%AE%E5%85%83%E7%B4%A0%E3%80%81%E6%95%B0%E6%8D%AE%E9%A1%B9%E3%80%81%E6%95%B0%E6%8D%AE%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%92%8C%E7%90%86%E8%A7%A3/index.html">
 <meta property="og:site_name" content="松鼠小筑">
-<meta property="og:description" content="在这里插入图片描述  数据结构是相互之间存在一种或多种特定关系的数据元素的集合。 数据：是描述客观事物的符号，是计算机中可以操作的对象，是能被计算机识别，并输入给计算机处理的符号集合。数据不仅仅包括整形、实型等数值类型，还包括字符及声音、图像、视频等非数值类型。 数据，也就是符号，必须具备两个前提： a.可以输入到计算机中 b.能被计算机程序处理 对于整型、实型等数值类型，可以进行数值计算。 对">
+<meta property="og:description" content="数据结构是相互之间存在一种或多种特定关系的数据元素的集合。 数据：是描述客观事物的符号，是计算机中可以操作的对象，是能被计算机识别，并输入给计算机处理的符号集合。数据不仅仅包括整形、实型等数值类型，还包括字符及声音、图像、视频等非数值类型。 数据，也就是符号，必须具备两个前提： a.可以输入到计算机中 b.能被计算机程序处理 对于整型、实型等数值类型，可以进行数值计算。 对于字符数据类型，就需要">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190618173532304.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JhaWR1XzMxNjU3ODg5,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/02/image-1-1024x316.png">
@@ -294,7 +294,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>814</span>
+      <span>805</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -312,9 +312,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <figure>
-<img data-src="https://img-blog.csdnimg.cn/20190618173532304.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JhaWR1XzMxNjU3ODg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /><figcaption aria-hidden="true">在这里插入图片描述</figcaption>
-</figure>
+        <p><img data-src="https://img-blog.csdnimg.cn/20190618173532304.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JhaWR1XzMxNjU3ODg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
 <p>数据结构是相互之间存在一种或多种特定关系的数据元素的集合。</p>
 <p>数据：是描述客观事物的符号，是计算机中可以操作的对象，是能被计算机识别，并输入给计算机处理的符号集合。数据不仅仅包括整形、实型等数值类型，还包括字符及声音、图像、视频等非数值类型。<br />
 数据，也就是符号，必须具备两个前提：<br />
@@ -335,7 +333,7 @@ b.能被计算机程序处理<br />
 数据结构：是相互之间存在一种或者多种特定关系的数据元素的集合。</p>
 <p>根据网上大佬的理解 可能会更直观一些：<br />
 假设有两张表，A表为人员表，B表为课程表， 表的格式如下：</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/02/image-1-1024x316.png" /></p>
+<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/02/image-1-1024x316.png" alt="" /></p>
 <p>重点：</p>
 <p>这两张表就是数据<br />
 而单独的一张表就称为数据对象，即人员表是一个数据对象，课程表也是一个数据对象<br />

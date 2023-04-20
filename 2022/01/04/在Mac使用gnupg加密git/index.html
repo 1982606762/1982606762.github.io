@@ -152,7 +152,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90gpg%E5%AF%86%E7%A0%81%E5%B9%B6%E6%B5%8B%E8%AF%95%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">生成gpg密码并测试可以使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEgit"><span class="nav-number">2.</span> <span class="nav-text">配置git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">3.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90gpg%E5%AF%86%E7%A0%81%E5%B9%B6%E6%B5%8B%E8%AF%95%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text"> 生成gpg密码并测试可以使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEgit"><span class="nav-number">2.</span> <span class="nav-text"> 配置git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">3.</span> <span class="nav-text"> 参考链接</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -314,16 +314,17 @@
     <div class="post-body" itemprop="articleBody">
         <p>让你的git提交也能拥有酷炫的认证标志</p>
 <span id="more"></span>
-<h2 id="生成gpg密码并测试可以使用">生成gpg密码并测试可以使用</h2>
+<h2 id="生成gpg密码并测试可以使用"><a class="markdownIt-Anchor" href="#生成gpg密码并测试可以使用"></a> 生成gpg密码并测试可以使用</h2>
 <p>首先需要下载安装gpg</p>
 <p><code>brew install gpg</code></p>
 <p>安装好之后看一眼有没有pinentry <code>pinentry -h</code></p>
 <p>有的话用<code>which pinentry</code>查找一下在哪，没有的话使用<code>brew install pinentry</code>安装</p>
-<p>找到目录后使用<code>vim ~/.gnupg/gpg-agent.conf</code> 添加一行<code>pinentry-program /usr/local/bin/pinentry</code>这里写你自己的路径</p>
+<p>找到目录后使用<code>vim ~/.gnupg/gpg-agent.conf</code> 添加一行<code> pinentry-program /usr/local/bin/pinentry</code>这里写你自己的路径</p>
 <p>然后使用<code>gpg --full-generate-key</code>生成，跟着指引走即可，注意一点，邮箱需要和github里添加的一样</p>
-<p>然后使用<code>echo "test"|gpg --clearsign</code>测试一下能不能用，在这一步可能会报错</p>
+<p>然后使用<code>echo &quot;test&quot;|gpg --clearsign</code>测试一下能不能用，在这一步可能会报错</p>
 <blockquote>
-<p>gpg: 签名时失败： Inappropriate ioctl for device gpg: [stdin]: clear-sign failed: Inappropriate ioctl for device</p>
+<p>gpg: 签名时失败： Inappropriate ioctl for device<br />
+gpg: [stdin]: clear-sign failed: Inappropriate ioctl for device</p>
 </blockquote>
 <p>解决方案：编辑~/.gnupg目录下的gpg.conf和gpg-agent.conf两个文件</p>
 <p>gpg.conf</p>
@@ -331,28 +332,31 @@
 <p>gpg-agent.conf</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">allow-loopback-pinentry</span><br></pre></td></tr></table></figure>
 <p>更改完后使用<code>gpgconf --kill gpg-agent</code>重启gpg，然后再尝试，此时应该可以生成密码了</p>
-<h2 id="配置git">配置git</h2>
+<h2 id="配置git"><a class="markdownIt-Anchor" href="#配置git"></a> 配置git</h2>
 <p>使用<code>gpg --list-secret-keys --keyid-format=long</code>查看当前的秘钥</p>
 <blockquote>
 <p>/Users/zxl/.gnupg/pubring.kbx</p>
-<p>sec rsa3072/89E3C55059BE3D97 2022-01-04 [SC] CE52DE13A3615D3687F9C82389E3C55059BE3D97 uid [ 绝对 ] Zhaoxuanlang (It's me!) <a href="mailto:1982606762@qq.com" class="email">1982606762@qq.com</a> ssb rsa3072/1CF09AC8CF982194 2022-01-04 [E]</p>
+<p>sec   rsa3072/89E3C55059BE3D97 2022-01-04 [SC]<br />
+CE52DE13A3615D3687F9C82389E3C55059BE3D97<br />
+uid                   [ 绝对 ] Zhaoxuanlang (It’s me!) <a href="mailto:1982606762@qq.com">1982606762@qq.com</a><br />
+ssb   rsa3072/1CF09AC8CF982194 2022-01-04 [E]</p>
 </blockquote>
 <p>这里你密钥的ID是89E3C55059BE3D97</p>
 <p>然后使用<code>gpg --armor --export 89E3C55059BE3D97</code>查看公钥，复制所有包括BEGIN和END的内容</p>
 <p>进入github页面-settings-SSH-新增GPG，复制进去即可</p>
 <p>还需要在本地设置git使用密钥</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.signingkey &quot;GPG key ID&quot;</span><br></pre></td></tr></table></figure>
-<p>然后在commit的时候使用<code>git commit -S -m "xxxx"</code>来加密本次提交，push之后就可以见到<img data-src="https://gitee.com/Squirrel_01/img/raw/master/img/image-20220104122352299.png" alt="image-20220104122352299" /></p>
+<p>然后在commit的时候使用<code>git commit -S -m &quot;xxxx&quot;</code>来加密本次提交，push之后就可以见到<img data-src="https://gitee.com/Squirrel_01/img/raw/master/img/image-20220104122352299.png" alt="image-20220104122352299" /></p>
 <p>防止每次都加-S太麻烦可以使用<code>git config --global commit.gpgsign true</code>来默认使用加密提交</p>
 <p>此外，还可以使用<code>gpg --delete-secret-and-public-key your@email.addr</code>来删除已生成的本地密钥</p>
 <p>或是两步删除密钥</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gpg -k #列出所有密钥</span><br><span class="line">gpg --delete-secret-keys id</span><br><span class="line">gpg --delete-keys id</span><br></pre></td></tr></table></figure>
-<h2 id="参考链接">参考链接</h2>
-<p>https://blog.csdn.net/qq_33154343/article/details/106030946</p>
-<p>https://superuser.com/questions/1628782/gpg-signing-failed-no-pinentry</p>
-<p>https://docs.github.com/cn/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key</p>
-<p>https://frostming.com/2019/11-25/git-commit-sign/</p>
-<p>https://blog.chaos.run/dreams/using-gpg/</p>
+<h2 id="参考链接"><a class="markdownIt-Anchor" href="#参考链接"></a> 参考链接</h2>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33154343/article/details/106030946">https://blog.csdn.net/qq_33154343/article/details/106030946</a></p>
+<p><a target="_blank" rel="noopener" href="https://superuser.com/questions/1628782/gpg-signing-failed-no-pinentry">https://superuser.com/questions/1628782/gpg-signing-failed-no-pinentry</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.github.com/cn/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key">https://docs.github.com/cn/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key</a></p>
+<p><a target="_blank" rel="noopener" href="https://frostming.com/2019/11-25/git-commit-sign/">https://frostming.com/2019/11-25/git-commit-sign/</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.chaos.run/dreams/using-gpg/">https://blog.chaos.run/dreams/using-gpg/</a></p>
 
     </div>
 

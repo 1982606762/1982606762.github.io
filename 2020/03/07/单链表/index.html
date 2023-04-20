@@ -316,7 +316,7 @@
     
     <div class="post-body" itemprop="articleBody">
         <p>2-3 某线性表中最常用的操作是在最后一个元素之后插入一个元素和删除第一个元素，则采用什么存储方式最节省运算时间？ (2分)b</p>
-<ol type="1">
+<ol>
 <li>单链表</li>
 <li>仅有尾指针的单循环链表</li>
 <li>仅有头指针的单循环链表</li>
@@ -328,19 +328,19 @@
 <p>F p++不能指向后一个元素</p>
 <p>2-4</p>
 <p>若某表最常用的操作是在最后一个结点之后插入一个结点或删除最后一个结点。则采用哪种存储方式最节省运算时间？ (2分)</p>
-<ol type="1">
+<ol>
 <li>单链表</li>
 <li>双链表</li>
 <li>单循环链表</li>
 <li>带头结点的双循环链表</li>
 </ol>
 <p>D 头结点上一个就是最后一个节点</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-1024x454.png" /></p>
+<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-1024x454.png" alt="" /></p>
 <p>这道题的逻辑，简单来说，就是地址存放你当前元素的地址，链接地址是指向当前元素的下一个元素的地址。 因此，我们来看没插入f之前时，链表的顺序，由于头元素是c（地址1008H），由C开始，C的链接地址是1000H，也就是指向元素a（地址1000H），之后a的链接地址是1010H，也就是指向元素e。。。 按照上面这个思路遍历，我们可以得到链表的遍历顺序c（1008H）-&gt;a（1000H）-&gt;e（1010H）-&gt;b（1004H）-&gt;d（100CH）-&gt;null。 由于f逻辑上位于a和e之间，因此也就是说将f插入到ae之间，因此只需要修改a的链接地址（也就是指向下一个元素的地址）为f的地址（1014H），然后将f的链接地址修改为e的地址。<br />
 链表插入不影响其他元素，所以其他元素链接地址不变。</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-1.png" /></p>
+<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-1.png" alt="" /></p>
 <p>不带表头结点，头指针直接指向数据</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-2.png" /></p>
+<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-2.png" alt="" /></p>
 <p>在m之后</p>
 <p>在一个长度为 n （ n&gt;1 ）的单链表上，设有头和尾两个指针，执行 操作与链表的长度有关。</p>
 <ul>
@@ -363,10 +363,10 @@
 <p>D <strong>在单链表最后一个元素后插入一个新元素</strong>时，只需先将新结点指向NULL，然后将尾指针指向的原末端结点指向新的元素（结点），最后将尾指针指向新的元素（结点）。与链表长度无关。</p>
 <p>123</p>
 <p><code>new_point-&gt;next = NULL;``rear-&gt;next = new_point;``rear = new_point;</code></p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-3.png" /></p>
+<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-3.png" alt="" /></p>
 <p>静态链表:数组的每一个下标都对应一个data和一个cur。数据域data用来存放数据元素，；而游标cur相当于单链表中的next指针，</p>
 <p>存放该元素的后继在数组中的下标。</p>
-<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-4.png" /></p>
+<p><img data-src="http://www.zhaoxuanlang.cn/wp-content/uploads/2020/03/image-4.png" alt="" /></p>
 
     </div>
 
