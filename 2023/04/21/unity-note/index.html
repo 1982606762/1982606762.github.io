@@ -21,26 +21,28 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.zhaoxuanlang.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="业精于勤荒于嬉，行成于思毁于随">
-<meta property="og:type" content="website">
-<meta property="og:title" content="松鼠小筑">
-<meta property="og:url" content="https://www.zhaoxuanlang.cn/archives/2021/page/2/index.html">
+<meta name="description" content="Obstacle course 按option可以调整观察视角，按qwer可以切换当前工具 Start and update start是运行脚本的时候只执行一次，而update是每一帧都执行一次 1transform.Translate(x,y,z)会给物品位置加一个增量 Variables 和c++类似 Using SerializeField 新建material可以给物品添加材质 在变量">
+<meta property="og:type" content="article">
+<meta property="og:title" content="unity-note">
+<meta property="og:url" content="https://www.zhaoxuanlang.cn/2023/04/21/unity-note/index.html">
 <meta property="og:site_name" content="松鼠小筑">
-<meta property="og:description" content="业精于勤荒于嬉，行成于思毁于随">
+<meta property="og:description" content="Obstacle course 按option可以调整观察视角，按qwer可以切换当前工具 Start and update start是运行脚本的时候只执行一次，而update是每一帧都执行一次 1transform.Translate(x,y,z)会给物品位置加一个增量 Variables 和c++类似 Using SerializeField 新建material可以给物品添加材质 在变量">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-04-21T19:55:11.000Z">
+<meta property="article:modified_time" content="2023-05-14T09:09:55.847Z">
 <meta property="article:author" content="Xuanlang">
-<meta property="article:tag" content="松鼠小筑">
+<meta property="article:tag" content="unity">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://www.zhaoxuanlang.cn/archives/2021/page/2/">
+<link rel="canonical" href="https://www.zhaoxuanlang.cn/2023/04/21/unity-note/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"archives/2021/page/2/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.zhaoxuanlang.cn/2023/04/21/unity-note/","path":"2023/04/21/unity-note/","title":"unity-note"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>归档 | 松鼠小筑</title>
+<title>unity-note | 松鼠小筑</title>
   
 
   <script src="/js/third-party/analytics/baidu-analytics.js"></script>
@@ -71,7 +73,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">松鼠小筑</h1>
+      <p class="site-title">松鼠小筑</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">学习笔记</p>
@@ -135,7 +137,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -148,6 +150,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#obstacle-course"><span class="nav-number">1.</span> <span class="nav-text">Obstacle course</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#start-and-update"><span class="nav-number">1.1.</span> <span class="nav-text">Start and update</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#variables"><span class="nav-number">1.2.</span> <span class="nav-text">Variables</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#using-serializefield"><span class="nav-number">1.3.</span> <span class="nav-text">Using SerializeField</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#input.getaxis"><span class="nav-number">1.4.</span> <span class="nav-text">Input.GetAxis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#time-deltatime"><span class="nav-number">1.5.</span> <span class="nav-text">Time DeltaTime</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cinemachine"><span class="nav-number">1.6.</span> <span class="nav-text">Cinemachine</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#basic-collision"><span class="nav-number">1.7.</span> <span class="nav-text">Basic collision</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#time"><span class="nav-number">1.8.</span> <span class="nav-text">Time</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -214,174 +217,175 @@
 </noscript>
 
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2023/04/21/unity-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Xuanlang">
+      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="松鼠小筑">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          unity-note
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-04-21 21:55:11" itemprop="dateCreated datePublished" datetime="2023-04-21T21:55:11+02:00">2023-04-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-05-14 11:09:55" itemprop="dateModified" datetime="2023-05-14T11:09:55+02:00">2023-05-14</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="unity-note" href="/2023/04/21/unity-note/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::faed22f69463304967518d4a41b04fad" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>835</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <span id="more"></span>
+<h1 id="obstacle-course">Obstacle course</h1>
+<p>按option可以调整观察视角，按qwer可以切换当前工具</p>
+<h2 id="start-and-update">Start and update</h2>
+<p>start是运行脚本的时候只执行一次，而update是每一帧都执行一次</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">transform.Translate(x,y,z)会给物品位置加一个增量</span><br></pre></td></tr></table></figure>
+<h2 id="variables">Variables</h2>
+<p>和c++类似</p>
+<h2 id="using-serializefield">Using SerializeField</h2>
+<p>新建material可以给物品添加材质</p>
+<p>在变量前加<code>[SerializeField]</code>就可以让他在物品的inspector里手动设置</p>
+<h2 id="input.getaxis">Input.GetAxis</h2>
+<p>从菜单栏的Edit-project
+settings里可以看到所有用户输入所对应的键位。</p>
+<p>在代码中使用<code>Input.GetAxis("Horizontal");</code>可以获得用户输入</p>
+<h2 id="time-deltatime">Time DeltaTime</h2>
+<p>为了让游戏在不同性能的电脑上效果一样就需要使用<code>Time.deltaTime</code>,然后乘一个movespeed就可以</p>
+<h2 id="cinemachine">Cinemachine</h2>
+<ol type="1">
+<li>安装cinemachine包</li>
+<li>给主摄像机的components添加cinemachine brain component</li>
+<li>添加一个虚拟摄像机Virtual camera</li>
+<li>在这个虚拟摄像机的设置中把body设置成framing
+transposer,在上边的follow里选择跟踪某个物体</li>
+<li>在下边的body里有一个camera distance可以设置摄像机的远近</li>
+</ol>
+<h2 id="basic-collision">Basic collision</h2>
+<p>每个物体都可以设置box collider，
+可以和物体大小一样也可以大小不同来实现不一样的效果。</p>
+<p>给玩家添加rigidbody
+component之后他就有了物理属性，可以碰撞。通过添加constrain可以控制旋转等</p>
+<p>给墙体附加一个c#脚本，脚本里写一个OnCollisionEnter函数可以检测碰撞消息。</p>
+<p>使用<code>GetComponent&lt;MeshRenderer&gt;().material.color = Color.red;</code>可以在碰撞的时候变颜色</p>
+<h2 id="time">Time</h2>
+<p>Time.time是当前的游戏时间</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Xuanlang
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.zhaoxuanlang.cn/2023/04/21/unity-note/" title="unity-note">https://www.zhaoxuanlang.cn/2023/04/21/unity-note/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/unity/" rel="tag"># unity</a>
+          </div>
+
         
-        <span class="collection-header">很好! 目前共计 87 篇日志。 继续努力。</span>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-08-18T16:37:21+02:00"
-              content="2021-08-18">
-          08-18
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/08/18/%E8%BF%AD%E4%BB%A3%E5%99%A8/" itemprop="url">
-            <span itemprop="name">迭代器</span>
-          </a>
-      </div>
-
-      
-    </header>
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/04/19/CG-note/" rel="prev" title="CG_note">
+                  <i class="fa fa-chevron-left"></i> CG_note
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-08-14T10:09:33+02:00"
-              content="2021-08-14">
-          08-14
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/08/14/%E5%89%8D%E7%AB%AF%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0/" itemprop="url">
-            <span itemprop="name">前端听课笔记</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-08-13T16:27:09+02:00"
-              content="2021-08-13">
-          08-13
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/08/13/%E7%A7%8B%E6%8B%9B%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/" itemprop="url">
-            <span itemprop="name">秋招面试记录</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-08-12T11:11:15+02:00"
-              content="2021-08-12">
-          08-12
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/08/12/66-%E5%8A%A0%E4%B8%80/" itemprop="url">
-            <span itemprop="name">66-加一</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-08-12T10:46:28+02:00"
-              content="2021-08-12">
-          08-12
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/08/12/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/" itemprop="url">
-            <span itemprop="name">合并两个有序数组</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-08-11T22:07:43+02:00"
-              content="2021-08-11">
-          08-11
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/08/11/page%E5%92%8Chexo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/" itemprop="url">
-            <span itemprop="name">page和hexo搭建自己的博客</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-08-11T21:47:37+02:00"
-              content="2021-08-11">
-          08-11
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/08/11/JS%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url">
-            <span itemprop="name">JS开发学习笔记</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
+</div>
 
 
-    </div>
-  </div>
-  
-  
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2021/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/archives/2021/">1</a><span class="page-number current">2</span>
-  </nav>
 
+
+
+
+    <div class="comments" id="SOHUCS" sid="faed22f69463304967518d4a41b04fad"></div>
 </div>
   </main>
 
@@ -432,7 +436,7 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://www.zhaoxuanlang.cn/archives/2021/page/2/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://www.zhaoxuanlang.cn/2023/04/21/unity-note/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
 <script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyvRiUJ7H","appkey":"bfa85e46b2e4cf46d837cbd6e78ba7ab"}</script>
 <script src="/js/third-party/comments/changyan.js"></script>

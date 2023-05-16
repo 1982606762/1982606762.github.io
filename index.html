@@ -89,9 +89,9 @@
 <nav class="site-nav">
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">23</span></a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">24</span></a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">10</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">86</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">87</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -162,7 +162,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">86</span>
+          <span class="site-state-item-count">87</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -173,7 +173,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -224,6 +224,140 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2023/04/21/unity-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Xuanlang">
+      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="松鼠小筑">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/04/21/unity-note/" class="post-title-link" itemprop="url">unity-note</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-04-21 21:55:11" itemprop="dateCreated datePublished" datetime="2023-04-21T21:55:11+02:00">2023-04-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-05-14 11:09:55" itemprop="dateModified" datetime="2023-05-14T11:09:55+02:00">2023-05-14</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="unity-note" href="/2023/04/21/unity-note/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::faed22f69463304967518d4a41b04fad" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>835</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <span id="more"></span>
+<h1 id="obstacle-course">Obstacle course</h1>
+<p>按option可以调整观察视角，按qwer可以切换当前工具</p>
+<h2 id="start-and-update">Start and update</h2>
+<p>start是运行脚本的时候只执行一次，而update是每一帧都执行一次</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">transform.Translate(x,y,z)会给物品位置加一个增量</span><br></pre></td></tr></table></figure>
+<h2 id="variables">Variables</h2>
+<p>和c++类似</p>
+<h2 id="using-serializefield">Using SerializeField</h2>
+<p>新建material可以给物品添加材质</p>
+<p>在变量前加<code>[SerializeField]</code>就可以让他在物品的inspector里手动设置</p>
+<h2 id="input.getaxis">Input.GetAxis</h2>
+<p>从菜单栏的Edit-project
+settings里可以看到所有用户输入所对应的键位。</p>
+<p>在代码中使用<code>Input.GetAxis("Horizontal");</code>可以获得用户输入</p>
+<h2 id="time-deltatime">Time DeltaTime</h2>
+<p>为了让游戏在不同性能的电脑上效果一样就需要使用<code>Time.deltaTime</code>,然后乘一个movespeed就可以</p>
+<h2 id="cinemachine">Cinemachine</h2>
+<ol type="1">
+<li>安装cinemachine包</li>
+<li>给主摄像机的components添加cinemachine brain component</li>
+<li>添加一个虚拟摄像机Virtual camera</li>
+<li>在这个虚拟摄像机的设置中把body设置成framing
+transposer,在上边的follow里选择跟踪某个物体</li>
+<li>在下边的body里有一个camera distance可以设置摄像机的远近</li>
+</ol>
+<h2 id="basic-collision">Basic collision</h2>
+<p>每个物体都可以设置box collider，
+可以和物体大小一样也可以大小不同来实现不一样的效果。</p>
+<p>给玩家添加rigidbody
+component之后他就有了物理属性，可以碰撞。通过添加constrain可以控制旋转等</p>
+<p>给墙体附加一个c#脚本，脚本里写一个OnCollisionEnter函数可以检测碰撞消息。</p>
+<p>使用<code>GetComponent&lt;MeshRenderer&gt;().material.color = Color.red;</code>可以在碰撞的时候变颜色</p>
+<h2 id="time">Time</h2>
+<p>Time.time是当前的游戏时间</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2023/04/19/CG-note/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -255,7 +389,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-04-20 20:25:04" itemprop="dateModified" datetime="2023-04-20T20:25:04+02:00">2023-04-20</time>
+      <time title="修改时间：2023-04-24 11:37:37" itemprop="dateModified" datetime="2023-04-24T11:37:37+02:00">2023-04-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -656,119 +790,6 @@ several online storage platforms.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/02/06/upload-to-Gdrive/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2023/02/05/deploy-flask-with-nginx-on-ubuntu/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Xuanlang">
-      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="松鼠小筑">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/02/05/deploy-flask-with-nginx-on-ubuntu/" class="post-title-link" itemprop="url">deploy flask with nginx on ubuntu</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-02-05 15:56:47 / 修改时间：18:15:30" itemprop="dateCreated datePublished" datetime="2023-02-05T15:56:47+01:00">2023-02-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Changyan：</span>
-    
-    <a title="deploy flask with nginx on ubuntu" href="/2023/02/05/deploy-flask-with-nginx-on-ubuntu/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::636167e1546daef3a6a15f0db983a13e" class="cy_cmt_count" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>420</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <ul>
-<li>Configure nginx</li>
-<li>configure flask app</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/02/05/deploy-flask-with-nginx-on-ubuntu/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
