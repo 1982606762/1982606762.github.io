@@ -21,18 +21,22 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.zhaoxuanlang.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="Obstacle course 按option可以调整观察视角，按qwer可以切换当前工具 Start and update start是运行脚本的时候只执行一次，而update是每一帧都执行一次 1transform.Translate(x,y,z)会给物品位置加一个增量 Variables 和c++类似 Using SerializeField 新建material可以给物品添加材质 在变量">
+<meta name="description" content="Basic 按option可以调整观察视角，按qwer可以切换当前工具 先选中camera后按cmd+shift+f可以让camera自动调整到当前画面 选中某个元素后按f可以focus这个元素 设置Terrain快捷键 按住Shift可以lower terrain，使用[]可以调整画笔大小 Start and update start是运行脚本的时候只执行一次，而update是每一帧都执行一次">
 <meta property="og:type" content="article">
 <meta property="og:title" content="unity-note">
 <meta property="og:url" content="https://www.zhaoxuanlang.cn/2023/04/21/unity-note/index.html">
 <meta property="og:site_name" content="松鼠小筑">
-<meta property="og:description" content="Obstacle course 按option可以调整观察视角，按qwer可以切换当前工具 Start and update start是运行脚本的时候只执行一次，而update是每一帧都执行一次 1transform.Translate(x,y,z)会给物品位置加一个增量 Variables 和c++类似 Using SerializeField 新建material可以给物品添加材质 在变量">
+<meta property="og:description" content="Basic 按option可以调整观察视角，按qwer可以切换当前工具 先选中camera后按cmd+shift+f可以让camera自动调整到当前画面 选中某个元素后按f可以focus这个元素 设置Terrain快捷键 按住Shift可以lower terrain，使用[]可以调整画笔大小 Start and update start是运行脚本的时候只执行一次，而update是每一帧都执行一次">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.zhaoxuanlang.cn/2023/04/21/unity-note/unity-note.assets/NllzOFx.png">
+<meta property="og:image" content="https://i.imgur.com/NllzOFx.png">
+<meta property="og:image" content="https://i.imgur.com/sVwS1BE.png">
 <meta property="article:published_time" content="2023-04-21T19:55:11.000Z">
-<meta property="article:modified_time" content="2023-05-14T09:09:55.847Z">
+<meta property="article:modified_time" content="2023-09-14T09:09:29.458Z">
 <meta property="article:author" content="Xuanlang">
 <meta property="article:tag" content="unity">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.zhaoxuanlang.cn/2023/04/21/unity-note/unity-note.assets/NllzOFx.png">
 
 
 <link rel="canonical" href="https://www.zhaoxuanlang.cn/2023/04/21/unity-note/">
@@ -150,7 +154,8 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#obstacle-course"><span class="nav-number">1.</span> <span class="nav-text">Obstacle course</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#start-and-update"><span class="nav-number">1.1.</span> <span class="nav-text">Start and update</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#variables"><span class="nav-number">1.2.</span> <span class="nav-text">Variables</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#using-serializefield"><span class="nav-number">1.3.</span> <span class="nav-text">Using SerializeField</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#input.getaxis"><span class="nav-number">1.4.</span> <span class="nav-text">Input.GetAxis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#time-deltatime"><span class="nav-number">1.5.</span> <span class="nav-text">Time DeltaTime</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cinemachine"><span class="nav-number">1.6.</span> <span class="nav-text">Cinemachine</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#basic-collision"><span class="nav-number">1.7.</span> <span class="nav-text">Basic collision</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#time"><span class="nav-number">1.8.</span> <span class="nav-text">Time</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#basic"><span class="nav-number">1.</span> <span class="nav-text">Basic</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AEterrain%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-number">1.1.</span> <span class="nav-text">设置Terrain快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#start-and-update"><span class="nav-number">1.2.</span> <span class="nav-text">Start and update</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#variables"><span class="nav-number">1.3.</span> <span class="nav-text">Variables</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#using-serializefield"><span class="nav-number">1.4.</span> <span class="nav-text">Using SerializeField</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#input.getaxis"><span class="nav-number">1.5.</span> <span class="nav-text">Input.GetAxis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#time-deltatime"><span class="nav-number">1.6.</span> <span class="nav-text">Time DeltaTime</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cinemachine"><span class="nav-number">1.7.</span> <span class="nav-text">Cinemachine</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#basic-collision"><span class="nav-number">1.8.</span> <span class="nav-text">Basic collision</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#time"><span class="nav-number">1.9.</span> <span class="nav-text">Time</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tag"><span class="nav-number">1.10.</span> <span class="nav-text">Tag</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spin"><span class="nav-number">1.11.</span> <span class="nav-text">Spin</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#boost-course"><span class="nav-number">2.</span> <span class="nav-text">Boost course</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#addrelativeforce"><span class="nav-number">2.1.</span> <span class="nav-text">AddRelativeForce</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E5%B8%A7%E9%80%9F%E7%8E%87independent"><span class="nav-number">2.2.</span> <span class="nav-text">实现帧速率independent</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E6%95%B4%E4%B8%96%E7%95%8C%E9%87%8D%E5%8A%9B"><span class="nav-number">2.3.</span> <span class="nav-text">调整世界重力</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0drag"><span class="nav-number">2.4.</span> <span class="nav-text">添加drag</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unity-audio-system"><span class="nav-number">2.5.</span> <span class="nav-text">unity audio system</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#switch%E8%AF%AD%E5%8F%A5"><span class="nav-number">2.6.</span> <span class="nav-text">switch语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%91%E6%B5%8B%E7%89%A9%E4%BD%93%E7%A2%B0%E6%92%9E"><span class="nav-number">2.7.</span> <span class="nav-text">监测物体碰撞</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E6%8D%A2scene"><span class="nav-number">2.8.</span> <span class="nav-text">切换Scene</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%B6%E8%BF%9F%E5%87%BD%E6%95%B0%E7%94%9F%E6%95%88"><span class="nav-number">2.9.</span> <span class="nav-text">延迟函数生效</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#unity-essentials"><span class="nav-number">3.</span> <span class="nav-text">Unity Essentials</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#apply-texture-image-on-a-material"><span class="nav-number">3.1.</span> <span class="nav-text">Apply texture image on a
+material</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#physic-material"><span class="nav-number">3.2.</span> <span class="nav-text">Physic material</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#prefab-variant"><span class="nav-number">3.3.</span> <span class="nav-text">Prefab Variant</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#assets"><span class="nav-number">3.4.</span> <span class="nav-text">Assets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#d%E9%9F%B3%E6%95%88"><span class="nav-number">3.5.</span> <span class="nav-text">3D音效</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#d%E4%B8%ADz%E8%BD%B4%E6%98%AFz-index"><span class="nav-number">3.6.</span> <span class="nav-text">2D中z轴是z-index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#d%E5%AE%9E%E7%8E%B0%E7%90%83%E4%B8%8B%E8%90%BD%E5%88%B0%E5%B9%B3%E9%9D%A2%E4%B8%8A"><span class="nav-number">3.7.</span> <span class="nav-text">2D实现球下落到平面上</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%91%E5%B8%83%E6%B8%B8%E6%88%8F%E5%88%B0unity-play"><span class="nav-number">3.8.</span> <span class="nav-text">发布游戏到unity play</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#project1-player-control"><span class="nav-number">4.</span> <span class="nav-text">Project1 Player Control</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#rigidbody-%E4%B8%8E-collider"><span class="nav-number">4.1.</span> <span class="nav-text">Rigidbody 与 Collider</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#camera-follow-player"><span class="nav-number">4.2.</span> <span class="nav-text">Camera Follow Player</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lateupdate"><span class="nav-number">4.3.</span> <span class="nav-text">LateUpdate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%BE%97%E7%94%A8%E6%88%B7%E8%BE%93%E5%85%A5"><span class="nav-number">4.4.</span> <span class="nav-text">获得用户输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%BB%E5%8A%A8player"><span class="nav-number">4.5.</span> <span class="nav-text">移动player</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8Eprefab%E4%B8%AD%E7%94%9F%E6%88%90%E6%96%B0object"><span class="nav-number">4.6.</span> <span class="nav-text">从prefab中生成新object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0%E9%99%A4object"><span class="nav-number">4.7.</span> <span class="nav-text">删除object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0"><span class="nav-number">4.8.</span> <span class="nav-text">生成随机数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C%E4%BB%BB%E5%8A%A1"><span class="nav-number">4.9.</span> <span class="nav-text">定时执行任务</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#project2"><span class="nav-number">5.</span> <span class="nav-text">Project2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%BE%97%E7%89%A9%E4%BD%93%E7%9A%84component%E5%A6%82rigidbody"><span class="nav-number">5.1.</span> <span class="nav-text">获得物体的component（如rigidbody）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8addforce%E7%BB%99%E7%89%A9%E4%BD%93%E6%96%BD%E5%8A%A0%E5%A4%96%E5%8A%9B%E8%AE%A9%E4%BB%96%E8%B7%B3%E8%B5%B7%E6%9D%A5"><span class="nav-number">5.2.</span> <span class="nav-text">使用addforce给物体施加外力（让他跳起来）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%B2%E6%AD%A2%E5%B7%A6%E8%84%9A%E8%B8%A9%E5%8F%B3%E8%84%9A"><span class="nav-number">5.3.</span> <span class="nav-text">防止左脚踩右脚：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E5%BE%AA%E7%8E%AF%E4%BD%BF%E7%94%A8"><span class="nav-number">5.4.</span> <span class="nav-text">背景循环使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A2%B0%E6%92%9E%E5%88%B0%E9%9A%9C%E7%A2%8D%E7%89%A9%E5%90%8E%E5%81%9C%E6%AD%A2"><span class="nav-number">5.5.</span> <span class="nav-text">碰撞到障碍物后停止</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E8%BE%91%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C"><span class="nav-number">5.6.</span> <span class="nav-text">编辑动画效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E7%B2%92%E5%AD%90%E7%89%B9%E6%95%88"><span class="nav-number">5.7.</span> <span class="nav-text">添加粒子特效</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E9%9F%B3%E6%95%88"><span class="nav-number">5.8.</span> <span class="nav-text">添加音效</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#project-4"><span class="nav-number">6.</span> <span class="nav-text">Project 4</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A9%E6%91%84%E5%83%8F%E6%9C%BA%E8%81%9A%E7%84%A6%E5%88%B0%E4%B8%80%E7%82%B9"><span class="nav-number">6.1.</span> <span class="nav-text">让摄像机聚焦到一点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AEplayer%E5%90%91%E6%9F%90%E4%B8%AAobject%E6%96%B9%E5%90%91%E5%89%8D%E8%BF%9B"><span class="nav-number">6.2.</span> <span class="nav-text">设置player向某个object方向前进</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8physics-material"><span class="nav-number">6.3.</span> <span class="nav-text">使用Physics Material</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8coroutine%E6%9D%A5%E8%AE%BE%E7%BD%AE%E7%8B%AC%E7%AB%8B%E6%B2%99%E6%BC%8F"><span class="nav-number">6.4.</span> <span class="nav-text">使用coroutine来设置独立沙漏</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#project-5"><span class="nav-number">7.</span> <span class="nav-text">Project 5</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB%E6%95%88%E6%9E%9C"><span class="nav-number">7.1.</span> <span class="nav-text">设置鼠标点击效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A9%E7%89%A9%E4%BD%93%E6%97%8B%E8%BD%AC"><span class="nav-number">7.2.</span> <span class="nav-text">让物体旋转</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E7%95%8C%E9%9D%A2%E4%B8%8A%E7%9A%84%E6%96%87%E5%AD%97"><span class="nav-number">7.3.</span> <span class="nav-text">添加界面上的文字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E7%94%A8%E5%8F%A6%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0"><span class="nav-number">7.4.</span> <span class="nav-text">调用另一个文件中的函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E6%8C%89%E9%92%AE"><span class="nav-number">7.5.</span> <span class="nav-text">添加按钮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E6%96%B0%E5%8A%A0%E8%BD%BD%E5%BD%93%E5%89%8Dscene"><span class="nav-number">7.6.</span> <span class="nav-text">重新加载当前Scene</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#oop"><span class="nav-number">8.</span> <span class="nav-text">OOP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#dadiu-notes"><span class="nav-number">9.</span> <span class="nav-text">DADIU Notes</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#attributes"><span class="nav-number">9.1.</span> <span class="nav-text">Attributes</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -259,7 +264,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-05-14 11:09:55" itemprop="dateModified" datetime="2023-05-14T11:09:55+02:00">2023-05-14</time>
+      <time title="修改时间：2023-09-14 11:09:29" itemprop="dateModified" datetime="2023-09-14T11:09:29+02:00">2023-09-14</time>
     </span>
 
   
@@ -283,14 +288,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>835</span>
+      <span>7.1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>13 分钟</span>
     </span>
 </div>
 
@@ -302,8 +307,12 @@
     
     <div class="post-body" itemprop="articleBody">
         <span id="more"></span>
-<h1 id="obstacle-course">Obstacle course</h1>
+<h1 id="basic">Basic</h1>
 <p>按option可以调整观察视角，按qwer可以切换当前工具</p>
+<p>先选中camera后按cmd+shift+f可以让camera自动调整到当前画面</p>
+<p>选中某个元素后按f可以focus这个元素</p>
+<h2 id="设置terrain快捷键">设置Terrain快捷键</h2>
+<p>按住Shift可以lower terrain，使用[]可以调整画笔大小</p>
 <h2 id="start-and-update">Start and update</h2>
 <p>start是运行脚本的时候只执行一次，而update是每一帧都执行一次</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">transform.Translate(x,y,z)会给物品位置加一个增量</span><br></pre></td></tr></table></figure>
@@ -336,6 +345,199 @@ component之后他就有了物理属性，可以碰撞。通过添加constrain�
 <p>使用<code>GetComponent&lt;MeshRenderer&gt;().material.color = Color.red;</code>可以在碰撞的时候变颜色</p>
 <h2 id="time">Time</h2>
 <p>Time.time是当前的游戏时间</p>
+<p>Time.Delta time是从上一帧开始经过的时间量。</p>
+<h2 id="tag">Tag</h2>
+<p>在右侧inspector里可以定义某个element的tag</p>
+<p>代码中使用以下代码可以获得tag值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">private void OnCollisionEnter(Collision other) &#123;</span><br><span class="line">        Color currentColor = GetComponent&lt;MeshRenderer&gt;().material.color;</span><br><span class="line">        if (other.gameObject.tag == &quot;Player&quot;)</span><br><span class="line">        &#123;</span><br><span class="line">            ChangeColor(currentColor);</span><br><span class="line">        &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="spin">Spin</h2>
+<p>通过transform.rotate(x,y,z)可以让物体在三个方向上旋转</p>
+<h1 id="boost-course">Boost course</h1>
+<h2 id="addrelativeforce">AddRelativeForce</h2>
+<p>使用rigidbody的addrelativeforce可以给他添加坐标轴方向的力，参数可以用(1,1,1)或者Vector3.up等同于(0,1,0)</p>
+<h2 id="实现帧速率independent">实现帧速率independent</h2>
+<p>在做变化的时候乘一个变量再乘Time.deltaTime</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rigidbody.AddRelativeForce(Vector3.up * thrustspeed * Time.deltaTime);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="调整世界重力">调整世界重力</h2>
+<p>在edit-》project settings-》 physics里调</p>
+<h2 id="添加drag">添加drag</h2>
+<p>drag是rigidbody移动时影响对象的空气阻力大小</p>
+<h2 id="unity-audio-system">unity audio system</h2>
+<p>需要三个东西，audio listener，audio source和audio file。</p>
+<p>audio listenser一般附加在main camera上</p>
+<p>audio source是产生声音的部件</p>
+<p>打开loop可以循环播放</p>
+<p>如果没有声音可以去project setting里看audio的设置</p>
+<h2 id="switch语句">switch语句</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">switch()</span><br><span class="line">&#123;</span><br><span class="line">  case a:</span><br><span class="line">    a();</span><br><span class="line">    break;</span><br><span class="line">  default:</span><br><span class="line">    d();</span><br><span class="line">    break;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="监测物体碰撞">监测物体碰撞</h2>
+<p>写一个函数，输入一个Collision类型的变量other，然后就可以获得这个碰撞的一些信息</p>
+<ul>
+<li>Other.gameObject.tag是这个碰撞的对方物体的tag的string</li>
+<li></li>
+</ul>
+<h2 id="切换scene">切换Scene</h2>
+<p>添加scene：File -&gt; Build Settings-&gt; add open scenes</p>
+<p>代码中需要使用SceneManager类,导入的是UnityEngine.SceneManagement命名空间</p>
+<p>获取当前Scene的index：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SceneManager.GetActiveScene().buildIndex</span><br></pre></td></tr></table></figure>
+<p>切换Scene：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SceneManager.LoadScene()</span><br></pre></td></tr></table></figure>
+<h2 id="延迟函数生效">延迟函数生效</h2>
+<p>使用invoke("methodname", delayInSeconds)</p>
+<h1 id="unity-essentials">Unity Essentials</h1>
+<h2 id="apply-texture-image-on-a-material">Apply texture image on a
+material</h2>
+<p>点Albedo左边的小圆圈可以选择当前导入的各种材质图片</p>
+<h2 id="physic-material">Physic material</h2>
+<p>应用后可以让物体拥有弹性，新建Physic
+material后修改Bounciness参数可以添加弹性。这个材质会应用在物体的
+Collider属性上。</p>
+<h2 id="prefab-variant">Prefab Variant</h2>
+<p>修改一个prefab的个体后拖进prefab文件夹他会提示你是否创建新的prefab
+variant，
+这是大prefab的一个小分支。修改他会修改所有这个variant控制的instance，但是不会修改其他root控制的</p>
+<figure>
+<img data-src="unity-note.assets/NllzOFx.png" alt="NllzOFx" />
+<figcaption aria-hidden="true">NllzOFx</figcaption>
+</figure>
+<figure>
+<img data-src="https://i.imgur.com/NllzOFx.png"
+alt="image-2023081013401807 AM" />
+<figcaption aria-hidden="true">image-2023081013401807 AM</figcaption>
+</figure>
+<h2 id="assets">Assets</h2>
+<p>从https://assetstore.unity.com/zh?category=3d&amp;orderBy=4&amp;page=3&amp;reverse=true可以获得现有的资源</p>
+<p>然后在window-》package manager可以下载导入</p>
+<h2 id="d音效">3D音效</h2>
+<p>要实现根据人的位置所改变的音效需要调整音效的Spatial
+Blend到1，还需要设置一个Audio listener在主角身上</p>
+<h2 id="d中z轴是z-index">2D中z轴是z-index</h2>
+<h2 id="d实现球下落到平面上">2D实现球下落到平面上</h2>
+<p>给球添加rigidbody让他有重力可以下落，然后为了让球落到平面上停止需要给球和平面各添加对应的2D
+collider。</p>
+<h2 id="发布游戏到unity-play">发布游戏到unity play</h2>
+<p>切记要安装WebGL Publisher Package！！</p>
+<h1 id="project1-player-control">Project1 Player Control</h1>
+<h2 id="rigidbody-与-collider">Rigidbody 与 Collider</h2>
+<p>Rigidbody是用于实现物理模拟的组件，它可以附加到对象上以获得物理引擎控制，并且获得一些属性例如重力</p>
+<p>Collider是用于定义游戏对象的物理形状来进行碰撞检测，它只用于定义边界</p>
+<h2 id="camera-follow-player">Camera Follow Player</h2>
+<p>给camera写一个脚本，定义一个player变量，然后让camera的坐标等于player的坐标加一个offset即可</p>
+<h2 id="lateupdate">LateUpdate</h2>
+<p>他会在Update执行之后执行，从而确保执行顺序是Update-LateUpdate-Update</p>
+<h2 id="获得用户输入">获得用户输入</h2>
+<p>从edit-project settings里找到inputs</p>
+<p>代码里新定义一个float类型变量x，获取方法是<code>x = Input.GetAxis("inputs里的名称")</code></p>
+<p>要获得按下某个键就用Input.GetKeyDown(KeyCode.Space))</p>
+<h2 id="移动player">移动player</h2>
+<p><code>transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed)</code></p>
+<p>或者使用transform.position = new Vector3(24,0,0)直接重定位目标</p>
+<p>使用transform.position.x获得位置信息</p>
+<h2 id="从prefab中生成新object">从prefab中生成新object</h2>
+<p>使用instantiate方法可以以一个prefab作为模板生成新的object</p>
+<p><code>Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);</code></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> GameObject enemyPrefab;</span><br><span class="line"></span><br><span class="line">Instantiate(enemyPrefab, <span class="keyword">new</span> Vector3(<span class="number">0</span>, <span class="number">0</span>, <span class="number">6</span>), enemyPrefab.transform.rotation);</span><br></pre></td></tr></table></figure>
+<h2 id="删除object">删除object</h2>
+<p>直接使用<code>Destroy(gameObject)</code>删除</p>
+<h2 id="生成随机数">生成随机数</h2>
+<p>有两种，range和randomRange</p>
+<p>range里写整数是左闭右开，写浮点数是左右都闭的。</p>
+<p><code>int position = Random.Range(-20,20)</code></p>
+<h2 id="定时执行任务">定时执行任务</h2>
+<p>使用InvokeRepeating可以定时执行函数，这个要写到start里</p>
+<h1 id="project2">Project2</h1>
+<h2
+id="获得物体的component如rigidbody">获得物体的component（如rigidbody）</h2>
+<p>使用<code>GetComponent&lt;Rigidbody&gt;()</code>方法赋值给某个变量</p>
+<h2
+id="使用addforce给物体施加外力让他跳起来">使用addforce给物体施加外力（让他跳起来）</h2>
+<p>addforce接收两个参数，第一个是施加的力的矢量，即力的大小和方向。</p>
+<p>mode: 表示施加力的模式，它是一个枚举类型，包括以下选项：</p>
+<ul>
+<li><code>Force</code>:
+施加一个持续的力，会根据刚体的质量产生加速度。</li>
+<li><code>Impulse</code>: 施加一个瞬间的冲量，类似于一次性的力。</li>
+<li><code>VelocityChange</code>: 直接改变刚体的速度，而不考虑质量。</li>
+<li><code>Acceleration</code>:
+施加一个持续的加速度，会受到质量的影响。</li>
+</ul>
+<h2 id="防止左脚踩右脚">防止左脚踩右脚：</h2>
+<p>设置一个bool变量，当起跳的时候设置成false，当检测到碰撞的时候变成true。</p>
+<h2 id="背景循环使用">背景循环使用</h2>
+<p>先设置一个起始坐标，在start里让他等于现在的位置，然后如果背景往左走了x，就让他归位。</p>
+<p>让他更加连贯可以设置当背景往左走x/2的时候归位。</p>
+<h2 id="碰撞到障碍物后停止">碰撞到障碍物后停止</h2>
+<p>首先需要给地面和障碍物加tag，然后在玩家运动脚本中使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (collision.gameObject.CompareTag(&quot;Obstacle&quot;))&#123;</span><br><span class="line">  gameOver = true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在需要停止的运动脚本中定义一个<code>private PlayerController playerScript</code>变量，在start里给他用<code>GameObject.Find("Player").GetComponent&lt;PlayerController&gt;()</code>赋值为脚本，然后就可以直接调用这个脚本里的gameOver变量了。</p>
+<h2 id="编辑动画效果">编辑动画效果</h2>
+<p>首先在animation
+component中双击controller可以进入动画效果编辑界面，每个状态都对应一个动画效果，并且状态间还可以互相切换。</p>
+<p>跳跃动作可以使用<code>SetTrigger("Jump_trig")</code>来触发。</p>
+<h2 id="添加粒子特效">添加粒子特效</h2>
+<p>首先把粒子效果添加进player作为子元素，然后在player脚本中新建粒子特效变量<code>public ParticleSystem explosionParticle</code>.</p>
+<p>在需要效果的地方使用<code>explosionParticle.Play()</code></p>
+<h2 id="添加音效">添加音效</h2>
+<h1 id="project-4">Project 4</h1>
+<h2 id="让摄像机聚焦到一点">让摄像机聚焦到一点</h2>
+<p>设置一个空object，让相机成为这个object的子元素，这样旋转或者移动object可以调整相机</p>
+<h2
+id="设置player向某个object方向前进">设置player向某个object方向前进</h2>
+<p>获取到物体之后使用<code>focalpoint.transform.forward</code>获得focalpoint的前方向</p>
+<h2 id="使用physics-material">使用Physics Material</h2>
+<p>物理材质可以调整物体的摩擦力和弹性，apply后会在colider的material中出现</p>
+<h2 id="使用coroutine来设置独立沙漏">使用coroutine来设置独立沙漏</h2>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">StartCoroutine(PowerupCountdown());</span><br><span class="line"><span class="function">IEnumerator <span class="title">PowerupCountdown</span>(<span class="params"></span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">yield</span> <span class="keyword">return</span> <span class="keyword">new</span> <span class="title">WaitForSeconds</span>(<span class="params"><span class="number">7</span></span>)</span>;</span><br><span class="line">        powered = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="project-5">Project 5</h1>
+<h2 id="设置鼠标点击效果">设置鼠标点击效果</h2>
+<p>用OnMouseDown()检测鼠标点击到Collider就会触发</p>
+<p>同样还有一些其他函数检测其他鼠标操作</p>
+<h2 id="让物体旋转">让物体旋转</h2>
+<p>使用AddTorque可以让物体旋转，传入四个参数，xyz和这个力触发的方式。</p>
+<p><code>targetRb.AddTorque(RandomTorque(), RandomTorque(), RandomTorque(), ForceMode.Impulse);</code></p>
+<h2 id="添加界面上的文字">添加界面上的文字</h2>
+<p>添加一个TextMeshPro，可以调整中心点。</p>
+<p>要想修改文字内容，需要先声明一个TextMeshProUGUI类型变量，然后在需要改的地方使用ScoreText.text
+= ""就可以修改。</p>
+<h2 id="调用另一个文件中的函数">调用另一个文件中的函数</h2>
+<p>首先两个文件都需要应用于object上，被调用的脚本所在物体需要有一个tag，然后在调用的那个脚本中声明变量，找到被调脚本，然后调用函数。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">private</span> Manager m;</span><br><span class="line">  m = GameObject.FindGameObjectWithTag(<span class="string">&quot;Manager&quot;</span>).GetComponent&lt;Manager&gt;();</span><br><span class="line">m.updateScore(<span class="number">-5</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="添加按钮">添加按钮</h2>
+<p>在UI-button里添加</p>
+<p>要想给他添加效果可以在inspactor里有一个onclick
+list，添加一个object作为新项，然后在右边的function里选想触发的函数。</p>
+<p>要想在代码里定义这个变量就需要先使用UnityEngine.UI命名空间，然后再定义变量。</p>
+<h2 id="重新加载当前scene">重新加载当前Scene</h2>
+<p>使用<code>SceneManager.LoadScene(SceneManager.GetActiveScene().name);</code></p>
+<h1 id="oop">OOP</h1>
+<p>在C#中，有多种访问修饰符，用于控制类的成员（字段、方法、属性等）的访问权限。以下是C#中常用的访问修饰符：</p>
+<ol type="1">
+<li><p><strong>public（公共）</strong>：这是最开放的访问修饰符，允许成员在任何地方都可以访问，包括类的外部。</p></li>
+<li><p><strong>private（私有）</strong>：私有成员只能在声明它们的类的内部访问。这用于隐藏类的内部实现细节。</p></li>
+<li><p><strong>protected（受保护）</strong>：受保护成员可以在声明它们的类以及派生类中访问，但不能在类的外部访问。</p></li>
+<li><p><strong>internal（内部）</strong>：内部成员可以在同一个程序集（assembly）中的任何类中访问，但不能在程序集之外的类中访问。</p></li>
+<li><p><strong>protected
+internal（受保护的内部）</strong>：这是protected和internal的组合，允许在同一程序集中的类和派生类中访问。</p></li>
+<li><p><strong>private protected（私有受保护）</strong>：这是C#
+7.2引入的，表示成员可以在同一程序集中的派生类中访问，但不能在程序集之外的类中访问。</p></li>
+</ol>
+<p>使用 [SerializeField]可以让private类型的变量在inspector中被修改。</p>
+<p>可以单独给某一个public变量设置权限，如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public static MainManager Instance &#123; get; &#125; // add getter to the end of the line</span><br></pre></td></tr></table></figure>
+<p>这样就会设置严格的read-only，所以还需要加一个private set;</p>
+<p>还可以在这里设置getter和setter
+validation来对变量取值进行限制，如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">set</span><br><span class="line">&#123;</span><br><span class="line">    if (value &lt; 0.0f)</span><br><span class="line">        &#123;</span><br><span class="line">            Debug.LogError(&quot;You can&#x27;t set a negative production speed!&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            m_ProductionSpeed = value; // original setter now in if/else statement</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="dadiu-notes">DADIU Notes</h1>
+<h2 id="attributes">Attributes</h2>
+<p>使用attributes可以自定义inspector</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">NewBehaviourScript</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    [<span class="meta">Header(<span class="meta-string">&quot;q&quot;</span>)</span>]</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> cubeName;</span><br><span class="line">    [<span class="meta">Range(0, 10)</span>]</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">float</span> asas;</span><br><span class="line">    [<span class="meta">Min(2.0f)</span>]</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">float</span> ssss;</span><br><span class="line">    [<span class="meta">Space(10)</span>]<span class="comment">//Add space in inspector</span></span><br><span class="line">    [<span class="meta">Min(2.0f)</span>]<span class="comment">//This var&#x27;s min value will be 2.0f</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">float</span> sssss;</span><br><span class="line">    <span class="keyword">public</span> test2 cubeClassTest;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">[<span class="meta">System.Serializable</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">test2</span></span><br><span class="line">&#123;</span><br><span class="line">    [<span class="meta">Header(<span class="meta-string">&quot;w&quot;</span>)</span>]</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> string1;</span><br><span class="line">    [<span class="meta">Range(0, 10)</span>]</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">float</span> asas;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure>
+<img data-src="https://i.imgur.com/sVwS1BE.png"
+alt="image-20230911105525002 AM" />
+<figcaption aria-hidden="true">image-20230911105525002 AM</figcaption>
+</figure>
 
     </div>
 
