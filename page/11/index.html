@@ -91,7 +91,7 @@
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">24</span></a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">10</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">87</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">88</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -162,7 +162,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">87</span>
+          <span class="site-state-item-count">88</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -215,6 +215,129 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2021/08/12/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Xuanlang">
+      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="松鼠小筑">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/08/12/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/" class="post-title-link" itemprop="url">合并两个有序数组</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-08-12 10:46:28" itemprop="dateCreated datePublished" datetime="2021-08-12T10:46:28+02:00">2021-08-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-01-15 03:13:37" itemprop="dateModified" datetime="2022-01-15T03:13:37+01:00">2022-01-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="合并两个有序数组" href="/2021/08/12/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::d504291e8780332e9f2921fbe695510b" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>828</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>给你两个有序整数数组 nums1 和 nums2，请你将 nums2 合并到 nums1 中，使
+nums1 成为一个有序数组。</p>
+<p>初始化 nums1 和 nums2 的元素数量分别为 m 和 n 。你可以假设 nums1
+的空间大小等于 m + n，这样它就有足够的空间保存来自 nums2 的元素。</p>
+<p>示例 1：</p>
+<p>输入：nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
+输出：[1,2,2,3,5,6] 示例 2：</p>
+<p>输入：nums1 = [1], m = 1, nums2 = [], n = 0 输出：[1]</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/08/12/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -677,202 +800,6 @@ page</p>
             </div>
           <!--/noindex-->
         
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2020/08/06/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Xuanlang">
-      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="松鼠小筑">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/08/06/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/" class="post-title-link" itemprop="url">网站开发日志</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-08-06 13:26:06" itemprop="dateCreated datePublished" datetime="2020-08-06T13:26:06+02:00">2020-08-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-01-15 03:25:17" itemprop="dateModified" datetime="2022-01-15T03:25:17+01:00">2022-01-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Changyan：</span>
-    
-    <a title="网站开发日志" href="/2020/08/06/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::3eaed1f8f9d33c144eddf2539bf58622" class="cy_cmt_count" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>4.8k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>9 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>2020-08-06</p>
-<ul>
-<li>新增左侧菜单栏功能</li>
-<li>新增菜单栏对比色功能</li>
-</ul>
-<p>菜单栏实现：内侧标题position使用relative可自动上下移动，想打开和关闭的组件使用display:block和none控制显示与隐藏，在标题栏div添加onclick事件更改display参数即可实现</p>
-<p>对比色实现：使用getelementsbyclassname获得一样classname的一个列表，for循环让列表[i]项的style.backgroundColor（注意这里和css不一样）变成不一样的颜色（加余数判定）</p>
-<p>注意：for循环内如果设置多个表的颜色，表内元素必须相同，不然进行时报错回中止for循环！！！</p>
-<p>2020-08-07</p>
-<ul>
-<li>去除左右滚动条</li>
-<li>调整左侧菜单布局样式</li>
-</ul>
-<p>滚动条：overflow:scroll;overflow-x:hidden</p>
-<p>2020-08-10</p>
-<ul>
-<li>顶部菜单和右侧菜单添加一些内容</li>
-<li>更改整体配色</li>
-<li>更改整体布局，大小</li>
-</ul>
-<p>右侧菜单设置有问题待修复，下拉菜单：<select><option></p>
-<p><img
-src="https://img.jbzj.com/file_images/article/201212/20121213112015996.png" /></p>
-<p>若要弄这样的表，灰色部分使用th白色部分用td就可以分开设置，td内部加input就可以输入值</p>
-<p>2020-08-12</p>
-<ul>
-<li>添加鼠标悬浮气泡功能</li>
-<li>样式小调整</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">static showdiv()&#123;</span><br><span class="line">        var tool = document.getElementsByClassName(&#x27;geSidebarTooltip&#x27;)[0];</span><br><span class="line">        //图片更改</span><br><span class="line">        var locate = this.firstElementChild.src;</span><br><span class="line">        var cimg = tool.firstElementChild;</span><br><span class="line">        cimg.src = locate;</span><br><span class="line">        //文字更改</span><br><span class="line">        var words =this.id.charAt(4).toUpperCase() + this.id.substr(5);</span><br><span class="line">        tool.children[1].innerText=words;</span><br><span class="line">        //位置更改</span><br><span class="line">        var t = this.offsetTop;</span><br><span class="line">        tool.style.top=t-10+&#x27;px&#x27;;</span><br><span class="line">        tool.style.display=&#x27;block&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">    static hidediv()&#123;</span><br><span class="line">        var tool = document.getElementsByClassName(&#x27;geSidebarTooltip&#x27;)[0];</span><br><span class="line">        tool.style.display=&#x27;none&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">var cpnt_btn_list = document.querySelectorAll(&#x27;.component_btn&#x27;);</span><br><span class="line">cpnt_btn_list.forEach(btn =&gt;&#123;</span><br><span class="line">    // formed as btn_ + component name</span><br><span class="line">    var cpnt_str = btn.id.charAt(4).toUpperCase() + btn.id.substr(5);</span><br><span class="line">    btn.component_type = eval(cpnt_str);</span><br><span class="line">    btn.addEventListener(&quot;click&quot;, Component_btn.attachComponent);</span><br><span class="line">    btn.addEventListener(&#x27;mouseover&#x27;,Component_btn.showdiv);</span><br><span class="line">    btn.addEventListener(&#x27;mouseout&#x27;,Component_btn.hidediv);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>以上为气泡核心代码，思路为先获得目标位置，图片src和文字描述，再通过js代码换进去，添加mouse
-over和mouseout就可以添加鼠标悬浮和移出功能</p>
-<p>只需要在html文件中添加一个div即可，div中添加主图img，下方文字div和左侧小箭头img。</p>
-<p>2020-08-13</p>
-<ul>
-<li>添加checkbox函数，可以控制输入框disable值</li>
-<li>右侧菜单新增奇偶颜色效果</li>
-<li>新增dragging bar箭头效果</li>
-<li>修复bug</li>
-</ul>
-<p>checkbox首先需要定义函数，添加onclick函数，定义两个变量分别选择box和需要更改的input
-list，第一个可以直接用id，第二个建议先选出父元素再用tagname选出input。添加判断条件q.checked，内部两个for循环就可解决，注意disabled是attrabute，需要用set和remove，set要传入两个参数</p>
-<p>箭头效果用css就可以，用js不知道为什么会出错</p>
-<p>2020-08-19</p>
-<ul>
-<li>新增顶部工具栏标签</li>
-<li>新增标签换颜色函数</li>
-<li>将函数运用到左侧和顶部标签</li>
-</ul>
-<p>button标签的border是没按下时的边框，outline是按下之后的边框，建议颜色都是inherit</p>
-<p>h换色函数需要首先把所有标签都编号，判断当下颜色是否改变，没改变就变，然后把所有其他的都变成初始值</p>
-<p>应用的时候使用箭头函数btn=&gt;{}此时btn就是每次点击的this，使用匿名函数可以实现有参数的函数</p>
-<p>2020-08-21</p>
-<ul>
-<li>尝试svg</li>
-<li>增加顶部工具栏标签个数</li>
-</ul>
-<p>js中数字直接相加有可能是首尾相连，所以需要用parseInt转换！！</p>
-<p>2020-08-31</p>
-<ul>
-<li>完成批量增加html元素功能</li>
-</ul>
-<p>添加时需要先选中要添加的位置，最好做一个空的div，然后使用innerHTML的方式直接添加，需注意的是换行和"都需要用\转义</p>
-<p>删除时只需要将其innerHTML变成""就可以</p>
-<p>2020-10-26</p>
-<p>人工alert函数：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    &lt;div id=&quot;light&quot; class=&quot;white_content&quot;&gt;</span><br><span class="line">    &lt;/div&gt; </span><br><span class="line">    &lt;div id=&quot;fade&quot; class=&quot;black_overlay&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">.black_overlay&#123; </span><br><span class="line">    display: none; </span><br><span class="line">    position: absolute; </span><br><span class="line">    top: 0%; </span><br><span class="line">    left: 0%; </span><br><span class="line">    width: 100%; </span><br><span class="line">    height: 100%; </span><br><span class="line">    background-color: black; </span><br><span class="line">    z-index:1001; </span><br><span class="line">    -moz-opacity: 0.8; </span><br><span class="line">    opacity:.80; </span><br><span class="line">    filter: alpha(opacity=88); </span><br><span class="line">&#125; </span><br><span class="line">.white_content &#123; </span><br><span class="line">    display: none; </span><br><span class="line">    position: absolute; </span><br><span class="line">    top: 35%;</span><br><span class="line">    left: 45%;</span><br><span class="line">    width: 10%;</span><br><span class="line">    height: 15%;</span><br><span class="line">    padding: 20px; </span><br><span class="line">    background-color: white; </span><br><span class="line">    z-index:1002; </span><br><span class="line">    overflow: auto; </span><br><span class="line">    border: 5px solid black;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">function artificial_alert(text)&#123;</span><br><span class="line">    document.getElementById(&#x27;light&#x27;).innerHTML=&quot;&lt;p&gt;&quot;+text+&quot;&lt;/p&gt;&lt;button type=\&quot;button\&quot; onclick=\&quot;closeDialog()\&quot;&gt;关闭&lt;/button&gt;&quot;</span><br><span class="line">    if(document.getElementById(&#x27;light&#x27;).style.display== &#x27;block&#x27;)&#123;</span><br><span class="line">        document.getElementById(&#x27;light&#x27;).style.display = &#x27;none&#x27;;</span><br><span class="line">        document.getElementById(&#x27;fade&#x27;).style.display = &#x27;none&#x27;;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        document.getElementById(&#x27;light&#x27;).style.display = &#x27;block&#x27;;</span><br><span class="line">        document.getElementById(&#x27;fade&#x27;).style.display = &#x27;block&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>原理就是动态添加需要alert的文字进去</p>
-<p>2020-11-04</p>
-<p>最近在搞bootstrap</p>
-<p>导入时只需要</p>
-<p><code>&lt;link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css"&gt;</code></p>
-<p><code>&lt;script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"&gt;&lt;/script&gt;</code></p>
-<p><code>&lt;script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"&gt;&lt;/script&gt;</code></p>
-<p>就可以，但是在npm下运行时需要把jq下载到本地，同时引入在线jq和本地jq才可以</p>
-<p>输入框默认值，点击清除，不点击恢复：</p>
-<p><code>onfocus="if(this.value=='test')&#123;this.value=''&#125;" onblur="if(this.value=='')&#123;this.value='test'&#125;" value="test"</code></p>
-<p>用for循环appendChild时不能只靠innerHTML修改元素，必须重新声明才可以</p>
-<p>列表可以使用push 和pop</p>
-<p>2020/11/23</p>
-<p>实现长宽比：</p>
-<p>垂直方向的padding</p>
-<p>这是最早提出的一种实现方案，主要借助的原理是利用<code>padding-top</code>或者<code>padding-bottom</code>的百分比值，实现容器长宽比。在CSS中<code>padding-top</code>或<code>padding-bottom</code>的百分比值是根据容器的<code>width</code>来计算的。如此一来就很好的实现了容器的长宽比。采用这种方法，需要把容器的<code>height</code>设置为<code>0</code>。而容器内容的所有元素都需要采用<code>position:absolute</code>，不然子元素内容都将被<code>padding</code>挤出容器（造成内容溢出）。</p>
-<p>比如我们容器的长宽比是<code>16:9</code>，那么根据计算：<code>100% * 9 / 16</code>可以得到<code>56.25%</code>。如果你希望的是<code>4:3</code>，那么对应的就是<code>100% * 3 / 4</code>。</p>
-<p>具体的CSS代码如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.aspectration &#123;</span><br><span class="line">    position: relative; /*因为容器所有子元素需要绝对定位*/</span><br><span class="line">    height: 0; /*容器高度是由padding来控制，盒模型原理告诉你一切*/</span><br><span class="line">    width: 100%; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.aspectration[data-ratio=&quot;16:9&quot;] &#123;</span><br><span class="line">    padding-top: 56.25%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.aspectration[data-ratio=&quot;4:3&quot;]&#123;</span><br><span class="line">    padding-top: 75%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>通过通配符<code>*</code>选择器，让其子元素的宽高和容器<code>.aspectration</code>一样大小：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.aspectration &gt; * &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: 0;</span><br><span class="line">    top: 0;</span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 100%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
       
     </div>
 
