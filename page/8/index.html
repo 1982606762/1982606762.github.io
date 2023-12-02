@@ -89,9 +89,9 @@
 <nav class="site-nav">
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">25</span></a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">27</span></a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">11</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">90</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">92</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -162,7 +162,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">90</span>
+          <span class="site-state-item-count">92</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -173,7 +173,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">27</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -215,6 +215,234 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2022/01/22/%E5%BC%BA%E5%88%B6git%E4%BD%BF%E7%94%A8ssh/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Xuanlang">
+      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="松鼠小筑">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/01/22/%E5%BC%BA%E5%88%B6git%E4%BD%BF%E7%94%A8ssh/" class="post-title-link" itemprop="url">强制git使用ssh</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-01-22 22:01:49" itemprop="dateCreated datePublished" datetime="2022-01-22T22:01:49+01:00">2022-01-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-01-23 02:11:43" itemprop="dateModified" datetime="2022-01-23T02:11:43+01:00">2022-01-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="强制git使用ssh" href="/2022/01/22/%E5%BC%BA%E5%88%B6git%E4%BD%BF%E7%94%A8ssh/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::cffa08275151e200ffd7c4d32c41a3b1" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>400</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>国内使用github时由于网络问题，push和pull时经常会卡，因此建议使用ssh代替http.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/01/22/%E5%BC%BA%E5%88%B6git%E4%BD%BF%E7%94%A8ssh/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2022/01/15/104-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Xuanlang">
+      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="松鼠小筑">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/01/15/104-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6/" class="post-title-link" itemprop="url">104.二叉树的最大深度</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-01-15 12:29:50 / 修改时间：12:29:08" itemprop="dateCreated datePublished" datetime="2022-01-15T12:29:50+01:00">2022-01-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="104.二叉树的最大深度" href="/2022/01/15/104-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::04f62186ca5889e21580112142eb69cf" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>给定一个二叉树，找出其最大深度。</p>
+<p>二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。</p>
+<p><strong>说明:</strong> 叶子节点是指没有子节点的节点。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/01/15/104-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -544,418 +772,8 @@ pages负载hexo的优化，包括push不受网络问题影响，网站https设�
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2021/12/03/swift%E5%AD%A6%E4%B9%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Xuanlang">
-      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="松鼠小筑">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/12/03/swift%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">swift学习</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-12-03 20:50:14" itemprop="dateCreated datePublished" datetime="2021-12-03T20:50:14+01:00">2021-12-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-02-18 05:51:03" itemprop="dateModified" datetime="2022-02-18T05:51:03+01:00">2022-02-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/swift/" itemprop="url" rel="index"><span itemprop="name">swift</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Changyan：</span>
-    
-    <a title="swift学习" href="/2021/12/03/swift%E5%AD%A6%E4%B9%A0/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::0af8df443f39a12a0bf19ea274e05f98" class="cy_cmt_count" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>11k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>20 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>udemy <a
-target="_blank" rel="noopener" href="https://www.udemy.com/course/ios-13-app-development-bootcamp/">iOS
-&amp; Swift - The Complete iOS App Development Bootcamp</a> 学习笔记</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/12/03/swift%E5%AD%A6%E4%B9%A0/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2021/11/05/vue%E5%AD%A6%E4%B9%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Xuanlang">
-      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="松鼠小筑">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/11/05/vue%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">vue学习</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-11-05 20:36:24" itemprop="dateCreated datePublished" datetime="2021-11-05T20:36:24+01:00">2021-11-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-08-04 11:06:44" itemprop="dateModified" datetime="2022-08-04T11:06:44+02:00">2022-08-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Changyan：</span>
-    
-    <a title="vue学习" href="/2021/11/05/vue%E5%AD%A6%E4%B9%A0/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::0ff7a15cbd7a012129bef0fb9606bb54" class="cy_cmt_count" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>12k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>22 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <span id="more"></span>
-<h1 id="vue-app内容">vue app内容</h1>
-<h2 id="data">data</h2>
-<p>可以return多个内容，代表app要使用的所有数据</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">data</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">list</span> : [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;张三&#x27;</span>,</span><br><span class="line">        <span class="attr">age</span>: <span class="number">18</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;李四&#x27;</span>,</span><br><span class="line">        <span class="attr">age</span>: <span class="number">20</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;王五&#x27;</span>,</span><br><span class="line">        <span class="attr">age</span>: <span class="number">22</span></span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">name</span>:<span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    <span class="attr">num</span>:<span class="string">&#x27;&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<h2 id="mounted">mounted</h2>
-<p>在网页加载完成后自动执行内容</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">mounted</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">  <span class="built_in">setInterval</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.num = <span class="built_in">Math</span>.random() * <span class="number">100</span></span><br><span class="line">  &#125;, <span class="number">1000</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="methods">methods</h2>
-<p>app要使用的所有函数</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">  <span class="function"><span class="title">handleClick</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.list.push(&#123;</span><br><span class="line">      <span class="attr">name</span>: <span class="built_in">this</span>.name,</span><br><span class="line">      <span class="attr">age</span>: <span class="built_in">this</span>.num</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="built_in">this</span>.name = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="built_in">this</span>.num = <span class="string">&#x27;&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<h3 id="事件">事件</h3>
-<p>函数默认第一个参数是event，若有参数就可以使用$event作为实参传入</p>
-<p>绑定多个事件可以用逗号隔开，并且加上函数的引用括号</p>
-<p>阻止事件冒泡，事件修饰符：</p>
-<ul>
-<li>可以在内层btn上使用@click.stop</li>
-<li>可以在外层使用@click.self判断是不是点的自己</li>
-<li>在外层加.capture让他捕获冒泡</li>
-<li>在外层加.once让他</li>
-</ul>
-<p>按键修饰符：<span class="citation"
-data-cites="keydown">@keydown</span></p>
-<p>Enter,tab,delete,esc,up,down,left,right</p>
-<p>鼠标修饰符：<span class="citation"
-data-cites="click">@click</span></p>
-<p>Left,right,middle</p>
-<p>精确修饰符：<span class="citation"
-data-cites="click.ctrl.exact只有点击ctrl才可以">@click.ctrl.exact只有点击ctrl才可以</span></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input @keydown.delete = <span class="string">&quot;handleKeyDown&quot;</span></span><br></pre></td></tr></table></figure>
-<h2 id="template">template</h2>
-<p>在app绑定的节点内添加里边的内容</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">template: <span class="string">`</span></span><br><span class="line"><span class="string">            &lt;div&gt;</span></span><br><span class="line"><span class="string">                &lt;input v-model=&quot;name&quot;&gt;</span></span><br><span class="line"><span class="string">                &lt;input v-model=&quot;num&quot;&gt;</span></span><br><span class="line"><span class="string">                &lt;button v-on:click = &quot;handleClick&quot;&gt;添加&lt;/button&gt;</span></span><br><span class="line"><span class="string">                &lt;ul&gt;</span></span><br><span class="line"><span class="string">                    &lt;li v-for=&quot;(item,index) in list&quot;&gt;</span></span><br><span class="line"><span class="string">                        &#123;&#123;item.name&#125;&#125;</span></span><br><span class="line"><span class="string">                        &#123;&#123;item.age&#125;&#125;</span></span><br><span class="line"><span class="string">                        &#123;&#123;index&#125;&#125;</span></span><br><span class="line"><span class="string">                    &lt;/li&gt;</span></span><br><span class="line"><span class="string">                &lt;/ul&gt;</span></span><br><span class="line"><span class="string">            &lt;/div&gt;</span></span><br><span class="line"><span class="string">        `</span>,</span><br><span class="line">&#125;).mount(<span class="string">&#x27;#root&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="component">component</h2>
-<p>组件，可以表示任何可见元素</p>
-<p>定义：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">app.component(<span class="string">&#x27;my-component&#x27;</span>, &#123;</span><br><span class="line">  <span class="attr">props</span>: [<span class="string">&#x27;content&#x27;</span>,<span class="string">&quot;index&quot;</span>],</span><br><span class="line">  <span class="attr">template</span>: <span class="string">`</span></span><br><span class="line"><span class="string">        &lt;li&gt;</span></span><br><span class="line"><span class="string">            &#123;&#123;content.name&#125;&#125;</span></span><br><span class="line"><span class="string">            &#123;&#123;content.age&#125;&#125;</span></span><br><span class="line"><span class="string">            &#123;&#123;index&#125;&#125;</span></span><br><span class="line"><span class="string">        &lt;/li&gt;</span></span><br><span class="line"><span class="string">        `</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>使用：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">   <span class="xml"><span class="tag">&lt;<span class="name">my-component</span> </span></span></span><br><span class="line"><span class="tag"><span class="xml"><span class="attr">v-for</span>=<span class="string">&quot;(item,index) in list&quot;</span> </span></span></span><br><span class="line"><span class="tag"><span class="xml"><span class="attr">v-bind:content</span>=<span class="string">&quot;item&quot;</span> </span></span></span><br><span class="line"><span class="tag"><span class="xml"><span class="attr">v-bind:index</span> = <span class="string">&quot;index&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">/&gt;</span></span></span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="计算属性">计算属性</h2>
-<p>computed</p>
-<p>当计算属性依赖的内容发生变更时才重新执行计算</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  <span class="function"><span class="title">total</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Date</span>.now()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="监听器">监听器</h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//price发生变化时执行</span></span><br><span class="line"><span class="attr">watch</span>: &#123;</span><br><span class="line">  <span class="function"><span class="title">price</span>(<span class="params">current,prev</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">this</span>.message = prev + <span class="string">&quot;changed to&quot;</span> + current</span><br><span class="line">    &#125;,<span class="number">1000</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<h2 id="样式">样式</h2>
-<p>在style里定义类，然后给标签绑定类</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">data</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span>&#123;</span><br><span class="line">    <span class="attr">class</span>:<span class="string">&#x27;red&#x27;</span>,</span><br><span class="line">    <span class="attr">classObj</span>:&#123;<span class="attr">red</span>:<span class="literal">true</span>,<span class="attr">green</span>:<span class="literal">true</span>&#125;,</span><br><span class="line">    <span class="attr">classArray</span>:[<span class="string">&#x27;red&#x27;</span>,<span class="string">&#x27;green&#x27;</span>,&#123;<span class="attr">brown</span>:<span class="literal">true</span>&#125;]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line">  <span class="attr">template</span>: <span class="string">`&lt;div :class=&quot;classObj&quot;&gt;Hello World&lt;/div&gt;`</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>对于组价有两种方法来改变class</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.每个组价标签都加class</span></span><br><span class="line"><span class="comment">//2.父组件加class，子组件使用:class=&quot;$attrs.class&quot;继承父组件的class</span></span><br></pre></td></tr></table></figure>
-<h1 id="vue基本操作">vue基本操作</h1>
-<h2 id="v-for">v-for</h2>
-<p>支持两个参数，第二个是当前项的索引，从0开始</p>
-<h2 id="v-bind">V-bind</h2>
-<p>用于给某个标签绑定属性，如title，class等</p>
-<p>简写为:</p>
-<p>v-bind:class后可以在某条件达成后获得某个类名</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;(item,index) in navList&quot;</span> <span class="attr">:class</span>=<span class="string">&quot;&#123;active:index === activeNavIndex&#125;&quot;</span></span></span><br></pre></td></tr></table></figure>
-<h2 id="v-on">v-on</h2>
-<p>绑定点击事件<code>v-on:click = "handleclick"</code></p>
-<p>简写为@click</p>
-<h2 id="v-model">v-model</h2>
-<p>双向绑定数据和输入框,把输入框变成单标签。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;message&#125;&#125;</span><br><span class="line">&lt;input v-model=<span class="string">&quot;message&quot;</span>/&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="标签">标签</h3>
-<p>可以使用：input(text,checkbox,video),textarea,select</p>
-<p>使用checkbox的时候message可以是一个数组[]，然后input添加value就可以显示当前点的什么</p>
-<p>也可以自定义选中和没选中的时候的显示：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">message:<span class="string">&quot;world&quot;</span></span><br><span class="line">&lt;input type=<span class="string">&quot;checkbox&quot;</span> v-model=<span class="string">&quot;message&quot;</span> <span class="literal">true</span>-value=<span class="string">&quot;hello&quot;</span> <span class="literal">false</span>-value=<span class="string">&quot;world&quot;</span>/&gt;</span><br><span class="line">  </span><br></pre></td></tr></table></figure>
-<p>使用video的时候message是字符串‘’</p>
-<p>使用select的时候message是字符串，最好给一个初始值，其中内部的option可以用object来批量初始化：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">options:[&#123;</span><br><span class="line">  <span class="attr">text</span>:<span class="string">&#x27;A&#x27;</span>,<span class="attr">value</span>:<span class="string">&#x27;A&#x27;</span></span><br><span class="line">&#125;,&#123;</span><br><span class="line">  <span class="attr">text</span>:<span class="string">&#x27;B&#x27;</span>,<span class="attr">value</span>:<span class="string">&#x27;B&#x27;</span></span><br><span class="line">&#125;,&#123;</span><br><span class="line">  <span class="attr">text</span>:<span class="string">&#x27;C&#x27;</span>,<span class="attr">value</span>:<span class="string">&#x27;C&#x27;</span></span><br><span class="line">&#125;]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;select v-model=<span class="string">&quot;message&quot;</span>&gt;</span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="name">option</span> <span class="attr">v-for</span>=<span class="string">&quot;item in options&quot;</span> <span class="attr">:value</span>=<span class="string">&quot;item.value&quot;</span>&gt;</span>&#123;&#123;item.text&#125;&#125;<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span></span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="修饰符">修饰符</h3>
-<p>v-model.lazy可以让他变得变慢</p>
-<p>V-model.number让输入的值存储成number类型</p>
-<p>V-model.trim去除后边的空格</p>
-<h2 id="v-once">V-once</h2>
-<p>让语句里的变量不会在改变的时候进行渲染</p>
-<p>内容会变，但是页面上显示的不变</p>
-<h2 id="v-if">v-if</h2>
-<p>根据变量判断是否展示标签</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">data</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span>&#123;</span><br><span class="line">                <span class="attr">show</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="attr">condotion</span>:<span class="literal">true</span></span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">template</span>: <span class="string">`</span></span><br><span class="line"><span class="string">        &lt;div :class=&#x27;classs&#x27;&gt;Hello World&lt;/div&gt;</span></span><br><span class="line"><span class="string">        &lt;div v-if=&quot;show&quot;&gt;if&lt;/div&gt;</span></span><br><span class="line"><span class="string">        &lt;div v-else-if=&quot;condotion&quot;&gt;elseif&lt;/div&gt;</span></span><br><span class="line"><span class="string">        &lt;div v-else&gt;else&lt;/div&gt;</span></span><br><span class="line"><span class="string">        `</span></span><br><span class="line">        </span><br></pre></td></tr></table></figure>
-<p>使用template来做占位符，仅做到for循环的效果并且不添加div</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">            <span class="xml"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-for</span>=<span class="string">&quot;(value,key,index) in listItem&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;index&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">&quot;key !== &#x27;second&#x27;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">                    &#123;&#123;key&#125;&#125;---&#123;&#123;value&#125;&#125;</span></span><br><span class="line"><span class="xml">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span>    </span><br><span class="line">        &lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="v-show">v-show</h2>
-<p>根据变量判断是否加display:none</p>
-<h1 id="mvvm">mvvm</h1>
-<blockquote>
-<p>let app = Vue.<strong>createApp</strong>({</p>
-<p>​ });</p>
-<p>创造vue app</p>
-<p>let vm = app.mount('#root')</p>
-<p>vue应用的根组件</p>
-</blockquote>
-<h1 id="生命周期函数">生命周期函数</h1>
-<p>某一时刻被自动执行的函数</p>
-<figure>
-<img data-src="https://img.zhaoxuanlang.cn/lifecycle.png"
-alt="The Vue Instance Lifecycle" />
-<figcaption aria-hidden="true">The Vue Instance Lifecycle</figcaption>
-</figure>
-<h1 id="组件">组件</h1>
-<p>可以复用，每个组件内的data是独立的</p>
-<p>全局组件定义后全局可以使用，但是性能不高</p>
-<p>局部组件注册才能用</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> counter = &#123;</span><br><span class="line">  <span class="function"><span class="title">data</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="attr">count</span>:<span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">template</span>: <span class="string">`&lt;div @click=&quot;count += 1&quot;&gt;&#123;&#123;count&#125;&#125;&lt;/div&gt;`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在app里添加components:{'count':counter}，或者{counter}简写</p>
-<h2 id="传值">传值</h2>
-<p>在调用的时候传递<code>&lt;test content="123" /&gt;</code></p>
-<p>或者使用v-bind:content="num"并且在data里定义num</p>
-<p>在组件里添加<code>props:['content']</code></p>
-<h2 id="参数类型校验">参数类型校验</h2>
-<p>在组件里使用</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">props:&#123;</span><br><span class="line">  <span class="attr">content</span>: string</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>就是需要传入一个string</p>
-<p>可以使用string,boolean,array,object,function</p>
-<p>高级用法：可以把content定义为一个object，里边可以包含default函数，validator函数，required元素等。</p>
-<h2 id="单向数据流">单向数据流</h2>
-<p>父组件能向子组件传值，但是子组件不能修改</p>
-<p>方法：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">props:[<span class="string">&#x27;count&#x27;</span>]</span><br><span class="line"><span class="function"><span class="title">data</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span>&#123;</span><br><span class="line">    <span class="attr">mycount</span>: <span class="built_in">this</span>.count</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="non-prop属性">non-prop属性</h2>
-<p>子组件不定义prop的时候父组件传过来的值就会变成一个属性，如msg="hello"</p>
-<p>用处：可以快速定义style</p>
-<p>可以在子组件加inheritAttrs: false来不接收</p>
-<p>子组件有做个的时候可以在想添加的那个组件上添加v-bind="$attrs"来获得属性</p>
-<h2 id="父子组件间使用方法通信">父子组件间使用方法通信</h2>
-<p>子组件使用this.$emit('add,1')</p>
-<p>父组件监听@add = handle</p>
-<p>handle函数有一个参数，获得1</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> app = Vue.createApp(&#123;</span><br><span class="line">        <span class="function"><span class="title">data</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span>&#123;</span><br><span class="line">                <span class="attr">count</span>:<span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">methods</span>:&#123;</span><br><span class="line">            <span class="function"><span class="title">handleadd</span>(<span class="params">para</span>)</span>&#123;</span><br><span class="line">                <span class="built_in">this</span>.count += para</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">template</span>:<span class="string">`</span></span><br><span class="line"><span class="string">        &lt;div&gt;</span></span><br><span class="line"><span class="string">            &lt;test @add=&quot;handleadd&quot; :content=&quot;count&quot;/&gt;</span></span><br><span class="line"><span class="string">        &lt;/div&gt;`</span></span><br><span class="line">        </span><br><span class="line">    &#125;);</span><br><span class="line">    app.component(<span class="string">&#x27;test&#x27;</span>,&#123;</span><br><span class="line">        <span class="attr">props</span>:[<span class="string">&#x27;content&#x27;</span>],</span><br><span class="line">        <span class="attr">methods</span>:&#123;</span><br><span class="line">            <span class="function"><span class="title">handleClick</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                <span class="built_in">this</span>.$emit(<span class="string">&#x27;add&#x27;</span>,<span class="number">2</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">template</span>:<span class="string">`&lt;div @click=&quot;handleClick&quot;&gt;&#123;&#123;content&#125;&#125;&lt;/div&gt;`</span></span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
-<p>使用emits是一个数组可以在数组里写所有父组件需要监听的函数名</p>
-<p>emits如果里边加一个函数的话可以在传参的时候校验参数</p>
-<p>高级用法：使用v-model双向绑定</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> app = Vue.createApp(&#123;</span><br><span class="line">        <span class="function"><span class="title">data</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span>&#123;</span><br><span class="line">                <span class="attr">count</span>:<span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">template</span>:<span class="string">`</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            &lt;test v-model=&quot;count&quot;/&gt;`</span></span><br><span class="line">        </span><br><span class="line">    &#125;);</span><br><span class="line">    app.component(<span class="string">&#x27;test&#x27;</span>,&#123;</span><br><span class="line">        <span class="attr">props</span>:[<span class="string">&#x27;modelValue&#x27;</span>],</span><br><span class="line">        <span class="attr">methods</span>:&#123;</span><br><span class="line">            <span class="function"><span class="title">handleClick</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                <span class="built_in">this</span>.$emit(<span class="string">&#x27;update:modelValue&#x27;</span>,<span class="built_in">this</span>.modelValue+<span class="number">3</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">template</span>:<span class="string">`&lt;div @click=&quot;handleClick&quot;&gt;&#123;&#123;modelValue&#125;&#125;&lt;/div&gt;`</span></span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
-<h2 id="动态组件">动态组件</h2>
-<p>使用component标签实现动态切换</p>
-<h2 id="同步组件异步组件">同步组件，异步组件</h2>
-<p>同步组件可以直接加载，异步组件会等一会加载</p>
-<h1 id="插槽">插槽</h1>
-<p>使用子组件的时候想传入一个dom元素可以使用slot</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> app = Vue.createApp(&#123;</span><br><span class="line">        <span class="attr">template</span>:<span class="string">`</span></span><br><span class="line"><span class="string">            &lt;test&gt;</span></span><br><span class="line"><span class="string">                &lt;div&gt;提交&lt;/div&gt;    </span></span><br><span class="line"><span class="string">            &lt;/test&gt;</span></span><br><span class="line"><span class="string">            &lt;test&gt;</span></span><br><span class="line"><span class="string">                &lt;button&gt;提交&lt;/button&gt;</span></span><br><span class="line"><span class="string">            &lt;/test&gt;</span></span><br><span class="line"><span class="string">            `</span></span><br><span class="line">        </span><br><span class="line">    &#125;);</span><br><span class="line">    app.component(<span class="string">&#x27;test&#x27;</span>,&#123;</span><br><span class="line">        <span class="attr">methods</span>:&#123;</span><br><span class="line">            <span class="function"><span class="title">handleClick</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                alert(<span class="number">123</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">template</span>:<span class="string">`</span></span><br><span class="line"><span class="string">        &lt;div&gt;</span></span><br><span class="line"><span class="string">            &lt;input /&gt; </span></span><br><span class="line"><span class="string">            &lt;span @click=&quot;handleClick&quot;&gt;  </span></span><br><span class="line"><span class="string">            &lt;slot&gt;&lt;/slot&gt;</span></span><br><span class="line"><span class="string">            &lt;/span&gt;</span></span><br><span class="line"><span class="string">        &lt;/div&gt;`</span></span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
-<p>可以传入另一个子组件</p>
-<p>可以设定默认值</p>
-<h2 id="具名插槽">具名插槽</h2>
-<p>把插槽分开，每个片段用template包裹，template上加上v-slot:"name"或者#name</p>
-<p>子组件内部使用的时候slot加name=“”属性</p>
-<h2 id="作用域插槽">作用域插槽</h2>
-<p>子组件渲染的内容由父组件决定的时候使用。父组件可以调用子组件的数据</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> app = Vue.createApp(&#123;</span><br><span class="line">        <span class="attr">template</span>:<span class="string">`</span></span><br><span class="line"><span class="string">            &lt;list v-slot=&quot;&#123;item&#125;&quot;&gt;</span></span><br><span class="line"><span class="string">                &lt;div&gt;&#123;&#123;item&#125;&#125;&lt;/div&gt;</span></span><br><span class="line"><span class="string">            &lt;/list&gt;</span></span><br><span class="line"><span class="string">            `</span></span><br><span class="line">        </span><br><span class="line">    &#125;);</span><br><span class="line">    app.component(<span class="string">&#x27;list&#x27;</span>,&#123;</span><br><span class="line">        <span class="function"><span class="title">data</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span>&#123;</span><br><span class="line">                <span class="attr">list</span>:[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">template</span>:<span class="string">`</span></span><br><span class="line"><span class="string">        &lt;div&gt;</span></span><br><span class="line"><span class="string">            &lt;slot v-for=&quot;item in list&quot; :item=&quot;item&quot;/&gt;</span></span><br><span class="line"><span class="string">        &lt;/div&gt;`</span></span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
-<h1 id="vue-动画效果">Vue 动画效果</h1>
-<h2 id="实现基础过渡和动画">实现基础过渡和动画</h2>
-<h3 id="动画">动画</h3>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">        @keyframes leftToright &#123;</span><br><span class="line">            <span class="number">0</span>%&#123;</span><br><span class="line">                <span class="attr">transform</span>: translateX(-100px);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="number">50</span>%&#123;</span><br><span class="line">                <span class="attr">transform</span>: translateX(-50px);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="number">100</span>%&#123;</span><br><span class="line">                <span class="attr">transform</span>: translateX(0px);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .animation&#123;</span><br><span class="line">            <span class="attr">animation</span>: leftToright 3s;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line"><span class="keyword">let</span> app = Vue.createApp(&#123;</span><br><span class="line">        <span class="function"><span class="title">data</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                <span class="attr">animate</span>:&#123;</span><br><span class="line">                    <span class="attr">animation</span>:<span class="literal">false</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">methods</span>:&#123;</span><br><span class="line">            <span class="function"><span class="title">handleClick</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                <span class="built_in">this</span>.animate.animation = !<span class="built_in">this</span>.animate.animation</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">template</span>:<span class="string">`</span></span><br><span class="line"><span class="string">        &lt;div&gt;    </span></span><br><span class="line"><span class="string">        &lt;div :class=&quot;animate&quot;&gt;hello world&lt;/div&gt;</span></span><br><span class="line"><span class="string">        &lt;button @click=&quot;handleClick&quot;&gt;切换&lt;/button&gt;</span></span><br><span class="line"><span class="string">        &lt;/div&gt;</span></span><br><span class="line"><span class="string">        `</span></span><br><span class="line">        </span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="过渡">过渡</h3>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">.transition&#123;</span><br><span class="line">            <span class="attr">transition</span>: 3s background-color ease;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .green&#123;</span><br><span class="line">            <span class="attr">background</span>: green;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .blue&#123;</span><br><span class="line">            <span class="attr">background</span>: blue;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="keyword">let</span> app = Vue.createApp(&#123;</span><br><span class="line">        <span class="function"><span class="title">data</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                <span class="attr">animate</span>:&#123;</span><br><span class="line">                    <span class="attr">transition</span>:<span class="literal">true</span>,</span><br><span class="line">                    <span class="attr">blue</span>:<span class="literal">true</span>,</span><br><span class="line">                    <span class="attr">green</span>:<span class="literal">false</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">methods</span>:&#123;</span><br><span class="line">            <span class="function"><span class="title">handleClick</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                <span class="built_in">this</span>.animate.blue = !<span class="built_in">this</span>.animate.blue</span><br><span class="line">                <span class="built_in">this</span>.animate.green = !<span class="built_in">this</span>.animate.green</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">template</span>:<span class="string">`</span></span><br><span class="line"><span class="string">        &lt;div&gt;    </span></span><br><span class="line"><span class="string">        &lt;div :class=&quot;animate&quot;&gt;hello world&lt;/div&gt;</span></span><br><span class="line"><span class="string">        &lt;button @click=&quot;handleClick&quot;&gt;切换&lt;/button&gt;</span></span><br><span class="line"><span class="string">        &lt;/div&gt;</span></span><br><span class="line"><span class="string">        `</span></span><br><span class="line">        </span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="实现单元素组件动画">实现单元素组件动画</h2>
-<h3 id="使用transition标签">使用transition标签</h3>
-<p>css：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.v-enter-from</span>&#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.v-enter-to</span>&#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.v-enter-active</span>&#123;</span><br><span class="line">  <span class="attribute">transition</span>: <span class="number">2s</span> opacity;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.v-leave-from</span>&#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.v-leave-to</span>&#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.v-leave-active</span>&#123;</span><br><span class="line">  <span class="attribute">transition</span>: <span class="number">2s</span> opacity;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>js:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> app = Vue.createApp(&#123;</span><br><span class="line">  <span class="function"><span class="title">data</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="attr">show</span>:<span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">methods</span>:&#123;</span><br><span class="line">    <span class="function"><span class="title">handleClick</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="built_in">this</span>.show = !<span class="built_in">this</span>.show</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">template</span>:<span class="string">`</span></span><br><span class="line"><span class="string">        &lt;div&gt;    </span></span><br><span class="line"><span class="string">            &lt;transition&gt;</span></span><br><span class="line"><span class="string">            &lt;div v-if=&quot;show&quot;&gt;hello world&lt;/div&gt;</span></span><br><span class="line"><span class="string">            &lt;/transition&gt;</span></span><br><span class="line"><span class="string">        &lt;button @click=&quot;handleClick&quot;&gt;切换&lt;/button&gt;</span></span><br><span class="line"><span class="string">        &lt;/div&gt;</span></span><br><span class="line"><span class="string">        `</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>动画效果实现也一样，只是v-enter-active里opacity改成动画keyframe名称即可。</p>
-<p>在transition添加name=‘aaa'后
-v-enter-active就需要改成aaa-enter-active，v只是默认名称。</p>
-<h3 id="自定义类名">自定义类名</h3>
-<p>可以在<code>transition</code>标签上添加<code>enter-active-class=""  leave-active-class=""</code></p>
-<p>里边填入类名，如：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.bye</span>&#123;</span><br><span class="line">  <span class="attribute">animation</span>:shake <span class="number">3s</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.hello</span>&#123;</span><br><span class="line">  <span class="attribute">animation</span>:shake <span class="number">3s</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="列表的动画效果">列表的动画效果</h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">    &lt;script src=&quot;https://unpkg.com/vue@next&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        .v-enter-from&#123;</span><br><span class="line">            opacity: 0;</span><br><span class="line">            transform: translateY(30px);</span><br><span class="line">        &#125;</span><br><span class="line">        .v-enter-to&#123;</span><br><span class="line">            opacity: 1;</span><br><span class="line">            transform: translateY(0);</span><br><span class="line">            /* 从下往上的动画效果 */</span><br><span class="line">        &#125;</span><br><span class="line">        .v-enter-active&#123;</span><br><span class="line">            transition: all .5s ease-in;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .v-move&#123;</span><br><span class="line">            /* 其他元素移动时的移动效果 */</span><br><span class="line">            transition: all .5s ease-in;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        .list-item&#123;</span><br><span class="line">            display: inline-block;</span><br><span class="line">            margin-right: 10px;</span><br><span class="line">        &#125;</span><br><span class="line">        .v-leave-from&#123;</span><br><span class="line">            opacity: 1;</span><br><span class="line">            transform: translateY(0);</span><br><span class="line">        &#125;</span><br><span class="line">        .v-leave-to&#123;</span><br><span class="line">            opacity: 0;</span><br><span class="line">            transform: translateY(30px);</span><br><span class="line">        &#125;</span><br><span class="line">        .v-leave-active&#123;</span><br><span class="line">            transition:all .5s ease-out;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;root&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    let app = Vue.createApp(&#123;</span><br><span class="line">        data()&#123;</span><br><span class="line">            return &#123;</span><br><span class="line">                list:[1,2,3],</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line">            handleClick()&#123;</span><br><span class="line">                this.list.unshift(Math.floor(Math.random()*100));</span><br><span class="line">            &#125;,</span><br><span class="line">            handleremove(i)&#123;</span><br><span class="line">                this.list.splice(i,1)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        template:`</span><br><span class="line">        &lt;div&gt;    </span><br><span class="line">            &lt;transition-group&gt;</span><br><span class="line">                &lt;span name=&quot;list&quot; class=&quot;list-item&quot; v-for=&quot;(item,index) in list&quot; :key=&quot;item&quot; @click=&quot;handleremove(index)&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/span&gt;</span><br><span class="line">            &lt;/transition-group&gt;</span><br><span class="line">        &lt;button @click=&quot;handleClick&quot;&gt;增加&lt;/button&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        `</span><br><span class="line">        </span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    let vm = app.mount(&#x27;#root&#x27;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="状态动画">状态动画</h2>
-<p>让某些数据有缓慢变化的过程，应用如svg</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> app = Vue.createApp(&#123;</span><br><span class="line">        <span class="function"><span class="title">data</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                <span class="attr">number</span>:<span class="number">1</span>,</span><br><span class="line">                <span class="attr">animatenumber</span>:<span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">methods</span>:&#123;</span><br><span class="line">            <span class="function"><span class="title">handleClick</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                <span class="built_in">this</span>.number = <span class="number">10</span>;</span><br><span class="line">                <span class="keyword">let</span> currentNumber = <span class="built_in">this</span>.animatenumber;</span><br><span class="line">                <span class="keyword">if</span>(<span class="built_in">this</span>.animatenumber &lt; <span class="built_in">this</span>.number)&#123;</span><br><span class="line">                    <span class="keyword">let</span> timer = <span class="built_in">setInterval</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">                    currentNumber++;</span><br><span class="line">                    <span class="built_in">this</span>.animatenumber = currentNumber;</span><br><span class="line">                    <span class="keyword">if</span>(currentNumber&gt;=<span class="built_in">this</span>.number)&#123;</span><br><span class="line">                        <span class="built_in">clearInterval</span>(timer);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;,<span class="number">100</span>)</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">            &#125;,</span><br><span class="line">            </span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">template</span>:<span class="string">`</span></span><br><span class="line"><span class="string">        &lt;div&gt;    </span></span><br><span class="line"><span class="string">        &lt;div&gt;&#123;&#123;animatenumber&#125;&#125;&lt;/div&gt;</span></span><br><span class="line"><span class="string">        &lt;button @click=&quot;handleClick&quot;&gt;增加&lt;/button&gt;</span></span><br><span class="line"><span class="string">        &lt;/div&gt;</span></span><br><span class="line"><span class="string">        `</span></span><br><span class="line">        </span><br></pre></td></tr></table></figure>
-<h1 id="高级语法">高级语法</h1>
-<h2 id="mixin">mixin</h2>
-<ul>
-<li>组件data优先级高于mixin优先级</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//mixin 混入</span></span><br><span class="line">    <span class="keyword">const</span> mixin = &#123;</span><br><span class="line">        <span class="function"><span class="title">data</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                <span class="attr">number</span>:<span class="number">2</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>不能用于子组件，需要使用全局mixin(不推荐使用)</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">app.mixin(&#123;</span><br><span class="line">        <span class="function"><span class="title">data</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                <span class="attr">number</span>:<span class="number">2</span>,</span><br><span class="line">                <span class="attr">count</span>:<span class="number">222</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="function"><span class="title">created</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="built_in">this</span>.count);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>

@@ -29,7 +29,7 @@
 <meta property="og:description" content="Problems and Learnings during the DADIU project.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-18T09:11:27.000Z">
-<meta property="article:modified_time" content="2023-11-23T14:55:34.779Z">
+<meta property="article:modified_time" content="2023-11-28T13:33:45.581Z">
 <meta property="article:author" content="Xuanlang">
 <meta property="article:tag" content="unity">
 <meta name="twitter:card" content="summary">
@@ -91,9 +91,9 @@
 <nav class="site-nav">
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">25</span></a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">27</span></a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">11</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">90</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">92</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -159,7 +159,8 @@ sound effects to footstep of the player</span></a></li></ol></li><li class="nav-
 object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#implement-puzzle-winning-manager"><span class="nav-number">5.</span> <span class="nav-text">Implement puzzle-winning
 manager</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#implement-timeline-feature"><span class="nav-number"></span> <span class="nav-text">Implement timeline feature</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#trigger"><span class="nav-number">1.</span> <span class="nav-text">Trigger</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#director"><span class="nav-number">2.</span> <span class="nav-text">Director</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#make-a-playable-timeline"><span class="nav-number">2.1.</span> <span class="nav-text">Make a playable timeline</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#add-signal-receiver"><span class="nav-number">2.2.</span> <span class="nav-text">Add signal receiver</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#implement-in-game-menu"><span class="nav-number"></span> <span class="nav-text">Implement in-game menu</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#switch-between-fullscreen-and-windowed"><span class="nav-number">1.</span> <span class="nav-text">Switch between
 fullscreen and windowed</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#implement-footstep-sound-on-different-surfaces"><span class="nav-number"></span> <span class="nav-text">Implement
-footstep sound on different surfaces</span></a></div>
+footstep sound on different surfaces</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#make-cube-appear-and-disappear-effect"><span class="nav-number"></span> <span class="nav-text">Make cube appear and
+disappear effect</span></a></div>
         </div>
         <!--/noindex-->
 
@@ -174,7 +175,7 @@ footstep sound on different surfaces</span></a></div>
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">90</span>
+          <span class="site-state-item-count">92</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -185,7 +186,7 @@ footstep sound on different surfaces</span></a></div>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">27</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -268,7 +269,7 @@ footstep sound on different surfaces</span></a></div>
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-11-23 15:55:34" itemprop="dateModified" datetime="2023-11-23T15:55:34+01:00">2023-11-23</time>
+      <time title="修改时间：2023-11-28 14:33:45" itemprop="dateModified" datetime="2023-11-28T14:33:45+01:00">2023-11-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -301,14 +302,14 @@ footstep sound on different surfaces</span></a></div>
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>15k</span>
+      <span>16k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>27 分钟</span>
+      <span>29 分钟</span>
     </span>
 </div>
 
@@ -467,6 +468,13 @@ In this case, the ray cast needs to have the offset based on the current
 gravity. I</p>
 <p>Then</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using LivingMansion._Scripts.Player;</span><br><span class="line">using UnityEngine;</span><br><span class="line"></span><br><span class="line">namespace LivingMansion._Scripts.Footsteps</span><br><span class="line">&#123;</span><br><span class="line">    public class FootstepsMaterialSwitcher : MonoBehaviour</span><br><span class="line">    &#123;</span><br><span class="line">        private string previousMaterial = &quot;&quot;;</span><br><span class="line">        public AK.Wwise.Event MyEvent;</span><br><span class="line">        private Player.Player player;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">        private void Start()</span><br><span class="line">        &#123;</span><br><span class="line">            //Set default as Wood</span><br><span class="line">            AkSoundEngine.SetSwitch(&quot;Material&quot;, &quot;Wood&quot;, gameObject);</span><br><span class="line">            previousMaterial = &quot;Wood&quot;;</span><br><span class="line">            player = FindObjectOfType&lt;Player.Player&gt;();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public void PlayFootstepSound()</span><br><span class="line">        &#123;</span><br><span class="line">            MyEvent.Post(gameObject);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        private void FixedUpdate()</span><br><span class="line">        &#123;</span><br><span class="line">            //based on the current gravity direction, raycast downwards to find the material</span><br><span class="line">            //need to add an offset</span><br><span class="line">            Vector3 offest = -player.customCharacter.Gravity.normalized;</span><br><span class="line">            Vector3 newpos = transform.position + offest;</span><br><span class="line">            RaycastHit[] hits = Physics.RaycastAll(newpos, -transform.up, 10f);</span><br><span class="line">            System.Array.Sort(hits, (x, y) =&gt; x.distance.CompareTo(y.distance));</span><br><span class="line">            // Debug.DrawRay(newpos, -transform.up * 10f, Color.red, 1f);</span><br><span class="line"></span><br><span class="line">            foreach (RaycastHit hit in hits)</span><br><span class="line">            &#123;</span><br><span class="line">                if (hit.collider != null &amp;&amp; hit.collider.TryGetComponent(out FootstepsMaterialSound sound))</span><br><span class="line">                &#123;</span><br><span class="line">                    string currentMaterial = sound.materialName.ToString();</span><br><span class="line">                    // Debug.Log(currentMaterial);   </span><br><span class="line">                    if (currentMaterial != previousMaterial)</span><br><span class="line">                    &#123;</span><br><span class="line">                        Debug.Log(&quot;Material: &quot; + currentMaterial);</span><br><span class="line">                        previousMaterial = currentMaterial;</span><br><span class="line">                        AkSoundEngine.SetSwitch(&quot;Material&quot;, currentMaterial, gameObject);</span><br><span class="line">                    &#125;</span><br><span class="line">                    // Only consider the first encountered material</span><br><span class="line">                    break;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="make-cube-appear-and-disappear-effect">Make cube appear and
+disappear effect</h1>
+<p>First, make a appear script, this needs to be done using a coroutine
+to prevent block main game.</p>
+<p>Then do it in a separate function to be called somewere.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">private IEnumerator ScaleDownAndDeactivate(GameObject obj, GameObject connectedSoundObject)</span><br><span class="line">&#123;</span><br><span class="line">    CubeDisappearSound.Post(gameObject);</span><br><span class="line">    connectedSoundObject.SetActive(false);</span><br><span class="line">    Vector3 originalScale = obj.transform.localScale;</span><br><span class="line">    float currentTime = 0;</span><br><span class="line"></span><br><span class="line">    while (currentTime &lt; 0.7f)</span><br><span class="line">    &#123;</span><br><span class="line">        // Scale down the object over time</span><br><span class="line">        obj.transform.localScale = Vector3.Lerp(originalScale, Vector3.zero, currentTime / 0.7f);</span><br><span class="line">        currentTime += Time.deltaTime;</span><br><span class="line">        yield return null;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // Deactivate the object</span><br><span class="line">    obj.SetActive(false);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">MakeCubeDisappear</span>(<span class="params"></span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            GameObject obj = gameObject.transform.GetChild(<span class="number">3</span>).gameObject;</span><br><span class="line">            GameObject connectedSoundObject = gameObject.transform.GetChild(<span class="number">1</span>).gameObject;</span><br><span class="line">            StartCoroutine(ScaleDownAndDeactivate(obj, connectedSoundObject));</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
