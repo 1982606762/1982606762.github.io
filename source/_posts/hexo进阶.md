@@ -96,6 +96,36 @@ theme: next
 
 测试成功后你向typora文章内新增图片，它会自动帮你上传并更换连接。
 
+## Hexo保存图片到本地asset 文件夹
+
+首先在config.yml文件中设置`post_asset_folder = true` 
+
+With asset folder management enabled, Hexo will create a folder every time you make a new post with the `hexo new [layout] <title>` command. This asset folder will have the same name as the markdown file associated with the post. Place all assets related to your post into the associated folder, and you will be able to reference them using a relative path, making for an easier and more convenient workflow.
+
+然后每次新建post都会有一个对应的文件夹。之后需要在typora里设置插入图片时需要复制到自定义文件夹`./${filename}`中，这样每当插入图片的时候都会把图片放到asset文件夹里。
+
+要想在生成的博客中显示图片不能使用传统的!{}表示图片，需要有两种方式，一种是hexo3自带的tag plugins实现：
+
+```
+{% asset_path slug %}//显示当前图片路径
+{% asset_img slug [title] %}\\显示图片
+{% asset_link slug [title] %}\\显示图片链接
+```
+
+[测试链接](https://www.joticia.cn/2023/09/15/Asset-Test/)
+
+还有一种方式是使用[hexo-renderer-marked](https://github.com/hexojs/hexo-renderer-marked)实现
+
+```
+_config.yml
+post_asset_folder: true
+marked:  
+	prependRoot: true  
+	postAsset: true
+```
+
+[参考链接](https://hexo.io/docs/asset-folders.html)
+
 # hexo新建文章后自动打开
 
 每次使用`hexo new xxx` 命令后它会在source文件夹下新建一个文章，还需要再用命令行或者手动来打开文件，同样略显繁琐，所以尝试使用node.js来完成自动化新建打开。
@@ -117,3 +147,21 @@ hexo.on('new',function(data){
 这里open也可以换成code（如果你用的是vscode来编辑文章），注意open后边有一个空格，不要漏了。
 
 然后在terminal里使用`hexo new xxx`命令后他就会自动新建并打开文件辣，可以直线提升100%的效率~
+
+# 补充功能以增加hexo使用效率
+
+在家目录下编辑.zshrc文件，添加以下别名
+
+```bash
+alias hexo='func(){ cd ~/study/newblog/source/_posts/ && hexo $1 $2 && sh new.sh && cd ~};func'
+alias hexo-find='func(){ cd ~/study/newblog/source/_posts/ && ls|grep $1 && cd ~};func'
+alias hexo-open='func(){ cd ~/study/newblog/source/_posts/ && open $1'.md' && cd ~};func'
+alias hexo-rm='func(){ cd ~/study/newblog/source/_posts/ && rm $1'.md' && cd ~};func'
+```
+
+增加四个新功能：
+
+* 在任意目录下使用hexo 命令
+* 使用hexo-find来搜索某一个文章
+* 使用hexo-open打开某一篇文章（无需输入后缀）
+* 使用hexo-rm删除某一篇文章（无需输入后缀）

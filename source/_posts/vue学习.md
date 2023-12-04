@@ -723,3 +723,158 @@ let app = Vue.createApp({
 }
 ```
 
+## 列表的动画效果
+
+```js
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://unpkg.com/vue@next"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .v-enter-from{
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .v-enter-to{
+            opacity: 1;
+            transform: translateY(0);
+            /* 从下往上的动画效果 */
+        }
+        .v-enter-active{
+            transition: all .5s ease-in;
+        }
+
+        .v-move{
+            /* 其他元素移动时的移动效果 */
+            transition: all .5s ease-in;
+        }
+        
+        .list-item{
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .v-leave-from{
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .v-leave-to{
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .v-leave-active{
+            transition:all .5s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+</body>
+<script>
+    let app = Vue.createApp({
+        data(){
+            return {
+                list:[1,2,3],
+            }
+        },
+        methods:{
+            handleClick(){
+                this.list.unshift(Math.floor(Math.random()*100));
+            },
+            handleremove(i){
+                this.list.splice(i,1)
+            }
+        },
+        template:`
+        <div>    
+            <transition-group>
+                <span name="list" class="list-item" v-for="(item,index) in list" :key="item" @click="handleremove(index)">{{item}}</span>
+            </transition-group>
+        <button @click="handleClick">增加</button>
+        </div>
+        `
+        
+    });
+
+    let vm = app.mount('#root')
+</script>
+
+</html>
+```
+
+## 状态动画
+
+让某些数据有缓慢变化的过程，应用如svg
+
+```js
+let app = Vue.createApp({
+        data(){
+            return {
+                number:1,
+                animatenumber:1
+            }
+        },
+        methods:{
+            handleClick(){
+                this.number = 10;
+                let currentNumber = this.animatenumber;
+                if(this.animatenumber < this.number){
+                    let timer = setInterval(()=>{
+                    currentNumber++;
+                    this.animatenumber = currentNumber;
+                    if(currentNumber>=this.number){
+                        clearInterval(timer);
+                    }
+                },100)
+                }
+                
+            },
+            
+        },
+        template:`
+        <div>    
+        <div>{{animatenumber}}</div>
+        <button @click="handleClick">增加</button>
+        </div>
+        `
+        
+```
+
+# 高级语法
+
+## mixin
+
+* 组件data优先级高于mixin优先级
+
+```js
+//mixin 混入
+    const mixin = {
+        data() {
+            return {
+                number:2
+            }
+        }
+    }
+```
+
+* 不能用于子组件，需要使用全局mixin(不推荐使用)
+
+```js
+app.mixin({
+        data(){
+            return {
+                number:2,
+                count:222
+            }
+        },
+        created(){
+            console.log(this.count);
+        }
+    })
+```
+

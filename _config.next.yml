@@ -142,6 +142,7 @@ site_state: true
 social:
   GitHub: https://github.com/1982606762 || fab fa-github
   E-Mail: mailto:zxl17302206700@gmail.com || fa fa-envelope
+  Linkedin: https://www.linkedin.com/in/xuanlang/ || fa fa-linkedin
   #Weibo: https://weibo.com/yourname || fab fa-weibo
   #Google: https://plus.google.com/yourname || fab fa-google
   #Twitter: https://twitter.com/yourname || fab fa-twitter
@@ -505,12 +506,18 @@ math:
   # Default (false) will load mathjax / katex script on demand.
   # That is it only render those page which has `mathjax: true` in front-matter.
   # If you set it to true, it will load mathjax / katex script EVERY PAGE.
-  every_page: false
+  every_page: true
 
   mathjax:
-    enable: false
+    enable: true
     # Available values: none | ams | all
     tags: none
+    single_dollars: true # enable single dollar signs as in-line math delimiters
+    cjk_width: 0.9 # relative CJK char width
+    normal_width: 0.6 # relative normal (monospace) width
+    append_css: true # add CSS to pages rendered by MathJax
+    every_page: true # if true, every page will be rendered by MathJax regardless the `mathjax` setting in Front-matter
+    
 
   katex:
     enable: false
@@ -569,7 +576,7 @@ comments:
   style: tabs
   # Choose a comment system to be displayed by default.
   # Available values: disqus | disqusjs | changyan | livere | gitalk | utterances
-  active: changyan
+  active: disqus
   # Setting `true` means remembering the comment system selected by the visitor.
   storage: true
   # Lazyload all comment systems.
@@ -585,8 +592,8 @@ comments:
 # Disqus
 # For more information: https://disqus.com
 disqus:
-  enable: false
-  shortname:
+  enable: true
+  shortname: squirrel
   count: true
 
 # DisqusJS
@@ -597,14 +604,14 @@ disqusjs:
   # Leave api empty if you are able to connect to Disqus API. Otherwise you need a reverse proxy for it.
   # For example:
   # api: https://disqus.skk.moe/disqus/
-  api:
-  apikey: # Register new application from https://disqus.com/api/applications/
+  api: w1BsZLpbrpyAwHaSNsUoy7f6HoZ9s5qB2l5vbUBp0kqFITWqsJK1FBX7iJZNVqY4
+  apikey: PEXtUkbMRVTdufVdlSvDprGXxGvWe7haS3Lrd2wk5Uyu1MvYZarDJgLWZAsZb705# Register new application from https://disqus.com/api/applications/
   shortname: # See: https://disqus.com/admin/settings/general/
 
 # Changyan
 # For more information: https://changyan.kuaizhan.com
 changyan:
-  enable: true
+  enable: false
   appid: cyvRiUJ7H
   appkey: bfa85e46b2e4cf46d837cbd6e78ba7ab
 
@@ -618,9 +625,9 @@ gitalk:
   enable: false
   github_id: 1982606762 # GitHub repo owner
   repo: gittalk # Repository name to store issues
-  client_id: 231cfb1b82c3b8fa9624
-  client_secret: d99b79d22a66ddc5629f9089f58d9fb49c1bf8d9 # GitHub Application Client Secret
-  admin_user: "['1982606762']" # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
+  client_id: 4513238e184a1b095b69
+  client_secret: 02c69f4c72e22b60d0cf30992678c575a3f6d491 # GitHub Application Client Secret
+  admin_user: 1982606762 # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
   distraction_free_mode: true # Facebook-like distraction free mode
   # When the official proxy is not available, you can change it to your own proxy address
   proxy: https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token # This is official proxy address

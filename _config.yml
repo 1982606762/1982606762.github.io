@@ -40,7 +40,7 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
@@ -103,7 +103,7 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
 - type: git
-  repository: git@github.com:1982606762/1982606762.github.io.git
+  repository: https://github.com/1982606762/1982606762.github.io.git
   branch: main
 - type: git
   repository:
@@ -136,3 +136,14 @@ symbols_count_time:
   exclude_codeblock: false
   awl: 2
   wpm: 275
+
+# # Markdown-it config
+# ## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
+# markdown:
+#   render:
+#     html: true
+#     linkify: true
+#   plugins:
+#     - markdown-it-footnote
+#   anchors:
+#     permalink: true
