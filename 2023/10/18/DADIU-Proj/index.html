@@ -29,7 +29,7 @@
 <meta property="og:description" content="Problems and Learnings during the DADIU project.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-18T09:11:27.000Z">
-<meta property="article:modified_time" content="2023-11-28T13:33:45.581Z">
+<meta property="article:modified_time" content="2023-12-05T09:28:17.419Z">
 <meta property="article:author" content="Xuanlang">
 <meta property="article:tag" content="unity">
 <meta name="twitter:card" content="summary">
@@ -150,17 +150,17 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#make-an-interactive-object"><span class="nav-number">1.</span> <span class="nav-text">Make an interactive object</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#add-a-trigger-area-so-when-players-step-on-it-they-can-interact-with-some-game-object"><span class="nav-number">1.1.</span> <span class="nav-text">Add
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#make-an-interactive-object"><span class="nav-number">1.</span> <span class="nav-text">Make an interactive object</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#add-a-trigger-area-so-when-players-step-on-it-they-can-interact-with-some-game-objects"><span class="nav-number">1.0.1.</span> <span class="nav-text">Add
 a trigger Area so when players step on it they can interact with some
-game object</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#add-the-object-to-interact"><span class="nav-number">1.2.</span> <span class="nav-text">add the object to interact</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#make-a-script-to-do-the-interact"><span class="nav-number">1.3.</span> <span class="nav-text">Make a script to do the
-interact</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#add-interactive-ui"><span class="nav-number">1.4.</span> <span class="nav-text">Add interactive UI</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#open-a-door-slowly"><span class="nav-number">2.</span> <span class="nav-text">Open a door slowly</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#add-a-door-object"><span class="nav-number">2.1.</span> <span class="nav-text">Add a door object</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#implement-wwise-sound-into-the-project"><span class="nav-number">3.</span> <span class="nav-text">Implement wwise sound
-into the project</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#implement-sound-effects-to-footstep-of-the-player"><span class="nav-number">3.1.</span> <span class="nav-text">Implement
-sound effects to footstep of the player</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#implement-timed-interaction-object"><span class="nav-number">4.</span> <span class="nav-text">Implement timed interaction
-object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#implement-puzzle-winning-manager"><span class="nav-number">5.</span> <span class="nav-text">Implement puzzle-winning
-manager</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#implement-timeline-feature"><span class="nav-number"></span> <span class="nav-text">Implement timeline feature</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#trigger"><span class="nav-number">1.</span> <span class="nav-text">Trigger</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#director"><span class="nav-number">2.</span> <span class="nav-text">Director</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#make-a-playable-timeline"><span class="nav-number">2.1.</span> <span class="nav-text">Make a playable timeline</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#add-signal-receiver"><span class="nav-number">2.2.</span> <span class="nav-text">Add signal receiver</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#implement-in-game-menu"><span class="nav-number"></span> <span class="nav-text">Implement in-game menu</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#switch-between-fullscreen-and-windowed"><span class="nav-number">1.</span> <span class="nav-text">Switch between
-fullscreen and windowed</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#implement-footstep-sound-on-different-surfaces"><span class="nav-number"></span> <span class="nav-text">Implement
-footstep sound on different surfaces</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#make-cube-appear-and-disappear-effect"><span class="nav-number"></span> <span class="nav-text">Make cube appear and
-disappear effect</span></a></div>
+game objects</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#add-the-object-to-interact"><span class="nav-number">1.0.2.</span> <span class="nav-text">add the object to interact</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#make-a-script-to-do-the-interact"><span class="nav-number">1.0.3.</span> <span class="nav-text">Make a script to do the
+interact</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#add-interactive-ui"><span class="nav-number">1.0.4.</span> <span class="nav-text">Add interactive UI</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#open-a-door-slowly"><span class="nav-number">2.</span> <span class="nav-text">Open a door slowly</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#add-a-door-object"><span class="nav-number">2.0.1.</span> <span class="nav-text">Add a door object</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#implement-wwise-sound-into-the-project"><span class="nav-number">3.</span> <span class="nav-text">Implement wwise sound
+into the project</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#implement-sound-effects-to-footsteps-of-the-player"><span class="nav-number">3.0.1.</span> <span class="nav-text">Implement
+sound effects to footsteps of the player</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#implement-timed-interaction-object"><span class="nav-number">4.</span> <span class="nav-text">Implement timed interaction
+object</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#implement-puzzle-winning-manager"><span class="nav-number">5.</span> <span class="nav-text">Implement puzzle-winning
+manager</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#implement-timeline-feature"><span class="nav-number">6.</span> <span class="nav-text">Implement timeline feature</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#trigger"><span class="nav-number">6.1.</span> <span class="nav-text">Trigger</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#director"><span class="nav-number">6.2.</span> <span class="nav-text">Director</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#make-a-playable-timeline"><span class="nav-number">6.2.1.</span> <span class="nav-text">Make a playable timeline</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#add-signal-receiver"><span class="nav-number">6.2.2.</span> <span class="nav-text">Add signal receiver</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#implement-in-game-menu"><span class="nav-number">7.</span> <span class="nav-text">Implement in-game menu</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#switch-between-fullscreen-and-windowed"><span class="nav-number">7.1.</span> <span class="nav-text">Switch between
+fullscreen and windowed</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#implement-footstep-sound-on-different-surfaces"><span class="nav-number">8.</span> <span class="nav-text">Implement
+footstep sound on different surfaces</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#make-cube-appear-and-disappear-effect"><span class="nav-number">9.</span> <span class="nav-text">Make cube appear and
+disappear effect</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -272,7 +272,7 @@ disappear effect</span></a></div>
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-11-28 14:33:45" itemprop="dateModified" datetime="2023-11-28T14:33:45+01:00">2023-11-28</time>
+      <time title="修改时间：2023-12-05 10:28:17" itemprop="dateModified" datetime="2023-12-05T10:28:17+01:00">2023-12-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -325,18 +325,20 @@ disappear effect</span></a></div>
     <div class="post-body" itemprop="articleBody">
         <p>Problems and Learnings during the DADIU project.</p>
 <span id="more"></span>
-<h2 id="make-an-interactive-object">Make an interactive object</h2>
+<p>The game is called "I inherited a castle" and this is the <a
+target="_blank" rel="noopener" href="https://dadiu.itch.io/i-inherited-a-castle">link</a>.</p>
+<h1 id="make-an-interactive-object">Make an interactive object</h1>
 <h3
-id="add-a-trigger-area-so-when-players-step-on-it-they-can-interact-with-some-game-object">Add
+id="add-a-trigger-area-so-when-players-step-on-it-they-can-interact-with-some-game-objects">Add
 a trigger Area so when players step on it they can interact with some
-game object</h3>
+game objects</h3>
 <h3 id="add-the-object-to-interact">add the object to interact</h3>
 <h3 id="make-a-script-to-do-the-interact">Make a script to do the
 interact</h3>
 <p>use "onTriggerEnter" to check if a player is in the area, and use an
 "inputAction" to bind an input method, then define an interact function
 to define what will be triggered after the input starts, and also need
-to bind that onenable. Code are as follows:</p>
+to bind that onenable. The code are as follows:</p>
 <p>The "require component" means it needs to have a collider component
 on this object.</p>
 <p>"ontriggerenter" needs two objects both have a collider and one of
@@ -348,7 +350,7 @@ it we need to use <code>event?.Invoke()</code>.</p>
 <h3 id="add-interactive-ui">Add interactive UI</h3>
 <p>Add a canvas with a text on it, and deactivate it. And write another
 script that on trigger enter invoke an event to activate the canvas.</p>
-<h2 id="open-a-door-slowly">Open a door slowly</h2>
+<h1 id="open-a-door-slowly">Open a door slowly</h1>
 <h3 id="add-a-door-object">Add a door object</h3>
 <p>In order to make it rotate from one side of the door we need to add a
 door hinge which is an empty parent to the actual door. make the parent
@@ -356,23 +358,23 @@ to be on the side of the door and apply the opendoor script on it.</p>
 <p>Here I use a slerp to do the rotation and it's based on the "isOpen"
 variable.</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">OpenDoor</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">float</span> openAngle = <span class="number">90f</span>; </span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">float</span> openSpeed = <span class="number">2f</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="built_in">bool</span> isOpen = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">private</span> Quaternion initialRotation;</span><br><span class="line">    <span class="keyword">private</span> Quaternion targetRotation;</span><br><span class="line">    <span class="keyword">private</span> <span class="built_in">bool</span> finishRotation = <span class="literal">true</span>;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Start</span>(<span class="params"></span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// Store the initial rotation of the door.</span></span><br><span class="line">        initialRotation = transform.rotation;</span><br><span class="line">        targetRotation = Quaternion.Euler(transform.eulerAngles + <span class="keyword">new</span> Vector3(<span class="number">0</span>, openAngle, <span class="number">0</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">FixedUpdate</span>(<span class="params"></span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        finishRotation = <span class="literal">false</span>;</span><br><span class="line">        <span class="comment">// Rotate the door towards the target rotation.</span></span><br><span class="line">        transform.rotation = Quaternion.Slerp(transform.rotation, </span><br><span class="line">            isOpen ? targetRotation : initialRotation, Time.fixedDeltaTime * openSpeed);</span><br><span class="line">        finishRotation = <span class="literal">true</span>;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ToggleDoor</span>(<span class="params"></span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (finishRotation)</span><br><span class="line">        &#123;</span><br><span class="line">            isOpen = !isOpen;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="implement-wwise-sound-into-the-project">Implement wwise sound
-into the project</h2>
+<h1 id="implement-wwise-sound-into-the-project">Implement wwise sound
+into the project</h1>
 <p>It needs to have an AKBank component in the scene to manage the
 sound, also it needs to have an AkGameobj to calculate the distance from
 player to the object. Then to play a sound you need a script which
 receive a wwise event using <code>public AK.Wwise.Event sound;</code>
 and then trigger the sound with
 <code>sound.Post(gameObject);</code>.</p>
-<h3 id="implement-sound-effects-to-footstep-of-the-player">Implement
-sound effects to footstep of the player</h3>
+<h3 id="implement-sound-effects-to-footsteps-of-the-player">Implement
+sound effects to footsteps of the player</h3>
 <p>To make it sounds differently on different surfaces, we need to have
 a script to do the switch like follows: <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">namespace LivingMansion._Scripts.Footsteps</span><br><span class="line">&#123;</span><br><span class="line">    public class FootstepsMaterialSwitcher : MonoBehaviour</span><br><span class="line">    &#123;</span><br><span class="line">        private RaycastHit hit;</span><br><span class="line">        private string currentMaterial;</span><br><span class="line">        private string previousMaterial = &quot;Default&quot;;</span><br><span class="line">        private void FixedUpdate()</span><br><span class="line">        &#123;</span><br><span class="line">            if (Physics.Raycast(transform.position,-transform.up, out RaycastHit hit,2f))</span><br><span class="line">            &#123;</span><br><span class="line">                </span><br><span class="line">                if (hit.collider.TryGetComponent(out FootstepsMaterialSound sound))</span><br><span class="line">                &#123;</span><br><span class="line">                    currentMaterial = sound.materialName;</span><br><span class="line">                    if(currentMaterial != previousMaterial)</span><br><span class="line">                    &#123;</span><br><span class="line">                        Debug.Log(&quot;Material: &quot; + currentMaterial);</span><br><span class="line">                        previousMaterial = currentMaterial;</span><br><span class="line">                        AkSoundEngine.SetSwitch(&quot;Material&quot;, currentMaterial, gameObject);</span><br><span class="line">                    &#125;</span><br><span class="line">                    </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>Here FootstepMaterialSound is a class which have a string called
 materialName. It uses raycasting to detect the surface under the player
 and send a switch to wwise engine whenever the material changes.</p>
-<h2 id="implement-timed-interaction-object">Implement timed interaction
-object</h2>
+<h1 id="implement-timed-interaction-object">Implement timed interaction
+object</h1>
 <p>Effect: after interacting with an object(like press e) a series of
 different events will be triggered and each of them can have a wait
 time, which will make it wait for x seconds to invoke.</p>
@@ -386,12 +388,11 @@ Interact function.</p>
 <p>The interact function needs the parameter to receive the action
 activity, and then for each action, it will create a new coroutine to
 wait for some seconds and run the action.</p>
-<p>In order to prevent the player from interacting multiple times while
-the actions are running, I use a variable to count the running
-coroutines, when it begins it +=1, and when it's done it will subtract
-1.</p>
-<h2 id="implement-puzzle-winning-manager">Implement puzzle-winning
-manager</h2>
+<p>To prevent the player from interacting multiple times while the
+actions are running, I use a variable to count the running coroutines,
+when it begins it +=1, and when it's done it will subtract 1.</p>
+<h1 id="implement-puzzle-winning-manager">Implement puzzle-winning
+manager</h1>
 <p>Effect: In the game, there are different puzzles to be solved. I want
 to implement a manager that checks conditions to be met and then
 triggers some events.</p>
