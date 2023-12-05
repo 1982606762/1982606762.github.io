@@ -4,7 +4,6 @@ title: Optimal-Shortest-Path-in-Simple-Polygon
 date: 2023-12-02 17:22:44
 tags: ShortestPath
 categories: 数据结构与算法
-mathjax: true
 ---
 
 Let P be a simple polygon with n sides and this report will give a method to preprocess the polygon so that given two query points p and q inside P, the length of the shortest path inside the polygon from p to q can be found in time O(log n).
