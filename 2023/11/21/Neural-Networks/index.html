@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/1982606762/picgo/master/image-20231213123737601%E2%80%AFPM.png">
 <meta property="article:published_time" content="2023-11-21T17:32:47.000Z">
-<meta property="article:modified_time" content="2023-12-13T15:07:08.225Z">
+<meta property="article:modified_time" content="2024-01-28T20:36:05.911Z">
 <meta property="article:author" content="Xuanlang">
 <meta property="article:tag" content="neural-network">
 <meta name="twitter:card" content="summary">
@@ -93,9 +93,9 @@
 <nav class="site-nav">
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">27</span></a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">29</span></a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">11</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">92</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">96</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -152,7 +152,12 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#neural-networks-intuition"><span class="nav-number">1.</span> <span class="nav-text">Neural networks intuition</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#neural-networks-model"><span class="nav-number">1.1.</span> <span class="nav-text">Neural networks model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#forward-propagation%E6%AD%A3%E5%90%91%E4%BC%A0%E6%92%AD"><span class="nav-number">1.2.</span> <span class="nav-text">Forward propagation(正向传播)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#use-tensorflow-to-implement"><span class="nav-number">1.3.</span> <span class="nav-text">Use TensorFlow to implement</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vectorisation"><span class="nav-number">1.4.</span> <span class="nav-text">Vectorisation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#matrix-multiplication"><span class="nav-number">1.4.1.</span> <span class="nav-text">matrix multiplication</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#neural-network-training"><span class="nav-number">2.</span> <span class="nav-text">Neural network training</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#neural-networks-intuition"><span class="nav-number">1.</span> <span class="nav-text">Neural networks intuition</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#neural-networks-model"><span class="nav-number">1.1.</span> <span class="nav-text">Neural networks model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#forward-propagation%E6%AD%A3%E5%90%91%E4%BC%A0%E6%92%AD"><span class="nav-number">1.2.</span> <span class="nav-text">Forward propagation(正向传播)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#use-tensorflow-to-implement"><span class="nav-number">1.3.</span> <span class="nav-text">Use TensorFlow to implement</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vectorisation"><span class="nav-number">1.4.</span> <span class="nav-text">Vectorisation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#matrix-multiplication"><span class="nav-number">1.4.1.</span> <span class="nav-text">matrix multiplication</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#neural-network-training"><span class="nav-number">2.</span> <span class="nav-text">Neural network training</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#activation-functions"><span class="nav-number">2.1.</span> <span class="nav-text">Activation Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sigmoid"><span class="nav-number">2.1.1.</span> <span class="nav-text">Sigmoid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#relu"><span class="nav-number">2.1.2.</span> <span class="nav-text">ReLU</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linear-function"><span class="nav-number">2.1.3.</span> <span class="nav-text">Linear function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#what-if-we-dont-use-activation-function"><span class="nav-number">2.1.4.</span> <span class="nav-text">What if we don&#39;t use
+activation function?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#multiclass-classification"><span class="nav-number">2.2.</span> <span class="nav-text">Multiclass Classification</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#softmax-algorithm"><span class="nav-number">2.2.1.</span> <span class="nav-text">Softmax algorithm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cost-function-for-softmax"><span class="nav-number">2.2.2.</span> <span class="nav-text">Cost function for softmax</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#how-to-add-softmax-into-neural-network"><span class="nav-number">2.2.3.</span> <span class="nav-text">How to add Softmax into
+neural network</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#multi-label-classification"><span class="nav-number">2.2.4.</span> <span class="nav-text">Multi-label classification</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#optimization-algorithm"><span class="nav-number">2.3.</span> <span class="nav-text">optimization algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#adam-algorithm"><span class="nav-number">2.3.1.</span> <span class="nav-text">Adam Algorithm</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#complex-model-example"><span class="nav-number">2.4.</span> <span class="nav-text">Complex model example</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#evaluating-a-model"><span class="nav-number">3.</span> <span class="nav-text">Evaluating a model</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#bias-and-variance"><span class="nav-number">3.1.</span> <span class="nav-text">Bias and variance</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#regularization-and-biasvariance"><span class="nav-number">3.1.1.</span> <span class="nav-text">Regularization and
+bias&#x2F;variance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#baseline-level-of-performance"><span class="nav-number">3.1.2.</span> <span class="nav-text">Baseline level of
+performance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#learning-curve"><span class="nav-number">3.1.3.</span> <span class="nav-text">Learning curve</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#example-reciple"><span class="nav-number">3.1.4.</span> <span class="nav-text">Example reciple</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#decision-tree-model"><span class="nav-number">4.</span> <span class="nav-text">Decision tree model</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#decision-tree"><span class="nav-number">4.1.</span> <span class="nav-text">Decision tree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#measure-of-impurity"><span class="nav-number">4.2.</span> <span class="nav-text">measure of impurity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#choosing-a-split"><span class="nav-number">4.3.</span> <span class="nav-text">Choosing a split</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#use-one-hot-encoding-to-code-features"><span class="nav-number">4.4.</span> <span class="nav-text">Use one-hot encoding to
+code features</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%BF%9E%E7%BB%AD%E5%8F%98%E9%87%8F"><span class="nav-number">4.5.</span> <span class="nav-text">使用连续变量</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -167,7 +172,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">92</span>
+          <span class="site-state-item-count">96</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -178,7 +183,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">29</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -264,7 +269,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-12-13 16:07:08" itemprop="dateModified" datetime="2023-12-13T16:07:08+01:00">2023-12-13</time>
+      <time title="修改时间：2024-01-28 21:36:05" itemprop="dateModified" datetime="2024-01-28T21:36:05+01:00">2024-01-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -297,14 +302,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.9k</span>
+      <span>8.7k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
+      <span>16 分钟</span>
     </span>
 </div>
 
@@ -365,6 +370,9 @@ layer:<code>layer_1 = Dense(units=3,activation='sigmoid')</code></p>
 <p>The input to <code>predict</code> is an array so the single example
 is reshaped to be two dimensional.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">prediction = model.predict(X[<span class="number">0</span>].reshape(<span class="number">1</span>,<span class="number">400</span>))  <span class="comment"># a zero</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot; predicting a zero: <span class="subst">&#123;prediction&#125;</span>&quot;</span>)</span><br><span class="line">prediction = model.predict(X[<span class="number">500</span>].reshape(<span class="number">1</span>,<span class="number">400</span>))  <span class="comment"># a one</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot; predicting a one:  <span class="subst">&#123;prediction&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>要想减小计算误差可以添加</p>
+<p><code>model.conpile(loss=BinaryCrossentropy(from_logitc = true))</code></p>
+<p>这可以让TensorFlow自动优化浮点数计算</p>
 <h2 id="vectorisation">Vectorisation</h2>
 <p>Originally the calculation can be done in a for loop, but by using
 vector maltiplication it can be much more easier.</p>
@@ -395,6 +403,202 @@ class="math inline">\((m,j_2)\)</span> matrix for this element-wise
 operation to make sense. This expansion is accomplished for you by NumPy
 broadcasting.</p>
 <h1 id="neural-network-training">Neural network training</h1>
+<ol type="1">
+<li><p>Create the model</p>
+<p>Define how many layers and how many units in each layer and their
+activation function</p></li>
+<li><p>Select loss and cost functions</p>
+<p>Select a loss function such as <code>BinaryCrossentropy()</code> from
+keras.losses</p></li>
+<li><p>Train the model using gradient descent</p>
+<p>repeat <span class="math display">\[
+\begin{align*}
+w_j^{[l]} &amp;= w_j^{[l]} - \alpha \frac{\partial}{\partial w_j}
+J(\hat{w}, b) \\
+b_j^{[l]} &amp;= b_j^{[l]} - \alpha \frac{\partial}{\partial b_j}
+J(\hat{w}, b)
+\end{align*}
+\]</span></p></li>
+</ol>
+<p>​ tensorflow can do it for you, you can just use
+<code>model.fit(X,y,epochs=100)</code></p>
+<h2 id="activation-functions">Activation Functions</h2>
+<h3 id="sigmoid">Sigmoid</h3>
+<p>Better used on the binary classification problem</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/1982606762/picgo/master/fbbb9b2c-c2f4-43ed-92f6-1c635dece716.jpg"
+alt="fbbb9b2c-c2f4-43ed-92f6-1c635dece716" />
+<figcaption
+aria-hidden="true">fbbb9b2c-c2f4-43ed-92f6-1c635dece716</figcaption>
+</figure>
+<p>The sigmoid activation function is defined as:</p>
+<p><span class="math display">\[ S(x) = \frac{1}{1 + e^{-x}}
+\]</span></p>
+<p>where: - ( S(x) ) is the output of the sigmoid function, - ( e ) is
+the base of the natural logarithm, - ( x ) is the input to the
+function.</p>
+<h3 id="relu">ReLU</h3>
+<p>Better used on the regression problem</p>
+<p>The ReLU (Rectified Linear Unit) activation function is defined
+as:</p>
+<p><span class="math display">\[ g(z) = \max(0, z) \]</span></p>
+<p>where: - ( g(z) ) is the output of the ReLU function, - ( z ) is the
+input to the function.</p>
+<h3 id="linear-function">Linear function</h3>
+<p>Better used on the regression problem</p>
+<p><span class="math inline">\(g(z) = z\)</span></p>
+<h3 id="what-if-we-dont-use-activation-function">What if we don't use
+activation function?</h3>
+<p>It will be the same as linear regression</p>
+<h2 id="multiclass-classification">Multiclass Classification</h2>
+<h3 id="softmax-algorithm">Softmax algorithm</h3>
+<p>For original logistic regression using sigmoid output can be denoted
+as <span class="math display">\[ a_1 = g(z) = \frac{1}{1+e^{-z}} = P(y =
+1|x) \]</span></p>
+<p>Softmax allows to have multiple options being predicted with formula
+as <span class="math display">\[
+a_1 = \frac{e^{z_1}}{e^{z_1} + e^{z_2} + e^{z_3} + e^{z_4}} = P(y = 1|x)
+\]</span> a是y成为某一个结果的概率</p>
+<p>It in general can be denoted as: $$ z_j = _j + b_j j = 1, , N\</p>
+<p>a_j = = P(y = j|x) $$</p>
+<h3 id="cost-function-for-softmax">Cost function for softmax</h3>
+<p><span class="math display">\[
+a_1 = \frac{e^{z_1}}{e^{z_1} + e^{z_2} + \dots + e^{z_N}} = P(y =
+1|\mathbf{x})
+\]</span> <span class="math display">\[
+\vdots
+\]</span> <span class="math display">\[
+a_N = \frac{e^{z_N}}{e^{z_1} + e^{z_2} + \dots + e^{z_N}} = P(y =
+N|\mathbf{x})
+\]</span> <span class="math display">\[
+\text{loss}(a_1, \dots, a_N, y) =
+\begin{cases}
+-\log a_1 &amp; \text{if } y = 1 \\
+-\log a_2 &amp; \text{if } y = 2 \\
+\vdots \\
+-\log a_N &amp; \text{if } y = N
+\end{cases}
+\]</span></p>
+<h3 id="how-to-add-softmax-into-neural-network">How to add Softmax into
+neural network</h3>
+<p>Change the last output layer from 1 unit to multiple units and let it
+work as softmax algorithm.</p>
+<h3 id="multi-label-classification">Multi-label classification</h3>
+<p>在这种问题里y可以是一个数组，例如识别一张图片中有没有三种不一样的物体，y就会输出三个数</p>
+<p>Solution 1 is to treat it as 3 separate different problems and build
+3 neural networks.</p>
+<p>Solution2 is to build one neural network with three outputs, so a[3]
+has three elements.</p>
+<h2 id="optimization-algorithm">optimization algorithm</h2>
+<h3 id="adam-algorithm">Adam Algorithm</h3>
+<p>Adaptive Moment estimation</p>
+<p>If w or b keeps moving in same direction it will increase <span
+class="math inline">\(\alpha\)</span>.</p>
+<p>If w or b keeps oscillating it will reduce <span
+class="math inline">\(\alpha\)</span>.</p>
+<p>要想使用需要如下代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.<span class="built_in">compile</span>(optimizer=tf.keras.optimizera.Adam(learning_rate=le-<span class="number">3</span>),lost=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=<span class="literal">True</span>))</span><br></pre></td></tr></table></figure>
+<h2 id="complex-model-example">Complex model example</h2>
+<p>Below, compose a three-layer model:</p>
+<ul>
+<li>Dense layer with 120 units, relu activation</li>
+<li>Dense layer with 40 units, relu activation</li>
+<li>Dense layer with 6 units and a linear activation (not softmax)
+Compile using</li>
+<li>loss with <code>SparseCategoricalCrossentropy</code>, remember to
+use <code>from_logits=True</code></li>
+<li>Adam optimizer with learning rate of 0.01.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># UNQ_C3</span></span><br><span class="line"><span class="comment"># GRADED CELL: model</span></span><br><span class="line"><span class="keyword">import</span> logging</span><br><span class="line">logging.getLogger(<span class="string">&quot;tensorflow&quot;</span>).setLevel(logging.ERROR)</span><br><span class="line"></span><br><span class="line">tf.random.set_seed(<span class="number">1234</span>)</span><br><span class="line">model = Sequential(</span><br><span class="line">    [</span><br><span class="line">        <span class="comment">### START CODE HERE ### </span></span><br><span class="line">        tf.keras.layers.Dense(units=<span class="number">120</span>,activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">        tf.keras.layers.Dense(units=<span class="number">40</span>,activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">        tf.keras.layers.Dense(units=<span class="number">6</span>,activation=<span class="string">&#x27;linear&#x27;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment">### END CODE HERE ### </span></span><br><span class="line"></span><br><span class="line">    ], name=<span class="string">&quot;Complex&quot;</span></span><br><span class="line">)</span><br><span class="line">model.<span class="built_in">compile</span>(</span><br><span class="line">    <span class="comment">### START CODE HERE ### </span></span><br><span class="line">    loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=<span class="literal">True</span>),</span><br><span class="line">    optimizer=tf.keras.optimizers.Adam(learning_rate=<span class="number">0.01</span>)</span><br><span class="line">    <span class="comment">### END CODE HERE ### </span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>Reconstruct your complex model, but this time include regularization.
+Below, compose a three-layer model:</p>
+<ul>
+<li>Dense layer with 120 units, relu activation,
+<code>kernel_regularizer=tf.keras.regularizers.l2(0.1)</code></li>
+<li>Dense layer with 40 units, relu activation,
+<code>kernel_regularizer=tf.keras.regularizers.l2(0.1)</code></li>
+<li>Dense layer with 6 units and a linear activation. Compile using</li>
+<li>loss with <code>SparseCategoricalCrossentropy</code>, remember to
+use <code>from_logits=True</code></li>
+<li>Adam optimizer with learning rate of 0.01.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># UNQ_C5</span></span><br><span class="line"><span class="comment"># GRADED CELL: model_r</span></span><br><span class="line"></span><br><span class="line">tf.random.set_seed(<span class="number">1234</span>)</span><br><span class="line">model_r = Sequential(</span><br><span class="line">    [</span><br><span class="line">        <span class="comment">### START CODE HERE ###         </span></span><br><span class="line">        tf.keras.layers.Dense(units=<span class="number">120</span>,activation=<span class="string">&#x27;relu&#x27;</span>,kernel_regularizer=tf.keras.regularizers.l2(<span class="number">0.1</span>)),</span><br><span class="line">        tf.keras.layers.Dense(units=<span class="number">40</span>,activation=<span class="string">&#x27;relu&#x27;</span>,kernel_regularizer=tf.keras.regularizers.l2(<span class="number">0.1</span>)),</span><br><span class="line">        tf.keras.layers.Dense(units=<span class="number">6</span>,activation=<span class="string">&#x27;linear&#x27;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment">### START CODE HERE ### </span></span><br><span class="line">    ], name= <span class="literal">None</span></span><br><span class="line">)</span><br><span class="line">model_r.<span class="built_in">compile</span>(</span><br><span class="line">    <span class="comment">### START CODE HERE ### </span></span><br><span class="line">    loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=<span class="literal">True</span>),</span><br><span class="line">    optimizer=tf.keras.optimizers.Adam(learning_rate=<span class="number">0.01</span>)</span><br><span class="line">    <span class="comment">### START CODE HERE ### </span></span><br><span class="line">)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="evaluating-a-model">Evaluating a model</h1>
+<h2 id="bias-and-variance">Bias and variance</h2>
+<p>Calculate <span class="math inline">\(J_{train}\)</span> and <span
+class="math inline">\(J_{CV}\)</span>and see what's the result.</p>
+<p>CV means cross-validation</p>
+<p>If both are high it means bias is high, if train is low and cv is
+high it means variance is high.</p>
+<h3 id="regularization-and-biasvariance">Regularization and
+bias/variance</h3>
+<p><span class="math inline">\(J(\hat{w},b) = \frac{1}{2m}
+\sum_{i=1}^{m} \left( f_{\hat{w},b}(x^{(i)}) - y^{(i)} \right)^2 +
+\frac{\lambda}{2m} \sum_{j=1}^{n} w_j^2\)</span></p>
+<p>成本函数中有lambda用于控制正则化(Regularization)过程的参数。lambda大的时候正则化效果强，模型会有high
+bias. lambda小的时候模型会过拟合导致high variance.</p>
+<p>如何选择合适的lambda？</p>
+<p>从0开始试，然后试0.01,0.02……逐渐增加。计算所有的Jcv，选择最小的那个对应的lambda。</p>
+<h3 id="baseline-level-of-performance">Baseline level of
+performance</h3>
+<p>给一些例子来帮助判断数字是高还是低</p>
+<p>假如人类的误差是10.6%，训练集误差是10.8%，交叉验证集误差是14.8%那么训练集误差可视为很低，但是交叉验证集误差高，代表可能是方差很高</p>
+<p>如果训练集的误差也很高说明可能是high bias</p>
+<h3 id="learning-curve">Learning curve</h3>
+<p>画一条曲线显示误差随着训练集增加的变化。训练集误差和验证集误差趋势如下图。</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/1982606762/picgo/master/image-2024011842639798%E2%80%AFPM.png"
+alt="image-2024011842639798 PM" />
+<figcaption aria-hidden="true">image-2024011842639798 PM</figcaption>
+</figure>
+<p>如果模型有high bias,那么增加数据量不会对模型有帮助。</p>
+<p>如果有high
+variance，增加数据量会提高Jtrain并且接近人类水平并且降低Jcv。</p>
+<h3 id="example-reciple">Example reciple</h3>
+<p>如果在训练集效果不好-》使用更大的网络。如果训练集效果好，验证集效果不好-》更多数据。目标是验证集效果好</p>
+<h1 id="decision-tree-model">Decision tree model</h1>
+<h2 id="decision-tree">Decision tree</h2>
+<p>用于当特征是离散值的时候，例如耳朵形状，脸大小等。</p>
+<p>最上边是root node，中间的是decision node，下边的是leaf node</p>
+<p>构建决策树：</p>
+<ol type="1">
+<li>从根节点出发把训练集分成两部分</li>
+<li>左右分别选择特征来分离数据</li>
+<li>当结束条件触发的时候结束</li>
+<li>把结果按照标签构建叶子结点，即决策的结果</li>
+</ol>
+<p>问题：</p>
+<p>什么时候结束？</p>
+<ul>
+<li>当一个节点结果全都是一个标签的数据</li>
+<li>当深度触发最大值</li>
+<li>当纯净值足够大</li>
+<li>当某个节点的结果数量太少</li>
+</ul>
+<h2 id="measure-of-impurity">measure of impurity</h2>
+<p>使用嫡函数(entropy function)来表示纯净性。</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/1982606762/picgo/master/image-2024012884947964%E2%80%AFPM.png"
+alt="image-2024012884947964 PM" />
+<figcaption aria-hidden="true">image-2024012884947964 PM</figcaption>
+</figure>
+<p>这里的p1是指是一种类型的比例,纵坐标是嫡的数据。</p>
+<p><span class="math inline">\(p_0 = 1 - p_1\)</span></p>
+<p><span class="math inline">\(H(p_1) = -p_1log_2(p_1) - (1 - p_1)
+log_2(1 - p_1)\)</span></p>
+<h2 id="choosing-a-split">Choosing a split</h2>
+<p>如何选择使用哪个属性来做分隔，需要使用information gain方法。</p>
+<p>xxxxxxxxxxx</p>
+<h2 id="use-one-hot-encoding-to-code-features">Use one-hot encoding to
+code features</h2>
+<p>如果一个feature可以接受k个不一样的赋值那么就创建k个二进制数来代表这个feature。</p>
+<p>这样就可以吧多个特征变成一串01数</p>
+<h2 id="使用连续变量">使用连续变量</h2>
+<p>可以画一条线，高于这个值的都是1，低于这个值的都是0</p>
+<p>这条线的选址通常是使用Information gain来获取最佳的取值</p>
 
     </div>
 
@@ -463,7 +667,7 @@ broadcasting.</p>
 
 <div class="copyright">
   &copy; 2019 – 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-award"></i>
   </span>
