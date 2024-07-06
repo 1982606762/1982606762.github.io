@@ -4,6 +4,32 @@
   
     
     <entry>
+      <title>Azure-learn</title>
+      <link href="/2024/07/07/Azure-learn/"/>
+      <url>/2024/07/07/Azure-learn/</url>
+      
+        <content type="html"><![CDATA[<span id="more"></span>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>GPU programming</title>
+      <link href="/2024/07/02/GPU-programming/"/>
+      <url>/2024/07/02/GPU-programming/</url>
+      
+        <content type="html"><![CDATA[<span id="more"></span><h1 id="introduction-to-concurrent-programming">Introduction toconcurrent programming</h1><h2 id="core-principles-of-parallel-programming">Core Principles ofParallel Programming</h2><h3 id="并发编程可能出现的问题">并发编程可能出现的问题</h3><ul><li>Race Conditions<ul><li>线程实际运行顺序和期望顺序不一样，如想让线程1读，修改，写，然后线程2读，修改，写。但是可能2会读到1修改之前的数据。</li></ul></li><li>Resource Contention<ul><li>多个程序视图读写相同内存块</li></ul></li><li>线程死锁<ul><li>1需要A,A由2产生，2需要1产生的B</li></ul></li><li>Live Lock<ul><li>类似死锁，但是是两个进程一直在改变状态但没有进展。类似走廊两个人互相避开对方。</li></ul></li><li>资源没有有效利用<ul><li>线程太少会让CPU闲置，线程太多会花大量时间在切换线程。</li></ul></li></ul><h3 id="经典并发问题">经典并发问题</h3><p>哲学家就餐，生产者消费者问题</p><h3 id="并发解决思想">并发解决思想</h3><ul><li>Divide and conquer<ul><li>解决子问题并且合并他们来解决大问题</li></ul></li><li>Map reduce</li><li>Repository</li><li>Pipeline</li><li>Recursion<ul><li>在多个gpu的时候不建议用</li></ul></li></ul><p>​</p><h2 id="parallel-programming-patterns-of-python-3">Parallel ProgrammingPatterns of Python 3</h2><p>python3里实现并发编程的库：</p><ul><li>Threading libraries</li><li>Asyncio library</li><li>Multiprocessing library</li></ul><h3 id="asyncio使用">Asyncio使用</h3><p>Asyncio主要组件有以下几个：</p><ol type="1"><li>事件循环（Event Loop）：</li></ol><p>​ • 事件循环是 asyncio 的核心，用于调度和管理异步任务。</p><p>​ • 它负责监控和调度所有的异步任务、I/O操作、回调函数等。</p><ol start="2" type="1"><li>协程（Coroutines）：</li></ol><p>​ • 协程是可以在运行过程中暂停和恢复的函数，用于执行异步操作。</p><p>​ • 使用 async def 定义协程函数，使用 await调用其他协程或异步操作。</p><ol start="3" type="1"><li>任务（Tasks）：</li></ol><p>​ • 任务是由事件循环调度的协程，用于并发运行协程。</p><p>​ • 使用 asyncio.create_task 或 asyncio.ensure_future 创建任务。</p><p>协程是带async的函数，需要显式调度，如用await或asynic.run()启动。</p><p>任务是对协程的包装</p><p>基本使用：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> asyncio</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">say_hello</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hello&quot;</span>)</span><br><span class="line">    <span class="keyword">await</span> asyncio.sleep(<span class="number">1</span>)  <span class="comment"># 模拟异步操作</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;World&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建并运行事件循环</span></span><br><span class="line">asyncio.run(say_hello())</span><br></pre></td></tr></table></figure><p>使用async定义异步函数</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">fetch_data</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Fetching data...&quot;</span>)</span><br><span class="line">    <span class="keyword">await</span> asyncio.sleep(<span class="number">2</span>)  <span class="comment"># 模拟异步操作，如网络请求</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Data fetched&quot;</span>)</span><br></pre></td></tr></table></figure><p>函数中等待的步骤需要用await关键字</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>C++_Notes</title>
       <link href="/2024/06/07/C-Notes/"/>
       <url>/2024/06/07/C-Notes/</url>
