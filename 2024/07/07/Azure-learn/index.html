@@ -21,13 +21,15 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.zhaoxuanlang.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="AZ 900 note">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Azure-learn">
 <meta property="og:url" content="https://www.zhaoxuanlang.cn/2024/07/07/Azure-learn/index.html">
 <meta property="og:site_name" content="松鼠小筑">
+<meta property="og:description" content="AZ 900 note">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-07-06T23:47:49.000Z">
-<meta property="article:modified_time" content="2024-07-06T23:47:49.163Z">
+<meta property="article:modified_time" content="2024-07-19T22:57:00.320Z">
 <meta property="article:author" content="Xuanlang">
 <meta property="article:tag" content="松鼠小筑">
 <meta name="twitter:card" content="summary">
@@ -90,7 +92,7 @@
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">31</span></a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">11</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">12</span></a></li>
         <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">101</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
@@ -135,7 +137,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -148,6 +150,10 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#az-900-learn"><span class="nav-number">1.</span> <span class="nav-text">AZ-900 Learn</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#cloud-computing"><span class="nav-number">1.1.</span> <span class="nav-text">Cloud Computing</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#public-cloud"><span class="nav-number">1.1.1.</span> <span class="nav-text">Public cloud</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#private-cloud"><span class="nav-number">1.1.2.</span> <span class="nav-text">private cloud</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hybrid-cloud"><span class="nav-number">1.1.3.</span> <span class="nav-text">hybrid cloud</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cloud-computing-types"><span class="nav-number">1.2.</span> <span class="nav-text">Cloud computing types</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#image-2024070824049880-pm"><span class="nav-number">1.2.1.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#saassoftware-as-a-service%E8%BD%AF%E4%BB%B6%E5%8D%B3%E6%9C%8D%E5%8A%A1"><span class="nav-number">1.2.2.</span> <span class="nav-text">SaaS（Software as a
+Service，软件即服务）：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iaasinfrastructure-as-a-service%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E5%8D%B3%E6%9C%8D%E5%8A%A1"><span class="nav-number">1.2.3.</span> <span class="nav-text">IaaS（Infrastructure
+as a Service，基础设施即服务）：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#paasplatform-as-a-service%E5%B9%B3%E5%8F%B0%E5%8D%B3%E6%9C%8D%E5%8A%A1"><span class="nav-number">1.2.4.</span> <span class="nav-text">PaaS（Platform as a
+Service，平台即服务）：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#azure-cosmos-db"><span class="nav-number">1.3.</span> <span class="nav-text">Azure Cosmos DB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#azure-synapse-analytics"><span class="nav-number">1.4.</span> <span class="nav-text">Azure Synapse Analytics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#azure-compute"><span class="nav-number">1.5.</span> <span class="nav-text">Azure compute</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#virtual-machines"><span class="nav-number">1.5.1.</span> <span class="nav-text">Virtual Machines</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#container-services"><span class="nav-number">1.5.2.</span> <span class="nav-text">Container Services</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#azure-app-service"><span class="nav-number">1.5.3.</span> <span class="nav-text">Azure App Service</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#azure-functions"><span class="nav-number">1.5.4.</span> <span class="nav-text">Azure functions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#azure-storage"><span class="nav-number">1.6.</span> <span class="nav-text">Azure Storage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#azure-ai"><span class="nav-number">1.7.</span> <span class="nav-text">Azure AI</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#azure-machine-learning"><span class="nav-number">1.7.1.</span> <span class="nav-text">Azure Machine Learning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#azure-cognitive-service"><span class="nav-number">1.7.2.</span> <span class="nav-text">Azure Cognitive Service</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#azure-bot-service"><span class="nav-number">1.7.3.</span> <span class="nav-text">Azure Bot Service</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#azure-devops"><span class="nav-number">1.8.</span> <span class="nav-text">Azure DevOps</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#azure-devops-services"><span class="nav-number">1.8.1.</span> <span class="nav-text">Azure DevOps Services</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#github"><span class="nav-number">1.8.2.</span> <span class="nav-text">Github</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#azure-serverless-technology"><span class="nav-number">1.9.</span> <span class="nav-text">Azure Serverless technology</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#azure-functions-1"><span class="nav-number">1.9.1.</span> <span class="nav-text">Azure functions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#azure-logic-apps"><span class="nav-number">1.9.2.</span> <span class="nav-text">Azure Logic apps</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#azure-iot-service"><span class="nav-number">1.10.</span> <span class="nav-text">Azure IOT Service</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#azure-iot-hub"><span class="nav-number">1.10.1.</span> <span class="nav-text">Azure IoT Hub</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iot-central"><span class="nav-number">1.10.2.</span> <span class="nav-text">IoT Central</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#azure-sphere"><span class="nav-number">1.10.3.</span> <span class="nav-text">Azure Sphere</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#azure-security"><span class="nav-number">1.11.</span> <span class="nav-text">Azure Security</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#azure-security-center"><span class="nav-number">1.11.1.</span> <span class="nav-text">Azure Security Center</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#azure-sentinel"><span class="nav-number">1.11.2.</span> <span class="nav-text">Azure Sentinel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#azure-key-vault"><span class="nav-number">1.11.3.</span> <span class="nav-text">Azure Key Vault</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#azure-dedicated-host"><span class="nav-number">1.11.4.</span> <span class="nav-text">Azure Dedicated host</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#network-security"><span class="nav-number">1.12.</span> <span class="nav-text">Network Security</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#service-and-lifecycles"><span class="nav-number">2.</span> <span class="nav-text">Service and Lifecycles</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#identity-service"><span class="nav-number">2.0.1.</span> <span class="nav-text">Identity Service</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -168,7 +174,7 @@
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -254,6 +260,22 @@
 
       <time title="创建时间：2024-07-07 01:47:49" itemprop="dateCreated datePublished" datetime="2024-07-07T01:47:49+02:00">2024-07-07</time>
     </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-07-20 00:57:00" itemprop="dateModified" datetime="2024-07-20T00:57:00+02:00">2024-07-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Azure/" itemprop="url" rel="index"><span itemprop="name">Azure</span></a>
+        </span>
+    </span>
 
   
   
@@ -276,14 +298,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>0</span>
+      <span>3.1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>6 分钟</span>
     </span>
 </div>
 
@@ -294,7 +316,183 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <span id="more"></span>
+        <p>AZ 900 note</p>
+<span id="more"></span>
+<h1 id="az-900-learn">AZ-900 Learn</h1>
+<h2 id="cloud-computing">Cloud Computing</h2>
+<p>Three deployment models for cloud computing:</p>
+<h3 id="public-cloud">Public cloud</h3>
+<p>公有云通过公共互联网提供，任何人都能购买使用，按用量支付。</p>
+<p>优点：</p>
+<ul>
+<li>按需消费</li>
+<li>无需硬件投资</li>
+<li>自动化快速配置</li>
+<li>减少硬件维护</li>
+</ul>
+<h3 id="private-cloud">private cloud</h3>
+<p>私有云是企业专有的计算资源，可以在组织办公地点也可以由第三方提供。</p>
+<p>优点：</p>
+<ul>
+<li>有一些无法在公共云中复制的环境需要</li>
+<li>无法轻易迁移的程序</li>
+<li>数据主权和安全</li>
+<li>法规认证</li>
+</ul>
+<h3 id="hybrid-cloud">hybrid cloud</h3>
+<p>部分私有部分公有</p>
+<h2 id="cloud-computing-types">Cloud computing types</h2>
+<h3 id="image-2024070824049880-pm"><img
+src="https://raw.githubusercontent.com/1982606762/picgo/master/image-2024070824049880%E2%80%AFPM.png"
+alt="image-2024070824049880 PM" /></h3>
+<h3 id="saassoftware-as-a-service软件即服务"><strong>SaaS（Software as a
+Service，软件即服务）</strong>：</h3>
+<p>​ • <strong>定义</strong>：SaaS
+是一种通过互联网提供的软件服务模式。用户可以通过网络访问和使用软件，而不需要关心软件的安装、维护和管理。</p>
+<p>​ • <strong>特点</strong>：</p>
+<p>​ • 软件由服务提供商托管，用户通过浏览器或客户端访问。</p>
+<p>​ • 用户不需要管理基础设施或平台，只需使用软件功能。</p>
+<p>​ •
+适用于各种业务应用，如电子邮件、办公软件、客户关系管理（CRM）系统等。</p>
+<p>​ • <strong>例子</strong>：Google Workspace（原 G Suite）、Microsoft
+Office 365、Salesforce。</p>
+<h3
+id="iaasinfrastructure-as-a-service基础设施即服务"><strong>IaaS（Infrastructure
+as a Service，基础设施即服务）</strong>：</h3>
+<p>​ • <strong>定义</strong>：IaaS
+提供计算基础设施，如虚拟化的计算资源、存储、网络等，用户可以根据需求灵活配置和使用。</p>
+<p>​ • <strong>特点</strong>：</p>
+<p>​ •
+提供虚拟机、存储空间、网络资源等基础设施，用户可以部署和管理自己的操作系统和应用程序。</p>
+<p>​ • 用户需要管理操作系统、应用程序和数据，但不需要管理底层硬件。</p>
+<p>​ • 适用于需要高度灵活性和控制力的企业和开发者。</p>
+<p>​ • <strong>例子</strong>：Amazon Web Services（AWS）、Microsoft
+Azure、Google Cloud Platform（GCP）。</p>
+<h3 id="paasplatform-as-a-service平台即服务"><strong>PaaS（Platform as a
+Service，平台即服务）</strong>：</h3>
+<p>​ • <strong>定义</strong>：PaaS
+提供一个平台，包括操作系统、编程语言执行环境、数据库和 web
+服务器，用户可以在这个平台上开发、运行和管理应用程序。</p>
+<p>​ • <strong>特点</strong>：</p>
+<p>​ •
+提供完整的开发和部署环境，开发者可以专注于代码和应用程序，而不需要管理底层基础设施。</p>
+<p>​ • 包括应用程序开发框架、中间件、数据库管理系统等。</p>
+<p>​ • 适用于开发、测试和部署应用程序的开发者和企业。</p>
+<p>​ • <strong>例子</strong>：Google App Engine、Heroku、Microsoft Azure
+App Services。</p>
+<p>总结来说，SaaS 是为最终用户提供的软件服务，IaaS
+是为需要基础设施的用户提供的服务，而 PaaS
+是为开发者提供的开发和部署平台。</p>
+<h2 id="azure-cosmos-db">Azure Cosmos DB</h2>
+<p>基于Azure SQL 的关系型数据库。</p>
+<blockquote>
+<p>关系型数据库：使用表来表示和存储数据</p>
+<p><strong>主要特点：</strong></p>
+<p>​ 1.
+<strong>表结构</strong>：数据存储在表中，每个表包含多行和多列。每一行代表一条记录，每一列代表一个字段。</p>
+<p>​ 2. <strong>关系</strong>：表之间可以通过外键（foreign
+keys）建立关系，从而实现数据的关联和查询。</p>
+<p>​ 3. <strong>SQL（Structured Query
+Language）</strong>：关系型数据库使用SQL作为其标准查询语言，用于执行数据的查询、插入、更新和删除操作。</p>
+<p>​ 4. <strong>数据完整性</strong>：通过主键（primary
+key）、外键和其他约束（constraints）来确保数据的一致性和完整性。</p>
+<p>​ 5.
+<strong>事务支持</strong>：关系型数据库支持事务（transactions），保证一组操作的原子性、一致性、隔离性和持久性（ACID属性）。</p>
+</blockquote>
+<p>使用迁移工具可以方便地将本地SQL数据库迁移到Azure SQL里</p>
+<p>所有用户每一个订阅都可以有一个免费SQL数据库，有免费的32G存储和100000秒vCore使用，这里vCore在使用时才会计时，不用的时候不计时，所以时间够用。sqluser/password1!</p>
+<h2 id="azure-synapse-analytics">Azure Synapse Analytics</h2>
+<p>用于处理大数据</p>
+<h2 id="azure-compute">Azure compute</h2>
+<h3 id="virtual-machines">Virtual Machines</h3>
+<p>scale set 可以管理一组虚拟机来实现负载均衡。</p>
+<h3 id="container-services">Container Services</h3>
+<p>可以管理容器。使用kubernetes可以管理一个容器集群。</p>
+<h3 id="azure-app-service">Azure App Service</h3>
+<p>管理app</p>
+<h3 id="azure-functions">Azure functions</h3>
+<p>无服务器计算服务，只需要运行一些函数代码时使用。</p>
+<h2 id="azure-storage">Azure Storage</h2>
+<p>blob是非结构化存储方案，用于存储大量文件</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/1982606762/picgo/master/image-2024070984825743%E2%80%AFPM.png"
+alt="image-2024070984825743 PM" />
+<figcaption aria-hidden="true">image-2024070984825743 PM</figcaption>
+</figure>
+<h2 id="azure-ai">Azure AI</h2>
+<h3 id="azure-machine-learning">Azure Machine Learning</h3>
+<p>使用数据训练。</p>
+<p>使用现有数据进行预测而不是预训练模型进行预测。重点在于使用以往数据来做事情。</p>
+<h3 id="azure-cognitive-service">Azure Cognitive Service</h3>
+<p>包含一些训练好的模型，可以直接进行预测。</p>
+<p>语音转文字，语言识别，预测用户行为等，重点在于understand content and
+meaning</p>
+<h3 id="azure-bot-service">Azure Bot Service</h3>
+<p>提供和人类交流的机器人如ChatBot，重点在于是一个virtual agent。</p>
+<h2 id="azure-devops">Azure DevOps</h2>
+<h3 id="azure-devops-services">Azure DevOps Services</h3>
+<p>包含一系列软件开发流程相关的工具，如boards, repos, pipelines等。</p>
+<h3 id="github">Github</h3>
+<p>代码存储，运行，自动化。</p>
+<h2 id="azure-serverless-technology">Azure Serverless technology</h2>
+<h3 id="azure-functions-1">Azure functions</h3>
+<p>更偏向代码，如果有现成代码就用这个</p>
+<h3 id="azure-logic-apps">Azure Logic apps</h3>
+<p>更偏向GUI界面</p>
+<h2 id="azure-iot-service">Azure IOT Service</h2>
+<h3 id="azure-iot-hub">Azure IoT Hub</h3>
+<p>特点：<strong>acts as a central message point for bi-directional
+communication between your IoT application and the devices it
+manages</strong></p>
+<p>链接IoT设备到hub管理</p>
+<p>可以控制设备，还可以监控设备。</p>
+<p>从设备到服务器发送信息</p>
+<h3 id="iot-central">IoT Central</h3>
+<p>特点：可以使用预设好的自定义用户界面user
+interface来远程查看和控制所有设备</p>
+<p>推送更新，批量管理</p>
+<p>使用设备模板</p>
+<h3 id="azure-sphere">Azure Sphere</h3>
+<p>特点：安全性最高，控制全套安全设置</p>
+<h2 id="azure-security">Azure Security</h2>
+<h3 id="azure-security-center">Azure Security Center</h3>
+<ol type="1">
+<li>监控所有服务的安全情况和设置</li>
+<li>当有资源上线时自动申请权限</li>
+<li>提供安全建议</li>
+<li>监控资源并且识别漏洞</li>
+<li>使用机器学习检测漏洞</li>
+<li>In-time access control可以设置在特定时间允许流量进入</li>
+</ol>
+<h3 id="azure-sentinel">Azure Sentinel</h3>
+<p>基于云的SIEM系统</p>
+<ol type="1">
+<li>收集大数据</li>
+<li>检测威胁</li>
+<li>快速相应</li>
+</ol>
+<h3 id="azure-key-vault">Azure Key Vault</h3>
+<p>密码管理器</p>
+<h3 id="azure-dedicated-host">Azure Dedicated host</h3>
+<p>为了符合法规要求，它要求某些组织成为唯一使用托管虚拟机的物理机的客户。</p>
+<h2 id="network-security">Network Security</h2>
+<p>Azure 网络由很多层layer来保护</p>
+<p>Physical layer：保安</p>
+<p>Perimeter layer：防DDoS攻击</p>
+<p>Network layer：限制数据通信，通过限制访问权限来保护</p>
+<p>Compute layer：系统更新，系统漏洞</p>
+<p>Application layer：软件更新，软件漏洞</p>
+<p>Azure DDoS protection：可以防护ddos攻击，通过识别攻击流量</p>
+<p>Azure security group：可以进行内部防护</p>
+<p>Azure服务推荐：</p>
+<p>firewall可以提供外部防护</p>
+<p>security group可以进行流量分层，主要是保护虚拟网络里的安全</p>
+<h1 id="service-and-lifecycles">Service and Lifecycles</h1>
+<p>包含40%考试内容</p>
+<p>20-25%是identity,governance,privacy和compliance feature</p>
+<p>10-15%是cost management, service level agreement</p>
+<h3 id="identity-service">Identity Service</h3>
 
     </div>
 
