@@ -21,27 +21,28 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.zhaoxuanlang.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="https://www.zhaoxuanlang.cn/categories/index.html">
+<meta name="description" content="Learning note for the course Deep Learning Specialization">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Deep-Learning">
+<meta property="og:url" content="https://www.zhaoxuanlang.cn/2024/07/20/Deep-Learning/index.html">
 <meta property="og:site_name" content="松鼠小筑">
+<meta property="og:description" content="Learning note for the course Deep Learning Specialization">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-08-09T19:09:06.000Z">
-<meta property="article:modified_time" content="2022-01-12T05:42:46.190Z">
+<meta property="article:published_time" content="2024-07-19T23:30:32.000Z">
+<meta property="article:modified_time" content="2024-08-10T13:34:49.780Z">
 <meta property="article:author" content="Xuanlang">
 <meta property="article:tag" content="松鼠小筑">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://www.zhaoxuanlang.cn/categories/">
+<link rel="canonical" href="https://www.zhaoxuanlang.cn/2024/07/20/Deep-Learning/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"https://www.zhaoxuanlang.cn/categories/index.html","path":"categories/index.html","title":"categories"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.zhaoxuanlang.cn/2024/07/20/Deep-Learning/","path":"2024/07/20/Deep-Learning/","title":"Deep-Learning"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>categories | 松鼠小筑
-</title>
+<title>Deep-Learning | 松鼠小筑</title>
   
 
   <script src="/js/third-party/analytics/baidu-analytics.js"></script>
@@ -136,7 +137,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -149,6 +150,10 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#neural-networks-and-deep-learning"><span class="nav-number">1.</span> <span class="nav-text">Neural Networks and Deep
+Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#introduction-to-deep-learning"><span class="nav-number">1.1.</span> <span class="nav-text">Introduction to Deep
+Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#logistic-regression-as-a-neural-network"><span class="nav-number">1.2.</span> <span class="nav-text">Logistic Regression as
+a Neural Network</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#notations"><span class="nav-number">1.2.1.</span> <span class="nav-text">Notations</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -218,45 +223,248 @@
 </noscript>
 
 
-    <div class="main-inner page posts-expand">
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
   
   
 
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.zhaoxuanlang.cn/2024/07/20/Deep-Learning/">
 
-    
-    
-    
-    <div class="post-block" lang="zh-CN"><header class="post-header">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Xuanlang">
+      <meta itemprop="description" content="业精于勤荒于嬉，行成于思毁于随">
+    </span>
 
-<h1 class="post-title" itemprop="name headline">categories
-</h1>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="松鼠小筑">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Deep-Learning
+        </h1>
 
-<div class="post-meta-container">
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-07-20 01:30:32" itemprop="dateCreated datePublished" datetime="2024-07-20T01:30:32+02:00">2024-07-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-08-10 15:34:49" itemprop="dateModified" datetime="2024-08-10T15:34:49+02:00">2024-08-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/MachineLearning/" itemprop="url" rel="index"><span itemprop="name">MachineLearning</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2024/07/20/Deep-Learning/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/07/20/Deep-Learning/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
 </div>
 
-</header>
+        </div>
+      </header>
 
-      
-      
-      <div class="post-body"><div class="category-all-page">
-  <div class="category-all-title">
-    目前共计 12 个分类
-  </div>
-  <div class="category-all">
-    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Azure/">Azure</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MachineLearning/">MachineLearning</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/UCPH/">UCPH</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unity/">Unity</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/haskell/">haskell</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/swift/">swift</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%85%B6%E4%BB%96%E7%AC%94%E8%AE%B0/">其他笔记</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="category-list-count">24</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a><span class="category-list-count">26</span></li></ul>
-  </div>
-</div>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>Learning note for the course <a
+target="_blank" rel="noopener" href="https://www.coursera.org/specializations/deep-learning">Deep
+Learning Specialization</a></p>
+<span id="more"></span>
+<h1 id="neural-networks-and-deep-learning">Neural Networks and Deep
+Learning</h1>
+<h2 id="introduction-to-deep-learning">Introduction to Deep
+Learning</h2>
+<p>Neural network:</p>
+<p>有一个输入x，经过一些神经元后计算得到结果y。所以线性回归是一个神经元的神经网络。</p>
+<p>复杂模型如预测房价的时候可以有多个神经元</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/1982606762/picgo/master/image-2024081012845398%E2%80%AFPM.png"
+alt="image-2024081012845398 PM" />
+<figcaption aria-hidden="true">image-2024081012845398 PM</figcaption>
+</figure>
+<p>Structured Data：如存在数据库里的数据</p>
+<p>Unstructured Data： 如图片，音频，视频</p>
+<p>要想提升预测的准确性，要不就使用更多数据，要不就使用更大的神经网络模型。</p>
+<h2 id="logistic-regression-as-a-neural-network">Logistic Regression as
+a Neural Network</h2>
+<h3 id="notations">Notations</h3>
+<p>例：给一个二元分类问题：分辨图片里是不是猫</p>
+<p><strong>General comments:</strong></p>
+<ul>
+<li>superscript <span class="math inline">\((i)\)</span> will denote the
+<span class="math inline">\(i^{\text{th}}\)</span> training example
+while superscript <span class="math inline">\([l]\)</span> will denote
+the <span class="math inline">\(l^{\text{th}}\)</span> layer</li>
+</ul>
+<p><strong>Sizes:</strong></p>
+<ul>
+<li><p><span class="math inline">\(m\)</span>: number of examples in the
+dataset</p></li>
+<li><p><span class="math inline">\(n_x\)</span>: input size</p></li>
+<li><p><span class="math inline">\(n_y\)</span>: output size (or number
+of classes)</p></li>
+<li><p><span class="math inline">\(n_h^{[l]}\)</span>: number of hidden
+units of the <span class="math inline">\(l^{\text{th}}\)</span>
+layer</p>
+<p>In a for loop, it is possible to denote <span
+class="math inline">\(n_x = n_h^{[0]}\)</span> and <span
+class="math inline">\(n_y = n_h^{[\text{number of layers} +
+1]}\)</span>.</p></li>
+<li><p><span class="math inline">\(L\)</span>: number of layers in the
+network.</p></li>
+</ul>
+<p><strong>Objects:</strong></p>
+<ul>
+<li><span class="math inline">\(X \in \mathbb{R}^{n_x \times m}\)</span>
+is the input matrix</li>
+<li><span class="math inline">\(x^{(i)} \in \mathbb{R}^{n_x}\)</span> is
+the <span class="math inline">\(i^{\text{th}}\)</span> example
+represented as a column vector</li>
+<li><span class="math inline">\(Y \in \mathbb{R}^{n_y \times m}\)</span>
+is the label matrix</li>
+<li><span class="math inline">\(y^{(i)} \in \mathbb{R}^{n_y}\)</span> is
+the output label for the <span
+class="math inline">\(i^{\text{th}}\)</span> example</li>
+<li><span class="math inline">\(W^{[l]} \in \mathbb{R}^{\text{number of
+units in next layer} \times \text{number of units in the previous
+layer}}\)</span> is the weight matrix, superscript <span
+class="math inline">\([l]\)</span> indicates the layer</li>
+<li><span class="math inline">\(b^{[l]} \in \mathbb{R}^{\text{number of
+units in next layer}}\)</span> is the bias vector in the <span
+class="math inline">\(l^{\text{th}}\)</span> layer</li>
+<li><span class="math inline">\(\hat{y} \in \mathbb{R}^{n_y}\)</span> is
+the predicted output vector. It can also be denoted <span
+class="math inline">\(a^{[L]}\)</span> where <span
+class="math inline">\(L\)</span> is the number of layers in the
+network.</li>
+</ul>
+<p><strong>Common forward propagation equation examples:</strong></p>
+<ul>
+<li><span class="math inline">\(a = g^{[l]}(W^{[l]}x^{(i)} + b_1) =
+g^{[l]}(z_1)\)</span> where <span class="math inline">\(g^{[l]}\)</span>
+denotes the <span class="math inline">\(l^{\text{th}}\)</span> layer
+activation function</li>
+<li><span class="math inline">\(\hat{y}^{(i)} = \text{softmax}(W_{hh} +
+b_2)\)</span></li>
+</ul>
+<p><strong>General Activation Formula:</strong></p>
+<ul>
+<li><p><span class="math inline">\(a_j^{[l]} = g^{[l]}\left(\sum_k
+w_{jk}^{[l]} a_k^{[l-1]} + b_j^{[l]}\right) =
+g^{[l]}(z_j^{[l]})\)</span></p></li>
+<li><p><span class="math inline">\(J(x, W, b, y)\)</span> or <span
+class="math inline">\(J(\hat{y}, y)\)</span> denote the cost
+function.</p></li>
+</ul>
+<p><strong>Examples of cost function:</strong></p>
+<ul>
+<li><span class="math inline">\(J_{\text{CE}}(\hat{y}, y) =
+-\sum_{i=0}^m y^{(i)} \log \hat{y}^{(i)}\)</span></li>
+<li><span class="math inline">\(J_1(\hat{y}, y) = \sum_{i=0}^m | y^{(i)}
+- \hat{y}^{(i)} |\)</span></li>
+</ul>
 
-      </div>
-      
-      
-      
     </div>
 
     
     
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Xuanlang
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.zhaoxuanlang.cn/2024/07/20/Deep-Learning/" title="Deep-Learning">https://www.zhaoxuanlang.cn/2024/07/20/Deep-Learning/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
 
 
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/07/07/Azure-learn/" rel="prev" title="Azure-learn">
+                  <i class="fa fa-chevron-left"></i> Azure-learn
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
 </div>
   </main>
 
@@ -307,7 +515,7 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://www.zhaoxuanlang.cn/categories/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://www.zhaoxuanlang.cn/2024/07/20/Deep-Learning/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
 <script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"squirrel","count":true,"i18n":{"disqus":"disqus"}}</script>
 <script src="/js/third-party/comments/disqus.js"></script>
