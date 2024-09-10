@@ -29,7 +29,7 @@
 <meta property="og:description" content="Learning note for React 代码片段在https:&#x2F;&#x2F;codesandbox.io&#x2F;dashboard&#x2F;sandboxes&#x2F;?workspace&#x3D;21c09ad6-4546-46a4-8740-fa5a1f9e3798">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-04-26T12:26:43.000Z">
-<meta property="article:modified_time" content="2024-08-12T12:23:02.487Z">
+<meta property="article:modified_time" content="2024-09-04T23:31:31.733Z">
 <meta property="article:author" content="Xuanlang">
 <meta property="article:tag" content="React">
 <meta name="twitter:card" content="summary">
@@ -91,9 +91,9 @@
 <nav class="site-nav">
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">31</span></a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">12</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">102</span></a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">33</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">13</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">104</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -150,7 +150,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E5%BB%BAreact%E9%A1%B9%E7%9B%AE"><span class="nav-number">1.</span> <span class="nav-text">新建React项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8app.jsx%E8%A7%84%E8%8C%83%E4%BB%A3%E7%A0%81%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">使用app.jsx规范代码格式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#react-module"><span class="nav-number">2.</span> <span class="nav-text">React module</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#es6%E7%9B%B8%E5%85%B3"><span class="nav-number">3.</span> <span class="nav-text">ES6相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#export"><span class="nav-number">3.1.</span> <span class="nav-text">export</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mapfilterreduce"><span class="nav-number">3.2.</span> <span class="nav-text">Map&#x2F;filter&#x2F;reduce</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#arrow-function"><span class="nav-number">3.3.</span> <span class="nav-text">Arrow function</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#react-prop"><span class="nav-number">4.</span> <span class="nav-text">React Prop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#react-map"><span class="nav-number">5.</span> <span class="nav-text">React map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#react-conditional-rendering"><span class="nav-number">6.</span> <span class="nav-text">React conditional rendering</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#react-state"><span class="nav-number">7.</span> <span class="nav-text">React State</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82state"><span class="nav-number">7.1.</span> <span class="nav-text">复杂State</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#react-handle-event-%E4%BA%8B%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="nav-number">8.</span> <span class="nav-text">React handle Event 事件管理</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E5%BB%BAreact%E9%A1%B9%E7%9B%AE"><span class="nav-number">1.</span> <span class="nav-text">新建React项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8app.jsx%E8%A7%84%E8%8C%83%E4%BB%A3%E7%A0%81%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">使用app.jsx规范代码格式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#react-module"><span class="nav-number">2.</span> <span class="nav-text">React module</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#es6%E7%9B%B8%E5%85%B3"><span class="nav-number">3.</span> <span class="nav-text">ES6相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#jsx"><span class="nav-number">3.1.</span> <span class="nav-text">JSX</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#export"><span class="nav-number">3.2.</span> <span class="nav-text">export</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mapfilterreduce"><span class="nav-number">3.3.</span> <span class="nav-text">Map&#x2F;filter&#x2F;reduce</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#arrow-function"><span class="nav-number">3.4.</span> <span class="nav-text">Arrow function</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#react-prop"><span class="nav-number">4.</span> <span class="nav-text">React Prop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#react-map"><span class="nav-number">5.</span> <span class="nav-text">React map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#react-conditional-rendering"><span class="nav-number">6.</span> <span class="nav-text">React conditional rendering</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#react-state"><span class="nav-number">7.</span> <span class="nav-text">React State</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82state"><span class="nav-number">7.1.</span> <span class="nav-text">复杂State</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#react-handle-event-%E4%BA%8B%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="nav-number">8.</span> <span class="nav-text">React handle Event 事件管理</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -165,18 +165,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">102</span>
+          <span class="site-state-item-count">104</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -262,7 +262,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-08-12 14:23:02" itemprop="dateModified" datetime="2024-08-12T14:23:02+02:00">2024-08-12</time>
+      <time title="修改时间：2024-09-05 01:31:31" itemprop="dateModified" datetime="2024-09-05T01:31:31+02:00">2024-09-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -333,11 +333,13 @@
 <p>使用react dev tool 可以查看当前网页树状图</p>
 <h2 id="react-module">React module</h2>
 <p>单文件使用component: <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Heading</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Heading<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="name">Heading</span>&gt;</span><span class="tag">&lt;/<span class="name">Heading</span>&gt;</span></span></span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<p>注意component必须用大写字母开头.</p>
+<p>注意component文件名和方程名必须用大写字母开头.</p>
 <p>如果在另一个文件中定义module，另一个文件需定义成.jsx文件</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&quot;react&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Heading</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Heading<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Heading</span><br><span class="line"></span><br><span class="line"><span class="comment">//import Heading from &quot;./Heading&quot; in the index.js</span></span><br></pre></td></tr></table></figure>
 <p>一般来讲在index中只有一个app组件，然后新建一个叫app的文件来包含所有其他东西</p>
 <h2 id="es6相关">ES6相关</h2>
+<h3 id="jsx">JSX</h3>
+<p>JSX可以让用户在JS代码里添加HTML代码。</p>
 <h3 id="export">export</h3>
 <p>如果只export一个东西就使用<code>export default x</code>,
 但是如果想要暴露多个变量或函数就需要用大括号包起来，例如<code>export &#123;x1,x2,x3&#125;</code>

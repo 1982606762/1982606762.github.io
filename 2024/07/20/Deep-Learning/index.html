@@ -29,7 +29,7 @@
 <meta property="og:description" content="Learning note for the course Deep Learning Specialization">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-07-19T23:30:32.000Z">
-<meta property="article:modified_time" content="2024-09-01T10:27:09.462Z">
+<meta property="article:modified_time" content="2024-09-09T11:08:57.754Z">
 <meta property="article:author" content="Xuanlang">
 <meta property="article:tag" content="松鼠小筑">
 <meta name="twitter:card" content="summary">
@@ -91,9 +91,9 @@
 <nav class="site-nav">
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">31</span></a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">12</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">102</span></a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">33</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">13</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">104</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -157,7 +157,12 @@ a Neural Network</span></a><ol class="nav-child"><li class="nav-item nav-level-3
 Representation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%92%88%E5%AF%B9%E5%8D%95%E4%B8%80%E6%A1%88%E4%BE%8B%E7%9A%84%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%AE%AD%E7%BB%83"><span class="nav-number">1.4.2.</span> <span class="nav-text">针对单一案例的神经网络训练</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%92%88%E5%AF%B9%E5%A4%9A%E4%B8%AA%E8%BE%93%E5%85%A5%E7%9A%84%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="nav-number">1.4.3.</span> <span class="nav-text">针对多个输入的神经网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#activation-functions"><span class="nav-number">1.4.4.</span> <span class="nav-text">Activation functions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD"><span class="nav-number">1.4.5.</span> <span class="nav-text">神经网络的反向传播</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D"><span class="nav-number">1.4.6.</span> <span class="nav-text">计算梯度下降</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E9%83%A8%E7%BD%B2"><span class="nav-number">1.4.7.</span> <span class="nav-text">代码部署</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%82%E6%95%B0"><span class="nav-number">1.4.7.1.</span> <span class="nav-text">初始化参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AD%A3%E5%90%91%E4%BC%A0%E6%92%AD"><span class="nav-number">1.4.7.2.</span> <span class="nav-text">正向传播：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="nav-number">1.4.7.3.</span> <span class="nav-text">计算损失函数：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%ADgrad_summary"><span class="nav-number">1.4.7.4.</span> <span class="nav-text">部署反向传播：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E5%8F%82%E6%95%B0"><span class="nav-number">1.4.7.5.</span> <span class="nav-text">更新参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%84%E5%90%88%E4%BB%A3%E7%A0%81"><span class="nav-number">1.4.7.6.</span> <span class="nav-text">组合代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%A8%A1%E5%9E%8B%E8%BF%9B%E8%A1%8C%E9%A2%84%E6%B5%8B"><span class="nav-number">1.4.7.7.</span> <span class="nav-text">使用模型进行预测</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#deep-neural-network"><span class="nav-number">1.5.</span> <span class="nav-text">Deep Neural Network</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9F%A9%E9%98%B5%E5%BD%A2%E7%8A%B6"><span class="nav-number">1.5.1.</span> <span class="nav-text">神经网络中矩阵形状</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%B7%B1%E5%BA%A6%E7%BD%91%E7%BB%9C%E6%95%88%E7%8E%87%E9%AB%98"><span class="nav-number">1.5.2.</span> <span class="nav-text">为什么深度网络效率高？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E6%AD%A3%E5%90%91%E5%92%8C%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD"><span class="nav-number">1.5.3.</span> <span class="nav-text">深度神经网络中的正向和反向传播</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80"><span class="nav-number">1.5.3.1.</span> <span class="nav-text">理论基础</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.5.3.2.</span> <span class="nav-text">具体实现：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#parameters-v.-hyperparameters"><span class="nav-number">1.5.4.</span> <span class="nav-text">Parameters v.
 Hyperparameters</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#improving-deep-neural-networks"><span class="nav-number">2.</span> <span class="nav-text">Improving Deep Neural
 Networks</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#practical-aspects-of-deep-learning"><span class="nav-number">2.1.</span> <span class="nav-text">Practical Aspects of Deep
-Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#biasvariance"><span class="nav-number">2.1.1.</span> <span class="nav-text">Bias&#x2F;Variance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#regularizing"><span class="nav-number">2.1.2.</span> <span class="nav-text">Regularizing</span></a></li></ol></li></ol></li></ol></div>
+Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#setting-up-machine-learning-application"><span class="nav-number">2.1.1.</span> <span class="nav-text">Setting up Machine
+Learning Application</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#biasvariance"><span class="nav-number">2.1.2.</span> <span class="nav-text">Bias&#x2F;Variance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#regularization%E6%AD%A3%E5%88%99%E5%8C%96"><span class="nav-number">2.1.3.</span> <span class="nav-text">Regularization正则化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dropout-redularization"><span class="nav-number">2.1.4.</span> <span class="nav-text">Dropout Redularization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#data-augmentation"><span class="nav-number">2.1.5.</span> <span class="nav-text">Data augmentation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#early-stopping"><span class="nav-number">2.1.6.</span> <span class="nav-text">Early stopping</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%92%E4%B8%80%E5%8C%96%E8%BE%93%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="nav-number">2.1.7.</span> <span class="nav-text">归一化输入数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A2%AF%E5%BA%A6%E6%B6%88%E5%A4%B1%E6%A2%AF%E5%BA%A6%E7%88%86%E7%82%B8"><span class="nav-number">2.1.8.</span> <span class="nav-text">梯度消失&#x2F;梯度爆炸</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gradient-checking"><span class="nav-number">2.1.9.</span> <span class="nav-text">Gradient checking</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#optimization-algorithms"><span class="nav-number">2.2.</span> <span class="nav-text">Optimization Algorithms</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mini-batch-gradient-descent"><span class="nav-number">2.2.1.</span> <span class="nav-text">Mini-batch gradient descent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exponentially-weighted-average%E6%8C%87%E6%95%B0%E5%8A%A0%E6%9D%83%E5%B9%B3%E5%9D%87%E6%95%B0"><span class="nav-number">2.2.2.</span> <span class="nav-text">Exponentially
+weighted average指数加权平均数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gradient-descent-with-momentum"><span class="nav-number">2.2.3.</span> <span class="nav-text">Gradient Descent with
+momentum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rmsprop"><span class="nav-number">2.2.4.</span> <span class="nav-text">RMSprop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#adam-optimization-algorithm"><span class="nav-number">2.2.5.</span> <span class="nav-text">Adam Optimization Algorithm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#learning-rate-decay"><span class="nav-number">2.2.6.</span> <span class="nav-text">Learning Rate Decay</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hyperparameter-tuning"><span class="nav-number">2.3.</span> <span class="nav-text">Hyperparameter Tuning</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#batch-normalization-%E6%89%B9%E9%87%8F%E5%BD%92%E4%B8%80%E5%8C%96"><span class="nav-number">2.3.1.</span> <span class="nav-text">Batch Normalization
+批量归一化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#softmax-multi-class-classification-regression"><span class="nav-number">2.3.2.</span> <span class="nav-text">Softmax
+multi-class classification Regression</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#intro-to-tensorflow"><span class="nav-number">2.3.3.</span> <span class="nav-text">Intro to Tensorflow</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -172,18 +177,18 @@ Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a cla
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">102</span>
+          <span class="site-state-item-count">104</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -269,7 +274,7 @@ Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a cla
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-09-01 12:27:09" itemprop="dateModified" datetime="2024-09-01T12:27:09+02:00">2024-09-01</time>
+      <time title="修改时间：2024-09-09 13:08:57" itemprop="dateModified" datetime="2024-09-09T13:08:57+02:00">2024-09-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -302,14 +307,14 @@ Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a cla
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>16k</span>
+      <span>19k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>29 分钟</span>
+      <span>35 分钟</span>
     </span>
 </div>
 
@@ -800,6 +805,9 @@ Hyperparameters</h3>
 Networks</h1>
 <h2 id="practical-aspects-of-deep-learning">Practical Aspects of Deep
 Learning</h2>
+<h3 id="setting-up-machine-learning-application">Setting up Machine
+Learning Application</h3>
+<p>对手里的数据进行划分，一部分训练一部分测试。</p>
 <p>如果数据集很小的话可以用60/20/20的比例分割训练，开发，测试集</p>
 <p>如果数据集很大的话只需要一点来做测试和开发就可以。</p>
 <h3 id="biasvariance">Bias/Variance</h3>
@@ -808,7 +816,178 @@ Learning</h2>
 在分类问题中，针对某个样本的最小误差。这个误差与数据本身的不确定性有关，他代表理论上无法超越的分类性能下限，无论用什么分类器都不能把误差降到贝叶斯误差以下。</p>
 <p>bias大可以通过更大的模型/更久的训练时间来解决</p>
 <p>var大可以通过更多数据/正则化regularization解决</p>
-<h3 id="regularizing">Regularizing</h3>
+<h3 id="regularization正则化">Regularization正则化</h3>
+<p>用于解决过拟合问题</p>
+<p>在逻辑回归模型中，正则化有以下公式： <span class="math display">\[
+J(w,b)=\frac{1}{m} \sum_{i=1}^{m} L(\hat{y}^{(i)},
+y^{(i)})+\frac{\lambda}{2m} \|\omega^{[l]}\|_2^2
+\]</span> 后边这一项叫做<span
+class="math inline">\(L_2\)</span>范数，他是模型中所有权重的平方和。</p>
+<p>在深度神经网络中，通过添加lambda参数来实现：</p>
+<ol type="1">
+<li>损失函数 (J)：</li>
+</ol>
+<p><span class="math display">\[
+J(\omega^{[1]}, b^{[1]}, \ldots, \omega^{[L]}, b^{[L]}) = \frac{1}{m}
+\sum_{i=1}^{m} L(\hat{y}^{(i)}, y^{(i)}) + \frac{\lambda}{2m}
+\sum_{l=1}^{L} \|\omega^{[l]}\|_2^2
+\]</span></p>
+<ol start="2" type="1">
+<li><p>Frobenius 范数 ：</p>
+<p>他是网络中所有w的平方和。</p></li>
+</ol>
+<p><span class="math display">\[
+\|\omega^{[l]}\|_F^2 = \sum_{i=1}^{n^{[l+1]}} \sum_{j=1}^{n^{[l]}}
+(\omega_{ij}^{[l]})^2
+\]</span></p>
+<ol start="3" type="1">
+<li>权重矩阵的维度 ：</li>
+</ol>
+<p><span class="math display">\[
+\omega^{[l]} : (n^{[l+1]}, n^{[l]})
+\]</span></p>
+<h3 id="dropout-redularization">Dropout Redularization</h3>
+<p>在训练过程中随机“丢弃”一部分神经元来提高模型的泛化能力。</p>
+<p>具体实现时，以固定概率p来随机丢弃神经元，被丢弃的神经元在这一次迭代中不会参与正向和反向传播。每次迭代中丢弃的神经元是随机选择的，这样模型就不会依赖某些特定的神经元。常用的p是0.2-0.5之间，丢弃只会在训练过程中使用。</p>
+<h3 id="data-augmentation">Data augmentation</h3>
+<p>对旧数据进行修改来训练可以获得更多训练集来解决过拟合问题。</p>
+<p>图片中可以进行如翻转或裁剪。</p>
+<h3 id="early-stopping">Early stopping</h3>
+<p>在训练过程中监控模型在验证集上的性能，当性能不在改善的时候就停止训练来防止模型过拟合。</p>
+<h3 id="归一化输入数据">归一化输入数据</h3>
+<p>用来加快训练速度 <span class="math display">\[
+x_{norm}=\frac{x - \mu}{\sigma}
+\]</span></p>
+<p>假如输入X是一些坐标(x1,x2),可以对所有输入减去他们的平均值<span
+class="math inline">\(\mu =
+\frac{1}{m}\sum_{i=1}^mx^\)</span>可以让数据都到中心位置。</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/1982606762/picgo/master/image-2024090315808843%E2%80%AFAM.png"
+alt="image-2024090315808843 AM" />
+<figcaption aria-hidden="true">image-2024090315808843 AM</figcaption>
+</figure>
+<p>这时发现x1的方差比x2大，我们还需要再归一化方差：</p>
+<p><span class="math inline">\(\sigma^2 =
+\frac{1}{N}\sum^N_{i=1}(x_i-\mu)^2\)</span></p>
+<p>开平方后得到标准差。</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/1982606762/picgo/master/image-2024090320330291%E2%80%AFAM.png"
+alt="image-2024090320330291 AM" />
+<figcaption aria-hidden="true">image-2024090320330291 AM</figcaption>
+</figure>
+<p>如果数据比例不一样，如有的是0-1，有的是0-1000就可以进行归一化，不过做了归一化也没什么坏处。</p>
+<h3 id="梯度消失梯度爆炸">梯度消失/梯度爆炸</h3>
+<h3 id="gradient-checking">Gradient checking</h3>
+<h2 id="optimization-algorithms">Optimization Algorithms</h2>
+<h3 id="mini-batch-gradient-descent">Mini-batch gradient descent</h3>
+<p>把输入的X，Y矩阵分成很多个小矩阵。</p>
+<p>假设X是(n,m)大小，n是input
+size，即样本的特征数量。m是样本的数量(number of
+examples).Y是(a,m)大小，a是output
+size，即输出类型，m是样本数量，即对每一个样本都有一个输出。</p>
+<p>mini-batch的时候把m个样本分成很多份，然后用for循环对每个batch进行训练。每个batch的一轮处理叫做一个epoc。</p>
+<p>mini-batch训练时的cost下降会有一些波动，因为具体效果取决于每个batch里数据，有可能有数据有噪音导致学习效果不好。</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/1982606762/picgo/master/image-2024090422728986%E2%80%AFPM.png"
+alt="image-2024090422728986 PM" />
+<figcaption aria-hidden="true">image-2024090422728986 PM</figcaption>
+</figure>
+<p>在使用mini-batch的时候需要指定它的参数：每个batch里的数据大小。大小可以指定为64-1024之间的某个值</p>
+<h3 id="exponentially-weighted-average指数加权平均数">Exponentially
+weighted average指数加权平均数</h3>
+<p>用来处理时间序列数据，他赋予最近的观测值最大的权重，最早的观测值最小的权重。
+<span class="math display">\[
+v_t = \beta v_{t-1} + (1 - \beta) x_t
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\beta\)</span>是平滑因子，范围0-1</li>
+<li>vt是在t时间的数据的加权平均数</li>
+<li>xt是时间t处的观测值</li>
+</ul>
+<p>可以用来计算一段时间的平均数据，如一个月内每天的平均气温。</p>
+<p>但是用这个平均数直接计算会在一开始的时候有误差，这时就要使用误差修正（bias
+correction）：</p>
+<p>使用<span
+class="math inline">\(\frac{v_t}{1-\beta^t}\)</span>来代替原来的vt可以修正这个问题。t很小的时候可以有更准确的数据，t变大的时候这个值和原来的vt几乎一样。</p>
+<h3 id="gradient-descent-with-momentum">Gradient Descent with
+momentum</h3>
+<ol type="1">
+<li>在每次迭代的时候，在每个mini-batch里计算dw和db</li>
+<li>计算<span class="math inline">\(vd_w = \beta V_{dw} +
+(1-\beta)d_w\)</span></li>
+<li><span class="math inline">\(V_{db} = \beta V_{db}+
+(1-\beta)d_b\)</span></li>
+<li><span class="math inline">\(W = W-\alpha V_{dw}, b = b - \alpha
+v_{db}\)</span></li>
+</ol>
+<p>一般设置<span class="math inline">\(\beta\)</span>为0.9</p>
+<h3 id="rmsprop">RMSprop</h3>
+<p>与momentum差不多，只不过<span class="math inline">\(S_{db}=\beta
+S_{db} + (1-\beta)d_b^2\)</span></p>
+<p>然后 <span class="math inline">\(w = w - \alpha
+\frac{dw}{\sqrt{S_{dw}+\epsilon}}\)</span></p>
+<h3 id="adam-optimization-algorithm">Adam Optimization Algorithm</h3>
+<p>组合RMS和momentum</p>
+<p>首先，初始化Vdb,Vdw,Sdb,Sdb都为0</p>
+<p>然后在每次迭代中</p>
+<ol type="1">
+<li>计算<span class="math inline">\(vd_w = \beta V_{dw} +
+(1-\beta)d_w\)</span>， <span class="math inline">\(V_{db} = \beta
+V_{db}+ (1-\beta)d_b\)</span></li>
+<li>计算<span class="math inline">\(S_{db}=\beta S_{db} +
+(1-\beta)d_b^2\)</span>，</li>
+</ol>
+<p>注意这里两个beta不是一个。</p>
+<ol start="3" type="1">
+<li>应用bias correction , <span class="math inline">\(V_dw =
+\frac{V_dw}{1-\beta^t}\)</span>,对四个参数都应用correction</li>
+<li>更新w和b：<span class="math inline">\(w = w - \alpha
+\frac{V_dw}{\sqrt{S_{dw}+\epsilon}}\)</span></li>
+</ol>
+<p>一般beta1(Vdw的参数)设置为0.9，beta2<span
+class="math inline">\((Sdw^2)\)</span>设置为0.999，<span
+class="math inline">\(\epsilon\)</span>设置为10^-8,这些也是Adam的默认参数。使用这些默认参数后调试学习率alpha来训练。</p>
+<h3 id="learning-rate-decay">Learning Rate Decay</h3>
+<p>在训练过程中可以逐渐减小学习率，因为后期不需要步长很长。</p>
+<p>可以使用以下几种方法：</p>
+<p><span class="math inline">\(\alpha = 0.95^{epochnum}
+*\alpha_0\)</span></p>
+<p><span class="math inline">\(\alpha =
+\frac{k}{\sqrt{epochnum}}*\alpha_0\)</span></p>
+<p>或者手动调整学习率。</p>
+<h2 id="hyperparameter-tuning">Hyperparameter Tuning</h2>
+<h3 id="batch-normalization-批量归一化">Batch Normalization
+批量归一化</h3>
+<p>在之前讨论过归一化normalization问题，先减均值再除平均差。</p>
+<p>现在需要对中间变量进行归一化。对Z(i)进行归一化处理。</p>
+<p>例如：输入X后经过第一层得到Z[1],然后对Z1进行归一化后经过激活函数得到a1，然后用这个a1再进入下一层，以此类推。</p>
+<h3 id="softmax-multi-class-classification-regression">Softmax
+multi-class classification Regression</h3>
+<p>输出可以有多个值，最后一层使用softmax层实现，也就是对上一层结果Z运用softmax激活函数。</p>
+<p>具体来说，首先计算一个<span
+class="math inline">\(t=e^{z[L]}\)</span>, 然后<span
+class="math inline">\(a =
+\frac{t}{\sum^4_{j=1}t_i}\)</span>.,其实就是算出每个结果对应的t之后求出他在所有求和之中站的比例，然后这个比例就是他是这个的概率。</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/1982606762/picgo/master/image-20240906123946524%E2%80%AFPM.png"
+alt="image-20240906123946524 PM" />
+<figcaption aria-hidden="true">image-20240906123946524 PM</figcaption>
+</figure>
+<h3 id="intro-to-tensorflow">Intro to Tensorflow</h3>
+<p>假设目前需要最小化cost function <span class="math inline">\(J =
+(x-5)^2\)</span></p>
+<p>用<code>w = tf.Variable(0,dtype=tf.float32)</code>来定义tf中的变量，即神经网络里的w。</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/1982606762/picgo/master/image-2024090713618877%E2%80%AFAM.png"
+alt="image-2024090713618877 AM" />
+<figcaption aria-hidden="true">image-2024090713618877 AM</figcaption>
+</figure>
+<p>核心是定义cost function，</p>
 
     </div>
 
@@ -844,6 +1023,9 @@ Learning</h2>
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2024/09/02/Web3-intro/" rel="next" title="Web3-intro">
+                  Web3-intro <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
