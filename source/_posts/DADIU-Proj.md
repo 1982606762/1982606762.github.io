@@ -9,15 +9,17 @@ Problems and Learnings during the DADIU project.
 
 <!--more-->
 
-## Make an interactive object
+The game is called "I inherited a castle" and this is the [link](https://dadiu.itch.io/i-inherited-a-castle).
 
-### Add a trigger Area so when players step on it they can interact with some game object
+# Make an interactive object
+
+### Add a trigger Area so when players step on it they can interact with some game objects
 
 ### add the object to interact
 
 ### Make a script to do the interact
 
- use "onTriggerEnter" to check if a player is in the area, and use an "inputAction" to bind an input method, then define an interact function to define what will be triggered after the input starts, and also need to bind that onenable. Code are as follows:
+ use "onTriggerEnter" to check if a player is in the area, and use an "inputAction" to bind an input method, then define an interact function to define what will be triggered after the input starts, and also need to bind that onenable. The code are as follows:
 
 The "require component" means it needs to have a collider component on this object.
 
@@ -80,7 +82,7 @@ namespace LivingMansion._Scripts.Interact
 
 Add a canvas with a text on it, and deactivate it. And write another script that on trigger enter invoke an event to activate the canvas.
 
-## Open a door slowly
+# Open a door slowly
 
 ### Add a door object
 
@@ -128,11 +130,11 @@ public class OpenDoor : MonoBehaviour
 
 ```
 
-## Implement wwise sound into the project
+# Implement wwise sound into the project
 
 It needs to have an AKBank component in the scene to manage the sound, also it needs to have an AkGameobj to calculate the distance from player to the object. Then to play a sound you need a script which receive a wwise event using `public AK.Wwise.Event sound;` and then trigger the sound with `sound.Post(gameObject);`.
 
-### Implement sound effects to footstep of the player
+### Implement sound effects to footsteps of the player
 
 To make it sounds differently on different surfaces, we need to have a script to do the switch like follows:
 ```c#
@@ -172,7 +174,7 @@ namespace LivingMansion._Scripts.Footsteps
 
 Here FootstepMaterialSound is a class which have a string called materialName. It uses raycasting to detect the surface under the player and send a switch to wwise engine whenever the material changes.
 
-## Implement timed interaction object
+# Implement timed interaction object
 
 Effect:  after interacting with an object(like press e) a series of different events will be triggered and each of them can have a wait time, which will make it wait for x seconds to invoke.
 
@@ -239,9 +241,9 @@ In this code, I defined a class "CustomAction" to store actions the designer may
 
 The interact function needs the parameter to receive the action activity, and then for each action, it will create a new coroutine to wait for some seconds and run the action.
 
-In order to prevent the player from interacting multiple times while the actions are running, I use a variable to count the running coroutines, when it begins it +=1, and when it's done it will subtract 1.
+To prevent the player from interacting multiple times while the actions are running, I use a variable to count the running coroutines, when it begins it +=1, and when it's done it will subtract 1.
 
-## Implement puzzle-winning manager
+# Implement puzzle-winning manager
 
 Effect: In the game, there are different puzzles to be solved. I want to implement a manager that checks conditions to be met and then triggers some events.
 

@@ -9,17 +9,9 @@ haskell笔记
 
 <!--more-->
 
-# 基础
-
-## 变量
-
-变量命名使用驼峰式
 
 
-
-
-
-## 函数
+# 函数
 
 ### 调用
 
@@ -35,9 +27,9 @@ haskell笔记
 
 replicate n m  复制n个m
 
+### 不等于是/=
 
-
-## if语句
+### if语句
 
 ```haskell
 doubleme x = if x>100
@@ -50,9 +42,186 @@ if里 else部分不能省略
 
 **if语句是一个表达式**，即返回一个值的代码。
 
-## 变量
+## 函数语法
 
-在ghci下使用let或在脚本中直接写a=1定义
+### 模式匹配
+
+模式匹配通过检查数据的特定结构来检查其是否匹配，并按模式从中取得数据。
+
+```haskell
+sayMe :: (Integral a) => a -> String  
+sayMe 1 = "One!"  
+sayMe 2 = "Two!"  
+sayMe 3 = "Three!"  
+sayMe 4 = "Four!"  
+sayMe 5 = "Five!"  
+sayMe x = "Not between 1 and 5"
+
+```
+
+若想匹配不需要的东西就需要用括号括起来并且用_表示
+
+递归常使用(x:xs)进行匹配
+
+```haskell
+sum' :: (Num a) => [a] -> a  
+sum' [] = 0  
+sum' (x:xs) = x + sum' xs
+```
+
+as模式：
+
+将一个名字和 `@` 置于模式前，可以在按模式分割什么东西时仍保留对其整体的引用。
+
+```haskell
+capital :: String -> String  
+capital "" = "Empty string, whoops!"  
+capital all@(x:xs) = "The first letter of " ++ all ++ " is " ++ [x]
+```
+
+### Guards
+
+用来检查一个值的某项属性是否为真
+
+```haskell
+bmiTell :: (RealFloat a) => a -> String  
+bmiTell bmi  
+    | bmi <= 18.5 = "You're underweight, you emo, you!"  
+    | bmi <= 25.0 = "You're supposedly normal. Pffft, I bet you're ugly!"  
+    | bmi <= 30.0 = "You're fat! Lose some weight, fatty!"  
+    | otherwise   = "You're a whale, congratulations!"
+```
+
+竖线就是guards，若为真就使用，为假就往下
+
+### Where
+
+写在guards下边
+
+```haskell
+bmiTell :: (RealFloat a) => a -> a -> String  
+bmiTell weight height  
+    | bmi <= skinny = "You're underweight, you emo, you!"  
+    | bmi <= normal = "You're supposedly normal. Pffft, I bet you're ugly!"  
+    | bmi <= fat    = "You're fat! Lose some weight, fatty!"  
+    | otherwise     = "You're a whale, congratulations!"  
+    where bmi = weight / height ^ 2  
+          skinny = 18.5  
+          normal = 25.0  
+          fat = 30.0
+```
+
+
+
+### let
+
+let必须跟一个in，在let里定义的变量可以在in里当成私有变量来使用。
+
+```haskell
+cylinder :: (RealFloat a) => a -> a -> a  
+cylinder r h = 
+    let sideArea = 2 * pi * r * h  
+        topArea = pi * r ^2  
+    in  sideArea + 2 * topArea
+```
+
+let是一个表达式，可以在任何地方使用。
+
+```haskell
+ghci> (let (a,b,c) = (1,2,3) in a+b+c) * 100  
+600
+```
+
+### case
+
+Case 类似switch
+
+```haskell
+case expression of pattern -> result  
+                   pattern -> result  
+                   pattern -> result  
+                   ...
+```
+
+```haskell
+head' :: [a] -> a  
+head' xs = case xs of [] -> error "No head for empty lists!"  
+                      (x:_) -> x
+```
+
+
+
+## 常用函数
+
+### zip [a] [b]
+
+返回数组，将a，b组合起来，若长度不同则以短的为准
+
+### replicate a b
+
+返回数组，把b重复a次
+
+### flip f a b
+
+返回f b a的结果
+
+### div a b
+
+返回a/b , 只能用于整数
+
+### zipWith f [a] [b]
+
+返回数组，每一项是a，b中相应项经过f操作后的结果
+
+### map f [a]
+
+返回数组，每一项是a经过f操作后的结果
+
+### filter (a->bool) [a]
+
+返回数组，a数组经过限制条件后剩余元素
+
+### takeWhile (a->bool) [a]
+
+返回符合限制条件的元素数组
+
+### dropWhile (a->bool) [a]
+
+返回去除条件后的数组
+
+### odd
+
+判断是不是基数
+
+### even
+
+判断是不是偶数
+
+### words
+
+把string中的单词拆出来成为数组
+
+### unwords
+
+把单词数组组合成String
+
+
+
+## 计算函数
+
+mod 取模
+
+div 除
+
+
+
+
+
+
+
+# 变量
+
+在ghci下使用`let`或在脚本中直接写a=1定义
 
 ### List
 
@@ -99,9 +268,22 @@ if里 else部分不能省略
 
 用小括号定义
 
-与list区别：可以存入多种元素，可以包含多种类别的元素 
+与list区别：元组可以存入多种元素，可以包含多种类别的元素 ，但是一个tuple的类型取决于内部数据的数量和类型，如：
 
-zip函数接受两个list，生成一个包含tuple的list。若长短不一则长的适配短的
+```haskell
+(1,2)!=(1,2,3)
+(1,2) != ('1',2)
+```
+
+所以可以用list包裹tuple来表示二维，如[(1,2),(1,3),(1,4)].
+
+`fst (1,2)=1`
+
+`snd (1,2)=2`
+
+
+
+zip函数接受两个list，生成一个包含tuple的list。若长短不一则长的那个会断开适配短的。
 
 ```haskell
  ghci> zip [1,2,3,4,5] [5,5,5,5,5]
@@ -113,186 +295,11 @@ ghci> zip [1 .. 5] ["one", "two", "three", "four", "five"]
 [(1,"one"),(2,"two"),(3,"three"),(4,"four"),(5,"five")]
 ```
 
- 
 
-# 函数语法
 
-## 模式匹配
+# type and Typeclass
 
-模式匹配通过检查数据的特定结构来检查其是否匹配，并按模式从中取得数据。
-
-```haskell
-sayMe :: (Integral a) => a -> String  
-sayMe 1 = "One!"  
-sayMe 2 = "Two!"  
-sayMe 3 = "Three!"  
-sayMe 4 = "Four!"  
-sayMe 5 = "Five!"  
-sayMe x = "Not between 1 and 5"
-
-```
-
-若想匹配不需要的东西就需要用括号括起来并且用_表示
-
-递归常使用(x:xs)进行匹配
-
-```haskell
-sum' :: (Num a) => [a] -> a  
-sum' [] = 0  
-sum' (x:xs) = x + sum' xs
-```
-
-as模式：
-
-将一个名字和 `@` 置于模式前，可以在按模式分割什么东西时仍保留对其整体的引用。
-
-```haskell
-capital :: String -> String  
-capital "" = "Empty string, whoops!"  
-capital all@(x:xs) = "The first letter of " ++ all ++ " is " ++ [x]
-```
-
-## Guards
-
-用来检查一个值的某项属性是否为真
-
-```haskell
-bmiTell :: (RealFloat a) => a -> String  
-bmiTell bmi  
-    | bmi <= 18.5 = "You're underweight, you emo, you!"  
-    | bmi <= 25.0 = "You're supposedly normal. Pffft, I bet you're ugly!"  
-    | bmi <= 30.0 = "You're fat! Lose some weight, fatty!"  
-    | otherwise   = "You're a whale, congratulations!"
-```
-
-竖线就是guards，若为真就使用，为假就往下
-
-## Where
-
-写在guards下边
-
-```haskell
-bmiTell :: (RealFloat a) => a -> a -> String  
-bmiTell weight height  
-    | bmi <= skinny = "You're underweight, you emo, you!"  
-    | bmi <= normal = "You're supposedly normal. Pffft, I bet you're ugly!"  
-    | bmi <= fat    = "You're fat! Lose some weight, fatty!"  
-    | otherwise     = "You're a whale, congratulations!"  
-    where bmi = weight / height ^ 2  
-          skinny = 18.5  
-          normal = 25.0  
-          fat = 30.0
-```
-
-
-
-## let
-
-let必须跟一个in，在let里定义的变量可以在in里当成私有变量来使用。
-
-```haskell
-cylinder :: (RealFloat a) => a -> a -> a  
-cylinder r h = 
-    let sideArea = 2 * pi * r * h  
-        topArea = pi * r ^2  
-    in  sideArea + 2 * topArea
-```
-
-let是一个表达式，可以在任何地方使用。
-
-```haskell
-ghci> (let (a,b,c) = (1,2,3) in a+b+c) * 100  
-600
-```
-
-## case
-
-Case 类似switch
-
-```haskell
-case expression of pattern -> result  
-                   pattern -> result  
-                   pattern -> result  
-                   ...
-```
-
-```haskell
-head' :: [a] -> a  
-head' xs = case xs of [] -> error "No head for empty lists!"  
-                      (x:_) -> x
-```
-
-
-
-# 常用函数
-
-## zip [a] [b]
-
-返回数组，将a，b组合起来，若长度不同则以短的为准
-
-## replicate a b
-
-返回数组，把b重复a次
-
-## flip f a b
-
-返回f b a的结果
-
-## div a b
-
-返回a/b , 只能用于整数
-
-## zipWith f [a] [b]
-
-返回数组，每一项是a，b中相应项经过f操作后的结果
-
-## map f [a]
-
-返回数组，每一项是a经过f操作后的结果
-
-## filter (a->bool) [a]
-
-返回数组，a数组经过限制条件后剩余元素
-
-## takeWhile (a->bool) [a]
-
-返回符合限制条件的元素数组
-
-## dropWhile (a->bool) [a]
-
-返回去除条件后的数组
-
-## odd
-
-判断是不是基数
-
-## even
-
-判断是不是偶数
-
-## words
-
-把string中的单词拆出来成为数组
-
-## unwords
-
-把单词数组组合成String
-
-
-
-# 计算函数
-
-mod 取模
-
-div 除
-
-
-
-
-
-
-
-# 自定义type
+可以用`:t`来判断
 
 ## 继承类
 

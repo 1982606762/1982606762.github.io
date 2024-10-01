@@ -38,5 +38,4 @@ print ("\n\n现有的categories:")
 for i in list(set(categories)):
     print (i, end=' ')
 print ("\n")
-print ("使用{%asset_img [file] [title]%}来添加图片链接。")
 f.close()
