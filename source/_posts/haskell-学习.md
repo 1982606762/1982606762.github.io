@@ -299,17 +299,40 @@ ghci> zip [1 .. 5] ["one", "two", "three", "four", "five"]
 
 # type and Typeclass
 
-可以用`:t`来判断
+## Type
 
-## 继承类
+类型以大写字母开头
 
-### show
+可以用`:t`来判断一个东西的类型。
 
-让他可以print
+函数的参数之间用->分隔，回传值是最后一项。
 
-### Eq
+常见类型有：
 
-可以做比较
+* Int: 整数
+* Integer：没有边界的整数
+* Float：单精度浮点数
+* Double：双精度浮点数
+* Bool：只有True和False
+* Char：一个字符
+
+## Type variable
+
+函数head的类型是[a]->a
+
+这里的a就是一个类型变量，他可以是任意类型，必须是小写。
+
+## 类型类Typeclass
+
+某个Typeclass定义了这个类型所描述的行为，如果一个类型属于某个类型类那么他就拥有相应的行为。
+
+`(Eq a) => a -> a` 表示a是Eq类型类的类型，这个符号代表typeclass约束。
+
+例如
+
+* show：
+
+* Eq：可以做比较
 
 
 
