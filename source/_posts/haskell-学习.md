@@ -330,10 +330,11 @@ ghci> zip [1 .. 5] ["one", "two", "three", "four", "five"]
 
 例如
 
-* show：
+* show：可以用字符串表示，目前除了函数其他类型都是show的成员。
 
 * Eq：可以做比较
 
+* read: 
 
 
 # 输入输出
